@@ -1,0 +1,240 @@
+//
+// D3 
+//
+
+.card__content--chart,
+.card__header-chart {
+	>div {
+		overflow: hidden;
+	}
+
+	.lineChart--svg {
+		fill: transparent;
+	}
+
+	.lineChart--area {
+		fill: rgba(85, 212, 68, 0.19);
+	}
+
+	.lineChart--areaLine {
+		stroke: #73ca67;
+		stroke-width: 1px;
+	}
+
+	.lineChart--tooltip {
+		stroke: transparent;
+		stroke-width: 12px;
+		transform: translateY(2px);
+	}
+
+	.lineChart--yAxis {
+		.tick {
+			&:first-child {
+				display: none;
+			}
+
+			rect {
+				opacity: 1;
+				fill: #fff;
+				transform: translateX(19px) translateY(-10px);
+			}
+
+			text {
+				fill: #a3a3a3;
+				font-size: 11px;
+				position: relative;
+				// transform: translate(-533px, 0);
+			}
+
+			line {
+				stroke: rgba(206, 206, 206, 0.2);
+				shape-rendering: crispEdges;
+			}
+
+		}
+
+	}
+
+	#chart--one {
+		@c: rgba(39, 174, 96, 0.3);
+
+		.lineChart--area {
+			fill: @c;
+		}
+
+		.lineChart--areaLine {
+			stroke: #27ae60;
+		}
+
+	}
+
+	#chart--two {
+		@c: rgba(255, 167, 38, 0.3);
+		@c2: rgba(230,232,235,0.4);
+		.lineChart--area {
+			fill: @c;
+
+			&:nth-child(2) {
+				fill:@c2;
+			}
+		}
+
+		.lineChart--areaLine {
+			stroke:#D8D8D8;
+			
+
+			&:nth-child(2) {
+			stroke: #ffa726;
+			}
+		}
+
+	}
+
+	#chart--three {
+		@c: rgba(126, 86, 194, 0.3);
+
+		.lineChart--area {
+			fill: @c;
+		}
+
+		.lineChart--areaLine {
+			stroke: #7e57c2;
+		}
+
+	}
+
+	#chart--four {
+		@c: rgba(0, 145, 234, 0.3);
+		@c2: rgba(230,232,235,0.4);
+
+		.lineChart--area {
+			fill: @c;
+
+			&:nth-child(2) {
+				fill:@c2;
+			}
+		
+		}
+
+		.lineChart--areaLine {
+			stroke:#D8D8D8;
+
+			&:nth-child(2) {
+				stroke: #0091ea;
+			}
+		
+		}
+
+	}
+
+	&#chart--client-value {
+		@c: @primary-bg-lighten6;
+		@c: lighten(@primary-bg, 12%);
+
+		.lineChart--area {
+			fill: @c;
+		}
+
+		.lineChart--areaLine {
+			stroke: darken(@primary-bg-lighten6, 10%);
+		}
+
+	}
+
+}
+
+.lineChart--rect {
+	width: 50px;
+	height: 20px;
+	fill: white;
+	transform: translate(25px, -10px);
+}
+//bar chart
+
+#chart--four {
+
+
+	svg {
+
+		.axis {
+			// display:none;
+		}
+
+		.bar {
+			fill:rgba(255,152,0,0.4);
+
+			&:nth-child(odd) {
+				fill:rgba(197, 197, 197, 0.4);
+			}
+		}
+	}
+
+
+}
+
+//tip
+
+.d3-tip {
+
+	.d3-tip__inner {
+
+		position:relative;
+	    background: #3d454c;
+	    padding: 14px;
+	    transition:300ms;
+	    color:#fff;
+	    font-size:12px;
+
+	}
+}
+
+
+
+//d3 test - tick in Y axis
+
+.axis {
+
+	&.y {
+
+		>text {
+			display:none;
+		}
+	    .domain {
+	    	display:none;
+	    }
+
+		.tick {
+
+			&:first-child {
+				display:none;
+			}
+			line {
+			    stroke: rgba(206, 206, 206, 0.2);
+			    shape-rendering: crispEdges;
+			}
+			text {
+			    	// transform: translateX(-530px);
+					fill: #a3a3a3;
+					position: relative;
+					// transform: translate(25px, 0);
+					font-size: 11px;
+				}
+
+			rect {
+    			transform: translateX(11px) translateY(-9px);
+
+			}
+		}
+
+
+
+	}
+	
+
+
+
+
+}
+
+//D3 | END
+

@@ -1,0 +1,103 @@
+//
+// enlarded widgets component 
+//
+
+//using modal
+
+//trigger icon
+.card-enlarge {
+	cursor:pointer;
+    color: #66615c;
+    font-size: 24px;
+}
+
+@media @max1200 {	
+
+	.card-enlarge,
+	.card-maximize, 
+	.card-minimize {
+		display:none;
+	}
+
+}
+
+//global
+.jquery-modal {
+
+	.card--enlarged.modal {
+		margin-bottom:0;
+	    display: flex;
+	    flex-flow: column nowrap;
+
+	    width: 90%;
+	    height: 100%;
+		padding:0;
+		&:before {
+			display:none;
+		}
+
+
+
+		// .card {
+		// 	height:100%;
+
+		// 	.card__content {
+		// 		    // height: ~'calc(100% - 52px)' !important;
+
+		// 		    // .ps-scrollbar-y-rail{
+		// 		    // 	margin-top:52px;
+		// 		    // 	margin-bottom:52px;
+		// 		    // }
+		// 	}
+
+
+		// }
+
+		.close-modal {
+			display:none;
+		}
+
+		.card__header {
+		    min-height: 52px;
+		}
+		.card__content {
+		    // flex: 1;
+		    position:relative;
+		}
+
+		&.card--comments {
+
+			.comments-message:last-child {
+				margin-bottom: 60px;
+			}
+		}
+	}
+	
+}
+
+//using GridStack
+
+//using gridstack
+.card-maximize {
+	cursor:pointer;
+    color: #66615c;
+    font-size: 24px;	
+}
+
+.is-maximized {
+
+	//using gridstack
+	.card-maximize {
+
+		i {
+			
+			
+		    &:before {
+		    	content:'\f1eb';
+		    }
+
+		}
+
+	}
+
+}

@@ -1,0 +1,134 @@
+.avatar
+{
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    .avatar-filter();
+    img
+    {
+        min-width: 100%;
+
+        transition: @transition;
+
+        border-radius: 50%;
+    }
+    &.avatar--active
+    {
+        &:after
+        {
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+
+            width: 7px;
+            height: 7px;
+
+            content: '';
+
+            border: 5px solid @secondary-bg-lighten5;
+            border-radius: 50%;
+            background-color: @color-success;
+        }
+    }
+    &.avatar--warning
+    {
+        &:after
+        {
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+
+            width: 10px;
+            width: 10px;
+            height: 10px;
+
+            content: '';
+
+            border: 5px solid @secondary-bg-lighten5;
+            border-radius: 50%;
+            background-color: @color-warning;
+        }
+    }
+    &.avatar--generic
+    {
+        display: flex;
+
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+        background-color: @secondary-bg-lighten3;
+
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        &:before
+        {
+            font: normal normal normal 21px/1 'Material-Design-Iconic-Font';
+
+            content: '\f3e1';
+
+            color: @fff;
+
+            .mdl-font();
+        }
+        *
+        {
+            display: none;
+        }
+    }
+    &.avatar--lg
+    {
+        min-width: 60px;
+        img
+        {
+            max-width: 60px;
+            max-height: 60px;
+        }
+        &:after
+        {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &.avatar--xs
+    {
+        min-width: 40px;
+        img
+        {
+            max-width: 40px;
+            max-height: 40px;
+        }
+        &:after
+        {
+            width: 7px;
+            height: 7px;
+        }
+    }
+}
+
+.flex-block
+{
+    .avatar
+    {
+        &:after
+        {
+            border: 5px solid @fff;
+        }
+    }
+}
+
+.card--comments
+{
+    .avatar
+    {
+        &:after
+        {
+            border: 5px solid @tetriary-bg;
+        }
+    }
+}

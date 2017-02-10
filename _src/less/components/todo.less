@@ -1,0 +1,193 @@
+#antares-todo-content {
+
+	// opacity:0; height: 0px; width:0px;
+
+	.btn-link {
+		position: relative;
+		outline:0;
+		border:0;
+
+		&:focus, &:active {
+			outline:0;
+			border:0;
+		}
+	}
+
+
+	.todo__control {
+		flex-flow: row wrap;
+		justify-content: space-around;
+
+		>input {
+			width: 100%;
+			flex: 1;
+			flex-basis: 100%;
+			margin: 16px 0 16px 0;
+		}
+
+		.todo__filter-area {
+			width:100%;
+			display:flex;
+			flex-flow:row nowrap;
+			align-items:center;
+			margin-bottom: 16px;
+
+			
+			>select {
+				flex:1;
+				height: 32px;
+
+
+				&:invalid {
+					color:#a1a7b2;
+				}
+			}
+
+			.select2 {
+				margin-right:0;
+				height:auto;
+
+				.select2-selection {
+					height:auto;
+				}
+
+				.select2-selection__rendered {
+					height:28px;
+				}
+			}
+
+			>span {
+				margin-right:16px;
+				font-size: 14px;
+				color: #a1a7b2;
+			}
+
+		}
+
+		
+
+	}
+
+	.todo-item {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: space-between;
+		margin: 16px 0;
+		font-size: 14px;
+		color: #a1a7b2;
+
+		input[type="checkbox"] {
+			width: 20px;
+		}
+
+		button {
+			// min-width: 80px;
+
+			i {
+				color:@secondary-bg;
+			}
+		}
+
+		>span {
+			display: flex;
+    		width: 100%;
+
+			span:first-child {
+			    margin-left: 14px;
+		        padding-right: 8px;
+			}
+			span:last-child {
+			flex:1
+			}
+
+		}
+
+	}
+
+}
+
+.item-move {
+
+	/* applied to the element when moving */
+	transition: transform .5s cubic-bezier(.55, 0, .1, 1);
+}
+
+.bounce-transition {
+
+	animation-duration: 500ms;
+	animation-fill-mode: both;
+}
+
+@keyframes bounceInLeft {
+	from,
+	60%,
+	75%,
+	90%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-3000px, 0, 0);
+		transform: translate3d(-3000px, 0, 0);
+	}
+
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(25px, 0, 0);
+		transform: translate3d(25px, 0, 0);
+	}
+
+	75% {
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+	}
+
+	90% {
+		-webkit-transform: translate3d(5px, 0, 0);
+		transform: translate3d(5px, 0, 0);
+	}
+
+	to {
+		-webkit-transform: none;
+		transform: none;
+	}
+
+}
+
+@keyframes bounceOutRight {
+	20% {
+		opacity: 1;
+		-webkit-transform: translate3d(-20px, 0, 0);
+		transform: translate3d(-20px, 0, 0);
+	}
+
+	to {
+		opacity: 0;
+		-webkit-transform: translate3d(2000px, 0, 0);
+		transform: translate3d(2000px, 0, 0);
+	}
+
+}
+
+.bounce-leave {
+	-webkit-animation-name: bounceOutRight;
+	animation-name: bounceOutRight;
+
+}
+
+.bounce-enter {
+	-webkit-animation-name: bounceInLeft;
+	animation-name: bounceInLeft;
+}
+
+.is-done {
+opacity:0.5;
+	> span {
+	text-decoration: line-through;
+		
+	}
+}

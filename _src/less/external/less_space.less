@@ -1,0 +1,99 @@
+//====================================
+//              FOR LOOP             =
+//====================================
+.for(@i, @n) {
+  .-each(@i)
+}
+
+.for(@n) when (isnumber(@n)) {
+  .for(1, @n)
+}
+
+.for(@i, @n) when not (@i =@n) {
+  .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+//--------  End of for loop  ---------//
+
+
+
+//=========================================
+//              FOR EACH LOOP             =
+//=========================================
+.for(@array) when (default()) {
+  .for-impl_(length(@array))
+}
+
+.for-impl_(@i) when (@i > 1) {
+  .for-impl_((@i - 1))
+}
+
+.for-impl_(@i) when (@i > 0) {
+  .-each(extract(@array, @i))
+}
+//--------  End of for each loop  ---------//
+
+
+
+
+
+
+///////////////
+// variables //
+///////////////
+@screen-xs: 0;
+@screen-sm: 480px;
+@screen-md: 768px;
+@screen-lg: 992px;
+@screen-xl: 1600px;
+
+
+
+
+@values-array: 0, 8, 16, 24, 32, 40, 48, 56;
+
+
+
+// global
+@media (min-width: @screen-xs) {
+  .make-space(@prefix: xs);
+}
+// mobile
+@media (min-width: @screen-sm) {
+  .make-space(@prefix: sm);
+}
+// tablet
+@media (min-width: @screen-md) {
+  .make-space(@prefix: md);
+}
+// desktop
+@media (min-width: @screen-lg) {
+  .make-space(@prefix: lg);
+}
+// large screens
+@media (min-width: @screen-xl) {
+  .make-space(@prefix: xl);
+}
+
+
+
+
+
+
+// init functions
+.make-space(@prefix) {
+  .for(@values-array);
+  .-each(@value) {
+    .@{prefix}-p-@{value}   { padding:        ~"@{value}px"; }
+    .@{prefix}-pt-@{value}  { padding-top:    ~"@{value}px"; }
+    .@{prefix}-pl-@{value}  { padding-left:   ~"@{value}px"; }
+    .@{prefix}-pr-@{value}  { padding-right:  ~"@{value}px"; }
+    .@{prefix}-pb-@{value}  { padding-bottom: ~"@{value}px"; }
+    .@{prefix}-m-@{value}   { margin:         ~"@{value}px"; }
+    .@{prefix}-mt-@{value}  { margin-top:     ~"@{value}px"; }
+    .@{prefix}-ml-@{value}  { margin-left:    ~"@{value}px"; }
+    .@{prefix}-mr-@{value}  { margin-right:   ~"@{value}px"; }
+    .@{prefix}-mb-@{value}  { margin-bottom:  ~"@{value}px"; }
+
+  }
+}
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Antares Brands List</title>
+    include ../layout/color_template.pug 
+    include ../layout/css_files.pug
+</head>
+
+<body>
+    <div id="app-wrapper">
+        include ../layout/sidebar.pug
+        <div class="app-content page-datatables">
+            include ../layout/mainhead.pug 
+            include ../layout/sidebar_notifications.pug
+            <section class="main-content">
+                <div class="grid-stack">
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="25">
+                        <div class="grid-stack-item-content" data-scroll-area>
+                            <div class="tbl-c no-pagination">
+                                <table class="billevo-table no-index mt24" data-table-init="true" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th class="no-sort" data-priority="1">Brand Name</th>
+                                            <th class="no-sort">Color Scheme</th>
+                                            <th class="no-sort">Income</th>
+                                            <th class="no-sort">Clients</th>
+                                            <th class="no-sort">Orders</th>
+                                            <th class="no-sort">Services</th>
+                                            <th class="no-sort">Invoices</th>
+                                            <th class="no-sort">Tickets</th>
+                                            <th class="no-sort">Mode</th>
+                                            <th class="no-sort" data-priority="2"></th>
+                                            <th class="no-sort is-hidden"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--Single-->
+                                        <tr>
+                                            <td>
+                                                <div class="flex-block mt5 mb5">
+                                                    <div class="avatar avatar--xs"><img src="img/brand-rsstudio.png" alt="Avatar"></div>
+                                                    <div class="flex-block__content flex--block__content--tight">
+                                                        <span class="flex-block__title">Sum Ting Wong</span>
+                                                        <span class="flex-block__desc"><a href="#">http://wetoolow.bang</a></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="c-group">
+                                                    <div class="c-single primary" data-color="#8822fc" data-tooltip-inline="#8822fc"></div>
+                                                    <div class="c-single secondary" data-color="#123321" data-tooltip-inline="#123321"></div>
+                                                    <div class="c-single tetriary" data-color="#008888" data-tooltip-inline="#008888"></div>
+                                                </div>
+                                            </td>
+                                            <td>$1025.50</td>
+                                            <td>158</td>
+                                            <td>389</td>
+                                            <td>12</td>
+                                            <td>23</td>
+                                            <td>158</td>
+                                            <td>
+                                                <!-- <span class="label-basic label-basic--success">NEW KIND OF LABEL</span> -->
+                                                <span class="label-circle" data-color="#e2e">Live</span>
+                                            </td>
+                                            <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                            <td class="is-hidden cm-actions">
+                                                <ul>
+                                                    <li><a href="http://google.com" data-icon="google" data-text="451231">First</a></li>
+                                                    <li><a href="http://google.com" data-icon="twitter" data-text="1231231">Second</a></li>
+                                                    <li>
+                                                        <a data-text="Third - Submenu">Third</a>
+                                                        <ul>
+                                                            <li><a href="http://google.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
+                                                            <li><a href="http://google.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <!-- Single | END -->
+                                        <!--Single-->
+                                        <tr>
+                                            <td>
+                                                <div class="flex-block mt5 mb5">
+                                                    <div class="avatar avatar--xs"><img src="img/brand-rsstudio.png" alt="Avatar"></div>
+                                                    <div class="flex-block__content flex--block__content--tight">
+                                                        <span class="flex-block__title">Sum Ting Wong</span>
+                                                        <span class="flex-block__desc"><a href="#">http://wetoolow.bang</a></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="c-group">
+                                                    <div class="c-single primary" data-color="#27ae61" data-tooltip-inline="#27ae61"></div>
+                                                    <div class="c-single secondary" data-color="#2d363d" data-tooltip-inline="#2d363d"></div>
+                                                    <div class="c-single tetriary" data-color="#e5e6eb" data-tooltip-inline="#e5e6eb"></div>
+                                                </div>
+                                            </td>
+                                            <td>$1025.50</td>
+                                            <td>158</td>
+                                            <td>389</td>
+                                            <td>12</td>
+                                            <td>23</td>
+                                            <td>158</td>
+                                            <td>
+                                                <!-- <span class="label-basic label-basic--success">NEW KIND OF LABEL</span> -->
+                                                <span class="label-circle" data-color="#000">Maintenance</span>
+                                            </td>
+                                            <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                            <td class="is-hidden cm-actions">
+                                                <ul>
+                                                    <li><a href="http://google.com" data-icon="google" data-text="451231">First</a></li>
+                                                    <li><a href="http://google.com" data-icon="twitter" data-text="1231231">Second</a></li>
+                                                    <li>
+                                                        <a data-text="Third - Submenu">Third</a>
+                                                        <ul>
+                                                            <li><a href="http://google.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
+                                                            <li><a href="http://google.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <!-- Single | END -->
+                                        <!--Single-->
+                                        <tr>
+                                            <td>
+                                                <div class="flex-block mt5 mb5">
+                                                    <div class="avatar avatar--xs"><img src="img/brand-rsstudio.png" alt="Avatar"></div>
+                                                    <div class="flex-block__content flex--block__content--tight">
+                                                        <span class="flex-block__title">Sum Ting Wong</span>
+                                                        <span class="flex-block__desc"><a href="#">http://wetoolow.bang</a></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="c-group">
+                                                    <div class="c-single primary" data-color="#8822fc" data-tooltip-inline="#8822fc"></div>
+                                                    <div class="c-single secondary" data-color="#123321" data-tooltip-inline="#123321"></div>
+                                                    <div class="c-single tetriary" data-color="#008888" data-tooltip-inline="#008888"></div>
+                                                </div>
+                                            </td>
+                                            <td>$1025.50</td>
+                                            <td>158</td>
+                                            <td>389</td>
+                                            <td>12</td>
+                                            <td>23</td>
+                                            <td>158</td>
+                                            <td>
+                                                <!-- <span class="label-basic label-basic--success">NEW KIND OF LABEL</span> -->
+                                                <span class="label-circle" data-color="#eaa">Live</span>
+                                            </td>
+                                            <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                            <td class="is-hidden cm-actions">
+                                                <ul>
+                                                    <li><a href="http://google.com" data-icon="google" data-text="451231">First</a></li>
+                                                    <li><a href="http://google.com" data-icon="twitter" data-text="1231231">Second</a></li>
+                                                    <li>
+                                                        <a data-text="Third - Submenu">Third</a>
+                                                        <ul>
+                                                            <li><a href="http://google.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
+                                                            <li><a href="http://google.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <!-- Single | END -->
+                                        <!--Single-->
+                                        <tr>
+                                            <td>
+                                                <div class="flex-block mt5 mb5">
+                                                    <div class="avatar avatar--xs"><img src="img/brand-rsstudio.png" alt="Avatar"></div>
+                                                    <div class="flex-block__content flex--block__content--tight">
+                                                        <span class="flex-block__title">Sum Ting Wong</span>
+                                                        <span class="flex-block__desc"><a href="#">http://wetoolow.bang</a></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="c-group">
+                                                    <div class="c-single primary" data-color="#000002" data-tooltip-inline="#000002"></div>
+                                                    <div class="c-single secondary" data-color="#412000" data-tooltip-inline="#412000"></div>
+                                                    <div class="c-single tetriary" data-color="#477cc4" data-tooltip-inline="#477cc4"></div>
+                                                </div>
+                                            </td>
+                                            <td>$1025.50</td>
+                                            <td>158</td>
+                                            <td>389</td>
+                                            <td>12</td>
+                                            <td>23</td>
+                                            <td>158</td>
+                                            <td>
+                                                <!-- <span class="label-basic label-basic--success">NEW KIND OF LABEL</span> -->
+                                                <span class="label-circle" data-color="#ccf">Live</span>
+                                            </td>
+                                            <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                            <td class="is-hidden cm-actions">
+                                                <ul>
+                                                    <li><a href="http://google.com" data-icon="google" data-text="451231">First</a></li>
+                                                    <li><a href="http://google.com" data-icon="twitter" data-text="1231231">Second</a></li>
+                                                    <li>
+                                                        <a data-text="Third - Submenu">Third</a>
+                                                        <ul>
+                                                            <li><a href="http://google.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
+                                                            <li><a href="http://google.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <!-- Single | END -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Brand Name</th>
+                                            <th>Color Scheme</th>
+                                            <th>Income</th>
+                                            <th>Clients</th>
+                                            <th>Orders</th>
+                                            <th>Services</th>
+                                            <th>Invoices</th>
+                                            <th>Tickets</th>
+                                            <th>Mode</th>
+                                            <th></th>
+                                            <th class="is-hidden"></th>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    script(src='js/app_cache.js') 
+    script(src='js/forms_basic.js') 
+    script(src='js/view_gridstack.js') 
+    script(src='js/view_datatables.js')
+</body>
+
+</html>

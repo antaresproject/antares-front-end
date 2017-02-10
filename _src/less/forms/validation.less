@@ -1,0 +1,264 @@
+//VALIDATION
+
+.form-validation {
+	margin-bottom: @unit3;
+}
+
+fieldset {
+
+
+
+	.form-block {
+
+		input {
+			//tmp
+			transition:@transition;
+		}
+		span.error {
+
+			color: @color-error;
+			// width: auto;
+			// padding-left: @unit1;
+			line-height: 1;
+			padding-top:@unit1;
+
+			// @media @xs {
+			// 	padding-left:0;
+			// 	padding-top:8px;
+			// }
+
+			// display:none !important;
+		}
+
+
+		input[aria-required] {
+			// border: 1px solid @color-error;
+			// border: 1px solid @color-error;
+		}
+
+		input[aria-invalid] {
+			
+		}
+
+		input.error:not(.switch-checkbox) {
+		    background: url('../img/forms/error.png');
+		    /* background-size: contain; */
+		    background-repeat: no-repeat;
+		    background-position: right 10px center;
+		    background-size: 20px;
+		    border: 1px solid @color-error;
+
+		    &[type='number'] {
+		    	&:hover {
+		    		background-position: right 20px center;
+		    	}
+		    }
+		}
+
+		textarea.error {
+		    background: url('../img/forms/error.png');
+		    /* background-size: contain; */
+		    background-repeat: no-repeat;
+		    background-position: right 10px center;
+		    background-size: 20px;
+			border: 1px solid @color-error;
+		}
+
+		input.valid {
+
+			border: 1px solid #dadce0;
+			background-image: none;
+
+		}
+
+
+		//datepicker
+		.input-field.error {
+			.comiseo-daterangepicker-triggerbutton {
+				border:1px solid @color-error;
+			}
+		}
+
+		//file input 
+		.file-upload {
+
+			&.error {
+				border:1px solid @color-error;
+			}
+
+		}
+
+		.switch-checkbox + .switch-container.error:after {
+			color:@color-error;
+		}
+
+		.switch-container {
+
+			&.error {
+
+				.switch-handle {
+					background-color:@color-error;
+				}
+
+			}
+
+		}
+
+
+		//input with button
+		&.form-block--inpbtn {
+
+			.error {
+				padding-right:@unit2;
+			}
+		}
+
+
+	}
+
+}
+
+
+
+
+.form-errors {
+	color: @color-error;
+	font-size: 13px;
+	    padding-bottom: @unit2;
+}
+
+.form-validation {
+
+	.slider-val {
+		display:none;
+	}
+
+	.ui-slider.error {
+
+		.ui-slider-handle {
+			background:@color-error;
+		}
+	}
+}
+
+.form-validation {
+
+	.mdl-textfield--AR {
+		flex: 1;
+		flex-flow: row nowrap;
+		display: flex;
+		    align-items: center;
+
+		    .mdl-textfield__input.error {
+			    border-top: 0;
+			    border-left: 0;
+			    border-right: 0;
+		    }
+
+		    span.error {
+		    	font-size: 13px;
+		    }
+
+	&.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+	&.mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+
+		&:before {
+
+			width:auto;	
+		}
+
+		color: #a1a1b2;
+		
+	}
+	}
+
+	.mdl-textfield.is-invalid .mdl-textfield__label:after {
+		
+		width:auto !important;
+	}
+}
+
+//select2
+
+.form-block.error {
+
+	.select2 {
+
+		.select2-selection {
+
+			border-color:@color-error;
+		}
+	}
+}
+
+//yii-active form 
+
+.form-block.yiiaf-error {
+
+
+		//input
+		input:not(.switch-checkbox) {
+		    background: url('../img/forms/error.png');
+		    /* background-size: contain; */
+		    background-repeat: no-repeat;
+		    background-position: right 10px center;
+		    background-size: 20px;
+		    border: 1px solid @color-error;
+
+		    &[type='number'] {
+		    	&:hover {
+		    		background-position: right 20px center;
+		    	}
+		    }
+		}
+	
+		//select2
+		.select2 {
+
+			.select2-selection {
+
+				border-color:@color-error;
+			}
+		}
+
+		//datepicker
+		.input-field {
+			.comiseo-daterangepicker-triggerbutton {
+				border:1px solid @color-error;
+			}
+		}
+
+		//file input 
+		.file-upload {
+
+				border:1px solid @color-error;
+			
+
+		}
+
+		.switch-checkbox + .switch-container.error:after {
+			color:@color-error;
+		}
+
+		.switch-container {
+
+			
+
+			.switch-handle {
+				background-color:@color-error;
+			}
+
+			
+
+		}
+
+
+		//input with button
+		&.form-block--inpbtn {
+
+			input {
+				padding-right:@unit2;
+			}
+		}
+
+}

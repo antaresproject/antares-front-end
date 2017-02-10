@@ -1,0 +1,148 @@
+//
+// Sidebar: notifications
+//
+
+@sidebar-w:360px;
+
+.sidebar {
+	width: @sidebar-w;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translate3d(100%, 0px, 0px);
+	box-shadow: @bs-notifications;
+	transition: @transition ease-out;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 101;
+	display: flex;
+	flex-flow: column nowrap;
+
+	@media @xs {
+		width:100%;
+	}
+
+	//modificators
+	&.sidebar--open {
+		transform: translate3d(0%, 0px, 0px);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.sidebar--notifications {
+	}
+
+	&.sidebar--white {
+		background-color: @fff;
+	}
+
+	//element
+	.sidebar__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 52px;
+		padding: 0 24px;
+		border-bottom: 1px solid #ebeff0;
+		color: #5c6066;
+		font-size: 13px;
+		font-weight: bold;
+		text-transform: uppercase;
+		min-height: 52px;
+
+		.sidebar__header-left {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			flex: 1;
+
+			span {
+				margin-right: @unit1;
+			}
+
+		}
+
+		.sidebar__header-right {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			position: relative;
+			flex: 1;
+			justify-content: flex-end;
+			margin-left: auto;
+
+			i {
+				// font-size: 24px;
+				// color: @primary-c;
+
+			    color: #5c6066;
+			    font-size: 19px;
+    
+			}
+
+		}
+
+	}
+
+	.sidebar__content {
+		// margin-right: 8px;
+		flex: 1;
+		max-height: ~'calc(100% - 120px)';
+		overflow: scroll;
+		position: relative;
+
+		.sidebar__sgl {
+			cursor: pointer;
+		}
+
+		a {
+			z-index: 9;
+			position: relative;
+		}
+
+	}
+
+	.sidebar__footer {
+		width: 100%;
+		.flex-center();
+		padding: @unit2;
+		min-height: 68px;
+
+		.btn {
+			width: 100%;
+			cursor: pointer;
+			position: relative;
+		}
+
+	}
+
+	.flex-block__close {
+		display: none;
+
+		i {
+			padding: 10px;
+			position: relative;
+			right: -10px;
+			top: -10px;
+		}
+
+	}
+
+	.flex-block__desc {
+		flex-flow: row wrap;
+	}
+
+	.flex-block__content {
+		flex: 1;
+	}
+
+}
+
+.flex-block:hover {
+	.flex-block__close {
+		display: block;
+	}
+
+}

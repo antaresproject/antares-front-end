@@ -1,0 +1,191 @@
+@scroll-color:#e1e5e8;
+@scroll-color:rgba(212, 212, 212, 0.6);
+
+.ps-container {
+
+  &.ps-active-x > .ps-scrollbar-x-rail, &.ps-active-y > .ps-scrollbar-y-rail {
+    display: block;
+  }
+
+  &.ps-in-scrolling {
+    pointer-events: none;
+
+    > .ps-scrollbar-x-rail {
+      background: @fff;
+      opacity: 1;
+
+      > .ps-scrollbar-x {
+        background: @scroll-color;
+      }
+    }
+
+    > .ps-scrollbar-y-rail {
+      background: @fff;
+      opacity: 1;
+
+      > .ps-scrollbar-y {
+        background: @scroll-color;
+      }
+    }
+  }
+
+  > .ps-scrollbar-x-rail {
+    display: none;
+    position: absolute;
+    bottom: 0;
+
+    height: 7px;
+
+    opacity: 0;
+
+    transition: background .2s, opacity .2s;
+
+    > .ps-scrollbar-x {
+      position: absolute;
+      bottom: 0;
+
+      height: 100%;
+
+      background: @scroll-color;
+
+      transition: background .2s;
+    }
+  }
+
+  > .ps-scrollbar-y-rail {
+    display: none;
+    position: absolute;
+    right: 0;
+
+    width: 7px;
+
+    opacity: 0;
+
+    transition: background .2s, opacity .2s;
+
+    > .ps-scrollbar-y {
+      position: absolute;
+      right: 0;
+
+      width: 100%;
+
+      background: @scroll-color;
+
+      transition: background .2s;
+    }
+  }
+
+  &:hover {
+
+    &.ps-in-scrolling {
+      pointer-events: none;
+
+      > .ps-scrollbar-x-rail {
+        background: @fff;
+        opacity: 0.2;
+
+        > .ps-scrollbar-x {
+          background: #000;
+        }
+      }
+
+      > .ps-scrollbar-y-rail {
+        background: @fff;
+        opacity: 0.2;
+
+        > .ps-scrollbar-y {
+          background: #000;
+        }
+      }
+    }
+
+    > .ps-scrollbar-x-rail {
+      opacity: 1;
+
+      &:hover {
+        background: transparent;
+        opacity: 1;
+
+
+        > .ps-scrollbar-x {
+          background: #000;
+        }
+      }
+    }
+
+    > .ps-scrollbar-y-rail {
+      opacity: 1;
+
+      &:hover {
+        background: transparent;
+        opacity: 0.6;
+
+        > .ps-scrollbar-y {
+          background: #000;
+        }
+      }
+    }
+  }
+}
+
+
+@media @min1200 {
+
+  .main-menu {
+    .ps-scrollbar-x-rail,
+    .ps-scrollbar-y-rail {
+      visibility:hidden;
+    }
+  }
+}
+
+//importance of cascade
+#app-wrapper {
+  
+    //scrolling customs
+    [data-scrollable] {
+      will-change: scroll-position;
+      
+        .ps-scrollbar-y-rail {
+            margin-right: 4px;
+        }
+    }
+
+    [data-scrollable] .ps-container {
+        padding-right: 16px;
+    }
+
+    [data-scrollable] .datarow.ps-container {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 16px;
+    }
+    .card--info {
+
+        .card__content {
+            padding: 0;
+            >div:not(.ps-scrollbar-y-rail):not(.ps-scrollbar-x-rail) {
+                padding: 0 24px
+            }
+
+            >ul.datarow {
+                padding: 0 24px;
+                margin: 0 0 16px 0;
+            }
+        }
+    }
+}
+
+
+//XS
+@media @xs {
+    #app-wrapper {
+        .card--logs {
+            .timeline {
+                height: 100%;
+            }
+        }
+    }
+}
+
+

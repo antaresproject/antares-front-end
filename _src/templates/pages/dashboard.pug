@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Antares Dashboard</title>
+    include ../layout/color_template.pug
+    include ../layout/css_files.pug
+</head>
+<body>
+<div id="app-wrapper">
+include ../layout/sidebar.pug
+<template id="card-info-template">
+    <div class="card card--info card--scrollbox" :data-widget-name="widgetName">
+        <div class="card__header">
+            <div class="card__header-left">
+                <span>{{title}}</span>
+            </div>
+            <div class="card__header-right">
+                <i class="card-maximize zmdi zmdi-window-maximize"></i>
+                <div class="ddown ddown--view-more">
+                    <div class="ddown__init ddown__init--clean">
+                        <a href="#" class="btn-link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">{{headerButtonText}}</a>
+                    </div>
+                    <div class="ddown__content">
+                        <div class="ddown__arrow"></div>
+                        <ul class="ddown__menu">
+                            <li class="ddown__header mdl-js-button mdl-js-ripple-effect"><a href="#"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-email"></i><span>Send Email</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                            <li class="ddown__sgl--footer">
+                                <a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>More</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card__content card__content--flex-column">
+            <div>
+                <span class="card__title">Version</span>
+                <span class="card__indicator card__indicator--down compare">{{currentVersion}} <span v-if="updateAvailable">An Update is available!</span></span>
+                <div class="single-row">
+                    <a v-if="updateAvailable" :href="upgradeLink" class="btn-link btn--md btn--red mdl-button mdl-js-button mdl-js-ripple-effect">UPGRADE</a>
+                    <a v-if="updateAvailable" :href="changelogLink" class="btn-link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">CHANGE LOG</a>
+                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="datarow" data-scrollable>
+                <!--SINGLE-->
+                <li v-for="row in datarows" class="datarow__sgl">
+                    <div class="datarow__left">
+                        <span class="datarow__status">{{row.left}}</span>
+                    </div>
+                    <div class="datarow__right">
+                        <span class="datarow__data"><strong>{{row.right}}</strong></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+<template id="card-chart-template">
+    <div class="card card--chart card--scrollbox" v-bind:class="{'card--compare': compareMode}" data-chart="true">
+        <div class="card__left">
+            <div class="card__header">
+                <div class="card__header-left">
+                    <span>{{title}}</span>
+                </div>
+                <div class="card__header-right">
+                    <form action="" method="post">
+                        <input data-daterangepicker="true" class="mr24">
+                        <input type="checkbox" data-icheck="true" name="check" id="check" v-model="compareMode">
+                        <label class="ml8" for="check">{{compareText}}</label>
+                    </form>
+                </div>
+            </div>
+            <div class="card__content card__content--chart">
+                <div :id="chartID" class="chart">
+                    <svg class="lineChart--svg"></svg>
+                </div>
+            </div>
+        </div>
+        <div class="card__right">
+            <header>
+                <span class="card__title">{{legendTitle}}</span>
+                <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': type === 'grow', 'card__indicator--down': type === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%<i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': type === 'grow', 'zmdi-long-arrow-down': type === 'decline' } "></i></span>
+                <span class="card__ammount"><strong>{{value1}} </strong><span class="compare"> / {{value2}}</span></span>
+                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': type === 'grow', 'zmdi-long-arrow-down': type === 'decline' } ">
+                    <i class="zmdi zmdi-caret-down"></i>
+                </div>
+            </header>
+            <ul class="datarow" data-scrollable>
+                <!--SINGLE-->
+                <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                    <div class="datarow__left">
+                        <span class="datarow__status">{{row.text}}</span>
+                    </div>
+                    <div class="datarow__right">
+                        <span class="datarow__data"><strong>{{row.value1}}</strong><span class="compare">/{{row.value2}}</span></span>
+                        <span class="datarow__percentage compare"><span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%</span><i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+<!-- DIALOG MODAL -->
+<dialog class="mdl-dialog ar-dialog">
+    <div class="mdl-dialog__canvas">
+        <div class="mdl-dialog__header">
+            <span class="mdl-dialog__title">Modal</span>
+            <a class="mdl-js-button mdl-js-ripple-effect close" href="#"><i class="zmdi zmdi-close"></i></a>
+        </div>
+        <div class="mdl-dialog__content">
+            <p>
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="btn btn--s-small btn--primary mdl-js-button mdl-js-ripple-effect mr8">Agree</button>
+            <button type="button" class="btn btn--s-small btn--dark mdl-js-button mdl-js-ripple-effect close">Disagree</button>
+        </div>
+    </div>
+</dialog>
+<!-- DIALOG MODAL | END -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<div class="app-content page-dashboard">
+    <div class="card-bar" id="widgets-list">
+        <div class="card-bar__rel">
+            <div class="card-bar__search">
+                <span class="card-bar__title">Available Widgets</span>
+                <span class="card-bar__desc">You can drag and drop to place them on the dashboards</span>
+                <div class="search-box search-box--darkbg">
+                    <i class="zmdi zmdi-search"></i>
+                    <form action="#">
+                        <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield ">
+                            <input class="mdl-textfield__input search-box__search-field" type="text" id="widget-search">
+                            <label class="mdl-textfield__label" for="sample2">Search...</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-bar__items">
+                <a href="#" class="card-bar__sgl" data-widget="contact-list">
+                    <div class="image"></div>
+                    <span class="widget-name">Contact List</span>
+                </a>
+                <a href="#" class="card-bar__sgl" data-widget="clients-details">
+                    <div class="image"></div>
+                    <span class="widget-name">Clients Details</span>
+                </a>
+                <a href="#" class="card-bar__sgl" data-widget="something-else">
+                    <div class="image"></div>
+                    <span class="widget-name">Something Else</span>
+                </a>
+                <a href="#" class="card-bar__sgl" data-widget="comments">
+                    <div class="image"></div>
+                    <span class="card-bar__name">Comments</span>
+                </a>
+                <a href="#" class="card-bar__sgl" data-widget="contact-list">
+                    <div class="image"></div>
+                    <span class="widget-name">Contact List</span>
+                </a>
+                <a href="#" class="card-bar__sgl" data-widget="clients-details">
+                    <div class="image"></div>
+                    <span class="widget-name">Clients Details</span>
+                </a>
+                <a href="#" class="card-bar__sgl" data-widget="something-else">
+                    <div class="image"></div>
+                    <span class="widget-name">Something Else</span>
+                </a>
+            </div>
+            <div class="card-bar__close" data-tooltip-inline="End Edit Mode">
+                <i class="zmdi zmdi-close"></i>
+            </div>
+        </div>
+    </div>
+    include ../layout/mainhead.pug 
+    include ../layout/sidebar_notifications.pug
+    <section class="main-content">
+        <!-- Gridstack -->
+        <div class="grid-stack" style="opacity:0;">
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <card-chart-billing></card-chart-billing>
+                </div>
+            </div>
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <card-chart-subscriptions></card-chart-subscriptions>
+                </div>
+            </div>
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <card-chart-orders></card-chart-orders>
+                </div>
+            </div>
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="10" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <card-chart-tickets></card-chart-tickets>
+                </div>
+            </div>
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="3" data-gs-height="15" data-gs-min-width="3" data-gs-min-height="11">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <card-info></card-info>
+                </div>
+            </div>
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="3" data-gs-y="20" data-gs-width="3" data-gs-height="10" data-gs-min-width="2" data-gs-min-height="11">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <div class="card card--news card--primary">
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <div class="card__header-left">
+                                    <span>News</span>
+                                </div>
+                                <div class="card__header-right">
+                                    <div class="card__control card__control--left" data-slickPrev="true"><i class="icon icon--chev-left"></i></div>
+                                    <div class="card__control card__control--right" data-slickNext="true"><i class="icon icon--chev-right"></i></div>
+                                </div>
+                            </div>
+                            <div class="card__slider" data-slick="true">
+                                <div>
+                                    <div class="card__info">
+                                        <span class="card__title">Phasellus fermentum in, dolor. Bassel fermentum lorem Ipsum dolor. Ferentium Artotel in, dolor.</span>
+                                        <span class="card__date">Jan 9, 2015</span>
+                                        <span class="card__author">Added by Michael J. Blox</span>
+                                    </div>
+                                    <div class="card__content">
+                                        <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span>
+                                    </div>
+                                    <div class="card__footer">
+                                        <button class="btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card__info">
+                                        <span class="card__title">Lorem Epsum Doloris Malis. </span>
+                                        <span class="card__date">Dec 10, 2015</span>
+                                        <span class="card__author">Added by Charlie J. Blox</span>
+                                    </div>
+                                    <div class="card__content">
+                                        <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span>
+                                    </div>
+                                    <div class="card__footer">
+                                        <a href="#" class="btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20" data-gs-width="6" data-gs-height="12" data-gs-min-width="5" data-gs-min-height="12" data-card-name="system-logs" data-anijs="if: mouseover, on: body, do: swing animated">
+                <div class="grid-stack-item-content">
+                    include ../layout/widget_edit.pug
+                    <div class="card card--logs" data-scrollable data-widget-name="card--logs">
+                        <div class="card__header">
+                            <div class="card__header-left">
+                                <span>Logs</span>
+                            </div>
+                            <div class="card__header-right">
+                                <i class="card-maximize zmdi zmdi-window-maximize"></i>
+                            </div>
+                        </div>
+                        <div class="card__content flex ff-cnw jc-flex-start">
+                            <div class="card-ctrls card-ctrls--nopadding mt16">
+                                <div class="card-ctrls__left">
+                                    <div class="search-box search-box--dark mr24">
+                                        <i class="zmdi zmdi-search"></i>
+                                        <form action="#">
+                                            <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield ">
+                                                <input class="mdl-textfield__input search-box__search-field" type="text" id="sample2">
+                                                <label class="mdl-textfield__label" for="sample2">Search...</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <select class="mb24 select2--prefix" name="select4" data-selectAR--mdl="true">
+                                        <option value="all">All</option>
+                                        <option value="important">Important</option>
+                                        <option value="secondary" selected>Secondary</option>
+                                    </select>
+                                </div>
+                                <div class="card-ctrls__right">
+                                    <div class="ddown mr-24">
+                                        <div class="ddown__init btn--dropdown btn btn--md btn--default mdl-js-button mdl-js-ripple-effect">Filter</div>
+                                        <div class="ddown__content">
+                                            <div class="ddown__arrow"></div>
+                                            <ul class="ddown__menu">
+                                                <li class="ddown__header mdl-js-button mdl-js-ripple-effect"><a href=""><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
+                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a></li>
+                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-email"></i><span>Send Email</span></a></li>
+                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
+                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a></li>
+                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                                                <li class="ddown__sgl--footer"><a class="mdl-js-button mdl-js-ripple-effect" href=""><i class="zmdi zmdi-square-right"></i><span>Login As Client</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="timeline" data-scrollable>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2510"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-02 08:31:41" id="date-format-WLs0W" tabindex="0" data-hasqtip="2517">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-WLs0W" data-upgraded=",MaterialTooltip">2016-09-02 08:31:41</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2520"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand 4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 19:45:02" id="date-format-ObfMD" tabindex="0" data-hasqtip="2527">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-ObfMD" data-upgraded=",MaterialTooltip">2016-09-01 19:45:02</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#FF8000" data-tooltip-inline="Tags" style="color: rgb(255, 128, 0);" data-hasqtip="2530"></div>
+                                    <div class="timeline__padding">
+                                        Tag Test has been deleted by user <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> in component acl_antares with language <a href="http://demo.antaresproject.io/admin/translations">English</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 15:25:33" id="date-format-dYb5n" tabindex="0" data-hasqtip="2535">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-dYb5n" data-upgraded=",MaterialTooltip">2016-09-01 15:25:33</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#FF8000" data-tooltip-inline="Tags" style="color: rgb(255, 128, 0);" data-hasqtip="2538"></div>
+                                    <div class="timeline__padding">
+                                        Tag Test, has been assigned by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> in module acl_antares with language <a href="http://demo.antaresproject.io/admin/translations">English</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 15:25:27" id="date-format-ADZGD" tabindex="0" data-hasqtip="2543">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-ADZGD" data-upgraded=",MaterialTooltip">2016-09-01 15:25:27</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2546"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand 4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 14:37:15" id="date-format-xkdpv" tabindex="0" data-hasqtip="2553">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-xkdpv" data-upgraded=",MaterialTooltip">2016-09-01 14:37:15</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2556"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 13:36:24" id="date-format-qb3X7" tabindex="0" data-hasqtip="2563">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-qb3X7" data-upgraded=",MaterialTooltip">2016-09-01 13:36:24</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2566"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/1/edit">Brand 1</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/1/edit">11</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 13:36:17" id="date-format-YtBss" tabindex="0" data-hasqtip="2572">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-YtBss" data-upgraded=",MaterialTooltip">2016-09-01 13:36:17</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2575"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/1/edit">Brand 1</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/1/edit">11</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 13:36:16" id="date-format-Tajm0" tabindex="0" data-hasqtip="2581">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-Tajm0" data-upgraded=",MaterialTooltip">2016-09-01 13:36:16</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2584"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/1/edit">Brand 1</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/1/edit">11</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 13:36:16" id="date-format-GUpuT" tabindex="0" data-hasqtip="2590">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-GUpuT" data-upgraded=",MaterialTooltip">2016-09-01 13:36:16</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2593"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 13:35:01" id="date-format-RBhe1" tabindex="0" data-hasqtip="2600">3 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-RBhe1" data-upgraded=",MaterialTooltip">2016-09-01 13:35:01</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2603"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/46/edit">Brand 3</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/46/edit">15</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/46/edit">12</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 11:55:04" id="date-format-XDcof" tabindex="0" data-hasqtip="2610">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-XDcof" data-upgraded=",MaterialTooltip">2016-09-01 11:55:04</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2613"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 11:50:38" id="date-format-YbmbI" tabindex="0" data-hasqtip="2620">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-YbmbI" data-upgraded=",MaterialTooltip">2016-09-01 11:50:38</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2623"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 11:48:18" id="date-format-jDJ0n" tabindex="0" data-hasqtip="2630">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-jDJ0n" data-upgraded=",MaterialTooltip">2016-09-01 11:48:18</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2633"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 11:41:54" id="date-format-0k37Y" tabindex="0" data-hasqtip="2640">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-0k37Y" data-upgraded=",MaterialTooltip">2016-09-01 11:41:54</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2643"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/46/edit">Brand 3</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/46/edit">15</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/46/edit">12</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 10:38:55" id="date-format-92GT4" tabindex="0" data-hasqtip="2650">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-92GT4" data-upgraded=",MaterialTooltip">2016-09-01 10:38:55</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2653"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 10:38:12" id="date-format-KpQob" tabindex="0" data-hasqtip="2660">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-KpQob" data-upgraded=",MaterialTooltip">2016-09-01 10:38:12</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#FFCCCC" data-tooltip-inline="Updater" style="color: rgb(255, 204, 204);" data-hasqtip="2663"></div>
+                                    <div class="timeline__padding">
+                                        Sandbox <a href="http://demo.antaresproject.io/admin/updater/sandboxes">1.0.0</a> has been created by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 09:58:55" id="date-format-myIL4" tabindex="0" data-hasqtip="2668">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-myIL4" data-upgraded=",MaterialTooltip">2016-09-01 09:58:55</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands" style="color: rgb(0, 128, 255);" data-hasqtip="2671"></div>
+                                    <div class="timeline__padding">
+                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand 2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> with options identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a> and colors identifier <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                        <span> <span data-tooltip-inline="2016-09-01 08:42:42" id="date-format-qHk4X" tabindex="0" data-hasqtip="2678">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-qHk4X" data-upgraded=",MaterialTooltip">2016-09-01 08:42:42</div>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="timeline__entry--ok">
+                                    <div class="timeline__indicator" data-color="#004D26" data-tooltip-inline="Logger" style="color: rgb(0, 77, 38);" data-hasqtip="2681"></div>
+                                    <div class="timeline__padding">
+                                        Report 11 has been created by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a> in brand Brand 1 and type analyzer
+                                        <span> <span data-tooltip-inline="2016-09-01 08:40:10" id="date-format-xGDWq" tabindex="0" data-hasqtip="2685">4 days ago</span>
+                                        <div class="mdl-tooltip" for="date-format-xGDWq" data-upgraded=",MaterialTooltip">2016-09-01 08:40:10</div>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="pagination mb16 mt16">
+                                <div class="pagination-pages">
+                                    <div class="pagination-pages__prev">
+                                        <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                            <i class="zmdi zmdi-chevron-left"></i>
+                                        </a>
+                                    </div>
+                                    <ul class="pagination-pages__list">
+                                        <li class="pagination-pages__sgl--active"><a class="mdl-js-button mdl-js-ripple-effect" href="#">1</a></li>
+                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">2</a></li>
+                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">3</a></li>
+                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">4</a></li>
+                                    </ul>
+                                    <div class="pagination-pages__next">
+                                        <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                            <i class="zmdi zmdi-chevron-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="pagination-filter">
+                                    <ul>
+                                        <li class="pagination-filter__sgl--active"><a class="mdl-js-button mdl-js-ripple-effect" href="#">10</a></li>
+                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">25</a></li>
+                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">100</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+
+</div>
+
+    script(src='js/app_cache.js')
+    script(src='js/forms_basic.js')
+    script(src='js/view_gridstack.js')
+    script(src='js/view_charts.js')
+
+</body>
+</html>

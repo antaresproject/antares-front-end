@@ -1,0 +1,119 @@
+//
+// main-enu indicator (arrow icon)
+//
+
+//variables:
+.main-menu-indicator {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent @primary-bg transparent transparent;
+    position: absolute;
+    right: 0;
+    top: 23px;
+    content: "";
+}
+
+//general:
+aside.main-sidebar {
+
+    ul {
+
+        li {
+            //triangle indicator based on app background
+            &.submenu-open > a {
+                //traingle indicator of open menu
+                &:after {
+                    .main-menu-indicator();
+                    border-color: transparent @background transparent transparent;
+                }
+
+            }
+
+        }
+
+    }
+
+    ul.main-menu,
+    ul.main-menu.main-menu--secondary {
+
+        li {
+            //triangle indicator based on app background
+            &:nth-child(1),
+            &:nth-child(2) {
+                &.submenu-open > a {
+                    //traingle indicator of open menu
+                    &:after {
+                        .main-menu-indicator();
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &.main-menu.main-menu--brand {
+
+        li {
+            //triangle indicator based on app background
+            &:nth-child(1){
+                &.submenu-open > a {
+                    //traingle indicator of open menu
+                    &:after {
+                        .main-menu-indicator();
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+&.main-sidebar--expanded {
+    @media @min768 {
+        ul.main-menu >li.has-submenu {
+            >a {
+                position: relative;
+
+                &:before {
+                    display: inline-block;
+                    position: absolute;
+                    top: 19px;
+                    right: 22px !important;
+                    content: '\f2f6';
+                    font-size: 19px;
+                    color: #666e80;
+                    display: inline-block;
+                    font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    border: 0;
+                    width: auto !important;
+                }
+
+                &:after {
+                    top: 19px;
+                }
+
+            }
+
+            &:hover {
+                >a:before {
+                    color: #fff;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+}

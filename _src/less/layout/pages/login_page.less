@@ -1,0 +1,138 @@
+//
+// login-page
+//
+
+.app-content.page-login{
+	background-color: #2e323b;
+	background: linear-gradient(313deg, #26292f, #3E424A);
+	background-size: 500% 500%;
+	// animation: loginBG 45s ease-in-out alternate infinite;
+
+	@keyframes loginBG {
+		0% {
+			background-position: 0% 5%
+		}
+
+		50% {
+			background-position: 100% 96%
+		}
+
+		100% {
+			background-position: 0% 5%
+		}
+
+	}
+
+	input {
+		&:focus,
+		&:active {
+			outline:0;
+		}
+	}
+
+	.main-content {
+		height: auto;
+	}
+
+	.flex-center();
+
+	&:before {
+		display: none;
+	}
+
+	.main-content {
+		padding: 0 !important;
+	}
+
+	.login-box {
+		width: 440px;
+		// minheight: 490px;
+		background-color: @fff;
+		padding: @unit2 0;
+		//tmp to gradient
+		// box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+
+		@media @xs {
+			width: 100vw;
+			height: 100vh;
+		}
+
+		.login-box__header {
+			width: 100%;
+			.flex-center();
+			padding-top: 40px;
+			padding-bottom: 72px;
+		}
+
+		form {
+			.flex-center();
+			flex-flow: column nowrap;
+			padding: 0 58px;
+		}
+
+		.btn {
+			margin-top: @unit2;
+		}
+
+		.btn,
+		.mdl-textfield {
+			width: 100%;
+
+			.mdl-textfield__input {
+				color: @primary-c;
+			}
+
+			// &.is-focused {
+				// 	.mdl-textfield__label {
+					// 		top: 2px;
+					// 		font-size: 12px;
+					//
+				// }
+
+				//
+			// }
+
+			&.is-dirty {
+				.mdl-textfield__label {
+					top: -3px;
+					font-size: 12px;
+				}
+
+			}
+
+			.mdl-textfield__label {
+				top: 16px;
+				font-weight: 400;
+				font-size: 16px;
+			}
+
+		}
+
+		.link-group {
+			padding-top: @unit1;
+			.flex-center();
+		}
+
+		.login-box__remember {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+
+			span {
+				color: @primary-c;
+			}
+
+		}
+
+	}
+
+}
+
+.label--login {
+	color: @primary-bg;
+	position: relative;
+	top: -8px;
+	font-size: 14px;
+}

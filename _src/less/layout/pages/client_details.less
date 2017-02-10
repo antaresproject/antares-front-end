@@ -1,0 +1,73 @@
+//
+// |  Client Details Page
+//
+
+.page-clients-details {
+
+    @media @xs {
+        .card--tabs {
+
+            display:none;
+            
+        }
+    }
+
+    // .main-content {
+    //     padding: 0 10px;
+    // }
+
+    .card {
+        margin-bottom: @unit3;
+    }
+
+
+    @cd-padding: 0 @unit3;
+
+    //mdl tabs mods
+
+    
+    .mdl-tabs__panel {
+        // padding: @cd-padding;
+    }
+
+    .mdl-tabs__tab-bar {
+        padding: @cd-padding;
+    }
+
+    .mdl-tabs__tab {
+
+        color: #5c5f66;
+    }
+
+    .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+        background: @primary-bg;
+    }
+
+    .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+        color: @primary-bg;
+    }
+
+    .dataTables_paginate {
+        display:none;
+    }
+
+
+    .dataTables_wrapper {
+        padding: 0 @unit3;
+    }
+
+
+
+
+    // .grid-stack {
+
+    //     .grid-stack-item[data-gs-width="3"]  { width: 25% }
+    //     .grid-stack-item[data-gs-width="2"]  { width: 47% }
+    //     .grid-stack-item[data-gs-width="1"]  { width: 25% }
+
+    //     .grid-stack-item[data-gs-x="2"]  { left: 47% }
+    //     .grid-stack-item[data-gs-x="1"]  { left: 25% }
+    // }
+
+}
+

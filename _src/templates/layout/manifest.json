@@ -1,0 +1,15 @@
+{
+    "name": "Antares",
+    "short_name": "Antares",
+    "description": "Antares is an open source user management platform. It was designed to revolutionize and streamline the whole process of creating standalone and SaaS applications that are easy to use and scalable to enterprise level.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "#02A8F3",
+    "orientation": "any",
+    "icons": [{
+        "src": "img/app_icons/android-chrome-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+    }]
+}

@@ -1,0 +1,176 @@
+// 
+// Zero Data
+//
+
+@fs: 15vw;
+@c: #848484;
+.zero-data {
+
+
+	width: 100%;
+	// height: 100%;
+	height:auto;
+	min-height: 30vh;
+	background-color: @fff;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-around;
+	color: @c;
+	margin: 24px 0;
+	border: 0px;
+	overflow:hidden;
+
+	.zero-data__indicator {
+		width:auto;
+		text-align: center;
+		padding: 0 6vw;
+		//tmp
+		// display:none;
+
+		&:before {
+			.mdl-font();
+			font: normal normal normal 10vh/1 'Material-Design-Iconic-Font';
+			color: lighten(@c, 36%);
+			font-size: @fs;
+			content: '\f1f8';
+			transition: @std-transition;
+		}
+
+		// &:hover {
+		// 	&:before {
+		// 		opacity:0.5;
+		// 	}
+
+		// }
+
+		i {
+			font-size: @fs;
+		}
+
+
+
+	}
+
+	.zero-data__txt {
+		old
+		flex:1;
+		// font-size: 50px;
+		text-align: center;
+		font-weight: 400;
+		letter-spacing: 3px;
+		font-size: 2vw;
+		line-height: 1.2;
+		flex:1;
+
+//try
+// text-transform: uppercase;
+// font-size: 30px;
+// font-weight: 700;
+// position: relative;
+// left: 0px;
+// top: 0;
+// width: auto;
+// transform: scale(7.66)rotate(-2deg);
+// padding: 100px 0;
+// opacity: 0.06;
+
+
+		a {
+		text-align: center;
+		font-weight: 400;
+		letter-spacing: 3px;
+		font-size: 2vw;
+		line-height: 1.2;
+		}
+
+	}
+
+		//states
+
+		&.zero-data--help {
+			@c: #BDE5FD;
+			border: 1px dotted lighten(@c, 6%);
+			a {
+				font-weight:300;
+
+			}
+		    .zero-data__indicator {
+		        &:before {
+		            .mdl-font();
+		            color:@c;
+		            content: '\f1f6';
+		            transition: @std-transition;
+		        }
+		    }
+
+		    .zero-data__txt {
+		    	a {
+		    		color:@c;
+		    	}
+		    }
+		}
+
+	//RWD
+	@media @max1550 {
+		@fs:35vw;
+
+		.zero-data__indicator {
+			
+
+			&:before {
+				font: normal normal normal 20vh/1 'Material-Design-Iconic-Font';
+			}
+			i {
+				font-size: @fs;
+			}
+		}
+		.zero-data__txt  {
+			padding: 0 5%;
+			font-size: 5vw;
+			a {
+				font-size: inherit;
+			}
+		}
+
+	}
+	@media @xs {
+	
+
+		.zero-data__indicator {
+			&:before {
+				font: normal normal normal 15vh/1 'Material-Design-Iconic-Font';
+			}
+		}
+		.zero-data__txt  {
+			padding: 0 5%;
+			font-size: 6vw;
+			a {
+				font-size: inherit;
+			}
+		}
+
+
+	}
+
+	@media @xxs {
+	
+
+		.zero-data__indicator {
+			&:before {
+				// font: normal normal normal 15vh/1 'Material-Design-Iconic-Font';
+			}
+		}
+		.zero-data__txt  {
+			padding: 0 3vw;
+			font-size: 6vw;
+			a {
+				font-size: inherit;
+			}
+		}
+
+
+	}
+
+
+}

@@ -1,0 +1,536 @@
+// 
+// Modal
+//
+
+.jquery-modal {
+	z-index: 100;
+	
+	.flex-center();
+	
+	.modal {
+		border-radius: 0;
+		box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+		// width: 90%;
+
+		width:auto;		
+		// width: 90%;
+		// padding: 76px 24px 93px 24px;
+
+		//new-sso
+		padding: 28px 24px 0px 24px;
+
+
+	}
+
+	.modal__inner-body {
+		  height: 80vh;
+    overflow: scroll;
+	}
+
+	.position-fix{
+		margin: 0 -24px;
+	}
+
+	.modal__header {
+		height: 52px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 24px;
+		position: absolute;
+		top: 0;
+		border-bottom: 1px solid #edeff2;
+		width: 100%;
+		.position-fix();
+
+		.modal__title {
+
+			font-size:13px;
+			font-weight:bold;
+			color:overlay(@primary-c, #fdfdfd);
+			text-transform: uppercase;
+
+
+		}
+
+
+		a.modal__close {
+			// position: absolute;
+			// top: 8px;
+			// right: 10px;
+			.flex-center();
+
+			i {
+				font-size: 19px;
+				color: #9ca1aa;
+			}
+
+		}
+	}
+
+	.modal__footer {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content:  flex-end;
+		height: auto;
+		padding: 16px 24px;
+		position: absolute;
+		bottom: 0;
+		border-top: 1px solid #edeff2;
+		width: 100%;
+
+		.position-fix();
+
+		.btn {
+			margin-right:@unit1;
+
+			&:last-child {
+				margin-right:0;
+			}
+		}
+	}
+
+}
+
+
+
+[data-hide] {
+	display:none;
+}
+[data-modal='true'],
+[data-modal] {
+	display:none;
+}
+
+
+
+//CSS ONLY
+[data-armodal] {
+
+	position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+	padding: 0 5%;
+}
+
+//CSS ONLY
+[data-armodal]:target {
+    opacity:1;
+    pointer-events: auto;
+} 
+[data-armodal] > div {
+    min-width: 400px;
+    position: relative;
+    margin: 10% auto; 
+    padding:  52px 24px 69px 24px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+[data-armodal] .close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+[data-armodal] .close:hover {
+    background: #00d9ff;
+}
+[data-armodal] div {
+
+	.modal__header {
+		height: 52px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 24px;
+		position: absolute;
+		top: 0;
+		border-bottom: 1px solid #edeff2;
+		width: 100%;
+		margin: 0 -24px;
+		.modal__title {
+
+			font-size:13px;
+			font-weight:bold;
+			color:overlay(@primary-c, #fdfdfd);
+			text-transform: uppercase;
+
+
+		}
+
+
+		a.modal__close {
+			// position: absolute;
+			// top: 8px;
+			// right: 10px;
+			.flex-center();
+
+			i {
+				font-size: 19px;
+				color: #9ca1aa;
+			}
+
+		}
+	}
+
+	.modal__content {
+
+		background:#fff;
+		width:100%;
+		min-height:200px;
+	}
+
+	.modal__footer {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content:  flex-end;
+		height: auto;
+		padding: 16px 24px;
+		position: absolute;
+		bottom: 0;
+		border-top: 1px solid #edeff2;
+		width: 100%;
+		margin: 0 -24px;
+
+		.btn {
+			margin-right:@unit1;
+
+			&:last-child {
+				margin-right:0;
+			}
+		}
+
+	}
+}
+
+// CSS ONLTY END
+
+// modal fixes
+
+body .jquery-modal.current {
+
+	z-index: 100;
+	
+	.flex-center();
+	
+	.modal {
+		border-radius: 0;
+		box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+		// width: 90%;
+
+		width:100%;		
+		// width: 90%;
+		// padding: 76px 24px 93px 24px;
+
+		//new-sso
+		// padding: 28px 24px 0px 24px;
+	    display: flex;
+	    flex-flow: column nowrap;
+	    padding: 0;
+	    justify-content: flex-start;
+	    align-items: flex-start;
+
+	}
+
+	.modal__inner-body {
+		  height: 80vh;
+    overflow: scroll;
+	}
+
+	.position-fix{
+		margin: 0 -24px;
+	}
+
+
+
+	.modal__header {
+		height: 52px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 24px;
+		position: absolute;
+		top: 0;
+		border-bottom: 1px solid #edeff2;
+		width: 100%;
+		// .position-fix();
+
+
+    position: relative;
+    margin: 0;
+
+
+		.modal__title {
+
+			font-size:13px;
+			font-weight:bold;
+			color:overlay(@primary-c, #fdfdfd);
+			text-transform: uppercase;
+
+
+		}
+
+
+		a.modal__close {
+			// position: absolute;
+			// top: 8px;
+			// right: 10px;
+			.flex-center();
+
+			i {
+				font-size: 19px;
+				color: #9ca1aa;
+			}
+
+		}
+	}
+
+
+	.modal__content {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+
+	}
+
+	.modal__footer {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content:  flex-end;
+    height: 52px;
+    padding: 0 24px;
+		border-top: 1px solid #edeff2;
+		width: 100%;
+
+    position: relative;
+    margin: 0;
+
+		.btn {
+			margin-right:@unit1;
+
+			&:last-child {
+				margin-right:0;
+			}
+		}
+	}
+
+
+}
+
+
+
+//Dialog Implementation
+
+//legacy
+dialog {
+  position: absolute;
+  left: 0; right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  margin: auto;
+  border: solid;
+  padding: 1em;
+  background: white;
+  color: black;
+  display: none;
+}
+
+dialog[open] {
+  display: block;
+}
+
+dialog + .backdrop {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* for small devices, modal dialogs go full-screen */
+@media screen and (max-width: 540px) {
+  dialog[_polyfill_modal] {  /* TODO: implement */
+    top: 0;
+    width: auto;
+    margin: 1em;
+  }
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+dialog.fixed {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+
+@dialog-size:40vh;
+
+.mdl-dialog.ar-dialog {
+
+	&.ar-dialog--actions-right {
+
+		.mdl-dialog__actions {
+			
+			justify-content: flex-end;
+
+			button, a {
+				margin-left:8px;
+
+				&:first-child {
+					margin-left:0;
+				}
+			}
+
+		}
+
+	}
+
+	&[open] {
+
+		width:@dialog-size;
+		min-height:@dialog-size;
+
+	    border: 0;
+	    background:transparent;
+		padding: 0;
+
+
+
+	    @media @max768 {
+
+			// @dialog-size:100%;
+	  //   	width:@dialog-size;
+	  //   	height:@dialog-size;
+	    }
+		
+	}
+
+	.mdl-dialog__canvas {
+
+		flex-flow: column nowrap;
+		display: flex;
+		height:100%;
+		    width: 100%;
+		position: absolute;
+		background:#fff;
+		box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+	}
+
+	.mdl-dialog__header {
+		width:100%;
+	    display: flex;
+	    height: 52px;
+	    flex-flow: row nowrap;
+	    align-items: center;
+	    justify-content: space-between;
+		border-bottom: 1px solid #edeff2;
+		padding: 0 24px;
+
+		.mdl-dialog__title {
+			color: #b7beca;
+			font-size: 13px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		a {
+			line-height: 1;
+			position:relative;
+			width:24px;
+			height:24px;
+			.flex-center();
+
+			.mdl-button__ripple-container {
+				border-radius:50%;
+			}
+
+		}
+
+	    .close i {
+	    	font-size:18px;
+	    	line-height: 1;
+	    }
+	}
+
+	.mdl-dialog__content {
+
+		height:auto;
+		flex:1;
+		margin: 24px 0;
+		padding: 0 24px;
+		position:relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+		// overflow:hidden;
+	}
+
+	.mdl-dialog__actions {
+
+		height: 52px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		// margin-bottom: 8px;
+		border-top: 1px solid #edeff2;
+		padding: 0 24px;
+
+		button, a {
+			margin-right:8px;
+
+			&:last-child {
+				margin-right:0;
+			}
+		}
+
+	}
+
+
+}
+
+dialog::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
