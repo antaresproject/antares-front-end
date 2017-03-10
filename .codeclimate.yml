@@ -16,3 +16,5 @@ ratings:
     - "**.js"
 exclude_paths:
   - "assets/"
+  - "_src/js/external/"
+  - "_src/js/external/modified"
