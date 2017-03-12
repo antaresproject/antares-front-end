@@ -821,11 +821,6 @@ i.zmdi-help-outline.help--trigger:hover {
   background: #5dccfe;
   text-shadow: none;
 }
-#main-search::selection {
-  background: #fff;
-  color: #000;
-  text-shadow: none;
-}
 .flex-sb {
   justify-content: space-between !important;
 }
