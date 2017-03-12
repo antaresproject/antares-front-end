@@ -42,6 +42,9 @@ validation-status.json
 bower_components/
 node_modules/
 _dist/
+.happypack
+
+# Files to ignore
 logo.png
 bulid_area
 stats.json
