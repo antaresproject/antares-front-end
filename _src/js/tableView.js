@@ -554,9 +554,7 @@ $.fn.multiSelect = function(o) {
         $(document).on('mousedown', options.list + options.filter, function(e) {
             if (e.which == 1) {
                 if (options.handle != undefined && !$(e.target).is(options.handle)) {
-                    // TODO:
-                    // keep propagation?
-                    // return true;
+
                 }
                 options.e = e;
                 options.element = $(this);
