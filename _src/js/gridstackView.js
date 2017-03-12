@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -18,8 +18,42 @@
 
 */
 
+import { Antares } from './mechanics';
 
-AntaresGridstack = function() {};
+import cardChartBilling from './components/dashboard/card_billing.vue';
+import cardChartSubscriptions from './components/dashboard/card_subscriptions.vue';
+import cardChartTickets from './components/dashboard/card_tickets.vue';
+import cardChartOrders from './components/dashboard/card_orders.vue';
+
+import cardInfo from './components/dashboard/card_info.vue';
+import cardNews from './components/dashboard/card_news.vue';
+import cardLogs from './components/dashboard/card_logs.vue';
+
+
+if ($('.page-dashboard.dashboard--vue').length) {
+
+    var Vue = require('vue');
+
+
+    var pageDashboard = new Vue({
+        name: 'Page Dashboard',
+        el: 'vue-page-dashboard',
+        template: '#vue-page-dashboard',
+        components: {
+            'card-chart-billing': cardChartBilling,
+            'card-chart-tickets': cardChartTickets,
+            'card-chart-orders': cardChartOrders,
+            'card-chart-subscriptions': cardChartSubscriptions,
+            'card-info': cardInfo,
+            'card-news': cardNews,
+            'card-logs': cardLogs,
+        }
+    });
+
+
+}
+
+var AntaresGridstack = function() {};
 AntaresGridstack.dashboard = AntaresGridstack.dashboard || {};
 
 AntaresGridstack.prototype.init = function() {
@@ -156,7 +190,6 @@ AntaresGridstack.prototype.dashboard = {
             var windowH = $(window).height();
             var appropriateHeight = (windowH - headH - 485) / currentCellH;
 
-
             var openCloseSwitch = $(this).data('openCloseSwitch');
 
             //identify card number
@@ -235,33 +268,33 @@ AntaresGridstack.prototype.dashboard = {
 
                 $('.app-content').toggleClass('app-content--widgets-movable');
 
-            }); 
+            });
 
             //widgets editable view
             $(document).on('click', '.remove-button', function() {
 
-                        // var grid = $('.grid-stack').data('gridstack'),
-                        //     el = $(this).closest('.grid-stack-item');
-                        //     grid.removeWidget(el);
+                // var grid = $('.grid-stack').data('gridstack'),
+                //     el = $(this).closest('.grid-stack-item');
+                //     grid.removeWidget(el);
 
-                    // var $self = $(this);
+                // var $self = $(this);
 
-                    // APP.swal.init('skin1', 'typeInfo', {
-                    //     title: 'Are you sure?',
-                    //     text: 'Widget will be removed.'
-                    // });
+                // APP.swal.init('skin1', 'typeInfo', {
+                //     title: 'Are you sure?',
+                //     text: 'Widget will be removed.'
+                // });
 
-                    // $('.sweet-container').addClass('widget-remove');
-                    // $('.sweet-container.widget-remove .sweet-confirm').on('click', function() {
+                // $('.sweet-container').addClass('widget-remove');
+                // $('.sweet-container.widget-remove .sweet-confirm').on('click', function() {
 
-                    //     console.log($self);
-                    //     var grid = $('.grid-stack').data('gridstack'),
-                    //         el = $self.closest('.grid-stack-item');
+                //     console.log($self);
+                //     var grid = $('.grid-stack').data('gridstack'),
+                //         el = $self.closest('.grid-stack-item');
 
-                    //     grid.removeWidget(el);
+                //     grid.removeWidget(el);
 
-                    // });
-                    // $('.sweet-container').removeClass('widget-remove');
+                // });
+                // $('.sweet-container').removeClass('widget-remove');
 
 
 
@@ -440,7 +473,7 @@ AntaresGridstack.prototype.dashboard = {
 
     sliders: function() {
 
-        
+
 
 
         if (!$('[data-slick="true"]').length) {
@@ -482,7 +515,7 @@ AntaresGridstack.prototype.dashboard = {
             //             executed = true;
             //             console.log(e);
 
-                      
+
             //         }
             //     };
             // })();
@@ -665,15 +698,13 @@ AntaresGridstack.prototype.dashboard = {
 };
 
 $(function() {
-    window.AntaresGridstack = new AntaresGridstack();
+    AntaresGridstack = new AntaresGridstack();
     AntaresGridstack.init();
 });
 
 //gridstack preload
 $(window).load(function() {
-    console.log('windowLoad');
     $('.grid-stack').css('opacity', '1');
-
 });
 
 //function Grid(container) {

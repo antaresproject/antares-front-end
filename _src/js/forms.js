@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -18,8 +18,8 @@
 
 */
 
-
-AntaresForms = function() {};
+import { Antares } from './mechanics';
+var AntaresForms = function() {};
 AntaresForms.elements = AntaresForms.elements || {};
 AntaresForms.validation = AntaresForms.validation || {};
 
@@ -288,7 +288,7 @@ AntaresForms.prototype.elements = {
     search: function() {
 
         var search = $('.main-head '),
-            searchSingle = $('.search-box'),
+            searchSingle = $('.main-head .search-box'),
             trigger = $('.main-head .search-box > i:first-child'),
             close = $('.main-head .search-box .search-box__close');
 
@@ -463,7 +463,7 @@ AntaresForms.prototype.elements = {
                 //if validation - must contain sibling input
                 if ($(this).siblings('.slider-val').length) {
                     $(this).siblings('.slider-val').val(ui.value);
-                    $(this).siblings('.slider-val').valid();
+                    // $(this).siblings('.slider-val').valid();
                 }
             }
 
@@ -523,7 +523,7 @@ AntaresForms.prototype.elements = {
         (function select2() {
             //select2 - better, faster, harder, stronger
 
-            select2Base = {
+            var select2Base = {
                 width: '100%',
                 dropdownAutoWidth: true,
                 // placeholder: 'Select an option',
@@ -540,50 +540,50 @@ AntaresForms.prototype.elements = {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
             });
 
             //WITH SEARCH
-            $('[data-selectAR--search]').select2($.extend({}, this.select2Base, { minimumResultsForSearch: 1 })).on("change", function(e) {
+            $('[data-selectAR--search]').select2($.extend({}, select2Base, { minimumResultsForSearch: 1 })).on("change", function(e) {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
             });
 
             //MDL
-            $('[data-selectAR--mdl]').select2($.extend({}, this.select2Base, { theme: "mdl" })).on("change", function(e) {
+            $('[data-selectAR--mdl]').select2($.extend({}, select2Base, { theme: "mdl" })).on("change", function(e) {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
             });
 
             //MDL big
-            $('[data-selectAR--mdl-big]').select2($.extend({}, this.select2Base, { theme: "mdl-big" })).on("change", function(e) {
+            $('[data-selectAR--mdl-big]').select2($.extend({}, select2Base, { theme: "mdl-big" })).on("change", function(e) {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
             });
             //MDL short (v2)
-            $('[data-selectAR--mdl-short]').select2($.extend({}, this.select2Base, { theme: "mdl-short" })).on("change", function(e) {
+            $('[data-selectAR--mdl-short]').select2($.extend({}, select2Base, { theme: "mdl-short" })).on("change", function(e) {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
@@ -591,18 +591,18 @@ AntaresForms.prototype.elements = {
 
 
             //Select - tags
-            $('[data-selectAR--tags]').select2($.extend({}, this.select2Base, { theme: "tags" })).on("change", function(e) {
+            $('[data-selectAR--tags]').select2($.extend({}, select2Base, { theme: "tags" })).on("change", function(e) {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
             });
 
             //Select - custom input (tags with 1 option)
-            $('[data-selectAR--custom-input]').select2($.extend({}, this.select2Base, {
+            $('[data-selectAR--custom-input]').select2($.extend({}, select2Base, {
                 createTag: function(term, data) {
                     if ($(data).filter(function() {
                             return this.text.localeCompare(term) === 0;
@@ -618,7 +618,7 @@ AntaresForms.prototype.elements = {
 
                 //validation if needed
                 if ($(this).closest('.form-validation').length) {
-                    $(this).valid();
+                    // $(this).valid();
                 }
                 $(this).closest('.input-field').removeClass('error');
 
@@ -650,7 +650,7 @@ AntaresForms.prototype.elements = {
                 $(this).siblings('.input-field__icon').find('.flag-icon').attr('class', 'flag-icon ' + 'flag-icon-' + flag);
             });
 
-            $('select[data-flag-select]').on('change', function() {
+            $('select[data-flag-select], [data-flag-select-translations]').on('change', function() {
 
                 if ($(this).find('option:selected').length) {
 
@@ -674,7 +674,7 @@ AntaresForms.prototype.elements = {
                         var flagCode = data.element.attributes["data-country"].nodeValue;
                         var flagHtml = '';
                         flagHtml += '<span class="flag-icon flag-icon-' + flagCode + '"></span>';
-                        html = $.parseHTML(flagHtml);
+                        var html = $.parseHTML(flagHtml);
                         // console.log($(container));
                         // $(container).append(flagHtml);
                         // $(container).prepend(data.text);
@@ -694,6 +694,34 @@ AntaresForms.prototype.elements = {
             });
 
 
+            //on init
+            $('[data-flag-select-translations]').select2({
+
+                theme: 'translations', 
+                templateResult: function(data, container) {
+                    if (data.element && data.element.attributes["data-country"]) {
+                        // console.log(data);
+                        var flagCode = data.element.attributes["data-country"].nodeValue;
+                        var flagHtml = '';
+                        flagHtml += '<span class="flag-icon flag-icon-' + flagCode + '"></span>';
+                        var html = $.parseHTML(flagHtml);
+                        // console.log($(container));
+                        // $(container).append(flagHtml);
+                        // $(container).prepend(data.text);
+                        var $state = $(
+                            '<span class="flag-icon flag-icon-' + flagCode + '"></span><span>' + data.text + '</span>'
+                        );
+                        return $state;
+
+                    } else {
+
+                        return data.text;
+
+                    }
+
+                }          
+
+            });
 
             //on init
 
@@ -711,8 +739,20 @@ AntaresForms.prototype.elements = {
                 $(this).siblings('.input-field__icon').find('.flag-icon').attr('class', 'flag-icon ' + 'flag-icon-' + flag);
             });
 
+            $('select[data-flag-select-translations]').each(function(index, el) {
+
+                if ($(this).find('option:selected').length) {
+                    var flag = $(this).find('option:selected').data('country');
+                } else {
+                    return false;
+                }
+                $(this).siblings('.input-field__icon').find('.flag-icon').attr('class', 'flag-icon ' + 'flag-icon-' + flag);
+
+            });
+
             $('[data-flag-select--search]').select2({
                 minimumResultsForSearch: 1,
+                closeOnSelect: false,
                 templateResult: function(data, container) {
 
                     if (data.element && data.element.attributes["data-country"]) {
@@ -721,7 +761,7 @@ AntaresForms.prototype.elements = {
                         var flagCode = data.element.attributes["data-country"].nodeValue;
                         var flagHtml = '';
                         flagHtml += '<span class="flag-icon flag-icon-' + flagCode + '"></span>';
-                        html = $.parseHTML(flagHtml);
+                        var html = $.parseHTML(flagHtml);
                         // console.log($(container));
                         // $(container).append(flagHtml);
                         // $(container).prepend(data.text);
@@ -1071,7 +1111,7 @@ function AjaxLoader() {
 }
 
 $(function() {
-    window.AntaresForms = new AntaresForms();
+    AntaresForms = new AntaresForms();
     AntaresForms.init();
 
 

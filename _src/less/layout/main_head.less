@@ -13,6 +13,7 @@
     position: relative;
     z-index: 3;
     transition: @std-transition;
+
     //padding in structure less
 
 
@@ -20,13 +21,13 @@
     //rwd
 
     &.main-head--mobile--search {
-
         .breadcrumbs {
             display: none;
         }
-    }
-    &.main-head--slim {
 
+    }
+
+    &.main-head--slim {
         .search-box input {
             width: 130px;
         }
@@ -45,68 +46,58 @@
         box-shadow: none;
 
         &.main-head--no-search {
-
             .item-grp {
-                margin-left:auto;
+                margin-left: auto;
             }
 
-
         }
 
-        // .breadcrumbs {
-        //     display: none;
-        // }
-
-        .main-head__dropdowns{
-
-            display:none;
+        .main-head__dropdowns {
+            display: none;
         }
+
         .item-grp {
-            margin-left:auto;
-            margin-right:0;
+            margin-left: auto;
+            margin-right: 0;
         }
+
         .item-grp-single {
-            // display:none;
+            // display: none;
         }
 
         .item-grp-single:nth-child(2) {
-            display:flex;
+            display: flex;
         }
 
         .item-grp-single:nth-child(3) {
-            display:flex;
+            display: flex;
         }
-
-
-
 
     }
 
     //return search box when removed on mobile
     @media @min768 {
-
         .search-box {
-            display:flex !important;
+            display: flex !important;
         }
+
     }
 
     @media @max1000 {
         .main-head__dropdowns {
-            display:none;
+            display: none;
         }
+
     }
 
 }
 
-
-
-.item-grp  {
+.item-grp {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
     // padding: 0 @unit2;
-
 
     .item-grp-single {
         position: relative;
@@ -161,7 +152,6 @@
 
     //themes
     &.item-grp--40 {
-
         .item-grp-single {
             height: @main-head-height;
             width: @main-head-height;
@@ -217,15 +207,10 @@
 
 }
 
-
-
 //RWD
 @media @max1000 {
-
     .item-grp {
-
-        // margin-right:0 !important;
+        // margin-right: 0 !important;
     }
-
 
 }

@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -42,6 +42,8 @@ AntaresAC.prototype.init = function() {
 
     self.helpers.updateDOM();
     self.logic();
+    // self.helpers.monkeyPatchAutocomplete(); // hightlight
+    // self.keyboard();
 
 }
 
@@ -62,7 +64,7 @@ AntaresAC.prototype.data = {
         { type: 'clean', label: "some microsoft", category: "Website" },
         { type: 'clean', label: "some nokia", category: "Website" },
         { type: 'clean', label: "andreas verge", category: "Website" },
-        { type: 'clean', label: "some author", category: "Website" },
+        { type: 'clean', label: "some cebulak", category: "Website" },
         { type: 'clean', label: "some objects", category: "Website" },
         { type: 'clean', label: "some not_any_more", category: "Website" }
     ],
@@ -82,7 +84,7 @@ AntaresAC.prototype.data = {
         { type: 'datarow', label: "some microsoft", category: "Datarow", email: 'some@adress.com' },
         { type: 'datarow', label: "some nokia", category: "Datarow" },
         { type: 'datarow', label: "andreas verge", category: "Datarow", email: 'some@adress.com' },
-        { type: 'datarow', label: "some author", category: "Datarow", email: 'some@adress.com' },
+        { type: 'datarow', label: "some cebulak", category: "Datarow", email: 'some@adress.com' },
         { type: 'datarow', label: "some objects", category: "Datarow", email: 'some@adress.com' },
         { type: 'datarow', label: "some not_any_more", category: "Datarow", email: 'some@adress.com' }
     ],
@@ -102,7 +104,7 @@ AntaresAC.prototype.data = {
         { type: 'label', id: '1', label: "some microsoft", category: "Label", labelType: 'success', labelText: 'Success' },
         { type: 'label', id: '1', label: "some nokia", category: "Label", labelType: 'success', labelText: 'Success' },
         { type: 'label', id: '1', label: "andreas verge", category: "Label", labelType: 'success', labelText: 'Success' },
-        { type: 'label', id: '1', label: "some author", category: "Label", labelType: 'danger', labelText: 'Pending' },
+        { type: 'label', id: '1', label: "some cebulak", category: "Label", labelType: 'danger', labelText: 'Pending' },
         { type: 'label', id: '1', label: "some objects", category: "Label", labelType: 'success', labelText: 'Success' },
         { type: 'label', id: '1', label: "some not_any_more", category: "Label", labelType: 'pending', labelText: 'Pending' }
     ],
@@ -403,14 +405,77 @@ AntaresAC.prototype.logic = function() {
             var label = parent.find('.mdl-textfield__label');
             label.hide();
         },
+        // _resizeMenu: function() {
+        //   this.menu.element.outerWidth( 600 );
+        // }
+        // source: function(request, response) {
+        //     showAllUrl = $('#search-form').attr('action') + '?search=' + $('#main-search').val();
+        //     category = null;
+        //     itemsCount = 0;
+        //     var search = request.term,
+        //         form = $('#search-form'),
+        //         container = form.find('input').parent();
+        //     if (search in searchCache) {
+        //         response(searchCache[search]);
+        //         return;
+        //     }
+        //     var $element = $(this.element),
+        //         previous_request = $element.data("jqXHR");
+        //     if (previous_request) {
+        //         previous_request.abort();
+        //     }
+
+        //     if (container.hasClass('is-invalid')) {
+        //         container.removeClass('is-invalid');
+        //     }
+        //     $element.data("jqXHR", $.ajax({
+        //         type: "GET",
+        //         beforeSend: function(request) {
+        //             request.setRequestHeader("search-protection", $('.search-protection').val());
+        //         },
+        //         url: form.attr('action').split('?')[0] + "?search=" + search,
+        //         dataType: 'JSON',
+        //         processData: false,
+        //         success: function(data) {
+        //             searchCache[search] = data;
+        //             response(data);
+        //             if (data.length <= 0) {
+        //                 response([{
+        //                     'empty': true
+        //                 }]);
+        //             }
+        //         },
+        //         error: function(error) {
+        //             if (error.responseJSON === undefined) {
+        //                 return;
+        //             }
+        //             if (error.responseJSON.message.length > 0) {
+        //                 container.addClass('is-invalid');
+        //                 attributes = {
+        //                     text: error.responseJSON.message,
+        //                     dismissQueue: true,
+        //                     layout: 'topRight',
+        //                     maxVisible: 10,
+        //                     timeout: 3000,
+        //                     animation: {
+        //                         open: 'animated bounceInRight',
+        //                         close: 'animated bounceOutRight',
+        //                         easing: 'swing',
+        //                         speed: 1000
+        //                     }
+        //                 };
+        //                 noty($.extend({}, APP.noti.errorFM("lg", "full"), attributes));
+        //             }
+
+        //         }
+        //     }));
+        // },
 
     });
 
 }
 
 $(function() {
-
     window.AntaresAC = new AntaresAC();
     window.AntaresAC.init();
-    
 });

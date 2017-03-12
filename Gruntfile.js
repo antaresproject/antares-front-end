@@ -68,8 +68,9 @@ module.exports = function(grunt) {
 
                     // //merge same rules
                     // require('postcss-merge-rules'),
-                    
                     // //sort
+
+
                     // require('css-declaration-sorter')({
                     //     order: 'smacss'
                     // }),
@@ -94,6 +95,18 @@ module.exports = function(grunt) {
             main: {
                 src: '_src/css/codeflow.css',
                 dest: '_dist/css/antares.css'
+            },
+            framework: {
+                src: '_src/css/antares_framework.css',
+                dest: '_dist/css/antares_framework.css'
+            },
+            login: {
+                src: '_src/css/login.css',
+                dest: '_dist/css/login.css'
+            },
+            bower_assets: {
+                src: '_src/css/bower_assets.css',
+                dest: '_dist/css/bower_assets.css'
             },
             external: {
                 src: '_src/css/external.css',

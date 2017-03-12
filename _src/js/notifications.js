@@ -1,23 +1,4 @@
-/*
- * Part of the Antares Project package.
- *
- * NOTICE OF LICENSE
- *
- * Licensed under the 3-clause BSD License.
- *
- * This source file is subject to the 3-clause BSD License that is
- * bundled with this package in the LICENSE file.
- *
- * @package    Antares Front-end
- * @version    0.9.0
- * @author     Antares Team
- * @license    BSD License (3-clause)
- * @copyright  (c) 2017, Antares Project
- * @link       http://antaresproject.io
- * 
-
-*/
-
+import { Antares } from './mechanics';
 
 Antares.prototype.swal = {
 
@@ -119,6 +100,7 @@ Antares.prototype.swal = {
 
 };
 
+import noty from 'script-loader!noty';
 //noty theme
 $.noty.layouts.centerFull = {
     name: 'CenterFull',
@@ -154,6 +136,8 @@ $.noty.layouts.centerFull = {
     },
     addClass: ''
 };
+
+
 
 // 
 //usage
@@ -212,33 +196,33 @@ Antares.prototype.noti = {
 
     alertFM: function(size, glow, icon, bg) {
         this.generateTheme.apply(this, arguments);
-        notyConfig = $.extend({}, this.base, this.typeAlert, { theme: APP.noti.className });
+        var notyConfig = $.extend({}, this.base, this.typeAlert, { theme: APP.noti.className });
         return notyConfig;
     },
 
     successFM: function(size, glow, icon, bg) {
         this.generateTheme.apply(this, arguments);
-        notyConfig = $.extend({}, this.base, this.typeSuccess, { theme: APP.noti.className });
+        var notyConfig = $.extend({}, this.base, this.typeSuccess, { theme: APP.noti.className });
         return notyConfig;
     },
     errorFM: function(size, glow, icon, bg) {
         this.generateTheme.apply(this, arguments);
-        notyConfig = $.extend({}, this.base, this.typeError, { theme: APP.noti.className });
+        var notyConfig = $.extend({}, this.base, this.typeError, { theme: APP.noti.className });
         return notyConfig;
     },
     warningFM: function(size, glow, icon, bg) {
         this.generateTheme.apply(this, arguments);
-        notyConfig = $.extend({}, this.base, this.typeWarning, { theme: APP.noti.className });
+        var notyConfig = $.extend({}, this.base, this.typeWarning, { theme: APP.noti.className });
         return notyConfig;
     },
     infoFM: function(size, glow, icon, bg) {
         this.generateTheme.apply(this, arguments);
-        notyConfig = $.extend({}, this.base, this.typeInfo, { theme: APP.noti.className });
+        var notyConfig = $.extend({}, this.base, this.typeInfo, { theme: APP.noti.className });
         return notyConfig;
     },
     confirmFM: function(size, glow, icon, bg) {
         this.generateTheme.apply(this, arguments);
-        notyConfig = $.extend({}, this.base, this.typeConfirm, { theme: APP.noti.className });
+        var notyConfig = $.extend({}, this.base, this.typeConfirm, { theme: APP.noti.className });
         return notyConfig;
     },
 
@@ -825,7 +809,12 @@ Antares.prototype.modal = {
 };
 
 $(function() {
-    APP.dialog.onLoad();
+
+
+    // window.APP = APP;
+
+
+    // APP.dialog.onLoad();
 
     
     $('.mdl-dialog').on('open', function (event) {

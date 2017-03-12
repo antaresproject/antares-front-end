@@ -1,0 +1,200 @@
+//Dialog Implementation
+
+//legacy
+dialog {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+	height: -moz-fit-content;
+	height: -webkit-fit-content;
+	height: fit-content;
+	margin: auto;
+	border: solid;
+	padding: 1em;
+	background: white;
+	color: black;
+	display: none;
+}
+
+dialog[open] {
+	display: block;
+}
+
+dialog + .backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+/* for small devices, modal dialogs go full-screen */
+@media screen and (max-width:540px) {
+	dialog[_polyfill_modal] {
+
+		/* TODO: implement */
+		top: 0;
+		width: auto;
+		margin: 1em;
+	}
+
+}
+
+._dialog_overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+dialog.fixed {
+	position: fixed;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+@dialog-size: 40vh;
+
+.mdl-dialog.ar-dialog .mdl-dialog__content.ps-container {
+	padding: 0 24px !important;
+}
+
+.mdl-dialog.ar-dialog {
+	.mdl-dialog__actions {
+		justify-content: flex-end;
+
+		button,
+		a {
+			margin-left: 8px;
+			cursor: pointer;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+		}
+
+	}
+
+	&[open] {
+		width: @dialog-size;
+		min-height: @dialog-size;
+		border: 0;
+		background: transparent;
+		padding: 0;
+
+		@media @max768 {
+			// @dialog-size: 100%;
+			//   	width: @dialog-size;
+			//   	height: @dialog-size;
+		}
+
+	}
+
+	.mdl-dialog__canvas {
+		flex-flow: column nowrap;
+		display: flex;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		background: #fff;
+		box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+	}
+
+	.mdl-dialog__header {
+		width: 100%;
+		display: flex;
+		height: 52px;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid #edeff2;
+		padding: 0 24px;
+
+		.mdl-dialog__title {
+			color: #b7beca;
+			font-size: 13px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		a {
+			line-height: 1;
+			position: relative;
+			width: 24px;
+			height: 24px;
+			.flex-center();
+
+			.mdl-button__ripple-container {
+				border-radius: 50%;
+			}
+
+		}
+
+		.close i {
+			font-size: 18px;
+			line-height: 1;
+		}
+
+	}
+
+	.mdl-dialog__content {
+		height: auto;
+		flex: 1;
+		margin: 24px 0;
+		padding: 0 24px;
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+		// overflow: hidden;
+	}
+
+	.mdl-dialog__actions {
+		height: 52px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		// margin-bottom: 8px;
+		border-top: 1px solid #edeff2;
+		padding: 0 24px;
+
+		button,
+		a {
+			margin-right: 8px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+		}
+
+	}
+
+}
+
+dialog::backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card--files {
+	.mdl-dialog.ar-dialog[open] {
+		min-height: auto;
+
+		.mdl-dialog__canvas {
+			min-height: 190px;
+			margin-top: -95px;
+		}
+
+	}
+
+}

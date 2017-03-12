@@ -1,6 +1,6 @@
-
 //noty = flash message 
 //positions
+
 .top-right {
 	position: fixed;
 	top: 32px;
@@ -11,7 +11,6 @@
 .noty_topRight_layout_container {
 }
 
-
 //custom layout for html
 #noty_CenterFull_layout_container {
 	width: 100vw;
@@ -19,25 +18,23 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-end;
-	position:fixed;
-	top:0;
+	position: fixed;
+	top: 0;
 
 	>li.FM {
-		        padding: 24px;
-		        max-width:90%;
+		padding: 24px;
+		max-width: 90%;
 	}
 
 }
 
 .FM {
-	//for position only
-	// &:extend(.top-right);
 	margin-bottom: 20px;
-	box-shadow: 10px 0 30px rgba(0,0,0,0.3) !important;
+	box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3) !important;
 
 	//animation
 	&.animated {
-		    animation-duration: 200ms;
+		animation-duration: 200ms;
 	}
 
 	//defaults
@@ -60,9 +57,8 @@
 	}
 
 	.noty_bar {
-		border-left:0px;
+		border-left: 0px;
 	}
-
 
 	//sizes
 	&.FM--lg {
@@ -206,17 +202,17 @@
 
 	}
 
-
 	&.FM--border {
 		.noty_bar {
 			border-left: 4px solid;
 		}
+
 	}
 
 	&.FM--outline {
 		.noty_bar {
-		    border-width: 1px;
-		    border-style: solid;
+			border-width: 1px;
+			border-style: solid;
 		}
 
 	}
@@ -277,7 +273,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	position: relative;
-	cursor:pointer;
+	cursor: pointer;
 
 	.alert__icon {
 		color: inherit;
@@ -295,7 +291,7 @@
 		padding: 8px;
 		cursor: pointer;
 		transition: @transition;
-		display:none;
+		display: none;
 
 		&:hover {
 			opacity: 0.8;
@@ -304,12 +300,11 @@
 	}
 
 	&.alert--close {
-
 		.alert__close {
-			display:block;
+			display: block;
 		}
-	}
 
+	}
 
 	&.alert--glow {
 		&.alert--alert {
@@ -339,8 +334,7 @@
 	}
 
 	&.alert--shadow {
-		
-		box-shadow: 10px 0 30px rgba(0,0,0,0.3) !important;
+		box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3) !important;
 	}
 
 	&.alert--bg {
@@ -408,7 +402,7 @@
 		line-height: 18px;
 
 		&.alert--close {
-			padding-right:@unit4;
+			padding-right: @unit4;
 		}
 
 		.alert__icon {
@@ -428,9 +422,8 @@
 			padding-right: @unit2;
 		}
 
-
 		&.alert--close {
-			padding-right:@unit4;
+			padding-right: @unit4;
 		}
 
 	}
@@ -439,9 +432,9 @@
 		padding: @unit1;
 		font-size: 12px;
 		line-height: 16px;
-		
+
 		&.alert--close {
-			padding-right:@unit4;
+			padding-right: @unit4;
 		}
 
 		.alert__icon {
@@ -465,7 +458,7 @@
 		line-height: 13px;
 
 		&.alert--close {
-			padding-right:@unit4;
+			padding-right: @unit4;
 		}
 
 		.alert__icon {

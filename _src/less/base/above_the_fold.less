@@ -1,42 +1,33 @@
-select
-{
-    opacity: 0;
+select {
+	opacity: 0;
 }
 
-select + .select2
-{
-    opacity: 1;
+select+.select2 {
+	opacity: 1;
 }
 
-.mdl-tabs__panel:not(.is-active)
-{
-    display: none;
+input[type="radio"],
+input[type="checkbox"] {
+	// display: none;
 }
 
-.billevo-table
-{
-    transition: 1400ms;
-
-    opacity: 1;
+//client details
+.mdl-tabs__panel:not(.is-active) {
+	display: none;
 }
 
-.billevo-table:not(.dataTable)
-{
-    opacity: 0;
+.billevo-table {
+	opacity: 1;
+	transition: 1400ms;
 }
 
-.timeline
-{
-    overflow: auto;
-
-    min-height: auto;
-    margin-bottom: 10px !important;
+.timeline {
+	overflow: auto;
+	min-height: auto;
 }
 
-.card--tabs-joined .timeline
-{
-    overflow: auto;
-
-    min-height: auto;
-    margin-bottom: 10px;
+.card--tabs-joined .timeline {
+	overflow: auto;
+	min-height: auto;
+	margin-bottom: 10px;
 }

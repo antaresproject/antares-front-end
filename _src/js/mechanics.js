@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -18,8 +18,7 @@
 
 */
 
-
-Antares = function() {};
+export const Antares = function() {};
 
 Antares.prototype.init = function() {
 
@@ -97,8 +96,6 @@ Antares.prototype.helpers = function() {
 
     var self = this;
 
-
-
     (function($) {
         $.fn.hasScrollBar = function() {
             return this.get(0) ? this.get(0).scrollWidth > this.innerWidth() : false;
@@ -117,8 +114,12 @@ Antares.prototype.helpers = function() {
 
             var dataBg = $(this).data('bg');
             var dataColor = $(this).data('color');
-            if (dataBg) { $(this).css('background-image', 'url(' + dataBg + ')'); }
-            if (dataColor) { $(this).css('color', 'url(' + dataColor + ')'); }
+            if (dataBg) {
+                $(this).css('background-image', 'url(' + dataBg + ')');
+            }
+            if (dataColor) {
+                $(this).css('color', 'url(' + dataColor + ')');
+            }
 
         });
     }
@@ -143,9 +144,6 @@ Antares.prototype.helpers = function() {
     //     $('.app-content .main-content').css('height', '100%');
     // }
 
-
-
-
     //simulate widnowResizeEnd
     $(window).resize(function() {
         if (this.resizeTO) clearTimeout(this.resizeTO);
@@ -158,9 +156,6 @@ Antares.prototype.helpers = function() {
     $(window).on('resizeEnd', function() {
         //do something, window hasn't changed size in 500ms
     });
-
-
-
 
     // cursor at end of input plugin
 
@@ -204,14 +199,10 @@ Antares.prototype.helpers = function() {
 
     };
 
-
-
-
     //if footer absolute add class to container (card)
     // if ( $('.app-content__footer--absolute').length ) {
     //    $(this).closest('.card__content').addClass('');
     // }
-
 
     //fix on tags widget 
 
@@ -251,9 +242,6 @@ Antares.prototype.helpers = function() {
     //cpanel FIx
     $('#translationImport').closest('.input-field__inner').addClass('w100p');
 
-
-
-
     ready('.select2-dropdown .select2-results__options', function(element) {
 
         $(element).attr('data-scrollable', 'true');
@@ -261,18 +249,11 @@ Antares.prototype.helpers = function() {
 
     });
 
-
-
-
-
 };
 
 Antares.prototype.components = {
 
-
     autoComplete: function() {
-
-        
 
     },
 
@@ -283,7 +264,9 @@ Antares.prototype.components = {
          * https://github.com/ded/bowser
          * MIT License | (c) Dustin Diaz 2015
          */
-        ! function(e, t) { typeof module != "undefined" && module.exports ? module.exports = t() : typeof define == "function" && define.amd ? define(e, t) : this[e] = t() }("bowser", function() {
+        ! function(e, t) {
+            typeof module != "undefined" && module.exports ? module.exports = t() : typeof define == "function" && define.amd ? define(e, t) : this[e] = t()
+        }("bowser", function() {
             function t(t) {
                 function n(e) {
                     var n = t.match(e);
@@ -315,7 +298,139 @@ Antares.prototype.components = {
                     S = !E && /[^-]mobi/i.test(t),
                     x = /xbox/i.test(t),
                     T;
-                /opera/i.test(t) ? T = { name: "Opera", opera: e, version: w || n(/(?:opera|opr|opios)[\s\/](\d+(\.\d+)?)/i) } : /opr|opios/i.test(t) ? T = { name: "Opera", opera: e, version: n(/(?:opr|opios)[\s\/](\d+(\.\d+)?)/i) || w } : /SamsungBrowser/i.test(t) ? T = { name: "Samsung Internet for Android", samsungBrowser: e, version: w || n(/(?:SamsungBrowser)[\s\/](\d+(\.\d+)?)/i) } : /coast/i.test(t) ? T = { name: "Opera Coast", coast: e, version: w || n(/(?:coast)[\s\/](\d+(\.\d+)?)/i) } : /yabrowser/i.test(t) ? T = { name: "Yandex Browser", yandexbrowser: e, version: w || n(/(?:yabrowser)[\s\/](\d+(\.\d+)?)/i) } : /ucbrowser/i.test(t) ? T = { name: "UC Browser", ucbrowser: e, version: n(/(?:ucbrowser)[\s\/](\d+(?:\.\d+)+)/i) } : /mxios/i.test(t) ? T = { name: "Maxthon", maxthon: e, version: n(/(?:mxios)[\s\/](\d+(?:\.\d+)+)/i) } : /epiphany/i.test(t) ? T = { name: "Epiphany", epiphany: e, version: n(/(?:epiphany)[\s\/](\d+(?:\.\d+)+)/i) } : /puffin/i.test(t) ? T = { name: "Puffin", puffin: e, version: n(/(?:puffin)[\s\/](\d+(?:\.\d+)?)/i) } : /sleipnir/i.test(t) ? T = { name: "Sleipnir", sleipnir: e, version: n(/(?:sleipnir)[\s\/](\d+(?:\.\d+)+)/i) } : /k-meleon/i.test(t) ? T = { name: "K-Meleon", kMeleon: e, version: n(/(?:k-meleon)[\s\/](\d+(?:\.\d+)+)/i) } : d ? (T = { name: "Windows Phone", windowsphone: e }, b ? (T.msedge = e, T.version = b) : (T.msie = e, T.version = n(/iemobile\/(\d+(\.\d+)?)/i))) : /msie|trident/i.test(t) ? T = { name: "Internet Explorer", msie: e, version: n(/(?:msie |rv:)(\d+(\.\d+)?)/i) } : f ? T = { name: "Chrome", chromeos: e, chromeBook: e, chrome: e, version: n(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i) } : /chrome.+? edge/i.test(t) ? T = { name: "Microsoft Edge", msedge: e, version: b } : /vivaldi/i.test(t) ? T = { name: "Vivaldi", vivaldi: e, version: n(/vivaldi\/(\d+(\.\d+)?)/i) || w } : c ? T = { name: "Sailfish", sailfish: e, version: n(/sailfish\s?browser\/(\d+(\.\d+)?)/i) } : /seamonkey\//i.test(t) ? T = { name: "SeaMonkey", seamonkey: e, version: n(/seamonkey\/(\d+(\.\d+)?)/i) } : /firefox|iceweasel|fxios/i.test(t) ? (T = { name: "Firefox", firefox: e, version: n(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i) }, /\((mobile|tablet);[^\)]*rv:[\d\.]+\)/i.test(t) && (T.firefoxos = e)) : l ? T = { name: "Amazon Silk", silk: e, version: n(/silk\/(\d+(\.\d+)?)/i) } : /phantom/i.test(t) ? T = { name: "PhantomJS", phantom: e, version: n(/phantomjs\/(\d+(\.\d+)?)/i) } : /slimerjs/i.test(t) ? T = { name: "SlimerJS", slimer: e, version: n(/slimerjs\/(\d+(\.\d+)?)/i) } : /blackberry|\bbb\d+/i.test(t) || /rim\stablet/i.test(t) ? T = { name: "BlackBerry", blackberry: e, version: w || n(/blackberry[\d]+\/(\d+(\.\d+)?)/i) } : p ? (T = { name: "WebOS", webos: e, version: w || n(/w(?:eb)?osbrowser\/(\d+(\.\d+)?)/i) }, /touchpad\//i.test(t) && (T.touchpad = e)) : /bada/i.test(t) ? T = { name: "Bada", bada: e, version: n(/dolfin\/(\d+(\.\d+)?)/i) } : h ? T = { name: "Tizen", tizen: e, version: n(/(?:tizen\s?)?browser\/(\d+(\.\d+)?)/i) || w } : /qupzilla/i.test(t) ? T = { name: "QupZilla", qupzilla: e, version: n(/(?:qupzilla)[\s\/](\d+(?:\.\d+)+)/i) || w } : /chromium/i.test(t) ? T = { name: "Chromium", chromium: e, version: n(/(?:chromium)[\s\/](\d+(?:\.\d+)?)/i) || w } : /chrome|crios|crmo/i.test(t) ? T = { name: "Chrome", chrome: e, version: n(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i) } : o ? T = { name: "Android", version: w } : /safari|applewebkit/i.test(t) ? (T = { name: "Safari", safari: e }, w && (T.version = w)) : i ? (T = { name: i == "iphone" ? "iPhone" : i == "ipad" ? "iPad" : "iPod" }, w && (T.version = w)) : /googlebot/i.test(t) ? T = { name: "Googlebot", googlebot: e, version: n(/googlebot\/(\d+(\.\d+))/i) || w } : T = { name: n(/^(.*)\/(.*) /), version: r(/^(.*)\/(.*) /) }, !T.msedge && /(apple)?webkit/i.test(t) ? (/(apple)?webkit\/537\.36/i.test(t) ? (T.name = T.name || "Blink", T.blink = e) : (T.name = T.name || "Webkit", T.webkit = e), !T.version && w && (T.version = w)) : !T.opera && /gecko\//i.test(t) && (T.name = T.name || "Gecko", T.gecko = e, T.version = T.version || n(/gecko\/(\d+(\.\d+)?)/i)), !T.windowsphone && !T.msedge && (o || T.silk) ? T.android = e : !T.windowsphone && !T.msedge && i ? (T[i] = e, T.ios = e) : g ? T.mac = e : x ? T.xbox = e : m ? T.windows = e : y && (T.linux = e);
+                /opera/i.test(t) ? T = {
+                    name: "Opera",
+                    opera: e,
+                    version: w || n(/(?:opera|opr|opios)[\s\/](\d+(\.\d+)?)/i)
+                } : /opr|opios/i.test(t) ? T = {
+                    name: "Opera",
+                    opera: e,
+                    version: n(/(?:opr|opios)[\s\/](\d+(\.\d+)?)/i) || w
+                } : /SamsungBrowser/i.test(t) ? T = {
+                    name: "Samsung Internet for Android",
+                    samsungBrowser: e,
+                    version: w || n(/(?:SamsungBrowser)[\s\/](\d+(\.\d+)?)/i)
+                } : /coast/i.test(t) ? T = {
+                    name: "Opera Coast",
+                    coast: e,
+                    version: w || n(/(?:coast)[\s\/](\d+(\.\d+)?)/i)
+                } : /yabrowser/i.test(t) ? T = {
+                    name: "Yandex Browser",
+                    yandexbrowser: e,
+                    version: w || n(/(?:yabrowser)[\s\/](\d+(\.\d+)?)/i)
+                } : /ucbrowser/i.test(t) ? T = {
+                    name: "UC Browser",
+                    ucbrowser: e,
+                    version: n(/(?:ucbrowser)[\s\/](\d+(?:\.\d+)+)/i)
+                } : /mxios/i.test(t) ? T = {
+                    name: "Maxthon",
+                    maxthon: e,
+                    version: n(/(?:mxios)[\s\/](\d+(?:\.\d+)+)/i)
+                } : /epiphany/i.test(t) ? T = {
+                    name: "Epiphany",
+                    epiphany: e,
+                    version: n(/(?:epiphany)[\s\/](\d+(?:\.\d+)+)/i)
+                } : /puffin/i.test(t) ? T = {
+                    name: "Puffin",
+                    puffin: e,
+                    version: n(/(?:puffin)[\s\/](\d+(?:\.\d+)?)/i)
+                } : /sleipnir/i.test(t) ? T = {
+                    name: "Sleipnir",
+                    sleipnir: e,
+                    version: n(/(?:sleipnir)[\s\/](\d+(?:\.\d+)+)/i)
+                } : /k-meleon/i.test(t) ? T = {
+                    name: "K-Meleon",
+                    kMeleon: e,
+                    version: n(/(?:k-meleon)[\s\/](\d+(?:\.\d+)+)/i)
+                } : d ? (T = {
+                    name: "Windows Phone",
+                    windowsphone: e
+                }, b ? (T.msedge = e, T.version = b) : (T.msie = e, T.version = n(/iemobile\/(\d+(\.\d+)?)/i))) : /msie|trident/i.test(t) ? T = {
+                    name: "Internet Explorer",
+                    msie: e,
+                    version: n(/(?:msie |rv:)(\d+(\.\d+)?)/i)
+                } : f ? T = {
+                    name: "Chrome",
+                    chromeos: e,
+                    chromeBook: e,
+                    chrome: e,
+                    version: n(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
+                } : /chrome.+? edge/i.test(t) ? T = {
+                    name: "Microsoft Edge",
+                    msedge: e,
+                    version: b
+                } : /vivaldi/i.test(t) ? T = {
+                    name: "Vivaldi",
+                    vivaldi: e,
+                    version: n(/vivaldi\/(\d+(\.\d+)?)/i) || w
+                } : c ? T = {
+                    name: "Sailfish",
+                    sailfish: e,
+                    version: n(/sailfish\s?browser\/(\d+(\.\d+)?)/i)
+                } : /seamonkey\//i.test(t) ? T = {
+                    name: "SeaMonkey",
+                    seamonkey: e,
+                    version: n(/seamonkey\/(\d+(\.\d+)?)/i)
+                } : /firefox|iceweasel|fxios/i.test(t) ? (T = {
+                    name: "Firefox",
+                    firefox: e,
+                    version: n(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i)
+                }, /\((mobile|tablet);[^\)]*rv:[\d\.]+\)/i.test(t) && (T.firefoxos = e)) : l ? T = {
+                    name: "Amazon Silk",
+                    silk: e,
+                    version: n(/silk\/(\d+(\.\d+)?)/i)
+                } : /phantom/i.test(t) ? T = {
+                    name: "PhantomJS",
+                    phantom: e,
+                    version: n(/phantomjs\/(\d+(\.\d+)?)/i)
+                } : /slimerjs/i.test(t) ? T = {
+                    name: "SlimerJS",
+                    slimer: e,
+                    version: n(/slimerjs\/(\d+(\.\d+)?)/i)
+                } : /blackberry|\bbb\d+/i.test(t) || /rim\stablet/i.test(t) ? T = {
+                    name: "BlackBerry",
+                    blackberry: e,
+                    version: w || n(/blackberry[\d]+\/(\d+(\.\d+)?)/i)
+                } : p ? (T = {
+                    name: "WebOS",
+                    webos: e,
+                    version: w || n(/w(?:eb)?osbrowser\/(\d+(\.\d+)?)/i)
+                }, /touchpad\//i.test(t) && (T.touchpad = e)) : /bada/i.test(t) ? T = {
+                    name: "Bada",
+                    bada: e,
+                    version: n(/dolfin\/(\d+(\.\d+)?)/i)
+                } : h ? T = {
+                    name: "Tizen",
+                    tizen: e,
+                    version: n(/(?:tizen\s?)?browser\/(\d+(\.\d+)?)/i) || w
+                } : /qupzilla/i.test(t) ? T = {
+                    name: "QupZilla",
+                    qupzilla: e,
+                    version: n(/(?:qupzilla)[\s\/](\d+(?:\.\d+)+)/i) || w
+                } : /chromium/i.test(t) ? T = {
+                    name: "Chromium",
+                    chromium: e,
+                    version: n(/(?:chromium)[\s\/](\d+(?:\.\d+)?)/i) || w
+                } : /chrome|crios|crmo/i.test(t) ? T = {
+                    name: "Chrome",
+                    chrome: e,
+                    version: n(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
+                } : o ? T = {
+                    name: "Android",
+                    version: w
+                } : /safari|applewebkit/i.test(t) ? (T = {
+                    name: "Safari",
+                    safari: e
+                }, w && (T.version = w)) : i ? (T = {
+                    name: i == "iphone" ? "iPhone" : i == "ipad" ? "iPad" : "iPod"
+                }, w && (T.version = w)) : /googlebot/i.test(t) ? T = {
+                    name: "Googlebot",
+                    googlebot: e,
+                    version: n(/googlebot\/(\d+(\.\d+))/i) || w
+                } : T = {
+                    name: n(/^(.*)\/(.*) /),
+                    version: r(/^(.*)\/(.*) /)
+                }, !T.msedge && /(apple)?webkit/i.test(t) ? (/(apple)?webkit\/537\.36/i.test(t) ? (T.name = T.name || "Blink", T.blink = e) : (T.name = T.name || "Webkit", T.webkit = e), !T.version && w && (T.version = w)) : !T.opera && /gecko\//i.test(t) && (T.name = T.name || "Gecko", T.gecko = e, T.version = T.version || n(/gecko\/(\d+(\.\d+)?)/i)), !T.windowsphone && !T.msedge && (o || T.silk) ? T.android = e : !T.windowsphone && !T.msedge && i ? (T[i] = e, T.ios = e) : g ? T.mac = e : x ? T.xbox = e : m ? T.windows = e : y && (T.linux = e);
                 var N = "";
                 T.windowsphone ? N = n(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i) : i ? (N = n(/os (\d+([_\s]\d+)*) like mac os x/i), N = N.replace(/[_\s]/g, ".")) : o ? N = n(/android[ \/-](\d+(\.\d+)*)/i) : T.webos ? N = n(/(?:web|hpw)os\/(\d+(\.\d+)*)/i) : T.blackberry ? N = n(/rim\stablet\sos\s(\d+(\.\d+)*)/i) : T.bada ? N = n(/bada\/(\d+(\.\d+)*)/i) : T.tizen && (N = n(/tizen[\/\s](\d+(\.\d+)*)/i)), N && (T.osversion = N);
                 var C = N.split(".")[0];
@@ -377,7 +492,6 @@ Antares.prototype.components = {
             }, n.isUnsupportedBrowser = o, n.compareVersions = s, n.check = u, n._detect = t, n
         });
 
-
         if (bowser.msie || bowser.msedge) {
             $('body').addClass('msie');
         }
@@ -394,7 +508,6 @@ Antares.prototype.components = {
         }
 
     },
-
 
     mutationService: function() {
 
@@ -413,8 +526,6 @@ Antares.prototype.components = {
         // }
 
         var target = $('.main-preloader');
-
-
 
         function mainPrelaoderOn() {
 
@@ -444,13 +555,12 @@ Antares.prototype.components = {
         // }, 5000);
 
         Pace.start({
-          elements: false,
+            elements: false,
             document: true,
-          // Only show the progress on regular and ajax-y page navigation,
-          // not every request
-          restartOnRequestAfter: true
+            // Only show the progress on regular and ajax-y page navigation,
+            // not every request
+            restartOnRequestAfter: false
         });
-
 
         // Pace.restart();
 
@@ -461,7 +571,6 @@ Antares.prototype.components = {
             // Pace.stop();
         }, timer);
 
-
     },
 
     colorControl: function() {
@@ -469,8 +578,6 @@ Antares.prototype.components = {
         // pallette control
         $('.c-group .c-single').each(function(index, el) {
             var getC1 = $(this).data('color');
-
-
 
             $(this).css('background', getC1);
         });
@@ -481,8 +588,6 @@ Antares.prototype.components = {
             var getC2 = $(this).data('color');
             $(this).css('color', getC2);
         });
-
-
 
         // timeline pallette control
         $('.timeline .timeline__indicator').each(function(index, el) {
@@ -503,7 +608,6 @@ Antares.prototype.components = {
                 });
 
             }, 1000);
-
 
         }
 
@@ -532,7 +636,6 @@ Antares.prototype.components = {
         //     restartOnRequestAfter: true
 
         // };
-
 
         // var pagePreloader = $('.preloader');
 
@@ -590,7 +693,6 @@ Antares.prototype.components = {
 
         function addScroll(selector, relative) {
 
-
             $(selector).each(function(index, el) {
 
                 if ($(this).hasClass('ps-container')) {
@@ -611,8 +713,6 @@ Antares.prototype.components = {
             }
 
         }
-
-
 
         enquire.register("screen and (min-width:1200px)", {
 
@@ -646,11 +746,9 @@ Antares.prototype.components = {
                     }, 500);
                 }());
 
-
             },
 
             unmatch: function() {
-
 
                 $('.ps-container').each(function(index, el) {
 
@@ -658,9 +756,7 @@ Antares.prototype.components = {
 
                 });
 
-
             },
-
 
         });
 
@@ -793,11 +889,8 @@ Antares.prototype.components = {
 
         var self = this;
 
-
         // console.log(singleTabsWidth);
         // console.log(tabBarWidth);
-
-
 
         var job = function() {
 
@@ -824,9 +917,7 @@ Antares.prototype.components = {
 
                 });
 
-
                 $('.card--tabs').each(function(index, el) {
-
 
                     var tabContainer = $(el).find('.mdl-tabs'),
                         tabBar = tabContainer.find('.mdl-tabs__tab-bar'),
@@ -835,7 +926,6 @@ Antares.prototype.components = {
                         singleTab = tabContainer.find('.mdl-tabs__tab'),
                         scrollDistance = singleTab.outerWidth() * 2,
                         transition = 300;
-
 
                     tabBar.find('.mdl-tabs__tab').each(function() {
                         singleTabsWidth += $(this).outerWidth();
@@ -850,12 +940,7 @@ Antares.prototype.components = {
                         tabContainer.removeClass('mdl-tabs--arows');
                     }
 
-
-
-
                 });
-
-
 
             }, 300);
 
@@ -874,8 +959,6 @@ Antares.prototype.components = {
             });
 
         }
-
-
 
     },
 
@@ -916,9 +999,6 @@ Antares.prototype.animations = {
         });
 
     },
-
-
-
 
     appAnime: function() {
 
@@ -966,7 +1046,6 @@ Antares.prototype.animations = {
 
     },
 
-
 };
 
 Antares.prototype.RWD = {
@@ -991,8 +1070,6 @@ Antares.prototype.RWD = {
             // APP.components.pagePreloader('off');
         }
 
-
-
         // card logs scrolling
         enquire.register("screen and (max-width:768px)", {
 
@@ -1007,7 +1084,6 @@ Antares.prototype.RWD = {
             },
 
         });
-
 
     },
 
@@ -1053,6 +1129,7 @@ Antares.prototype.RWD = {
 
 };
 
+require('./notifications.js');
 //fire on document ready
 $(function() {
 

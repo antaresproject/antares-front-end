@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -100,27 +100,18 @@ require('script!jquery-menu-aim');
                             icon: 'zmdi-account-circle',
                             isActive: false,
                         },
-                        // {
-                        //     name: 'Components', // displayed text
-                        //     title: 'components', // interal use
-                        //     url: '#',
-                        //     icon: 'zmdi-layers',
-                        //     isActive: false,
-                        //     submenuTitle: 'Components List',
-                        //     submenu: [{
-                        //         name: 'Filters',
-                        //         url: 'component-filters.html'
-                        //     }, {
-                        //         name: 'JS-Modal',
-                        //         url: 'component-modal.html'
-                        //     },{
-                        //         name: 'CSS-Modal',
-                        //         url: 'component-modal-css.html'
-                        //     }, {
-                        //         name: 'ToDo',
-                        //         url: 'component-todo.html'
-                        //     },]
-                        // },
+                        {
+                            name: 'Components', // displayed text
+                            title: 'components', // interal use
+                            url: '#',
+                            icon: 'zmdi-layers',
+                            isActive: false,
+                            submenuTitle: 'Components List',
+                            submenu: [{
+                                name: 'Files Widget',
+                                url: 'widget_files.html'
+                            },]
+                        },
                         {
                             name: 'Forms', // displayed text
                             title: 'forms', // interal use

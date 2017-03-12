@@ -5,121 +5,79 @@
 
 //XS
 @media @xs {
-
     [data-chart="true"] {
-        padding:0;
+        padding: 0;
     }
 
     .col-group {
-        padding:0; 
+        padding: 0;
     }
 
     .card.card--chart .card__right {
         padding: 24px 24px 24px 24px;
     }
 
-
-
-
-
 }
-
-
-//Top Bar Adjust
-// @media @md-max {
-//     .main-head {
-//         .search-box {
-//             width: 0px;
-//             margin: 0;
-//             margin-right: 14px;
-
-//             .SearchComponent__search-field {
-//                 opacity: 0;
-//             }
-
-//         }
-
-//         >.dropdown {
-//             display: none;
-//         }
-
-//     }
-
-// }
-
 
 //new general RWD styles
 
 @media @xs {
     .main-head {
-
         .ddown--brand {
-            display:none;
+            display: none;
         }
 
         .item-grp {
-                margin-right: 0 !important;
+            margin-right: 0 !important;
         }
 
     }
 
     .card .card__ammount {
-        margin-bottom:0;
+        margin-bottom: 0;
     }
 
-
-
-    .card.card--news .card__footer a, .card.card--news .card__footer button {
-        bottom:16px;
+    .card.card--news .card__footer a,
+    .card.card--news .card__footer button {
+        bottom: 16px;
     }
 
     .card-ctrls {
         .mdl-textfield__input {
-            margin-left:30px;
+            margin-left: 30px;
         }
 
         .mdl-textfield__label {
-            margin-left:30px;
-            text-indent:0;
+            margin-left: 30px;
+            text-indent: 0;
         }
 
         .card-ctrls__left {
-
             .search-box > i {
-                    top: 13%;
+                top: 13%;
             }
 
         }
 
         .search-box {
-
             .search-box__mdl-textfield {
-
-            width:auto !important;
-
+                width: auto !important;
             }
 
             .mdl-textfield__input,
-            .mdl-textfield__label  {
+            .mdl-textfield__label {
                 width: 100% !important;
-
             }
 
-
         }
-    }
 
+    }
 
     .generals-form {
-        padding-left:24px;
-        padding-right:24px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
-    // table, table * {
-    //     user-select:all !important;
-    // }
-
-    
     .card--logs {
         .search-box {
             .search-box__mdl-textfield {
@@ -130,136 +88,111 @@
 
     }
 
-
-    .card.card--chart .card__right .datarow  {
-        max-height:200px;
-        overflow-y:scroll !important;
+    .card.card--chart .card__right .datarow {
+        max-height: 200px;
+        overflow-y: scroll !important;
     }
-
 
 }
 
 @media @max1200 {
-
-
-    .card.card--news .card__footer a, .card.card--news .card__footer button {
-        bottom:16px;
+    .card.card--news .card__footer a,
+    .card.card--news .card__footer button {
+        bottom: 16px;
     }
+
     .grid-stack-item {
-            min-height: auto !important;
+        min-height: auto !important;
     }
 
     .grid-stack-item.gs-pagination .card {
-        padding-bottom:0;
+        padding-bottom: 0;
     }
 
-    .card.card--chart .card__right .datarow  {
-        max-height:200px;
-        overflow-y:scroll !important;
+    .card.card--chart .card__right .datarow {
+        max-height: 200px;
+        overflow-y: scroll !important;
     }
-
 
 }
 
 @media @max992 {
     .main-head .item-grp-single:nth-child(1) {
-        // display:none !important;
+        // display: none !important;
     }
+
 }
 
 @media @max1550 {
-
     .tmp-show {
-        display:none;
+        display: none;
     }
 
     .tmp-show + .select2 {
-        display:none;
+        display: none;
     }
+
 }
 
 @media @xs {
-    .main-head { 
+    .main-head {
         .item-grp-single:nth-child(4) {
-            display:none;
+            display: none;
         }
-    }
 
+    }
 
     .select2-results {
         overflow-y: scroll;
         max-height: 330px;
-
     }
 
-
-
-    // .card-ctrls__right {
-    //     display:none !important;
-    // }
-
     .ui-resizable-handle {
-
-        display:none !important;
+        display: none !important;
     }
 
     .comiseo-daterangepicker {
         left: 24px !important;
 
-        .comiseo-daterangepicker-main  {
+        .comiseo-daterangepicker-main {
             // display: flex;
             // flex-flow: column wrap;
-
         }
 
-
         .ui-helper-clearfix {
-
-                // margin-top: 50px;
+            // margin-top: 50px;
         }
 
         .comiseo-daterangepicker-presets {
-
-            display:none;
-
+            display: none;
         }
+
     }
 
-
-} 
+}
 
 @media @max550 {
-
     .grid-stack-item .grid-stack-item-content .card.card--chart .card__content > div {
-    height: 100%;
-}
-.card.card--chart .card__left {
-    width: 100%;
-    overflow: hidden;
-}
+        height: 100%;
+    }
+
+    .card.card--chart .card__left {
+        width: 100%;
+        overflow: hidden;
+    }
 
 }
 
 @media @max450 {
-    .main-head { 
+    .main-head {
         .item-grp-single:nth-child(3) {
-            // display:none;
+            // display: none;
         }
+
     }
-
-// .page-dashboard .card--chart {
-
-//     flex-flow: column  nowrap;
-// }
-
-// .card__mobile-toggle {
-//     display: block;
-// }
-
 
     .breadcrumbs .ddown__init a {
         max-width: 40px;
     }
-} 
 
-
+}

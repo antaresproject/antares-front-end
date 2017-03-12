@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Login Page</title>
+    <% include ../layout/color_template %>
+    link(href='css/external.css', rel='stylesheet')
+    link(href='css/bower_assets.css', rel='stylesheet')
+    link(href='css/antares.css', rel='stylesheet')
+</head>
+<body>
+<div id="app-wrapper">
+    <div class="app-content page-login">
+        <section class="main-content">
+            <div class="login-box">
+                <div class="login-box__header"><img src="img/theme/antares/logo/logo_mobile.png" alt=""></div>
+                <form action="" method="get" id="login-form">
+                    <div class="mdl-textfield mdl-textfield--billevo mdl-js-textfield">
+                        <label for="" class="label--login">E-mail</label>
+                        <input class="mdl-textfield__input" type="email" id="email" autofocus>
+                        <!-- <label class="mdl-textfield__label" for="email">Email address</label> -->
+                        <span class="mdl-textfield__error">Please, enter a valid email address.</span>
+                    </div>
+                    <div class="mdl-textfield mdl-textfield--billevo mdl-js-textfield  mt8 mb24">
+                        <label for="" class="label--login">Password</label>
+                        <input class="mdl-textfield__input" type="password" id="password">
+                        <!-- <label class="mdl-textfield__label" for="password">Password</label> -->
+                        <span class="mdl-textfield__error">Please, enter your password.</span>
+                    </div>
+                    <div class="login-box__remember">
+                        <input type="checkbox" data-icheck="true" name="check[1]" id="login-box__remember">
+                        <span>Remember me</span>
+                    </div>
+                    <a class="btn btn--submit btn--s-xxl btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" form="login-form">LOGIN</a>
+                    <div class="link-group">
+                        <a href="#" class="password-reset" title="Password Reset">Reset password</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>

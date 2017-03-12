@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -18,7 +18,10 @@
 
 */
 
-AntaresCharts = function() {};
+
+
+
+var AntaresCharts = function() {};
 
 AntaresCharts.prototype.init = function() {
 
@@ -533,6 +536,6 @@ AntaresCharts.prototype.barChart = function(elementId) {
 };
 
 $(function() {
-    window.AntaresCharts = new AntaresCharts();
+    AntaresCharts = new AntaresCharts();
     AntaresCharts.init();
 });

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Antares Email Settings</title>
+    <% include ../layout/color_template %> 
+    <% include ../layout/css_files %>
+</head>
+
+<body>
+    <div id="app-wrapper">
+        <% include ../layout/sidebar %>
+        <div class="app-content page-email-settings">
+            <% include ../layout/mainhead %> 
+            <% include ../layout/sidebar_notifications %>
+            <section class="main-content nopadding">
+                <div class="grid-container grid-container--2col grid-container--no-padd">
+                    <div class="grid-col grid-col--menu">
+                        <div class="menu-aside-container">
+                            <ul class="menu-aside">
+                                <li>
+                                    <a href="brand-settings.html" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-settings"></i><span>General</span></a>
+                                </li>
+                                <li class="is-active">
+                                    <a href="email-settings.html" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-shopping-cart"></i><span>Email Branding</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid-col grid-col--container">
+                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                            <form action="">
+                                <div class="email-additions">
+                                    <div class="btn-group flex">
+                                        <div class="ddown ddown--left mr-24">
+                                            <div id="Foundation" class="ddown__init btn btn--dropdown btn--bold btn--md btn--default mdl-js-button mdl-js-ripple-effect">Foundation</div>
+                                            <div class="ddown__content">
+                                                <div class="ddown__arrow"></div>
+                                                <ul class="ddown__menu ddown__menu--innerpadd">
+                                                    <li>
+                                                        <a class="mdl-js-button mdl-js-ripple-effect insert-variable" href="#" title="foundation::site.name" data-target="group" data-upgraded=",MaterialButton,MaterialRipple"><i class="zmdi zmdi-file-plus"></i><span>site.name</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="mdl-js-button mdl-js-ripple-effect insert-variable" href="#" title="foundation::site.description" data-target="group"><i class="zmdi zmdi-file-plus"></i><span>site.description</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="mdl-js-button mdl-js-ripple-effect insert-variable" href="#" title="foundation::admin_list" data-target="group"><i class="zmdi zmdi-file-plus"></i><span>admin_list</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="mdl-js-button mdl-js-ripple-effect insert-variable" href="#" title="foundation::reseller_list" data-target="group"><i class="zmdi zmdi-file-plus"></i><span>reseller_list</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="mdl-js-button mdl-js-ripple-effect insert-variable" href="#" title="foundation::client_list" data-target="group"><i class="zmdi zmdi-file-plus"></i><span>client_list</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ddown ddown--left mr-24">
+                                            <div id="Brands" class="ddown__init btn btn--dropdown btn--bold btn--md btn--default mdl-js-button mdl-js-ripple-effect">Brands</div>
+                                            <div class="ddown__content">
+                                                <div class="ddown__arrow"></div>
+                                                <ul class="ddown__menu ddown__menu--innerpadd">
+                                                    <li>
+                                                        <a class="mdl-js-button mdl-js-ripple-effect insert-variable" href="#" title="brands::brand_list" data-target="group"><i class="zmdi zmdi-file-plus"></i><span>brand_list</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn--md btn--bold btn--primary mdl-button mdl-js-button mdl-js-ripple-effect insert-instruction" title="foreach">foreach</a>
+                                        <a href="#" class="btn btn--md btn--bold btn--primary mdl-button mdl-js-button mdl-js-ripple-effect insert-instruction" title="if">if</a>
+                                    </div>
+                                </div>
+                                <div class="mdl-tabs__tab-bar">
+                                    <a href="#header-panel" class="mdl-tabs__tab is-active">Header</a>
+                                    <a href="#footer-panel" class="mdl-tabs__tab">Footer</a>
+                                    <a href="#styles-panel" class="mdl-tabs__tab">Styles</a>
+                                </div>
+                                <div class="mdl-tabs__panel is-active " id="header-panel">
+                                    <fieldset>
+                                        <textarea name="email-header-html" id="email-header-html" rows="10" cols="80">
+                                            <% include ../email/header.html %>
+                                        </textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="mdl-tabs__panel" id="footer-panel">
+                                    <fieldset>
+                                        <textarea name="email-footer-html" id="email-footer-html" rows="10" cols="80">
+                                            <% include ../email/footer.html %>
+                                        </textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="mdl-tabs__panel" id="styles-panel">
+                                    <fieldset>
+                                        <textarea name="email-styles" id="email-styles" rows="10" cols="80">
+                                            <% include ../email/styles.html %>
+                                        </textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="app-content__footer">
+                                    <div class="btn-group">
+                                        <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
+                                        <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button">Cancel</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="email-preview">
+                        <div class="preview-area">
+                            <iframe id="preview" frameBorder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

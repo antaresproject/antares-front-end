@@ -1,13 +1,13 @@
 var path = './../../../';
 
 // EXTERNAL DEPS:
-require('script!icheck'); // css in package
-require('script!select2');
-// require('script!jquery-validation'); //no css
+require('script-loader!icheck'); // css in package
+require('script-loader!select2');
+// require('script-loader!jquery-validation'); //no css
 require('./../../../js/external/modified/jquery.comiseo.daterangepicker.js'); // css in package
 require('./../../../js/external/modified/bs_datepicker.js');
-// require('script!php-date-formatter'); //no css
-require('script!jquery-datetimepicker');
+// require('script-loader!php-date-formatter'); //no css
+require('script-loader!jquery-datetimepicker');
 
 //CORE ANTARES
 require('./../../../js/forms.js');

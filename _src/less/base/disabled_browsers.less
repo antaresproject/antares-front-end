@@ -1,39 +1,28 @@
 //
-// Disabled Browsers for Disabled
+// "DIFFERENT" BROWSERS
 //
 
 @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
-
 	.select2 {
-		flex-basis:40px;
-		min-width:90px;
+		flex-basis: 40px;
+		min-width: 90px;
 	}
-
-
-
 
 }
 
 //IE11 max768
+@media screen and (-ms-high-contrast:active) and @xs, (-ms-high-contrast:none) {
+	aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu.mobile-ddowns__menu--user .flex-block__title {
+		min-height: 60px;
+	}
 
-@media screen and (-ms-high-contrast:active) and @xs, (-ms-high-contrast:none) { 
-		aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu.mobile-ddowns__menu--user .flex-block__title {
-			min-height:60px;
-		}
 }
-
 
 // Safari 
-_::-webkit-:not(:root:root), .select2-dropdown {
-
-	width:240px !important;
+_::-webkit-:not(:root:root),.select2-dropdown {
+	width: 240px !important;
 }
-
 
 .main-head {
-	max-height:88px;
-}
-
-.timeline {
-	// min-height: 200px;
+	max-height: 88px;
 }

@@ -1,134 +1,146 @@
-.avatar
-{
+//
+// Avatar Component
+//
+
+
+
+
+.avatar {
     position: relative;
-
+    // margin-right: 18px;
+    //comments component mod
+    // margin-right: 12px;
     display: flex;
-
     justify-content: center;
     align-items: center;
+    
+    
     .avatar-filter();
-    img
-    {
+
+    img {
         min-width: 100%;
-
-        transition: @transition;
-
+        transition:@transition;
         border-radius: 50%;
     }
-    &.avatar--active
-    {
-        &:after
-        {
-            position: absolute;
-            right: -5px;
-            bottom: -5px;
 
+    //
+    // STATES
+    //
+
+    &.avatar--active {
+        &:after {
+            content: "";
             width: 7px;
             height: 7px;
-
-            content: '';
-
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background-color: @color-success;
             border: 5px solid @secondary-bg-lighten5;
             border-radius: 50%;
-            background-color: @color-success;
         }
-    }
-    &.avatar--warning
-    {
-        &:after
-        {
-            position: absolute;
-            right: -5px;
-            bottom: -5px;
 
+    }
+
+    &.avatar--warning {
+        &:after {
+            content: "";
             width: 10px;
             width: 10px;
             height: 10px;
-
-            content: '';
-
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background-color: @color-warning;
             border: 5px solid @secondary-bg-lighten5;
             border-radius: 50%;
-            background-color: @color-warning;
         }
-    }
-    &.avatar--generic
-    {
-        display: flex;
 
+    }
+
+    //Generic
+    &.avatar--generic {
         width: 40px;
         min-width: 40px;
         height: 40px;
-
-        border-radius: 50%;
-        background-color: @secondary-bg-lighten3;
-
+        display: flex;
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        &:before
-        {
-            font: normal normal normal 21px/1 'Material-Design-Iconic-Font';
+        background-color: @secondary-bg-lighten3;
+        border-radius: 50%;
 
+        &:before {
             content: '\f3e1';
-
+            font: normal normal normal 21px/1 'Material-Design-Iconic-Font';
             color: @fff;
-
             .mdl-font();
         }
-        *
-        {
+
+        * {
             display: none;
         }
+
     }
-    &.avatar--lg
-    {
+
+    //
+    // SIZES 
+    //
+
+    //Big
+    &.avatar--lg {
         min-width: 60px;
-        img
-        {
-            max-width: 60px;
-            max-height: 60px;
+
+        img {
+            max-width:60px;
+            max-height:60px;
         }
-        &:after
-        {
+
+        &:after {
             width: 10px;
             height: 10px;
         }
+
     }
-    &.avatar--xs
-    {
+
+    //Small
+    &.avatar--xs {
         min-width: 40px;
-        img
-        {
-            max-width: 40px;
-            max-height: 40px;
+
+
+        img {
+            max-width:40px;
+            max-height:40px;
         }
-        &:after
-        {
+
+        &:after {
             width: 7px;
             height: 7px;
         }
+
     }
+
 }
 
-.flex-block
-{
-    .avatar
-    {
-        &:after
-        {
+//modifiers
+//white bg on contact list
+
+.flex-block {
+    .avatar {
+        &:after {
             border: 5px solid @fff;
         }
+
     }
+
 }
 
-.card--comments
-{
-    .avatar
-    {
-        &:after
-        {
+.card--comments {
+    .avatar {
+        &:after {
             border: 5px solid @tetriary-bg;
         }
+
     }
+
 }

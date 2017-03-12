@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Antares Steps Page</title>
+    <% include ../layout/color_template %> 
+    <% include ../layout/css_files %>
+</head>
+<body>
+<div id="app-wrapper">
+    <% include ../layout/sidebar %>
+    <div class="app-content page-create">
+        <% include ../layout/mainhead %> 
+        <% include ../layout/sidebar_notifications %>
+        <section class="main-content nopadding">
+            <div class="grid-container grid-container--2col grid-container--no-padd">
+                <div class="grid-col grid-col--menu">
+                    <div class="menu-aside-container">
+                        <ul class="menu-aside menu-aside--steps">
+                            <li class="is-complete">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>1</span></span><span>Group Settings</span>
+                                </a>
+                            </li>
+                            <li class="is-active">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>2</span></span><span>Users</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>3</span></span><span>Synchronization</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>4</span></span><span>Summary</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-col grid-col--container">
+                    <!-- FOOTER -->
+                    <!-- PLEASE, DONT TOUCH ME -->
+                    <!-- I'M FEELING REALLY LOW -->
+                    <div class="app-content__footer">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+                            <a href="#" class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Save &amp; Continue <i class="pl8 zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>

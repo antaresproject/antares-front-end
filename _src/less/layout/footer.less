@@ -5,6 +5,7 @@
 // left: calc(98px + 338px + 24px);
 
 // 
+
 .app-content__footer {
 	width: 100%;
 	height: @footer-h;
@@ -25,7 +26,7 @@
 		margin-bottom: 0;
 	}
 
-}
+} 
 
 @media screen and (max-width:992px) and (min-width:768px) {
 	.col-group {
@@ -57,8 +58,7 @@
 
 //when side menu
 .grid-container--2col {
-
-	.app-content__footer{
+	.app-content__footer {
 		left: ~'calc(98px + 338px + 24px)';
 	}
 
@@ -73,45 +73,38 @@
 
 //when no side menu
 .grid-container--1col {
-
 	.app-content__footer {
 		left: ~'calc(98px + 24px)';
 	}
 
 	.app-content__footer {
 		margin-left: 0;
-	    width: ~'calc( 100% - (24px + 24px + 98px))';
+		width: ~'calc(100% - (24px + 24px + 98px))';
 
-	    @media @xs {
-		    left: 24px;
-		    width: ~'calc(100% - 48px)';
-	    }
+		@media @xs {
+			left: 24px;
+			width: ~'calc(100% - 48px)';
+		}
+
 	}
-
 
 }
 
-
-
 @media @xs {
-
 	#app-wrapper {
-
 		.app-content__footer {
-
-		width:100%;
-		padding:0 24px;
-		height:65px;
-		margin:0;
-		left:0;
+			width: 100%;
+			padding: 0 24px;
+			height: 65px;
+			margin: 0;
+			left: 0;
 		}
 
-
 		.btn-group {
-		    display: flex;
-		    justify-content: flex-end;
-		    width: 100%;
-		    flex-flow: row nowrap;
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			flex-flow: row nowrap;
 		}
 
 	}

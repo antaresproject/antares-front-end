@@ -3,6 +3,8 @@
 //
 
 //variables:
+
+
 .main-menu-indicator {
     width: 0;
     height: 0;
@@ -16,10 +18,9 @@
 }
 
 //general:
+
 aside.main-sidebar {
-
     ul {
-
         li {
             //triangle indicator based on app background
             &.submenu-open > a {
@@ -37,7 +38,6 @@ aside.main-sidebar {
 
     ul.main-menu,
     ul.main-menu.main-menu--secondary {
-
         li {
             //triangle indicator based on app background
             &:nth-child(1),
@@ -57,10 +57,9 @@ aside.main-sidebar {
     }
 
     &.main-menu.main-menu--brand {
-
         li {
             //triangle indicator based on app background
-            &:nth-child(1){
+            &:nth-child(1) {
                 &.submenu-open > a {
                     //traingle indicator of open menu
                     &:after {
@@ -75,37 +74,39 @@ aside.main-sidebar {
 
     }
 
-&.main-sidebar--expanded {
-    @media @min768 {
-        ul.main-menu >li.has-submenu {
-            >a {
-                position: relative;
+    &.main-sidebar--expanded {
+        @media @min768 {
+            ul.main-menu >li.has-submenu {
+                >a {
+                    position: relative;
 
-                &:before {
-                    display: inline-block;
-                    position: absolute;
-                    top: 19px;
-                    right: 22px !important;
-                    content: '\f2f6';
-                    font-size: 19px;
-                    color: #666e80;
-                    display: inline-block;
-                    font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
-                    text-rendering: auto;
-                    -webkit-font-smoothing: antialiased;
-                    border: 0;
-                    width: auto !important;
+                    &:before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 19px;
+                        right: 22px !important;
+                        content: '\f2f6';
+                        font-size: 19px;
+                        color: #666e80;
+                        display: inline-block;
+                        font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        border: 0;
+                        width: auto !important;
+                    }
+
+                    &:after {
+                        top: 19px;
+                    }
+
                 }
 
-                &:after {
-                    top: 19px;
-                }
+                &:hover {
+                    >a:before {
+                        color: #fff;
+                    }
 
-            }
-
-            &:hover {
-                >a:before {
-                    color: #fff;
                 }
 
             }
@@ -113,7 +114,5 @@ aside.main-sidebar {
         }
 
     }
-
-}
 
 }

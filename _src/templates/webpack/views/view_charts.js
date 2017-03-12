@@ -1,8 +1,8 @@
 var path = './../../../';
 
 // EXTERNAL DEPS:
-require('script!d3');  //no css
+require('script-loader!d3');  //no css
 // APP COMPONENTS: 
 require('./../../../js/chartsView.js');
-// require('script!d3tip'); // psuje wszystko jebany
+// require('script-loader!d3tip'); // psuje wszystko jebany
 

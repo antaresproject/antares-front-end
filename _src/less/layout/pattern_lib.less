@@ -7,10 +7,85 @@
 @pat-menu-bg: #fff;
 @pat-menu-width: 220px;
 
-
 //highlight js
-.hljs{display:block;overflow-x:auto;padding:0.5em;background:#F0F0F0}.hljs,.hljs-subst{color:#444}.hljs-comment{color:#888888}.hljs-keyword,.hljs-attribute,.hljs-selector-tag,.hljs-meta-keyword,.hljs-doctag,.hljs-name{font-weight:bold}.hljs-type,.hljs-string,.hljs-number,.hljs-selector-id,.hljs-selector-class,.hljs-quote,.hljs-template-tag,.hljs-deletion{color:#880000}.hljs-title,.hljs-section{color:#880000;font-weight:bold}.hljs-regexp,.hljs-symbol,.hljs-variable,.hljs-template-variable,.hljs-link,.hljs-selector-attr,.hljs-selector-pseudo{color:#BC6060}.hljs-literal{color:#78A960}.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-addition{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta-string{color:#4d99bf}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #F0F0F0
+}
 
+.hljs,
+.hljs-subst {
+	color: #444
+}
+
+.hljs-comment {
+	color: #888888
+}
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-name {
+	font-weight: bold
+}
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+	color: #880000
+}
+
+.hljs-title,
+.hljs-section {
+	color: #880000;
+	font-weight: bold
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+	color: #BC6060
+}
+
+.hljs-literal {
+	color: #78A960
+}
+
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+	color: #397300
+}
+
+.hljs-meta {
+	color: #1f7199
+}
+
+.hljs-meta-string {
+	color: #4d99bf
+}
+
+.hljs-emphasis {
+	font-style: italic
+}
+
+.hljs-strong {
+	font-weight: bold
+}
 
 //general
 .page-pattern-lib {
@@ -24,7 +99,6 @@
 	&:before {
 		display: none;
 	}
-
 
 	.CodeMirror {
 		height: auto;
@@ -40,10 +114,10 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
 
 	img {
-		margin-bottom:32px;
+		margin-bottom: 32px;
 	}
 
 	ul {
@@ -63,7 +137,6 @@
 
 	> ul {
 		> li {
-
 			>ul {
 				margin-left: 24px;
 
@@ -77,13 +150,12 @@
 				display: none;
 			}
 
-
 			a {
 				font-size: 13px;
 			}
 
 			> a {
-				font-size:14px;
+				font-size: 14px;
 			}
 
 		}
@@ -103,8 +175,6 @@
 }
 
 .pattern-content {
-
-
 	// height: 100vh;
 	// overflow: scroll;
 	// background: #fff;
@@ -121,20 +191,18 @@
 		font-weight: 300;
 
 		img {
-			margin-right:24px;
+			margin-right: 24px;
 		}
 
 	}
 
 	span.featured {
-		display:inline-block;
-		background:#eee;
-	    padding: 0 8px;
-	    margin-right: 16px;
-	    font-size: 12px;
+		display: inline-block;
+		background: #eee;
+		padding: 0 8px;
+		margin-right: 16px;
+		font-size: 12px;
 	}
-
-
 
 }
 
@@ -144,19 +212,18 @@
 	margin: 32px 0;
 	padding: 24px;
 	border: 1px solid #d0d0d0;
-
-
 }
 
 .molecule {
 	padding: 24px;
 	border: 1px solid #d0d0d0;
 	margin: 32px 0;
-	transition:500ms;
+	transition: 500ms;
 
 	&:hover {
-		background-color:rgba(255, 255, 255, 0.25);
+		background-color: rgba(255, 255, 255, 0.25);
 	}
+
 }
 
 //code & preview & desc on before element
@@ -197,9 +264,9 @@
 	position: relative;
 	margin-top: 24px;
 	padding-top: 32px;
- 	box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
-    max-width: 100%;
-    min-height:70px;
+	box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+	max-width: 100%;
+	min-height: 70px;
 
 	&:before {
 		.meta-section-title();
@@ -217,11 +284,12 @@
 
 	}
 
-
 	//adjustments to elements
-	form, fieldset {
-    	width: 100%;
+	form,
+	fieldset {
+		width: 100%;
 	}
+
 	.form-block {
 		flex: 1;
 		// margin-bottom: 0;
@@ -240,7 +308,6 @@
 
 	& + .CodeMirror {
 		box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
-
 	}
 
 	&:before {
@@ -256,8 +323,8 @@
 	padding: 24px;
 	background: #fff;
 	padding-top: 32px;
-	 box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
-	font-size:16px;
+	box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+	font-size: 16px;
 
 	&:before {
 		.meta-section-title();
@@ -270,4 +337,3 @@
 .select2-container .select2-selection--multiple .select2-selection__rendered input.select2-search__field {
 	outline: none;
 }
-

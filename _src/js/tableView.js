@@ -8,7 +8,7 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Antares Front-end
+ * @package    Files
  * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
@@ -18,8 +18,30 @@
 
 */
 
+import { Antares } from './mechanics';
 
-AntaresTableView = function() {};
+if ($('.page-datatables.page-vue-datatables').length) {
+
+
+var Vue = require('vue');
+
+var pageClientsList = new Vue({
+    name: 'Clients List',
+    el: 'vue-page-clients-list',
+    template: '#vue-page-clients-list',
+    // components: {
+    //     'card-chart-billing': cardChartBilling,
+    //     'card-chart-tickets': cardChartTickets,
+    //     'card-chart-orders': cardChartOrders,
+    //     'card-chart-subscriptions': cardChartSubscriptions,
+    //     'card-info': cardInfo,
+    // }
+});
+
+
+}
+
+var AntaresTableView = function() {};
 AntaresTableView.datatables = AntaresTableView.datatables || {};
 
 AntaresTableView.prototype.init = function() {
@@ -49,9 +71,9 @@ AntaresTableView.prototype.init = function() {
 
             $('.billevo-table').find('thead th').each(function(index, el) {
 
-                if ( $(this).text() !== '' ) {
+                if ($(this).text() !== '') {
                     $('.ddown--columns .ddown__menu').append(columnLi);
-                    $('.ddown--columns .ddown__menu li:last-child a span').text( $(this).text() );
+                    $('.ddown--columns .ddown__menu li:last-child a span').text($(this).text());
                 }
 
             });
@@ -64,14 +86,14 @@ AntaresTableView.prototype.init = function() {
 
                 // order / index
                 var order = $(this).index();
-                if ( oTable.column( order ).visible() === true ) {
-                    oTable.column( order ).visible(false);
+                if (oTable.column(order).visible() === true) {
+                    oTable.column(order).visible(false);
                 } else {
-                    oTable.column( order ).visible(true);
+                    oTable.column(order).visible(true);
                 }
-                
+
             });
-            
+
 
         }
 
@@ -175,13 +197,13 @@ AntaresTableView.prototype.datatables = {
             return nRow;
         },
         //disable sorting
-        "columnDefs": [{
-            "targets": 'no-sort',
-            "orderable": false,
-        },{
-            "width": "auto", 
-            "targets": 0,
-        }],
+        // "columnDefs": [{
+        //     "targets": 'no-sort',
+        //     "orderable": false,
+        // },{
+        //     "width": "150px", 
+        //     "targets": 0,
+        // }],
         "order": [
             // [1, "desc"]
         ],
@@ -201,7 +223,7 @@ AntaresTableView.prototype.datatables = {
         // scroller:       true,
         //default sorting
         "asSorting": ["asc"],
-        "aTargets": [5],
+        "aTargets": [2],
         //select search
         initComplete: function() {
 
@@ -243,18 +265,18 @@ AntaresTableView.prototype.datatables = {
             // "lengthMenu"  : "_MENU_ records per page",
             "sLengthMenu": "_MENU_",
         },
-      // "columns": [
-      //   { "width": "100px" },
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null
-      // ]
+        // "columns": [
+        //   { "width": "100px" },
+        //   null,
+        //   null,
+        //   null,
+        //   null,
+        //   null,
+        //   null,
+        //   null,
+        //   null,
+        //   null
+        // ]
     },
     delay: (function() {
         var timer = 0;
@@ -348,11 +370,11 @@ AntaresTableView.prototype.datatables = {
 
                     $(this).closest('table').find('tr').removeClass('is-selected');
                     $(this).addClass('is-selected');
-     // if ($(this).closest('table').find('tr.is-selected').length > 1) {
-     //                        $(this).find('#table-ma').attr("disabled", false);
-     //                    } else {
-     //                        $(this).find('#table-ma').prop("disabled", true);
-     //                    }
+                    // if ($(this).closest('table').find('tr.is-selected').length > 1) {
+                    //                        $(this).find('#table-ma').attr("disabled", false);
+                    //                    } else {
+                    //                        $(this).find('#table-ma').prop("disabled", true);
+                    //                    }
 
                 });
 
@@ -360,7 +382,7 @@ AntaresTableView.prototype.datatables = {
                     $(this).find('tr').removeClass('is-selected');
 
                 });
-        
+
 
 
             } else {
@@ -693,6 +715,6 @@ function multiSelect(o) {
 })(window, document, jQuery);
 
 $(function() {
-    window.AntaresTableView = new AntaresTableView();
+    AntaresTableView = new AntaresTableView();
     AntaresTableView.init();
 });

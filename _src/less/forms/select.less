@@ -133,7 +133,9 @@
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
-  width: 1px !important; }
+  width: 1px !important; 
+
+}
 
 .select2-container--mdl .select2-selection--single {
   background-color: #fff;
@@ -1474,4 +1476,30 @@ body .select2-results>.select2-results__options {
     position: relative;
     max-height: 50vh;
 
+}
+@media @xs {
+  .select2-container--translations{
+    left: 0 !important;
+
+    width: 100%;
+    .select2-dropdown{
+      transform: translateY(9px);
+      background: #f0f2f5;
+      width: 100% !important;
+      ul.select2-results__options li.select2-results__option[aria-selected="true"]{
+        background: transparent;
+      }
+      .select2-search{
+        background: transparent;
+        border-bottom: 1px solid #dadce0;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        padding-left: 0;
+        input{
+          background: transparent;      
+        }
+      }
+    }
+  }
 }
