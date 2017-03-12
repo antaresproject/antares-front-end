@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! Antares_Front-End - v0.9.1 - 2017-03-12 */
+/*! Antares_Front-End - v0.9.1 - 2017-03-13 */
 /*------------------------------------*\
     -- APP COLORS
 \*------------------------------------*/
@@ -819,6 +819,11 @@ i.zmdi-help-outline.help--trigger:hover {
 }
 ::selection {
   background: #5dccfe;
+  text-shadow: none;
+}
+#main-search::selection {
+  background: #fff;
+  color: #000;
   text-shadow: none;
 }
 .flex-sb {
@@ -2022,10 +2027,8 @@ dialog + .backdrop {
   left: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-/* for small devices, modal dialogs go full-screen */
 @media screen and (max-width: 540px) {
   dialog[_polyfill_modal] {
-    /* TODO: implement */
     top: 0;
     width: auto;
     margin: 1em;
@@ -5296,6 +5299,14 @@ a.disabled {
 }
 .main-head__alerts i {
   font-size: 24px;
+}
+#main-search::selection {
+  background: #fff;
+  color: #000;
+  text-shadow: none;
+}
+.main-head .search-box .mdl-textfield__label:after {
+  background-color: #ffffff;
 }
 table.dataTable.no-footer {
   border-bottom: 0;
