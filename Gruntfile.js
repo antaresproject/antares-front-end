@@ -1,9 +1,20 @@
+var intro = `
+  █████╗ ███╗   ██╗████████╗ █████╗ ██████╗ ███████╗███████╗
+ ██╔══██╗████╗  ██║╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██╔════╝
+ ███████║██╔██╗ ██║   ██║   ███████║██████╔╝█████╗  ███████╗
+ ██╔══██║██║╚██╗██║   ██║   ██╔══██║██╔══██╗██╔══╝  ╚════██║
+ ██║  ██║██║ ╚████║   ██║   ██║  ██║██║  ██║███████╗███████║
+ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝                                                                                                                                                                                                                          
+`;
+console.log(intro);
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
 
         //  __   __   __   ___ 
-        // /  ` /  \ |__) |__  
+        // /  ` /  \ |__) |__ 
+         
         // \__, \__/ |  \ |___ 
 
         pkg: grunt.file.readJSON('package.json'),
@@ -36,6 +47,16 @@ module.exports = function(grunt) {
                     '_src/css/codeflow.css': '_src/less/codeflow.less'
                 }
             },
+            mainLight: {
+                options: {
+                    sourceMap: false,
+                    sourceMapFileInline: false,
+                    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+                },
+                files: {
+                    '_src/css/codeflow-light.css': '_src/less/codeflow-light.less'
+                }
+            },
             external: {
                 options: {
                     sourceMap: false,
@@ -45,19 +66,23 @@ module.exports = function(grunt) {
                 files: {
                     '_src/css/external.css': '_src/less/external.less'
                 }
+            },
+            externalLight: {
+                options: {
+                    sourceMap: false,
+                    sourceMapFileInline: false,
+                    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+                },
+                files: {
+                    '_src/css/external-light.css': '_src/less/external-light.less'
+                }
             }
         },
         postcss: {
             options: {
-                // map: {
-                //     inline: false, // save all sourcemaps as separate files...
-                //     // annotation: 'dist/css/maps/' // ...to the specified directory
-                //     prev: '_src/css/',
-                // },
                 processors: [
                     // require('pixrem')(), // add fallbacks for rem units
-
-                    require('rucksack-css'),
+                    // require('rucksack-css'),
                     // add vendor prefixes
                     require('autoprefixer')({
                         browsers: ['last 6 versions']
@@ -67,28 +92,28 @@ module.exports = function(grunt) {
                     require('postcss-zindex'),
 
                     // //merge same rules
-                    // require('postcss-merge-rules'),
+                    require('postcss-merge-rules'),
                     // //sort
 
 
-                    // require('css-declaration-sorter')({
-                    //     order: 'smacss'
-                    // }),
+                    require('css-declaration-sorter')({
+                        order: 'smacss'
+                    }),
 
-                    //join media querries
+                    // join media querries
                     require('css-mqpacker'),
 
-                    require('postcss-unique-selectors'),
-                    require('postcss-discard-unused'),
-                    require('postcss-discard-empty'),
-                    require('postcss-discard-duplicates'),
+                    // require('postcss-unique-selectors'),
+                    // require('postcss-discard-unused'),
+                    // require('postcss-discard-empty'),
+                    // require('postcss-discard-duplicates'),
 
                     // need config in future
                     // require("stylelint")(),
 
-                    require('cssnano')({
-                        discardUnused: {fontFace: false}
-                    }),
+                    // require('cssnano')({
+                    //     discardUnused: {fontFace: false}
+                    // }),
 
                 ],
             },
@@ -96,24 +121,19 @@ module.exports = function(grunt) {
                 src: '_src/css/codeflow.css',
                 dest: '_dist/css/antares.css'
             },
-            framework: {
-                src: '_src/css/antares_framework.css',
-                dest: '_dist/css/antares_framework.css'
-            },
-            login: {
-                src: '_src/css/login.css',
-                dest: '_dist/css/login.css'
-            },
-            bower_assets: {
-                src: '_src/css/bower_assets.css',
-                dest: '_dist/css/bower_assets.css'
+            mainLight: {
+                src: '_src/css/codeflow-light.css',
+                dest: '_dist/css/antares-light.css'
             },
             external: {
                 src: '_src/css/external.css',
                 dest: '_dist/css/external.css'
+            },
+            externalLight: {
+                src: '_src/css/external-light.css',
+                dest: '_dist/css/external-light.css'
             }
         },
-
 
     });
 
@@ -136,6 +156,7 @@ module.exports = function(grunt) {
         grunt.loadNpmTasks('grunt-contrib-less');
         grunt.loadNpmTasks('grunt-postcss');
         grunt.task.run('less:main', 'less:external', 'postcss:main', 'postcss:external');
+        // grunt.task.run('less:mainLight', 'less:externalLight', 'postcss:mainLight', 'postcss:externalLight');
     });
 
     // STYLES with dist clean
@@ -144,6 +165,7 @@ module.exports = function(grunt) {
         grunt.loadNpmTasks('grunt-contrib-less');
         grunt.loadNpmTasks('grunt-postcss');
         grunt.task.run('clean', 'less:main', 'less:external', 'postcss:main', 'postcss:external');
+        // grunt.task.run('clean', 'less:mainLight', 'less:externalLight', 'postcss:mainLight', 'postcss:externalLight');
     });
 
 };
