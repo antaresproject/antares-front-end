@@ -15,7 +15,6 @@ const banner = `
  * @copyright  (c) 2017, Antares Project
  * @link       http://antaresproject.io
  * 
-
 `;
 
 var path = require('path');
@@ -29,9 +28,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var HappyPack = require('happypack');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
-var OfflinePlugin = require('offline-plugin');
 
 module.exports = {
 
@@ -47,8 +43,8 @@ module.exports = {
         'view_gridstack': ['./_src/templates/webpack/views/view_gridstack.js']
     },
     output: {
-        path: "_dist/",
-        filename: "js/[name].js"
+        path: path.join(__dirname, '_dist/'),
+        filename: "js/[name].js",
     },
     module: {
         rules: [{
@@ -124,7 +120,6 @@ module.exports = {
     },
     plugins: [
         new webpack.BannerPlugin(banner),
-        new DashboardPlugin(),
         new ProgressBarPlugin(),
         new HappyPack({
             loaders: ['babel?presets[]=babili'],
@@ -427,5 +422,6 @@ module.exports = {
         //     },
         //     logo: './_src/img/theme/antares/logo/logo_circle.png',
         // }),
-    ],
+    ]
+
 };
