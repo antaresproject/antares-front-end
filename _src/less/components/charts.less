@@ -128,7 +128,7 @@
 	}
 
 	&#chart--client-value {
-		@c: @primary-bg-lighten6;
+		@c: lighten(@primary-bg, 6%);
 		@c: lighten(@primary-bg, 12%);
 
 		.lineChart--area {
@@ -136,7 +136,7 @@
 		}
 
 		.lineChart--areaLine {
-			stroke: darken(@primary-bg-lighten6, 10%);
+			stroke: darken(lighten(@primary-bg, 6%), 10%);
 		}
 
 	}

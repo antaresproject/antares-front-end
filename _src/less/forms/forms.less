@@ -225,7 +225,7 @@
 	input {
 		border: 1px solid #dadce0;
 		border-radius: 2px;
-		background-color: @fff;
+		background-color: #fff;
 		font-size: 13px;
 		color: @primary-c;
 		padding: 0 @unit1;
@@ -299,7 +299,7 @@
 	textarea {
 		border: 1px solid #dadce0;
 		border-radius: 2px;
-		background-color: @fff;
+		background-color: #fff;
 		font-size: 13px;
 		color: @primary-c;
 		padding: @unit1 @unit1;
@@ -528,7 +528,7 @@
 				background: @primary-bg;
 				font-size: 13px;
 				text-transform: uppercase;
-				color: @fff;
+				color: #fff;
 				padding: 0 @unit2;
 				.flex-center();
 			}
@@ -608,7 +608,7 @@
 		padding: 0 8px;
 		border: 1px solid #dadce0;
 		border-radius: 3px;
-		background-color: @fff;
+		background-color: #fff;
 		color: @primary-c;
 		font-size: 13px;
 		// width: 100%;
@@ -699,7 +699,7 @@
 			position: absolute;
 			top: -15px;
 			right: 7px;
-			color: @fff;
+			color: #fff;
 			font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
 			text-rendering: auto;
 			content: '\f2f8';
@@ -729,7 +729,7 @@
 		//search input
 		.selectivity-search-input {
 			border: 0;
-			color: @secondary-bg-lighten45;
+			color: lighten(@secondary-bg, 45%);
 			font-size: 13px;
 			position: relative;
 		}
@@ -771,10 +771,10 @@
 	padding: 0 @unit1;
 	border: 1px solid #dadce0;
 	border-radius: 2px;
-	background-color: @fff;
+	background-color: #fff;
 	color: @primary-c;
 	font-size: 13px;
-	background: @fff;
+	background: #fff;
 	position: relative;
 	width: @datepicker-width;
 	font-family: Roboto;
@@ -865,7 +865,7 @@
 
 	.comiseo-daterangepicker-triggerbutton {
 		border:0;
-		background:@fff;
+		background:#fff;
 		width:auto;
 		min-width:auto;
 		margin-right:@unit1;
@@ -973,7 +973,7 @@
 	.ui-datepicker th {
 		font-weight: 500;
 		font-size: 10px;
-		color: @secondary-bg-lighten45;
+		color: lighten(@secondary-bg, 45%);
 
 		span {
 			text-transform: uppercase;
@@ -1186,7 +1186,7 @@
 			left: 8px;
 			z-index: 1;
 			content: "on";
-			color: @fff;
+			color: #fff;
 			font-size: 10px;
 			font-weight: 300;
 			text-transform: uppercase;
@@ -1220,7 +1220,7 @@
 			left: 8px;
 			z-index: 1;
 			content: "on";
-			color: @fff;
+			color: #fff;
 			font-size: 10px;
 			font-weight: 300;
 			text-transform: uppercase;
@@ -1257,7 +1257,7 @@
 			top: 0px;
 			right: auto;
 			left: 10px;
-			color: @fff;
+			color: #fff;
 			font-family: 'Material-Design-Iconic-Font';
 			font-size: 15px;
 		}
@@ -1321,7 +1321,7 @@
 		display: block;
 		height: 18px;
 		width: 18px;
-		background-color: @fff;
+		background-color: #fff;
 		-webkit-border-radius: 12px;
 		border-radius: 12px;
 		-webkit-transition: all ease .3s;
@@ -1339,7 +1339,7 @@
 		left: 8px;
 		z-index: 1;
 		content: "on";
-		color: @fff;
+		color: #fff;
 		font-size: 10px;
 		font-weight: 300;
 		text-transform: uppercase;
@@ -1478,7 +1478,7 @@
 	width: 19px;
 	min-width: 19px;
 	margin: 0 10px 0 0;
-	background-color: @fff;
+	background-color: #fff;
 	border: 2px solid #dadce0;
 	border-radius: 2px;
 	transition: 0.15s ease-in-out;
@@ -1536,7 +1536,7 @@
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	color: @fff;
+	color: #fff;
 	font-size: 19px;
 	content: '\f26b';
 	font-family: 'Material-Design-Iconic-Font';
@@ -1618,7 +1618,7 @@
 		&:focus,
 		&:active {
 			outline: 0;
-			background: @primary-bg-lighten2;
+			background: lighten(@primary-bg, 2%);
 		}
 
 		//when moving
@@ -1670,7 +1670,7 @@ position:relative;
 		    padding: 0 @unit1;
 		    border: 1px solid #dadce0;
 		    border-radius: 2px;
-		    background-color: @fff;
+		    background-color: #fff;
 		    color: @primary-c;
 		    font-size: 13px;
 		    margin:0;
@@ -1771,7 +1771,7 @@ position:relative;
 		min-height:@unit4;
 		padding: @unit2;
 		border:1px solid @input-border;
-		background:@fff;
+		background:#fff;
 		position: relative;
 		text-align: left;
 
@@ -2063,7 +2063,8 @@ form {
 }
 
 form.form--hor {
-@label-width: auto;
+	@label-width: auto;
+
 	legend {
 		padding-left:0;
 	}
@@ -2184,3 +2185,22 @@ section.form-blocks--hor {
 
 }
 
+
+.form-block.ai-fs {
+
+	.form-block__name {
+		padding-top:8px;
+	}
+}
+
+#app-wrapper form.form--hor {
+
+	.form-block {
+		align-items:flex-start;
+
+		label.form-block__name {
+			padding-top:8px;
+		}
+
+	}
+}

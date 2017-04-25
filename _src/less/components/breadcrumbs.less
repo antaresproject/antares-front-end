@@ -2,6 +2,12 @@
 // Breadcrumbs Component
 //
 
+// Variables
+
+@main-head-height: 40px;
+
+// Code
+
 .breadcrumbs {
     list-style-type: none;
     margin: 0;
@@ -15,7 +21,7 @@
     font-size: 16px;
     font-weight: 600;
     height: 100%;
-    // color: @primary-bg-lighten43;
+    // color: lighten(@primary-bg, 4%)3;
     color: lighten(@primary-bg, 20%);
 
     @media @max1050 {
@@ -50,7 +56,7 @@
         }
         &:last-child {
             // a {
-            //     color:@fff !important;
+            //     color:#fff !important;
             // }
 
             .ddown__init {
@@ -66,7 +72,7 @@
             content: '\f2fb';
             font: normal normal normal 18px/1 'Material-Design-Iconic-Font';
             padding-right: 20px;
-            color: @primary-bg-lighten43;
+            color: lighten(@primary-bg, 4%)3;
             position: absolute;
             top: 11px;
             left: -11px;
@@ -85,7 +91,7 @@
             white-space: nowrap;
             overflow: hidden;
             font-weight:500;
-            color:@fff;
+            color:#fff;
 
         }
 
@@ -98,14 +104,14 @@
         //
 
         // &:hover {
-        //     background: @primary-bg-lighten4;
+        //     background: lighten(@primary-bg, 4%);
         //     border-radius: 3px;
         //     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         // }
 
 
         &.is-active {
-            background: @primary-bg-lighten4;
+            background: lighten(@primary-bg, 4%);
             border-radius: 3px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
@@ -130,7 +136,7 @@
         &:last-child {
             // margin-right: 0;
 
-            color:@fff;
+            color:#fff;
         }
 
         &.dropdown {
@@ -140,7 +146,7 @@
                 .mdl-font();
                 font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
                 content: '\f2f2';
-                color: @fff;
+                color: #fff;
                 padding-left: 9px;
             }
 
@@ -152,12 +158,12 @@
     //modifiers
 
     &.breadcrumbs--dark {
-        color: @secondary-bg-lighten5;
+        color: lighten(@secondary-bg, 5%);
 
         >li {
             
             &:last-child {
-                color:@secondary-bg-lighten5;
+                color:lighten(@secondary-bg, 5%);
             }
         }
     }

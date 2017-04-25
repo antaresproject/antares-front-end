@@ -3,131 +3,28 @@
 \*------------------------------------*/
 
 .truncate(@width) {
-  max-width: @width;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.keyframes(@name;@arguments) {
-	
-	@-moz-keyframes @name {
-		@arguments();
-	}
-
-	@-webkit-keyframes @name {
-		@arguments();
-	}
-
-	@keyframes @name {
-		@arguments();
-	}
-
+    overflow: hidden;
+    max-width: @width;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .avatar-filter {
-    &:hover {
-        .avatar {
-            img {
-                filter: @avatar-filter;
-            }
-        }
+    &:hover .avatar img {
+        filter: @avatar-filter;
     }
 }
 
-//date-releated information
-@cache: `( new Date() ).getTime()` ;
-
-.showFromTo (@startYear, @startMonth, @startDay, @endYear, @endMonth, @endDay) {
-  @currentTime: `new Date().getTime()`;
-  @start: `new Date(@{startYear}, @{startMonth} - 1, @{startDay}).getTime()`;
-  @end: `new Date(@{endYear}, @{endMonth} - 1, @{endDay}).getTime()`;
-  @displayCheck: `@{currentTime} >= @{start} && @{currentTime} <= @{end} ? true : false`;
-  .display() when (@displayCheck = true) {
-    display:none;
-  }
-  .display();
-}
-
-// .experiment {
-//   .showFromTo(2017, 1, 1, 2017, 12, 31); 
-
-// }
-
-// .experiment2 {
-//   .showFromTo(2016, 1, 1, 2016, 12, 31);
-// }
-
-//MDL FONT
-
-
-
+//distance helperes 
 //extras
 .m0 {
-	margin: 0 !important;
+    margin: 0 !important;
 }
+
 .p0 {
-	margin: 0 !important;
+    margin: 0 !important;
 }
+
 .ml235 {
-	margin-left:235px !important;
+    margin-left: 235px !important;
 }
-
-
-///Position Helpers
-//margin
-//commented for performance
-// .m {
-//     .positionHelper(10, top, t);
-//     .positionHelper(10, right, r);
-//     .positionHelper(10, bottom, b);
-//     .positionHelper(10, left, l);
-// }
-// //padding
-// .p {
-//     .positionHelper(10, top, t);
-//     .positionHelper(10, right, r);
-//     .positionHelper(10, bottom, b);
-//     .positionHelper(10, left, l);
-// }
-// .positionHelper(@i, @dir, @short, @u: px) when (@i > 0) {
-//     .positionHelper((@i - 1), @dir, @short);
-//     &@{short} {.generate(@i*8, @dir)}
-//     &@{short} {.generate(@i*5, @dir)}
-// }
-// //zero
-// .positionHelper(@i, @dir, @short, @u: px) when (@i = 0) {
-//     .positionHelper((@i - 1), @dir, @short);
-//     &@{short} {.generate(0, @dir)}
-// }
-// //init
-// .generate(@value,@dir) {
-//   @unit: e("@{value}px !important");
-//   &@{value} {margin-@{dir}:@unit}
-// }
-
-// //Position Helpers | END
-
-// //width helper - forms
-// .widthHelper (@index) when (@index > 0){
-//   .w@{index}{
-//     @unit: e("@{index}px !important");
-//     width: @unit;
-//     max-width: @unit;
-//   }
-//   .widthHelper(@index - 1);
-// }
-// .widthHelper(600);
-
-// //height helper - forms
-// .heightHelper (@index) when (@index > 0){
-//   .h@{index}{
-//     @unit: e("@{index}px !important");
-//     height: @unit;
-//     max-height: @unit;
-//   }
-//   .heightHelper(@index - 1);
-// }
-// .heightHelper(600);
-
-

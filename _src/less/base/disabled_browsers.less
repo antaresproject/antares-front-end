@@ -2,13 +2,76 @@
 // "DIFFERENT" BROWSERS
 //
 
+
+
+// IE11 Only
 @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+	
+	
 	.select2 {
 		flex-basis: 40px;
 		min-width: 90px;
 	}
 
 }
+
+//Trademark
+
+/* IE11 Only */
+@media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+    // Composed FUll Height Wrapper IE FIX
+    // Many, many tries.
+    #app-wrapper .form-block .input-field.input-field--icon .input-field__icon {
+        top: 16px;
+    }
+    #app-wrapper .grid-container.full-height .grid-col--container {
+        min-height: calc(100vh - 88px);
+        position: absolute;
+        width: calc(100% - 48px);
+    }
+    .form-block {
+        min-height: 80px;
+    }
+    #app-wrapper .form-block .input-field .input-field__inner {
+        width: 100%;
+    }
+    fieldset[data-id="trademark-logo"] {
+        min-height: 300px;
+    }
+    #app-wrapper .mdl-dialog:before {
+        z-index: 99998;
+    }
+    #app-wrapper dialog .mdl-dialog__canvas {
+        z-index: 99999;
+    }
+    fieldset[data-id="event-basic-data"] .input-field.input-field--desc input {
+        min-height: 36px;
+    }
+    fieldset[data-id="notification-parameters"] .input-field.input-field--short + span .form-block__name {
+        margin-left: 30px;
+    }
+    fieldset[data-id="document-template-for-language-english"] .form-block__name > .input-field.input-field--short {
+        -webkit-box-flex: 0;
+            -ms-flex: 0;
+                flex: 0;
+        margin-right: 30px;
+    }
+    .mdl-dialog.ar-dialog[data-dialog-id='wf-rename'] .mdl-dialog__content.ps-container {
+        min-height: 50px;
+        padding-top: 24px !important;
+    }
+    .mdl-dialog.ar-dialog[data-dialog-id='wf-newDir'] .mdl-dialog__content.ps-container {
+        min-height: 50px;
+        padding-top: 24px !important;
+    }
+    .header-translation__compare .form-block {
+        min-height: auto;
+    }
+    .header-translations .header-translation__compare .select2-container {
+        min-width: 190px !important;
+    }
+}
+
 
 //IE11 max768
 @media screen and (-ms-high-contrast:active) and @xs, (-ms-high-contrast:none) {

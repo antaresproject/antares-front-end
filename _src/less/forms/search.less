@@ -18,7 +18,7 @@
 		position: absolute;
 		font: normal normal normal 18px/1 'Material-Design-Iconic-Font';
 		// content: '\f1c3';
-		color: @fff;
+		color: #fff;
 		top: 9px;
 		left: 0;
 		font-size: 24px;
@@ -30,7 +30,7 @@
 		position: absolute;
 		font: normal normal normal 18px/1 'Material-Design-Iconic-Font';
 		content: '\f1c3';
-		color: @fff;
+		color: #fff;
 		// top: 18%;
 		top:7px;
 		left: 0;
@@ -58,19 +58,17 @@
 		border: 0px;
 		padding: 0 16px 0 0px;
 		font-size: 13px;
-		color: @primary-bg-lighten43;
+		color: #fff;
 		height: 39px;
-		border-bottom: 1px solid @primary-bg-darken6;
+		border-bottom: 1px solid #fff;
 		font-weight:400;
 		// width: 233px;
-
 		background: transparent;
-
 		// min-width: 200px;
 
 
 		&::placeholder {
-			color: @primary-bg-lighten43;
+			color: lighten(@primary-bg, 4%);
 			font-weight:400;
 		}
 
@@ -95,7 +93,7 @@
 		width: auto;
 		//label - placeholder
 		.mdl-textfield__label {
-			color: @primary-bg-lighten43;
+			color: #fff;
 			font-size: 13px;
 			font-weight: 400;
 			top: 6px;
@@ -143,7 +141,7 @@
 		}
 
 		&:before, >i {
-			color: @fff;
+			color: #fff;
 		}
 
 		.search-box__search-field {
@@ -322,7 +320,7 @@
 
 
 		.mdl-textfield__label:after {
-			// background-color: @fff;
+			// background-color: #fff;
 		}
 
 	}

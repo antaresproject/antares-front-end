@@ -491,12 +491,6 @@ Antares.prototype.components = {
             // not every request
             restartOnRequestAfter: false
         });
-        // Pace.restart();
-        var timer = 2200;
-        setTimeout(function() {
-            // self.processing = false;
-            // Pace.stop();
-        }, timer);
     },
     colorControl: function() {
         // pallette control

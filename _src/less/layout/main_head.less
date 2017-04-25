@@ -1,6 +1,10 @@
 //
-// | MAIN APP HEAD
+// MAIN APP HEAD
 //
+
+// Variables
+
+@main-head-height: 40px;
 
 .main-head {
     // width: ~'calc(100vw - 96px)';
@@ -12,7 +16,7 @@
     justify-content: flex-start;
     position: relative;
     z-index: 3;
-    transition: @std-transition;
+    transition: @transition;
 
     //padding in structure less
 
@@ -163,7 +167,7 @@
 
 .main-head__settings {
     font-size: 24px;
-    color: @fff;
+    color: #fff;
     cursor: pointer;
     height: 100%;
 }
@@ -175,7 +179,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: @fff;
+    color: #fff;
     height: 100%;
 
     &:active,
@@ -212,23 +216,5 @@
     .item-grp {
         // margin-right: 0 !important;
     }
-
-}
-
-
-#main-search::selection {
-
-    background: #fff;
-    color:#000;
-    text-shadow: none;
-
-}
-
-.main-head .search-box {
-
-    .mdl-textfield__label:after {
-        background-color: #ffffff;
-    }
-
 
 }

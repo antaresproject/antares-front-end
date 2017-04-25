@@ -371,23 +371,6 @@ module.exports = {
             chunks: ['app_cache', 'forms_basic']
         }),
         new HtmlWebpackPlugin({
-            title: 'Login',
-            template: '_src/templates/pages/login.ejs',
-            inject: true,
-            cache: true,
-            hash: true,
-            showErrors: true,
-            minify: {
-                html5: true,
-                removeComments: true,
-                sortClassName: true,
-                preserveLineBreaks: true,
-                collapseWhitespace: true,
-                decodeEntities: true
-            },
-            filename: 'login_page.html'
-        }),
-        new HtmlWebpackPlugin({
             title: 'Table Filter',
             template: '_src/templates/pages/table_filter.ejs',
             inject: true,
@@ -404,24 +387,7 @@ module.exports = {
             },
             filename: 'table_filter.html',
             chunks: ['app_cache', 'forms_basic', 'view_gridstack', 'view_datatables']
-        }),
-        // new FaviconsWebpackPlugin({
-        //     title: 'Antares',
-        //     // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
-        //     icons: {
-        //       android: true,
-        //       appleIcon: true,
-        //       appleStartup: true,
-        //       coast: false,
-        //       favicons: true,
-        //       firefox: true,
-        //       opengraph: false,
-        //       twitter: false,
-        //       yandex: false,
-        //       windows: false
-        //     },
-        //     logo: './_src/img/theme/antares/logo/logo_circle.png',
-        // }),
+        })
     ]
 
 };

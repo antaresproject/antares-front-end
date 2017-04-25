@@ -1,8 +1,6 @@
 //
 // Table View 
 //
-
-
 table.dataTable.no-footer {
     border-bottom: 0;
 }
@@ -17,8 +15,6 @@ table.dataTable {
 }
 
 //end tmp
-
-
 .tbl-c {
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -27,57 +23,43 @@ table.dataTable {
     flex-flow: column nowrap;
     flex: 1;
     height: 100%;
-
     //select
     @media @min768 {
         table td,
         table th {
             user-select: none;
         }
-
     }
-
     //no pagination
     &.no-pagination {
         .dt-area-bottom {
             display: none;
         }
-
     }
-
     @media @xs {
         padding: 0;
     }
-
     table {
         position: relative;
         // padding: 0 @unit3;
-
         @media @xs {
             padding: 0 @unit1;
         }
-
         tr th:first-child {
             padding-left: 30px;
         }
-
         tr th:last-child {
             padding-right: 30px;
         }
-
         tr td,
         tr th {
             border-bottom: 1px solid #f0f2f5;
         }
-
         tr:last-child {
-            td {
-            }
-
+            td {}
         }
-
         tr th {
-            color: @secondary-bg-lighten45;
+            color: lighten(@secondary-bg, 45%);
             text-transform: uppercase;
             font-weight: 500;
             text-align: left;
@@ -85,106 +67,79 @@ table.dataTable {
             // display: flex;
             // align-items: center;
         }
-
         //sorting
         th.sorting_desc,
         th.sorting_asc,
         th.sorting {
             background-image: none;
-
             &:after {
                 .mdl-font();
                 font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
                 padding-left: 5px;
-                color: @secondary-bg-lighten45;
+                color: lighten(@secondary-bg, 45%);
             }
-
         }
-
         //auto sorting hack
-        th:first-child {
-        }
-
+        th:first-child {}
         th.sorting_desc {
             &:after {
                 content: '\f303';
             }
-
         }
-
         th.sorting_asc {
             &:after {
                 content: '\f2fe';
             }
-
         }
-
         th.sorting {
             &:after {
                 content: '\f30c';
             }
-
         }
-
         //sorting | end
-
         td.dt-actions {
             i {
                 position: relative;
                 top: 3px;
             }
-
         }
-
         tr td {
             font-size: 13px;
             color: #5d6166;
             padding: 6px 10px;
             padding-left: 0;
-
             //mass action
             &:last-child,
             &.dt-actions {
                 //mass action align
                 text-align: left;
-
                 i {
                     font-size: 24px;
                     color: #646666;
                     cursor: pointer;
                 }
-
             }
-
             a {
                 font-size: 13px;
-                color: @link-color;
+                color: @color-link;
                 font-weight: normal;
-
                 &:hover {
                     text-decoration: underline;
                 }
-
             }
-
         }
-
         tfoot {
             display: none;
         }
-
         tr td:first-child,
         tr th:first-child {
             padding-left: 13px;
         }
-
         tr td:last-child,
         tr th:last-child {
             padding-right: 13px;
         }
-
     }
-
     //hide
     .dataTables_info,
     .dataTables_paginate,
@@ -192,66 +147,53 @@ table.dataTable {
     #DataTables_Table_0_filter {
         // display: none;
     }
-
     //search disalbe 
     .dataTables_filter {
         display: none;
     }
-
     .dataTables_paginate {
         // margin-top: 20px;
         margin-top: 0;
         padding-top: 0;
-
         .paginate_button {
             padding: 2px 10px;
         }
-
     }
-
 }
 
 #table-ma {
     i {
         color: @primary-c;
     }
-
     &.is-disabled {
         i {
             color: @color-disabled;
         }
-
     }
-
 }
 
 //
 // Table filter component
 //
-
 .card-filter {
     font-size: 13px;
     color: #5c5f66;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-
     //DATErangepicker
     .comiseo-daterangepicker-triggerbutton {
         // display: none;
     }
-
     @media @medium-max {
         display: none;
     }
-
     //active 
     .ddown--filter-edit {
         &.ddown--open {
             .card-filter__sgl.ddown__init {
                 span {
                     position: relative;
-
                     &:after {
                         content: '';
                         width: 100%;
@@ -261,16 +203,11 @@ table.dataTable {
                         bottom: -5px;
                         background-color: @primary-bg;
                     }
-
                 }
-
                 color: @primary-bg;
             }
-
         }
-
     }
-
     .card-filter__sgl {
         display: flex;
         align-items: center;
@@ -279,29 +216,22 @@ table.dataTable {
         animation-duration: 600ms;
         cursor: pointer;
         position: relative;
-
         i {
             margin-left: 16px;
             cursor: pointer;
             font-size: 16px;
-
             &:hover {
                 color: @color-error;
             }
-
         }
-
     }
-
 }
 
 //mods 
-
 .card--tabs {
     table tr td:last-child {
         text-align: left;
     }
-
 }
 
 //modificator
@@ -314,12 +244,10 @@ table.dataTable {
         // padding: 10px 0;
         // padding-top: 0;
     }
-
     .table-controls {
         padding-left: 0;
         padding-right: 0;
     }
-
 }
 
 //zero data
@@ -330,18 +258,15 @@ table.dataTable {
         // padding-top: 16px;
         padding-bottom: 32px;
     }
-
     //hide 
     // .card-ctrls,
     .card-ctrls .card-ctrls__left *,
     .dt-area-bottom {
         // display: none;
     }
-
 }
 
 //select
-
 .ui-selectable-helper {
     position: absolute;
     z-index: 100;
@@ -363,11 +288,8 @@ table.dataTable {
                 background: #9be0ff !important;
                 background: lighten(@primary-bg, 33%) !important;
             }
-
         }
-
     }
-
 }
 
 //hover
@@ -375,21 +297,15 @@ table.billevo-table {
     //hover
     tr:hover {
         cursor: pointer;
-
         td {
             background-color: #f0f2f5;
         }
-
     }
-
 }
 
 //RWD
-
 table {
-    @media @max1000 {
-    }
-
+    @media @max1000 {}
     //collapsed
     //RWD
     &.collapsed {
@@ -404,7 +320,6 @@ table {
                 flex-flow: row nowrap;
                 align-items: center;
                 justify-content: flex-start;
-
                 &:before {
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
@@ -419,52 +334,35 @@ table {
                     padding-right: 8px;
                     padding-left: 8px;
                 }
-
             }
-
         }
-
         .child {
             .dtr-title {
                 &:after {
                     content: ": ";
                 }
-
             }
-
         }
-
         //expanded state
-
         tbody tr.parent {
             td:first-child {
                 &:before {
                     content: '\f2f7';
                 }
-
             }
-
         }
-
     }
-
     //datatable responsive
-
     tr.child {
         td.child {
             ul {
                 .list-clear();
-
                 li {
                     text-align: center;
                 }
-
             }
-
         }
-
     }
-
 }
 
 .dataTables_paginate {
@@ -473,20 +371,16 @@ table {
         color: #5c6066;
         font-size: 20px;
     }
-
 }
 
 #table-ma {
     background: #07b1fd;
-
     &:after {
         color: #fff;
     }
-
     &.is-disabled {
         background: lighten(#07b1fd, 20%);
     }
-
 }
 
 //helpers
@@ -504,32 +398,25 @@ table {
 }
 
 //tmp
-
 @media @max1200 {
     .card-ctrls__left {
         .select2:nth-child(2) {
             display: none;
         }
-
         .search-box:nth-child(2) {
             display: none;
         }
-
     }
-
 }
 
 // zero data,
 // no records to show!
-
 #app-wrapper .app-content table .dataTables_empty {
     position: absolute;
     width: 98.5%;
-
     &:before {
         display: none;
     }
-
 }
 
 #app-wrapper .app-content .main-content .tbl-c {
@@ -537,39 +424,30 @@ table {
 }
 
 //card fludable
-
 #app-wrapper .card.card--table-fluid {
     .card__content {
         // flex: 1;
         height: ~'calc(100% - 52px)';
     }
-
     .widget-content {
         height: 100%;
     }
-
     .dataTables_wrapper {
         height: ~'calc(100% - 88px)';
         display: flex;
         flex-flow: column wrap;
-
         table[data-scrollable] {
             display: block;
             flex: 1;
             //ie fix: // border-left:1px solid #fff;
-
             .ps-scrollbar-y-rail {
                 margin-right: 0px;
             }
-
         }
-
     }
-
 }
 
 //dt buttons extension - https://cdn.datatables.net/buttons/1.2.4/css/buttons.jqueryui.min.css
-
 div.dt-button-info {
     position: fixed;
     top: 50%;
@@ -726,12 +604,6 @@ div.dt-button-background {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    background: -ms-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
-    background: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
-    background: -o-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
-    background: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, rgba(0, 0, 0, 0.3)), color-stop(1, rgba(0, 0, 0, 0.7)));
-    background: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
     background: radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
     z-index: 2001
 }
@@ -741,12 +613,13 @@ div.dt-button-background {
         float: none !important;
         text-align: center
     }
-
 }
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * ColVis styles
  */
+
 div.ColVis {
     float: right;
     margin-bottom: 1em;
@@ -764,23 +637,13 @@ ul.ColVis_collection li {
     font-size: 0.88em;
     color: black !important;
     white-space: nowrap;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 1px 1px 3px #ccc;
-    -moz-box-shadow: 1px 1px 3px #ccc;
-    -ms-box-shadow: 1px 1px 3px #ccc;
-    -o-box-shadow: 1px 1px 3px #ccc;
-    box-shadow: 1px 1px 3px #ccc;    /* Generated by http://www.colorzilla.com/gradient-editor/ */
-    background: #ffffff; /* Old browsers */
-    background: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%); /* Chrome10+,Safari5.1+ */
-    background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%); /* FF3.6+ */
-    background: -ms-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%); /* IE10+ */
-    background: -o-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%); /* Opera 11.10+ */
-    background: linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f9f9f9', GradientType=0); /* IE6-9 */
+    box-shadow: 1px 1px 3px #ccc;
+    /* Generated by http://www.colorzilla.com/gradient-editor/ */
+    background: #ffffff;
+    /* Old browsers */
+    background: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+    /* W3C */
 }
 
 .ColVis_Button:hover,
@@ -792,13 +655,10 @@ ul.ColVis_collection li:hover {
     -ms-box-shadow: 1px 1px 3px #999;
     -o-box-shadow: 1px 1px 3px #999;
     box-shadow: 1px 1px 3px #999;
-    background: #f3f3f3; /* Old browsers */
-    background: -webkit-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%); /* Chrome10+,Safari5.1+ */
-    background: -moz-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%); /* FF3.6+ */
-    background: -ms-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%); /* IE10+ */
-    background: -o-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%); /* Opera 11.10+ */
-    background: linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#f4f4f4', GradientType=0); /* IE6-9 */
+    background: #f3f3f3;
+    /* Old browsers */
+    background: linear-gradient(to bottom, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%);
+    /* W3C */
 }
 
 button.ColVis_Button {
@@ -881,23 +741,13 @@ ul.ColVis_collection li span {
 
 ul.ColVis_collection li.ColVis_Special {
     border-color: #555;
-    background: rgb(237, 237, 237); /* Old browsers */
-    background: -webkit-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -moz-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%); /* FF3.6+ */
-    background: -ms-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%); /* IE10+ */
-    background: -o-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%); /* Opera 11.10+ */
-    background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#e8e8e8', GradientType=0); /* IE6-9 */
+    background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%);
+    /* W3C */
 }
 
 ul.ColVis_collection li.ColVis_Special:hover {
-    background: #e2e2e2; /* Old browsers */
-    background: -webkit-linear-gradient(top, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%); /* Chrome10+,Safari5.1+ */
-    background: -moz-linear-gradient(top, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%); /* FF3.6+ */
-    background: -ms-linear-gradient(top, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%); /* IE10+ */
-    background: -o-linear-gradient(top, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%); /* Opera 11.10+ */
-    background: linear-gradient(top, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#e2e2e2', GradientType=0); /* IE6-9 */
+    background: linear-gradient(to bottom, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%);
+    /* W3C */
 }
 
 span.ColVis_radio {

@@ -51,9 +51,9 @@
 	@badge-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
 
 	&.badge--green {
-		// background-color: @primary-bg-lighten3;
+		// background-color: lighten(@primary-bg, 3%);
 		background-color: lighten(@primary-bg, 15%);
-		color: @fff;
+		color: #fff;
 		font-size: 10px;
 		font-weight: bold;
 		box-shadow: @badge-shadow;
@@ -61,16 +61,16 @@
 
 	&.badge--green,
 	&.badge--default {
-		// background-color: @primary-bg-lighten3;
+		// background-color: lighten(@primary-bg, 3%);
 		background-color: lighten(@primary-bg, 15%);
-		color: @fff;
+		color: #fff;
 		font-size: 10px;
 		font-weight: bold;
 		box-shadow: @badge-shadow;
 	}
 
 	&.badge--dark {
-		background-color: @secondary-bg-darken3;
+		background-color: darken(@secondary-bg, 3%);
 		color: #fff;
 		box-shadow: @badge-shadow;
 	}
@@ -106,7 +106,7 @@
 // .submenu {
 // 	.badge {
 // 		font-weight: 600;
-// 		background-color: @secondary-bg-darken3;
+// 		background-color: darken(@secondary-bg, 3%);
 // 		color: #b0b6c2;
 // 	}
 

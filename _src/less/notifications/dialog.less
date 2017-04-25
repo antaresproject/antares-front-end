@@ -21,6 +21,7 @@ dialog {
 
 dialog[open] {
 	display: block;
+	position:fixed;
 }
 
 dialog + .backdrop {
@@ -32,8 +33,11 @@ dialog + .backdrop {
 	background: rgba(0, 0, 0, 0.4);
 }
 
+/* for small devices, modal dialogs go full-screen */
 @media screen and (max-width:540px) {
 	dialog[_polyfill_modal] {
+
+		/* TODO: implement */
 		top: 0;
 		width: auto;
 		margin: 1em;
@@ -81,6 +85,7 @@ dialog.fixed {
 	&[open] {
 		width: @dialog-size;
 		min-height: @dialog-size;
+		min-width:300px;
 		border: 0;
 		background: transparent;
 		padding: 0;
@@ -194,4 +199,37 @@ dialog::backdrop {
 
 	}
 
+}
+
+@media only screen and (max-height: 700px) {
+
+
+	.mdl-dialog.ar-dialog {
+		
+		.mdl-dialog__content {
+
+			// height:50vh;
+			overflow-y:scroll;
+			
+		}
+
+	}
+
+}
+
+
+dialog {
+    position: fixed !important;
+    top: 50% !important;
+    -webkit-transform: translate(0, -50%) !important;
+            transform: translate(0, -50%) !important;
+}
+body dialog .mdl-dialog__canvas {
+    position: relative !important
+}
+body dialog .mdl-dialog.ar-dialog[open] {
+    min-height: auto;
+}
+body .mdl-dialog:before {
+    display: none !important;
 }

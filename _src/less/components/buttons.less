@@ -161,7 +161,7 @@
 .btn {
 	@box-shadow-active: 0 5px 12px rgba(0, 0, 0, .15);
 	display: inline-block;
-	color: @fff;
+	color: #fff;
 	border-radius: 2px;
 	border: 0;
 	transition: @button-transition;
@@ -198,7 +198,7 @@
 	//tmp
 	&.btn--brand {
 	background: @btn--brand;
-	color: @fff;
+	color: #fff;
 	box-shadow: 3px 0 10px rgba(0,0,0,0.06);
 	text-transform: none;
 	display: flex;
@@ -206,7 +206,7 @@
 
 		i {
 		    margin-left: 7px;
-		    color: @fff;
+		    color: #fff;
 		    font-size: 19px;
 		}
 
@@ -244,7 +244,7 @@
 	&.btn--primary {
 		@bg: @btn-primary-color;
 		@bg-hover-and-active: lighten(@btn-primary-color, 5%);
-		@c: @fff;
+		@c: #fff;
 		background-color: @bg;
 		color: @c;
 
@@ -280,7 +280,7 @@
 	&.btn--default {
 		// @bg: #ebeff2;
 		@bg: #e1e5e8;
-		@bg-hover-and-active: @fff;
+		@bg-hover-and-active: #fff;
 		// @c: #636466;
 		@c: #5c5f66;
 		background-color: @bg;
@@ -316,9 +316,9 @@
 
 	//DARK
 	&.btn--dark {
-		@bg: @secondary-bg-lighten5;
+		@bg: lighten(@secondary-bg, 5%);
 		@bg-hover-and-active: #43474f;
-		@c: @fff;
+		@c: #fff;
 		background-color: @bg;
 		color: @c;
 
@@ -354,7 +354,7 @@
 	&.btn--orange {
 		@bg: #ff9800;
 		@bg-hover-and-active: #ffa726;
-		@c: @fff;
+		@c: #fff;
 		background-color: @bg;
 		color: @c;
 
@@ -390,7 +390,7 @@
 	&.btn--indigo {
 		@bg: #2196f3;
 		@bg-hover-and-active: #5c6bc0;
-		@c: @fff;
+		@c: #fff;
 		background-color: @bg;
 		color: @c;
 
@@ -426,7 +426,7 @@
 	&.btn--blue {
 		@bg: #3f51b5;
 		@bg-hover-and-active: #42a5f5;
-		@c: @fff;
+		@c: #fff;
 		background-color: @bg;
 		color: @c;
 
@@ -462,7 +462,7 @@
 	&.btn--red {
 		@bg: #f44336;
 		@bg-hover-and-active: #ef5350;
-		@c: @fff;
+		@c: #fff;
 		background-color: @bg;
 		color: @c;
 
@@ -502,7 +502,7 @@
 	@bg-hover: #dfe3e6;
 	@bg-active: #d2d6d9;
 	display: inline-block;
-	color: @fff;
+	color: #fff;
 	border-radius: 2px;
 	border: 0;
 	transition: @button-transition;
@@ -582,7 +582,7 @@
 
 	//Dark
 	&.btn--dark {
-		@c: @secondary-bg-lighten5;
+		@c: lighten(@secondary-bg, 5%);
 		color: @c;
 
 		//disabled

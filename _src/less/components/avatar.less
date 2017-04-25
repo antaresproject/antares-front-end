@@ -36,7 +36,7 @@
             bottom: -5px;
             right: -5px;
             background-color: @color-success;
-            border: 5px solid @secondary-bg-lighten5;
+            border: 5px solid lighten(@secondary-bg, 5%);
             border-radius: 50%;
         }
 
@@ -52,7 +52,7 @@
             bottom: -5px;
             right: -5px;
             background-color: @color-warning;
-            border: 5px solid @secondary-bg-lighten5;
+            border: 5px solid lighten(@secondary-bg, 5%);
             border-radius: 50%;
         }
 
@@ -67,13 +67,13 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        background-color: @secondary-bg-lighten3;
+        background-color: lighten(@secondary-bg, 3%);
         border-radius: 50%;
 
         &:before {
             content: '\f3e1';
             font: normal normal normal 21px/1 'Material-Design-Iconic-Font';
-            color: @fff;
+            color: #fff;
             .mdl-font();
         }
 
@@ -128,7 +128,7 @@
 .flex-block {
     .avatar {
         &:after {
-            border: 5px solid @fff;
+            border: 5px solid #fff;
         }
 
     }

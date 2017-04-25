@@ -33,7 +33,7 @@ if ($('.page-dashboard.dashboard--vue').length) {
     el: 'vue-page-dashboard',
     template: '#vue-page-dashboard',
     metaInfo: {
-      title: 'Vue Dashboard',
+      title: 'Dashboard',
       titleTemplate: '%s | Antares Project',
       meta: [{
         charset: 'utf-8'

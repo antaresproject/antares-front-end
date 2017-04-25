@@ -13,7 +13,7 @@ html {
 
 body {
     color: #000;
-    background: @secondary-bg-lighten72;
+    background: lighten(@secondary-bg, 72%);
     overflow: hidden;
 }
 
@@ -45,7 +45,7 @@ body {
 
 a {
     text-decoration: none;
-    color: @link-color;
+    color: @color-link;
 
     &:active,
     &:focus {
@@ -139,7 +139,7 @@ aside.main-sidebar {
 
     //main content
     .main-content {
-        transition: @std-transition;
+        transition: @transition;
         padding: 0px @unit3 @unit3 @unit3;
         position: relative;
         // height: 100%;

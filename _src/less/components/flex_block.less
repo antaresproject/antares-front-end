@@ -82,14 +82,14 @@
     &.flex-block--bold {
         .flex-block__title {
             font-weight: 500;
-            color: @secondary-bg-lighten45;
+            color: lighten(@secondary-bg, 45%);
             font-size: 13px;
             color: @primary-c;
         }
 
         .flex-block__desc {
             font-weight: 500;
-            color: @secondary-bg-lighten45;
+            color: lighten(@secondary-bg, 45%);
             font-size: 13px;
         }
 
@@ -132,10 +132,10 @@
         }
             
         &:hover {
-            background-color: @secondary-bg-lighten72;
+            background-color: lighten(@secondary-bg, 72);
 
             .avatar:after {
-                border-color: @secondary-bg-lighten72;
+                border-color: lighten(@secondary-bg, 72%);
             }
 
         }

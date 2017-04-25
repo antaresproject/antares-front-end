@@ -149,7 +149,7 @@
 							display: flex;
 							background: #282c33;
 							width: 100%;
-							color: @fff;
+							color: #fff;
 							align-items: center;
 							height: 50px;
 
@@ -157,7 +157,7 @@
 								display: flex;
 								align-items: center;
 								width: 50px;
-								color: @fff;
+								color: #fff;
 								font-size: 24px;
 								transition: 300ms;
 							}
@@ -280,7 +280,7 @@
 				justify-content: center;
 				padding-left: @unit2;
 				// position: relative;
-				border-right: 1px solid @secondary-bg-lighten5;
+				border-right: 1px solid lighten(@secondary-bg, 5%);
 				cursor: pointer;
 
 				&:last-child {
@@ -308,7 +308,7 @@
 						bottom: 50px;
 						font: normal normal normal 35px/1 'Material-Design-Iconic-Font';
 						content: '\f2f2';
-						color: @fff;
+						color: #fff;
 						color: @primary-bg;
 					}
 
@@ -350,7 +350,7 @@
 
 				.mobile-ddowns__text {
 					font-size: 14px;
-					color: @fff;
+					color: #fff;
 					font-weight: 500;
 					//text overflow
 					width: 65px;
@@ -360,7 +360,7 @@
 				}
 
 				ul.mobile-ddowns__menu {
-					// background-color: @secondary-bg-lighten6;
+					// background-color: lighten(@secondary-bg, 6%);
 					background-color: @primary-bg;
 					// height: 300px;
 					width: 100%;
@@ -377,7 +377,7 @@
 
 						span {
 							font-size: 13px;
-							color: @fff;
+							color: #fff;
 							font-weight: normal;
 						}
 
@@ -405,7 +405,7 @@
 					}
 
 					li {
-						color: @fff;
+						color: #fff;
 						padding: @unit1 @unit3;
 						display: flex;
 						flex-flow: row nowrap;
@@ -419,7 +419,7 @@
 								&:after {
 									position: relative;
 									margin-left: auto;
-									color: @fff;
+									color: #fff;
 									.mdl-font();
 									content: '\f26b';
 									font: normal normal normal 24px/1 'Material-Design-Iconic-Font';
@@ -434,7 +434,7 @@
 						}
 
 						&:hover {
-							background-color: @primary-bg-darken6;
+							background-color: darken(@primary-bg, 6%);
 						}
 
 						.flex-block {
@@ -446,7 +446,7 @@
 							display: none;
 
 							i {
-								color: @fff;
+								color: #fff;
 								font-size: 24px;
 							}
 
@@ -459,7 +459,7 @@
 						}
 
 						.flex-block__title {
-							color: @fff;
+							color: #fff;
 						}
 
 						&.mobile-ddowns-new {
@@ -472,7 +472,7 @@
 
 							i {
 								font-size: 24px;
-								color: @fff;
+								color: #fff;
 								width: 40px;
 								text-align: center;
 							}
@@ -481,7 +481,7 @@
 
 						&.mobile-ddowns__menu-header {
 							// height: 150px;
-							border-bottom: 1px solid @primary-bg-darken4;
+							border-bottom: 1px solid darken(@primary-bg, 4%);
 							margin-bottom: @unit2;
 							padding: @unit3;
 						}

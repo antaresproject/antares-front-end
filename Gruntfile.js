@@ -44,17 +44,7 @@ module.exports = function(grunt) {
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
                 },
                 files: {
-                    '_src/css/codeflow.css': '_src/less/codeflow.less'
-                }
-            },
-            mainLight: {
-                options: {
-                    sourceMap: false,
-                    sourceMapFileInline: false,
-                    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
-                },
-                files: {
-                    '_src/css/codeflow-light.css': '_src/less/codeflow-light.less'
+                    '_dist/css/antares.css': '_src/less/codeflow.less'
                 }
             },
             external: {
@@ -64,17 +54,7 @@ module.exports = function(grunt) {
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
                 },
                 files: {
-                    '_src/css/external.css': '_src/less/external.less'
-                }
-            },
-            externalLight: {
-                options: {
-                    sourceMap: false,
-                    sourceMapFileInline: false,
-                    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
-                },
-                files: {
-                    '_src/css/external-light.css': '_src/less/external-light.less'
+                    '_dist/css/external.css': '_src/less/external.less'
                 }
             }
         },
@@ -88,50 +68,38 @@ module.exports = function(grunt) {
                         browsers: ['last 6 versions']
                     }),
                     // disable comments
-                    require('postcss-discard-comments'),
-                    require('postcss-zindex'),
+                    // require('postcss-discard-comments'),
+                    // require('postcss-zindex'),
 
                     // //merge same rules
-                    require('postcss-merge-rules'),
+                    // require('postcss-merge-rules'),
                     // //sort
 
+                    // require('css-declaration-sorter')({
+                    //     order: 'smacss'
+                    // }),
 
-                    require('css-declaration-sorter')({
-                        order: 'smacss'
-                    }),
-
-                    // join media querries
-                    require('css-mqpacker'),
+                    // // join media querries
+                    // require('css-mqpacker'),
 
                     // require('postcss-unique-selectors'),
                     // require('postcss-discard-unused'),
                     // require('postcss-discard-empty'),
                     // require('postcss-discard-duplicates'),
 
-                    // need config in future
-                    // require("stylelint")(),
-
                     // require('cssnano')({
                     //     discardUnused: {fontFace: false}
                     // }),
 
-                ],
+                ]
             },
             main: {
-                src: '_src/css/codeflow.css',
+                src: '_dist/css/antares.css',
                 dest: '_dist/css/antares.css'
             },
-            mainLight: {
-                src: '_src/css/codeflow-light.css',
-                dest: '_dist/css/antares-light.css'
-            },
             external: {
-                src: '_src/css/external.css',
+                src: '_dist/css/external.css',
                 dest: '_dist/css/external.css'
-            },
-            externalLight: {
-                src: '_src/css/external-light.css',
-                dest: '_dist/css/external-light.css'
             }
         },
 
