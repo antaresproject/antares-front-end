@@ -17,7 +17,7 @@ aside.main-sidebar {
     // padding: 12px 0 0 0;
     position: relative;
     float: left;
-    transition: @std-transition;
+    transition: @transition;
 
     .menu-scroll {
         height: auto;
@@ -90,7 +90,7 @@ aside.main-sidebar {
                         position: relative;
 
                         &:after {
-                            background: @fff;
+                            background: #fff;
                             .mdl-font();
                             font: normal normal normal 17px/1 'Material-Design-Iconic-Font';
                             content: '\f19c';
@@ -125,7 +125,7 @@ aside.main-sidebar {
                 }
 
                 &.submenu-open > a {
-                    // background-color: @secondary-bg-lighten6;
+                    // background-color: lighten(@secondary-bg, 6%);
 
                     &:after {
                         border-color: transparent #fff-darken6 transparent transparent;
@@ -166,7 +166,7 @@ aside.main-sidebar {
                     height: 0;
                     border-style: solid;
                     border-width: 10px 10px 10px 0;
-                    border-color: transparent @secondary-bg-lighten6 transparent transparent;
+                    border-color: transparent lighten(@secondary-bg, 6%) transparent transparent;
                     position: absolute;
                     right: 0;
                     top: 23px;
@@ -180,12 +180,12 @@ aside.main-sidebar {
                 // background: #2b2d30;
 
                 .text {
-                    color: @fff;
+                    color: #fff;
                 }
 
                 .icon,
                 i {
-                    color: @fff;
+                    color: #fff;
                 }
 
             }
@@ -203,11 +203,11 @@ aside.main-sidebar {
 
                 //clean hover css state
                 &:hover {
-                    color: @fff;
+                    color: #fff;
 
                     .icon,
                     i {
-                        color: @fff;
+                        color: #fff;
                     }
 
                 }
@@ -268,13 +268,13 @@ aside.main-sidebar {
 
         .submenu {
             width: 340px;
-            background-color: @secondary-bg-lighten6;
+            background-color: lighten(@secondary-bg, 6%);
             position: absolute;
             left: -500px;
             top: 0;
             top: @menu-top-margin;
             z-index: 101;
-            color: @fff;
+            color: #fff;
             text-align: left;
             // animation: slideOut 500ms ease-in-out;
             overflow-y: auto;
@@ -317,7 +317,7 @@ aside.main-sidebar {
                     h3 {
                         line-height: 1;
                         font-size: 16px;
-                        color: @fff;
+                        color: #fff;
                     }
 
                 }
@@ -354,7 +354,7 @@ aside.main-sidebar {
                             font-weight: 400;
 
                             &:hover {
-                                color: @fff;
+                                color: #fff;
                             }
 
                             i,
@@ -378,8 +378,8 @@ aside.main-sidebar {
 
             &.submenu--system {
                 .submenu__mobile-return {
-                    color: @secondary-bg-lighten5;
-                    background-color: @fff;
+                    color: lighten(@secondary-bg, 5%);
+                    background-color: #fff;
                     transition: @transition;
 
                     @media @min768 {
@@ -390,13 +390,13 @@ aside.main-sidebar {
                     }
 
                     i {
-                        color: @secondary-bg-lighten5;
+                        color: lighten(@secondary-bg, 5%);
                     }
 
                 }
 
-                background-color: @fff;
-                color: @secondary-bg-lighten6;
+                background-color: #fff;
+                color: lighten(@secondary-bg, 6%);
 
                 section {
                     border-bottom: 0px;
@@ -480,7 +480,7 @@ aside.main-sidebar {
                 }
 
                 header {
-                    color: @secondary-bg-lighten6;
+                    color: lighten(@secondary-bg, 6%);
                     margin-bottom: 8px;
 
                     h3 {
@@ -670,5 +670,86 @@ nav {
         }
 
     }
+
+}
+
+// Tooltip
+
+aside.main-sidebar {
+
+
+
+
+
+    .menu-tooltip {
+
+            
+        background:#2d353d;
+        position:absolute;
+        left:16px;
+        bottom:32px;
+        //tmp
+        min-height:100px;
+        width:~'calc(100% - 32px )';
+        border-radius:5px;
+        padding:24px;
+        display:none;
+        opacity:0;
+
+
+        .menu-tooltip__header {
+
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+
+            i {
+                font-size:24px;
+                color:#02A8F3 !important;
+                padding-right:13px;
+
+            }
+
+            span {
+                color:#fff;
+                font-size:15px;
+                font-weight:500;
+
+            }
+
+
+        }
+
+        .menu-tooltip__content {
+
+            font-size:13px;
+            color:#b8becc;
+            font-weight: normal;
+            padding-top: 16px;
+
+        }
+
+
+
+    }
+
+
+        // to do - overflow battle
+        @media only screen and (max-height: 700px){
+
+            .submenu  {
+
+                overflow:visible !important;
+
+            }
+
+            .menu-tooltip {
+
+                left:364px;
+
+            }
+
+        }
+
 
 }

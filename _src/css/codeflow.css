@@ -6778,6 +6778,47 @@ nav .main-menu--brand {
     width: calc(100% - 48px);
   }
 }
+aside.main-sidebar .menu-tooltip {
+  background: #2d353d;
+  position: absolute;
+  left: 16px;
+  bottom: 32px;
+  min-height: 100px;
+  width: calc(100% - 32px );
+  border-radius: 5px;
+  padding: 24px;
+  display: none;
+  opacity: 0;
+}
+aside.main-sidebar .menu-tooltip .menu-tooltip__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+aside.main-sidebar .menu-tooltip .menu-tooltip__header i {
+  font-size: 24px;
+  color: #02A8F3 !important;
+  padding-right: 13px;
+}
+aside.main-sidebar .menu-tooltip .menu-tooltip__header span {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+aside.main-sidebar .menu-tooltip .menu-tooltip__content {
+  font-size: 13px;
+  color: #b8becc;
+  font-weight: normal;
+  padding-top: 16px;
+}
+@media only screen and (max-height: 700px) {
+  aside.main-sidebar .submenu {
+    overflow: visible !important;
+  }
+  aside.main-sidebar .menu-tooltip {
+    left: 364px;
+  }
+}
 .main-menu-indicator {
   width: 0;
   height: 0;

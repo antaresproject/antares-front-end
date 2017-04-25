@@ -11,6 +11,7 @@ require('script-loader!moment'); //no css
 require('script-loader!dialog-polyfill');
 require('script-loader!jquery-modal');
 require('script-loader!qtip2');
+require('script-loader!velocity-animate');
 require('./../../../js/external/modified/swal.js');
 require('script-loader!jquery-match-height'); //nocss
 require('script-loader!hammerjs'); // no css
