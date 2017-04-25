@@ -10,6 +10,7 @@ window.enquire = enquire;
 require('script-loader!moment'); //no css
 require('script-loader!dialog-polyfill');
 require('script-loader!jquery-modal');
+require('script-loader!noty'); //no css
 require('script-loader!qtip2');
 require('script-loader!velocity-animate');
 require('./../../../js/external/modified/swal.js');

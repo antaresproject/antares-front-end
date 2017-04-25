@@ -87,7 +87,7 @@
     "matchdep": "^1.0.1",
     "modernizr": "^3.5.0",
     "moment": "^2.18.1",
-    "noty": "^3.1.0-beta",
+    "noty": "^2.3.8",
     "npm-check-updates": "^2.11.0",
     "pace": "0.0.4",
     "perfect-scrollbar": "^0.6.16",

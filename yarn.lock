@@ -5487,9 +5487,9 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-noty@^3.1.0-beta:
-  version "3.1.0-beta"
-  resolved "https://registry.yarnpkg.com/noty/-/noty-3.1.0-beta.tgz#07636ff71cc2185953e699c287bcc90c657c79b7"
+noty@^2.3.8:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/noty/-/noty-2.4.1.tgz#4327fb0985fe93f6aadb929fa6807fa3ccd86a07"
 
 npm-cache-filename@~1.0.2:
   version "1.0.2"

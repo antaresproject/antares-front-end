@@ -18,7 +18,6 @@
 
 */
 
-import { Antares } from './mechanics';
 var AntaresForms = function() {};
 AntaresForms.elements = AntaresForms.elements || {};
 AntaresForms.validation = AntaresForms.validation || {};

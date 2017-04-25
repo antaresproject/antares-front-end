@@ -26,7 +26,7 @@ Antares.prototype.swal = {
             componentHandler.upgradeAllRegistered();
 
         } else {
-            // console.log('wrong parameter.');
+            
             return false;
         }
     },
@@ -100,44 +100,6 @@ Antares.prototype.swal = {
     },
 
 };
-
-//noty theme
-// $.noty.layouts.centerFull = {
-//     name: 'CenterFull',
-//     options: { // overrides options
-
-//     },
-//     container: {
-//         object: '<ul id="noty_CenterFull_layout_container" />',
-//         selector: 'ul#noty_CenterFull_layout_container',
-//         style: function() {
-//             $(this).css({
-//                 margin: 0,
-//                 padding: 0,
-//                 listStyleType: 'none',
-//                 zIndex: 10000000,
-//                 // width: 'auto'
-
-//             });
-
-//             $(this).css({
-//                 left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px'
-//             });
-//         }
-//     },
-//     parent: {
-//         object: '<li />',
-//         selector: 'li',
-//         css: {}
-//     },
-//     css: {
-//         display: 'none',
-//         width: 'auto'
-//     },
-//     addClass: ''
-// };
-
-
 
 // 
 //usage

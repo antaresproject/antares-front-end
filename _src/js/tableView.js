@@ -18,14 +18,6 @@
 
 */
 
-import { Antares } from './mechanics';
-
-if ($('.page-datatables').length) {
-
-
-
-}
-
 var AntaresTableView = function() {};
 AntaresTableView.datatables = AntaresTableView.datatables || {};
 

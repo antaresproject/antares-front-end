@@ -18,9 +18,6 @@
 
 */
 
-import { Antares } from './mechanics';
-
-
 var AntaresGridstack = function() {};
 AntaresGridstack.dashboard = AntaresGridstack.dashboard || {};
 
