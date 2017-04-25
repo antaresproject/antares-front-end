@@ -1,14 +1,13 @@
-// EXTRA LOGIC:
-console.log('start!');
 // EXTERNAL DEPS:
 var pace = require('./../../../js/external/modified/pace.js');
 window.Pace = pace;
-require("script-loader!./../../../js/external/jquery.js");
+// require("script-loader!./../../../js/external/jquery.js");
+require("script-loader!jquery");
 require("script-loader!jquery-ui-bundle");
 require('./../../../js/external/modified/globalize.js');
-require('script-loader!enquire.js'); // no css
+var enquire = require('enquire.js');
+window.enquire = enquire; 
 require('script-loader!moment'); //no css
-require('script-loader!noty'); //no css
 require('script-loader!dialog-polyfill');
 require('script-loader!jquery-modal');
 require('script-loader!qtip2');

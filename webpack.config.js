@@ -125,13 +125,13 @@ module.exports = {
             loaders: ['babel?presets[]=babili'],
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            mangle: true,
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: false,
+        //     mangle: true,
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new CopyWebpackPlugin([
             { from: '_src/img/', to: 'img/' },
             { from: '_src/fonts/', to: 'fonts/' },

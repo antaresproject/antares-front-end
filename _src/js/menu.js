@@ -24,9 +24,11 @@
 
     require('jquery-menu-aim');
 
+    
 
     $(function() {
 
+        require('./components/menu_tooltips/menu_tooltips.js');
         //VARIABLES
 
         var animClass1 = 'animated fadeInLeft',

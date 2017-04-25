@@ -20,23 +20,8 @@
 
 import { Antares } from './mechanics';
 
-if ($('.page-datatables.page-vue-datatables').length) {
+if ($('.page-datatables').length) {
 
-
-var Vue = require('vue');
-
-var pageClientsList = new Vue({
-    name: 'Clients List',
-    el: 'vue-page-clients-list',
-    template: '#vue-page-clients-list',
-    // components: {
-    //     'card-chart-billing': cardChartBilling,
-    //     'card-chart-tickets': cardChartTickets,
-    //     'card-chart-orders': cardChartOrders,
-    //     'card-chart-subscriptions': cardChartSubscriptions,
-    //     'card-info': cardInfo,
-    // }
-});
 
 
 }
@@ -434,6 +419,10 @@ AntaresTableView.prototype.datatables = {
                     // console.log('clickoutside prop disabled');
                 });
 
+                $('#table-ma .is-disabled').on('click', function(e){
+                    e.preventDefault();
+                })
+
             }
 
         }
@@ -554,7 +543,9 @@ $.fn.multiSelect = function(o) {
         $(document).on('mousedown', options.list + options.filter, function(e) {
             if (e.which == 1) {
                 if (options.handle != undefined && !$(e.target).is(options.handle)) {
-
+                    // TODO:
+                    // keep propagation?
+                    // return true;
                 }
                 options.e = e;
                 options.element = $(this);

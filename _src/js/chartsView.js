@@ -538,4 +538,5 @@ AntaresCharts.prototype.barChart = function(elementId) {
 $(function() {
     AntaresCharts = new AntaresCharts();
     AntaresCharts.init();
+    window.AntaresCharts = AntaresCharts; 
 });

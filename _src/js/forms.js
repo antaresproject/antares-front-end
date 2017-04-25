@@ -1111,15 +1111,14 @@ function AjaxLoader() {
 }
 
 $(function() {
-    AntaresForms = new AntaresForms();
-    AntaresForms.init();
-
+    window.AntaresForms = new AntaresForms();
+    window.AntaresForms.init();
 
     //wait, damnit! for the dom!
     setTimeout(function() {
 
         ready('select', function(element) {
-            AntaresForms.elements.select();
+            window.AntaresForms.elements.select();
         });
 
     }, 7000);

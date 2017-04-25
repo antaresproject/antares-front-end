@@ -10,7 +10,7 @@ Antares.prototype.swal = {
         $('.sweet-alert').attr('class', 'sweet-alert');
 
         //if exist
-        if (typeof APP.swal[theme] != "undefined" && typeof APP.swal[type] != "undefined") {
+        if (typeof APP.swal[theme] !== "undefined" && typeof APP.swal[type] !== "undefined") {
 
             var medley = $.extend({}, APP.swal.base, APP.swal[theme], APP.swal[type], custom);
             //load!
@@ -42,6 +42,7 @@ Antares.prototype.swal = {
         type: 'success',
         title: "Warning Confirmation Modal",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie mi erat, Pellegestas. ",
+        animation: false,
         // html: 'You can use <b>bold text</b>, ' +
         // '<a href="//github.com">links</a> ' +
         // 'and other HTML tags',
@@ -100,42 +101,41 @@ Antares.prototype.swal = {
 
 };
 
-import noty from 'script-loader!noty';
 //noty theme
-$.noty.layouts.centerFull = {
-    name: 'CenterFull',
-    options: { // overrides options
+// $.noty.layouts.centerFull = {
+//     name: 'CenterFull',
+//     options: { // overrides options
 
-    },
-    container: {
-        object: '<ul id="noty_CenterFull_layout_container" />',
-        selector: 'ul#noty_CenterFull_layout_container',
-        style: function() {
-            $(this).css({
-                margin: 0,
-                padding: 0,
-                listStyleType: 'none',
-                zIndex: 10000000,
-                // width: 'auto'
+//     },
+//     container: {
+//         object: '<ul id="noty_CenterFull_layout_container" />',
+//         selector: 'ul#noty_CenterFull_layout_container',
+//         style: function() {
+//             $(this).css({
+//                 margin: 0,
+//                 padding: 0,
+//                 listStyleType: 'none',
+//                 zIndex: 10000000,
+//                 // width: 'auto'
 
-            });
+//             });
 
-            $(this).css({
-                left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px'
-            });
-        }
-    },
-    parent: {
-        object: '<li />',
-        selector: 'li',
-        css: {}
-    },
-    css: {
-        display: 'none',
-        width: 'auto'
-    },
-    addClass: ''
-};
+//             $(this).css({
+//                 left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px'
+//             });
+//         }
+//     },
+//     parent: {
+//         object: '<li />',
+//         selector: 'li',
+//         css: {}
+//     },
+//     css: {
+//         display: 'none',
+//         width: 'auto'
+//     },
+//     addClass: ''
+// };
 
 
 

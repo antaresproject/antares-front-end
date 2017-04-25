@@ -20,38 +20,6 @@
 
 import { Antares } from './mechanics';
 
-import cardChartBilling from './components/dashboard/card_billing.vue';
-import cardChartSubscriptions from './components/dashboard/card_subscriptions.vue';
-import cardChartTickets from './components/dashboard/card_tickets.vue';
-import cardChartOrders from './components/dashboard/card_orders.vue';
-
-import cardInfo from './components/dashboard/card_info.vue';
-import cardNews from './components/dashboard/card_news.vue';
-import cardLogs from './components/dashboard/card_logs.vue';
-
-
-if ($('.page-dashboard.dashboard--vue').length) {
-
-    var Vue = require('vue');
-
-
-    var pageDashboard = new Vue({
-        name: 'Page Dashboard',
-        el: 'vue-page-dashboard',
-        template: '#vue-page-dashboard',
-        components: {
-            'card-chart-billing': cardChartBilling,
-            'card-chart-tickets': cardChartTickets,
-            'card-chart-orders': cardChartOrders,
-            'card-chart-subscriptions': cardChartSubscriptions,
-            'card-info': cardInfo,
-            'card-news': cardNews,
-            'card-logs': cardLogs,
-        }
-    });
-
-
-}
 
 var AntaresGridstack = function() {};
 AntaresGridstack.dashboard = AntaresGridstack.dashboard || {};
@@ -113,14 +81,14 @@ AntaresGridstack.prototype.helpers = function() {
 
     // if ($('.slick-slider').length) {
 
-    //     $(window).resize(function() {
+    //     $(window).on('resize', function() {
 
     //         $('.slick-slider')[0].slick.refresh();
     //         // console.log('slick updated!');
 
     //     });
     //     //slick update
-    //     $(window).load(function() {
+    //     $(window).on('load', function() {
 
     //         $('.slick-slider')[0].slick.refresh();
 
@@ -572,27 +540,7 @@ AntaresGridstack.prototype.dashboard = {
                 } else {
 
 
-                    //start of new block
 
-
-                    //adding widget mechanics - comment for now
-
-                    // $('body').append('<div class="test-widget"></div>');
-                    // var $testEl = $('.test-widget');
-                    // var grid = $('.grid-stack').data('gridstack');
-                    // grid.addWidget($testEl, 0, 0, 3, 25, true);
-                    // $testEl.css({
-                    //     background:'red',
-                    //     width:'100%',
-                    //     height:'100%',
-                    // });
-                    // console.log('dodaje widhet@!!!!@');
-
-
-                    //end of new block
-
-
-                    // console.log('valid');
                     this.velocity({
                         opacity: '0',
                     }, 500, function() {
@@ -698,12 +646,12 @@ AntaresGridstack.prototype.dashboard = {
 };
 
 $(function() {
-    AntaresGridstack = new AntaresGridstack();
-    AntaresGridstack.init();
+    window.AntaresGridstack = new AntaresGridstack();
+    window.AntaresGridstack.init();
 });
 
 //gridstack preload
-$(window).load(function() {
+$(window).on('load', function() {
     $('.grid-stack').css('opacity', '1');
 });
 
