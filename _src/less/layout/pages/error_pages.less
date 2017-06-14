@@ -1,42 +1,24 @@
-//
-// error pages
-//
-
-//variables:
 @top-height:428px;
 @div-width-lg:876px;
-
-
 #app-wrapper {
-	
 	.app-content {
 		&.page-error {
 			.main-content {
 				padding: 0;
 				margin-bottom: 48px;
 			}
-
 		}
-
 		&.page-error--clean {
-			.main-content {
-				padding-bottom: 0px 0 24px 0;
-			}
-
 			&:before {
 				display: none;
 			}
-
 		}
-
 	}
-
 }
 
 .error-container {
 	display: flex;
 	flex-flow: column nowrap;
-
 	.top-area {
 		background-color: @primary-bg;
 		height: @top-height;
@@ -52,12 +34,9 @@
 			align-items: center;
 			justify-content: center;
 			height: 118px;
-
 			img {
-				// min-width: 100%;
 				width: 203px;
 			}
-
 		}
 
 		.error-message {
@@ -65,10 +44,8 @@
 			width: @div-width-lg;
 			position: relative;
 			box-shadow: 1px 0 15px rgba(0, 0, 0, 0.05);
-
+			background-color: @primary-bg-second-light;
 			.error-message__bg {
-				background-image: url('../img/errors/error-bg.jpg');
-				background-color: #2fbd6a;
 				background-position: -164px -30px;
 				opacity: 0.05;
 				position: absolute;
@@ -79,7 +56,6 @@
 				z-index: 1;
 				transition: 300ms;
 			}
-
 			.error-message__text {
 				position: absolute;
 				top: 0;
@@ -89,64 +65,48 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #fff;
+				color: @standard-white;
 				z-index: 2;
 				flex-flow: column nowrap;
 				font-weight: bold;
 				padding-bottom: 24px;
-
 				.error-code {
 					font-size: 180px;
 					line-height: 180px;
 				}
-
 				.error-desc {
 					font-size: 26px;
 					text-transform: uppercase;
 				}
-
 			}
-
 		}
-
 	}
-
 	.bottom-area {
 		width: 100%;
-		// background-color: #ebeff2;
-		background-color: #ecedf0;
-		// padding-bottom: 81px;
+		background-color: @background;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 		.error-details {
 			width: @div-width-lg;
-			// min-height: 400px;
 			background: #fff;
 			box-shadow: 1px 0 15px rgba(0, 0, 0, 0.05);
 			padding: 54px 80px;
-
 			h3 {
 				margin-top: 8px;
 				margin-bottom: 12px;
 			}
-
 			p {
-				color: #5c6066;
+				color: @primary-c;
 				margin-bottom: 32px;
 			}
-
 		}
-
 		.btn-group {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 		}
-
 	}
-
 }
 
 //rwd
@@ -156,7 +116,6 @@
 		.bottom-area .error-details {
 			width: 100%;
 		}
-
 	}
 
 	.bottom-area {
@@ -169,24 +128,17 @@
 	.error-container {
 		.btn-group {
 			flex-flow: column wrap;
-
 			.btn {
 				margin-bottom: 16px;
-
 				&:last-child {
 					margin-bottom: 0;
 				}
-
 			}
-
 		}
-
 		.bottom-area .error-details {
 			padding: 32px 24px;
 		}
-
 	}
-
 }
 
 @media screen and (max-width:550px) {
@@ -195,21 +147,35 @@
 			.error-code {
 				font-size: 33vw;
 			}
-
 			.error-desc {
 				font-size: 5vw;
 			}
-
 		}
-
 	}
-
 	.error-container {
 		.top-area .error-message .error-message__bg {
 			background-position: 0 0;
 			background-size: cover;
 		}
+	}
+}
 
+@media @xs {
+	#app-wrapper .app-content.page-error .main-content {
+		margin-bottom: 0;
 	}
 
+	.page-error .error-container .bottom-area .btn-group {
+		display: block !important;
+		text-align: center;
+		a {
+			margin-right: 0;
+			margin-bottom: 16px;
+		}
+	}
+}
+.go-back{
+	i{
+		margin-right: 12px;
+	}
 }

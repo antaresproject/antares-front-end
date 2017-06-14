@@ -1,29 +1,14 @@
-
-// CIRCLE PRELOADER
-
-//
-// preloader
-//
-
 @color: @primary-bg;
 @size: 30px;
-
-
 .spinner-xs {
-  
   display: block;
   width: 50px;
   height: 50px;
   border: solid 2px transparent;
-  border-top-color: #02a8f3;
-  border-left-color: #02a8f3;
+  border-top-color: @primary-bg;
+  border-left-color: @primary-bg;
   border-radius: 100%;
-  -webkit-animation: pace-spinner 400ms linear infinite;
-  -moz-animation: pace-spinner 400ms linear infinite;
-  -ms-animation: pace-spinner 400ms linear infinite;
-  -o-animation: pace-spinner 400ms linear infinite;
   animation: pace-spinner 400ms linear infinite;
-
 }
 
 @-webkit-keyframes pace-spinner {
@@ -81,11 +66,9 @@
 @keyframes pace-spinner {
   0% {
     transform: rotate(0deg);
-    transform: rotate(0deg);
   }
 
   100% {
-    transform: rotate(360deg);
     transform: rotate(360deg);
   }
 
@@ -177,7 +160,7 @@
 
 #materialPreloader {
   height: 100vh !important;
-  top: 0px;
+  top: 0;
   width: 100vw;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.55);
@@ -199,7 +182,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  z-index: 999;    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+1,000000+100&0+0,0.65+100 */
+  z-index: 999; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+1,000000+100&0+0,0.65+100 */
   background: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.85) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.85) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.85) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -214,9 +197,7 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    // height: 140px;
     color: @primary-bg;
-    // font-family: Consolas, Menlo, Monaco, monospace;
     font-weight: bold;
     font-size: @loader-size;
     opacity: 0.8;
@@ -229,33 +210,27 @@
   }
 
   img {
-    // margin-bottom: 16px;
     width: 40px;
     margin: 0 16px;
   }
 
 }
 
-@background-color: #4684ee;
-@loader-color: #fff;
+@background-color: @background-blue-grey;
+@loader-color: @standard-white;
 @loader-size: 70px;
-
 .main-preloader__animation {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-
   span {
     display: inline-block;
     animation: pulse 0.4s alternate infinite ease-in-out;
-
     &.last {
       animation-delay: 0.4s;
     }
-
   }
-
 }
 
 @keyframes pulse {
@@ -263,5 +238,4 @@
     transform: scale(0.8);
     opacity: 0.5;
   }
-
 }

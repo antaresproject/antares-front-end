@@ -1,275 +1,348 @@
 .page-email-settings {
 
-	//legend
-	.email-additions {
-		width: 100%;
-		// min-height: 56px;
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		padding-left: 24px;
-		background: #fff;
-		border-bottom: 1px solid #e9ebf2;
+  .email-additions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: @standard-white;
+    border-bottom: 1px solid @background;
+    .btn-group {
+      padding: 14px 0;
+    }
+    .ddown__init, .btn {
+      line-height: 28px;
+    }
+  }
+  .mdl-tabs {
+    flex: 1
+  }
+  legend {
+    padding-bottom: 8px;
+  }
+  fieldset {
+    min-width: 100%;
+  }
+  .email-settings {
+    width: 100%;
+    background: @standard-white;
+    height: 100%;
+    padding: 24px;
+    .CodeMirror {
+      height: 500px;
+    }
+  }
+  .mdl-tabs__tab-bar {
+    padding-left: 24px;
+  }
+  .email-preview {
+    width: 50%;
+    background: @input-border-bottom;
+    height: 100%;
+    padding: 0;
+    .preview-area {
+      width: 100%;
+      height: ~'calc(100vh - 170px)';
+      background: #eee;
+      display: flex;
+      flex-flow: column nowrap;
+      iframe {
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        body {
+          * {
+            font-family: 'Roboto', sans-serif;
+          }
+        }
+      }
+    }
+  }
+  .mdl-tabs textarea {
+    opacity: 0;
+  }
+  .mdl-tabs .mdl-tabs__panel {
+    padding: 24px 24px 0 24px;
+  }
+  .grid-container.grid-container--2col {
+    height: ~'calc(100vh - 88px)';
+  }
+  .grid-container.grid-container--2col .grid-col--container {
+    min-height: auto;
+    padding: 0;
+  }
 
-		.btn-group {
-			padding: 14px 0;
-		}
-
-	
-		.ddown__init, .btn {
-			line-height:28px;
-		}
-
-	}
-
-	.mdl-tabs {
-		flex: 1
-	}
-
-	legend {
-		padding-bottom: 8px;
-	
-	}
-
-	fieldset {
-		min-width: 100%;
-	}
-
-	.email-settings {
-		width: 100%;
-		background: #fff;
-		height: 100%;
-		padding: 24px;
-
-		.CodeMirror {
-			// max-width: 500px;
-			height:500px;
-		}
-
-	}
-
-	.mdl-tabs__tab-bar {
-		padding-left: 24px;
-	}
-
-	.email-preview {
-		width: 50%;
-		background: #dcdfe5;
-		height: 100%;
-		padding: 48px;
-
-		.CodeMirror {
-			// max-width: 500px;
-		}
-
-		.preview-area {
-			width: 100%;
-			height: ~'calc(100vh - 170px)';
-			background: #eee;
-			display: flex;
-			flex-flow: column nowrap;
-
-			iframe {
-				width: 100%;
-				height: 100%;
-				flex: 1;
-				borer: 0;
-
-				body {
-					//global styles for email: font-family:'Roboto', sans-serif;
-
-					* {
-						font-family: 'Roboto', sans-serif;
-					}
-
-				}
-
-			}
-
-		}
-
-	}
-
-}
-
-
-
-.page-email-settings {
-
-	.mdl-tabs textarea {
-		opacity:0;
-	}
-
-    .mdl-tabs .mdl-tabs__panel {
-      padding:24px 24px 0 24px;
+  .email-preview .preview-area {
+    height: 100%;
+  }
+  @media only screen and (max-width: 1400px) {
+    .grid-col.grid-col--menu {
+      min-width: 200px;
+      width: 200px;
     }
 
-	.grid-container.grid-container--2col {
-		height: ~'calc(100vh - 88px)';
-		min-height: auto;
-	}	
-	.grid-container.grid-container--2col .grid-col--container {
-		min-height:auto;
-		padding:0;
-	}	
+    .grid-col.grid-col--container {
+      flex-basis: 55%;
+    }
 
-	.email-preview {
-	    width: 50%;
-	    background: #dcdfe5;
-	    height: ~'calc(100vh - 172px)';
-	    padding: 0;
-	}
-
-	.email-preview .preview-area {
-		height:100%;
-	}
-
+  }
 }
 
+@media @max1200 {
+  .grid-container.grid-container--2col.grid-container--email .grid-col--container {
+    flex-flow: column nowrap;
+    padding: 0 !important;
+  }
 
-@media @max1200  {
-
-
-	.grid-container.grid-container--2col.grid-container--email .grid-col--container {
-		flex-flow:column nowrap;
-		padding:0 !important;
-	}
-
-	.page-email-settings  {
-
-		.email-additions {
-			padding:0;
-
-			.btn-group {
-				width:100%;
-				flex-flow:row wrap;
-				align-items:center;
-				justify-content:space-around;
-				margin:0 16px;
-
-				
-				.ddown, .btn {
-					margin:0;
-
-				}
-			}
-		}
-
-
-		.mdl-tabs__tab-bar {
-
-		height:auto;
-
-		}
-
-		.email-preview {
-			width:100%;
-			padding:16px;
-		}
-
-	}
+  .page-email-settings {
+    .email-additions {
+      padding: 0;
+      .btn-group {
+        width: 100%;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 16px;
+        .ddown, .btn {
+          margin: 8px 0;
+        }
+      }
+    }
+    .mdl-tabs__tab-bar {
+      height: auto;
+    }
+    .email-preview {
+      width: 100%;
+      padding: 16px;
+      height: 65%;
+      padding-bottom: 85px;
+    }
+    .grid-container.grid-container--2col {
+      flex-flow: column nowrap;
+    }
+    .grid-col.grid-col--container {
+      flex-basis: 100%;
+      width: 100%;
+    }
+    .menu-mobile-settings--box .menu-mobile-settings+.select2 .select2-selection{
+      margin: 24px;
+      margin-bottom: 0;
+    }
+    .ddown .ddown__content .ddown__arrow:after{
+      top: 8px;
+    }
+    .ddown .ddown__content .ddown__arrow:before{
+      top: 3px;
+      left: -12.5px;
+    }
+  }
+  .page-email-settings .email-preview .preview-area{
+    margin-bottom: 80px;
+  }
 }
 
 @media @max550 {
+  .page-email-settings {
+    //.email-additions {
+    //  padding: 0;
+    //  .btn-group {
+    //    width: 100%;
+    //    flex-flow: row wrap;
+    //    align-items: center;
+    //    justify-content: space-around;
+    //    margin: 0 16px;
+    //    //> .ddown, > .btn {
+    //    //  margin: 8px 0;
+    //    //}
+    //  }
+    //}
+    .mdl-tabs__tab-bar {
+      height: auto;
+    }
+    .email-preview {
+      width: 100%;
+    }
+  }
+}
+@media @max1366{
+  .page-email-settings{
+    .email-additions .btn-group{
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+@media @md{
+  .page-email-settings{
+    .email-additions .btn-group{
+      margin:0;
+      padding: 0 24px;
+    }
+  }
+}
+.page-email-settings {
 
-		.page-email-settings  {
+ @media only screen and (max-width: 599px) and (orientation: landscape) {
+   .email-additions .btn-group {
+       padding: 8px 80px;
+   }
+ }
+  @media only screen and (min-width: 600px) and (max-width: 767px) and (orientation: landscape) {
+    .email-additions .btn-group {
+      padding: 8px 160px;
+    }
+  }
+  @media @xs {
+    .menu-mobile-settings--box .menu-mobile-settings+.select2 .select2-selection{
+      margin: 0;
+    }
+    .ddown .ddown__content .ddown__arrow{
+      right: auto;
+    }
+    .ddown .ddown__content .ddown__arrow:after{
+      top: 0;
+    }
+    .ddown .ddown__content .ddown__arrow:before{
+      top: -5.5px;
+      left: -12px;
+    }
+    .CodeMirror {
+      height: 200px;
+    }
 
-		.email-additions {
-			padding:0;
-
-			.btn-group {
-				width:100%;
-				flex-flow:row wrap;
-				align-items:center;
-				justify-content:space-around;
-				margin:0 16px;
-				
-				> .ddown, > .btn {
-					margin: 16px 0;
-
-				}
-			}
-		}
 
 
-		.mdl-tabs__tab-bar {
 
-		height:auto;
+    //design for btn on top
+    .email-additions .btn-group {
+      display: block !important;
+      text-align: center;
+      margin-right: 4px;
+      margin-left: 4px;
+      padding: 0 0 16px 0;
+      margin-top: 8px;
+      @media only screen and (max-height: 330px) {
+        padding: 8px 80px !important;
+      }
+      @media only screen and (max-height: 390px) {
+        padding: 8px 80px !important;
+      }
+      @media only screen and (max-height: 420px) {
+        padding: 8px 80px !important;
+      }
+      .ddown{
+        display: inline-block;
+        margin: 0 8px;
+        .ddown__init{
+          width: 130px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: block;
+          margin: 0;
+          position: relative;
+          &:after{
+            position: absolute;
+            top: 50%;
+            right:4px;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      & > a {
+        width: 90px;
+        display: inline-block;
+        margin: 0 8px;
+      }
+      .ddown.ddown--open {
+        .ddown__arrow{
+          right: 45%;
+        }
+        .ddown__menu {
+          top: 14px !important;
+          right: none;
+        }
+        #Brands + .ddown__content{
+          .ddown__menu{
+            right: 0;
+            left:inherit;
+          }
+        }
+      }
+    }
 
-		}
 
-		.email-preview {
-			width:100%;
-		}
 
-	}
 
+
+
+    .email-preview {
+      height: 400px;
+    }
+
+    .email-additions {
+      .btn-group {
+        padding-top: 0;
+        .ddown {
+        }
+      }
+    }
+
+    #app-wrapper .page-email-settings .email-additions .btn-group .btn {
+      width: 100%; // blue buttons up
+      margin-bottom: 8px;
+    }
+
+    .email-additions {
+      .btn-group {
+        justify-content: center;
+        flex-flow: row wrap;
+      }
+      .btn-group .btn {
+        margin: 0 10px;
+      }
+    }
+
+    .grid-col.grid-col--container {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    .email-preview {
+      padding-bottom: 65px;
+    }
+  }
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1366px) {
+  .page-email-settings .menu-mobile-settings + .select2 .select2-selection {
+    margin: 24px;
+    margin-bottom: 0;
+  }
+}
 
-#app-wrapper .page-email-settings {
+@media @max1366 {
+  .page-email-settings .app-content__footer {
+    margin-left: 0;
+  }
+}
 
-		.email-preview {
-			width:40%
-		}
+@media only screen and (max-width: 1049px) {
+  .grid-container.grid-container--2col .grid-col--container {
+    width: auto;
+  }
+}
+.page-email-settings {
+  .ddown.ddown--open .ddown__menu{//
 
-
-	@media only screen and (max-width: 1400px)  {
-
-		.grid-col.grid-col--menu {
-			min-width: 200px;
-			width:200px;
-		}
-		.grid-col.grid-col--container {
-			    flex-basis: 55%;
-		}
-
-		.email-preview {
-			width:45%
-		}
-
-	}
-
-	@media only screen and (max-width: 1200px)  {
-
-		.grid-container.grid-container--2col {
-			flex-flow: column nowrap;
-		}
-
-		.email-preview {
-			width:100%;
-			padding-bottom: 85px;
-		}
-		.grid-col.grid-col--container {
-			    flex-basis: 100%;
-			    width:100%;
-		}
-
-
-	}
-
-	@media @xs {
-		.email-additions {
-
-			.btn-group {
-				justify-content:center;
-				flex-flow:row wrap;
-			}
-
-			.btn-group .btn {
-				    margin: 0 10px;
-			}
-		}
-
-		.grid-col.grid-col--container {
-		    flex-basis: 100%;
-		    width: 100%;
-		}
-
-		.email-preview {
-			// width:100%;
-			padding-bottom: 65px;
-		}
-
-	}
+  }
+  .ddown .ddown__content .ddown__arrow{
+    top:18px;
+  }
+}
+.page-email-settings .email-additions .btn-group .ddown.ddown--open .ddown__menu{
+  left: 0px
 }

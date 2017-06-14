@@ -1,156 +1,119 @@
 .label-basic {
-	padding: 6px 5px;
-	font-size: 10px;
-	font-weight: 500;
-	position: relative;
-	text-transform: uppercase;
-	border-radius: 2px;
-	color: #fff;
-	background-color: #222;
-	
-    overflow: hidden;
-    white-space: nowrap;
+  font-size: 10px;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+  border-radius: 2px;
+  color: @standard-white;
+  background-color: @background-not-full-black;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 3px 5px;
 
-	//new sisze
-	padding: 3px 5px;
+  //states
 
+  &.label-basic--success {
+    background: @color-success;
+  }
 
-	// //tmp
-	// @media @medium-max {
-	// 	display: flex;
-	// 	flex-flow: row nowrap;
-	// 	align-items: center;
-	// 	justify-content: center;
-	// 	text-align: center;
-	// }
+  &.label-basic--default {
+    background: @color-disabled;
+    color: @standard-white;
+  }
 
-	//states 
+  &.label-basic--danger {
+    background: @color-error;
+  }
 
-	&.label-basic--success {
-		background: @color-success;
-	}
+  &.label-basic--pending {
+    background: @color-warning;
+  }
 
-	&.label-basic--default {
-		background: #c6c8cc;
-		color: #fff;
-	}
+  &.label-basic--info {
+    background: @color-info;
+  }
 
-	&.label-basic--danger {
-		background: @color-error;
-	}
+  &.label-basic--transparent {
+    background: transparent;
+    color: @primary-grey;
+    padding-left: 0;
+  }
 
-	&.label-basic--pending {
-		background: @color-warning;
-	}
+  //sizes
 
-	&.label-basic--info {
-		background: @color-info;
-	}
+  &.label-basic--md {
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 20px;
+    line-height: 20px;
+  }
 
-	&.label-basic--transparent {
-		background: transparent;
-		color: #929292;
-		padding-left: 0;
-	}
-
-
-	//sizes
-
-	&.label-basic--md {
-	    display: inline-block;
-	    padding-top: 0;
-	    padding-bottom: 0;
-	    height: 20px;
-	    line-height: 20px;	
-	}
-
-	&.label-basic--small {
-	    display: flex;
-	    margin-left: 8px;
-	    padding: 0px 5px;
-	}
+  &.label-basic--small {
+    display: flex;
+    margin-left: 8px;
+    padding: 0 5px;
+  }
 
 }
-
 
 //inside datatable RWD
 
 .dtr-data {
+  .label-circle {
+    text-align: center;
+    display: inline-block;
+  }
 
-	.label-circle {
-		text-align:center;
-		display:inline-block;
-	}
-	
 }
 
 //label circle - so far, brand list
 .label-circle {
+  font-size: 13px;
+  font-weight: bold;
+  color: @primary-bg;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
 
-	font-size:13px;
-	font-weight:bold;
-	color:@primary-bg;
-	// padding-left:20px;
-	position: relative;
-	display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
+  &:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-weight: 900;
+    text-rendering: auto;
+    content: '\f26c';
+    z-index: 1;
+    margin-right: 8px;
+    color: currentColor;
+  }
 
-	&:before {
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	    display: inline-block;
-	    position: relative;
-	    top: 0;
-	    left: 0;
-	    // color: @primary-bg;
-	    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
-	    font-weight: 900;
-	    text-rendering: auto;
-	    content: '\f26c';
-	    z-index: 1;
-	    margin-right:8px;
-	    color:currentColor;
+  &.label-circle--success {
+    color: @color-success;
+  }
 
-	}
+  &.label-circle--warning {
+    color: @color-warning;
+  }
 
-	&.label-circle--success {
+  &.label-circle--error {
+    color: @color-error;
+  }
 
-		color: @color-success;
-
-		
-	}
-
-	&.label-circle--warning {
-
-		color: @color-warning;
-
-	}
-
-	&.label-circle--error {
-
-		color: @color-error;
-
-		}
-
-	&.label-circle--info {
-
-		color: @color-info;
-
-	}
-	&.label-circle--alert {
-
-		color: @color-alert;
-
-
-	}
-
-	&.label-circle--pending {
-
-		color: @color-inactive;
-
-	}
-
+  &.label-circle--info {
+    color: @color-info;
+  }
+  &.label-circle--alert {
+    color: @color-alert;
+  }
+  &.label-circle--pending {
+    color: @color-inactive;
+  }
 
 }

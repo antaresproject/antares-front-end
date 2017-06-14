@@ -1,44 +1,114 @@
 //helpers
+
+[data-lorem] {
+    width:100%;
+    height:100%;
+}
+
 .list-clear {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-
 .nopadding {
     padding: 0 !important;
 }
-
 .nomargin {
-    margin: 0 !important;
+    margin: 0 !i mportant;
 }
-
 .bold {
     font-weight: bold;
 }
-
 .noborder {
     border: 0 !important;
 }
-
 .noboxshadow {
     box-shadow: none !important;
 }
-
 .is-hidden {
     // display: none !important;
     display: none;
 }
-
 #app-wrapper .is-hidden {
     // display: none !important;
     display: none;
 }
-
 .overflow-visible {
     overflow: visible !important;
 }
 
+.text-justify{
+    text-align: justify !important;
+}
+.text-uppercase{
+    text-transform: uppercase !important;
+}
+.text-lowercase{
+    text-transform: lowercase !important;
+}
+.text-capitalize{
+    text-transform: capitalize !important;
+}
+.italic{
+    font-style: italic !important;
+}
+.normal{
+    font-style: normal !important;
+}
+.text-white{
+    color: white !important;
+}
+.text-black{
+    color: black !important;
+}
+.align-top{
+    vertical-align: top !important;
+}
+.align-bot{
+    vertical-align: bottom !important;
+}
+.align-middle{
+    vertical-align: middle !important;
+}
+.background-grey{
+    background-color: @background !important;
+}
+.background-blue{
+    background-color: @primary-bg !important;
+}
+.background-black{
+    background-color: @secondary-bg !important;
+}
+.text-color-link{
+    color: @color-link !important;
+}
+.noborder-top{
+    border-top: 0 !important;
+}
+.noborder-right{
+    border-right: 0 !important;
+}
+.noborder-bot{
+    border-bottom: 0 !important;
+}
+.noborder-left{
+    border-left: 0 !important;
+}
+.display-block{
+    display: block !important;
+}
+.display-none{
+    display: none !important;
+}
+.display-inline-block{
+    display: inline-block !important;
+}
+.overflow-hidden{
+    overflow: hidden !important;
+}
+.overflow-auto{
+    overflow: auto !important;
+}
 // Gradients
 .default-gradient {
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
@@ -47,7 +117,6 @@
     background-image: -ms-linear-gradient(top, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
 }
-
 .default-gradient2 {
     background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .04), rgba(255, 255, 255, 0));
     background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, .04), rgba(255, 255, 255, 0));
@@ -55,12 +124,10 @@
     background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, .04), rgba(255, 255, 255, 0));
     background-image: linear-gradient(to top, rgba(0, 0, 0, .04), rgba(255, 255, 255, 0));
 }
-
 .no-scroll {
     overflow-x: hidden !important;
     overflow-y: hidden !important;
 }
-
 .mdl-font {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -68,7 +135,6 @@
     text-rendering: auto;
     z-index: 1;
 }
-
 .mdl-font-search--left {
     .mdl-font();
     position: absolute;
@@ -78,37 +144,30 @@
     font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
     content: '\f1c3';
 }
-
 //arrow
 .pseudo-arrow {
     .mdl-font();
     font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
 }
-
 .overflow-y {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 .text-center,
 .text-c {
     text-align: center;
 }
-
 .text-right,
 .text-r {
     text-align: right;
 }
-
 .text-left,
 .text-l {
     text-align: left;
 }
-
 .text-nowrap {
     white-space: nowrap;
 }
-
 //help icon
 i.zmdi-help-outline.help--trigger {
     color: #b8c0cc;
@@ -119,29 +178,23 @@ i.zmdi-help-outline.help--trigger {
         cursor: help;
     }
 }
-
 .maxwidth380 {
     max-width: 380px;
 }
-
 .minwidth480 {
     min-width: 480px;
 }
-
 .maxwidth480 {
     max-width: 480px;
 }
-
 .hAuto {
     height: auto !important;
 }
-
 //framework server specific
 .widget-content {
     position: relative;
     height: 100%;
 }
-
 .clearfix:before,
 .clearfix:after {
     content: ".";
@@ -149,18 +202,13 @@ i.zmdi-help-outline.help--trigger {
     height: 0;
     overflow: hidden;
 }
-
 .clearfix:after {
     clear: both;
 }
-
 .clearfix {
     zoom: 1;
 }
-
-
 /* IE < 8 */
-
 //reset css for an element
 .reset-css {
     all: initial !important;
@@ -168,8 +216,11 @@ i.zmdi-help-outline.help--trigger {
         all: unset !important;
     }
 }
-
 ::selection {
     background: lighten(@primary-bg, 20%);
     text-shadow: none;
+}
+
+#app-wrapper .box-shadow {
+    box-shadow: 0 1px 15px rgba(0,0,0,.05) !important;
 }

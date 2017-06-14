@@ -50,12 +50,9 @@
             .grid-col {
                 flex-basis: 100% !important;
                 width: 100%;
-                // margin-bottom: -32px;
             }
         }
         .grid-col--small {
-            // flex-basis: 18.5%;
-            width: 18.5%;
             width: 336px;
         }
         .grid-col--big {
@@ -89,11 +86,11 @@
             min-height: 100vh;
             background-color: #fff;
             box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
+            z-index: 0;
             padding: @unit3;
             @media @max1050 {
                 padding: 24px 24px;
                 width: ~"calc(100% - 68px)";
-                // ~"calc(100vh - 62px)";
                 .form-block.form-block--md .input-field__container,
                 .form-block.form-block--md .input-field {
                     width: auto;
@@ -164,13 +161,6 @@
     }
     .grid-col {
         padding: 0 @grid-padding;
-        // height: 100%;
-        &:first-child {
-            // padding-right: @grid-padding;
-        }
-        &:last-child {
-            // padding-right: 0;
-        }
         &.grid-col--h100p {
             min-height: 100%;
             .card {
@@ -219,12 +209,10 @@
 }
 
 .grid-container.full-height {
-    // height: ~'calc(100vh - 88px)';
     height: auto;
     min-height: ~'calc(100vh - 88px)';
     position: relative;
     @media @xs {
-        // height: ~'calc(100vh - 64px)';
         height: auto;
         padding-bottom: 0;
         >.grid-col {

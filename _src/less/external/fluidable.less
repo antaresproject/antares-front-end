@@ -1,13 +1,8 @@
-
-
-
 //Fluidable
 /*!
- * Fluidable Grid System 1.2.4
- *
- * Creator: Andri Sigurðsson
+ * Fluidable Grid System 
  * Site: http://fluidable.com
- * Date: 24.10.2015
+ * Date: 31.05.2016
  */
 
 /*
@@ -28,29 +23,23 @@
 
 
 
-/*
- 	
-	Mobile and up
- 
-*/
+//
+// Mobile and up
+//
 
 [class*="col-fixed-"] {
   float: left;
   width: 100%;
 }
 
-.col-group {
-	padding: 0 @gutterWidth;
-	&:after {
-    	display: table;
-    	clear: both;
-    	content: " ";
-	}
-}
+//.col-group {
+//	padding: 0 @gutterWidth;
+//	.clear();
+//}
 
-.col-group .col-group {
-	padding: 0;
-}
+//.col-group .col-group {
+//	padding: 0;
+//}
 
 .col-group [class*="col-"] {
 	min-height: 1px;
@@ -64,8 +53,6 @@
 	position: relative;
 }
 
-
-
 // Columns
 
 .fluidable (@index) when (@index > 0) {
@@ -77,32 +64,54 @@
 	}
 	.fluidable(@index - 1);
 }
-
-	.offset (@index) when (@index > -1) {
-		.col-mb-offset-@{index} {
-			margin-left: @columnWidth * @index;
-		}
-		.offset(@index - 1);
-	}
-	.offset (0) {}
-	.offset (@columns);
-
-
 .fluidable (0) {}
 .fluidable (@columns);
 
+// Offset
 
-/*
- 	
-	Tablet and up
- 
-*/
+.offset (@index) when (@index > -1) {
+	.col-mb-offset-@{index} {
+		margin-left: @columnWidth * @index;
+	}
+	.offset(@index - 1);
+}
+.offset (0) {}
+.offset (@columns);
+
+
+// Pull
+
+.pull (@index) when (@index > -1) {
+	.col-mb-pull-@{index} {
+		right: @columnWidth * @index;
+	}
+	.pull(@index - 1);
+}
+.pull (0) {}
+.pull (@columns);
+
+
+// Push
+
+.push (@index) when (@index > -1) {
+	.col-mb-push-@{index} {
+		left: @columnWidth * @index;
+	}
+	.push(@index - 1);
+}
+.push (0) {}
+.push (@columns);
+
+
+//	
+//	Tablet and up
+//
 
 @media (min-width: @screenTablet) {
 
 	.container {
 		max-width: @screenTablet - (@gutterWidth * 2);
-		margin: 0 auto;
+		.center-block();
 	}
 
 	// Columns
@@ -162,26 +171,20 @@
 		margin-right: @gutterWidth / -2;
 		margin-left: @gutterWidth / -2;
 		padding: 0;
-		&:after {
-	    	display: table;
-	    	clear: both;
-	    	content: " ";
-		}
+		.clear();
 	}
 
 }
 
-/*
- 	
-	Desktop and up
- 
-*/
+//	
+//	Desktop and up
+//
 
 @media (min-width: @screenDesktop) {
 
 	.container {
 		max-width: @screenDesktop  - (@gutterWidth * 2);
-		margin: 0 auto;
+		.center-block();
 	}
 
 	// Columns
@@ -237,17 +240,15 @@
 }
 
 
-/*
- 	
-	Large desktop and up
- 
-*/
+//	
+//	Large desktop and up
+//
 
 @media (min-width: @screenLarge) {
 
 	.container {
 		max-width: @screenLarge  - (@gutterWidth * 2);
-		margin: 0 auto;
+		.center-block();
 	}
 
 	// Columns
@@ -302,11 +303,9 @@
 
 }
 
-/*
-
-	Fixed aspect ratio columns
-
-*/
+//
+//	Fixed aspect ratio columns
+//
 
 .col-fixed-hd,
 .col-fixed-landscape,
@@ -348,3 +347,23 @@
 	margin-top: 133.33333333%;
 }
 
+
+//	
+//	Other
+//
+
+// Positioning
+
+.center-block {
+	margin: 0 auto;
+}
+
+// Clearfix
+
+.clear {
+	&:after {
+    	display: table;
+    	clear: both;
+    	content: " ";
+	}
+}

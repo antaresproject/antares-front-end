@@ -1,5 +1,6 @@
-@scroll-color: #e1e5e8;
-@scroll-color: rgba(212, 212, 212, 0.6);
+// @scroll-color: @input-border-bottom;
+@scroll-color: @scroll-color-grey-rgba;
+@hover-scroll-color: @scroll-color-grey-rgba-hover;
 
 .ps-container {
   &.ps-active-x > .ps-scrollbar-x-rail,
@@ -11,7 +12,7 @@
     pointer-events: none;
 
     > .ps-scrollbar-x-rail {
-      background: #fff;
+      background: @standard-white;
       opacity: 1;
 
       > .ps-scrollbar-x {
@@ -21,7 +22,7 @@
     }
 
     > .ps-scrollbar-y-rail {
-      background: #fff;
+      background: @standard-white;
       opacity: 1;
 
       > .ps-scrollbar-y {
@@ -73,21 +74,21 @@
       pointer-events: none;
 
       > .ps-scrollbar-x-rail {
-        background: #fff;
-        opacity: 0.2;
+        background: rgba(255,255,255,0.2);
+        // opacity: 0.2;
 
         > .ps-scrollbar-x {
-          background: #000;
+          background: @hover-scroll-color;
         }
 
       }
 
       > .ps-scrollbar-y-rail {
-        background: #fff;
-        opacity: 0.2;
+        background: rgba(255,255,255,0.2);
+        // opacity: 0.2;
 
         > .ps-scrollbar-y {
-          background: #000;
+          background: @hover-scroll-color;
         }
 
       }
@@ -99,10 +100,10 @@
 
       &:hover {
         background: transparent;
-        opacity: 1;
+        // opacity: 1;
 
         > .ps-scrollbar-x {
-          background: #000;
+          background: @hover-scroll-color;
         }
 
       }
@@ -114,10 +115,10 @@
 
       &:hover {
         background: transparent;
-        opacity: 0.6;
+        // opacity: 0.6;
 
         > .ps-scrollbar-y {
-          background: #000;
+          background: @hover-scroll-color;
         }
 
       }
@@ -137,6 +138,21 @@
 
   }
 
+}
+
+
+// hover width fix
+
+.ps-container>.ps-scrollbar-x-rail:active>.ps-scrollbar-x, 
+.ps-container>.ps-scrollbar-x-rail:hover>.ps-scrollbar-x,
+.ps-container>.ps-scrollbar-y-rail:active>.ps-scrollbar-y, 
+.ps-container>.ps-scrollbar-y-rail:hover>.ps-scrollbar-y,
+.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y,
+.ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail>.ps-scrollbar-x,
+.ps-container.ps-in-scrolling.ps-y.active-y>.ps-scrollbar-y-rail>.ps-scrollbar-y,
+.ps-container.ps-in-scrolling.ps-x.active-x>.ps-scrollbar-x-rail>.ps-scrollbar-x
+{
+  width:7px;
 }
 
 //importance of cascade
@@ -180,16 +196,12 @@
 
 }
 
-//XS
 @media @xs {
   #app-wrapper {
     .card--logs {
       .timeline {
         height: 100%;
       }
-
     }
-
   }
-
 }

@@ -1,1 +1,113 @@
-//dropzones
+.page-brand-settings {
+  .generals-form {
+    .col-group {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      .col-16 {
+        padding: 0;
+      }
+    }
+  }
+  .form-block{
+    .col-group{
+      .input-field.input-field--short{
+        @media @xs{
+          position: relative;
+        }
+        .switch{
+          margin-right: -8px;
+          margin-left: auto;
+          @media @xs{
+            position: absolute;
+            right: 8px;
+            top: -22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media @min768max991 {
+  .col-group .app-content__footer {
+    margin: 0 -24px !important;
+  }
+}
+
+@media @xs {
+  .page-brand-settings {
+    .generals-form {
+      .col-group {
+        padding: 0;
+        margin: 0 !important;
+        .col-8 {
+          .col-group {
+            .select2 {
+              width: auto !important;
+            }
+            .select2-selection__rendered {
+              max-width: 270px !important;
+              line-height: 32px;
+            }
+            .select2-container--selectAR {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+      [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow, .select2 .select2-selection .select2-selection__arrow:before {
+        right: 3%;
+      }
+      .select2-selection--single .select2-selection__arrow {
+        right: 3%;
+        width: 9px;
+        height: 32px;
+      }
+
+      .form-block .input-field--desc, .form-block .input-field--desc-right {
+        display: block;
+      }
+    }
+    .cp-brand.cp-brand--typo {
+      min-height: 150px;
+    }
+    .menu-mobile-settings + .select2 {
+      .select2-selection__arrow:before {
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        color: white;
+        height: 24px;
+      }
+      .select2-selection__rendered {
+        line-height: 32px;
+        height: auto;
+      }
+    }
+    .cp-brand--typo .minicolors-position-left .minicolors-panel{
+      left: -100px;
+    }
+
+
+
+
+    &.app-content .main-content .generals-form{
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media @max1650 {
+  .cp-row {
+    display: block;
+    .cp-brand {
+      margin-bottom: 20px;
+      height: auto;
+      .cp-brand--typo {
+        display: block;
+        height: auto;
+      }
+    }
+  }
+}

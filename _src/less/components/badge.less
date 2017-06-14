@@ -2,112 +2,93 @@
 // Badge Component
 //
 
-
-
 .badge {
-	//default color
-	color:  @secondary-bg;
-	border-radius: 10px;
-	font-size: 9px;
-	font-weight: 500;
-	padding: 0 5px;
-	// .flex-center();
-	display: inline-block;
-	text-align: center;    
-	overflow: hidden;
-    white-space: nowrap;
+  color: @secondary-bg;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 500;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  &.badge--top-right {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+  &.badge--right {
+    position: relative;
+    margin-left: auto;
+    margin-right: 16px;
+  }
 
+  //sizes
 
-	&.badge--top-right {
-		position: absolute;
-		top: -5px;
-		right: -5px;
-	}
+  &.badge--md {
+    @min-size: 19px;
+    height: @min-size;
+    line-height: @min-size;
+    min-width: @min-size;
+  }
 
-	&.badge--right {
-		position:relative;
-		margin-left: auto;
-    	margin-right: 16px;
-	}
+  &.badge--lg {
+    @min-size: 24px;
+    height: 18px;
+    line-height: 18px;
+    min-width: @min-size;
+  }
 
-	//sizes
+  //colors
 
-	&.badge--md {
-		@min-size: 19px;
-		height: @min-size;
-		line-height:@min-size;
-		min-width: @min-size;
-	}
+  @badge-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
 
-	&.badge--lg {
-		@min-size: 24px;
-		height: 18px;
-		line-height:18px;
-		min-width: @min-size;
-	}
+  &.badge--green {
+    background-color: lighten(@primary-bg, 15%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: @badge-shadow;
+  }
 
-	//colors 
+  &.badge--green,
+  &.badge--default {
+    background-color: lighten(@primary-bg, 15%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: @badge-shadow;
+  }
 
-	@badge-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  &.badge--dark {
+    background-color: darken(@secondary-bg, 3%);
+    color: #fff;
+    box-shadow: @badge-shadow;
+  }
 
-	&.badge--green {
-		// background-color: lighten(@primary-bg, 3%);
-		background-color: lighten(@primary-bg, 15%);
-		color: #fff;
-		font-size: 10px;
-		font-weight: bold;
-		box-shadow: @badge-shadow;
-	}
+  &.badge--warning {
+    background-color: @color-warning;
+    color: #fff;
+    box-shadow: @badge-shadow;
+  }
 
-	&.badge--green,
-	&.badge--default {
-		// background-color: lighten(@primary-bg, 3%);
-		background-color: lighten(@primary-bg, 15%);
-		color: #fff;
-		font-size: 10px;
-		font-weight: bold;
-		box-shadow: @badge-shadow;
-	}
+  &.badge--info {
+    background-color: @color-info;
+    color: #fff;
+    box-shadow: @badge-shadow;
+  }
 
-	&.badge--dark {
-		background-color: darken(@secondary-bg, 3%);
-		color: #fff;
-		box-shadow: @badge-shadow;
-	}
+  &.badge--success {
+    background-color: @color-success;
+    color: #fff;
+    box-shadow: @badge-shadow;
+  }
 
-	&.badge--warning {
-		background-color: @color-warning;
-		color: #fff;
-		box-shadow: @badge-shadow;
-	}
-
-	&.badge--info {
-		background-color: @color-info;
-		color: #fff;
-		box-shadow: @badge-shadow;
-	}
-
-	&.badge--success {
-		background-color: @color-success;
-		color: #fff;
-		box-shadow: @badge-shadow;
-	}
-
-	&.badge--error,
-	&.badge--danger {
-		background-color: @color-error;
-		color: #fff;
-		box-shadow: @badge-shadow;
-	}
+  &.badge--error,
+  &.badge--danger {
+    background-color: @color-error;
+    color: #fff;
+    box-shadow: @badge-shadow;
+  }
 
 }
-
-// //modifiers
-// .submenu {
-// 	.badge {
-// 		font-weight: 600;
-// 		background-color: darken(@secondary-bg, 3%);
-// 		color: #b0b6c2;
-// 	}
-
-// }

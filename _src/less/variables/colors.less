@@ -7,11 +7,12 @@
 @primary-bg: #02A8F3; //blue
 @secondary-bg: #30343d;
 @tetriary-bg: #fff9c4; //yellow
-@primary-c:#5c6066;
+@primary-c:#5c6066 ;
 @color-inactive:#a1a7b3;
 @background: #ecedf0;
 @primary-grey: #a1a8b2;
 
+@primary-bg-second-light: #44c4fd;
 //PRIMARY COLOR MODS
 @primary-c-overlay:overlay(@primary-c, #dfdfdf);
 
@@ -32,13 +33,126 @@
 // COMPONENTS
 //
 
+
 //btn-link
 @btn-primary-color: @primary-bg;
 //btn--brand
-@btn--brand: lighten(@primary-bg, 3%);
+@btn--brand: lighten(@primary-bg, 15%);
 //timeline
 @timeline-entry-ok: @primary-bg;
 //chart header
 @chart-header:exclusion(@secondary-bg, #232323);
 //input border
 @input-border:#b8c0cc;
+
+
+// components ------------------------------------
+
+@standard-white: #fff;
+@standard-white-second:#eee;
+@standard-black: #000;
+@standard-yellow: yellow;
+// acl
+@input-border-bottom:#dfe3e6;
+@background-borderd-grey:#a8aaad;
+@text-color-darkgrey:#8a9099;
+// @scroll-color-grey-rgba: rgba(138,144,153,0.7);
+@scroll-color-grey-rgba: rgb(188, 197, 204, 0.5);
+@scroll-color-grey-rgba-hover: rgb(188, 197, 204, 0.6);
+// arrows
+@super-dark-grey: #3d454c;
+
+//buttons
+@text-color-grey:#747b80;
+@btn-orange: #ff9800;
+@btn-indigo-hover-active: #5c6bc0;
+@btn-purple-blue: #3f51b5;
+@btn-blue-light: #42a5f5;
+@btn-red-light: #ef5350;
+@btn-link-grey-hover:@input-border-bottom;
+@btn-link-grey-active:#d2d6d9;
+
+//lineChart
+@fill-dark-green-rgba: rgba(85, 212, 68, 0.19);
+@stroke-light-green: #73ca67;
+@stroke-dark-grey-rgba: rgba(206, 206, 206, 0.2);
+@fill-dark-dark-green-rgba: rgba(39, 174, 96, 0.3);
+@stroke-standard-green:#27ae60;
+@fill-brown-rgba:rgba(255, 167, 38, 0.3);
+@fill-grey-rgba: rgba(230,232,235,0.4);
+@fill-purple-rgba:rgba(126, 86, 194, 0.3);
+@stroke-purple: #7e57c2;
+@fill-dark-blue-rgba:rgba(0, 145, 234, 0.3);
+@fill-dark-orange-rgba: rgba(255, 152, 0, 0.4);
+
+//colorindicator
+@standard-purple: rebeccapurple;
+
+//color picker
+@color-dark-dark-blue:#2d353d;
+@color-green:#3ca53c;
+
+//comments
+@background-dark-red:rgba(255, 86, 60, 0.15);
+@text-color-dark-sand: #d6ca89;
+@text-color-brown-grey:#66615c;
+@text-color-grey-sand:#b2a9a1;
+@text-color-light-orange: #ffc107;
+@text-color-dark-cherry-rgba:rgba(255, 0, 0, 0.55);
+@background-light-brown-rgba:rgba(189, 180, 122, 0.3);
+@background-brown-rgba:  rgba(179, 162, 68, 0.4);
+
+//context_menu
+@border-ultra-dark-grey: #2f2f2f;
+
+//datarow
+@text-color-dark-grey: #4b4c4d;
+@text-color-light-green: #5ec250;
+
+
+//files
+@back-border-light-light-green: #d3eafd;
+@background-dark-orange:#cc9200;
+@text-color-light-brown-grey: @text-color-brown-grey;
+
+//labels
+@background-not-full-black: #222;
+
+//pattern_lib
+@text-color-dark-cherry: #880000;
+@text-color-dark-green: #397300;
+@text-color-dark-blue: #1f7199;
+
+// table_view/tableView_main
+@background-soft-blue-green: #9be0ff;
+
+//components END ---------------------------------
+
+// forms (but there may be colored other folders)
+//forms
+@input-hover-border-color:#b7b9bd;
+
+
+//layouts
+//preloader
+@background-blue-grey:#4684ee;
+
+//pages
+//settings_page
+@submenu-color: rgba(255, 255, 255, 0.7);
+@border-color-dark-blue-grey: #252c34;
+//notifications
+//modal
+@background-light-green-blue: #00d9ff;
+
+
+
+
+
+//menu hover
+@background-menu-dark-light:#3d434e;
+@text-color-menu:#b8becc;
+@search-border-bottom: rgba(0,0,0,0.1);
+
+
+@menu-aside-select-mob-tab-bg: #039be0;

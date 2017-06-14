@@ -1,14 +1,217 @@
-// 
-// Zero Data
+@fs: 15vw;
+@c: #848484;
+// new
+
+.card {
+
+	.card__header--left span {
+		font-weight:400;
+	}
+}
+
+.zd-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card--zd {
+
+	.card__content {
+		display:flex;
+		flex-flow:column wrap;
+		align-items:center;
+		justify-content: center;
+		letter-spacing: -0.7px;
+	}
+}
+
+.zd {
+
+	width:100%;
+	height:auto;
+	padding-bottom: 16px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-flow:column wrap;
+
+	&__header {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+		i {
+			color:@primary-bg;
+			font-size:50px;
+		}
+
+	}
+
+	&__content {
+	}
+
+	&__title {
+		font-size:18px;
+		color:#4b4b4c;
+		font-weight:500;
+		text-align:center;
+		margin-bottom:8px;
+	}
+
+	&__description {
+		color:#737780;
+		text-align:center;
+		margin-bottom:8px;
+		font-size:13px;
+	}
+
+	&__footer {
+		display:flex;
+	}
+
+}
+
+//	
+// sizes
 //
 
+.zd {
+
+	&--xs {
+
+		max-width: 172px;
+		@header-margin-bottom: 10px;
+		
+		@header-size:40px;
+		@icon-size: 35px;
+		@title-font-size:13px;
+
+		@desc-line-height: 16px;
+		@desc-font-size:12px;
+		
+		@button-font-size: 12px;
+		@button-line-height: 32px;
+		@button-padding: 12px;
+
+		.zd__title { font-size:@title-font-size; line-height:18px;  }
+		.zd__description { line-height: @desc-line-height; font-size:@desc-font-size; margin-bottom:14px; }
+		.btn--zd { font-size:@button-font-size; line-height:@button-line-height; padding:0 @button-padding; }
+		.zd__header i { font-size:@icon-size }
+		.zd__header {
+			margin-bottom: @header-margin-bottom;
+			height: @header-size;
+			width: @header-size;
+		}
+		
+	}
+
+	&--sm {
+		max-width: 224px;
+		@header-margin-bottom: 10px;
+		@header-size:48px;
+		
+		@icon-size: 45px;
+
+		@title-font-size:14px;
+		
+		@desc-line-height: 18px;
+		@desc-margin-bottom: 16px;
+		@desc-font-size:13px;
+
+		@button-font-size: 12px;
+		@button-line-height: 36px;
+		@button-padding: 16px;
+
+		.zd__title { font-size:@title-font-size; line-height:20px; }
+		.zd__description { line-height: @desc-line-height; font-size:@desc-font-size }
+		.btn--zd { font-size:@button-font-size; line-height:@button-line-height; padding:0 @button-padding; }
+		.zd__header i { 
+			font-size:@icon-size 
+		}
+		.zd__header {
+			width:@header-size;
+			height:@header-size;
+			margin-bottom:@header-margin-bottom;
+
+		}
+
+	}
+
+	&--default,
+	&--dft {
+
+		max-width: 224px;
+
+		@header-margin-bottom: 24px;
+		@header-size:62px;
+		@icon-size: 65px;
+
+		@title-margin-bottom: 8px;
+		@title-font-size:18px;
+		
+		@desc-line-height: 20px;
+		@desc-margin-bottom: 16px;
+		@desc-font-size:13px;
+
+		@button-padding: 22px;
+		@button-font-size: 13px;
+		@button-line-height: 40px;
+
+		.zd__title { font-size:@title-font-size; margin-bottom: @title-margin-bottom; line-height:24px;  }
+		.zd__description { line-height: @desc-line-height; font-size:@desc-font-size;
+			margin-bottom:@desc-margin-bottom }
+		.btn--zd { font-size:@button-font-size; line-height:@button-line-height; padding:0 @button-padding; }
+		.zd__header i { font-size:@icon-size }
+		.zd__header{ margin-bottom: @header-margin-bottom; width:@header-size; height:@header-size;}
+	}
+
+	&--lg,
+	&--large {
+
+		max-width: 400px;
+
+		@header-margin-bottom: 18px;
+		@header-size:135px;
+		@icon-size: 130px;
+		
+		@title-margin-bottom: 16px;
+		@title-font-size:22px;
+
+		@desc-margin-bottom: 24px;
+		@desc-line-height: 22px;
+		@desc-font-size:16px;
+
+		@button-font-size: 15px;
+		@button-line-height: 52px;
+		@button-padding: 36px;
+
+		.zd__title { font-size:@title-font-size; margin-bottom: @title-margin-bottom; line-height:28px; }
+		.zd__description {  font-size:@desc-font-size; margin-bottom:@desc-margin-bottom; }
+		.btn--zd { font-size:@button-font-size; line-height:@button-line-height; padding:0 @button-padding; }
+		.zd__header i { font-size:@icon-size;}
+		.zd__header {margin-bottom: @header-margin-bottom; width: @header-size; height:@header-size}
+
+		.zd__header {
+			width:135px;
+			height:135px;
+
+		}
+
+
+	}
+
+}
+
+
+// OLD V
 @fs: 15vw;
 @c: #848484;
 .zero-data {
-
-
 	width: 100%;
-	// height: 100%;
 	height:auto;
 	min-height: 30vh;
 	background-color: #fff;
@@ -18,15 +221,12 @@
 	justify-content: space-around;
 	color: @c;
 	margin: 24px 0;
-	// border: 1px dotted lighten(@c, 38%);
 	overflow:hidden;
 
 	.zero-data__indicator {
 		width:auto;
 		text-align: center;
 		padding: 0 6vw;
-		//tmp
-		// display:none;
 
 		&:before {
 			.mdl-font();
@@ -36,46 +236,18 @@
 			content: '\f1f8';
 			transition: @transition;
 		}
-
-		// &:hover {
-		// 	&:before {
-		// 		opacity:0.5;
-		// 	}
-
-		// }
-
 		i {
 			font-size: @fs;
 		}
-
-
-
 	}
 
 	.zero-data__txt {
-		old
-		flex:1;
-		// font-size: 50px;
 		text-align: center;
 		font-weight: 400;
 		letter-spacing: 3px;
 		font-size: 2vw;
 		line-height: 1.2;
 		flex:1;
-
-//try
-// text-transform: uppercase;
-// font-size: 30px;
-// font-weight: 700;
-// position: relative;
-// left: 0px;
-// top: 0;
-// width: auto;
-// transform: scale(7.66)rotate(-2deg);
-// padding: 100px 0;
-// opacity: 0.06;
-
-
 		a {
 		text-align: center;
 		font-weight: 400;
@@ -83,17 +255,14 @@
 		font-size: 2vw;
 		line-height: 1.2;
 		}
-
 	}
 
 		//states
-
 		&.zero-data--help {
-			@c: #BDE5FD;
+			@c: @back-border-light-light-green;
 			border: 1px dotted lighten(@c, 6%);
 			a {
 				font-weight:300;
-
 			}
 		    .zero-data__indicator {
 		        &:before {
@@ -116,8 +285,6 @@
 		@fs:35vw;
 
 		.zero-data__indicator {
-			
-
 			&:before {
 				font: normal normal normal 20vh/1 'Material-Design-Iconic-Font';
 			}
@@ -135,8 +302,6 @@
 
 	}
 	@media @xs {
-	
-
 		.zero-data__indicator {
 			&:before {
 				font: normal normal normal 15vh/1 'Material-Design-Iconic-Font';
@@ -154,13 +319,6 @@
 	}
 
 	@media @xxs {
-	
-
-		.zero-data__indicator {
-			&:before {
-				// font: normal normal normal 15vh/1 'Material-Design-Iconic-Font';
-			}
-		}
 		.zero-data__txt  {
 			padding: 0 3vw;
 			font-size: 6vw;
@@ -168,9 +326,5 @@
 				font-size: inherit;
 			}
 		}
-
-
 	}
-
-
 }

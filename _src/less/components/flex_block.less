@@ -1,26 +1,18 @@
-//
-// Flex Data Block
-//
-
 .flex-block {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: @unit;
+    margin-bottom: 24px;
     width: 100%;
     flex: 1;
     position: relative;
 
-
-
     .flex-block__close {
-
         position:absolute;
-        top:@unit1;
-        right:@unit3;
+        top:8px;
+        right:24px;
         z-index:102;
-
         i {
             color:@primary-grey;
             font-size:17px;
@@ -31,9 +23,7 @@
     &:hover {
 
         .flex-block__close i {
-            
             color:@primary-c;
- 
         }
 
     }
@@ -44,26 +34,16 @@
         display: flex;
         flex-flow: column nowrap;
         font-size: 13px;
-        margin-left: @unit2;
+        margin-left: 16px;
         text-align: left;
 
-        .flex-block__title {
-            color: #4b4b4c;
-        }
 
-        .flex-block__desc {
-            color: #8a8f99;
-            //tmp off
-            // line-height: 17px;
-        }
 
         &.flex--block__content--tight {
-
             >* {
-
                 line-height:18px;
             }
-            
+
         }
 
     }
@@ -82,7 +62,6 @@
     &.flex-block--bold {
         .flex-block__title {
             font-weight: 500;
-            color: lighten(@secondary-bg, 45%);
             font-size: 13px;
             color: @primary-c;
         }
@@ -97,15 +76,15 @@
 
 }
 
-//Helpers 
+//Helpers
 
 .card--contacts {
     .flex-block {
         margin-bottom: 0;
 
         &:hover {
-            background: #eee;
-            transition: 500;
+            background: @standard-white-second;
+            transition: 500ms;
         }
 
     }
@@ -114,7 +93,7 @@
 
 .card--scrollbox {
     .flex-block {
-        padding: @unit1 0 @unit1 @unit3;
+        padding: 8px 0 8px 24px;
     }
 
 }
@@ -122,7 +101,7 @@
 .sidebar {
     .flex-block {
         padding: 8px 24px;
-        border-bottom: 1px solid #ebeff0; 
+        border-bottom: 1px solid @background;
         margin-bottom:0;
         transition:@transition;
         position:relative;
@@ -130,9 +109,9 @@
         .avatar:after {
             transition:@transition;
         }
-            
+
         &:hover {
-            background-color: lighten(@secondary-bg, 72);
+            background-color: lighten(@secondary-bg, 72%);
 
             .avatar:after {
                 border-color: lighten(@secondary-bg, 72%);
@@ -145,7 +124,7 @@
         }
 
         &:last-child {
-            border-bottom:0px;
+            border-bottom:0;
         }
     }
 }
@@ -167,24 +146,18 @@
     }
 
     .ddown__menu {
-         > li:first-child {
+        > li:first-child {
             margin-top: 0;
         }
-         > li:last-child {
+        > li:last-child {
             margin-bottom: 0;
         }
-    }
-}
-
-.ddown {
-    .flex-block {
-        // padding:0;
     }
 }
 
 .card--contacts.card--scrollbox {
 
     .flex-block__content {
-            line-height: 20px;
+        line-height: 20px;
     }
 }
