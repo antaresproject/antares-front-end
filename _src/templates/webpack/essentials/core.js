@@ -4,16 +4,17 @@ var path = './../../../';
 // import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 // OfflinePluginRuntime.install();
 
-
 // EXTERNAL DEPS:
-require('./../../../js/external/material.min.js'); //css in LESS files
+import './../../../js/external/material.min';
 // APP COMPONENTS:
-require('./../../../js/mutator_observer.js');
-require('./../../../js/mechanics.js');
-require('./../../../js/notifications.js');
-require('./../../../js/dropdowns.js');
-require('./../../../js/menu.js');
-require('./../../../js/components/auto_complete/auto_complete.js');
+import './../../../js/components/mutator_observer/mutator_observer';
+import './../../../js/antares_mechanics';
+import './../../../js/antares_notifications';
+import './../../../js/components/dropdowns/ddown_single';
+import './../../../js/components/dropdowns/ddown_multi';
+// import './../../../js/components/auto_complete/auto_complete';
+// import './../../../js/components/main_menu/main_menu_old';
+
 //moved to forms_basic partial
 // require('./../../../js/forms.js');
 // OUTED BY SERVERSIDE VERSION:

@@ -11,10 +11,11 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar %>
+        <% include ../layout/sidebar_vue %>
         <div class="app-content page-dashboard">
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
+            <% include ../layout/sidebar_alerts %>
             <section class="main-content">
                 <div class="grid-container grid-container--main-center">
                     <div class="grid-col grid-col--small">
@@ -22,7 +23,7 @@
                             <div class="card__header">
                                 <div class="card__header--top">
                                     <div class="avatar avatar--active avatar--lg">
-                                        <img src="img/avatar_sample.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample.png" alt="Avatar">
                                     </div>
                                     <div class="client-name">
                                         <span>INBS.Software Konrad Keck</span>
@@ -121,10 +122,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card__content" data-scrollable style="max-height:300px;">
+                            <div class="card__content"  data-scrollable style="max-height:300px; margin-top:12px;">
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--active avatar--xs">
-                                        <img src="img/avatar_sample_2.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_2.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Anna Niemiec</span>
@@ -133,7 +134,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--active avatar--xs">
-                                        <img src="img/avatar_sample_3.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_3.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Damian Piecuchc</span>
@@ -143,7 +144,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--warning avatar--xs">
-                                        <img src="img/avatar_sample_2.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_2.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Piotr Dolega</span>
@@ -152,7 +153,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--xs">
-                                        <img src="img/avatar_sample_4.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_4.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Anna Niemiec</span>
@@ -161,7 +162,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--active avatar--xs">
-                                        <img src="img/avatar_sample_2.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_2.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Anna Niemiec</span>
@@ -170,7 +171,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--active avatar--xs">
-                                        <img src="img/avatar_sample_3.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_3.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Damian Piecuchc</span>
@@ -179,7 +180,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--warning avatar--xs">
-                                        <img src="img/avatar_sample_2.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_2.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Piotr Dolega</span>
@@ -188,7 +189,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--xs">
-                                        <img src="img/avatar_sample_4.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_4.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Anna Niemiec</span>
@@ -197,7 +198,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--active avatar--xs">
-                                        <img src="img/avatar_sample_2.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_2.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Anna Niemiec</span>
@@ -206,7 +207,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--active avatar--xs">
-                                        <img src="img/avatar_sample_3.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_3.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Damian Piecuchc</span>
@@ -215,7 +216,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--warning avatar--xs">
-                                        <img src="img/avatar_sample_2.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_2.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Piotr Dolega</span>
@@ -224,7 +225,7 @@
                                 </a>
                                 <a href="#" class="flex-block">
                                     <div class="avatar avatar--xs">
-                                        <img src="img/avatar_sample_4.png" alt="Avatar">
+                                        <img src="img/avatars/avatar_sample_4.png" alt="Avatar">
                                     </div>
                                     <div class="flex-block__content">
                                         <span class="flex-block__title">Anna Niemiec</span>
@@ -361,7 +362,7 @@
                                                 </div>
                                                 <!-- DDOWN MULTI END -->
                                                 <div class="ddown">
-                                                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button mdl-js-ripple-effect ml8" id="table-ma" disabled>With Selected</div>
+                                                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button  ml8" id="table-ma" disabled>With Selected</div>
                                                     <div class="ddown__content">
                                                         <div class="ddown__arrow"></div>
                                                         <ul class="ddown__menu">
@@ -1543,6 +1544,6 @@
             </section>
         </div>
     </div>
-</body>
+<% include ../layout/js_files %>  </body>
 
 </html>

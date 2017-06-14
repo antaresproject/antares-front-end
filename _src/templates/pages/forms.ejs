@@ -11,89 +11,27 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar %>
-        <div class="app-content">
+        <% include ../layout/sidebar_vue %>
+        <div class="app-content page-forms" data-scroll-blocked="true">
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
+            <% include ../layout/sidebar_alerts %>
             <section class="main-content nopadding">
                 <div class="grid-container grid-container--2col grid-container--footer grid-container--no-padd">
-                    <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
-                    </select>
-                    <div class="grid-col grid-col--menu">
-                        <div class="menu-aside-container">
-                            <ul class="menu-aside">
-                                <li class="is-active">
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-settings"></i><span>General</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-pin"></i><span>Localisation</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-shopping-cart"></i><span>Ordering</span></a>
-                                    <ul class="menu-aside__submenu">
-                                        <li>
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-sun"></i><span>Ordering#1</span></a>
-                                        </li>
-                                        <li class="is-active">
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-wrench"></i><span>Ordering#2</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-washing-machine"></i><span>Ordering#3</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-subway"></i><span>Ordering#4</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-shield-security"></i><span>Ordering#5</span></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="is-active">
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-globe"></i><span>Domains</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-email"></i><span>Mail</span></a>
-                                    <ul class="menu-aside__submenu">
-                                        <li>
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-sun"></i><span>Mail#1</span></a>
-                                        </li>
-                                        <li class="is-active">
-                                            <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-wrench"></i><span>Mail#2</span></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-help"></i><span>Support</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-file"></i><span>Invoices</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-card"></i><span>Credit</span></a>
-                                </li>
-                            </ul>
-                            <ul class="menu-aside">
-                                <li class="menu-aside__title"><span>Separator title</span></li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-settings"></i><span>General</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-pin"></i><span>Localisation</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-shopping-cart"></i><span>Ordering</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+                    <% include ../layout/menu_aside %>
                     <div class="grid-col grid-col--container">
-                        <section class="generals-form ">
+                        <div class="menu-mobile-settings--box">
+                            <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
+                            </select>
+                        </div>
+                        <section class="generals-form">
                             <div class="col-group">
                                 <div class="col-16 text-c mb50 mt32">
                                     <h1>Forms Vertical - Dev Area</h1>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="14" class="form-validation" method="post" action="">
+                                    <form id="14" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Error list</legend>
                                             <div class="form-errors"></div>
@@ -136,13 +74,14 @@
                                             <div class="col-group">
                                                 <div class="form-block">
                                                     <div class="col-16">
-                                                        <label class="form-block__name">Control element error with icon</label>
+                                                        <label class="form-block__name">Control element with icon</label>
                                                     </div>
                                                     <div class="col-16">
-                                                        <div class="input-field">
-                                                            <div class="input-field">
+                                                        <div class="input-field input-field--icon">
+                                                                <div class="input-field__icon">
+                                                                    <i class="zmdi zmdi-upload"></i>
+                                                                </div>
                                                                 <input type="text" name="with_desc" placeholder="Placeholder" required>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -156,7 +95,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="1" class="form-validation" method="post" action="">
+                                    <form id="1" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Input - simple types</legend>
                                             <div class="col-group">
@@ -216,7 +155,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="2" class="form-validation" method="post" action="">
+                                    <form id="2" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Input File</legend>
                                             <div class="col-group">
@@ -227,7 +166,6 @@
                                                     <div class="col-16">
                                                         <div class="input-field">
                                                             <label class="file-upload" for="input-upload">
-                                                                <!-- <span class="file-upload__header">File Upload</span> -->
                                                                 <a class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect mr16">Select Files</a>
                                                                 <input type="text" placeholder="File path" class="disabled file-path" disabled>
                                                                 <input type="file" name="input-upload" id="input-upload" class="input-upload" required>
@@ -246,7 +184,7 @@
                                                             <div class="dropzone dropzone-form">
                                                                 <div class="dz-message" data-dz-message>
                                                                     <div class="dz-m__current">
-                                                                        <img src="img/theme/antares/logo/logo_full.png" alt="">
+                                                                        <img src="img/theme/antares/logo/logo_tear.svg" alt="">
                                                                     </div>
                                                                     <div class="dz-m__header">
                                                                         <i class="zmdi zmdi-wallpaper"></i>
@@ -270,7 +208,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="5" class="form-validation" method="post" action="">
+                                    <form id="5" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Input Date</legend>
                                             <div class="col-group">
@@ -366,7 +304,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="5" class="form-validation" method="post" action="">
+                                    <form id="5" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Textarea</legend>
                                             <!--Single | Input Group  -->
@@ -391,7 +329,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="3" class="form-validation" method="post" action="">
+                                    <form id="3" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Input-group</legend>
                                             <!--Single | Input Group  -->
@@ -474,7 +412,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16">
-                                    <form id="5" class="form-validation" method="post" action="">
+                                    <form id="5" method="post" action="">
                                         <fieldset name="Input-with-button">
                                             <legend>Input with button</legend>
                                             <!--Single | Size Small - 32 -->
@@ -556,7 +494,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="2" class="form-validation" method="post" action="">
+                                    <form id="2" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Select</legend>
                                             <!-- <div class="col-group">
@@ -679,7 +617,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="5" class="form-validation" method="post" action="">
+                                    <form id="5" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Checkbox &amp; Radio</legend>
                                             <!--Single | Input Group  -->
@@ -733,7 +671,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="5" class="form-validation" method="post" action="">
+                                    <form id="5" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>Slider</legend>
                                             <div class="col-group">
@@ -758,7 +696,7 @@
                                     </form>
                                 </div>
                                 <div class="col-16 ">
-                                    <form id="5" class="form-validation" method="post" action="">
+                                    <form id="5" method="post" action="">
                                         <fieldset name="inputs">
                                             <legend>MDL Inputs</legend>
                                             <div class="col-group">
@@ -796,6 +734,20 @@
             </section>
         </div>
     </div>
-</body>
+    <div class="wrapper">
+        <div class="target" id="target">
+            <h1>Scroll me!</h1>
+        </div>
+    </div>
+<% include ../layout/js_files %>
 
+    <script>
+
+
+    </script>
+</body>
+<script>
+
+
+</script>
 </html>

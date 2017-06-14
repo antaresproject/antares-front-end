@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Antares ClientsList</title>
+    <title>Antares Clients List</title>
     <% include ../layout/color_template %>
     <% include ../layout/css_files %>
 </head>
 <template id="vue-page-clients-list">
     
+
     <section class="main-content">
         <div class="grid-stack">
             <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="25">
@@ -51,7 +52,7 @@
                                     <option value="secondary">Secondary 3</option>
                                     <option value="secondary">Secondary 1</option>
                                 </select>
-                                <div class="search-box search-box--dark search-box--big ml25 mr50">
+                                <div class="search-box search-box--dark search-box--big  mr50">
                                     <i class="zmdi zmdi-search"></i>
                                     <form action="#">
                                         <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield">
@@ -126,7 +127,7 @@
                                     </div>
                                 </div>
                                 <div class="ddown ddown--left">
-                                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button mdl-js-ripple-effect ml8" id="table-ma" disabled>With Selected</div>
+                                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button ml8" id="table-ma" disabled>With Selected</div>
                                     <div class="ddown__content">
                                         <div class="ddown__arrow"></div>
                                         <ul class="ddown__menu">
@@ -146,11 +147,11 @@
                                     <th>First Name</th>
                                     <th class="no-sort">Last Name</th>
                                     <th class="no-sort">Company Name</th>
-                                    <th class="no-sort">Email Address</th>
-                                    <th class="no-sort">Services</th>
-                                    <th class="no-sort">Created</th>
+                                    <th class="no-sort desktop">Email Address</th>
+                                    <th class="no-sort desktop">Services</th>
+                                    <th class="no-sort desktop">Created</th>
                                     <th class="no-sort">Status</th>
-                                    <th class="no-sort"></th>
+                                    <th class="no-sort desktop"></th>
                                     <th class="no-sort is-hidden"></th>
                                 </tr>
                             </thead>
@@ -164,7 +165,7 @@
                                     <td>0(0)</td>
                                     <td>08/04/2015</td>
                                     <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                    <td class="dt-actions desktop"><i class="zmdi zmdi-more"></i></td>
                                     <td class="is-hidden cm-actions">
                                         <ul>
                                             <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
@@ -185,10 +186,10 @@
                                     <td>Bis</td>
                                     <td>RS Studio</td>
                                     <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
+                                    <td class="desktop">1(2)</td>
+                                    <td class="desktop">1(2)</td>
                                     <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                    <td class="dt-actions desktop"><i class="zmdi zmdi-more"></i></td>
                                     <td class="is-hidden cm-actions">
                                         <ul>
                                             <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
@@ -209,10 +210,10 @@
                                     <td>Bis</td>
                                     <td>RS Studio</td>
                                     <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
+                                    <td class="desktop">1(2)</td>
+                                    <td class="desktop">1(2)</td>
                                     <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                    <td class="dt-actions desktop"><i class="zmdi zmdi-more"></i></td>
                                     <td class="is-hidden cm-actions">
                                         <ul>
                                             <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
@@ -233,10 +234,10 @@
                                     <td>Bis</td>
                                     <td>RS Studio</td>
                                     <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
+                                    <td class="desktop">1(2)</td>
+                                    <td class="desktop">1(2)</td>
                                     <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                    <td class="dt-actions desktop"><i class="zmdi zmdi-more"></i></td>
                                     <td class="is-hidden cm-actions">
                                         <ul>
                                             <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
@@ -257,10 +258,10 @@
                                     <td>Bis</td>
                                     <td>RS Studio</td>
                                     <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
+                                    <td class="desktop">1(2)</td>
+                                    <td class="desktop">1(2)</td>
                                     <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                    <td class="dt-actions desktop"><i class="zmdi zmdi-more"></i></td>
                                     <td class="is-hidden cm-actions">
                                         <ul>
                                             <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
@@ -281,850 +282,10 @@
                                     <td>Bis</td>
                                     <td>RS Studio</td>
                                     <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Andrew</td>
-                                    <td>Golota</td>
-                                    <td>KSW</td>
-                                    <td><a title="email address" href="#">email@ksw.com.net.pl</a></td>
-                                    <td>1(2)</td>
-                                    <td>12/05/2012</td>
-                                    <td><span class="label-basic label-basic--danger">Danger</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
+                                    <td class="desktop">1(2)</td>
+                                    <td class="desktop">1(2)</td>
                                     <td><span class="label-basic label-basic--info">Pending transfer</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Anna</td>
-                                    <td>Niemiec</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">anna@rsstudio.net</a></td>
-                                    <td>0(0)</td>
-                                    <td>08/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Andrew</td>
-                                    <td>Golota</td>
-                                    <td>KSW</td>
-                                    <td><a title="email address" href="#">email@ksw.com.net.pl</a></td>
-                                    <td>1(2)</td>
-                                    <td>12/05/2012</td>
-                                    <td><span class="label-basic label-basic--danger">Danger</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--info">Pending transfer</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Anna</td>
-                                    <td>Niemiec</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">anna@rsstudio.net</a></td>
-                                    <td>0(0)</td>
-                                    <td>08/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Andrew</td>
-                                    <td>Golota</td>
-                                    <td>KSW</td>
-                                    <td><a title="email address" href="#">email@ksw.com.net.pl</a></td>
-                                    <td>1(2)</td>
-                                    <td>12/05/2012</td>
-                                    <td><span class="label-basic label-basic--danger">Danger</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--info">Pending transfer</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Anna</td>
-                                    <td>Niemiec</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">anna@rsstudio.net</a></td>
-                                    <td>0(0)</td>
-                                    <td>08/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--success">ACTIVE</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Andrew</td>
-                                    <td>Golota</td>
-                                    <td>KSW</td>
-                                    <td><a title="email address" href="#">email@ksw.com.net.pl</a></td>
-                                    <td>1(2)</td>
-                                    <td>12/05/2012</td>
-                                    <td><span class="label-basic label-basic--danger">Danger</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
-                                    <td class="is-hidden cm-actions">
-                                        <ul>
-                                            <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
-                                            <li><a href="http://modulesgarden.com" data-icon="twitter" data-text="1231231">Second</a></li>
-                                            <li>
-                                                <a data-text="Third - Submenu">Third</a>
-                                                <ul>
-                                                    <li><a href="http://modulesgarden.com" data-icon="codepen" data-text="Deep #1">Sub One</a></li>
-                                                    <li><a href="http://modulesgarden.com" data-icon="google" data-text="Deep #2">Sub Two</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul</td>
-                                    <td>Bis</td>
-                                    <td>RS Studio</td>
-                                    <td><a title="email address" href="#">email@rsstudio.net</a></td>
-                                    <td>1(2)</td>
-                                    <td>22/04/2015</td>
-                                    <td><span class="label-basic label-basic--info">Pending transfer</span></td>
-                                    <td class="dt-actions"><i class="zmdi zmdi-more"></i></td>
+                                    <td class="dt-actions desktop"><i class="zmdi zmdi-more"></i></td>
                                     <td class="is-hidden cm-actions">
                                         <ul>
                                             <li><a href="http://modulesgarden.com" data-icon="google" data-text="451231">First</a></li>
@@ -1147,10 +308,10 @@
                                     <th>Last Name</th>
                                     <th>Company Name</th>
                                     <th>Email Address</th>
-                                    <th>Services</th>
-                                    <th>Created</th>
+                                    <th class="desktop">Services</th>
+                                    <th class="desktop">Created</th>
                                     <th>Status</th>
-                                    <th></th>
+                                    <th class="desktop"></th>
                                     <th class="is-hidden"></th>
                                 </tr>
                         </table>
@@ -1164,14 +325,15 @@
 </template>
 <body>
 <div id="app-wrapper">
-    <% include ../layout/sidebar %>
+    <% include ../layout/sidebar_vue %>
 <div class="app-content page-datatables page-vue-datatables">
     <% include ../layout/mainhead %> 
     <% include ../layout/sidebar_notifications %>
+    <% include ../layout/sidebar_alerts %>
     <vue-page-clients-list></vue-page-clients-list>
 </div>
 
 </div>
 
-</body>
+<% include ../layout/js_files %>  <% include ../layout/js_files %>  </body>
 </html>

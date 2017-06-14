@@ -1,18 +1,37 @@
+
+// require("script-loader!jquery");
+// require("script-loader!jquery-ui-bundle");
+// import './../../../js/external/modified/pace';
+// import './../../../js/external/modified/globalize';
+// import 'enquire.js';
+// import 'moment';
+// import 'noty';
+// import 'dialog-polyfill';
+// import 'jquery-modal';
+// import 'qtip2';
+// import './../../../js/external/modified/swal';
+// import 'jquery-match-height';
+// import 'hammerjs';
+// import 'jquery-hammerjs';
+// import 'underscore';
+// import 'perfect-scrollbar/jquery';
+// import './../../../js/external/mdrnzr';
+
 // EXTERNAL DEPS:
 var pace = require('./../../../js/external/modified/pace.js');
 window.Pace = pace;
 // require("script-loader!./../../../js/external/jquery.js");
 require("script-loader!jquery");
+require("./../../../js/external/jquery_migrate_3.js");
 require("script-loader!jquery-ui-bundle");
 require('./../../../js/external/modified/globalize.js');
 var enquire = require('enquire.js');
 window.enquire = enquire; 
 require('script-loader!moment'); //no css
+require('script-loader!noty'); //no css
 require('script-loader!dialog-polyfill');
 require('script-loader!jquery-modal');
-require('script-loader!noty'); //no css
 require('script-loader!qtip2');
-require('script-loader!velocity-animate');
 require('./../../../js/external/modified/swal.js');
 require('script-loader!jquery-match-height'); //nocss
 require('script-loader!hammerjs'); // no css

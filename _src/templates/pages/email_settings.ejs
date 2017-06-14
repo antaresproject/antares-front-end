@@ -11,25 +11,20 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar %>
+        <% include ../layout/sidebar_vue %>
         <div class="app-content page-email-settings">
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
+            <% include ../layout/sidebar_alerts %>
             <section class="main-content nopadding">
                 <div class="grid-container grid-container--2col grid-container--no-padd">
-                    <div class="grid-col grid-col--menu">
-                        <div class="menu-aside-container">
-                            <ul class="menu-aside">
-                                <li>
-                                    <a href="brand-settings.html" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-settings"></i><span>General</span></a>
-                                </li>
-                                <li class="is-active">
-                                    <a href="email-settings.html" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-shopping-cart"></i><span>Email Branding</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+                    <% include ../layout/menu_aside %>
                     <div class="grid-col grid-col--container">
+                        <div class="menu-mobile-settings--box">
+                            <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
+                            </select>
+                        </div>
                         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                             <form action="">
                                 <div class="email-additions">
@@ -116,6 +111,6 @@
             </section>
         </div>
     </div>
-</body>
+<% include ../layout/js_files %>  </body>
 
 </html>

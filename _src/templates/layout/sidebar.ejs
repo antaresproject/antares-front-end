@@ -1,13 +1,13 @@
-
 <!-- App sidebar -->
 <aside class="main-sidebar">
     <!-- <div class="main-sidebar__logo" title="BillEvo"></div> -->
     <nav>
         <!-- Main Menu -->
-        <ul class="main-menu main-menu--brand">
+
+        <ul class="main-menu main-menu--primary">
             <li class="main-menu__brand">
-                <a href="#" title="Dashboard">
-                    <div class="main-sidebar__logo" title="BillEvo"></div>
+                <a href="#">
+                    <div class="main-sidebar__logo"></div>
                 </a>
                 <div class="submenu submenu--system flex-fs">
                     <a href="#" class="submenu__mobile-return">
@@ -106,26 +106,25 @@
                     </section>
                 </div>
             </li>
-        </ul>
-        <ul class="main-menu main-menu--primary">
             <li data-name='dashboard'>
-                <a href="index.html" title="Dashboard">
+                <a href="index.html">
                     <i class="zmdi zmdi-view-dashboard"></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-            <li data-name='brand-list'>
-                <a href="brand_list.html" title="Brand List">
+            <li data-name='dev-tests'>
+                <a href="login_page.html">
                     <i class="zmdi zmdi-email"></i>
-                    <span class="text">Brand List</span>
+                    <span class="text">Login</span>
                 </a>
             </li>
             <li data-name='settings'>
-                <a href="#" title="Settings">
+                <a href="#">
                     <i class="zmdi zmdi-shopping-cart"></i>
                     <span class="text">Settings</span>
                 </a>
                 <div class="submenu flex-fs">
+                    <div class="main-sidebar__logo"></div>
                     <a href="#" class="submenu__mobile-return">
                         <i class="zmdi zmdi-arrow-left"></i>
                         <span>Settings</span>
@@ -137,19 +136,19 @@
                             </header>
                             <ul class="data-list">
                                 <li data-name="general_settings">
-                                    <a href="general_settings.html" title="General Settings" >
+                                    <a href="general_settings.html">
                                         <span>General Settings</span>
                                         <!-- <span class="badge badge--dark badge--lg">20</span> -->
                                     </a>
                                 </li>
                                 <li data-name="email_settings">
-                                    <a href="email_settings.html" title="Email Settings">
+                                    <a href="email_settings.html">
                                         <span>Email Settings</span>
                                         <!-- <span class="badge badge--dark badge--lg">20</span> -->
                                     </a>
                                 </li>
                                 <li data-name="brands_settings">
-                                    <a href="brand_settings.html" title="Brand Settings">
+                                    <a href="brand_settings.html">
                                         <span>Brand Settings</span>
                                         <!-- <span class="badge badge--dark badge--lg">20</span> -->
                                     </a>
@@ -201,23 +200,24 @@
                 </div>
             </li>
             <li data-name='clients_list'>
-                <a href="clients_list.html" title="Clients">
+                <a href="clients_list_dev.html">
                     <i class="zmdi zmdi-accounts" style="font-size: 28px"></i>
                     <span class="text">Clients List</span>
                 </a>
             </li>
             <li data-name='clients_details'>
-                <a href="clients_details.html" title="Clients">
+                <a href="clients_details_gridstack.html">
                     <i class="zmdi zmdi-account-circle"></i>
                     <span class="text">Clients Details</span>
                 </a>
             </li>
             <li data-name='forms'>
-                <a href="">
+                <a href="#">
                     <i class="zmdi zmdi-check-circle-u"></i>
                     <span class="text">Forms</span>
                 </a>
                 <div class="submenu">
+                    <div class="main-sidebar__logo"></div>
                     <a href="#" class="submenu__mobile-return">
                         <i class="zmdi zmdi-arrow-left"></i>
                         <span>Forms List</span>
@@ -228,13 +228,13 @@
                                 <h3>Forms</h3>
                             </header>
                             <ul class="data-list data-list--flex-fs">
-                                <li>
-                                    <a href="forms.html" title="Reports">
+                                <li data-name='forms'>
+                                    <a href="forms.html">
                                         <span class="text">Form Vertical Layout</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="forms_hor.html" title="Reports">
+                                <li data-name='forms_hor'>
+                                    <a href="forms_hor.html">
                                         <span class="text">Form Horizontal Layout</span>
                                     </a>
                                 </li>
@@ -243,13 +243,65 @@
                     </section>
                 </div>
             </li>
+            <li data-name='components'>
+                <a href="#">
+                    <i class="zmdi zmdi-group-work"></i>
+                    <span class="text">Components</span>
+                </a>
+                <div class="submenu">
+                    <div class="main-sidebar__logo"></div>
+                    <a href="#" class="submenu__mobile-return">
+                        <i class="zmdi zmdi-arrow-left"></i>
+                        <span>Components</span>
+                    </a>
+                    <section>
+                        <div class="submenu__content">
+                            <header>
+                                <h3>Components List</h3>
+                            </header>
+                            <ul class="data-list data-list--flex-fs">
+                                <li data-name='widget_files'>
+                                    <a href="widget_files.html">
+                                        <span class="text">Widget Files</span>
+                                    </a>
+                                </li>
+                                <li data-name="widget_tabs">
+                                    <a href="widget_tabs.html">
+                                        <span class="text">Widget Tabs</span>
+                                    </a>
+                                </li>
+                                <li data-name="widget_comments">
+                                    <a href="widget_comments.html">
+                                        <span class="text">Widget Comments</span>
+                                    </a>
+                                </li>
+                                <li data-name="acl">
+                                    <a href="acl.html">
+                                        <span class="text">ACL</span>
+                                    </a>
+                                </li>
+                                <li data-name="translations">
+                                    <a href="translations.html">
+                                        <span class="text">Translations</span>
+                                    </a>
+                                </li>
+                                <li data-name="notifications">
+                                    <a href="notification_templates.html">
+                                        <span class="text">Notification Templates</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </li>
             <li class="more-trigger">
-                <a href="#" title="more">
+                <a href="#">
                     <i class="zmdi zmdi-caret-right-circle"></i>
                     <span class="text">More</span>
                 </a>
             </li>
-            <!-- UNVISIBLE -->
+            <!-- INVISIBLE -->
             <li data-name='framework' class="framework">
                 <a href="framework.html">
                     <span class="icon icon--alert-alt"></span>
@@ -258,12 +310,114 @@
             </li>
         </ul>
         <ul class="main-menu main-menu--secondary is-hidden">
-            <li>
-                <a href="#" title="Bonus #1">
+            <li class="main-menu__brand">
+                <a href="#">
+                    <div class="main-sidebar__logo"></div>
+                </a>
+                <div class="submenu submenu--system flex-fs">
+                    <a href="#" class="submenu__mobile-return">
+                        <i class="zmdi zmdi-arrow-left"></i>
+                        <span>Brand Menu</span>
+                    </a>
+                    <section class="section--2col">
+                        <header>
+                            <h3>Current System</h3>
+                        </header>
+                        <div class="submenu__content">
+                            <div class="submenu__content-left">
+                                <div class="brand-logo">
+                                    <!-- <img src="img/brand-billevo.png" alt=""> -->
+                                </div>
+                            </div>
+                            <div class="submenu__content-right">
+                                <span class="brand-name">BillEvo</span>
+                                <ul class="datarow">
+                                    <li class="datarow__sgl">
+                                        <div class="datarow__left">
+                                            <span>Plan</span>
+                                        </div>
+                                        <div class="datarow__right">
+                                            <span><i class="zmdi zmdi-forward"></i>Lite ($99/mo)</span>
+                                        </div>
+                                    </li>
+                                    <li class="datarow__sgl">
+                                        <div class="datarow__left">
+                                            <span>Payment</span>
+                                        </div>
+                                        <div class="datarow__right">
+                                            <span>Monthly</span>
+                                        </div>
+                                    </li>
+                                    <li class="datarow__sgl">
+                                        <div class="datarow__left">
+                                            <span>Support</span>
+                                        </div>
+                                        <div class="datarow__right">
+                                            <span><i class="zmdi zmdi-forward"></i>2 mo. left</span>
+                                        </div>
+                                    </li>
+                                    <li class="datarow__sgl">
+                                        <div class="datarow__left">
+                                            <span>Registered</span>
+                                        </div>
+                                        <div class="datarow__right">
+                                            <span>2 years ago</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Switch System</h3>
+                        </header>
+                        <div class="submenu__content">
+                            <div class="flex-block flex-block--bold">
+                                <div class="avatar avatar--generic  avatar--xs"></div>
+                                <div class="flex-block__content">
+                                    <span class="flex-block__title">GimmeMoney</span>
+                                    <span class="flex-block__desc">Basic Plan</span>
+                                </div>
+                            </div>
+                            <div class="flex-block flex-block--bold">
+                                <div class="avatar avatar--generic  avatar--active avatar--xs"></div>
+                                <div class="flex-block__content">
+                                    <span class="flex-block__title">GimmeMoney</span>
+                                    <span class="flex-block__desc">Basic Plan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="submenu__content">
+                            <div class="flex-block flex-block--bold">
+                                <div class="avatar avatar--generic  avatar--xs"></div>
+                                <div class="flex-block__content">
+                                    <span class="flex-block__title">GimmeMoney</span>
+                                    <span class="flex-block__desc">Basic Plan</span>
+                                </div>
+                                <span class="flex-block__badge">From $99/mo</span>
+                            </div>
+                            <div class="flex-block flex-block--bold">
+                                <div class="avatar avatar--generic  avatar--xs"></div>
+                                <div class="flex-block__content">
+                                    <span class="flex-block__title">GimmeMoney</span>
+                                    <span class="flex-block__desc">Basic Plan</span>
+                                </div>
+                                <span class="flex-block__badge">From $99/mo</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </li>
+            <li data-name="error-pages">
+                <a href="#">
                     <i class="zmdi zmdi-battery"></i>
                     <span class="text">Error Pages</span>
                 </a>
                 <div class="submenu">
+                    <div class="main-sidebar__logo"></div>
                     <a href="#" class="submenu__mobile-return">
                         <i class="zmdi zmdi-arrow-left"></i>
                         <span>Error Pages</span>
@@ -274,18 +428,18 @@
                                 <h3>Error Pages List</h3>
                             </header>
                             <ul class="data-list data-list--flex-fs">
-                                <li>
-                                    <a href="error_400.html" title="Error 400">
+                                <li data-name="400">
+                                    <a href="error_400.html">
                                         <span class="text">400</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="error_404.html" title="Error 404">
+                                <li data-name="404">
+                                    <a href="error_404.html">
                                         <span class="text">404</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="error_500.html" title="Error 500">
+                                <li data-name="500">
+                                    <a href="error_500.html">
                                         <span class="text">500</span>
                                     </a>
                                 </li>
@@ -294,14 +448,26 @@
                     </section>
                 </div>
             </li>
-            <li>
-                <a href="steps.html" title="Steps Page">
+            <li data-name="login_page">
+                <a href="login_page.html">
+                    <i class="zmdi zmdi-account-circle"></i>
+                    <span class="text">Login Page</span>
+                </a>
+            </li>
+            <li data-name="steps_page">
+                <a href="steps.html">
                     <i class="zmdi zmdi-audio"></i>
                     <span class="text">Steps Page</span>
                 </a>
             </li>
+            <li data-name='zero_data'>
+                <a href="zero_data.html">
+                    <i class="zmdi zmdi-account-circle"></i>
+                    <span class="text">Zero Data</span>
+                </a>
+            </li>
             <li class="more-trigger">
-                <a href="#" title="more">
+                <a href="#">
                     <i class="zmdi zmdi-caret-left-circle"></i>
                     <span class="text">More</span>
                 </a>
@@ -321,7 +487,7 @@
                         <a href="#">
                             <div class="flex-block">
                                 <div class="avatar avatar--xs">
-                                    <img src="img/brand-inbs.png" alt="Avatar" />
+                                    <img src="img/brand/brand-inbs.png" alt="Avatar"/>
                                 </div>
                                 <div class="flex-block__content">
                                     <span class="flex-block__title">PaweŁ‚ Bis</span>
@@ -366,7 +532,7 @@
                         <a href="#">
                             <div class="flex-block">
                                 <div class="avatar avatar--xs">
-                                    <img src="img/brand-inbs.png" alt="Avatar" />
+                                    <img src="img/brand/brand-inbs.png" alt="Avatar"/>
                                 </div>
                                 <div class="flex-block__content">
                                     <span class="flex-block__title">INBS.software</span>
@@ -379,7 +545,7 @@
                         <a href="#">
                             <div class="flex-block">
                                 <div class="avatar avatar--xs">
-                                    <img src="img/brand-rsstudio.png" alt="Avatar" />
+                                    <img src="img/brand/brand-rsstudio.png" alt="Avatar"/>
                                 </div>
                                 <div class="flex-block__content">
                                     <span class="flex-block__title">RS STUDIO</span>

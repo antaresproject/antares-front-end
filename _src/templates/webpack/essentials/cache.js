@@ -1,7 +1,11 @@
 // BUNDLE STARTING POINT
 
+
+
 // IE
-require('es6-promise').polyfill();
+import 'babel-polyfill';
+
+
 
 var stylesBlack = [
     'background: #fff'
@@ -12,10 +16,24 @@ var stylesBlack = [
     , 'font-weight: bold'
 ].join(';');
 
+
+// if ( !PRODUCTION ) {	
+// 	console.log("Antares-Front-end, v." + VERSION + ' initializing...');
+// 	console.log('%cenv: ' + ENV, stylesBlack);
+// }
+
 window.onload = function() {
  console.log('Antares Initialized.');
 };
 
+// if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
+
+// WEBPACK PARTIALS:
+// require('offline-plugin/runtime').install();
+
+
+
 require('./essentials.js');
 require('./core.js');
 require('./vue_loader.js');
+require('./../../../js/components/browser_hooks/browser_hooks.js');

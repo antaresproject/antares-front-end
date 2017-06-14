@@ -11,25 +11,19 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar %>
+        <% include ../layout/sidebar_vue %>
         <div class="app-content page-brand-settings">
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
+            <% include ../layout/sidebar_alerts %>
             <section class="main-content nopadding">
                 <div class="grid-container grid-container--footer grid-container--2col grid-container--no-padd">
-                    <div class="grid-col grid-col--menu">
-                        <div class="menu-aside-container">
-                            <ul class="menu-aside">
-                                <li class="is-active">
-                                    <a href="brand-settings.html" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-settings"></i><span>General</span></a>
-                                </li>
-                                <li>
-                                    <a href="email-settings.html" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-shopping-cart"></i><span>Email Branding</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <% include ../layout/menu_aside %>
                     <div class="grid-col grid-col--container">
+                        <div class="menu-mobile-settings--box">
+                            <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
+                            </select>
+                        </div>
                         <section class="generals-form">
                             <form id="14" class="form-validation" method="post" action="">
                                 <div class="col-group">
@@ -73,7 +67,7 @@
                                                     <div class="col-16 mb2">
                                                         <label class="form-block__name">Default Country</label>
                                                     </div>
-                                                    <div class="col-16" style="width:180px;">
+                                                    <div class="col-16" >
                                                         <div class="input-field input-field--icon">
                                                             <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
@@ -91,7 +85,7 @@
                                                     <div class="col-16 mb2">
                                                         <label class="form-block__name">Default Country</label>
                                                     </div>
-                                                    <div class="col-16" style="width:180px;">
+                                                    <div class="col-16" >
                                                         <div class="input-field input-field--icon">
                                                             <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
@@ -124,26 +118,30 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-block">
-                                                    <div class="col-16 mb2">
+                                                    <div class="col-group">
+                                                    <div class="col-14 mb2">
                                                         <label class="form-block__name p0">
                                                             <span>Maintenance Mode</span>
                                                             <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-inline="Enable Maintenance Mode"></i>
-                                                            <div class="input-field input-field--short ml-auto">
-                                                                <label class="switch">
-                                                                    <input class="switch-checkbox" name="switch" type="checkbox" required="" aria-required="true">
-                                                                    <div class="switch-container">
-                                                                        <div class="switch-handle"></div>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
                                                         </label>
+                                                    </div>
+                                                    <div class="col-2 mb2">
+                                                        <div class="input-field input-field--short ml-auto">
+                                                            <label class="switch">
+                                                                <input class="switch-checkbox" name="switch" type="checkbox" required="" aria-required="true">
+                                                                <div class="switch-container">
+                                                                    <div class="switch-handle"></div>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="col-dt-7 col-dt-offset-1">
-                                        <fieldset name="inputs">
+                                        <fieldset name="BrandLogo">
                                             <legend>Brand Logo</legend>
                                             <div class="col-group">
                                                 <div class="col-10">
@@ -152,7 +150,7 @@
                                                             <div class="dropzone dropzone-form brand-logo">
                                                                 <div class="dz-message" data-dz-message>
                                                                     <div class="dz-m__current">
-                                                                        <img src="img/theme/antares/logo/logo_full.png" alt="">
+                                                                        <img src="img/theme/antares/logo/logo_tear.svg" alt="">
                                                                     </div>
                                                                     <div class="dz-m__header">
                                                                         <i class="zmdi zmdi-wallpaper"></i>
@@ -183,7 +181,7 @@
                                                             <div class="dropzone dropzone-form brand-favicon">
                                                                 <div class="dz-message" data-dz-message>
                                                                     <div class="dz-m__current">
-                                                                        <img src="img/theme/antares/logo/logo_tear.png" alt="">
+                                                                        <img src="img/theme/antares/logo/logo_tear.svg" alt="">
                                                                     </div>
                                                                     <div class="dz-m__header">
                                                                         <i class="zmdi zmdi-wallpaper"></i>
@@ -342,6 +340,6 @@
         </div>
     </div>
         
-</body>
+<% include ../layout/js_files %>  </body>
 
 </html>

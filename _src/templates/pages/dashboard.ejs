@@ -36,7 +36,7 @@
                         <card-chart-tickets></card-chart-tickets>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="3" data-gs-height="15" data-gs-min-width="3" data-gs-min-height="11">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="3" data-gs-height="15" data-gs-min-width="3" data-gs-min-height="11" style="z-index: 1;">
                     <div class="grid-stack-item-content">
                         <card-info></card-info>
                     </div>
@@ -59,19 +59,18 @@
 
     <% include ../layout/templates_dashboard %>
         <div id="app-wrapper">
-            <% include ../layout/sidebar %>
+            <% include ../layout/sidebar_vue %>
                 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
                 <div class="app-content page-dashboard dashboard--vue">
                     <% include ../layout/card_bar %>
                     <% include ../layout/mainhead %>
                     <% include ../layout/sidebar_notifications %>
+                    <% include ../layout/sidebar_alerts %>
                     <div id="dashboard-container">
                         <vue-page-dashboard></vue-page-dashboard>
                     </div>
                 </div>
         </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
 
         <% include ../layout/js_files %>
 </body>

@@ -9,10 +9,11 @@
 </head>
 <body>
 <div id="app-wrapper">
-    <% include ../layout/sidebar %>
+    <% include ../layout/sidebar_vue %>
 <div class="app-content page-datatables">
     <% include ../layout/mainhead %> 
     <% include ../layout/sidebar_notifications %>
+    <% include ../layout/sidebar_alerts %>
     <section class="main-content">
         <div class="grid-stack">
             <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="25">
@@ -75,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="ddown ddown--left">
-                                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button mdl-js-ripple-effect ml8" id="table-ma" disabled>With Selected</div>
+                                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button ml8" id="table-ma" disabled>With Selected</div>
                                     <div class="ddown__content">
                                         <div class="ddown__arrow"></div>
                                         <ul class="ddown__menu">
@@ -1112,5 +1113,5 @@
 
 </div>
 
-</body>
+<% include ../layout/js_files %>  </body>
 </html>

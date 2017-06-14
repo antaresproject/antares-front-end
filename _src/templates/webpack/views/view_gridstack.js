@@ -7,5 +7,7 @@ require('script-loader!gridstack');
 var List = require('list.js');
 window.List = List;
 
-require('./../../../js/gridstackView.js');
+require('./../../../js/antares_gridstack.js');
 
+import zeroData from './../../../js/components/zero_data/zero_data';
+zeroData.gridstack();
