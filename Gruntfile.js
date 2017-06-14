@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         less: {
             main: {
                 options: {
-                    sourceMap: false,
+                    sourceMap: true,
                     sourceMapFileInline: false,
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
                 },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
             },
             external: {
                 options: {
-                    sourceMap: false,
+                    sourceMap: true,
                     sourceMapFileInline: false,
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
                 },
@@ -68,30 +68,34 @@ module.exports = function(grunt) {
                         browsers: ['last 6 versions']
                     }),
                     // disable comments
-                    // require('postcss-discard-comments'),
-                    // require('postcss-zindex'),
+                    require('postcss-discard-comments'),
+                    require('postcss-zindex'),
 
                     // //merge same rules
-                    // require('postcss-merge-rules'),
+                    require('postcss-merge-rules'),
                     // //sort
 
-                    // require('css-declaration-sorter')({
-                    //     order: 'smacss'
-                    // }),
 
-                    // // join media querries
-                    // require('css-mqpacker'),
+                    require('css-declaration-sorter')({
+                        order: 'smacss'
+                    }),
+
+                    // join media querries
+                    require('css-mqpacker'),
 
                     // require('postcss-unique-selectors'),
                     // require('postcss-discard-unused'),
                     // require('postcss-discard-empty'),
                     // require('postcss-discard-duplicates'),
 
-                    // require('cssnano')({
-                    //     discardUnused: {fontFace: false}
-                    // }),
+                    // need config in future
+                    // require("stylelint")(),
 
-                ]
+                    require('cssnano')({
+                        discardUnused: {fontFace: false}
+                    }),
+
+                ],
             },
             main: {
                 src: '_dist/css/antares.css',

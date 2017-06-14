@@ -49,3 +49,17 @@ logo.png
 bulid_area
 stats.json
 profile.json
+.SynologyWorkingDirectory/
+desktop.ini
+phantomas/
+tests/
+/.vscode
+/gzip_assets/
+/_dist/
+/nbproject/
+/nbproject/*
+/.idea/
+/.idea/*
+*.log
+/.gtm/
+
