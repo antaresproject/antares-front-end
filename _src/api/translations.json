@@ -1,0 +1,382 @@
+{
+    "draw": 1,
+    "recordsTotal": 1736,
+    "recordsFiltered": 1736,
+    "data": [  
+        {  
+            "id": 6027,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/foundation",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">456456<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"6027\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">456<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"6027\"  rows='1' class=\"table-key__input\">456<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": "2017-01-02 22:01:38",
+            "updated_at": "2017-01-02 22:01:38",
+            "action": "<div class=\"table-key__inner\"><span>456<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"6027\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 6028,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/foundation",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">456546<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"6028\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">456456<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"6028\"  rows='1' class=\"table-key__input\">456456<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": "2017-01-02 22:01:46",
+            "updated_at": "2017-01-02 22:01:46",
+            "action": "<div class=\"table-key__inner\"><span>456456<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"6028\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2659,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">auth.configuration 1111<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2659\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Two Factor Authentication - First Use 1111<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2659\"  rows='1' class=\"table-key__input\">Two Factor Authentication - First Use 1111<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": "2017-01-02 22:04:23",
+            "action": "<div class=\"table-key__inner\"><span>Two Factor Authentication - First Use 1111<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2659\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2658,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">auth.verify 11<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2658\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Two Factor Authentication 111<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2658\"  rows='1' class=\"table-key__input\">Two Factor Authentication 111<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": "2017-01-02 22:17:53",
+            "action": "<div class=\"table-key__inner\"><span>Two Factor Authentication 111<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2658\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2660,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">auth.wrong_credentials<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2660\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Wrong credentials<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2660\"  rows='1' class=\"table-key__input\">Wrong credentials<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Wrong credentials<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2660\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2567,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/updater",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">commands.app_backup_completed<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2567\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Application backup has been created.<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2567\"  rows='1' class=\"table-key__input\">Application backup has been created.<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Application backup has been created.<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2567\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2568,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/updater",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">commands.app_restore_completed<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2568\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Restore from backup :name has been completed.<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2568\"  rows='1' class=\"table-key__input\">Restore from backup :name has been completed.<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Restore from backup :name has been completed.<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2568\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2569,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/updater",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">commands.app_restore_failed<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2569\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Restore from backup :name failed.<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2569\"  rows='1' class=\"table-key__input\">Restore from backup :name failed.<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Restore from backup :name failed.<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2569\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2566,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/updater",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">commands.db_backup_completed<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2566\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Database backup has been created.<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2566\"  rows='1' class=\"table-key__input\">Database backup has been created.<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Database backup has been created.<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2566\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2571,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/updater",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">commands.finishing_restoration<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2571\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Finishing restoration...<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2571\"  rows='1' class=\"table-key__input\">Finishing restoration...<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Finishing restoration...<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2571\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2570,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/updater",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">commands.starting_restoration<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2570\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Starting restore application from backup :name.<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2570\"  rows='1' class=\"table-key__input\">Starting restore application from backup :name.<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Starting restore application from backup :name.<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2570\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2676,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.activated<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2676\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Activated<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2676\"  rows='1' class=\"table-key__input\">Activated<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Activated<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2676\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2673,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.backend-no-config<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2673\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">This provider does not support the setup configuration.<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2673\"  rows='1' class=\"table-key__input\">This provider does not support the setup configuration.<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>This provider does not support the setup configuration.<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2673\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2681,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.disable.label<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2681\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Disable<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2681\"  rows='1' class=\"table-key__input\">Disable<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Disable<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2681\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2683,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.disable.prompt<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2683\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Do you want to disable the Two-Factor Authentication for the chosen area?<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2683\"  rows='1' class=\"table-key__input\">Do you want to disable the Two-Factor Authentication for the chosen area?<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Do you want to disable the Two-Factor Authentication for the chosen area?<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2683\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2682,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.disable.title<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2682\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Disabling Two-Factor Authentication<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2682\"  rows='1' class=\"table-key__input\">Disabling Two-Factor Authentication<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Disabling Two-Factor Authentication<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2682\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2671,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.edit<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2671\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">:provider Configuration for :area<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2671\"  rows='1' class=\"table-key__input\">:provider Configuration for :area<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>:provider Configuration for :area<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2671\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2678,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.enable.label<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2678\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Enable<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2678\"  rows='1' class=\"table-key__input\">Enable<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Enable<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2678\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2680,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.enable.prompt<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2680\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Do you want to enable the Two-Factor Authentication for the chosen area?<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2680\"  rows='1' class=\"table-key__input\">Do you want to enable the Two-Factor Authentication for the chosen area?<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Do you want to enable the Two-Factor Authentication for the chosen area?<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2680\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2679,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.enable.title<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2679\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Enabling Two-Factor Authentication<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2679\"  rows='1' class=\"table-key__input\">Enabling Two-Factor Authentication<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Enabling Two-Factor Authentication<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2679\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2672,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.fieldset<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2672\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Provider Configuration<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2672\"  rows='1' class=\"table-key__input\">Provider Configuration<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Provider Configuration<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2672\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2675,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.force<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2675\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Force<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2675\"  rows='1' class=\"table-key__input\">Force<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Force<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2675\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2674,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.force_description<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2674\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Force users to configure Two-Factor Authentication after they log in<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2674\"  rows='1' class=\"table-key__input\">Force users to configure Two-Factor Authentication after they log in<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Force users to configure Two-Factor Authentication after they log in<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2674\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2670,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.index<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2670\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Two-Factor Authentication<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2670\"  rows='1' class=\"table-key__input\">Two-Factor Authentication<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Two-Factor Authentication<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2670\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        },
+        {  
+            "id": 2669,
+            "locale": "en",
+            "area": "admin",
+            "lang_id": 1,
+            "group": "antares\/two_factor_auth",
+            "key": "<div class=\"table-key__mobile-open\">\r\n                                        <i class=\"zmdi zmdi-chevron-down\"><\/i>\r\n                                    <\/div>\r\n                                    <div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">configuration.provider<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-key\/admin\" data-id=\"2669\" rows='1' class=\"table-key__input\"><\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "value": "<div class=\"table-key__inner\">\r\n                                        <div class=\"table-key__text\">Provider<\/div>\r\n                                        <textarea data-url=\"http:\/\/192.168.1.225\/admin\/translations\/update-translation\/admin\" data-id=\"2669\"  rows='1' class=\"table-key__input\">Provider<\/textarea>\r\n                                        <div class=\"table-key__actions\">\r\n                                            <div class=\"table-key__remove\"><i class=\"zmdi zmdi-close\"><\/i><\/div>\r\n                                            <div class=\"table-key__add\"><i class=\"zmdi zmdi-check\"><\/i><\/div>\r\n                                        <\/div>\r\n                                        <div class=\"table-key__init-edit\">\r\n                                            <i class=\"zmdi zmdi-edit\"><\/i>\r\n                                        <\/div>\r\n                                    <\/div>",
+            "created_at": null,
+            "updated_at": null,
+            "action": "<div class=\"table-key__inner\"><span>Provider<\/span>\r\n                                    <div class = \"table-key__delete-row\" data-url = \"http:\/\/192.168.1.225\/admin\/translations\/delete-translation\/admin\" data-id = \"2669\">\r\n                                    <i class = \"zmdi zmdi-delete\"><\/i>\r\n                                    <\/div>\r\n                                    <\/div>"
+        }
+    ],
+    "queries": [  
+        {  
+            "query": "select count(*) as aggregate from (select '1' as `row_count` from `tbl_translations` where `area` = ? and (`locale` = ?)) count_row_table",
+            "bindings": [  
+                "admin",
+                "en"
+            ],
+            "time": 7.26
+        },
+        {  
+            "query": "select * from `tbl_translations` where `area` = ? and (`locale` = ?) order by `key` asc limit 25 offset 0",
+            "bindings": [  
+                "admin",
+                "en"
+            ],
+            "time": 9.94
+        }
+    ],
+    "input": {  
+        "draw": "1",
+        "columns": [  
+            {  
+                "data": "id",
+                "name": "id",
+                "searchable": "false",
+                "orderable": "false",
+                "search": {  
+                    "value": "",
+                    "regex": "false"
+                }
+            },
+            {  
+                "data": "key",
+                "name": "key",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {  
+                    "value": "",
+                    "regex": "false"
+                }
+            },
+            {  
+                "data": "value",
+                "name": "value",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {  
+                    "value": "",
+                    "regex": "false"
+                }
+            },
+            {  
+                "data": "action",
+                "name": "edit",
+                "searchable": "false",
+                "orderable": "false",
+                "search": {  
+                    "value": "",
+                    "regex": "false"
+                }
+            }
+        ],
+        "order": [  
+            {  
+                "column": "1",
+                "dir": "asc"
+            }
+        ],
+        "start": "0",
+        "length": "25",
+        "search": {  
+            "value": "",
+            "regex": "false"
+        }
+    }
+}
