@@ -1,0 +1,136 @@
+.grid-stack {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.grid-stack > .grid-stack-item > .ui-resizable-sw {
+  display: none !important;
+}
+
+.grid-stack > .grid-stack-item > .ui-resizable-se {
+  display: none;
+}
+
+.grid-stack > .grid-stack-item:hover > .ui-resizable-se {
+  display: none !important;
+}
+
+.app-content--widgets-movable .grid-stack > .grid-stack-item > .ui-resizable-se {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 4px;
+  bottom: -4px;
+  display: block !important;
+
+  &:before {
+    .mdl-font();
+    font: normal normal normal 15px/1 'Material-Design-Iconic-Font';
+    content: '\f364' !important;
+    transition: @transition;
+    width: 40px;
+    height: 40px;
+    color: overlay(@primary-c, @standard-white);
+    font-size: 24px;
+  }
+}
+
+@media @large-max {
+  .grid-stack-item {
+    height: auto !important;
+  }
+
+  .grid-stack-item-content {
+    position: relative !important;
+    left: 0 !important;
+    height: auto !important;
+  }
+
+}
+
+@media @md-max {
+  .grid-stack {
+    margin: 0;
+  }
+
+}
+
+#app-wrapper .main-content .grid-stack-item {
+  @t: 50ms;
+}
+
+.grid-stack-item {
+  z-index: 0;
+
+  .grid-stack > .grid-stack-item > .grid-stack-item-content {
+    overflow: hidden;
+  }
+
+  .grid-stack-item-content {
+    //box-shadow: none !important;
+    box-shadow: none;
+    .card {
+      height: 100%;
+      margin: 0;
+    }
+
+    .card.card--chart .card__content {
+      //height: ~"calc(100% - 52px)";
+      > div {
+        height: 100%;
+      }
+    }
+  }
+}
+
+//tmp
+//gridsatk overflow - for dropdowns
+
+.page-dashboard.grid-stack-item,
+.page-dashboard .grid-stack-item-content {
+  //overflow: visible !important;
+}
+
+#app-wrapper .app-content .grid-stack-item-content {
+  overflow: visible;
+}
+
+@media (max-width: 1200px) {
+  .grid-stack-item {
+    position: relative !important;
+    width: auto !important;
+    left: 0 !important;
+    top: auto !important;
+    //margin-bottom: 20px;
+    margin-bottom: 8px;
+  }
+
+  .grid-stack-item .ui-resizable-handle {
+    display: none;
+  }
+
+  //.grid-stack {
+  //  height: auto !important;
+  //}
+}
+
+.grid-stack-item .ui-resizable-handle {
+  background: none;
+}
+
+//all gridstacks - OVERFLOW UNITED!
+#app-wrapper .app-content {
+  .grid-stack-item-content {
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    height: 100%;
+  }
+
+  //FF ONLY
+
+  @-moz-document url-prefix() {
+    .grid-stack-item-content {
+      overflow: hidden;
+    }
+  }
+}

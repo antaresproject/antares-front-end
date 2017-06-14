@@ -1,0 +1,137 @@
+//dt buttons extension - https://cdn.datatables.net/buttons/1.2.4/css/buttons.jqueryui.min.css
+div.dt-button-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  margin-top: -100px;
+  margin-left: -200px;
+  background-color: @standard-white;
+  border: 2px solid @background-not-full-black;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  text-align: center;
+  z-index: 21
+}
+
+div.dt-button-info h2 {
+  padding: 0.5em;
+  margin: 0;
+  font-weight: normal;
+  border-bottom: 1px solid @background;
+  background-color: @standard-white
+}
+
+div.dt-button-info > div {
+  padding: 1em
+}
+
+div.dt-buttons {
+  position: relative;
+  float: left
+}
+
+div.dt-buttons .dt-button {
+  margin-right: 0
+}
+
+div.dt-buttons .dt-button span.ui-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px
+}
+
+div.dt-buttons .dt-button:active {
+  outline: none
+}
+
+div.dt-buttons .dt-button:hover > span {
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+div.dt-button-collection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  margin-top: 3px;
+  padding: 8px 8px 4px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: 2002;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  column-gap: 0
+}
+
+div.dt-button-collection .dt-button {
+  position: relative;
+  left: 0;
+  right: 0;
+  display: block;
+  float: none;
+  margin-right: 0
+}
+
+div.dt-button-collection .dt-button:last-child {
+  margin-bottom: 4px
+}
+
+div.dt-button-collection .dt-button:hover > span {
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+div.dt-button-collection.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -75px;
+  border-radius: 0
+}
+
+div.dt-button-collection.fixed.two-column {
+  margin-left: -150px
+}
+
+div.dt-button-collection.fixed.three-column {
+  margin-left: -225px
+}
+
+div.dt-button-collection.fixed.four-column {
+  margin-left: -300px
+}
+
+div.dt-button-collection > * {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid
+}
+
+div.dt-button-collection.two-column {
+  width: 300px;
+  padding-bottom: 1px;
+  column-count: 2
+}
+
+div.dt-button-collection.three-column {
+  width: 450px;
+  padding-bottom: 1px;
+  column-count: 3
+}
+
+div.dt-button-collection.four-column {
+  width: 600px;
+  padding-bottom: 1px;
+  column-count: 4
+}
+
+div.dt-button-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 2001
+}
+

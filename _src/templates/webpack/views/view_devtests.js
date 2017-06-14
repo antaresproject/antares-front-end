@@ -1,0 +1,1 @@
+require('./../../../js/components/devtests/devtests.js');

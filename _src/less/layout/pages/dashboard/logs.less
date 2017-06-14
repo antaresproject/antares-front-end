@@ -1,0 +1,133 @@
+.timeline__padding {
+  &> div {
+    display: block !important; // because css in vue
+    & > span {
+      display: inline-block;
+      position: relative;
+      padding-left: 10px !important;
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 1px;
+        transform: translateY(-50%);
+        border: 2px solid #a1a8b2;
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
+
+.card.card--logs .card-ctrls {
+  margin-top: 16px;
+}
+.card .select2 .select2-selection{
+  background-color: transparent;
+}
+@media @xs {
+  .card.card--logs .card-ctrls{
+    .search-box .search-box__search-field{
+      padding: 0;
+    }
+    margin-bottom: 0;
+    margin-top: 0;
+
+    .search-box .search-box__mdl-textfield .mdl-textfield__label:after{
+      z-index: 10;
+    }
+  }
+  .card.card--logs .card-ctrls__left .select2 .select2-selection {
+    &:after {
+      bottom: 1px
+    }
+    .select2-selection__arrow:before {
+      height: 25px;
+    }
+  }
+  //.card.card--logs .card__content .search-box{
+  //  &:after{
+  //    position: absolute;
+  //    content: "";
+  //    border-bottom: 1px solid #dfe3e6;
+  //    width: 100%;
+  //    top: 90px;
+  //    left: 0;
+  //  }
+  //}
+  // xs LOGS
+  .card-ctrls.card-ctrls--nopadding {
+    margin: 0 !important; // tam był important mt16
+    &:after {
+      position: absolute;
+      content: "";
+      border-bottom: 1px solid #ebeff0;
+      top: 45px;
+      left: 0;
+      width: 100%;
+    }
+    .card-ctrls__left {
+      padding-top: 5px;
+    }
+  }
+
+  [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .select2 .select2-selection .select2-selection__arrow:before {
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    height: 20px;
+  }
+
+  [data-selectar--mdl="true"] + .select2-container--mdl {
+    padding-right: 0;
+    text-align: right;
+    min-width: auto;
+    position: absolute !important;
+    right: 35px;
+    width: auto !important;
+    .select2-selection {
+      height: 100%;
+    }
+  }
+
+  .select2 .select2-selection .select2-selection__rendered {
+    line-height: 37px;
+    height: 100%;
+  }
+
+  [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection, .search-box.search-box--dark .search-box__search-field {
+    border-bottom: 0;
+  }
+
+  .timeline__padding > div {
+    display: block !important; // because css in vue
+    & > span {
+      display: inline-block;
+      position: relative;
+      padding-left: 10px !important;
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        border: 2px solid #a1a8b2;
+        border-radius: 100px;
+      }
+    }
+
+  }
+
+  #app-wrapper .card--logs .timeline {
+    max-height: 300px;
+    margin-top: 20px;
+  }
+
+  // xs LOGS END
+}

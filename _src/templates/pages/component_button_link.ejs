@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Antares Button-Link</title>
+    <% include ../layout/color_template %>
+        <% include ../layout/css_files %>
+</head>
+
+<body>
+    <div id="app-wrapper">
+        <% include ../layout/sidebar_vue %>
+        <div class="app-content page-forms">
+            <% include ../layout/mainhead %>
+            <% include ../layout/sidebar_notifications %>
+            <% include ../layout/sidebar_alerts %>
+            <section class="main-content">
+
+                <div class="card card--example">
+                    <div class="card__header">
+                        <div class="card__header-left">
+                            <span>Button Link</span>
+                        </div>
+                    </div>
+                    <div class="card__content">
+                        <div class="col-group">
+                            <div class="col-mb-2 flex jc-c ai-c">
+
+                                <!-- BUTTON PRIMARY -->
+                                <a href="#" class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Primary</a>
+
+
+                            </div>
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <!-- BUTTON DEFAULT -->
+                                <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Default</a>
+
+                            </div>
+
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <!-- BUTTON DARK -->
+                                <a href="#" class="btn btn--link btn--md btn--dark mdl-button mdl-js-button mdl-js-ripple-effect">Dark</a>
+                            </div>
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <!-- BUTTON ORANGE -->
+                                <a href="#" class="btn btn--link btn--md btn--orange mdl-button mdl-js-button mdl-js-ripple-effect">Orange</a>
+                            </div>
+                            <!-- BUTTON INDIGO -->
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <a href="#" class="btn btn--link btn--md btn--indigo mdl-button mdl-js-button mdl-js-ripple-effect">Indigo</a>
+                            </div>
+                            <!-- BUTTON BLUE -->
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <a href="#" class="btn btn--link btn--md btn--blue mdl-button mdl-js-button mdl-js-ripple-effect">Blue</a>
+                            </div>
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <!-- BUTTON RED -->
+                                <a href="#" class="btn btn--link btn--md btn--red mdl-button mdl-js-button mdl-js-ripple-effect">Red</a>
+                            </div>
+                            <div class="col-mb-2 flex jc-c ai-c">
+                                <!-- BUTTON DISABLED -->
+                                <a href="#" data-single class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" disabled>Button</a>
+                            </div>
+
+                        </div> 
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <% include ../layout/js_files %>
+</body>
+
+</html>

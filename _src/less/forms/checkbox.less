@@ -1,0 +1,89 @@
+.icheckbox_billevo {
+  position: relative;
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+  min-width: 19px;
+  margin: 0 8px 0 0;
+  background-color: #fff;
+  border: 2px solid @border-light-grey;
+  border-radius: 2px;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+  color: transparent;
+  &:active,
+  &:focus {
+    border-color: @primary-bg;
+  }
+  > input {
+    opacity: 0;
+  }
+  input[readonly] + .iCheck-helper {
+    cursor: not-allowed;
+  }
+  &.error:not(.checked) {
+    border: 2px solid @color-error;
+  }
+}
+.icheck-label {
+  cursor: pointer;
+}
+.icheck-label:hover > .icheckbox_billevo,
+.icheckbox_billevo.hover {
+  border: 2px solid @primary-bg;
+}
+.icheckbox_billevo.checked {
+  border: 0;
+  background-color: @primary-bg;
+}
+
+.icheckbox_billevo.disabled,
+.icheckbox_billevo.disabled:hover,
+.icheckbox_billevo.disabled:active,
+.icheckbox_billevo.disabled:focus,
+.icheck-label:hover > .icheckbox_billevo.disabled {
+  border: 2px solid @border-light-grey;
+  cursor: not-allowed;
+}
+
+.icheckbox_billevo:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: @standard-white;
+  font-size: 19px;
+  content: '\f26b';
+  font-family: 'Material-Design-Iconic-Font';
+  text-align: center;
+  line-height: 19px;
+  transition: 0.15s ease-in-out;
+  transform: scale(.7);
+}
+.icheckbox_billevo.checked:before {
+  opacity: 1;
+  transform: scale(1);
+}
+.checkbox > label > .icheckbox_billevo,
+.checkbox-inline > .icheckbox_billevo {
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.iradio_billevo {
+  margin-right: @unit1;
+  &.error:not(.checked) {
+    border: 2px solid @color-error;
+  }
+}
+.form-span--helper {
+  font-size: 13px;
+  color: @primary-c;
+  padding: 0 @unit3 0 @unit1;
+  min-width: 170px;
+}

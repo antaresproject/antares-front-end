@@ -1,0 +1,89 @@
+body {
+  .dropjs-dropbox--first, .dropjs-dropbox--second, .dropjs-dropbox--three1, .dropjs-dropbox--three2 {
+    display: none;
+    background-color: @standard-white;
+    width: 280px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    div:first-child {
+      border-bottom: 1px solid @input-border-bottom;
+      i {
+        color: @color-success;
+      }
+    }
+    div:last-child {
+      border-top: 1px solid @input-border-bottom;
+      i {
+        color: @color-success;
+      }
+    }
+    ul {
+      margin: 0 0;
+      padding: 0 0;
+      li {
+        list-style-type: none;
+        color: @primary-c;
+        font-size: 13px;
+        padding: 10px 20px;
+        i {
+          color: @text-color-grey;
+          vertical-align: bottom;
+          margin-right: 16px;
+        }
+      }
+
+    }
+    .dropjs-dropbox__item {
+      position: relative;
+      &:hover, &:focus {
+        background-color: @background;
+        display: block;
+        cursor: pointer;
+      }
+    }
+    .is-open {
+      display: block;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        border: 5px solid transparent;
+        border-left: 5px solid @text-color-grey;
+        top: 50%;
+        right: 3%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .drop {
+    &.drop-enabled {
+      .dropjs-dropbox--first, .dropjs-dropbox--second, .dropjs-dropbox--three1, .dropjs-dropbox--three2 {
+        display: block;
+      }
+
+    }
+  }
+
+  .dropjs-dropbox--first {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: -13px;
+      border: 7px solid transparent;
+      border-bottom: 7px solid @standard-white;
+    }
+  }
+  .dropjs-dropbox--second, .dropjs-dropbox--three1, .dropjs-dropbox--three2 {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      border: 7px solid transparent;
+      border-right: 7px solid transparent;
+    }
+  }
+}
+
+

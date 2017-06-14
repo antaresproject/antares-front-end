@@ -1,0 +1,32 @@
+@media @xs {
+
+  // xs SYSTEM INFO
+  .card.card--info .card__header-right .btn-link {
+    left: auto;
+  }
+  .card.card--info .card__mobile-toggle{
+    margin-right: -12px;
+  }
+  .card.card--info .card__indicator span {
+    display: inherit;
+    color: #5c6066;
+    margin-top: 8px;
+  }
+
+  .card.card--info .card__indicator .zmdi-info-outline {
+    display: inline-block;
+    font-size: 19px;
+    margin-left: 0;
+    vertical-align: top;
+  }
+
+  // xs SYSTEM INFO END
+}
+.card.card--info .btn-link.btn--red{
+  color: @standard-white !important;
+  background-color: @color-alert;
+  font-weight: 400;
+  &:hover{
+    background-color: #fd4e42;
+  }
+}

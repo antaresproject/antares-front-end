@@ -1,0 +1,238 @@
+.page-settings {
+  .form-block {
+    .col-group {
+      width: 100%;
+      position: relative;
+      > div {
+        .form-block__name {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          display: block;
+          text-align: right;
+          width: 25%;
+        }
+      }
+      .select2-container {
+        //width: 100% !important;
+      }
+    }
+  }
+  .form-block label:not(.switch) {
+    cursor: pointer;
+    line-height: 28px;
+  }
+}
+.form-block {
+  input {
+    transition: 300ms;
+  }
+}
+.page-settings {
+  .form-block .radio-btns [data-type="radio-btn"] input[type="radio"] {
+    display: none;
+  }
+  .form-block .input-field--desc-right .input-field__desc {
+    margin-left: 8px;
+  }
+  .form-block > .col-group > div:last-child .switch {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px
+  }
+  .form-block label:not(.switch) {
+    > span {
+      vertical-align: top
+    }
+  }
+}
+
+@media @xs {
+  .generals-form {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .page-settings {
+    .form-block {
+      .col-group {
+        .form-block__name {
+          max-width: 40%;
+          width: 100% !important;
+        }
+        .input-field, .radio-btns {
+          float: right;
+          width: 60%;
+        }
+        .select2 {
+          width: 60% !important;
+          float: right;
+        }
+        .form-block > .col-group > div:last-child .switch {
+          display: table;
+        }
+        .comiseo-daterangepicker-triggerbutton.ui-button {
+          min-width: 100%;
+        }
+      }
+    }
+
+    .switchbox {
+      display: block;
+    }
+    .radiobtns, .checkboxs {
+      display: block;
+      label {
+        display: block
+      }
+    }
+
+  }
+
+  .select2 .select2-selection .select2-selection__rendered {
+    max-width: 280px !important;
+  }
+
+}
+
+@media @max1366 {
+  .grid-container--2col .app-content__footer {
+    left: auto;
+
+  }
+
+  .page-settings {
+    .grid-container.grid-container--2col .grid-col--container {
+      margin-top: 0;
+    }
+
+    .grid-container.grid-container--2col .grid-col--menu {
+      display: none !important;
+    }
+    .menu-mobile-settings + .select2 {
+      display: block;
+      top: 0;
+      //padding: 16px 24px;
+      z-index: 1;
+      span {
+        color: white
+      }
+      .select2-selection__arrow:before {
+        top: 50%;
+        //right: 12px;
+        transform: translateY(-50%);
+        color: white
+      }
+      .select2-selection__rendered {
+        line-height: 32px;
+        height: auto;
+      }
+    }
+    .menu-mobile-settings + .select2 .select2-selection {
+      height: 32px;
+      background: #02a8f3;
+      color: white;
+      position: relative;
+    }
+  }
+}
+
+@media @min768max991 {
+  .page-settings .generals-form .col-group .col-8 .col-group .select2-container--selectAR {
+    width: 300px !important;
+  }
+
+  .page-settings .generals-form .col-group .col-16 .select2-container--default {
+    width: 300px !important;
+  }
+}
+
+@media @xs {
+  .page-settings .generals-form .col-group .col-8 .col-group .select2-container--selectAR {
+    width: 100% !important;
+  }
+
+  .page-settings .generals-form .col-group .col-16 .select2-container--default {
+    width: 100% !important;
+  }
+
+  .page-settings {
+    .generals-form {
+      .col-group {
+        .col-8 {
+          .col-group {
+            .select2-selection__rendered {
+              max-width: 270px !important;
+              line-height: 32px;
+            }
+          }
+        }
+      }
+      [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow, .select2 .select2-selection .select2-selection__arrow:before {
+        right: 3%;
+      }
+      .select2-selection--single .select2-selection__arrow {
+        right: 3%;
+        width: 9px;
+        height: 32px;
+
+      }
+      .form-block .input-field--desc, .form-block .input-field--desc-right {
+        display: block;
+      }
+    }
+  }
+
+  .page-settings { // for buttonss
+    fieldset[name="Buttons"],
+    fieldset[name="Button Links"],
+    fieldset[name="Button XS"],
+    fieldset[name="Button SM"],
+    fieldset[name="Button MD"],
+    fieldset[name="Button LG"],
+    fieldset[name="Button XL"] {
+      .form-block {
+        text-align: center;
+      }
+      .col-4 {
+        margin: 8px 0;
+      }
+    }
+  }
+}
+
+.page-settings {
+  fieldset[name="inputs"] {
+    .form-block .radio-btns {
+      margin-left: -8px;
+    }
+  }
+  fieldset[name="RadioCheckSwitch"] {
+    .form-block .switchbox {
+      margin-left: -8px;
+    }
+  }
+  @media @max450 {
+    fieldset[name="RadioCheckSwitch"] .form-block .switchbox, .form-block .col-group .radio-btns {
+      width: 62%;
+    }
+  }
+  @media @xs {
+    fieldset[name="RadioCheckSwitch"] .form-block .switchbox, .form-block .col-group .radio-btns {
+      width: 61%;
+    }
+  }
+  @media @xs {
+    fieldset[name="ButtonsWithIcon"] .form-block {
+      text-align: center;
+      .btn {
+        margin: 8px 0;
+      }
+    }
+  }
+
+}
+
+.comiseo-daterangepicker-mask{
+  //display: none !important;
+}

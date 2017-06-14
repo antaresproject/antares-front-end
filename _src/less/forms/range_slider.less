@@ -1,0 +1,52 @@
+.ui-slider {
+  width: 100%;
+  background: @input-border-bottom;
+  height: 12px;
+  border-radius: 10px;
+  margin: @unit3 @unit1;
+  flex: 1;
+  & + .slider-val {
+    display: none;
+  }
+
+  .ui-slider-range {
+    background: @primary-bg;
+  }
+
+  .ui-slider-handle {
+    width: 24px;
+    height: 24px;
+    background: @primary-bg;
+    top: -6px;
+    border-radius: 50%;
+    transition: 300ms box-shadow ease-in-out;
+    border: 0;
+    cursor:pointer;
+
+    &:focus,
+    &:active {
+      outline: 0;
+      background: lighten(@primary-bg, 2%);
+    }
+
+    //when moving
+    &.ui-state-active {
+      box-shadow: 0 2px 13px rgba(0, 0, 0, 0.2);
+    }
+
+  }
+
+  //states
+  &.ui-slider--minimal {
+    height: 2px;
+    border-radius: 0;
+    background: @input-border-bottom;
+    .ui-slider-handle {
+      width: 18px;
+      height: 18px;
+      background: @primary-bg;
+      top: -8px;
+    }
+  }
+
+}

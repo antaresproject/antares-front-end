@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Antares Steps Page</title>
+    <% include ../layout/color_template %>
+    <% include ../layout/css_files %>
+</head>
+<body>
+<div id="app-wrapper" class="app-install">
+    <div class="app-content">
+        <section class="main-content nopadding">
+            <div class="grid-container grid-container--2col grid-container--no-padd ">
+                <div class="grid-col grid-col--menu">
+                    <div class="menu-aside-container">
+                        <ul class="menu-aside menu-aside--steps">
+                            <li>
+                                <a href="/" class="lmdl-js-button mdl-js-ripple-effect install-logo">
+                                    <img src="full-logo-white.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="is-active  ">
+                                <a href="#" class="lmdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>1</span></span><span>Check Requirements</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>2</span></span><span>Create Administrator</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>3</span></span><span>Select components</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>4</span></span><span>Install Antares</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                    <span class="step-indicator"><span>5</span></span><span>Done</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="grid-col grid-col--container">
+
+
+                    <form method="GET" action="http://51.254.36.218/antares/install/prepare" accept-charset="UTF-8"
+                          class="form--hor">
+                        <div class="col-group">
+                            <div class="col-dt-16 col-mb-16">
+                                <fieldset name="inputs" class="system">
+                                    <legend>System Requirements</legend>
+                                    <div class="col-group">
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Storage
+                                                            directory</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-close"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+                                                            <p class="solution">
+                                                                <strong>
+                                                                    Solution:
+                                                                </strong>
+                                                                antares/foundation::install.system.
+                                                                writableStorage.solution
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Assets
+                                                            directory</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Logs
+                                                            directory</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-close"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+                                                            <p class="solution">
+                                                                <strong>
+                                                                    Solution:
+                                                                </strong>
+                                                                Change permissions to storage\logs directory.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Public
+                                                            directory</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Packages
+                                                            directory</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Composer
+                                                            vendor directory</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">PHP
+                                                            Version</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+                                                            <span>7.1.5-1+deb.sury.org~xenial+1</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">PHP
+                                                            Extensions</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+                                                            <p>
+                                                                Following php extensions are installed:
+                                                                <br/>
+                                                                Core, date, libxml, openssl, pcre, zlib, filter, hash,
+                                                                Reflection, SPL, session, standard, apache2handler,
+                                                                mysqlnd,
+                                                                PDO, xml, bcmath, bz2, calendar, ctype, curl, dom,
+                                                                mbstring,
+                                                                fileinfo, ftp, gd, gettext, iconv, json, exif, mcrypt,
+                                                                mysqli,
+                                                                pdo_mysql, pdo_sqlite, Phar, posix, readline, shmop,
+                                                                SimpleXML,
+                                                                sockets, sqlite3, sysvmsg, sysvsem, sysvshm, tokenizer,
+                                                                wddx,
+                                                                xmlreader, xmlwriter, xsl, zip, Zend OPcache
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-block form-box">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <div class="form-block">
+                                                    <div class="col-dt-12 col-11 col-mb-11">
+                                                        <label for="writableStorage" class="form-block__name">Apache
+                                                            Modules</label>
+                                                    </div>
+                                                    <div class="col-dt-4 col-2 col-mb-2">
+                                                        <div class="input-field ">
+                                                            <i class="zmdi zmdi-hc-2x zmdi-check"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-13 col-13 col-mb-13">
+                                                <div class="form-block  form-block-desc">
+                                                    <div class="col-dt-16 col-16 col-mb-16">
+                                                        <div class="input-field__desc">
+                                                            <p>
+                                                                Following apache modules are installed:
+                                                                <br/>
+                                                                core, mod_so, mod_watchdog, http_core, mod_log_config,
+                                                                mod_logio, mod_version, mod_unixd, mod_access_compat,
+                                                                mod_alias,
+                                                                mod_auth_basic, mod_authn_core, mod_authn_file,
+                                                                mod_authz_core,
+                                                                mod_authz_host, mod_authz_user, mod_autoindex,
+                                                                mod_deflate,
+                                                                mod_dir, mod_env, mod_filter, mod_headers, mod_mime,
+                                                                prefork,
+                                                                mod_negotiation, mod_php7, mod_rewrite, mod_setenvif,
+                                                                mod_status
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+                                <fieldset name="inputs" class="database-settings">
+                                    <legend>Database Setting</legend>
+                                    <div class="col-group">
+
+                                        <div class="form-block">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <label class="form-block__name">Database Type</label>
+                                            </div>
+                                            <div class="col-dt-6 col-6 col-mb-6">
+                                                <div class="input-field ">
+                                                    <input disabled type="text" value="mysql" class="w370">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-block">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <label class="form-block__name">Host</label>
+                                            </div>
+                                            <div class="col-dt-6 col-6 col-mb-6">
+                                                <div class="input-field ">
+                                                    <input disabled type="text" value="127.0.0.1" class="w370">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-block">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <label class="form-block__name">Database Name</label>
+                                            </div>
+                                            <div class="col-dt-6 col-6 col-mb-6">
+                                                <div class="input-field ">
+                                                    <input disabled type="text" value="instance9" class="w370">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-block">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <label class="form-block__name">Connection Status</label>
+                                            </div>
+                                            <div class="col-dt-6 col-6 col-mb-6">
+                                                <div class="input-field ">
+
+                                                    <div class="alert alert--sm alert--glow  alert--sm ">
+                                                        <i class="alert__icon zmdi zmdi-alert-circle-o"></i>
+                                                        <div>
+                                                            Failed
+                                                            <p>
+                                                                <strong>Error:</strong> SQLSTATE[HY000] [1044] Access
+                                                                denied for user 'antares'@'localhost'; to database
+                                                                'instance9';
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-block">
+                                            <div class="col-dt-2 col-3 col-mb-3">
+                                                <label class="form-block__name">Mysqldump command availability</label>
+                                            </div>
+                                            <div class="col-dt-2 col-2 col-mb-2">
+                                                <div class="input-field ">
+
+                                                    <input data-icheck="true" type="checkbox" checked="checked">
+                                                    Available
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="separator"></div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<% include ../layout/js_files %>
+</body>
+</html>

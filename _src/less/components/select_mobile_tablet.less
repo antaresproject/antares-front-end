@@ -1,0 +1,98 @@
+@media @xs {
+
+  #app-wrapper .grid-container.grid-container--2col .grid-col--container {
+    padding-top:0 !important;
+  }
+
+  .grid-container.grid-container--2col .grid-col--container{
+    // padding: 0 !important;
+    box-shadow: none;
+  }
+  .menu-mobile-settings + .select2 {
+    .select2-selection__arrow:before {
+      top: 50% !important;
+      transform: translateY(-50%);
+      height: auto;
+      right: 10px;
+    }
+  }
+  .menu-mobile-settings--box + .generals-form{
+    margin-top: 60px;
+  }
+  .menu-mobile-settings + .select2 .select2-selection .select2-selection__rendered {
+    line-height: 46px;
+  }
+  .menu-mobile-settings +.select2 .select2-selection{
+    border: 0;
+  }
+  .menu-mobile-settings+.select2 .select2-selection .select2-selection__rendered{
+    position: relative;
+    padding-left: 63px !important;
+    line-height: 32px;
+    &:before{
+      position: absolute;
+      top:50%;
+      left: 19px;
+      transform: translateY(-50%);
+      font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+      content: "\f1c6";
+      font-size: 24px;
+    }
+  }
+}
+
+@media @max1366 {
+  .menu-mobile-settings--box{
+    position: relative;
+    margin-bottom: 8px;
+    .select2{
+      position: relative;
+    }
+  }
+  .page-email-settings {
+    .menu-mobile-settings--box{
+      .select2{
+        position: relative;
+      }
+    }
+  }
+  .grid-container.grid-container--2col .grid-col--menu {
+    display: none !important;
+  }
+
+  .grid-container.grid-container--2col .grid-col--container {
+    margin-top: 0;
+  }
+
+  .menu-mobile-settings + .select2 {
+    display: block;
+    top: 0;
+    z-index: 1;
+    span {
+      color: white
+    }
+    .select2-selection__rendered {
+      color: white
+    }
+    .select2-selection__arrow:before {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: white
+    }
+    .select2-selection__rendered {
+      line-height: 32px;
+      height: auto;
+    }
+  }
+
+  .menu-mobile-settings + .select2 .select2-selection {
+    color: white;
+    position: relative;
+  }
+}
+.menu-mobile-settings + .select2 .select2-selection {
+  background: @menu-aside-select-mob-tab-bg !important;
+}
+
+

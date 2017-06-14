@@ -1,0 +1,265 @@
+.ddown--view-more-options {
+  display: none !important;
+}
+
+.card--chart .card__header {
+  height: @card-chart-header-height !important;
+}
+
+.ddown--view-more-options + form {
+  display: block;
+}
+
+.card .card__indicator .zmdi-info-outline {
+  display: none;
+}
+
+.card.card--news .card__date, .card__author {
+  i {
+    display: none
+  }
+}
+
+.card.card--news .card__content {
+  max-height: 170px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    top: 40%;
+    //background: linear-gradient(transparent, whitee);
+  }
+}
+
+.card--news .card__overlay, .card--news .card__overlay .card__slider {
+  height: 93% !important;
+}
+
+.card.card--news .card__footer .btn-link {
+  margin-bottom: 0;
+}
+
+@media @xs {
+  .card.card--chart .card__header-left {
+    margin-right: 8px;
+  }
+
+  .main-head .search-box {
+    width: auto;
+  }
+
+}
+
+@media @md {
+  div[data-tooltip-inline="Widget Edit Toggle"] {
+    display: none !important;
+  }
+
+  .main-head .search-box {
+    width: 100%;
+    form {
+      width: 100%;
+      div {
+        width: 100%;
+      }
+      .search-box .search-box__mdl-textfield {
+        width: 100%;
+      }
+    }
+  }
+
+  .main-head.main-head--slim .search-box input {
+    width: 100%;
+  }
+}
+
+// TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN)
+.mobile--toogle-target {
+  //margin: 8px 0 !important;
+}
+
+@media @md {
+  .card__mobile-toggle {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    float: right;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    .mdl-button__ripple-container {
+      border-radius: 50%;
+    }
+  }
+
+  .card--logs,
+  .mdl-tabs {
+    .card__mobile-toggle {
+      left: ~'calc(50% - 20px)';
+      margin: 24px 0;
+    }
+  }
+
+  .card__mobile-toggle.zmdi-long-arrow-up:before {
+    display: none !important;
+  }
+
+  .card__mobile-toggle.zmdi-long-arrow-down:before {
+    display: none !important;
+  }
+
+  .mobile--toogle-box {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    .card__mobile-toggle {
+      float: inherit;
+      margin: 0;
+      left: auto;
+    }
+  }
+
+  ul.mobile--toogle-target, div.mobile--toogle-target {
+    display: none;
+  }
+
+  #app-wrapper .card--tabs .mdl-tabs .tbl-c {
+    overflow-y: hidden !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card--chart .card__mobile-toggle {
+    display: none !important;
+  }
+}
+
+@media @xs {
+  .card--chart .card__mobile-toggle {
+    right: 24px;
+  }
+
+}
+
+@media @md {
+  .card:not(.card-chart--slim):not(.card--info) .card__mobile-toggle.card__mobile-toggle--open {
+    .zmdi {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+// TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN) END
+
+@media @max1500 {
+  .ddown--view-more-options li:first-child {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      //background-image: url(../img/jq-ui/ui-icons_222222_256x240.png);
+      background-position: -64px -16px;
+      width: 16px;
+      height: 16px;
+      left: 110px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .page-dashboard .comiseo-daterangepicker-triggerbutton {
+    .truncate(105px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ddown--view-more-options {
+    display: block !important;
+  }
+
+  .ddown--view-more-options + form {
+    display: none !important;
+  }
+
+  .ddown--view-more-options .ddown__menu > li {
+    width: auto;
+  }
+
+  .ddown--view-more-options .btn.mdl-button {
+    min-width: 36px;
+    border-radius: 50%;
+    font-size: 24px;
+  }
+
+  .ddown--view-more-options .ddown__menu.ddown__menu--innerpadd > li:first-child {
+    margin-top: 0;
+    margin-left: 16px;
+  }
+
+  .ddown--view-more-options .ddown__menu.ddown__menu--innerpadd > li:last-child {
+    margin-bottom: 0;
+    float: right;
+    margin-right: 16px;
+  }
+
+  .ddown--view-more-options .icheckbox_billevo {
+    vertical-align: middle;
+  }
+
+}
+
+.card.card--chart.card-chart--slim .card__header label {
+  display: inline-block !important;
+}
+
+.page-dashboard .select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 4px;
+}
+
+.page-dashboard .grid-stack-item.gs-pagination .tbl-c .pagination {
+  margin: 0 0;
+  padding-right: 8px;
+  height: 53px;
+}
+
+@media @xs {
+  .grid-stack-item {
+    &.gs-pagination {
+      .tbl-c {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .page-dashboard .grid-stack-item.gs-pagination .tbl-c .pagination {
+    margin: 8px 0 0 0;
+  }
+
+  .dataTables_length a:last-child {
+    margin-right: 8px;
+  }
+
+  .card.card-chart--slim .card__header .ddown--view-more-options .btn.mdl-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media @md {
+  .grid-stack-item {
+    &.gs-pagination {
+      .tbl-c {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.card__content .card-ctrls__left .select2 .select2-selection__rendered {
+  line-height: 35px;
+}

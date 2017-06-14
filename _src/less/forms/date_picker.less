@@ -1,0 +1,496 @@
+.page-dashboard{
+  .comiseo-daterangepicker-triggerbutton {
+    > span {
+      display: block;
+    }
+  }
+}
+.comiseo-daterangepicker-calendar, .comiseo-daterangepicker-presets{
+  height: auto;
+}
+.comiseo-daterangepicker-triggerbutton {
+  height: 36px;
+  padding: 0 @unit1;
+  border: 1px solid @border-light-grey;
+  border-radius: 2px;
+  color: @primary-c;
+  font-size: 13px;
+  background: #fff;
+  position: relative;
+  width: @datepicker-width;
+  font-family: Roboto;
+  > span {
+    display: none;
+    color: @primary-c-overlay;
+    padding: 0;
+  }
+
+
+  .ui-button-text {
+    padding-left: 0;
+  }
+  &.error {
+    border: 1px solid @color-error;
+  }
+  &:focus,
+  &:active,
+  &.comiseo-daterangepicker-active {
+    outline: 0;
+  }
+  &:hover {
+    border-color: @input-hover-border-color;
+    .ui-button-text {
+      color: @input-hover-border-color;
+    }
+  }
+  > .ui-button-icon-secondary {
+    display: none;
+  }
+  &.comiseo-daterangepicker-active {
+    border-color: @input-hover-border-color;
+    &:after {
+      color: @primary-bg;
+    }
+  }
+  &:after {
+    content: '\f332';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    color: @input-border;
+    font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
+  }
+  .ui-button-text {
+    .truncate(200px);
+    @media @xs {
+      max-width: 200px !important;
+    }
+    @media @max550 {
+      max-width: 120px !important;
+    }
+  }
+}
+
+//dashboard
+.page-dashboard {
+  .comiseo-daterangepicker-triggerbutton {
+    border: 0;
+    background: @standard-white;
+    width: auto;
+    min-width: auto;
+    margin-right: @unit1;
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+
+    span.ui-button-text {
+      color: @text-color-light-brown-grey;
+      font-size: 13px;
+      .truncate(100%);
+      position: relative;
+      padding: 0 24px 0 8px;
+      height: 36px;
+      line-height: 36px;
+      &:after {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: inline-block;
+        position: absolute;
+        top: 7px;
+        right: 8px;
+        color: @primary-c;
+        font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
+        line-height: 1;
+        text-rendering: auto;
+        content: '\f2f2';
+        z-index: 1;
+      }
+
+    }
+
+    &.comiseo-daterangepicker-active {
+      span.ui-button-text {
+        color: @primary-bg;
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}
+.comiseo-daterangepicker-main{
+  display: flex !important;
+  .comiseo-daterangepicker-calendar{
+    order: 2;
+  }
+  .comiseo-daterangepicker-presets{
+    order:1;
+  }
+}
+.comiseo-daterangepicker {
+
+  padding: 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  font-family: Roboto;
+  z-index: 9999;
+  .comiseo-daterangepicker-presets {
+    padding: 0;
+    ul.ui-menu {
+      border-right: 1px solid @background;
+      padding: 8px 0;
+    }
+    li.ui-menu-item {
+      font-size: 13px;
+      font-family: Roboto;
+      font-weight: 500;
+      color: @primary-c;
+      padding: @unit1 @unit3;
+      border-top: 0;
+      border-bottom: 0;
+      border-right: 0;
+      &:hover,
+      &.ui-state-focus {
+        background: @background-white-grey;
+        padding: @unit1 @unit3;
+        border: 0;
+        outline: 0;
+        margin: 0;
+      }
+      a {
+        font-weight: 400;
+      }
+    }
+  }
+  .btn.btn--dark, .btn.btn--red{ //
+    background-color: @input-border-bottom;
+    color: @primary-c;
+  }
+  .ui-datepicker th {
+    font-weight: 500;
+    font-size: 10px;
+    color: lighten(@secondary-bg, 45%);
+    padding: 0;
+    width: 26px;
+    height: 26px;
+    span {
+      text-transform: uppercase;
+    }
+  }
+  .ui-state-default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    font-size: 12px;
+    color: @primary-c;
+    padding: 4.5px 0;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .ui-state-highlight {
+    a.ui-state-default {
+      background: @background-white-grey;
+      color: @primary-c;
+    }
+  }
+
+  .ui-widget {
+    border: 0;
+  }
+  .ui-widget-content + .ui-helper-clearfix {
+    border-top: 1px solid @background;
+    .comiseo-daterangepicker-buttonpanel {
+      position: relative;
+      display: flex;
+      flex-flow: row nowrap;
+      text-align: right;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 8px 16px;
+      @media @max768{
+        padding: 16px 16px;
+      }
+      button {
+        margin: 0;
+        &:last-child{ //
+          position: absolute;
+          right: 16px;
+          @media @max768{
+            position: relative;
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+  .ui-datepicker-header {
+    border: 0;
+    background: transparent;
+    .ui-datepicker-title {
+      color: @primary-c;
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-prev.ui-state-hover,
+    .ui-datepicker-next,
+    .ui-datepicker-next.ui-state-hover {
+      background: none;
+      border: 0;
+      top: 0;
+      &:before {
+        display: inline-block;
+        position: absolute;
+        top: 7px;
+        color: @standard-black;
+        font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
+        width: 20px;
+        height: 20px;
+        z-index: 1;
+        cursor: pointer;
+      }
+      &.ui-state-disabled {
+        &:before {
+          content: '';
+        }
+      }
+      .ui-icon {
+        background: none;
+      }
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-prev.ui-state-hover {
+      left: 0;
+      &:before {
+        right: -10px;
+        content: '\f2fa';
+      }
+      .ui-icon {
+        background: none;
+      }
+    }
+
+    .ui-datepicker-next,
+    .ui-datepicker-next.ui-state-hover {
+      left: auto;
+      right: 10px;
+      &:before {
+        right: -2px;
+        content: '\f2fb';
+      }
+      .ui-icon {
+        position: relative;
+      }
+    }
+  }
+}
+.data-scroll-blocked-pickers{
+  overflow: hidden ;
+  pointer-events: none;
+}
+.ui-widget-content { //
+  border: 0
+}
+.comiseo-daterangepicker .comiseo-daterangepicker-presets li.ui-menu-item{
+  width: 280px;
+}
+.ui-datepicker td{
+  padding: 0 ;
+}
+.comiseo-daterangepicker{
+  font-family: Roboto, sans-serif;
+}
+.comiseo-daterangepicker .ui-widget{
+  padding-top: 10px;
+}
+.comiseo-daterangepicker-presets a, .comiseo-daterangepicker-presets .ui-state-active{
+  color: @primary-c;
+}
+.comiseo-daterangepicker.ui-widget-content.ui-front:before{
+  left: auto;
+  right:17.5px;
+}
+.comiseo-daterangepicker.ui-widget-content.ui-front:after{
+  left: auto;
+  right:19px;
+}
+@media @max550{
+  .comiseo-daterangepicker-main .comiseo-daterangepicker-calendar{
+    margin-left: 16px;
+  }
+}
+
+
+//calendar
+.xdsoft_datetimepicker{ //
+  font-family: Roboto, sans-serif;
+  box-shadow: 0 5px 20px rgba(0,0,0,.15);
+  border:0;
+  @media @xs{
+    margin-top: 2px;
+  }
+}
+.xdsoft_datetimepicker .xdsoft_calendar th{
+  background-color: @standard-white;
+  color:@color-inactive;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 10px;
+  border: 0;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td{
+  background-color: @standard-white;
+  color:@primary-c;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  border: 0;
+  padding: 4.5px 0;
+  text-align: center;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_date:hover{
+  background-color: @standard-white-second !important;
+  color: @color-inactive !important;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current{
+  background-color: @background;
+  box-shadow: none;
+  color: @primary-c !important;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current:hover{
+  color: @primary-c !important;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td>div{
+  padding: 0;
+}
+.xdsoft_datetimepicker .xdsoft_datepicker  .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_datepicker .xdsoft_next {
+  background-image: none;
+  position: relative;
+  display: block;
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    color: @primary-c;
+    font-size: 24px;
+    line-height: 12px;
+    font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+    content: "\f2fa";
+  }
+}
+
+.xdsoft_datetimepicker .xdsoft_datepicker .xdsoft_next {
+  &:after {
+    content: "\f2fb" !important; //
+  }
+}
+.xdsoft_datetimepicker .xdsoft_mounthpicker{
+  color: @primary-c;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today{
+  color: @primary-c;
+}
+
+//time
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div{
+  background: @standard-white;
+  border:0;
+  color: @primary-c;
+  font-weight: 500;
+}
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current{
+  background-color: @background;
+  box-shadow: none;
+  color: @primary-c !important;
+}
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current:hover{
+  color: @primary-c !important;
+}
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div:hover{
+  background-color: @standard-white-second !important;
+  color: @color-inactive !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next{
+  background-image: none;
+  position: relative;
+  display: block;
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    color: @primary-c;
+    font-size: 24px;
+    line-height: 12px;
+    font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+    content: "\f2fc";
+  }
+}
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next{
+  &:after{ //
+    content: "\f2f9";
+  }
+}
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box{
+  border: 0;
+}
+.xdsoft_datetimepicker .xdsoft_datepicker.active+.xdsoft_timepicker{
+  margin-top: 5%;
+}
+
+//select
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select>div>.xdsoft_option{
+  color: @color-inactive;
+  font-weight: 400;
+  font-size: 13px;
+}
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select>div>.xdsoft_option.xdsoft_current{
+  color: @primary-c;
+  background-color: @background;
+  box-shadow: none;
+  font-weight: 500;
+}
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select>div>.xdsoft_option:hover{
+  background-color: @standard-white-second ;
+  color: @primary-c;
+  font-weight: 500;
+}
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select>div>.xdsoft_option.xdsoft_current:hover{
+  color: @primary-c;
+  font-weight: 500;
+}
+.xdsoft_datetimepicker .xdsoft_label:hover>span{
+  text-decoration: none;
+}
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select{
+  border: 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select.xdsoft_yearselect{
+  width: 55px;
+}
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select.xdsoft_monthselect{
+  width: 85px;
+}
+
+.comiseo-daterangepicker.ui-widget-content.ui-front.arrow-top:after{
+  bottom: -16px;
+  top: auto;
+  transform: rotate(180deg);
+}
+.comiseo-daterangepicker.ui-widget-content.ui-front.arrow-top:before{
+  bottom: -21px;
+  top: auto;
+  transform: rotate(180deg);
+}//

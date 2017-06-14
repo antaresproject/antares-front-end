@@ -1,0 +1,21 @@
+#app-wrapper .card.card--table-fluid {
+  .card__content {
+    height: ~'calc(100% - 52px)';
+  }
+  .widget-content {
+    height: 100%;
+  }
+  .dataTables_wrapper {
+    height: ~'calc(100% - 88px)';
+    display: flex;
+    flex-flow: column wrap;
+    table[data-scrollable] {
+      display: block;
+      flex: 1;
+      .ps-scrollbar-y-rail {
+        margin-right: 0;
+      }
+    }
+  }
+}
+

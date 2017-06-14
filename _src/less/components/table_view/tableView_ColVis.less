@@ -1,0 +1,118 @@
+div.ColVis {
+  float: right;
+  margin-bottom: 1em;
+}
+
+button.ColVis_Button,
+ul.ColVis_collection li {
+  position: relative;
+  float: left;
+  margin-right: 3px;
+  padding: 5px 8px;
+  border: 1px solid #999;
+  cursor: pointer;
+  *cursor: hand;
+  font-size: 0.88em;
+  color: black !important;
+  white-space: nowrap;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px @color-disabled;
+  background: @standard-white;
+  background: linear-gradient(to bottom, @standard-white 0%, @background 89%, #f9f9f9 100%);
+}
+
+.ColVis_Button:hover,
+ul.ColVis_collection li:hover {
+  border: 1px solid #666;
+  text-decoration: none !important;
+  box-shadow: 1px 1px 3px @primary-grey;
+  background: @background;
+  background: linear-gradient(to bottom, @background 0%, #e2e2e2 89%, #f4f4f4 100%);
+}
+
+button.ColVis_Button {
+  height: 30px;
+  padding: 3px 8px;
+}
+
+button.ColVis_Button::-moz-focus-inner {
+  border: none !important;
+  padding: 0;
+}
+
+button.ColVis_Button:active {
+  outline: none;
+}
+
+div.ColVis_collectionBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 1100;
+}
+
+ul.ColVis_collection {
+  list-style: none;
+  width: 150px;
+  padding: 8px 8px 4px 8px;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: 2002;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+ul.ColVis_collection li {
+  position: relative;
+  height: auto;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  display: block;
+  float: none;
+  margin-bottom: 4px;
+  box-shadow: 1px 1px 3px #999;
+}
+
+ul.ColVis_collection li {
+  text-align: left;
+}
+
+ul.ColVis_collection li.ColVis_Button:hover {
+  border: 1px solid @primary-grey;
+  background-color: @standard-white-second;
+}
+
+ul.ColVis_collection li span {
+  display: inline-block;
+  padding-left: 0.5em;
+  cursor: pointer;
+}
+
+ul.ColVis_collection li.ColVis_Special {
+  border-color: @primary-c;
+  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%);
+}
+
+ul.ColVis_collection li.ColVis_Special:hover {
+  background: linear-gradient(to bottom, #d0d0d0 0%, #d5d5d5 89%, #e2e2e2 100%);
+}
+
+span.ColVis_radio {
+  display: inline-block;
+  width: 20px;
+}
+
+div.ColVis_catcher {
+  position: absolute;
+  z-index: 1101;
+}
+
+.disabled {
+  color: @background-borderd-grey;
+}

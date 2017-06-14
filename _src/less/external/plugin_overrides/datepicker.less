@@ -1,0 +1,42 @@
+@font-roboto: 'Roboto', sans-serif;
+
+.comiseo-daterangepicker {
+
+  .ui-menu-item {
+    .ui-state-active {
+      background:transparent;
+      border:0;
+      outline:0;
+      padding:0;
+      margin:0;
+    }
+  }
+  .ui-datepicker-unselectable {
+    span {
+      color: @standard-white-second;
+    }
+  }
+  .ui-state-focus {
+    border: 0;
+    margin: 0;
+    background: transparent;
+  }
+  .comiseo-daterangepicker-buttonpanel {
+    button {
+      font-family: @font-roboto;
+      font-size: 13px;
+    }
+
+    .ui-state-focus, .ui-state-active {
+      font-family: @font-roboto;
+      font-weight: 500;
+    }
+
+    .btn--primary {
+      &:hover {
+        background-color: @primary-bg !important;
+        color: @standard-white !important;
+      }
+    }
+  }
+}
