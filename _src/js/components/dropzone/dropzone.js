@@ -8,8 +8,8 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Files
- * @version    0.9.0
+ * @package    Global
+ * @version    0.9.1
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
@@ -19,13 +19,19 @@
 */
 
 
-"use strict";
+'use strict';
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
-var DropzoneAntares = (function() {
+// imports
+
+require('script-loader!dropzone');
+
+Dropzone.autoDiscover = false;
+
+var DropzoneAntares = (function () {
     var defaults = {
-        url: "/target-url/",
+        url: '127.0.0.1/target-url/',
         thumbnailWidth: 120,
         thumbnailHeight: 120,
         parallelUploads: 20,
@@ -38,19 +44,20 @@ var DropzoneAntares = (function() {
         if (handler.length) {
             var srcBase = [];
             Dropzone.autoDiscover = false;
-            handler.each(function() {
-                (new Dropzone($(this).get(0), attributes)).on("addedfile", function(file) {
+            handler.each(function () {
+                (new Dropzone($(this).get(0), attributes)).on('addedfile', function (file) {
                     var read = new FileReader();
                     read.readAsDataURL(file);
 
-                    read.onloadend = function() {
+                    read.onloadend = function () {
                         srcBase.push(read.result);
-                    }
-                    $.each($('.dz-preview'), function(index, elem) {
+                    };
+
+                    $.each($('.dz-preview'), function (index) {
 
                         var image = $(this).find('.dz-image img');
                         image.hide();
-                        setTimeout(function() {
+                        setTimeout(function () {
 
                             image.attr('src', srcBase[index]);
                             image.show();
@@ -62,10 +69,10 @@ var DropzoneAntares = (function() {
             });
         }
     }
-    DropzoneAntares.prototype.replaceBase64 = function(data) {
+    DropzoneAntares.prototype.replaceBase64 = function (data) {
         var image = $('.dz-preview:last-child .dz-image img');
         image.hide();
-        setTimeout(function() {
+        setTimeout(function () {
 
             image.attr('src', data);
             image.show();
@@ -73,29 +80,31 @@ var DropzoneAntares = (function() {
         }, 400);
 
     },
-    DropzoneAntares.prototype.manualUpload = function() {
+        DropzoneAntares.prototype.manualUpload = function () {
 
-        //input file manual
-        $('.file-upload').each(function(index, el) {
+            //input file manual
+            $('.file-upload').each(function () {
 
-            $(this).find('input.input-upload').on('change', function() {
+                $(this).find('input.input-upload').on('change', function () {
 
-                var curVal = $(this).val();
+                    var curVal = $(this).val();
 
-                $(this).siblings('.file-path').val(curVal);
+                    $(this).siblings('.file-path').val(curVal);
+
+                });
 
             });
 
-        });
+        };
 
-    }
     return DropzoneAntares;
 }());
-$(document).ready(function() {
-    var handler = ".dropzone-form";
-    var dropzone = new DropzoneAntares($(handler), { url: "dupa" });
+
+$(document).ready(function () {
+    var handler = '.dropzone-form';
+    var dropzone = new DropzoneAntares($(handler), { url: 'test' });
     dropzone.manualUpload();
-    $('#app-wrapper').on('DOMNodeInserted', handler, function() {
-        dropzone.manualUpload();
-    });
+    // $('#app-wrapper').on('DOMNodeInserted', handler, function() {
+    //     dropzone.manualUpload();
+    // });
 });

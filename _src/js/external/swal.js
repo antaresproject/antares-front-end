@@ -2,888 +2,882 @@
 // SweetAlert2
 // github.com/limonte/sweetalert2
 
-;(function(window, document) {
-  'use strict';
+;
+(function (window, document) {
+    'use strict';
 
-  var modalClass   = '.sweet-alert';
-  var overlayClass = '.sweet-overlay';
-  var mediaqueryId = 'sweet-alert-mediaquery';
-  var alertTypes   = ['error', 'warning', 'info', 'success'];
-  var defaultParams = {
-    title: '',
-    text: '',
-    html: '',
-    type: null,
-    animation: true,
-    allowOutsideClick: true,
-    allowEscapeKey: true,
-    showConfirmButton: true,
-    showCancelButton: false,
-    closeOnConfirm: true,
-    closeOnCancel: true,
-    confirmButtonText: 'OK',
-    confirmButtonColor: '#3085d6',
-    confirmButtonClass: null,
-    cancelButtonText: 'Cancel',
-    cancelButtonColor: '#aaa',
-    cancelButtonClass: null,
-    buttonsStyling: true,
-    reverseButtons: false,
-    imageUrl: null,
-    imageWidth: null,
-    imageHeight: null,
-    imageClass: null,
-    timer: null,
-    width: 500,
-    padding: 20,
-    background: '#fff'
-  };
+    var modalClass = '.sweet-alert';
+    var overlayClass = '.sweet-overlay';
+    var mediaqueryId = 'sweet-alert-mediaquery';
+    var alertTypes = ['error', 'warning', 'info', 'success'];
+    var defaultParams = {
+        title: '',
+        text: '',
+        html: '',
+        type: null,
+        animation: true,
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        showConfirmButton: true,
+        showCancelButton: false,
+        closeOnConfirm: true,
+        closeOnCancel: true,
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#3085d6',
+        confirmButtonClass: null,
+        cancelButtonText: 'Cancel',
+        cancelButtonColor: '#aaa',
+        cancelButtonClass: null,
+        buttonsStyling: true,
+        reverseButtons: false,
+        imageUrl: null,
+        imageWidth: null,
+        imageHeight: null,
+        imageClass: null,
+        timer: null,
+        width: 500,
+        padding: 20,
+        background: '#fff'
+    };
 
-  /*
-   * Manipulate DOM
-   */
-  var getModal = function() {
-    return document.querySelector(modalClass);
-  };
+    /*
+     * Manipulate DOM
+     */
+    var getModal = function () {
+        return document.querySelector(modalClass);
+    };
 
-  var getOverlay = function() {
-    return document.querySelector(overlayClass);
-  };
+    var getOverlay = function () {
+        return document.querySelector(overlayClass);
+    };
 
-  var hasClass = function(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-  };
+    var hasClass = function (elem, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+    };
 
-  var addClass = function(elem, className) {
-    if (className && !hasClass(elem, className)) {
-      elem.className += ' ' + className;
-    }
-  };
+    var addClass = function (elem, className) {
+        if (className && !hasClass(elem, className)) {
+            elem.className += ' ' + className;
+        }
+    };
 
-  var removeClass = function(elem, className) {
-    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-    if (hasClass(elem, className)) {
-      while (newClass.indexOf(' ' + className + ' ') >= 0) {
-        newClass = newClass.replace(' ' + className + ' ', ' ');
-      }
-      elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-  };
+    var removeClass = function (elem, className) {
+        var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                newClass = newClass.replace(' ' + className + ' ', ' ');
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        }
+    };
 
-  var escapeHtml = function(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+    var escapeHtml = function (str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    };
 
-  var _show = function(elem) {
-    elem.style.opacity = '';
-    elem.style.display = 'block';
-  };
+    var _show = function (elem) {
+        elem.style.opacity = '';
+        elem.style.display = 'block';
+    };
 
-  var show = function(elems) {
-    if (elems && !elems.length) {
-      return _show(elems);
-    }
-    for (var i = 0; i < elems.length; ++i) {
-      _show(elems[i]);
-    }
-  };
+    var show = function (elems) {
+        if (elems && !elems.length) {
+            return _show(elems);
+        }
+        for (var i = 0; i < elems.length; ++i) {
+            _show(elems[i]);
+        }
+    };
 
-  var _hide = function(elem) {
-    elem.style.opacity = '';
-    elem.style.display = 'none';
-  };
+    var _hide = function (elem) {
+        elem.style.opacity = '';
+        elem.style.display = 'none';
+    };
 
-  var hide = function(elems) {
-    if (elems && !elems.length) {
-      return _hide(elems);
-    }
-    for (var i = 0; i < elems.length; ++i) {
-      _hide(elems[i]);
-    }
-  };
+    var hide = function (elems) {
+        if (elems && !elems.length) {
+            return _hide(elems);
+        }
+        for (var i = 0; i < elems.length; ++i) {
+            _hide(elems[i]);
+        }
+    };
 
-  var removeStyleProperty = function(elem, property) {
-    if (elem.style.removeProperty) {
-      elem.style.removeProperty(property);
-    } else {
-      elem.style.removeAttribute(property);
-    }
-  }
-
-  var isDescendant = function(parent, child) {
-    var node = child.parentNode;
-    while (node !== null) {
-      if (node === parent) {
-        return true;
-      }
-      node = node.parentNode;
-    }
-    return false;
-  };
-
-  var getTopMargin = function(elem) {
-    elem.style.left = '-9999px';
-    elem.style.display = 'block';
-
-    var height = elem.clientHeight;
-    var padding;
-    if (typeof getComputedStyle !== 'undefined') { /* IE 8 */
-      padding = parseInt(getComputedStyle(elem).getPropertyValue('padding'), 10);
-    } else {
-      padding = parseInt(elem.currentStyle.padding);
+    var removeStyleProperty = function (elem, property) {
+        if (elem.style.removeProperty) {
+            elem.style.removeProperty(property);
+        } else {
+            elem.style.removeAttribute(property);
+        }
     }
 
-    elem.style.left = '';
-    elem.style.display = 'none';
-    return ('-' + parseInt(height / 2 + padding) + 'px');
-  };
+    var isDescendant = function (parent, child) {
+        var node = child.parentNode;
+        while (node !== null) {
+            if (node === parent) {
+                return true;
+            }
+            node = node.parentNode;
+        }
+        return false;
+    };
 
-  var fadeIn = function(elem, interval) {
-    if (+elem.style.opacity < 1) {
-      interval = interval || 16;
-      elem.style.opacity = 0;
-      elem.style.display = 'block';
-      var last = +new Date();
-      var tick = function() {
-        elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
-        last = +new Date();
+    var getTopMargin = function (elem) {
+        elem.style.left = '-9999px';
+        elem.style.display = 'block';
 
+        var height = elem.clientHeight;
+        var padding;
+        if (typeof getComputedStyle !== 'undefined') { /* IE 8 */
+            padding = parseInt(getComputedStyle(elem).getPropertyValue('padding'), 10);
+        } else {
+            padding = parseInt(elem.currentStyle.padding);
+        }
+
+        elem.style.left = '';
+        elem.style.display = 'none';
+        return ('-' + parseInt(height / 2 + padding) + 'px');
+    };
+
+    var fadeIn = function (elem, interval) {
         if (+elem.style.opacity < 1) {
-          setTimeout(tick, interval);
+            interval = interval || 16;
+            elem.style.opacity = 0;
+            elem.style.display = 'block';
+            var last = +new Date();
+            var tick = function () {
+                elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
+                last = +new Date();
+
+                if (+elem.style.opacity < 1) {
+                    setTimeout(tick, interval);
+                }
+            };
+            tick();
         }
-      };
-      tick();
-    }
-    elem.style.display = 'block'; //fallback IE8
-  };
+        elem.style.display = 'block'; //fallback IE8
+    };
 
-  var fireClick = function(node) {
-    // Taken from http://www.nonobtrusive.com/2011/11/29/programatically-fire-crossbrowser-click-event-with-javascript/
-    // Then fixed for today's Chrome browser.
-    if (typeof MouseEvent === 'function') {
-      // Up-to-date approach
-      var mevt = new MouseEvent('click', {
-        view: window,
-        bubbles: false,
-        cancelable: true
-      });
-      node.dispatchEvent(mevt);
-    } else if (document.createEvent) {
-      // Fallback
-      var evt = document.createEvent('MouseEvents');
-      evt.initEvent('click', false, false);
-      node.dispatchEvent(evt);
-    } else if (document.createEventObject) {
-      node.fireEvent('onclick') ;
-    } else if (typeof node.onclick === 'function') {
-      node.onclick();
-    }
-  };
-
-  var stopEventPropagation = function(e) {
-    // In particular, make sure the space bar doesn't scroll the main window.
-    if (typeof e.stopPropagation === 'function') {
-      e.stopPropagation();
-      e.preventDefault();
-    } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
-      window.event.cancelBubble = true;
-    }
-  };
-
-  // Remember state in cases where opening and handling a modal will fiddle with it.
-  var previousActiveElement;
-  var previousDocumentClick;
-  var previousWindowKeyDown;
-  var lastFocusedButton;
-
-  /*
-   * Global sweetAlert function
-   */
-  window.sweetAlert = window.swal = function() {
-    // Copy arguments to the local args variable
-    var args = arguments;
-    var modal = getModal();
-    if (modal !== null) {
-        if (hasClass(modal, 'visible')) {
-          resetPrevState();
+    var fireClick = function (node) {
+        // Taken from http://www.nonobtrusive.com/2011/11/29/programatically-fire-crossbrowser-click-event-with-javascript/
+        // Then fixed for today's Chrome browser.
+        if (typeof MouseEvent === 'function') {
+            // Up-to-date approach
+            var mevt = new MouseEvent('click', {
+                view: window,
+                bubbles: false,
+                cancelable: true
+            });
+            node.dispatchEvent(mevt);
+        } else if (document.createEvent) {
+            // Fallback
+            var evt = document.createEvent('MouseEvents');
+            evt.initEvent('click', false, false);
+            node.dispatchEvent(evt);
+        } else if (document.createEventObject) {
+            node.fireEvent('onclick');
+        } else if (typeof node.onclick === 'function') {
+            node.onclick();
         }
-        // If getModal returns values then continue
-        modalDependant.apply(this, args);
-    } else {
-        // If getModal returns null i.e. no matches, then set up a interval event to check the return value until it is not null
-        var modalCheckInterval = setInterval(function() {
-          if (getModal() !== null) {
-            clearInterval(modalCheckInterval);
+    };
+
+    var stopEventPropagation = function (e) {
+        // In particular, make sure the space bar doesn't scroll the main window.
+        if (typeof e.stopPropagation === 'function') {
+            e.stopPropagation();
+            e.preventDefault();
+        } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
+            window.event.cancelBubble = true;
+        }
+    };
+
+    // Remember state in cases where opening and handling a modal will fiddle with it.
+    var previousActiveElement;
+    var previousDocumentClick;
+    var previousWindowKeyDown;
+    var lastFocusedButton;
+
+    /*
+     * Global sweetAlert function
+     */
+    window.sweetAlert = window.swal = function () {
+        // Copy arguments to the local args variable
+        var args = arguments;
+        var modal = getModal();
+        if (modal !== null) {
+            if (hasClass(modal, 'visible')) {
+                resetPrevState();
+            }
+            // If getModal returns values then continue
             modalDependant.apply(this, args);
-          }
-      }, 100);
-    }
-  };
+        } else {
+            // If getModal returns null i.e. no matches, then set up a interval event to check the return value until it is not null
+            var modalCheckInterval = setInterval(function () {
+                if (getModal() !== null) {
+                    clearInterval(modalCheckInterval);
+                    modalDependant.apply(this, args);
+                }
+            }, 100);
+        }
+    };
 
-   /*
-   * Global function to close sweetAlert
-   */
-  window.sweetAlert.closeModal = window.swal.closeModal = function() {
-    closeModal();
-  };
+    /*
+     * Global function to close sweetAlert
+     */
+    window.sweetAlert.closeModal = window.swal.closeModal = function () {
+        closeModal();
+    };
 
-  function modalDependant() {
+    function modalDependant() {
 
-    if (arguments[0] === undefined) {
-      window.console.error('sweetAlert expects at least 1 attribute!');
-      return false;
-    }
+        if (arguments[0] === undefined) {
+            window.console.error('sweetAlert expects at least 1 attribute!');
+            return false;
+        }
 
-    var params = extend({}, defaultParams);
+        var params = extend({}, defaultParams);
 
-    switch (typeof arguments[0]) {
+        switch (typeof arguments[0]) {
 
-      case 'string':
-        params.title = arguments[0];
-        params.text  = arguments[1] || '';
-        params.type  = arguments[2] || '';
+            case 'string':
+                params.title = arguments[0];
+                params.text = arguments[1] || '';
+                params.type = arguments[2] || '';
 
-        break;
+                break;
 
-      case 'object':
-        params.title              = arguments[0].title || defaultParams.title;
-        params.text               = arguments[0].text || defaultParams.text;
-        params.html               = arguments[0].html || defaultParams.html;
-        params.type               = arguments[0].type || defaultParams.type;
-        params.animation          = arguments[0].animation !== undefined ? arguments[0].animation : defaultParams.animation;
-        params.customClass        = arguments[0].customClass || params.customClass;
-        params.allowOutsideClick  = arguments[0].allowOutsideClick !== undefined ? arguments[0].allowOutsideClick : defaultParams.allowOutsideClick;
-        params.allowEscapeKey     = arguments[0].allowEscapeKey !== undefined ? arguments[0].allowEscapeKey : defaultParams.allowEscapeKey;
-        params.showConfirmButton  = arguments[0].showConfirmButton !== undefined ? arguments[0].showConfirmButton : defaultParams.showConfirmButton;
-        params.showCancelButton   = arguments[0].showCancelButton !== undefined ? arguments[0].showCancelButton : defaultParams.showCancelButton;
-        params.closeOnConfirm     = arguments[0].closeOnConfirm !== undefined ? arguments[0].closeOnConfirm : defaultParams.closeOnConfirm;
-        params.closeOnCancel      = arguments[0].closeOnCancel !== undefined ? arguments[0].closeOnCancel : defaultParams.closeOnCancel;
-        params.timer              = parseInt(arguments[0].timer) || defaultParams.timer;
-        params.width              = parseInt(arguments[0].width) || defaultParams.width;
-        params.padding            = parseInt(arguments[0].padding) || defaultParams.padding;
-        params.background         = arguments[0].background !== undefined ? arguments[0].background : defaultParams.background;
+            case 'object':
+                params.title = arguments[0].title || defaultParams.title;
+                params.text = arguments[0].text || defaultParams.text;
+                params.html = arguments[0].html || defaultParams.html;
+                params.type = arguments[0].type || defaultParams.type;
+                params.animation = arguments[0].animation !== undefined ? arguments[0].animation : defaultParams.animation;
+                params.customClass = arguments[0].customClass || params.customClass;
+                params.allowOutsideClick = arguments[0].allowOutsideClick !== undefined ? arguments[0].allowOutsideClick : defaultParams.allowOutsideClick;
+                params.allowEscapeKey = arguments[0].allowEscapeKey !== undefined ? arguments[0].allowEscapeKey : defaultParams.allowEscapeKey;
+                params.showConfirmButton = arguments[0].showConfirmButton !== undefined ? arguments[0].showConfirmButton : defaultParams.showConfirmButton;
+                params.showCancelButton = arguments[0].showCancelButton !== undefined ? arguments[0].showCancelButton : defaultParams.showCancelButton;
+                params.closeOnConfirm = arguments[0].closeOnConfirm !== undefined ? arguments[0].closeOnConfirm : defaultParams.closeOnConfirm;
+                params.closeOnCancel = arguments[0].closeOnCancel !== undefined ? arguments[0].closeOnCancel : defaultParams.closeOnCancel;
+                params.timer = parseInt(arguments[0].timer) || defaultParams.timer;
+                params.width = parseInt(arguments[0].width) || defaultParams.width;
+                params.padding = parseInt(arguments[0].padding) || defaultParams.padding;
+                params.background = arguments[0].background !== undefined ? arguments[0].background : defaultParams.background;
 
-        params.confirmButtonText  = arguments[0].confirmButtonText || defaultParams.confirmButtonText;
-        params.confirmButtonColor = arguments[0].confirmButtonColor || defaultParams.confirmButtonColor;
-        params.confirmButtonClass = arguments[0].confirmButtonClass || params.confirmButtonClass;
-        params.cancelButtonText   = arguments[0].cancelButtonText || defaultParams.cancelButtonText;
-        params.cancelButtonColor  = arguments[0].cancelButtonColor || defaultParams.cancelButtonColor;
-        params.cancelButtonClass  = arguments[0].cancelButtonClass || params.cancelButtonClass;
-        params.buttonsStyling     = arguments[0].buttonsStyling !== undefined ? arguments[0].buttonsStyling : defaultParams.buttonsStyling;
-        params.reverseButtons     = arguments[0].reverseButtons !== undefined ? arguments[0].reverseButtons : defaultParams.reverseButtons;
-        params.imageUrl           = arguments[0].imageUrl || defaultParams.imageUrl;
-        params.imageWidth         = arguments[0].imageWidth || defaultParams.imageWidth;
-        params.imageHeight        = arguments[0].imageHeight || defaultParams.imageHeight;
-        params.imageClass         = arguments[0].imageClass || defaultParams.imageClass;
-        params.callback           = arguments[1] || null;
+                params.confirmButtonText = arguments[0].confirmButtonText || defaultParams.confirmButtonText;
+                params.confirmButtonColor = arguments[0].confirmButtonColor || defaultParams.confirmButtonColor;
+                params.confirmButtonClass = arguments[0].confirmButtonClass || params.confirmButtonClass;
+                params.cancelButtonText = arguments[0].cancelButtonText || defaultParams.cancelButtonText;
+                params.cancelButtonColor = arguments[0].cancelButtonColor || defaultParams.cancelButtonColor;
+                params.cancelButtonClass = arguments[0].cancelButtonClass || params.cancelButtonClass;
+                params.buttonsStyling = arguments[0].buttonsStyling !== undefined ? arguments[0].buttonsStyling : defaultParams.buttonsStyling;
+                params.reverseButtons = arguments[0].reverseButtons !== undefined ? arguments[0].reverseButtons : defaultParams.reverseButtons;
+                params.imageUrl = arguments[0].imageUrl || defaultParams.imageUrl;
+                params.imageWidth = arguments[0].imageWidth || defaultParams.imageWidth;
+                params.imageHeight = arguments[0].imageHeight || defaultParams.imageHeight;
+                params.imageClass = arguments[0].imageClass || defaultParams.imageClass;
+                params.callback = arguments[1] || null;
 
-         /*
-         * Global function to call sweetAlert callback
-         */
-        window.sweetAlert.callback = window.swal.callback = function(isConfirm) {
-          if (typeof params.callback === 'function') {
-            params.callback(isConfirm);
-          }
+                /*
+                 * Global function to call sweetAlert callback
+                 */
+                window.sweetAlert.callback = window.swal.callback = function (isConfirm) {
+                    if (typeof params.callback === 'function') {
+                        params.callback(isConfirm);
+                    }
+                };
+
+                break;
+
+            default:
+                window.console.error('Unexpected type of argument! Expected "string" or "object", got ' + typeof arguments[0]);
+                return false;
+
+        }
+
+        setParameters(params);
+        fixVerticalPosition();
+        openModal();
+
+        // Modal interactions
+        var modal = getModal();
+        $(document).on('click', '.swal__close', function () {
+            closeModal();
+        });
+        // Close on timer
+        if (params.timer) {
+            modal.timeout = setTimeout(function () {
+                closeModal();
+                if (typeof params.callback === 'function') {
+                    params.callback();
+                }
+            }, params.timer);
+        }
+
+        // Mouse interactions
+        var onButtonEvent = function (event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
+            var targetedConfirm = hasClass(target, 'sweet-confirm');
+            var targetedCancel = hasClass(target, 'sweet-cancel');
+            var modalIsVisible = hasClass(modal, 'visible');
+
+            switch (e.type) {
+                case 'mouseover':
+                case 'mouseup':
+                case 'focus':
+                    if (params.buttonsStyling) {
+                        if (targetedConfirm) {
+                            target.style.backgroundColor = colorLuminance(params.confirmButtonColor, -0.1);
+                        } else if (targetedCancel) {
+                            target.style.backgroundColor = colorLuminance(params.cancelButtonColor, -0.1);
+                        }
+                    }
+                    break;
+                case 'mouseout':
+                case 'blur':
+                    if (params.buttonsStyling) {
+                        if (targetedConfirm) {
+                            target.style.backgroundColor = params.confirmButtonColor;
+                        } else if (targetedCancel) {
+                            target.style.backgroundColor = params.cancelButtonColor;
+                        }
+                    }
+                    break;
+                case 'mousedown':
+                    if (params.buttonsStyling) {
+                        if (targetedConfirm) {
+                            target.style.backgroundColor = colorLuminance(params.confirmButtonColor, -0.2);
+                        } else if (targetedCancel) {
+                            target.style.backgroundColor = colorLuminance(params.cancelButtonColor, -0.2);
+                        }
+                    }
+                    break;
+                case 'click':
+                    // Clicked 'confirm'
+                    if (targetedConfirm && params.callback && modalIsVisible) {
+                        params.callback(true);
+
+                        if (params.closeOnConfirm) {
+                            $('.sweet-container').attr('class', 'sweet-container');
+                            closeModal();
+                        }
+
+                        // Clicked 'cancel'
+                    } else if (params.callback && modalIsVisible) {
+
+                        // Check if callback function expects a parameter (to track cancel actions)
+                        if (params.callback.length > 0) {
+                            params.callback(false);
+                        }
+
+                        if (params.closeOnCancel) {
+                            $('.sweet-container').attr('class', 'sweet-container');
+                            closeModal();
+                        }
+                    } else {
+                        $('.sweet-container').attr('class', 'sweet-container');
+                        closeModal();
+                    }
+
+                    break;
+            }
         };
 
-        break;
-
-      default:
-        window.console.error('Unexpected type of argument! Expected "string" or "object", got ' + typeof arguments[0]);
-        return false;
-
-    }
-
-    setParameters(params);
-    fixVerticalPosition();
-    openModal();
-
-    // Modal interactions
-    var modal = getModal();
-    $(document).on('click', '.swal__close', function() {
-        closeModal();
-    });
-    // Close on timer
-    if (params.timer) {
-      modal.timeout = setTimeout(function() {
-        closeModal();
-        if (typeof params.callback === 'function') {
-          params.callback();
+        var $buttons = modal.querySelectorAll('button');
+        var i;
+        for (i = 0; i < $buttons.length; i++) {
+            $buttons[i].onclick = onButtonEvent;
+            $buttons[i].onmouseover = onButtonEvent;
+            $buttons[i].onmouseout = onButtonEvent;
+            $buttons[i].onmousedown = onButtonEvent;
         }
-      }, params.timer);
-    }
 
-    // Mouse interactions
-    var onButtonEvent = function(event) {
-      var e = event || window.event;
-      var target = e.target || e.srcElement;
-      var targetedConfirm = hasClass(target, 'sweet-confirm');
-      var targetedCancel  = hasClass(target, 'sweet-cancel');
-      var modalIsVisible  = hasClass(modal, 'visible');
+        // Remember the current document.onclick event.
+        previousDocumentClick = document.onclick;
+        document.onclick = function (event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
 
-      switch (e.type) {
-        case 'mouseover':
-        case 'mouseup':
-        case 'focus':
-          if (params.buttonsStyling) {
-            if (targetedConfirm) {
-              target.style.backgroundColor = colorLuminance(params.confirmButtonColor, -0.1);
-            } else if (targetedCancel) {
-              target.style.backgroundColor = colorLuminance(params.cancelButtonColor, -0.1);
+            if (target === getOverlay() && params.allowOutsideClick) {
+                closeModal();
+                if (typeof params.callback === 'function') {
+                    params.callback();
+                }
             }
-          }
-          break;
-        case 'mouseout':
-        case 'blur':
-          if (params.buttonsStyling) {
-            if (targetedConfirm) {
-              target.style.backgroundColor = params.confirmButtonColor;
-            } else if (targetedCancel) {
-              target.style.backgroundColor = params.cancelButtonColor;
+        };
+
+        // Keyboard interactions
+        var $confirmButton = modal.querySelector('button.sweet-confirm');
+        var $cancelButton = modal.querySelector('button.sweet-cancel');
+        var $modalElements = modal.querySelectorAll('button, input:not([type=hidden]), textarea, select');
+        for (i = 0; i < $modalElements.length; i++) {
+            $modalElements[i].onfocus = onButtonEvent;
+            $modalElements[i].onblur = onButtonEvent;
+        }
+
+        // Reverse buttons if needed    
+        if (params.reverseButtons) {
+            $confirmButton.parentNode.insertBefore($cancelButton, $confirmButton);
+        }
+
+        // Focus the first element (input or button)
+        setFocus(-1, 1);
+
+        function setFocus(index, increment) {
+            // search for visible elements and select the next possible match
+            for (var i = 0; i < $modalElements.length; i++) {
+                index = index + increment;
+
+                // rollover to first item
+                if (index === $modalElements.length) {
+                    index = 0;
+
+                    // go to last item
+                } else if (index === -1) {
+                    index = $modalElements.length - 1;
+                }
+
+                // determine if element is visible, the following is borrowed from jqeury $(elem).is(':visible') implementation
+                if (
+                        $modalElements[index].offsetWidth ||
+                        $modalElements[index].offsetHeight ||
+                        $modalElements[index].getClientRects().length
+                        ) {
+                    $modalElements[index].focus();
+                    return;
+                }
             }
-          }
-          break;
-        case 'mousedown':
-          if (params.buttonsStyling) {
-            if (targetedConfirm) {
-              target.style.backgroundColor = colorLuminance(params.confirmButtonColor, -0.2);
-            } else if (targetedCancel) {
-              target.style.backgroundColor = colorLuminance(params.cancelButtonColor, -0.2);
-            }
-          }
-          break;
-        case 'click':
-          // Clicked 'confirm'
-          if (targetedConfirm && params.callback && modalIsVisible) {
-            params.callback(true);
-
-            if (params.closeOnConfirm) {
-                $('.sweet-container').attr('class', 'sweet-container');
-              closeModal();
-            }
-
-          // Clicked 'cancel'
-          } else if (params.callback && modalIsVisible) {
-
-            // Check if callback function expects a parameter (to track cancel actions)
-            if (params.callback.length > 0) {
-              params.callback(false);
-            }
-
-            if (params.closeOnCancel) {
-                $('.sweet-container').attr('class', 'sweet-container');
-              closeModal();
-            }
-          } else {
-            $('.sweet-container').attr('class', 'sweet-container');
-            closeModal();
-          }
-
-          break;
-      }
-    };
-
-    var $buttons = modal.querySelectorAll('button');
-    var i;
-    for (i = 0; i < $buttons.length; i++) {
-      $buttons[i].onclick     = onButtonEvent;
-      $buttons[i].onmouseover = onButtonEvent;
-      $buttons[i].onmouseout  = onButtonEvent;
-      $buttons[i].onmousedown = onButtonEvent;
-    }
-
-    // Remember the current document.onclick event.
-    previousDocumentClick = document.onclick;
-    document.onclick = function(event) {
-      var e = event || window.event;
-      var target = e.target || e.srcElement;
-
-      if (target === getOverlay() && params.allowOutsideClick) {
-        closeModal();
-        if (typeof params.callback === 'function') {
-          params.callback();
-        }
-      }
-    };
-
-    // Keyboard interactions
-    var $confirmButton = modal.querySelector('button.sweet-confirm');
-    var $cancelButton = modal.querySelector('button.sweet-cancel');
-    var $modalElements = modal.querySelectorAll('button, input:not([type=hidden]), textarea, select');
-    for (i = 0; i < $modalElements.length; i++) {
-      $modalElements[i].onfocus = onButtonEvent;
-      $modalElements[i].onblur = onButtonEvent;
-    }
-
-    // Reverse buttons if needed
-    if (params.reverseButtons) {
-      $confirmButton.parentNode.insertBefore($cancelButton, $confirmButton);
-    }
-
-    // Focus the first element (input or button)
-    setFocus(-1, 1);
-
-    function setFocus(index, increment) {
-      // search for visible elements and select the next possible match
-      for (var i = 0; i < $modalElements.length; i++) {
-        index = index + increment;
-
-        // rollover to first item
-        if (index === $modalElements.length) {
-          index = 0;
-
-        // go to last item
-        } else if (index === -1) {
-          index = $modalElements.length - 1;
         }
 
-        // determine if element is visible, the following is borrowed from jqeury $(elem).is(':visible') implementation
-        if (
-          $modalElements[index].offsetWidth ||
-          $modalElements[index].offsetHeight ||
-          $modalElements[index].getClientRects().length
-        ) {
-          $modalElements[index].focus();
-          return;
-        }
-      }
-    }
+        function handleKeyDown(event) {
+            var e = event || window.event;
+            var keyCode = e.keyCode || e.which;
+            var modalIsVisible = hasClass(modal, 'visible');
 
-    function handleKeyDown(event) {
-      var e = event || window.event;
-      var keyCode = e.keyCode || e.which;
-      var modalIsVisible = hasClass(modal, 'visible');
-
-      if ([9,13,32,27].indexOf(keyCode) === -1) {
-        // Don't do work on keys we don't care about.
-        return;
-      }
-
-      var $targetElement = e.target || e.srcElement;
-
-      var btnIndex = -1; // Find the button - note, this is a nodelist, not an array.
-      for (var i = 0; i < $modalElements.length; i++) {
-        if ($targetElement === $modalElements[i]) {
-          btnIndex = i;
-          break;
-        }
-      }
-
-      if (keyCode === 9) {
-        // TAB
-
-        // Should only happen if modal is visible
-        if (!modalIsVisible) {
-          return;
-        }
-
-        if (!e.shiftKey) {
-          // Cycle to the next button
-          setFocus(btnIndex, 1);
-        } else {
-          // Cycle to the prev button
-          setFocus(btnIndex, -1);
-        }
-
-        stopEventPropagation(e);
-
-      } else {
-        if (keyCode === 13 || keyCode === 32) {
-          if (btnIndex === -1) {
-            // ENTER/SPACE clicked outside of a button.
-            fireClick($confirmButton, e);
-          }
-        } else if (keyCode === 27 && params.allowEscapeKey === true) {
-          fireClick($cancelButton, e);
-        }
-      }
-    }
-
-    previousWindowKeyDown = window.onkeydown;
-    window.onkeydown = handleKeyDown;
-
-    // Loading state
-    if (params.buttonsStyling) {
-      $confirmButton.style.borderLeftColor = params.confirmButtonColor;
-      $confirmButton.style.borderRightColor = params.confirmButtonColor;
-    }
-
-    window.swal.toggleLoading = function() {
-      $confirmButton.disabled = !$confirmButton.disabled;
-      $cancelButton.disabled = !$cancelButton.disabled;
-    };
-
-    window.swal.enableButtons = function() {
-      $confirmButton.disabled = false;
-      $cancelButton.disabled = false;
-    };
-
-    window.swal.disableButtons = function() {
-      $confirmButton.disabled = true;
-      $cancelButton.disabled = true;
-    };
-
-    swal.enableButtons();
-
-    window.onfocus = function() {
-      // When the user has focused away and focused back from the whole window.
-      window.setTimeout(function() {
-        // Put in a timeout to jump out of the event sequence. Calling focus() in the event
-        // sequence confuses things.
-        if (lastFocusedButton !== undefined) {
-          lastFocusedButton.focus();
-          lastFocusedButton = undefined;
-        }
-      }, 0);
-    };
-  }
-
-  /*
-   * Add modal + overlay to DOM
-   */
-  window.swal.init = function() {
-
-    // if (window.swal.params.type == 'warning') {
-    //     alert('warning');
-    // }
-    // console.log(modal);
-    // console.log(window.swal());
-
-
-    var sweetHTML = '<div class="sweet-overlay" tabIndex="-1"></div><div class="sweet-alert" style="display: none" tabIndex="-1"><div class="icon error"><span class="x-mark"><span class="line left"></span><span class="line right"></span></span></div><div class="icon warning"> <span class="body"></span> <span class="dot"></span> </div> <div class="icon info"></div> <div class="icon success"> <span class="line tip"></span> <span class="line long"></span> <div class="placeholder"></div> <div class="fix"></div> </div> <img class="sweet-image"> <div class="header"><h2>Title</h2><i class="zmdi zmdi-close swal__close"></i></div><div class="sweet-content">Text</div><hr class="sweet-spacer"><div class="footer"><button class="sweet-cancel">Cancel</button><button class="sweet-confirm">OK</button></div></div>';
-    var sweetWrap = document.createElement('div');
-    sweetWrap.className = 'sweet-container';
-    sweetWrap.innerHTML = sweetHTML;
-    document.body.appendChild(sweetWrap);
-  };
-
-  /*
-*   * Set default params for each popup
-   * @param {Object} userParams
-   */
-  window.swal.setDefaults = function(userParams) {
-    if (!userParams) {
-      throw new Error('userParams is required');
-    }
-    if (typeof userParams !== 'object') {
-      throw new Error('userParams has to be a object');
-    }
-
-    extend(defaultParams, userParams);
-  };
-
-  /*
-   * Set type, text and actions on modal
-   */
-  function setParameters(params) {
-    var modal = getModal();
-
-    // set modal width, padding and margin-left
-    modal.style.width = params.width + 'px';
-    modal.style.padding = params.padding + 'px';
-    modal.style.marginLeft = -params.width / 2 + 'px';
-    modal.style.background = params.background;
-
-    // add dynamic media query css
-    var head = document.getElementsByTagName('head')[0];
-    var cssNode = document.createElement('style');
-    cssNode.type = 'text/css';
-    cssNode.id = mediaqueryId;
-    cssNode.innerHTML =
-      '@media screen and (max-width: ' + params.width + 'px) {' +
-        '.sweet-alert {' +
-          'max-width: 100%;' +
-          'left: 0 !important;' +
-          'margin-left: 0 !important;' +
-        '}' +
-      '}';
-    head.appendChild(cssNode);
-
-    var $title = modal.querySelector('h2');
-    var $content = modal.querySelector('div.sweet-content');
-    var $cancelBtn = modal.querySelector('button.sweet-cancel');
-    var $confirmBtn = modal.querySelector('button.sweet-confirm');
-    var $btnSpacer = modal.querySelector('hr.sweet-spacer');
-
-    // Title
-    $title.innerHTML = escapeHtml(params.title).split('\n').join('<br>');
-
-    // Content
-    if (window.jQuery) {
-
-
-
-
-      $content = $($content).html(params.html || ('<p>' + escapeHtml(params.text.split('\n').join('<br>'))) + '</p>');
-    } else {
-      $content.innerHTML = params.html || ('<p>' + escapeHtml(params.text.split('\n').join('<br>')) + '</p>');
-      if ($content.innerHTML) {
-        show($content);
-      }
-    }
-
-    //Custom Class
-    if (params.customClass) {
-      addClass(modal, params.customClass);
-
-    }
-
-    // Icon
-    hide(modal.querySelectorAll('.icon'));
-    if (params.type) {
-      var validType = false;
-      for (var i = 0; i < alertTypes.length; i++) {
-        if (params.type === alertTypes[i]) {
-          validType = true;
-          $('.sweet-container').addClass(params.type);
-          // if type2
-          if ( params.customClass == 'CB CB--type2') {
-
-            if ( !$('.sweet-container h2').length ) {
+            if ([9, 13, 32, 27].indexOf(keyCode) === -1) {
+                // Don't do work on keys we don't care about.
                 return;
             }
 
-            // $('.sweet-container h2').prependTo('.sweet-content');
+            var $targetElement = e.target || e.srcElement;
 
-          }
-          // console.log(params.customClass)
-          // console.log(modal);
-          break;
+            var btnIndex = -1; // Find the button - note, this is a nodelist, not an array.
+            for (var i = 0; i < $modalElements.length; i++) {
+                if ($targetElement === $modalElements[i]) {
+                    btnIndex = i;
+                    break;
+                }
+            }
+
+            if (keyCode === 9) {
+                // TAB
+
+                // Should only happen if modal is visible
+                if (!modalIsVisible) {
+                    return;
+                }
+
+                if (!e.shiftKey) {
+                    // Cycle to the next button
+                    setFocus(btnIndex, 1);
+                } else {
+                    // Cycle to the prev button
+                    setFocus(btnIndex, -1);
+                }
+
+                stopEventPropagation(e);
+
+            } else {
+                if (keyCode === 13 || keyCode === 32) {
+                    if (btnIndex === -1) {
+                        // ENTER/SPACE clicked outside of a button.
+                        fireClick($confirmButton, e);
+                    }
+                } else if (keyCode === 27 && params.allowEscapeKey === true) {
+                    fireClick($cancelButton, e);
+                }
+            }
         }
-      }
-      if (!validType) {
-        window.console.error('Unknown alert type: ' + params.type);
-        return false;
-      }
-      var $icon = modal.querySelector('.icon.' + params.type);
-      show($icon);
 
-      // Animate icon
-      switch (params.type) {
-        case 'success':
-          addClass($icon, 'animate');
-          addClass($icon.querySelector('.tip'), 'animate-success-tip');
-          addClass($icon.querySelector('.long'), 'animate-success-long');
-          break;
-        case 'error':
-          addClass($icon, 'animate-error-icon');
-          addClass($icon.querySelector('.x-mark'), 'animate-x-mark');
-          break;
-        case 'warning':
-          addClass($icon, 'pulse-warning');
-          addClass($icon.querySelector('.body'), 'pulse-warning-ins');
-          addClass($icon.querySelector('.dot'), 'pulse-warning-ins');
-          break;
-      }
+        previousWindowKeyDown = window.onkeydown;
+        window.onkeydown = handleKeyDown;
 
+        // Loading state
+        if (params.buttonsStyling) {
+            $confirmButton.style.borderLeftColor = params.confirmButtonColor;
+            $confirmButton.style.borderRightColor = params.confirmButtonColor;
+        }
+
+        window.swal.toggleLoading = function () {
+            $confirmButton.disabled = !$confirmButton.disabled;
+            $cancelButton.disabled = !$cancelButton.disabled;
+        };
+
+        window.swal.enableButtons = function () {
+            $confirmButton.disabled = false;
+            $cancelButton.disabled = false;
+        };
+
+        window.swal.disableButtons = function () {
+            $confirmButton.disabled = true;
+            $cancelButton.disabled = true;
+        };
+
+        swal.enableButtons();
+
+        window.onfocus = function () {
+            // When the user has focused away and focused back from the whole window.
+            window.setTimeout(function () {
+                // Put in a timeout to jump out of the event sequence. Calling focus() in the event
+                // sequence confuses things.
+                if (lastFocusedButton !== undefined) {
+                    lastFocusedButton.focus();
+                    lastFocusedButton = undefined;
+                }
+            }, 0);
+        };
     }
 
-    // Custom image
-    var $customImage = modal.querySelector('.sweet-image');
-    if (params.imageUrl) {
-      $customImage.setAttribute('src', params.imageUrl);
-      show($customImage);
+    /*
+     * Add modal + overlay to DOM
+     */
+    window.swal.init = function () {
+        var template = $('template#sweet-alert-template');
+        var sweetHTML = template.length ? template.html() : '<div class="sweet-overlay" tabIndex="-1"></div><div class="sweet-alert" style="display: none" tabIndex="-1"><div class="icon error"><span class="x-mark"><span class="line left"></span><span class="line right"></span></span></div><div class="icon warning"> <span class="body"></span> <span class="dot"></span> </div> <div class="icon info"></div> <div class="icon success"> <span class="line tip"></span> <span class="line long"></span> <div class="placeholder"></div> <div class="fix"></div> </div> <img class="sweet-image"> <div class="header"><h2>Title</h2><i class="zmdi zmdi-close swal__close"></i></div><div class="sweet-content">Text</div><hr class="sweet-spacer"><div class="footer"><button class="sweet-cancel">Cancel</button><button class="sweet-confirm">OK</button></div></div>';
+        var sweetWrap = document.createElement('div');
+        sweetWrap.className = 'sweet-container';
+        sweetWrap.innerHTML = sweetHTML;
+        document.body.appendChild(sweetWrap);
+    };
 
-      if (params.imageWidth) {
-        $customImage.setAttribute('width', params.imageWidth);
-      }
+    /*
+     *   * Set default params for each popup
+     * @param {Object} userParams
+     */
+    window.swal.setDefaults = function (userParams) {
+        if (!userParams) {
+            throw new Error('userParams is required');
+        }
+        if (typeof userParams !== 'object') {
+            throw new Error('userParams has to be a object');
+        }
 
-      if (params.imageHeight) {
-        $customImage.setAttribute('height', params.imageHeight);
-      }
+        extend(defaultParams, userParams);
+    };
 
-      if (params.imageClass) {
-        addClass($customImage, params.imageClass);
-      }
-    } else {
-      hide($customImage);
-    }
+    /*
+     * Set type, text and actions on modal
+     */
+    function setParameters(params) {
+        var modal = getModal();
 
-    // Cancel button
-    if (params.showCancelButton) {
-      $cancelBtn.style.display = 'inline-block';
-    } else {
-      hide($cancelBtn);
-    }
+        // set modal width, padding and margin-left
+        modal.style.width = params.width + 'px';
+        modal.style.padding = params.padding + 'px';
+        modal.style.marginLeft = -params.width / 2 + 'px';
+        modal.style.background = params.background;
 
-    // Confirm button
-    if (params.showConfirmButton) {
-      removeStyleProperty($confirmBtn, 'display');
+        // add dynamic media query css
+        var head = document.getElementsByTagName('head')[0];
+        var cssNode = document.createElement('style');
+        cssNode.type = 'text/css';
+        cssNode.id = mediaqueryId;
+        cssNode.innerHTML =
+                '@media screen and (max-width: ' + params.width + 'px) {' +
+                '.sweet-alert {' +
+                'max-width: 100%;' +
+                'left: 0 !important;' +
+                'margin-left: 0 !important;' +
+                '}' +
+                '}';
+        head.appendChild(cssNode);
+
+        var $title = modal.querySelector('h2');
+        var $content = modal.querySelector('div.sweet-content');
+        var $cancelBtn = modal.querySelector('button.sweet-cancel');
+        var $confirmBtn = modal.querySelector('button.sweet-confirm');
+        var $btnSpacer = modal.querySelector('hr.sweet-spacer');
+
+        // Title
+        $title.innerHTML = escapeHtml(params.title).split('\n').join('<br>');
+
+        // Content
+        if (window.jQuery) {
+
+
+
+
+            $content = $($content).html(params.html || ('<p>' + escapeHtml(params.text.split('\n').join('<br>'))) + '</p>');
+        } else {
+            $content.innerHTML = params.html || ('<p>' + escapeHtml(params.text.split('\n').join('<br>')) + '</p>');
+            if ($content.innerHTML) {
+                show($content);
+            }
+        }
+
+        //Custom Class
+        if (params.customClass) {
+            addClass(modal, params.customClass);
+
+        }
+
+        // Icon
+        hide(modal.querySelectorAll('.icon'));
+        if (params.type) {
+            var validType = false;
+            for (var i = 0; i < alertTypes.length; i++) {
+                if (params.type === alertTypes[i]) {
+                    validType = true;
+                    $('.sweet-container').addClass(params.type);
+                    // if type2
+                    if (params.customClass == 'CB CB--type2') {
+
+                        if (!$('.sweet-container h2').length) {
+                            return;
+                        }
+
+                        // $('.sweet-container h2').prependTo('.sweet-content');
+
+                    }
+                    // console.log(params.customClass)
+                    // console.log(modal);
+                    break;
+                }
+            }
+            if (!validType) {
+                window.console.error('Unknown alert type: ' + params.type);
+                return false;
+            }
+            var $icon = modal.querySelector('.icon.' + params.type);
+            show($icon);
+
+            // Animate icon
+            switch (params.type) {
+                case 'success':
+                    addClass($icon, 'animate');
+                    addClass($icon.querySelector('.tip'), 'animate-success-tip');
+                    addClass($icon.querySelector('.long'), 'animate-success-long');
+                    break;
+                case 'error':
+                    addClass($icon, 'animate-error-icon');
+                    addClass($icon.querySelector('.x-mark'), 'animate-x-mark');
+                    break;
+                case 'warning':
+                    addClass($icon, 'pulse-warning');
+                    addClass($icon.querySelector('.body'), 'pulse-warning-ins');
+                    addClass($icon.querySelector('.dot'), 'pulse-warning-ins');
+                    break;
+            }
+
+        }
+
+        // Custom image
+        var $customImage = modal.querySelector('.sweet-image');
+        if (params.imageUrl) {
+            $customImage.setAttribute('src', params.imageUrl);
+            show($customImage);
+
+            if (params.imageWidth) {
+                $customImage.setAttribute('width', params.imageWidth);
+            }
+
+            if (params.imageHeight) {
+                $customImage.setAttribute('height', params.imageHeight);
+            }
+
+            if (params.imageClass) {
+                addClass($customImage, params.imageClass);
+            }
+        } else {
+            hide($customImage);
+        }
+
+        // Cancel button
+        if (params.showCancelButton) {
+            $cancelBtn.style.display = 'inline-block';
+        } else {
+            hide($cancelBtn);
+        }
+
+        // Confirm button
+        if (params.showConfirmButton) {
+            removeStyleProperty($confirmBtn, 'display');
             // console.log($confirmBtn);
-    } else {
-      hide($confirmBtn);
+        } else {
+            hide($confirmBtn);
+        }
+
+        // Buttons spacer
+        if (!params.showConfirmButton && !params.showCancelButton) {
+            hide($btnSpacer);
+        } else {
+            show($btnSpacer);
+        }
+
+        // Edit text on cancel and confirm buttons
+        $confirmBtn.innerHTML = escapeHtml(params.confirmButtonText);
+        $cancelBtn.innerHTML = escapeHtml(params.cancelButtonText);
+
+        // Set buttons to selected background colors
+        if (params.buttonsStyling) {
+            $confirmBtn.style.backgroundColor = params.confirmButtonColor;
+            $cancelBtn.style.backgroundColor = params.cancelButtonColor;
+        }
+
+        // Add buttons custom classes
+        $confirmBtn.className = 'sweet-confirm btn btn--md mdl-button mdl-js-button mdl-js-ripple-effect';
+        addClass($confirmBtn, params.confirmButtonClass);
+        $cancelBtn.className = 'sweet-cancel btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect';
+        addClass($cancelBtn, params.cancelButtonClass);
+
+        // Buttons styling
+        if (params.buttonsStyling) {
+            addClass($confirmBtn, 'styled');
+            addClass($cancelBtn, 'styled');
+        } else {
+            removeClass($confirmBtn, 'styled');
+            removeClass($cancelBtn, 'styled');
+
+            $confirmBtn.style.backgroundColor = $confirmBtn.style.borderLeftColor = $confirmBtn.style.borderRightColor = '';
+            $cancelBtn.style.backgroundColor = $cancelBtn.style.borderLeftColor = $cancelBtn.style.borderRightColor = '';
+        }
+
+        // CSS animation
+        if (params.animation === true) {
+            removeClass(modal, 'no-animation');
+        } else {
+            addClass(modal, 'no-animation');
+        }
     }
 
-    // Buttons spacer
-    if (!params.showConfirmButton && !params.showCancelButton) {
-      hide($btnSpacer);
-    } else {
-      show($btnSpacer);
+    /*
+     * Set hover, active and focus-states for buttons (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
+     */
+    function colorLuminance(hex, lum) {
+        // Validate hex string
+        hex = String(hex).replace(/[^0-9a-f]/gi, '');
+        if (hex.length < 6) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+        lum = lum || 0;
+
+        // Convert to decimal and change luminosity
+        var rgb = '#';
+        for (var i = 0; i < 3; i++) {
+            var c = parseInt(hex.substr(i * 2, 2), 16);
+            c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+            rgb += ('00' + c).substr(c.length);
+        }
+
+        return rgb;
     }
 
-    // Edit text on cancel and confirm buttons
-    $confirmBtn.innerHTML = escapeHtml(params.confirmButtonText);
-    $cancelBtn.innerHTML = escapeHtml(params.cancelButtonText);
+    function extend(a, b) {
+        for (var key in b) {
+            if (b.hasOwnProperty(key)) {
+                a[key] = b[key];
+            }
+        }
 
-    // Set buttons to selected background colors
-    if (params.buttonsStyling) {
-      $confirmBtn.style.backgroundColor = params.confirmButtonColor;
-      $cancelBtn.style.backgroundColor = params.cancelButtonColor;
+        return a;
     }
 
-    // Add buttons custom classes
-    $confirmBtn.className = 'sweet-confirm btn btn--md mdl-button mdl-js-button mdl-js-ripple-effect';
-    addClass($confirmBtn, params.confirmButtonClass);
-    $cancelBtn.className = 'sweet-cancel btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect';
-    addClass($cancelBtn, params.cancelButtonClass);
+    /*
+     * Animations
+     */
+    function openModal() {
+        var modal = getModal();
+        fadeIn(getOverlay(), 10);
+        show(modal);
+        addClass(modal, 'show-sweet-alert');
+        removeClass(modal, 'hide-sweet-alert');
 
-    // Buttons styling
-    if (params.buttonsStyling) {
-      addClass($confirmBtn, 'styled');
-      addClass($cancelBtn, 'styled');
-    } else {
-      removeClass($confirmBtn, 'styled');
-      removeClass($cancelBtn, 'styled');
+        previousActiveElement = document.activeElement;
 
-      $confirmBtn.style.backgroundColor = $confirmBtn.style.borderLeftColor = $confirmBtn.style.borderRightColor = '';
-      $cancelBtn.style.backgroundColor = $cancelBtn.style.borderLeftColor = $cancelBtn.style.borderRightColor = '';
+        setTimeout(function () {
+            addClass(modal, 'visible');
+        }, 500);
     }
 
-    // CSS animation
-    if (params.animation === true) {
-      removeClass(modal, 'no-animation');
-    } else {
-      addClass(modal, 'no-animation');
-    }
-  }
+    function closeModal() {
+        var modal = getModal();
+        _hide(getOverlay());
+        _hide(modal);
+        removeClass(modal, 'showSweetAlert');
+        addClass(modal, 'hideSweetAlert');
+        removeClass(modal, 'visible');
 
-  /*
-   * Set hover, active and focus-states for buttons (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
-   */
-  function colorLuminance(hex, lum) {
-    // Validate hex string
-    hex = String(hex).replace(/[^0-9a-f]/gi, '');
-    if (hex.length < 6) {
-      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-    }
-    lum = lum || 0;
+        // Reset icon animations
 
-    // Convert to decimal and change luminosity
-    var rgb = '#';
-    for (var i = 0; i < 3; i++) {
-      var c = parseInt(hex.substr(i * 2,2), 16);
-      c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-      rgb += ('00' + c).substr(c.length);
-    }
+        var $successIcon = modal.querySelector('.icon.success');
+        removeClass($successIcon, 'animate');
+        removeClass($successIcon.querySelector('.tip'), 'animate-success-tip');
+        removeClass($successIcon.querySelector('.long'), 'animate-success-long');
 
-    return rgb;
-  }
+        var $errorIcon = modal.querySelector('.icon.error');
+        removeClass($errorIcon, 'animate-error-icon');
+        removeClass($errorIcon.querySelector('.x-mark'), 'animate-x-mark');
 
-  function extend(a, b) {
-    for (var key in b) {
-      if (b.hasOwnProperty(key)) {
-        a[key] = b[key];
-      }
+        var $warningIcon = modal.querySelector('.icon.warning');
+        removeClass($warningIcon, 'pulse-warning');
+        removeClass($warningIcon.querySelector('.body'), 'pulse-warning-ins');
+        removeClass($warningIcon.querySelector('.dot'), 'pulse-warning-ins');
+
+        resetPrevState();
     }
 
-    return a;
-  }
+    // Reset the page to its previous state
+    function resetPrevState() {
+        var modal = getModal();
+        window.onkeydown = previousWindowKeyDown;
+        document.onclick = previousDocumentClick;
+        if (previousActiveElement) {
+            previousActiveElement.focus();
+        }
+        lastFocusedButton = undefined;
+        clearTimeout(modal.timeout);
 
-  /*
-   * Animations
-   */
-  function openModal() {
-    var modal = getModal();
-    fadeIn(getOverlay(), 10);
-    show(modal);
-    addClass(modal, 'show-sweet-alert');
-    removeClass(modal, 'hide-sweet-alert');
-
-    previousActiveElement = document.activeElement;
-
-    setTimeout(function() {
-      addClass(modal, 'visible');
-    }, 500);
-  }
-
-  function closeModal() {
-    var modal = getModal();
-    _hide(getOverlay());
-    _hide(modal);
-    removeClass(modal, 'showSweetAlert');
-    addClass(modal, 'hideSweetAlert');
-    removeClass(modal, 'visible');
-
-    // Reset icon animations
-
-    var $successIcon = modal.querySelector('.icon.success');
-    removeClass($successIcon, 'animate');
-    removeClass($successIcon.querySelector('.tip'), 'animate-success-tip');
-    removeClass($successIcon.querySelector('.long'), 'animate-success-long');
-
-    var $errorIcon = modal.querySelector('.icon.error');
-    removeClass($errorIcon, 'animate-error-icon');
-    removeClass($errorIcon.querySelector('.x-mark'), 'animate-x-mark');
-
-    var $warningIcon = modal.querySelector('.icon.warning');
-    removeClass($warningIcon, 'pulse-warning');
-    removeClass($warningIcon.querySelector('.body'), 'pulse-warning-ins');
-    removeClass($warningIcon.querySelector('.dot'), 'pulse-warning-ins');
-
-    resetPrevState();
-  }
-
-  // Reset the page to its previous state
-  function resetPrevState() {
-    var modal = getModal();
-    window.onkeydown = previousWindowKeyDown;
-    document.onclick = previousDocumentClick;
-    if (previousActiveElement) {
-      previousActiveElement.focus();
+        // Remove dynamically created media query
+        var head = document.getElementsByTagName('head')[0];
+        var mediaquery = document.getElementById(mediaqueryId);
+        if (mediaquery) {
+            head.removeChild(mediaquery);
+        }
     }
-    lastFocusedButton = undefined;
-    clearTimeout(modal.timeout);
 
-    // Remove dynamically created media query
-    var head = document.getElementsByTagName('head')[0];
-    var mediaquery = document.getElementById(mediaqueryId);
-    if (mediaquery) {
-      head.removeChild(mediaquery);
+    /*
+     * Set 'margin-top'-property on modal based on its computed height
+     */
+    function fixVerticalPosition() {
+        var modal = getModal();
+
+        modal.style.marginTop = getTopMargin(getModal());
     }
-  }
 
-  /*
-   * Set 'margin-top'-property on modal based on its computed height
-   */
-  function fixVerticalPosition() {
-    var modal = getModal();
-
-    modal.style.marginTop = getTopMargin(getModal());
-  }
-
-  /*
-   * If library is injected after page has loaded
-   */
-  (function() {
-    if (document.readyState === 'complete' || document.readyState === 'interactive' && document.body) {
-      swal.init();
-    } else {
-      if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', function onDomContentLoaded() {
-          document.removeEventListener('DOMContentLoaded', onDomContentLoaded, false);
-          swal.init();
-        }, false);
-      } else if (document.attachEvent) {
-        document.attachEvent('onreadystatechange', function onReadyStateChange() {
-          if (document.readyState === 'complete') {
-            document.detachEvent('onreadystatechange', onReadyStateChange);
+    /*
+     * If library is injected after page has loaded
+     */
+    (function () {
+        if (document.readyState === 'complete' || document.readyState === 'interactive' && document.body) {
             swal.init();
-          }
-        });
-      }
-    }
-  })();
+        } else {
+            if (document.addEventListener) {
+                document.addEventListener('DOMContentLoaded', function onDomContentLoaded() {
+                    document.removeEventListener('DOMContentLoaded', onDomContentLoaded, false);
+                    swal.init();
+                }, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('onreadystatechange', function onReadyStateChange() {
+                    if (document.readyState === 'complete') {
+                        document.detachEvent('onreadystatechange', onReadyStateChange);
+                        swal.init();
+                    }
+                });
+            }
+        }
+    })();
 
 })(window, document);

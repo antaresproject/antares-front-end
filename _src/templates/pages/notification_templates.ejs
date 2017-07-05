@@ -11,8 +11,9 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar_vue %>
+        <% include ../layout/main_menu_html %>
         <div class="app-content page-brand-settings notification-templates">
+            <% var breadData= 'Notification Templates'; %>
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
             <% include ../layout/sidebar_alerts %>
@@ -151,7 +152,7 @@
                 </table>
             </td>
         </tr>
-        <tr>                    
+        <tr>
             <td style="text-align:center;padding-left:4px">
                 <table style="width:100%">
                     <tbody>
@@ -555,12 +556,7 @@ echo "My boat is " . $coLOR . "<br>";
                                     </div>      
                                 </fieldset>                          
                         </div>      
-                        <div class="app-content__footer">
-                            <div class="btn-group">
-                                <a href="#" id="sendAclForm" class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" >Save Changes</a>
-                                <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-                            </div>
-                        </div>                                          
+                        <% include ../layout/app_footer %>                                      
                         </form>
                     </div>                                      
                 </div>

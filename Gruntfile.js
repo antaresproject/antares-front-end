@@ -8,13 +8,13 @@ var intro = `
 `;
 console.log(intro);
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     grunt.initConfig({
 
         //  __   __   __   ___ 
         // /  ` /  \ |__) |__ 
-         
+
         // \__, \__/ |  \ |___ 
 
         pkg: grunt.file.readJSON('package.json'),
@@ -75,7 +75,6 @@ module.exports = function(grunt) {
                     require('postcss-merge-rules'),
                     // //sort
 
-
                     require('css-declaration-sorter')({
                         order: 'smacss'
                     }),
@@ -83,16 +82,16 @@ module.exports = function(grunt) {
                     // join media querries
                     require('css-mqpacker'),
 
-                    // require('postcss-unique-selectors'),
-                    // require('postcss-discard-unused'),
-                    // require('postcss-discard-empty'),
-                    // require('postcss-discard-duplicates'),
+                    require('postcss-unique-selectors'),
+                    require('postcss-discard-unused'),
+                    require('postcss-discard-empty'),
+                    require('postcss-discard-duplicates'),
 
                     // need config in future
                     // require("stylelint")(),
 
                     require('cssnano')({
-                        discardUnused: {fontFace: false}
+                        discardUnused: { fontFace: false }
                     }),
 
                 ],
@@ -114,17 +113,17 @@ module.exports = function(grunt) {
     // MAIN
     //
 
-    grunt.registerTask('default', [], function() {
+    grunt.registerTask('default', [], function () {
         grunt.task.run('styles-clean');
     });
 
-    grunt.registerTask('watch', [], function() {
+    grunt.registerTask('watch', [], function () {
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.task.run('watch');
     });
 
     // STYLES
-    grunt.registerTask('styles', [], function() {
+    grunt.registerTask('styles', [], function () {
         grunt.loadNpmTasks('grunt-contrib-less');
         grunt.loadNpmTasks('grunt-postcss');
         grunt.task.run('less:main', 'less:external', 'postcss:main', 'postcss:external');
@@ -132,7 +131,7 @@ module.exports = function(grunt) {
     });
 
     // STYLES with dist clean
-    grunt.registerTask('styles-clean', [], function() {
+    grunt.registerTask('styles-clean', [], function () {
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-contrib-less');
         grunt.loadNpmTasks('grunt-postcss');

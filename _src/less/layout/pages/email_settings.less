@@ -1,5 +1,7 @@
 .page-email-settings {
-
+  .CodeMirror {
+    height: ~'calc(100vh - 380px)';
+  }
   .email-additions {
     width: 100%;
     display: flex;
@@ -30,9 +32,7 @@
     background: @standard-white;
     height: 100%;
     padding: 24px;
-    .CodeMirror {
-      height: 500px;
-    }
+
   }
   .mdl-tabs__tab-bar {
     padding-left: 24px;
@@ -64,7 +64,7 @@
     opacity: 0;
   }
   .mdl-tabs .mdl-tabs__panel {
-    padding: 24px 24px 0 24px;
+    padding: 24px;
   }
   .grid-container.grid-container--2col {
     height: ~'calc(100vh - 88px)';
@@ -298,6 +298,9 @@
 
     .email-additions {
       .btn-group {
+        width: 400px !important;
+        margin-left: auto;
+        margin-right: auto;
         justify-content: center;
         flex-flow: row wrap;
       }
@@ -336,13 +339,17 @@
   }
 }
 .page-email-settings {
-  .ddown.ddown--open .ddown__menu{//
-
-  }
-  .ddown .ddown__content .ddown__arrow{
+  .main-content .ddown .ddown__content .ddown__arrow{
     top:18px;
   }
 }
 .page-email-settings .email-additions .btn-group .ddown.ddown--open .ddown__menu{
   left: 0px
 }
+//@media @min1300{
+//  .page-email-settings{
+//    .grid-container--2col .app-content__footer{
+//      left: 122px
+//    }
+//  }
+//}

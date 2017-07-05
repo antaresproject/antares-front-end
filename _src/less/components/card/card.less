@@ -741,10 +741,10 @@
 
   //card news
   &.card--news {
-    position: relative;
-    overflow: hidden;
-    color: @standard-white;
-    background-color: @standard-white !important;
+    //position: relative;
+    //overflow: hidden;
+    //color: @standard-white;
+    //background-color: @standard-white !important;
 
     .card__header {
       border: 0;
@@ -844,7 +844,7 @@
       display: flex;
       flex:1;
     }
-      .mobile--toogle-target  {
+      .mobile-toogle--target  {
         flex:1;
       }
       
@@ -1300,17 +1300,17 @@
   .card-chart--slim {
 
     .card__mobile-toggle {
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 8px;
-      font-size: 24px;
+      display: inline-block;
+      position: relative;
       width: 40px;
       height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+      float: right;
+      font-size: 24px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      right: auto;
+      margin-right: -12px;
       .mdl-button__ripple-container {
         border-radius: 50%;
       }
@@ -1330,7 +1330,7 @@
 
     &.card--compare {
       .card__mobile-toggle {
-        top: 16px;
+        //top: 16px;
       }
 
     }
@@ -1414,7 +1414,12 @@
   box-shadow:none !important;
 }
 
-
+//
 #app-wrapper .card.card--chart .card__right {
-  padding-bottom:8px;
+  padding-bottom:0px;
+}
+
+
+#app-wrapper .app-content .grid-stack-item-content.card-datatables {
+  overflow: hidden;
 }

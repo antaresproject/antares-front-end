@@ -8,30 +8,33 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Files
- * @version    0.9.0
+ * @package    Global
+ * @version    0.9.1
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
  * @link       http://antaresproject.io
  * 
+ */
+const AntaresContextMenu = {
 
-*/
+    init() {
 
-//
-// Component: Datatables Context Menu
-//
-(function(window, document, undefined) {
+        var self = this;
 
-    window.arContextMenu = function() {
-        getItems = function(trigger, e) {
+        self.arContextMenuMutate();
+
+    },
+    arContextMenu() {
+
+        let getItems = function (trigger) {
             var element = {},
                 elements = {},
                 $target = $(trigger);
             if ($(trigger).is('tr')) {
-                var $target = $(trigger);
+                $target = $(trigger);
             } else if ($(trigger).is('td')) {
-                var $target = $(trigger).closest('tr');
+                $target = $(trigger).closest('tr');
             }
 
             function isURL(str) {
@@ -43,18 +46,17 @@
                     '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
                 return pattern.test(str);
             }
+
             //if multiActions
             if ($target.closest('.tbl-c').find('tr.is-selected').length > 1) {
-                $(trigger).closest('.tbl-c').find('#table-ma').closest('.ddown').find('.ddown__menu li').each(function(index, el) {
+                $(trigger).closest('.tbl-c').find('#table-ma').closest('.ddown').find('.ddown__menu li').each(function (index, el) {
                     var $el = $(el),
                         $name = $el.find('>a span:first').text(),
                         $text = $el.find('>a span:first').text(),
-                        $icon = $el.find('>a i:first').attr('class').split(' '),
-                        $icon = $icon[1].split('-'),
                         $icon = $icon[1],
                         $href = $el.find('>a').attr('href');
                     element[$name] = {
-                        'callback': function() {
+                        'callback': function () {
                             if (isURL($href) && $href !== '#') {
                                 window.location.href = $href;
                             }
@@ -63,22 +65,21 @@
                         'name': $text,
                     };
                     elements = $.extend({}, element);
-                    // console.log(elements);
                 });
                 return {
                     items: elements
                 };
             }
-            //if single action 
+            //if single action
             else {
-                $target.find('.cm-actions > ul > li > a').each(function(index, el) {
+                $target.find('.cm-actions > ul > li > a').each(function (index, el) {
                     var $el = $(el),
                         $name = $el.text(),
                         $text = $el.data('text'),
                         $icon = $el.data('icon'),
                         $href = $el.attr('href');
                     element[$name] = {
-                        'callback': function() {
+                        'callback': function () {
                             if (isURL($href) && $href !== '#') {
                                 window.location.href = $href;
                             }
@@ -94,14 +95,14 @@
                             items: {},
                         };
                         var subMenuEl = $(el).closest('li').find('> ul a');
-                        subMenuEl.each(function(index, el) {
+                        subMenuEl.each(function (index, el) {
                             var $el = $(el),
                                 $subName = $el.text(),
                                 $subText = $el.data('text'),
                                 $subIcon = $el.data('icon'),
                                 $subHref = $el.attr('href');
                             element[$name].items[$subName] = {
-                                'callback': function() {
+                                'callback': function () {
                                     if (isURL($subHref) && $subHref !== '#') {
                                         window.location.href = $subHref;
                                     }
@@ -112,38 +113,34 @@
                         });
                     }
                     elements = $.extend({}, element);
-                    // console.log(elements);
                 });
                 return {
                     items: elements
                 };
             }
         };
-        //each row
-        $('.billevo-table tbody tr').each(function(index, item) {
+        //each roww
+        $('.billevo-table tbody tr').each(function () {
             // LEFT TRIGGER
             $.contextMenu({
                 selector: '.billevo-table tbody tr',
-                build: function(trigger, e) {
+                build: function (trigger, e) {
                     return getItems(trigger, e);
                 },
                 events: {
-                    show: function() {
+                    show: function () {
+
+                        $('.context-menu-active').each(function () {
+                            $(this).contextMenu('hide');
+                        });
 
 
                         var $self = $(this);
-
                         if (!$self.hasClass('is-selected')) {
                             $self.closest('table').find('tr').removeClass('is-selected');
                             $self.addClass('is-selected');
-                            $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
+                            $self.closest('.tbl-c').find('#table-ma').attr('disabled', true);
                         }
-
-                        // if ($self.closest('.tbl-c').find('tr.is-selected').length > 1) {
-                        //     $self.closest('.tbl-c').find('#table-ma').attr("disabled", false);
-                        // } else {
-                        //     $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
-                        // }
                     },
                 },
             });
@@ -151,49 +148,41 @@
             // RIGHT TRIGGER ON DOTS
             $.contextMenu({
                 selector: '.billevo-table td.dt-actions',
-                build: function(trigger, e) {
+                build: function (trigger, e) {
                     return getItems(trigger, e);
                 },
                 trigger: 'left',
                 events: {
-                    show: function() {
+                    show: function () {
+
+
+                        $('.context-menu-active').each(function () {
+                            $(this).contextMenu('hide');
+                        });
+
                         var $self = $(this);
-
-            // console.log($self);
-
                         if (!$self.hasClass('is-selected')) {
-                             $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
+                            $self.closest('.tbl-c').find('#table-ma').attr('disabled', true);
                         }
-
-
-                        // if ($self.closest('.tbl-c').find('tr.is-selected').length > 1) {
-   
-                        //     $self.closest('.tbl-c').find('#table-ma').attr("disabled", false);
-                        // } else {
-                        //     $self.closest('.tbl-c').find('#table-ma').prop("disabled", true);
-                        // }
-
-               
                     },
                 },
             });
         });
-
         //fix - close on body
-        $('#app-wrapper').on('click', function() {
-
-            $('.context-menu-active').each(function() {
-                $(this).contextMenu("hide");
+        $('#app-wrapper').on('click', function () {
+            $('.context-menu-active').each(function () {
+                $(this).contextMenu('hide');
             });
-
         });
-
+    },
+    arContextMenuMutate() {
+        var self = this;
+        ready('.tbl-c .dataTable tr', function () {
+            self.arContextMenu();
+        });
     }
-
-})(window, document);
-
-//mutate!
-ready('.tbl-c .dataTable tr', function(element) {
-    // console.log('count');
-    window.arContextMenu();
+};
+$(function () {
+    window.AntaresContextMenu = AntaresContextMenu;
+    AntaresContextMenu.init();
 });

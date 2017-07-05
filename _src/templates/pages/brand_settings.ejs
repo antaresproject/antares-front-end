@@ -11,8 +11,9 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar_vue %>
+        <% include ../layout/main_menu_html %>
         <div class="app-content page-brand-settings">
+            <% var breadData= 'Brand Settings'; %>
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
             <% include ../layout/sidebar_alerts %>
@@ -119,13 +120,16 @@
                                                 </div>
                                                 <div class="form-block">
                                                     <div class="col-group">
-                                                    <div class="col-14 mb2">
+                                                    <div class="col-13 mb2">
                                                         <label class="form-block__name p0">
                                                             <span>Maintenance Mode</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-inline="Enable Maintenance Mode"></i>
+                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-mobile="true"></i>
+                                                            <div class="tooltip-content">
+                                                                <p>Enable Maintenance Mode</p>
+                                                            </div>
                                                         </label>
                                                     </div>
-                                                    <div class="col-2 mb2">
+                                                    <div class="col-3 mb2">
                                                         <div class="input-field input-field--short ml-auto">
                                                             <label class="switch">
                                                                 <input class="switch-checkbox" name="switch" type="checkbox" required="" aria-required="true">
@@ -164,7 +168,7 @@
                                                         </div>
                                                         <label class="form-block__name p0 mt8">
                                                             <span>Logo</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true"></i>
+                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-mobile="true"></i>
                                                             <div class="tooltip-content">
                                                                 <p>Logo used in the invoices, as well as in the login page.</p>
                                                                 <p class="tooltip__header mt16">Recommended format:</p>
@@ -195,7 +199,7 @@
                                                         </div>
                                                         <label class="form-block__name p0 mt8">
                                                             <span>Favicon</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true"></i>
+                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-mobile="true"></i>
                                                             <div class="tooltip-content">
                                                                 <p>Logo used in the invoices, as well as in the login page.</p>
                                                                 <p class="tooltip__header mt16">Recommended format:</p>
@@ -326,8 +330,10 @@
                                     <div class="col-dt-16">
                                         <div class="app-content__footer">
                                             <div class="btn-group">
-                                                <button type="submit" href="#" class="btn btn--md btn--submit btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Save Changes</button>
-                                                <button href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</button>
+                                                <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
+                                                <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+
+                                                <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset all</button>
                                             </div>
                                         </div>
                                     </div>

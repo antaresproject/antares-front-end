@@ -11,8 +11,9 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar_vue %>
+        <% include ../layout/main_menu_html %>
         <div class="app-content acl-page">
+            <% var breadData= 'ACL'; %>
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
             <% include ../layout/sidebar_alerts %>
@@ -73,12 +74,7 @@
                                             </ul>
                                         </div>
                                 </div>
-                                <div class="app-content__footer">
-                                    <div class="btn-group">
-                                        <a href="#" id="sendAclForm" class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Save Changes<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-                                        <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Cancel<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-                                    </div>
-                                </div>
+                                <% include ../layout/app_footer %>
                             </form>
                         </section>
                     </div>

@@ -11,15 +11,16 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar_vue %>
+        <% include ../layout/main_menu_html %>
         <div class="app-content page-brand-settings">
+            <% var breadData= 'Translations'; %>
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
             <% include ../layout/sidebar_alerts %>
             <section class="main-content nopadding">   
                 <div class="grid-container grid-container--footer grid-container--2col grid-container--no-padd">
                     <% include ../layout/menu_aside %>
-                    <div class="grid-col grid-col--container">
+                    <div class="grid-col grid-col--container card--pagination">
                         <div class="menu-mobile-settings--box">
                             <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
                             </select>
@@ -52,7 +53,7 @@
                             </div>
                             <div class="header-translation__compare">
                                 <div class="ddown ddown--flags ddown">
-                                    <div class="ddown__init btn btn--md mdl-js-button mdl-js-ripple-effect">
+                                    <div class="mdl-js-button mdl-js-ripple-effect btn btn--md ddown__init  btn--default ">
                                         <div class="flag-icon flag-icon-fr flag-translate">
                                         </div>
                                         <div class="arrow">
@@ -130,9 +131,6 @@
                                             <a id="translations-new-row__add" name="action" class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
                                                 Add translation
                                             </a>
-                                            <a id="translations-new-row__cancel"class="btn btn--link btn--default btn--md mdl-button mdl-js-button mdl-js-ripple-effect">
-                                                Cancel
-                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -146,12 +144,7 @@
                                             <tbody></tbody>
                                         </table>
                                     </div>
-                                    <div class="app-content__footer">
-                                        <div class="btn-group">
-                                            <a href="#" id="sendTableForm" class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Save Changes<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-                                            <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Cancel<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-                                        </div>
-                                    </div>    
+                                    <% include ../layout/app_footer %>  
                             </form>                       
                         </div>
                     </div>

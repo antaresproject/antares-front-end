@@ -11,15 +11,15 @@
 
 <body>
     <div id="app-wrapper">
-        <% include ../layout/sidebar_vue %>
+        <% include ../layout/main_menu_html %>
         <div class="app-content page-email-settings">
+            <% var breadData= 'Email Settings'; %>
             <% include ../layout/mainhead %> 
             <% include ../layout/sidebar_notifications %>
             <% include ../layout/sidebar_alerts %>
             <section class="main-content nopadding">
                 <div class="grid-container grid-container--2col grid-container--no-padd">
-
-                    <% include ../layout/menu_aside %>
+                    <% include ../layout/menu_aside %>    
                     <div class="grid-col grid-col--container">
                         <div class="menu-mobile-settings--box">
                             <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
@@ -93,24 +93,20 @@
                                         </textarea>
                                     </fieldset>
                                 </div>
-                                <div class="app-content__footer">
-                                    <div class="btn-group">
-                                        <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
-                                        <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button">Cancel</a>
-                                    </div>
-                                </div>
+                                <% include ../layout/app_footer %>
                             </form>
                         </div>
                     </div>
-                    <div class="email-preview">
-                        <div class="preview-area">
-                            <iframe id="preview" frameBorder="0"></iframe>
+                    <div class="email-preview" >
+                        <div class="preview-area" >
+                            <iframe id="preview"   frameBorder="0"></iframe>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-<% include ../layout/js_files %>  </body>
+<% include ../layout/js_files %>  
+</body>
 
 </html>

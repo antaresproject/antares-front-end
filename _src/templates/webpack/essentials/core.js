@@ -12,6 +12,7 @@ import './../../../js/antares_mechanics';
 import './../../../js/antares_notifications';
 import './../../../js/components/dropdowns/ddown_single';
 import './../../../js/components/dropdowns/ddown_multi';
+import '../../../js/components/main_menu/main_menu_html';
 // import './../../../js/components/auto_complete/auto_complete';
 // import './../../../js/components/main_menu/main_menu_old';
 

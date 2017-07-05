@@ -77,10 +77,16 @@
 }
 
 // TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN)
-.mobile--toogle-target {
-  //margin: 8px 0 !important;
+@media @lg {
+  .mobile-toogle--target {
+    display: block !important;
+  }
 }
 
+//.card__mobile-toggle .mdl-button__ripple-container{
+//  left: 50%;
+//  transform: translatyX(-50%);
+//}
 @media @md {
   .card__mobile-toggle {
     display: inline-block;
@@ -113,18 +119,24 @@
     display: none !important;
   }
 
-  .mobile--toogle-box {
+  .mobile-toogle--box {
     width: 100%;
-    padding: 8px;
+    padding: 8px !important;
     text-align: center;
     .card__mobile-toggle {
-      float: inherit;
+      float: inherit !important;
       margin: 0;
       left: auto;
     }
   }
 
-  ul.mobile--toogle-target, div.mobile--toogle-target {
+  .card--chart {
+    .mobile-toogle--box {
+      display: none;
+    }
+  }
+
+  ul.mobile-toogle--target, div.mobile-toogle--target {
     display: none;
   }
 
@@ -144,6 +156,11 @@
     right: 24px;
   }
 
+  .card--chart {
+    .mobile-toogle--box {
+      display: block;
+    }
+  }
 }
 
 @media @md {
@@ -154,7 +171,71 @@
   }
 }
 
+//TOGGLE WITH OVERFLOW
+@media @md {
+  .mobile-target--overflow {
+    max-height: 305px;
+    .card__content {
+      overflow: hidden !important;
+    }
+  }
+}
+
+.card--mobile-toggled {
+  .mobile-target--overflow {
+    max-height: inherit;
+  }
+}
+
+@media @md {
+  .card--more-gradient {
+    .card__content {
+      position: relative;
+      &:after {
+        position: absolute;
+        content: '';
+        bottom: 24px;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background: linear-gradient(transparent, white);
+      }
+    }
+  }
+
+  .card--more-gradient.card--mobile-toggled {
+    .card__content {
+      &:after {
+        background: linear-gradient(transparent, transparent);
+      }
+    }
+  }
+}
+
+@media @md {
+  .clients-details-gridstack {
+    .grid-stack-item-content {
+      .card.card--contacts.card--more-gradient .card__content:after {
+        bottom: 0;
+        height: 20%;
+      }
+    }
+  }
+}
+
 // TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN) END
+
+@media @md {
+  .list.list--md {
+    margin-bottom: 0;
+  }
+
+  .card--mobile-toggled .mobile-toogle--target {
+    .list {
+      margin-top: 24px;
+    }
+  }
+}
 
 @media @max1500 {
   .ddown--view-more-options li:first-child {
@@ -261,5 +342,5 @@
 }
 
 .card__content .card-ctrls__left .select2 .select2-selection__rendered {
-  line-height: 35px;
+  line-height: 39px;
 }

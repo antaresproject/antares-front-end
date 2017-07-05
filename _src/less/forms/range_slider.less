@@ -3,8 +3,8 @@
   background: @input-border-bottom;
   height: 12px;
   border-radius: 10px;
-  margin: @unit3 @unit1;
   flex: 1;
+  margin: 24px 0;
   & + .slider-val {
     display: none;
   }
@@ -49,4 +49,20 @@
     }
   }
 
+}
+.card-filter.ui-selectee .ddown__sgl .ui-spinner{
+  input{
+    width: 99.5%;
+  }
+}
+.ddown .ddown__content .ddown-multi__submenu.is-active + .ddown__arrow{
+position: absolute;
+top: 24px;
+right: 13px;
+left: auto;
+z-index: 22;
+display: block;
+transform: translateZ(0)!important;
+opacity: 1!important;
+visibility: visible!important;
 }

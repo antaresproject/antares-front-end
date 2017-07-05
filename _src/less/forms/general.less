@@ -243,14 +243,6 @@
       .btn--input {
         box-shadow: none;
         border-radius: 0 2px 2px 0;
-        //width: auto;
-        //height: 36px;
-        //border: 0;
-        //background: @primary-bg;
-        //font-size: 13px;
-        //text-transform: uppercase;
-        //color: @standard-white;
-        //padding: 0 @unit2;
         .flex-center();
       }
 
@@ -265,14 +257,6 @@
 
     }
 
-    //&.input-field--short {
-      //button
-      //input {
-      //  width: 75px;
-      //  max-width: 75px;
-      //}
-
-    //}
 
     &.input-field--pre {
       input {
@@ -482,9 +466,10 @@
 //////////////////////////
 // 8 FORMS HOR END
 /////////////////////////
-.ui-front.comiseo-daterangepicker-mask{
+.ui-front.comiseo-daterangepicker-mask {
   z-index: -10;
 }
+
 .icheckbox_billevo.disabled, .icheckbox_billevo.disabled, .switch-checkbox[disabled] + .switch-container {
   opacity: 0.5;
 }
@@ -503,7 +488,60 @@
 
 #app-wrapper {
   .app-content__footer {
-    transition:@transition;
+    transition: @transition;
     box-shadow: @bs-footer;
+  }
+}
+
+[data-tooltip-inline="Widget Edit Toggle"] {
+  display: none !important;
+}
+
+.app-content--gridstack {
+  [data-tooltip-inline="Widget Edit Toggle"] {
+    display: block !important;
+  }
+  @media @md {
+    [data-tooltip-inline="Widget Edit Toggle"] {
+      display: none !important;
+    }
+  }
+}
+
+.filter-spinner--validation-error {
+  border: 1px solid @color-error !important;
+  &:hover {
+    border: 1px solid @color-error !important;
+  }
+}
+
+
+
+.filters {
+  &:first-of-type {
+    display: inherit;
+  }
+  &:last-of-type{
+    display: none;
+  }
+  @media @xs {
+    &:first-of-type {
+      display: none;
+    }
+    &:last-of-type{
+      display: inherit;
+      .ddown.ddown--filter-edit{
+        margin-right: 0 !important;
+        .ddown__menu{
+       right: -42%;
+      }
+      }
+    }
+  }
+}
+
+fieldset.slider{
+  .input-field{
+    padding: 0 8px;
   }
 }

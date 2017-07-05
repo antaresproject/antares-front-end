@@ -1,5 +1,3 @@
-var path = './../../../';
-
 // EXTERNAL DEPS:
 // var $ = require("script-loader!./../../../js/external/jquery.js");
 // window.$ = $;
@@ -11,7 +9,7 @@ require('./../../../js/external/modified/bs_datepicker.js');
 // require('script-loader!php-date-formatter'); //no css
 require('script-loader!jquery-datetimepicker');
 require('script-loader!jquery-mask-plugin');
-
+require('script-loader!velocity-animate');
 //CORE ANTARES
 require('./../../../js/antares_forms.js');
 

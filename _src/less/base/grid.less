@@ -229,3 +229,27 @@
         min-height: auto;
     }
 }
+
+
+
+
+@gridstack-columns: 24;
+
+.grid-stack-item (@i) when (@i > 0) {
+    &[data-gs-width='@{i}'] {
+        width: (100% / @gridstack-columns) * @i !important;
+    }
+    &[data-gs-x='@{i}'] {
+        left: (100% / @gridstack-columns) * @i !important;
+    }
+    &.grid-stack-item[data-gs-min-width='@{i}'] {
+        min-width: (100% / @gridstack-columns) * @i !important;
+    }
+    &.grid-stack-item[data-gs-max-width='@{i}'] {
+        max-width: (100% / @gridstack-columns) * @i !important;
+    }
+
+    .grid-stack-item(@i - 1);
+}
+
+.grid-stack-item(@gridstack-columns);

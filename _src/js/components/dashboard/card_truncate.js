@@ -2,7 +2,7 @@ import Vue from "vue";
 
 export const cardTruncate = {
 
-    install(Vue, options) {
+    install: function(Vue, options) {
 
         Vue.mixin({
             mounted: function() {

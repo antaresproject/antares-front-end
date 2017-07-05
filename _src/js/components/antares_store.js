@@ -8,8 +8,8 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Files
- * @version    0.9.0
+ * @package    Global
+ * @version    0.9.1
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
@@ -18,9 +18,14 @@
 
 */
 
-import { Antares } from './../mechanics';
+import { Antares } from './../antares_mechanics';
 
-var Vuex = require('vuex')
+import Vue from 'vue'
+Vue.use(Vuex);
+import Vuex from 'vuex'
+
+Vue.config.devtools = true;
+Vue.config.productionTip = false;
 
 function randomDateGenerate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
@@ -37,3 +42,10 @@ window.generateRandomNumber = function() {
         
     return highlightedNumber;
 };
+
+export const antaresStore = new Vuex.Store({
+    modules: {
+        // filesWidget1: filesWidget1,
+        // tabsWidget1: tabsWidget1
+    }
+});

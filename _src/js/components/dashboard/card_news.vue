@@ -12,16 +12,20 @@
                 </div>
                 <slick class="card__slider" ref="slick" @init="slickUpdate" :options="slickOptions">
                     <div>
-                        <div class="card__info"> <span class="card__title">Phasellus fermentum in, dolor. Bassel fermentum lorem Ipsum dolor. Ferentium Artotel in, dolor.</span> <span class="card__date">Jan 9, 2015</span> <span class="card__author">Added by Konrad Keck</span> </div>
+                        <div class="card__info"> <span class="card__title">Phasellus fermentum in, dolor. otel in, dolor. </span> <span class="card__date"><i class="zmdi zmdi-calendar-alt"></i> Jan 9, 2015</span> <span class="card__author"><i class="zmdi zmdi-account"></i> Added by Konrad Keck</span> </div>
                         <div class="card__content"> <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span> </div>
                         <div class="card__footer">
-                            <button class="btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</button>
+
+                            <button class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</button>
+
                         </div>
                     </div>
                     <div>
-                        <div class="card__info"> <span class="card__title">Lorem Epsum Doloris Malis. </span> <span class="card__date">Dec 10, 2015</span> <span class="card__author">Added by Łukasz Cirut</span> </div>
+                        <div class="card__info"> <span class="card__title">Lorem Epsum Doloris Malis. </span> <span class="card__date"><i class="zmdi zmdi-calendar-alt"></i> Dec 10, 2015</span> <span class="card__author"><i class="zmdi zmdi-account"></i> Added by Łukasz Cirut</span> </div>
                         <div class="card__content"> <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span> </div>
-                        <div class="card__footer"> <a href="#" class="btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</a> </div>
+
+                        <div class="card__footer"> <a href="#" class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</a> </div>
+
                     </div>
                 </slick>
             </div>
@@ -50,13 +54,13 @@ export default {
             }
         }
     },
-    activated() {
+    activated: function() {
         var self = this;
         self.$nextTick(function() {
             self.slickUpdate();
         });
     },
-    created() {
+    created: function() {
         var self = this;
         setTimeout(function() {
             self.slickUpdate();
@@ -67,14 +71,14 @@ export default {
         $(this.$el).closest('.grid-stack-item').addClass('card-news--gsi');
     },
     methods: {
-        slickUpdate() {
+        slickUpdate: function() {
             var self = this;
             self.$nextTick(function() {
                 var slickCurrent = $(self.$el).find('.slick-slider').slickCurrentSlide;
                 $(self.$el).find('.slick-slider').slick('slickGoTo', slickCurrent)
             });
         },
-        slickResize() {
+        slickResize: function() {
             var self = this;
             var grid = $('.grid-stack').data('gridstack');
             $('.grid-stack').on('change', function(event) {
@@ -83,10 +87,10 @@ export default {
                 }
             });
         },
-        next() {
+        next: function() {
             this.$refs.slick.next();
         },
-        prev() {
+        prev: function() {
             this.$refs.slick.prev();
         },
     }
@@ -94,7 +98,7 @@ export default {
 </script>
 <style lang="less">
 .card-news--gsi.ui-resizable-resizing .card__slider,
-.card-news--gsi.ui-draggable-dragging .card__slider,
+.card-news--gsi.ui-draggable-dragging .card__slider
 {
     opacity: 0;
     transition: 0ms;
@@ -105,9 +109,11 @@ export default {
     transition: 2s;
 }
 
-.card--news .card__footer .btn-link {
+
+.card--news .card__footer .btn .btn--link {
     margin-bottom: 16px;
 }
+
 
 .slick-list {
     height: ~'calc(100% - 52px)';
@@ -123,7 +129,12 @@ export default {
         color: rgba(255, 255, 255, 0.6);
     }
 }
-
+.card__info{
+    max-height: 94px;
+    .card__title{
+        height:50px;
+    }
+}
 .card__edit-view {
     
     i {

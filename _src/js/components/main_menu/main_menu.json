@@ -1,0 +1,147 @@
+{   "debugIndicator": false,
+    "menuIconToggle": "primary",
+    "menuLock": false,
+    "rippleDuration": 30,
+    "primaryMenuHeight": null,
+    "primaryMenuWidth": null,
+    "topMenuLeftValue": null,
+    "animationActive": false,
+    "rippleOnActive": false,
+    "rippleOffActive": false,
+    "menuVisible": false,
+    "menuType": "default",
+    "clientarea": true,
+    "isAttachedToTop": false,
+    "brandButton": true,
+    "mobileDdowns": true,
+    "menuActive": "primary",
+    "brandMenu": [{
+        "title": "BillEvo",
+        "url": "#"
+    }],
+    "currentMenu": [],
+    "secondaryMenu": {
+        "name": "secondary",
+        "classList": "main-menu--secondary",
+        "items": [{
+                "name": "Templates",
+                "title": "notification-templates",
+                "url": "notification-templates.html",
+                "icon": "zmdi-code-setting",
+                "isActive": false
+            }, {
+                "name": "ACL",
+                "title": "acl",
+                "url": "acl.html",
+                "icon": "zmdi-format-line-spacing",
+                "isActive": false
+            }, {
+                "name": "Translations",
+                "title": "translations",
+                "url": "translations.html",
+                "icon": "zmdi-translate",
+                "isActive": false
+            }, {
+                "name": "Widget Tabs", 
+                "title": "Widget Tabs",
+                "url": "widget_tabs.html",
+                "icon": "zmdi-tab",
+                "isActive": false
+            }]
+    },
+    "primaryMenu": {
+        "name": "primary",
+        "classList": "main-menu--primary",
+        "items": [{
+                "name": "Dashboard", 
+                "title": "dashboard", 
+                "url": "index.html",
+                "icon": "zmdi-view-dashboard",
+                "isActive": true
+            }, {
+                "name": "Pages",
+                "title": "settings",
+                "url": "",
+                "icon": "zmdi-layers",
+                "isActive": false,
+                "submenuTitle": "Upper Menu",
+                "submenu": [{
+                    "name": "Clients List",
+                    "title": "clients_list",
+                    "icon": "zmdi-accounts",
+                    "url": "clients_list_dev.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }, {
+                    "name": "Clients Details",
+                    "title": "clients_details",
+                    "icon": "zmdi-account-circle",
+                    "url": "clients_details_gridstack.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }, {
+                    "name": "Brand Settings",
+                    "title": "brand_settings",
+                    "url": "brand_settings.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }, {
+                    "name": "Email Settings",
+                    "title": "email_settings",
+                    "url": "email_settings.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                },{
+                    "name": "Steps Page",
+                    "title": "steps-page",
+                    "url": "steps.html",
+                    "icon": "zmdi-trending-down",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                },{
+                    "name": "Login Page",
+                    "title": "login-page",
+                    "url": "login-page.html",
+                    "icon": "zmdi-trending-down",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                },{
+                    "name": "Error 400",
+                    "title": "error_400",
+                    "url": "error_400.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }, {
+                    "name": "Error 404",
+                    "title": "error_404",
+                    "url": "error_404.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }, {
+                    "name": "Error 500",
+                    "title": "error_500",
+                    "url": "error_500.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }]
+            },{
+                "name": "UI elements", 
+                "title": "UI elements",
+                "url": "",
+                "icon": "zmdi-check-all",
+                "isActive": false,
+                "submenuTitle": "Upper Menu",
+                "submenu": [{
+                    "name": "Forms Vertical",
+                    "title": "forms_vertical",
+                    "icon": "zmdi-accounts",
+                    "url": "forms.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                },{
+                    "name": "Forms Horizontal",
+                    "title": "forms_horizontal",
+                    "icon": "zmdi-accounts",
+                    "url": "forms_hor.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                },{
+                    "name": "Addidional UI",
+                    "title": "General Settings",
+                    "icon": "zmdi-wrench",
+                    "url": "general_settings.html",
+                    "tooltipText": "wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!! wabba lubba dub dub!!!!!!!!!!!"
+                }]
+            }]
+    }
+
+}

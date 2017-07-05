@@ -155,7 +155,7 @@
       }
       .search-box--open {
         .search-box__mdl-textfield {
-          display: block;;
+          display: block;
         }
         i {
           top: 7px;
@@ -173,15 +173,16 @@
         position: static;
       }
       .ddown__init {
-        box-shadow: none;
-        border: 1px solid @input-border;
+        box-shadow: 2px 0 6px rgba(0, 0, 0, .05);
+        //box-shadow: none;
+        //border: 1px solid @input-border;
       }
       .header-translation__select-text {
         font-size: 13px;
         color: @text-color-darkgrey;
       }
       .ddown__menu {
-        padding: 10px 0;
+        //padding: 10px 0;
         font-size: 13px;
         left: 0;
         width: 100%;
@@ -556,38 +557,70 @@
   }
 }
 
-@media only screen and (max-width: 766px) {
-
+@media only screen and (max-width: 768px) {
   #app-wrapper {
-
     .header-translations {
       margin-top: 40px;
     }
-
     .header-translations__search {
-
       margin-left: 16px;
       width: 100%;
-
       .search-box {
         padding-left: 0;
         padding-right: 16px;
       }
-
       .search-box,
       .search-box .search-box__mdl-textfield,
       .search-box .search-box__search-field {
         width: 100%;
       }
-
     }
-
-    .header-translations .header-translations__search .search-box i {
-      margin-left: auto;
-      margin-right: 0;
-
+    .header-translations .header-translations__search .search-box {
+      .search-box__open {
+        //margin-left: auto;
+        left: 0;
+        position: absolute;
+        margin-right: 0;
+      }
+      .search-box__close {
+        right: 0;
+        left: auto;
+        top: 24px;
+      }
     }
-
   }
 
+  #app-wrapper {
+    .translations-table thead tr:first-of-type {
+      display: none;
+    }
+    .translations-table thead tr {
+      display: inline-block;
+    }
+    .tbl-c table tr td:first-child, .tbl-c table tr th:first-child {
+      margin-right: 8px;
+    }
+    .table-key.table-key--key {
+      width: 85%;
+    }
+    .translation-row__mobile-open .table-key .table-key__init-edit {
+      position: absolute;
+      right: 48px;
+      top: 10px;
+    }
+    .tbl-c table .translation-row .table-key:last-of-type .table-key__inner {
+      justify-content: flex-end;
+    }
+    .translation-row__mobile-open .table-key.table-key--key {
+      width: 60%;
+    }
+  }
+}
+
+@media @xs {
+  .grid-col .header-translations .select2 .selection .select2-selection--single .select2-selection__arrow:before {
+    top: 50%;
+    height: 24px;
+    right: 7px;
+  }
 }

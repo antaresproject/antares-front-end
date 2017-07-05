@@ -34,6 +34,7 @@
     }
   }
 }
+
 @media @xs {
   .card-ctrls__left {
     .select2:nth-child(2) {
@@ -41,27 +42,27 @@
     }
   }
 }
+
 // filters
-@media @medium-max {
-  .card-filter {
-    display: none;
-  }
-}
-
-
-
+//@media @medium-max {
+//  .card-filter {
+//    display: none;
+//  }
+//}
 
 @media @md {
   .search-box:before, .search-box > i {
     left: 8px;
   }
-  td[tabindex]{
-    &:before{
+
+  td[tabindex] {
+    &:before {
       vertical-align: sub;
       font-size: 20px !important;
       color: @primary-bg;
     }
   }
+
   .tbl-c {
     padding: 0 16px;
   }
@@ -86,6 +87,7 @@
       color: #9fa5b3;
     }
   }
+
   .page-brand-list {
     table.collapsed tbody tr:not(.child) td:first-child {
       padding-left: 45px !important;
@@ -97,6 +99,8 @@
       padding-left: 16px;
     }
   }
+
+
 }
 
 @media @xs {
@@ -105,67 +109,103 @@
     .card-ctrls {
       margin-bottom: 0;
       border-bottom: 1px solid #f5f5f7;
-      .search-box{
+      .search-box {
         margin-left: 8px !important;
       }
-      .mdl-textfield__input,.mdl-textfield__label{
+      .mdl-textfield__input, .mdl-textfield__label {
         margin-left: 40px;
       }
-      .card-ctrls__right {
-      display: none;
-    }}
-    table tr.child td.child ul li{
+      //  .card-ctrls__right {
+      //  display: none;
+      //}
+    }
+    table tr.child td.child ul li {
       padding: 4px 24px;
     }
-    table{
-      thead{
+    table {
+      thead {
         display: none;
       }
     }
-    .odd, .even{
+    .odd, .even {
       position: relative;
 
-      td>a[title="email address"]{
+      td > a[title="email address"] {
         position: relative;
         left: 22.5%;
         margin-top: 4px;
 
       }
-      td{
+      td {
         text-align: left;
       }
-      td:first-child{
+      td:first-child {
         padding-left: 10px !important;
       }
-      td:nth-child(8){
+      td:nth-child(8) {
         text-align: right;
         padding-right: 16px;
       }
     }
-    .tbl-c{
-      padding:0;
-      table{
+    .tbl-c {
+      padding: 0;
+      table {
         padding: 0;
       }
     }
-    .tbl-c table tr td{
+    .tbl-c table tr td {
       padding: 12px 0 12px 0;
       //padding: 16px 0 16px 0;
     }
-    .tbl-c .dt-area-bottom{
+    .tbl-c .dt-area-bottom {
       padding: 0 8px;
+    }
+    .filters .ddown-multi .ddown-multi__submenu[data-name="withSelected"] {
+      .ddown-multi__label {
+        padding: 0 24px;
+      }
+      .ddown-multi__return {
+        margin-bottom: 8px;
+      }
+      & > li {
+        padding: 0;
+        & > a {
+          padding: 0 24px;
+        }
+      }
     }
   }
 }
+
 @media @max450 {
   .page-datatables {
-    .odd, .even{
-      td>a[title="email address"]{
+    .odd, .even {
+      td > a[title="email address"] {
         position: absolute;
       }
     }
-    .tbl-c table tr td{
-      padding: 12px 0 24px 0;
+    .tbl-c table tr td {
+      padding: 12px 0 12px 0;
+    }
+    .main-content .card .tbl-c table {
+      margin: 0 !important;
+      tr td {
+        padding-bottom: 24px;
+      }
+    }
+  }
+}
+
+.filters {
+  .ddown-multi__submenu.is-active + .ddown-arrow {
+    &:before, &:after {
+      display: block;
+    }
+  }
+  .ddown-multi__submenu + .ddown-arrow {
+    &:before, &:after {
+
+      display: none;
     }
   }
 }

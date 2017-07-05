@@ -1,0 +1,51 @@
+<div class="card-filter">  
+    <!-- EXAMPLE -->
+
+</div>
+
+
+
+
+<div class="ddown ddown-multi ">    <!-- BUTTON -->
+    <div class="ddown-multi__init btn--dropdown btn btn--capitalize btn--md btn--default mdl-js-button mdl-js-ripple-effect mr-24">
+        Filter
+    </div>
+    <div class="ddown__content">    <!-- CHANGE THIS -->
+        <div class="ddown__arrow"></div>
+        <ul class="ddown-multi__menu">
+            <li class="ddown-multi__label"><span>Filter By</span></li>
+            <li class="has-submenu">
+                <a data-target="income" href="#"><span>Services</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="ddown__content">    <!-- CHANGE ON THIS after click on btn 'Income' -->
+        <ul data-name="income" class="ddown-multi__submenu">
+            <li class="ddown-multi__label"><span>Filter By</span></li>
+            <li class="ddown-multi__return">
+                <a href="#">
+                    <i class="zmdi zmdi-chevron-left"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li class="ddown__sgl ddown__sgl--range">
+                <div class="filter-slider ui-slider--minimal"
+                     data-slider-range-filter="true"  ></div>
+                <div class="form-block ff-rnw mb0">
+                    <div class="spinner-basic">
+                        <input class="filter-spinner filter-spinner-mode-min filter-spinner--min"
+                               value="1"  name="value">
+                    </div>
+                    <span class="ml16 mr16"> - </span>
+                    <div class="spinner-basic">
+                        <input class="filter-spinner filter-spinner-mode-max  filter-spinner--max"
+                               value="512"  name="value2">
+                    </div>
+                </div>
+                <a href="#"
+                   class="btn btn--uppercase btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
+            </li>
+        </ul>
+        <div class="ddown__arrow"></div>
+    </div>
+</div>

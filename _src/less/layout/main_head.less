@@ -167,3 +167,31 @@
     font-size: 24px;
   }
 }
+
+@media @xs {
+  .main-head {
+    .breadcrumbs {
+      .ddown--adj-bottom {
+        .ddown__arrow {
+          top: 25px;
+          &:before, &:after {
+            transform: rotate(180deg);
+          }
+          &:before{
+            top: -5.5px;
+          }
+        }
+        .ddown__menu {
+          transform: translate3d(0,20px,0)!important
+        }
+      }
+      .ddown .ddown__menu {
+        min-width: 250px;
+        top: auto !important;
+        .ddown__submenu {
+          min-width: 250px;
+        }
+      }
+    }
+  }
+}

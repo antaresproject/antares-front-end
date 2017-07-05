@@ -9,19 +9,18 @@
 </head>
 <body>
 <div id="app-wrapper">
-<% include ../layout/sidebar_vue %>
+<% include ../layout/main_menu_html %>
 <!-- DIALOG MODAL | END -->
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-<div class="app-content page-error">
+<div class="app-content page-error page-error--no-logo">
+    <% var breadData= 'Error 400'; %>
     <% include ../layout/mainhead %> 
     <% include ../layout/sidebar_notifications %>
     <% include ../layout/sidebar_alerts %>
     <section class="main-content">
         <div class="error-container">
             <div class="top-area">
-                <div class="app-logo">
-                    <img src="img/theme/antares/logo/logo_sign_white_2.svg" alt="App Logo">
-                </div>
+
                 <div class="error-message">
                     <div class="error-message__bg"></div>
                     <div class="error-message__text">
@@ -38,17 +37,13 @@
                     <p>Zaorałeś ją na śmierć... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <div class="btn-group">
                         <a href="#" class="go-back btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-long-arrow-left"></i> Back to previous page</a>
-
                         <a href="#" class="open-modal btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Can't solve the problem?</a>
-
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
     </div>
 </div>
-
 <% include ../layout/js_files %>  </body>
 </html>

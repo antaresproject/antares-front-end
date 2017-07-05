@@ -58,17 +58,17 @@
   // xs LOGS
   .card-ctrls.card-ctrls--nopadding {
     margin: 0 !important; // tam był important mt16
-    &:after {
-      position: absolute;
-      content: "";
-      border-bottom: 1px solid #ebeff0;
-      top: 45px;
-      left: 0;
-      width: 100%;
-    }
-    .card-ctrls__left {
-      padding-top: 5px;
-    }
+    //&:after {
+    //  position: absolute;
+    //  content: "";
+    //  border-bottom: 1px solid #ebeff0;
+    //  top: 45px;
+    //  left: 0;
+    //  width: 100%;
+    //}
+    //.card-ctrls__left {
+    //  padding-top: 5px;
+    //}
   }
 
   [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow {
@@ -130,4 +130,9 @@
   }
 
   // xs LOGS END
+  .card-block--logs{
+    .card__content > .datarow{
+      margin-top: 16px;
+    }
+  }
 }

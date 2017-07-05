@@ -12,9 +12,10 @@
 <body>
 <% include ../layout/templates_dashboard %>
 <div id="app-wrapper">
-    <% include ../layout/sidebar_vue %>
+    <% include ../layout/main_menu_html %>
     <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-    <div class="app-content page-dashboard page-dashboard-html">
+    <div class="app-content page-dashboard page-dashboard-html app-content--gridstack">
+        <% var breadData= 'Widgets HTML'; %>
         <% include ../layout/card_bar %>
         <% include ../layout/mainhead %>
         <% include ../layout/sidebar_notifications %>
@@ -23,10 +24,10 @@
             <!-- Gridstack -->
             <div class="grid-stack" style="opacity:0">
                 <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0"
-                     data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
-                        <div class="card  card--chart card--scrollbox" data-chart="true">
+                        <div class="card card--chart card--scrollbox" data-chart="true">
                             <div class="card__left">
                                 <div class="card__header">
                                     <div class="card__header-left">
@@ -80,7 +81,7 @@
                                                     class="zmdi zmdi-caret-down"></i></div>
                                 </header>
 
-                                <ul class="datarow mobile--toogle-target" data-scrollable>
+                                <ul class="datarow mobile-toogle--target" data-scrollable>
                                     <!--SINGLE-->
                                     <li class="datarow__sgl datarow__sgl--down">
                                         <div class="datarow__left">
@@ -256,8 +257,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="0"
-                     data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="0"
+                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
                         <div class="card card--chart card--scrollbox" data-chart="true">
@@ -310,7 +311,7 @@
                                     <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
                                                 class="zmdi zmdi-caret-down"></i></div>
                                 </header>
-                                <ul class="datarow mobile--toogle-target " data-scrollable>
+                                <ul class="datarow mobile-toogle--target " data-scrollable>
                                     <!--SINGLE-->
                                     <li class="datarow__sgl datarow__sgl--up">
                                         <div class="datarow__left">
@@ -364,7 +365,7 @@
                     </div>
                 </div>
                 <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10"
-                     data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
                         <div class="card card--chart card--scrollbox" data-chart="true">
@@ -417,7 +418,7 @@
                                     <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
                                                 class="zmdi zmdi-caret-down"></i></div>
                                 </header>
-                                <ul class="datarow mobile--toogle-target" data-scrollable>
+                                <ul class="datarow mobile-toogle--target" data-scrollable>
                                     <!--SINGLE-->
                                     <li class="datarow__sgl datarow__sgl--down">
                                         <div class="datarow__left">
@@ -483,8 +484,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="10"
-                     data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="10"
+                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
                         <div class="card card--chart card--scrollbox" data-chart="true">
@@ -540,7 +541,7 @@
                                     <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
                                                 class="zmdi zmdi-caret-down"></i></div>
                                 </header>
-                                <ul class="datarow mobile--toogle-target" data-scrollable>
+                                <ul class="datarow mobile-toogle--target" data-scrollable>
                                     <!--SINGLE-->
                                     <li class="datarow__sgl datarow__sgl--down">
                                         <div class="datarow__left">
@@ -643,7 +644,7 @@
                     </div>
                 </div>
                 <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20"
-                     data-gs-width="3" data-gs-height="15" data-gs-min-width="3" data-gs-min-height="11">
+                     data-gs-width="6" data-gs-height="12" data-gs-min-width="6" data-gs-min-height="11">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
                         <div class="card card--info card--scrollbox" data-widget-name="card--info">
@@ -699,12 +700,9 @@
                                         <a href="#"
                                            class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">CHANGE
                                             LOG</a>
-                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
-                                            <i class="zmdi zmdi-caret-down"></i>
-                                        </div>
                                     </div>
                                 </div>
-                                <ul class="datarow mobile--toogle-target" data-scrollable>
+                                <ul class="datarow mobile-toogle--target" data-scrollable>
                                     <!--SINGLE-->
                                     <li class="datarow__sgl">
                                         <div class="datarow__left">
@@ -769,12 +767,16 @@
                                         </div>
                                     </li>
                                 </ul>
+                                <div class="mobile-toogle--box">
+                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
+                                                class="zmdi zmdi-caret-down"></i></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="3" data-gs-y="20"
-                     data-gs-width="3" data-gs-height="10" data-gs-min-width="2" data-gs-min-height="11">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20"
+                     data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="11">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
                         <div class="card card--news card--primary">
@@ -826,8 +828,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20"
-                     data-gs-width="6" data-gs-height="12" data-gs-min-width="5" data-gs-min-height="12"
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="20"
+                     data-gs-width="12" data-gs-height="12" data-gs-min-width="11" data-gs-min-height="12"
                      data-card-name="system-logs">
                     <div class="grid-stack-item-content">
                         <% include ../layout/widget_edit %>
@@ -862,11 +864,7 @@
                                     </div>
                                     <div class="card-ctrls__right"></div>
                                 </div>
-                                <div class="mobile--toogle-box">
-                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                                class="zmdi zmdi-caret-down"></i></div>
-                                </div>
-                                <div class="datarow mobile--toogle-target">
+                                <div class="datarow">
                                     <ul class="timeline">
                                         <li class="timeline__entry--ok">
                                             <div class="timeline__indicator" data-color="#0080FF"></div>

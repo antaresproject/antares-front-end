@@ -24,6 +24,7 @@ window.Pace = pace;
 require("script-loader!jquery");
 require("./../../../js/external/jquery_migrate_3.js");
 require("script-loader!jquery-ui-bundle");
+require('jquery-menu-aim');
 require('./../../../js/external/modified/globalize.js');
 var enquire = require('enquire.js');
 window.enquire = enquire; 

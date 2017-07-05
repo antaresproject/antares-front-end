@@ -2,18 +2,38 @@
 <div class="card-container">
     <card-edit-controls></card-edit-controls>
 
-   <div class="card card--chart" v-bind:class="{'card--compare': compareMode}" :data-widget-name="widgetName" data-chart="true">
+   <div class="card card--chart card-chart--slim" v-bind:class="{'card--compare': compareMode}" :data-widget-name="widgetName" data-chart="true">
         <div class="card__left">
             <div class="card__header">
                 <div class="card__header-left">
                     <span>{{title}}</span>
                 </div>
                 <div class="card__header-right">
-                    <form action="" method="post">
-                        <input data-daterangepicker="true" class="mr24">
-                        <input type="checkbox" data-icheck="true" name="check" id="check" v-model="compareMode">
-                        <label class="ml8" for="check">{{compareText}}</label>
-                    </form>
+                    <div class="card__header-right">
+                        <div class="ddown ddown--view-more ddown--view-more-options">
+                            <div class="ddown__init ddown__init--clean">
+                                <a href="#"  class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i class="zmdi zmdi-more-vert"></i></a>
+                            </div>
+                            <div class="ddown__content">
+                                <form action="" method="post">
+                                    <ul class="ddown__menu">
+                                        <li>
+                                            <input data-daterangepicker="true" class="mr24">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" data-icheck="true" name="check" id="orders" >
+                                            <label class="ml8" for="orders" v-on:click="compareMode = !compareMode">{{compareText}}</label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                        <form action="" method="post">
+                            <input data-daterangepicker="true" class="mr24">
+                            <input type="checkbox" data-icheck="true" name="check" id="orders" >
+                            <label class="ml8" for="orders" v-on:click="compareMode = !compareMode">{{compareText}}</label>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="card__content card__content--chart">
@@ -27,11 +47,8 @@
                 <span class="card__title">{{legendTitle}}</span>
                 <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%<i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': type === 'decline' } "></i></span>
                 <span class="card__ammount"><strong>{{value1}} </strong><span class="compare"> / {{value2}}</span></span>
-                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                    <i class="zmdi zmdi-caret-down"></i>
-                </div>
             </header>
-            <ul class="datarow" data-scrollable>
+            <ul class="datarow mobile-toogle--target" data-scrollable>
                 <!--SINGLE-->
                 <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
                     <div class="datarow__left">
@@ -44,6 +61,11 @@
                 </li>
             </ul>
         </div>
+       <div class="mobile-toogle--box">
+           <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+               <i class="zmdi zmdi-caret-down"></i>
+           </div>
+       </div>
     </div>
 
     </div>
@@ -210,9 +232,31 @@ export default {
         domElem.find('[data-icheck]').on('ifChanged', function(event) {
             self.compareMode = !self.compareMode;
         });
+
+        setTimeout(function() {
+            self.setDate();
+        }, 500);
     },
 
     methods: {
+
+        setDate() {
+
+            var self = this;
+
+            function randomNumber(min, max) {
+                return Math.floor(Math.random()*(max-min+1)+min);
+            } 
+
+            var date = moment().subtract(randomNumber(1,10), 'days' ).startOf('day').toDate();
+
+            enquire.register("screen and (min-width:768px)", {
+                match: function () {
+                    $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", {start: date});
+                }
+            });
+
+        },
 
         toggleMode: function() {
 

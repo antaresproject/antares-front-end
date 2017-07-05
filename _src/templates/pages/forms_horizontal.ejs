@@ -10,8 +10,9 @@
 </head>
 <body>
 <div id="app-wrapper">
-    <% include ../layout/sidebar_vue %>
+    <% include ../layout/main_menu_html %>
     <div class="app-content" data-scroll-blocked="true">
+        <% var breadData= 'Forms Horizontal'; %>
         <% include ../layout/mainhead %>
         <% include ../layout/sidebar_notifications %>
         <% include ../layout/sidebar_alerts %>
@@ -961,7 +962,7 @@
                             </div>
                             <div class="col-16 ">
                                 <form id="5" class="form-validation form--hor" method="post" action="">
-                                    <fieldset name="inputs">
+                                    <fieldset name="inputs" class="slider">
                                         <legend>Slider</legend>
                                         <div class="form-block">
 
@@ -1038,18 +1039,7 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- FOOTER -->
-                        <!-- PLEASE, DONT TOUCH ME -->
-                        <!-- I'M FEELING REALLY LOW -->
-                        <div class="app-content__footer">
-                            <div class="btn-group">
-                                <a href="#"
-                                   class="btn btn--md btn--primary mdl-button mdl-button mdl-js-button mdl-js-ripple-effect">Save
-                                    Changes</a>
-                                <a href="#"
-                                   class="btn btn--md btn--default mdl-button mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
-                            </div>
-                        </div>
+                        <% include ../layout/app_footer %>
                 </div>
             </div>
         </section>

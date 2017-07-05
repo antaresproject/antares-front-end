@@ -1,69 +1,3 @@
-//
-// Buttons
-//
-
-//sizes
-
-//new
-
-// .btn--xxl{
-//   font-size: 16px;
-//   padding: 0 24px;
-//   font-weight: 500;
-//   line-height: 60px;
-//   text-align: center;
-// }
-
-.btn--s-small {
-  font-size: 12px;
-  padding: 0 8px;
-  font-weight: 500;
-  line-height: 32px;
-  text-align: center;
-}
-
-.btn--s-default {
-  font-size: 13px;
-  padding: 0 16px;
-  font-weight: 500;
-  line-height: 36px;
-  text-align: center;
-}
-
-.btn--s-medium {
-  font-size: 13px;
-  padding: 0 16px;
-  font-weight: 500;
-  line-height: 40px;
-  text-align: center;
-}
-
-.btn--s-large {
-  font-size: 14px;
-  padding: 0 24px;
-  font-weight: 500;
-  line-height: 46px;
-  text-align: center;
-}
-
-.btn--s-extra-large {
-  font-size: 15px;
-  padding: 0 24px;
-  font-weight: 500;
-  line-height: 52px;
-  text-align: center;
-}
-
-.btn--s-xxl {
-  font-size: 16px;
-  padding: 0 24px;
-  font-weight: 500;
-  line-height: 60px;
-  text-align: center;
-}
-
-//Button More - 3 dots vertical - for cards
-
 .btn-more {
   font-size: inherit;
   padding: 0 16px;
@@ -84,9 +18,7 @@
     color: @text-color-grey;
   }
 }
-
 .ddown .ddown__init {
-
   &.btn--dropdown {
 
     background-color: @background;
@@ -96,22 +28,14 @@
       top: 0;
     }
   }
-
 }
-
-//modifiers
-
 .table-controls {
-
   .btn-more {
     font-size: 24px;
     right: 0;
   }
-
 }
-
 .btn-group {
-
   > * {
     margin-right: 8px;
     &:last-child {
@@ -120,9 +44,7 @@
   }
 }
 
-/* 3.1. Full Buttons
-	========================================================================== */
-.btn {
+.btn {                    // KING
   @box-shadow-active: 0 5px 12px rgba(0, 0, 0, .15);
   display: inline-block;
   border-radius: 2px;
@@ -135,20 +57,115 @@
   white-space: nowrap;
   position: relative;
 
+
+  //default from MD
+  font-size: 13px;
+  padding: 0 16px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  @padding-for-icon:36px;
+  @font-size-for-icon: 20px;
+  @left-or-right: 12px;
+  &.btn--icon-left, &.btn--icon {
+    padding-left: @padding-for-icon;
+    &:before{
+      left: @left-or-right;
+      font-size: @font-size-for-icon;
+    }
+  }
+  &.btn--icon-right {
+    padding-right: @padding-for-icon;
+    &:before{
+      right: @left-or-right;
+      font-size: @font-size-for-icon;
+    }
+  }
+
+  //default from primary
+  @bg: @btn-primary-color;
+  @bg-hover-and-active: lighten(@btn-primary-color, 5%);
+  @c: #fff;
+  background-color: @bg;
+  color: @c;
+  //hover
+  &:hover, &.btn--forced-hover, &:active, &.btn--forced-active {
+    background-color: @bg-hover-and-active;
+  }
+  &[disabled],
+  &:disabled {
+    opacity: 0.5;
+    background-color: @bg;
+    color: @c;
+  }
+
+
+  &.btn--s-small {
+    font-size: 12px;
+    padding: 0 8px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  &.btn--s-default {
+    font-size: 13px;
+    padding: 0 16px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  &.btn--s-medium {
+    font-size: 13px;
+    padding: 0 16px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  &.btn--s-large {
+    font-size: 14px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: center;
+  }
+
+  &.btn--s-extra-large {
+    font-size: 15px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 52px;
+    text-align: center;
+  }
+
+  &.btn--s-xxl {
+    font-size: 16px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: center;
+  }
+
+
+
+
+
   &:active {
     //active shadow
     box-shadow: @box-shadow-active;
   }
-
   &:disabled,
   &[disabled] {
     box-shadow: none;
     cursor: not-allowed !important;
   }
-
   &.btn--forced-active {
     box-shadow: @box-shadow-active;
   }
+
+  // for standard btns
   &.btn--xs {
     padding: 0 8px;
     font-size: 10px;
@@ -293,13 +310,54 @@
   }
 
 
+  //for inputs
+  &.btn--s-small {
+    font-size: 12px;
+    padding: 0 8px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+  }
+  &.btn--s-default {
+    font-size: 13px;
+    padding: 0 16px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+  }
+  &.btn--s-medium {
+    font-size: 13px;
+    padding: 0 16px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+  }
+  &.btn--s-large {
+    font-size: 14px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: center;
+  }
+  &.btn--s-extra-large {
+    font-size: 15px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 52px;
+    text-align: center;
+  }
+  &.btn--s-xxl {
+    font-size: 16px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: center;
+  }
 
-  //bold
   &.btn--bold {
     font-weight: bold;
   }
 
-  //PRIMARY
   &.btn--primary {
     @bg: @btn-primary-color;
     @bg-hover-and-active: lighten(@btn-primary-color, 5%);
@@ -334,8 +392,6 @@
     }
 
   }
-
-  //DEFAULT
   &.btn--default {
     @bg: @input-border-bottom;
     @bg-hover-and-active: lighten(@input-border-bottom, 5%);
@@ -370,8 +426,6 @@
     }
 
   }
-
-  //DARK
   &.btn--dark {
     @bg: @secondary-bg;
     @bg-hover-and-active: lighten(@secondary-bg, 10%);
@@ -406,8 +460,6 @@
     }
 
   }
-
-  //ORANGE
   &.btn--orange {
     @bg: @btn-orange;
     @bg-hover-and-active: lighten(@btn-orange, 10%);
@@ -442,8 +494,6 @@
     }
 
   }
-
-  //INDIGO
   &.btn--indigo {
     @bg: @btn-purple-blue;
     @bg-hover-and-active: lighten(@btn-purple-blue, 5%);
@@ -478,8 +528,6 @@
     }
 
   }
-
-  //BLUE
   &.btn--blue {
     @bg: @color-info;
     @bg-hover-and-active: lighten(@color-info, 5%);
@@ -514,8 +562,6 @@
     }
 
   }
-
-  //RED
   &.btn--red {
     @bg: @color-alert;
     @bg-hover-and-active: lighten(@color-alert, 10%);
@@ -570,8 +616,23 @@
       content: '\f278';
     }
   }
-  
-  &.btn--link {
+
+
+  &.btn--lowercase {
+    text-transform: lowercase !important;
+  }
+  &.btn--capitalize {
+    text-transform: capitalize !important;
+  }
+  &.btn--uppercase {
+    text-transform: uppercase !important;
+  }
+  &.btn-w-auto {
+    width: auto !important;
+    min-width: auto !important;
+  }
+
+  &.btn--link {       //GRAND KING
     @bg-hover: @btn-link-grey-hover;
     @bg-active: @btn-link-grey-active;
     display: inline-block;
@@ -587,16 +648,12 @@
     &.btn--forced-hover {
       background-color: @bg-hover;
     }
-
     &:active {
       background-color: @bg-active;
     }
-
     &.btn--forced-active {
       background-color: @bg-active;
     }
-
-    //disabled
     &[disabled],
     &:disabled {
       opacity: 0.5;
@@ -604,8 +661,6 @@
       color: inherit;
     }
 
-
-    //PRIMARY
     &.btn--primary {
       color: @btn-primary-color;
       background-color: transparent;
@@ -620,7 +675,6 @@
       }
 
     }
-    //Default
     &.btn--default {
       @c: @primary-c;
       background-color: transparent;
@@ -636,8 +690,6 @@
       }
 
     }
-
-    //Dark
     &.btn--dark {
       @c: @secondary-bg;
       color: @c;
@@ -652,8 +704,6 @@
         background-color: @bg-hover;
       }
     }
-
-    //Orange
     &.btn--orange {
       @c: @btn-orange;
       color: @c;
@@ -668,8 +718,6 @@
         background-color: @bg-hover;
       }
     }
-
-    //Indigo
     &.btn--indigo {
       @c: @btn-purple-blue;
       color: @c;
@@ -684,8 +732,6 @@
         background-color: @bg-hover;
       }
     }
-
-    //Blue
     &.btn--blue {
       @c: @color-link;
       color: @c;
@@ -700,8 +746,6 @@
         background-color: @bg-hover;
       }
     }
-
-    //Red
     &.btn--red {
       @c: @color-alert;
       color: @c;
@@ -717,27 +761,6 @@
       }
     }
   }
-
-}
-
-
-//helpers
-
-.btn--lowercase {
-  text-transform: lowercase !important;
-}
-
-.btn--capitalize {
-  text-transform: capitalize !important;
-}
-
-.btn--uppercase {
-  text-transform: uppercase !important;
-}
-
-.btn-w-auto {
-  width: auto !important;
-  min-width: auto !important;
 }
 
 #table-ma:disabled {

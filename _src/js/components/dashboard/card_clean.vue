@@ -7,7 +7,28 @@
                 <div class="card__header-left"><span>{{name}}</span></div>
                 <div class="card__header-right"></div>
             </div>
-            <div class="card__content" v-html="html"></div>
+            <div class="card__content">
+                
+                <div class="zd-container">
+
+                    <div class="zd zd--default">
+                        <div class="zd__header">
+                            <i class="zmdi zmdi-email"></i>
+                        </div>
+                        <div class="zd__content">
+                            <div class="zd__title">No transactions to display.</div>
+                            <div class="zd__description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac efficitur.
+                            </div>
+                        </div>
+                        <div class="zd__footer">
+                            <a href="#" class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEW TICKET</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -17,7 +38,7 @@
 import cardEditControls from './card_edit_controls.vue';
 export default {
     name: 'CardClean',
-    data() {
+    data: function() {
         return {
             widgetName: 'Clean',
             name: 'Card Clean',

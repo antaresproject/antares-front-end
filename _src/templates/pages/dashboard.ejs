@@ -9,44 +9,42 @@
     <% include ../layout/color_template %>
     <% include ../layout/css_files %>
 </head>
-
 <body>
-
     <script type="text/x-template" id="vue-page-dashboard">
         <section class="main-content" v-cloak>
             <!-- Gridstack -->
             <div class="grid-stack" style="opacity:0;">
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="10" data-gs-min-width="10" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <card-chart-billing></card-chart-billing>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="0" data-gs-width="12" data-gs-height="10" data-gs-min-width="10" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <card-chart-subscriptions></card-chart-subscriptions>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10" data-gs-width="12" data-gs-height="10" data-gs-min-width="10" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <card-chart-orders></card-chart-orders>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="10" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="10" data-gs-width="12" data-gs-height="10" data-gs-min-width="10" data-gs-min-height="10">
                     <div class="grid-stack-item-content">
                         <card-chart-tickets></card-chart-tickets>
-                    </div>
+                    </div> 
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="3" data-gs-height="15" data-gs-min-width="3" data-gs-min-height="11" style="z-index: 1;">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="6" data-gs-height="15" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
                     <div class="grid-stack-item-content">
                         <card-info></card-info>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="3" data-gs-y="20" data-gs-width="3" data-gs-height="10" data-gs-min-width="2" data-gs-min-height="11">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20" data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="11">
                     <div class="grid-stack-item-content">
                         <card-news></card-news>
                     </div>
                 </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20" data-gs-width="6" data-gs-height="12" data-gs-min-width="5" data-gs-min-height="12" data-card-name="system-logs" data-anijs="if: mouseover, on: body, do: swing animated">
+                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="20" data-gs-width="12" data-gs-height="12" data-gs-min-width="12" data-gs-min-height="12" data-card-name="system-logs" data-anijs="if: mouseover, on: body, do: swing animated">
                     <div class="grid-stack-item-content">
                         <card-logs></card-logs>
                     </div>
@@ -59,10 +57,11 @@
 
     <% include ../layout/templates_dashboard %>
         <div id="app-wrapper">
-            <% include ../layout/sidebar_vue %>
+            <% include ../layout/main_menu_html %>
                 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-                <div class="app-content page-dashboard dashboard--vue">
+                <div class="app-content page-dashboard dashboard--vue app-content--gridstack">
                     <% include ../layout/card_bar %>
+                    <% var breadData= 'Vue Dashboard'; %>
                     <% include ../layout/mainhead %>
                     <% include ../layout/sidebar_notifications %>
                     <% include ../layout/sidebar_alerts %>

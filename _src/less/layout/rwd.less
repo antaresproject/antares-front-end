@@ -12,6 +12,14 @@
   }
 
 }
+.grid-stack-item .ui-resizable-handle {
+  display: none !important;
+}
+.app-content--widgets-movable{
+  .grid-stack-item .ui-resizable-handle {
+    display: none !important;
+  }
+}
 
 //new general RWD styles
 @media @xs {
@@ -66,16 +74,17 @@
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  .search-box {
-    .search-box__mdl-textfield {
-      margin-right: 130px;
-    }
+  .ui-resizable-handle {
+    display: none !important;
   }
-
+  //.search-box {
+  //  .search-box__mdl-textfield {
+  //    margin-right: 170px;
+  //  }
+  //}
   .card.card--chart .card__right .datarow {
-    max-height: 200px;
-    overflow-y: scroll !important;
+    max-height: none;
+    overflow-y: auto !important;
   }
 
 }
@@ -89,10 +98,6 @@
 
   .grid-stack-item {
     min-height: auto !important;
-  }
-
-  .grid-stack-item.gs-pagination .card {
-    padding-bottom: 0;
   }
 
   .card.card--chart .card__right .datarow {
@@ -122,10 +127,6 @@
   .select2-results {
     overflow-y: scroll;
     max-height: 330px;
-  }
-
-  .ui-resizable-handle {
-    display: none !important;
   }
 
   .comiseo-daterangepicker {

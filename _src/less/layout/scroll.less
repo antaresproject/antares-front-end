@@ -74,7 +74,7 @@
       pointer-events: none;
 
       > .ps-scrollbar-x-rail {
-        background: rgba(255,255,255,0.2);
+        background: rgba(255, 255, 255, 0.2);
         // opacity: 0.2;
 
         > .ps-scrollbar-x {
@@ -84,7 +84,7 @@
       }
 
       > .ps-scrollbar-y-rail {
-        background: rgba(255,255,255,0.2);
+        background: rgba(255, 255, 255, 0.2);
         // opacity: 0.2;
 
         > .ps-scrollbar-y {
@@ -140,19 +140,17 @@
 
 }
 
-
 // hover width fix
 
-.ps-container>.ps-scrollbar-x-rail:active>.ps-scrollbar-x, 
-.ps-container>.ps-scrollbar-x-rail:hover>.ps-scrollbar-x,
-.ps-container>.ps-scrollbar-y-rail:active>.ps-scrollbar-y, 
-.ps-container>.ps-scrollbar-y-rail:hover>.ps-scrollbar-y,
-.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y,
-.ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail>.ps-scrollbar-x,
-.ps-container.ps-in-scrolling.ps-y.active-y>.ps-scrollbar-y-rail>.ps-scrollbar-y,
-.ps-container.ps-in-scrolling.ps-x.active-x>.ps-scrollbar-x-rail>.ps-scrollbar-x
-{
-  width:7px;
+.ps-container > .ps-scrollbar-x-rail:active > .ps-scrollbar-x,
+.ps-container > .ps-scrollbar-x-rail:hover > .ps-scrollbar-x,
+.ps-container > .ps-scrollbar-y-rail:active > .ps-scrollbar-y,
+.ps-container > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y,
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y,
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x,
+.ps-container.ps-in-scrolling.ps-y.active-y > .ps-scrollbar-y-rail > .ps-scrollbar-y,
+.ps-container.ps-in-scrolling.ps-x.active-x > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  width: 7px;
 }
 
 //importance of cascade
@@ -181,18 +179,31 @@
     .card__content {
       padding: 0;
 
-      >div:not(.ps-scrollbar-y-rail):not(.ps-scrollbar-x-rail) {
+      > div:not(.ps-scrollbar-y-rail):not(.ps-scrollbar-x-rail) {
         padding: 0 24px
       }
 
-      >ul.datarow {
+      > ul.datarow {
         padding: 0 24px;
         margin: 0 0 16px 0;
+        @media @md {
+          margin: 0;
+        }
       }
 
     }
 
   }
+
+  .main-content .grid-stack .grid-stack-item-content .card [data-scrollable], .sidebar .ps-container {
+    margin: 8px 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    & > .ps-scrollbar-y-rail {
+      margin-right: 8px;
+    }
+  }
+
 
 }
 
