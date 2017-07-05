@@ -176,7 +176,7 @@ module.exports = {
         new ProgressBarPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         // new ExtractTextPlugin("./css/app.css"),
-        // new BabiliPlugin({}, require('babel-preset-babili')),
+        new BabiliPlugin({}, require('babel-preset-babili')),
         // new UglifyJSPlugin({
         //     mangle: true,
         //     sourceMap: false,
