@@ -38,10 +38,14 @@ OR
 
 After that, you can init building process, by typing
 
-`npm run antares`
+`grunt`
 
-in your console. 
+in your console to start css generation. 
 
-After completion, build is available in `_dist` folder.
+Upon completion, fire webpack with command:
 
-Use `grunt watch` to watch for css changes, and `webpack --watch` for html and js changes.
+`webpack-dev-server`
+
+That will generate all others system assets.
+
+You can preview the system on url `http://localhost:9000/`.
