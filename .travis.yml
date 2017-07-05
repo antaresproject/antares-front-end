@@ -7,4 +7,5 @@ install:
 before_script:
     - yarn install
 script:
-    - npm run antares
+    - grunt \ 
+    && webpack-dev-server
