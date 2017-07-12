@@ -173,6 +173,9 @@
 
     .card-ctrls__left {
       padding: 0 0px;
+      .select2-selection--single .select2-selection__rendered{
+        line-height: 40px;
+      }
     }
 
   }
@@ -184,8 +187,9 @@
     justify-content: flex-end;
     height: 100%;
     align-items: center;
-    max-width: 400px;
+    //max-width: 400px;
     max-height: 72px;
+
     //active
     .ddown--filter-edit {
       &.ddown--open {
@@ -301,6 +305,7 @@
             display: block;
             text-align: right;
             overflow-y: hidden;
+            padding: 0 16px;
             .filter {
               display: inline-block;
               & > .ddown--filter-edit {
@@ -375,3 +380,20 @@
   }
 }
 
+#app-wrapper .card .card-ctrls.tab-search .card-filter{
+  .filter{
+    .ddown.ddown--filter-edit .ddown__sgl{
+      &:hover{
+        a.add-filter{
+          background: #dfe3e6;
+        }
+      }
+      a.add-filter:hover{
+        background-color: #edf0f1;
+      }
+    }
+  }
+}
+#app-wrapper .card-datatables .card.card--tabs .mdl-tabs .tbl-c{
+  overflow-y: visible !important;
+}

@@ -40,7 +40,7 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <svg class="lineChart--svg"></svg>
+                        <line-chart quantityLines="2" quantityColumns="10" background="rgba(126, 86, 194, 0.3)" borderLineColor="#7e57c2" nTwoBackground="rgba(230, 232, 235, 0.4)" nTwoBorderLineColor="#e1e3e6"></line-chart>
                     </div>
                 </div>
             </div>
@@ -54,10 +54,13 @@
                         <strong>{{value1}} </strong>
                         <span class="compare"> / {{value2}}</span>
                     </span>
+                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
                 </header>
-                <ul class="datarow mobile-toogle--target" data-scrollable>
+                <ul class="datarow mobile--toogle-target" data-scrollable>
                     <!--SINGLE-->
-                    <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                    <li v-for="row in datarows" v-bind:key="row" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
                         <div class="datarow__left">
                             <span class="datarow__status">{{row.text}}</span>
                         </div>
@@ -74,11 +77,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="mobile-toogle--box">
-                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                    <i class="zmdi zmdi-caret-down"></i>
-                </div>
-            </div>
+    
+            <!-- <div class="mobile-toogle--box">
+                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div> -->
+    
         </div>
     
     </div>
@@ -87,7 +92,7 @@
 
 <script>
 
-var $ = require('jquery');
+// var $ = require('jquery');
 
 function dataCalc(data) {
 
@@ -112,11 +117,12 @@ function dataCalc(data) {
 }
 
 import cardEditControls from './card_edit_controls.vue';
-
+import LineChart from './chart_js/line.js'
 export default {
     name: 'CardOrders',
     components: {
         'card-edit-controls': cardEditControls,
+        'line-chart': LineChart
     },
     data: function () {
         return {

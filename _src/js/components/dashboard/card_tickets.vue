@@ -37,7 +37,16 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <svg class="lineChart--svg"></svg>
+                        <horizontal-bar
+                                quantityLines="2"
+                                quantityColumns="10"
+
+                                background="rgba(0, 145, 234, 0.3)"
+                                hoverBackground="rgba(0, 145, 234, 0.6)"
+
+                                nTwoBackground="rgba(230, 232, 235, 0.4)"
+                                nTwoHoverBackground="#d4d6d8"
+                        ></horizontal-bar>
                     </div>
                 </div>
             </div>
@@ -97,10 +106,12 @@ function dataCalc(data) {
     data.value2 = value2Sum;
 }
 import cardEditControls from './card_edit_controls.vue';
+import HorizontalBar from './chart_js/horizontalBar.js'
 export default {
     name: 'CardTickets',
     components: {
         'card-edit-controls': cardEditControls,
+        'horizontal-bar': HorizontalBar
     },
     data: function () {
         return {

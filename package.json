@@ -30,6 +30,7 @@
     "blueimp-file-upload": "^9.18.0",
     "bowser": "^1.7.0",
     "browserslist": "^2.1.2",
+    "chart.js": "^2.6.0",
     "ckeditor": "^4.6.2",
     "clean-webpack-plugin": "^0.1.16",
     "clipboard": "^1.6.1",
@@ -40,8 +41,6 @@
     "css-loader": "^0.28.0",
     "css-mqpacker": "^6.0.0",
     "cssnano": "^3.10.0",
-    "d3": "3.5.17",
-    "d3tip": "^0.5.0",
     "datatables": "^1.10.13",
     "datatables.net-buttons": "^1.3.1",
     "datatables.net-responsive": "^2.1.1",
@@ -146,13 +145,14 @@
     "url-loader": "^0.5.8",
     "velocity-animate": "^1.5.0",
     "vue": "^2.2.6",
-    "vue-chartjs": "^2.6.1",
+    "vue-chartjs": "^2.6.5",
     "vue-clickaway": "^2.1.0",
     "vue-component-generator": "^1.2.1",
     "vue-context-menu": "^2.0.2",
     "vue-date-picker": "^1.0.2",
     "vue-drag-and-drop": "^2.2.0",
     "vue-dragula": "^1.3.1",
+    "vue-echarts-v3": "^1.0.4",
     "vue-filter": "^0.2.0",
     "vue-loader": "^12.1.1",
     "vue-meta": "^1.0.4",
@@ -197,6 +197,69 @@
     ],
     "development": [
       "last 1 version"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jquery": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "jquery": true,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "linebreak-style": 0,
+      "semi": 2,
+      "indent": [
+        "error",
+        2
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        }
+      ],
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "func-names": [
+        "error",
+        "never"
+      ],
+      "no-unused-vars": 0
+    },
+    "plugins": [
+      "prettier"
+    ],
+    "extends": "airbnb"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7",
+              "ie >= 11"
+            ]
+          }
+        }
+      ]
     ]
   }
 }

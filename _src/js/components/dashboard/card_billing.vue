@@ -34,7 +34,16 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <svg class="lineChart--svg"></svg>
+                        <!-- <line-chart
+                        quantityColumns="12"
+                        borderLineColor="#67c68f"
+                        background="rgba(39,174,96,.3)"
+                        quantityLines="1"
+                        bottomBar="'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'"
+                        ></line-chart> -->
+                    <div :id="chartID" class="chart">
+                        <bar-chart quantityLines="2" quantityColumns="5" background="#ffa726" hoverBackground="#ef9c23" nTwoBackground="#e1e3e6" nTwoHoverBackground="#d4d6d8"></bar-chart>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -60,13 +69,14 @@
     </div>
 
 </template>
+
 <script>
+
 function dataCalc(data) {
-    //calcuations to dataa
+    //calcuations to data
     function add(a, b) {
         return a + b;
     }
-
     var value1Array = data.datarows.map(function (a) {
         return a.value1
     });
@@ -79,12 +89,19 @@ function dataCalc(data) {
     data.value2 = value2Sum;
 }
 
-import cardEditControls from './card_edit_controls.vue';
 
+// #76 new vue charts
+// https://github.com/apertureless/vue-chartjs
+
+import cardEditControls from './card_edit_controls.vue'
+
+import LineChart from './chart_js/line.js'
+import BarChart from './chart_js/bar.js'
 export default {
     name: 'CardBilling',
     components: {
-        'card-edit-controls': cardEditControls
+        'card-edit-controls': cardEditControls,
+        'bar-chart': BarChart
     },
     data: function () {
         return {
@@ -149,7 +166,8 @@ export default {
                 value1: 11,
                 value2: 82,
                 type: 'grow',
-            }]
+            }],
+
         }
     },
     mounted: function () {
@@ -161,7 +179,7 @@ export default {
         });
         setTimeout(function () {
             self.setDate();
-        }, 1500);
+        }, 500);
     },
     methods: {
 
@@ -183,6 +201,7 @@ export default {
         }
     }
 }
+
 </script>
 <style>
 

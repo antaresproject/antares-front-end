@@ -37,7 +37,7 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <svg class="lineChart--svg"></svg>
+                        <bar-chart quantityLines="2" quantityColumns="5" background="#ffa726" hoverBackground="#ef9c23" nTwoBackground="#e1e3e6" nTwoHoverBackground="#d4d6d8"></bar-chart>
                     </div>
                 </div>
             </div>
@@ -51,10 +51,13 @@
                         <strong>{{value1}} </strong>
                         <span class="compare"> / {{value2}}</span>
                     </span>
+                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
                 </header>
                 <ul class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
-                    <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                    <li v-for="row in datarows" v-bind:key="row" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
                         <div class="datarow__left">
                             <span class="datarow__status">{{row.text}}</span>
                         </div>
@@ -97,10 +100,12 @@ function dataCalc(data) {
     data.value2 = value2Sum;
 }
 import cardEditControls from './card_edit_controls.vue';
+import BarChart from './chart_js/bar.js'
 export default {
     name: 'CardSubscriptions',
     components: {
         'card-edit-controls': cardEditControls,
+        'bar-chart': BarChart
     },
     data: function () {
         return {
