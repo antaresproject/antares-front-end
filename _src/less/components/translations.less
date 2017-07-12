@@ -135,11 +135,11 @@
     }
 
     .header-translations__search {
-      margin-left: auto;
-      margin-right: 5px;
+      margin-left: 0;
+      margin-right: auto;
       .search-box {
+        padding-left: 8px;
         i {
-          top: 0;
           order: 100;
           position: relative;
         }
@@ -149,16 +149,22 @@
         .search-box__search-field {
           height: 38px;
         }
+        .search-box__open{
+          position: absolute;
+        }
       }
       .search-box__close {
         margin: 0 !important;
+        top: 25px !important;
       }
       .search-box--open {
         .search-box__mdl-textfield {
           display: block;
+          max-width: 180px;
         }
         i {
           top: 7px;
+
         }
         .search-box__open {
           display: none;

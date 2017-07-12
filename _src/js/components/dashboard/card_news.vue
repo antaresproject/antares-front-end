@@ -1,30 +1,50 @@
 <template>
     <div class="card-container card-container--news">
         <card-edit-controls></card-edit-controls>
-        <div class="card card--news card--primary" :data-widget-name="widgetName">
+        <div class="card card--news " :data-widget-name="widgetName">
             <div class="card__overlay">
+
                 <div class="card__header">
                     <div class="card__header-left"><span>News</span></div>
                     <div class="card__header-right">
-                        <div @click="prev" class="card__control card__control--left"><i class="icon icon--chev-left"></i></div>
-                        <div @click="next" class="card__control card__control--right"><i class="icon icon--chev-right"></i></div>
+                        <div @click="prev" class="card__control card__control--left"><i
+                                class="icon icon--chev-left"></i></div>
+                        <div @click="next" class="card__control card__control--right"><i
+                                class="icon icon--chev-right"></i></div>
                     </div>
                 </div>
+                <span class="blue-header-background"></span>
+
                 <slick class="card__slider" ref="slick" @init="slickUpdate" :options="slickOptions">
                     <div>
-                        <div class="card__info"> <span class="card__title">Phasellus fermentum in, dolor. otel in, dolor. </span> <span class="card__date"><i class="zmdi zmdi-calendar-alt"></i> Jan 9, 2015</span> <span class="card__author"><i class="zmdi zmdi-account"></i> Added by Konrad Keck</span> </div>
-                        <div class="card__content"> <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span> </div>
+                        <div class="card__info">
+                            <span class="card__title" >Phasellus fermentum in, dolor. otel in, dolor. </span> <span
+                                class="card__date"><i class="zmdi zmdi-calendar-alt"></i> Jan 9, 2015</span> <span
+                                class="card__author"><i class="zmdi zmdi-account"></i> Added by Konrad Keck</span>
+                        </div>
+                        <div class="card__content"><span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span>
+                        </div>
                         <div class="card__footer">
 
-                            <button class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</button>
+                            <button class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
+                                READ MORE
+                            </button>
 
                         </div>
                     </div>
                     <div>
-                        <div class="card__info"> <span class="card__title">Lorem Epsum Doloris Malis. </span> <span class="card__date"><i class="zmdi zmdi-calendar-alt"></i> Dec 10, 2015</span> <span class="card__author"><i class="zmdi zmdi-account"></i> Added by Łukasz Cirut</span> </div>
-                        <div class="card__content"> <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span> </div>
+                        <div class="card__info">
 
-                        <div class="card__footer"> <a href="#" class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</a> </div>
+                            <span class="card__title">Lorem Epsum Doloris Malis. </span> <span
+                                class="card__date"><i class="zmdi zmdi-calendar-alt"></i> Dec 10, 2015</span> <span
+                                class="card__author"><i class="zmdi zmdi-account"></i> Added by Łukasz Cirut</span>
+                        </div>
+                        <div class="card__content"><span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span>
+                        </div>
+
+                        <div class="card__footer"><a href="#"
+                                                     class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</a>
+                        </div>
 
                     </div>
                 </slick>
@@ -33,132 +53,169 @@
     </div>
 </template>
 <script>
-import Slick from 'vue-slick';
-import cardEditControls from './card_edit_controls.vue';
-export default {
-    name: 'CardNews',
-    components: {
-        'card-edit-controls': cardEditControls,
-        Slick,
-    },
-    data: function() {
-        return {
-            widgetName: 'news',
-            cardClass: 'card--news',
-            slickOptions: {
-                slidesToShow: 1,
-                arrows: false,
-                autoplay: false,
-                dots: false,
-                speed: 350
-            }
-        }
-    },
-    activated: function() {
-        var self = this;
-        self.$nextTick(function() {
-            self.slickUpdate();
-        });
-    },
-    created: function() {
-        var self = this;
-        setTimeout(function() {
-            self.slickUpdate();
-        }, 1000);
-    },
-    mounted: function() {
-        var self = this;
-        $(this.$el).closest('.grid-stack-item').addClass('card-news--gsi');
-    },
-    methods: {
-        slickUpdate: function() {
-            var self = this;
-            self.$nextTick(function() {
-                var slickCurrent = $(self.$el).find('.slick-slider').slickCurrentSlide;
-                $(self.$el).find('.slick-slider').slick('slickGoTo', slickCurrent)
-            });
+    import Slick from 'vue-slick';
+    import cardEditControls from './card_edit_controls.vue';
+    export default {
+        name: 'CardNews',
+        components: {
+            'card-edit-controls': cardEditControls,
+            Slick,
         },
-        slickResize: function() {
-            var self = this;
-            var grid = $('.grid-stack').data('gridstack');
-            $('.grid-stack').on('change', function(event) {
-                if ($(event.target).find('.card--news').length) {
-                    self.slickUpdate();
+        data: function () {
+            return {
+                widgetName: 'news',
+                cardClass: 'card--news',
+                slickOptions: {
+                    slidesToShow: 1,
+                    arrows: false,
+                    autoplay: false,
+                    dots: false,
+                    speed: 350
                 }
+            }
+        },
+        activated: function () {
+            var self = this;
+            self.$nextTick(function () {
+                self.slickUpdate();
             });
         },
-        next: function() {
-            this.$refs.slick.next();
+        created: function () {
+            var self = this;
+            setTimeout(function () {
+                self.slickUpdate();
+            }, 1000);
         },
-        prev: function() {
-            this.$refs.slick.prev();
+        mounted: function () {
+            var self = this;
+            $(this.$el).closest('.grid-stack-item').addClass('card-news--gsi');
         },
-    }
-};
+        methods: {
+            slickUpdate: function () {
+                var self = this;
+                self.$nextTick(function () {
+                    var slickCurrent = $(self.$el).find('.slick-slider').slickCurrentSlide;
+                    $(self.$el).find('.slick-slider').slick('slickGoTo', slickCurrent)
+                });
+            },
+            slickResize: function () {
+                var self = this;
+                var grid = $('.grid-stack').data('gridstack');
+                $('.grid-stack').on('change', function (event) {
+                    if ($(event.target).find('.card--news').length) {
+                        self.slickUpdate();
+                    }
+                });
+            },
+            next: function () {
+                this.$refs.slick.next();
+            },
+            prev: function () {
+                this.$refs.slick.prev();
+            },
+        }
+    };
 </script>
 <style lang="less">
-.card-news--gsi.ui-resizable-resizing .card__slider,
-.card-news--gsi.ui-draggable-dragging .card__slider
-{
-    opacity: 0;
-    transition: 0ms;
-}
-
-.card-news--gsi .card__slider {
-    opacity: 1;
-    transition: 2s;
-}
-
-
-.card--news .card__footer .btn .btn--link {
-    margin-bottom: 16px;
-}
-
-
-.slick-list {
-    height: ~'calc(100% - 52px)';
-}
-
-.slick-track {
-    height: 100%;
-}
-
-.card-container--news .card__edit-view {
-    i {
-        transition: 300ms;
-        color: rgba(255, 255, 255, 0.6);
+    .card-news--gsi.ui-resizable-resizing .card__slider,
+    .card-news--gsi.ui-draggable-dragging .card__slider {
+        opacity: 0;
+        transition: 0ms;
     }
-}
-.card__info{
-    max-height: 94px;
+
+    .card-news--gsi .card__slider {
+        opacity: 1;
+        transition: 2s;
+    }
+
+    .card--news .card__footer .btn .btn--link {
+        margin-bottom: 16px;
+    }
+
+    .slick-list {
+        height: ~'calc(100% - 52px)';
+    }
+
+    .slick-track {
+        height: 100%;
+    }
+
+    .card-container--news .card__edit-view {
+        i {
+            transition: 300ms;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .card__info {
+        max-height: 94px;
+        .card__title {
+            height: 50px;
+        }
+    }
+
+    .card__edit-view {
+
+        i {
+            transition: 300ms;
+        }
+    }
+
+    .grid-stack-item:hover .card-container--news .card__edit-view .card__edit-icons i {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .slick-list {
+        height: 100%;
+    }
+
+    #app-wrapper .app-content--widgets-movable .mdl-tabs .card-container--news .card__edit-view {
+        background: #fff !important;
+    }
+
+    #app-wrapper .app-content--widgets-movable .grid-stack-item-content .card-container--news .card__edit-view {
+        background: #02A8F3;
+    }
+
+    .card-container--news .slick-initialized .slick-slide {
+        background: white;
+        z-index: 5;
+        .card__content {
+            z-index: 10;
+            background: white;
+        }
+    }
+
+
+    #app-wrapper .card.card--news .card__footer {
+        z-index: 12;
+    }
+    .card.card--news .card__info{
+        background: transparent;
+    }
+    .card-container--news .slick-initialized .slick-slide{
+        background: transparent;
+    }
+    .blue-header-background{
+        position: absolute;
+        width:100%;
+        display: block;
+        height: 27%;
+        top:13%;
+        @media only screen and (max-width: 1199px){
+            height: 35%;
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            background: #02A8F3;
+            width:100%;
+            height: 100%;
+        }
+    }
     .card__title{
-        height:50px;
+        position: relative;
     }
-}
-.card__edit-view {
-    
-    i {
-        transition: 300ms;
-    }
-}
-
-.grid-stack-item:hover .card-container--news .card__edit-view .card__edit-icons i {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.slick-list {
-    height: 100%;
-}
-
-
-#app-wrapper .app-content--widgets-movable .mdl-tabs .card-container--news .card__edit-view {
-    background:#fff !important;
-}
-
-
-#app-wrapper .app-content--widgets-movable .grid-stack-item-content .card-container--news .card__edit-view {
-    background:#02A8F3;
-}
-
-
 </style>

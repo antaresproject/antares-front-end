@@ -21,8 +21,8 @@
 }
 
 .card.card--news .card__content {
-  max-height: 170px;
   position: relative;
+  height:100%;
   &:after {
     content: '';
     position: absolute;
@@ -341,6 +341,9 @@
   }
 }
 
-.card__content .card-ctrls__left .select2 .select2-selection__rendered {
-  line-height: 39px;
+.card-container--news .card.card--news {
+  .card__header{
+    background: @primary-bg;
+  }
+
 }

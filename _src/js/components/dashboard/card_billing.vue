@@ -61,128 +61,129 @@
 
 </template>
 <script>
-    function dataCalc(data) {
-        //calcuations to dataa
-        function add(a, b) {
-            return a + b;
-        }
-
-        var value1Array = data.datarows.map(function (a) {
-            return a.value1
-        });
-        var value1Sum = value1Array.reduce(add, 0);
-        var value2Array = data.datarows.map(function (a) {
-            return a.value2
-        });
-        var value2Sum = value2Array.reduce(add, 0);
-        data.value1 = value1Sum;
-        data.value2 = value2Sum;
+function dataCalc(data) {
+    //calcuations to dataa
+    function add(a, b) {
+        return a + b;
     }
 
-    import cardEditControls from './card_edit_controls.vue';
+    var value1Array = data.datarows.map(function (a) {
+        return a.value1
+    });
+    var value1Sum = value1Array.reduce(add, 0);
+    var value2Array = data.datarows.map(function (a) {
+        return a.value2
+    });
+    var value2Sum = value2Array.reduce(add, 0);
+    data.value1 = value1Sum;
+    data.value2 = value2Sum;
+}
 
-    export default {
-        name: 'CardBilling',
-        components: {
-            'card-edit-controls': cardEditControls
-        },
-        data: function () {
-            return {
-                cardClass: 'card--chart',
-                widgetName: 'card--chart',
-                title: 'Billing',
-                legendTitle: 'New Billings',
-                value1: 0,
-                value2: 0,
-                statusType: 'grow',
-                type: 'chart_billing',
-                compareMode: false,
-                compareText: 'Compare',
-                chartID: 'chart--one',
-                datarows: [{
-                    text: 'Cancelled',
-                    value1: 21,
-                    value2: 512,
-                    type: 'grow',
-                }, {
-                    text: 'Pending',
-                    value1: 512,
-                    value2: 921,
-                    type: 'grow',
-                }, {
-                    text: 'Accepted',
-                    value1: 333,
-                    value2: 1412,
-                    type: 'decline',
-                }, {
-                    text: 'Accepted',
-                    value1: 11,
-                    value2: 82,
-                    type: 'grow',
-                }, {
-                    text: 'Pending',
-                    value1: 512,
-                    value2: 921,
-                    type: 'grow',
-                }, {
-                    text: 'Accepted',
-                    value1: 333,
-                    value2: 1412,
-                    type: 'decline',
-                }, {
-                    text: 'Accepted',
-                    value1: 11,
-                    value2: 82,
-                    type: 'grow',
-                }, {
-                    text: 'Pending',
-                    value1: 512,
-                    value2: 921,
-                    type: 'grow',
-                }, {
-                    text: 'Accepted',
-                    value1: 333,
-                    value2: 1412,
-                    type: 'decline',
-                }, {
-                    text: 'Accepted',
-                    value1: 11,
-                    value2: 82,
-                    type: 'grow',
-                }]
-            }
-        },
-        mounted: function () {
+import cardEditControls from './card_edit_controls.vue';
+
+export default {
+    name: 'CardBilling',
+    components: {
+        'card-edit-controls': cardEditControls
+    },
+    data: function () {
+        return {
+            cardClass: 'card--chart',
+            widgetName: 'card--chart',
+            title: 'Billing',
+            legendTitle: 'New Billings',
+            value1: 0,
+            value2: 0,
+            statusType: 'grow',
+            type: 'chart_billing',
+            compareMode: false,
+            compareText: 'Compare',
+            chartID: 'chart--one',
+            datarows: [{
+                text: 'Cancelled',
+                value1: 21,
+                value2: 512,
+                type: 'grow',
+            }, {
+                text: 'Pending',
+                value1: 512,
+                value2: 921,
+                type: 'grow',
+            }, {
+                text: 'Accepted',
+                value1: 333,
+                value2: 1412,
+                type: 'decline',
+            }, {
+                text: 'Accepted',
+                value1: 11,
+                value2: 82,
+                type: 'grow',
+            }, {
+                text: 'Pending',
+                value1: 512,
+                value2: 921,
+                type: 'grow',
+            }, {
+                text: 'Accepted',
+                value1: 333,
+                value2: 1412,
+                type: 'decline',
+            }, {
+                text: 'Accepted',
+                value1: 11,
+                value2: 82,
+                type: 'grow',
+            }, {
+                text: 'Pending',
+                value1: 512,
+                value2: 921,
+                type: 'grow',
+            }, {
+                text: 'Accepted',
+                value1: 333,
+                value2: 1412,
+                type: 'decline',
+            }, {
+                text: 'Accepted',
+                value1: 11,
+                value2: 82,
+                type: 'grow',
+            }]
+        }
+    },
+    mounted: function () {
+        var self = this;
+        dataCalc(this);
+        var domElem = $(self.$el);
+        domElem.find('[data-icheck]').on('ifChanged', function (event) {
+            self.compareMode = !self.compareMode;
+        });
+        setTimeout(function () {
+            self.setDate();
+        }, 1500);
+    },
+    methods: {
+
+        setDate() {
+
             var self = this;
-            dataCalc(this);
-            var domElem = $(self.$el);
-            domElem.find('[data-icheck]').on('ifChanged', function (event) {
-                self.compareMode = !self.compareMode;
-            });
-            setTimeout(function () {
-                self.setDate();
-            }, 500);
-        },
-        methods: {
 
-            setDate() {
-
-                var self = this;
-
-                function randomNumber(min, max) {
-                    return Math.floor(Math.random() * (max - min + 1) + min);
-                }
-
-                var date = moment().subtract(randomNumber(1, 10), 'days').startOf('day').toDate();
-                enquire.register("screen and (min-width:768px)", {
-                    match: function () {
-                        $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", {start: date});
-                    }
-                });
-
+            function randomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
             }
+
+            var date = moment().subtract(randomNumber(1, 10), 'days').startOf('day').toDate();
+            enquire.register("screen and (min-width:768px)", {
+                match: function () {
+                    $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", { start: date });
+                }
+            });
+
         }
     }
+}
 </script>
 <style>
+
 </style>

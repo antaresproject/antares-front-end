@@ -1,23 +1,21 @@
 // Menu Active Element
 
-export const menuActiveElement = function () {
+function menuActiveElement() {
+  const url = document.location.href;
+  const parts = url.split('/');
+  let lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+  const linkColor = 'white';
 
-	let url = document.location.href,
-		parts = url.split('/'),
-		lastSegment = parts.pop() || parts.pop(),  // handle potential trailing slash
-		linkColor = 'white';
+  if (lastSegment === 'localhost:9000' || lastSegment === 'localhost') {
+    lastSegment = 'index.html';
+  }
 
-	if (lastSegment === 'localhost:9000' || lastSegment === 'localhost') {
-		lastSegment = 'index.html';
-	}
+  const link = $('.main-sidebar a[href="' + lastSegment + '"]');
 
-	let link = $('.main-sidebar a[href="' + lastSegment + '"]');
-
-
-	link.closest('li[data-index]').addClass('is-active');
-	link.css('color', linkColor);
-
-};
+  link.closest('li[data-index]').addClass('is-active');
+  link.css('color', linkColor);
+}
 
 menuActiveElement();
 
+export default menuActiveElement;

@@ -52,7 +52,7 @@
 
 @media @md {
   .search-box:before, .search-box > i {
-    left: 8px;
+    left: 0;
   }
 
   td[tabindex] {
@@ -104,21 +104,8 @@
 }
 
 @media @xs {
-  .page-datatables {
 
-    .card-ctrls {
-      margin-bottom: 0;
-      border-bottom: 1px solid #f5f5f7;
-      .search-box {
-        margin-left: 8px !important;
-      }
-      .mdl-textfield__input, .mdl-textfield__label {
-        margin-left: 40px;
-      }
-      //  .card-ctrls__right {
-      //  display: none;
-      //}
-    }
+
     table tr.child td.child ul li {
       padding: 4px 24px;
     }
@@ -174,11 +161,9 @@
         }
       }
     }
-  }
 }
 
 @media @max450 {
-  .page-datatables {
     .odd, .even {
       td > a[title="email address"] {
         position: absolute;
@@ -193,7 +178,6 @@
         padding-bottom: 24px;
       }
     }
-  }
 }
 
 .filters {
@@ -207,5 +191,10 @@
 
       display: none;
     }
+  }
+}
+@media @md{
+   table tr.child td.child ul li:last-of-type{
+    display: none;
   }
 }

@@ -6,141 +6,19 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Antares Clients List</title>
     <% include ../layout/color_template %>
-    <% include ../layout/css_files %>
+        <% include ../layout/css_files %>
 </head>
 <template id="vue-page-clients-list">
 
     <section class="main-content" v-cloak>
         <div class="grid-stack">
             <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-min-width="13"
-                data-gs-min-height="19" data-gs-width="24" data-gs-height="19">
+                data-gs-min-height="18" data-gs-width="24" data-gs-height="18">
                 <div class="grid-stack-item-content" data-scroll-area>
                     <div class="card card--pagination">
                         <div class="tbl-c">
-                            <div class="card-ctrls ">
-                                <div class="card-ctrls__left">
-                                    <select name="select" data-selectAR--mdl-big="true" class="mr24 select2--prefix">
-                                        <option value="" selected>All</option>
-                                    </select>
-                                    <div class="search-box search-box--dark search-box--big ml25 mr50">
-                                        <i class="zmdi zmdi-search"></i>
-                                        <form action="#">
-                                            <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield">
-                                                <input class="mdl-textfield__input search-box__search-field" type="text" id="sample2" AUTOCOMPLETE="off">
-                                                <label class="mdl-textfield__label" for="sample2">Search...</label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card-ctrls__right">
-                                    <div class="filters">
-                                        <% include ../layout/card_ddown_filter %>
-                                            <div class="ddown ddown--left ddown--disabled">
-                                                <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button ml8" id="table-ma" disabled>With Selected
-                                                </div>
-                                                <div class="ddown__content">
-                                                    <div class="ddown__arrow"></div>
-                                                    <ul class="ddown__menu">
-                                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-group"></i><span>Client Overview</span></a>
-                                                        </li>
-                                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-rss"></i><span>Client Contacts</span></a>
-                                                        </li>
-                                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-case"></i><span>Log In As Client</span></a>
-                                                        </li>
-                                                        <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-cast"></i><span>Archive Client</span></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <div class="filters">
-                                        <div class="card-filter"></div>
-                                        <div class="ddown ddown-multi ddown--view-more-options">
-                                            <!-- BUTTON -->
-                                            <!-- DROPDOWN MULTI -->
-                                            <div class="ddown__init ddown__init--clean">
-                                                <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">
-                                                    <i class="zmdi zmdi-more-vert"></i></a>
-                                            </div>
-                                            <div class="ddown__content">
-                                                <!-- CHANGE THIS -->
-                                                <div class="ddown__arrow"></div>
-                                                <ul class="ddown-multi__menu">
-                                                    <li>
-                                                    </li>
-                                                    <li class="has-submenu">
-                                                        <a data-target="filter" class="btn btn--capitalize btn--md btn--default mdl-js-button mdl-js-ripple-effect mr-24" href="#">
-                                                            <div>
-                                                                Filter
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="has-submenu">
-                                                        <a data-target="withSelected" id="table-ma" class=" btn btn--capitalize btn--md btn--primary mdl-js-button" href="#" disabled="disabled">
-                                                            <div  disabled>
-                                                                With Selected
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="ddown__content">
-                                                <!-- CHANGE ON THIS after click on btn 'Income' -->
-                                                <ul data-name="filter" class="ddown-multi__submenu">
-                                                    <li class="ddown-multi__label"><span>Filter By</span></li>
-                                                    <li class="ddown-multi__return">
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-chevron-left"></i>
-                                                            <span>Income</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="ddown__sgl ddown__sgl--range">
-                                                        <div class="filter-slider ui-slider--minimal" data-slider-range-filter="true"></div>
-                                                        <div class="form-block ff-rnw mb0">
-                                                            <div class="spinner-basic">
-                                                                <input class="filter-spinner filter-spinner-mode-min filter-spinner--min" value="1250" name="value">
-                                                            </div>
-                                                            <span class="ml16 mr16"> - </span>
-                                                            <div class="spinner-basic">
-                                                                <input class="filter-spinner filter-spinner-mode-max  filter-spinner--max" value="1750" name="value2">
-                                                            </div>
-                                                        </div>
-                                                        <a href="#" class="btn btn--uppercase btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
-                                                    </li>
-                                                </ul>
-                                                <ul data-name="withSelected" class="ddown-multi__submenu">
-                                                    <li class="ddown-multi__label"><span>With Selected</span></li>
-                                                    <li class="ddown-multi__return">
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-chevron-left"></i>
-                                                            <span>Income</span>
-                                                        </a>
-                                                    </li>
-                                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-group"></i><span>Client Overview</span></a>
-                                                    </li>
-                                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-rss"></i><span>Client Contacts</span></a>
-                                                    </li>
-                                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-case"></i><span>Log In As Client</span></a>
-                                                    </li>
-                                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                                                    class="zmdi zmdi-cast"></i><span>Archive Client</span></a>
-                                                    </li>
-                                                </ul>
-                                                <div class="ddown__arrow"></div>
-                                            </div>
-                                        </div>
-                                        <!-- DROPDOWN MULTI -->
-                                    </div>
-                                </div>
-                            </div>
-                            <% include ../layout/example_datatable %>
+                            <% include ../layout/tab_search_filter %>
+                                <% include ../layout/example_datatable %>
                         </div>
                     </div>
                 </div>
@@ -154,13 +32,13 @@
 <body>
     <div id="app-wrapper">
         <% include ../layout/main_menu_html %>
-        <div class="app-content page-datatables page-vue-datatables">
-            <% var breadData= 'Clients List'; %>
-            <% include ../layout/mainhead %>
-            <% include ../layout/sidebar_notifications %>
-            <% include ../layout/sidebar_alerts %>
-            <vue-page-clients-list></vue-page-clients-list>
-        </div>
+            <div class="app-content page-datatables page-vue-datatables">
+                <% var breadData= 'Clients List'; %>
+                    <% include ../layout/mainhead %>
+                        <% include ../layout/sidebar_notifications %>
+                            <% include ../layout/sidebar_alerts %>
+                                <vue-page-clients-list></vue-page-clients-list>
+            </div>
     </div>
     <% include ../layout/js_files %>
 
@@ -169,8 +47,11 @@
 </html>
 
 <style lang="less">
+    [v-cloak]>* {
+        display: none
+    }
 
-    [v-cloak] > * { display:none }
-    [v-cloak]::before { content: "loading…" }
-
+    [v-cloak]::before {
+        content: "loading…"
+    }
 </style>

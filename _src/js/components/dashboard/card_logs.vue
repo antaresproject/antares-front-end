@@ -1,4 +1,4 @@
-<template>
+<template lang="ejs">
     <div class="card-container">
         <card-edit-controls></card-edit-controls>
         <div  class="card card--pagination card--logs" :data-widget-name="widgetName">
@@ -10,80 +10,61 @@
             </div>
             <div class="card__content  datarow flex ff-cnw jc-flex-start">
 
-                <div class="card-ctrls">
-                    <div class="card-ctrls__left">
-                        <div class="search-box search-box--dark mr24"><i class="zmdi zmdi-search"></i>
-                            <form action="#">
-                                <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield ">
-                                    <input v-model="search" class="mdl-textfield__input search-box__search-field"
-                                           type="text" id="sample2">
-                                    <label class="mdl-textfield__label" for="sample2">{{searchPlaceholder}}</label>
-                                </div>
-                            </form>
-                        </div>
-                        <select @change="select($event)" class="card--logs-filter mb24 select2--prefix" name="select4"
-                                data-selectAR--mdl="true">
-                            <option v-for="option in optionList" :value="option.value">{{option.value}}</option>
-                        </select>
+                <!--<div class="card-ctrls">-->
+                    <!--<div class="card-ctrls__left">-->
+                        <!--<div class="search-box search-box&#45;&#45;dark mr24"><i class="zmdi zmdi-search"></i>-->
+                            <!--<form action="#">-->
+                                <!--<div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield ">-->
+                                    <!--<input v-model="search" class="mdl-textfield__input search-box__search-field"-->
+                                           <!--type="text" id="sample2">-->
+                                    <!--<label class="mdl-textfield__label" for="sample2">{{searchPlaceholder}}</label>-->
+                                <!--</div>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                        <!--<select @change="select($event)" class="card&#45;&#45;logs-filter mb24 select2&#45;&#45;prefix" name="select4"-->
+                                <!--data-selectAR&#45;&#45;mdl="true">-->
+                            <!--<option v-for="option in optionList" :value="option.value">{{option.value}}</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="card-ctrls__right"></div>-->
+                <!--</div>-->
+                <% include ../../../templates/layout/tab_search %>
+                <div class="datarow">
+                    <div data-scrollable>
+                        <ul class="timeline" >
+                            <li v-bind:class="{'timeline__entry--ok': log.status === 'ok'}" class="timeline__entry"
+                                v-for="log in logList">
+                                <div class="timeline__indicator" :data-color="log.color"
+                                     :data-tooltip-inline="log.tooltipText"></div>
+                                <div class="timeline__padding" v-html="log.html"></div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="card-ctrls__right"></div>
-                </div>
-                <div class="datarow ">
-                    <ul class="timeline" >
-                        <li v-bind:class="{'timeline__entry--ok': log.status === 'ok'}" class="timeline__entry"
-                            v-for="log in logList">
-                            <div class="timeline__indicator" :data-color="log.color"
-                                 :data-tooltip-inline="log.tooltipText"></div>
-                            <div class="timeline__padding" v-html="log.html"></div>
-                        </li>
-                    </ul>
-                    <div class="pagination pagination--arrows">
-                        <div class="pagination-pages">
-                            <div class="pagination-pages__prev">
-                                <a href="#" class="mdl-js-button mdl-js-ripple-effect"> <i
-                                        class="zmdi zmdi-chevron-left"></i> </a>
-                            </div>
-                            <ul class="pagination-pages__list">
-                                <li class="pagination-pages__sgl--active"><a class="mdl-js-button mdl-js-ripple-effect"
-                                                                             href="#">1</a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">2</a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">3</a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">4</a></li>
-                            </ul>
-                            <div class="pagination-pages__next">
-                                <a href="#" class="mdl-js-button mdl-js-ripple-effect"> <i
-                                        class="zmdi zmdi-chevron-right"></i> </a>
-                            </div>
-                        </div>
-                        <div class="pagination-filter">
+                    <div class="pagination">
+                        <div class="pagination-list simple-pagination--list"></div>
+                        <div class="pagination-current simple-pagination--current antares-pagination">
                             <ul>
-                                <li class="pagination-filter__sgl--active"><a class="mdl-js-button mdl-js-ripple-effect"
-                                                                              href="#">10</a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">25</a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#">100</a></li>
+                                <li><a class="current10 active mdl-js-button mdl-js-ripple-effect">10</a></li>
+                                <li><a  class="current25 mdl-js-button mdl-js-ripple-effect">25</a></li>
+                                <li><a  class="current50 mdl-js-button mdl-js-ripple-effect">50</a></li>
+                                <li><a  class="current100 mdl-js-button mdl-js-ripple-effect">100</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!--   <paginate
-        :pageCount="20"
-        :pageRange="3"
-        :marginPages="2"
-        :clickHandler="clickCallback"
-        :prevText="'Prev'"
-        :nextText="'Next'"
-        :containerClass="'pagination'"
-        :pageClass="'page-item'">
-      </paginate> -->
+
             </div>
         </div>
     </div>
 </template>
 <script>
+
     import Paginate from 'vuejs-paginate';
 
     import cardEditControls from './card_edit_controls.vue';
+
+//    require('./../../../js/components/datatables/filters');
 
     var c1 = '#02a8f3';
     var c2 = '#30343d';
@@ -387,4 +368,5 @@
             }
         }
     }
+
 </style>

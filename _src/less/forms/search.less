@@ -1,5 +1,5 @@
 .search-box {
-  height: auto;
+  height: 100%;
   padding-left: 35px;
   display: flex;
   position: relative;
@@ -65,14 +65,14 @@
   //mdl magic line
   .search-box__mdl-textfield {
     padding: 0;
-    width: auto;
-    max-width: 90px;
+    width: 100%;
+    max-width: 100%;
     //label - placeholder
     .mdl-textfield__label {
       color: @standard-white;
       font-size: 13px;
       font-weight: 400;
-      top: 6px;
+      top: 8px;
       //bottom:1px;
       &:after {
         bottom: 0;
@@ -127,28 +127,7 @@
   }
 }
 
-.card-ctrls {
-  .search-box {
-    @media @xs {
-      padding-left: 0;
-      > i {
-        top: 23%;
-      }
 
-      > i:first-child {
-        padding-left: 0;
-      }
-
-      .mdl-textfield__input {
-        text-indent: 0;
-      }
-
-      .mdl-textfield__label {
-        text-indent: 0;
-      }
-    }
-  }
-}
 
 //modifiers
 //primary on main-head

@@ -236,10 +236,12 @@
                     group: $('.translations-component').val()
                 },
                 success: function (response) {
-                    window.noty($.extend({}, APP.noti.successFM("xs", "glow"), {text: $(response.message).text()}));
+                    // window.noty($.extend({}, APP.noti.successFM("xs", "glow"), {text: $(response.message).text()}));
+                    window.noty($.extend({}, APP.noti.successFM("lg", "border"), {text: 'success'}));
                 },
                 error: function (error) {
-                    window.noty($.extend({}, APP.noti.errorFM("xs", "glow"), {text: $(error.message).text()}));
+                    // window.noty($.extend({}, APP.noti.errorFM("xs", "glow"), {text: $(error.message).text()}));
+                    window.noty($.extend({}, APP.noti.errorFM("lg", "border"), {text: 'error'}));
                 }
             });
 
@@ -255,10 +257,12 @@
                 method: 'POST',
                 data: {id: current.data('id')},
                 success: function (response) {
-                    window.noty($.extend({}, APP.noti.successFM("xs", "glow"), {text: $(response.message).text()}));
+                    // window.noty($.extend({}, APP.noti.successFM("xs", "glow"), {text: $(response.message).text()}));
+                    window.noty($.extend({}, APP.noti.successFM("lg", "border"), {text: 'success'}));
                 },
                 error: function (error) {
-                    window.noty($.extend({}, APP.noti.errorFM("xs", "glow"), {text: $(error.message).text()}));
+                    // window.noty($.extend({}, APP.noti.errorFM("xs", "glow"), {text: $(error.message).text()}));
+                    window.noty($.extend({}, APP.noti.errorFM("lg", "border"), {text: 'error'}));
                 }
             });
 
@@ -292,10 +296,12 @@
                     method: 'POST',
                     data: {id: $input.data('id'), value: inputVal},
                     success: function (response) {
-                        window.noty($.extend({}, APP.noti.successFM("xs", "glow"), {text: $(response.message).text()}));
+                        // window.noty($.extend({}, APP.noti.successFM("xs", "glow"), {text: $(response.message).text()}));
+                        window.noty($.extend({}, APP.noti.successFM("lg", "border"), {text: 'success'}));
                     },
                     error: function (error) {
-                        window.noty($.extend({}, APP.noti.errorFM("xs", "glow"), {text: $(error.message).text()}));
+                        // window.noty($.extend({}, APP.noti.errorFM("xs", "glow"), {text: $(error.message).text()}));
+                        window.noty($.extend({}, APP.noti.errorFM("lg", "border"), {text: 'error'}));
                     }
                 });
 

@@ -8,8 +8,8 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Global
- * @version    0.9.1
+ * @package    Files
+ * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
@@ -17,24 +17,81 @@
  * 
  */
 const AntaresContextMenu = {
-
     init() {
-
-        var self = this;
-
-        self.arContextMenuMutate();
-
+        this.arContextMenuMutate();
     },
     arContextMenu() {
 
-        let getItems = function (trigger) {
+
+        //each roww
+        $('.billevo-table tbody tr').each(function (index, item) {
+
+            // LEFT TRIGGER
+            $.contextMenu({
+                selector: '.billevo-table tbody tr td:not(.dt-actions)',
+                build: function (trigger, e) {  // 'trigger' this is the last element (td:not(.dt-actions)) that is written by the line above (30 line)
+                    $('tr').removeClass('is-selected')
+                    trigger = trigger.closest('tr')
+                    if (trigger.is('.child')) {
+                        trigger = trigger.prev(".parent")
+                        return getItems(trigger, e);
+                    }
+                    else {
+                        return getItems(trigger, e);
+                    }
+
+                },
+                events: {
+                    show: function () {
+                        $('.context-menu-active').each(function () {
+                            $(this).contextMenu("hide");
+                        });
+
+
+                        var $self = $(this).closest('tr');
+                        $self.addClass('is-selected')
+                        if (!$self.hasClass('is-selected')) {
+                            $self.closest('table').find('tr').removeClass('is-selected');
+                            $self.addClass('is-selected');
+                            $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
+                        }
+                    },
+                },
+            });
+
+            // RIGHT TRIGGER ON DOTS
+            $.contextMenu({
+                selector: '.billevo-table td.dt-actions',
+                build: function (trigger, e) {
+                    return getItems(trigger, e);
+                },
+                trigger: 'left',
+                events: {
+                    show: function () {
+                        $('tr').removeClass('is-selected')
+                        $('.context-menu-active').each(function () {
+                            $(this).contextMenu("hide");
+                        });
+
+                        var $self = $(this).closest('tr');
+                        $self.addClass('is-selected')
+                        if (!$self.hasClass('is-selected')) {
+                            $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
+                        }
+                    },
+                },
+            });
+        });
+
+
+        let getItems = function (trigger, e) {
             var element = {},
                 elements = {},
                 $target = $(trigger);
             if ($(trigger).is('tr')) {
-                $target = $(trigger);
+                var $target = $(trigger);
             } else if ($(trigger).is('td')) {
-                $target = $(trigger).closest('tr');
+                var $target = $(trigger).closest('tr');
             }
 
             function isURL(str) {
@@ -65,14 +122,14 @@ const AntaresContextMenu = {
                         'name': $text,
                     };
                     elements = $.extend({}, element);
-                });
+                });//This function is responsible for the menu (quantity <a>)
                 return {
                     items: elements
                 };
             }
             //if single action
             else {
-                $target.find('.cm-actions > ul > li > a').each(function (index, el) {
+                $target.find('.cm-actions > ul > li > a').each(function (index, el) {  //This function is responsible for the menu (quantity <a>)
                     var $el = $(el),
                         $name = $el.text(),
                         $text = $el.data('text'),
@@ -113,71 +170,26 @@ const AntaresContextMenu = {
                         });
                     }
                     elements = $.extend({}, element);
-                });
+                });//This function is responsible for the menu (quantity <a>)
                 return {
                     items: elements
                 };
             }
         };
-        //each roww
-        $('.billevo-table tbody tr').each(function () {
-            // LEFT TRIGGER
-            $.contextMenu({
-                selector: '.billevo-table tbody tr',
-                build: function (trigger, e) {
-                    return getItems(trigger, e);
-                },
-                events: {
-                    show: function () {
-
-                        $('.context-menu-active').each(function () {
-                            $(this).contextMenu('hide');
-                        });
 
 
-                        var $self = $(this);
-                        if (!$self.hasClass('is-selected')) {
-                            $self.closest('table').find('tr').removeClass('is-selected');
-                            $self.addClass('is-selected');
-                            $self.closest('.tbl-c').find('#table-ma').attr('disabled', true);
-                        }
-                    },
-                },
-            });
-
-            // RIGHT TRIGGER ON DOTS
-            $.contextMenu({
-                selector: '.billevo-table td.dt-actions',
-                build: function (trigger, e) {
-                    return getItems(trigger, e);
-                },
-                trigger: 'left',
-                events: {
-                    show: function () {
 
 
-                        $('.context-menu-active').each(function () {
-                            $(this).contextMenu('hide');
-                        });
-
-                        var $self = $(this);
-                        if (!$self.hasClass('is-selected')) {
-                            $self.closest('.tbl-c').find('#table-ma').attr('disabled', true);
-                        }
-                    },
-                },
-            });
-        });
         //fix - close on body
         $('#app-wrapper').on('click', function () {
             $('.context-menu-active').each(function () {
-                $(this).contextMenu('hide');
+                $(this).contextMenu("hide");
             });
         });
     },
     arContextMenuMutate() {
         var self = this;
-        ready('.tbl-c .dataTable tr', function () {
+        ready('.tbl-c .dataTable tr', function (element) {
             self.arContextMenu();
         });
     }

@@ -1,4 +1,3 @@
-
 // require("script-loader!jquery");
 // require("script-loader!jquery-ui-bundle");
 // import './../../../js/external/modified/pace';
@@ -21,13 +20,13 @@
 var pace = require('./../../../js/external/modified/pace.js');
 window.Pace = pace;
 // require("script-loader!./../../../js/external/jquery.js");
-require("script-loader!jquery");
-require("./../../../js/external/jquery_migrate_3.js");
-require("script-loader!jquery-ui-bundle");
+require('script-loader!jquery');
+require('./../../../js/external/jquery_migrate_3.js');
+require('script-loader!jquery-ui-bundle');
 require('jquery-menu-aim');
 require('./../../../js/external/modified/globalize.js');
 var enquire = require('enquire.js');
-window.enquire = enquire; 
+window.enquire = enquire;
 require('script-loader!moment'); //no css
 require('script-loader!noty'); //no css
 require('script-loader!dialog-polyfill');
@@ -40,3 +39,4 @@ require('script-loader!jquery-hammerjs'); // no css
 require('script-loader!underscore'); // no css
 require('perfect-scrollbar/jquery')($);
 require('./../../../js/external/mdrnzr.js');
+require('jquery-ui-touch-punch');

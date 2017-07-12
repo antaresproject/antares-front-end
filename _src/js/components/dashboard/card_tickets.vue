@@ -4,11 +4,15 @@
         <div class="card card--chart card-chart--slim" v-bind:class="{'card--compare': compareMode}" :data-widget-name="widgetName" data-chart="true">
             <div class="card__left">
                 <div class="card__header">
-                    <div class="card__header-left"> <span>{{title}}</span> </div>
+                    <div class="card__header-left">
+                        <span>{{title}}</span>
+                    </div>
                     <div class="card__header-right">
                         <div class="ddown ddown--view-more ddown--view-more-options">
                             <div class="ddown__init ddown__init--clean">
-                                <a href="#"  class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i class="zmdi zmdi-more-vert"></i></a>
+                                <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
                             </div>
                             <div class="ddown__content">
                                 <form action="" method="post">
@@ -17,7 +21,7 @@
                                             <input data-daterangepicker="true" class="mr24">
                                         </li>
                                         <li>
-                                            <input type="checkbox" data-icheck="true" name="check" id="tickets" >
+                                            <input type="checkbox" data-icheck="true" name="check" id="tickets">
                                             <label class="ml8" v-on:click="compareMode = !compareMode" for="tickets">{{compareText}}</label>
                                         </li>
                                     </ul>
@@ -26,7 +30,7 @@
                         </div>
                         <form action="" method="post">
                             <input data-daterangepicker="true" class="mr24">
-                            <input type="checkbox" data-icheck="true" name="check" id="tickets" >
+                            <input type="checkbox" data-icheck="true" name="check" id="tickets">
                             <label class="ml8" v-on:click="compareMode = !compareMode" for="tickets">{{compareText}}</label>
                         </form>
                     </div>
@@ -38,20 +42,37 @@
                 </div>
             </div>
             <div class="card__right">
-                <header> <span class="card__title">{{legendTitle}}</span> <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%<i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i></span> <span class="card__ammount"><strong>{{value1}} </strong><span class="compare"> / {{value2}}</span></span>
+                <header>
+                    <span class="card__title">{{legendTitle}}</span>
+                    <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%
+                        <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
+                    </span>
+                    <span class="card__ammount">
+                        <strong>{{value1}} </strong>
+                        <span class="compare"> / {{value2}}</span>
+                    </span>
                 </header>
                 <ul class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
-                    <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
-                        <div class="datarow__left"> <span class="datarow__status">{{row.text}}</span> </div>
-                        <div class="datarow__right"> <span class="datarow__data"><strong>{{row.value1}}</strong><span class="compare">/{{row.value2}}</span></span> <span class="datarow__percentage compare"><span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%</span><i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i></span>
+                    <li v-for="row in datarows" class="datarow__sgl" v-bind:key="row" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                        <div class="datarow__left">
+                            <span class="datarow__status">{{row.text}}</span>
+                        </div>
+                        <div class="datarow__right">
+                            <span class="datarow__data">
+                                <strong>{{row.value1}}</strong>
+                                <span class="compare">/{{row.value2}}</span>
+                            </span>
+                            <span class="datarow__percentage compare">
+                                <span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%</span>
+                                <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i>
+                            </span>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="mobile-toogle--box">
-                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"
-                     v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
                     <i class="zmdi zmdi-caret-down"></i>
                 </div>
             </div>
@@ -64,11 +85,11 @@ function dataCalc(data) {
     function add(a, b) {
         return a + b;
     }
-    var value1Array = data.datarows.map(function(a) {
+    var value1Array = data.datarows.map(function (a) {
         return a.value1
     });
     var value1Sum = value1Array.reduce(add, 0);
-    var value2Array = data.datarows.map(function(a) {
+    var value2Array = data.datarows.map(function (a) {
         return a.value2
     });
     var value2Sum = value2Array.reduce(add, 0);
@@ -81,7 +102,7 @@ export default {
     components: {
         'card-edit-controls': cardEditControls,
     },
-    data: function() {
+    data: function () {
         return {
             widgetName: 'card--chart',
             title: 'Tickets',
@@ -89,7 +110,7 @@ export default {
             value1: 0,
             value2: 0,
             statusType: 'decline',
-            type:'chart_tickets',
+            type: 'chart_tickets',
             compareMode: false,
             compareText: 'Compare',
             chartID: 'chart--four',
@@ -166,17 +187,17 @@ export default {
             }]
         }
     },
-    mounted: function() {
+    mounted: function () {
         var self = this;
         dataCalc(this);
         var domElem = $(self.$el);
-        domElem.find('[data-icheck]').on('ifChanged', function(event) {
+        domElem.find('[data-icheck]').on('ifChanged', function (event) {
             self.compareMode = !self.compareMode;
         });
 
-        setTimeout(function() {
+        setTimeout(function () {
             self.setDate();
-        }, 500);
+        }, 1500);
 
     },
     methods: {
@@ -186,14 +207,14 @@ export default {
             var self = this;
 
             function randomNumber(min, max) {
-                return Math.floor(Math.random()*(max-min+1)+min);
-            } 
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
 
-            var date = moment().subtract(randomNumber(1,10), 'days' ).startOf('day').toDate();
+            var date = moment().subtract(randomNumber(1, 10), 'days').startOf('day').toDate();
 
             enquire.register("screen and (min-width:768px)", {
                 match: function () {
-                    $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", {start: date});
+                    $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", { start: date });
                 }
             });
         },
@@ -202,4 +223,5 @@ export default {
 }
 </script>
 <style>
+
 </style>

@@ -68,7 +68,7 @@
         },
         data: function () {
             return {
-                title: 'System Information',
+                title: 'System Info',
                 widgetName: 'card--info',
                 widgetClass: 'card--info',
                 headerButtonText: 'View More',

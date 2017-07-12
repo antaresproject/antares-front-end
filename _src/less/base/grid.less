@@ -1,175 +1,179 @@
 //paddings
 @grid-padding: 10px;
 .grid-container {
-    margin: 0 -@grid-padding;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    min-height: 100%;
-    &.grid-container--footer {
-        .grid-col {
-            padding-bottom: 85px !important;
-        }
-    }
-    &.grid-container--main-center {
-        flex-flow: row wrap;
-        .grid-col--big {
-            flex-basis: 100%;
-        }
-        @media @max1550 {
-            flex-flow: row nowrap;
-        }
-        //max 1366
-        @media @max1366 {
-            flex-flow: row wrap;
-            .grid-col:nth-child(1) {
-                order: 1;
-            }
-            .grid-col:nth-child(2) {
-                order: 3;
-            }
-            .grid-col:nth-child(3) {
-                order: 2;
-            }
-            .grid-col--small {
-                width: 50%;
-                display: flex;
-                flex-flow: column nowrap;
-                .card--comments {
-                    flex: 1;
-                }
-            }
-            .grid-col--big {
-                width: auto;
-            }
-        }
-        //100% width mobile layput
-        @media @xs {
-            flex-flow: column wrap;
-            margin: 0 -@grid-padding;
-            .grid-col {
-                flex-basis: 100% !important;
-                width: 100%;
-            }
-        }
-        .grid-col--small {
-            width: 336px;
-        }
-        .grid-col--big {
-            flex: 1;
-        }
-    }
-    &.grid-container--no-padd {
-        margin: 0;
-        .grid-col {
-            padding: 0;
-        }
-    }
-    //setings page
-    &.grid-container--2col {
-        @media @max1200 {
-            .grid-col--menu {
-                display: none !important;
-            }
-            .menu-mobile-settings {
-                display: block;
-            }
-        }
-        .grid-col--menu {
-            display: flex;
-            flex-flow: column;
-            width: 338px;
-            min-width: 338px;
-        }
-        .grid-col--container {
-            flex: 1;
-            min-height: 100vh;
-            background-color: #fff;
-            box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
-            z-index: 0;
-            padding: @unit3;
-            @media @max1050 {
-                padding: 24px 24px;
-                width: ~"calc(100% - 68px)";
-                .form-block.form-block--md .input-field__container,
-                .form-block.form-block--md .input-field {
-                    width: auto;
-                    max-width: auto;
-                }
-            }
-            @media @xs {
-                padding: 24px 0 !important;
-            }
-        }
-        .grid-col--email-view {
-            min-height: 100vh;
-            background-color: #fff;
-            box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
-            padding: 0;
-            flex-flow: row nowrap;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex: 1;
-        }
-    }
-    &.grid-container--1col {
-        width: 100%;
-        margin: 0;
-        flex-flow: column nowrap;
-        >.grid-col {
-            flex: 1;
-            padding: 0;
-            margin-left: 24px;
-            margin-right: 24px;
-        }
-        @media @max1200 {
-            .menu-mobile-settings {
-                display: block;
-            }
-        }
-        .grid-col--container {
-            flex: 1;
-            // min-height: 100vh;
-            background-color: #fff;
-            box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
-            padding: @unit3;
-            @media @max1050 {
-                padding: 24px 24px;
-                width: ~"calc(100% - 48px)";
-                .form-block.form-block--md .input-field__container,
-                .form-block.form-block--md .input-field {
-                    width: auto;
-                    max-width: auto;
-                }
-            }
-            @media @xs {
-                padding: 24px 0 !important;
-            }
-        }
-        .grid-col--email-view {
-            min-height: 100vh;
-            background-color: #fff;
-            box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
-            padding: 0;
-            flex-flow: row nowrap;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex: 1;
-        }
-    }
+  margin: 0 -@grid-padding;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  min-height: 100%;
+  &.grid-container--footer {
     .grid-col {
-        padding: 0 @grid-padding;
-        &.grid-col--h100p {
-            min-height: 100%;
-            .card {
-                min-height: 100%;
-            }
-        }
+      padding-bottom: 85px !important;
     }
-}
+  }
+  &.grid-container--main-center {
+    flex-flow: row wrap;
+    .grid-col--big {
+      flex-basis: 100%;
+    }
+    @media @max1550 {
+      flex-flow: row nowrap;
+    }
+    //max 1366
+    @media @max1366 {
+      flex-flow: row wrap;
+      .grid-col:nth-child(1) {
+        order: 1;
+      }
 
+      .grid-col:nth-child(2) {
+        order: 3;
+      }
+
+      .grid-col:nth-child(3) {
+        order: 2;
+      }
+
+      .grid-col--small {
+        width: 50%;
+        display: flex;
+        flex-flow: column nowrap;
+        .card--comments {
+          flex: 1;
+        }
+      }
+
+      .grid-col--big {
+        width: auto;
+      }
+    }
+    //100% width mobile layput
+    @media @xs {
+      flex-flow: column wrap;
+      margin: 0 -@grid-padding;
+      .grid-col {
+        flex-basis: 100% !important;
+        width: 100%;
+      }
+    }
+    .grid-col--small {
+      width: 336px;
+    }
+    .grid-col--big {
+      flex: 1;
+    }
+  }
+  &.grid-container--no-padd {
+    margin: 0;
+    .grid-col {
+      padding: 0;
+    }
+  }
+  //setings page
+  &.grid-container--2col {
+    @media @max1200 {
+      .grid-col--menu {
+        display: none !important;
+      }
+
+      .menu-mobile-settings {
+        display: block;
+      }
+    }
+    .grid-col--menu {
+      display: flex;
+      flex-flow: column;
+      width: 338px;
+      min-width: 338px;
+    }
+    .grid-col--container {
+      flex: 1;
+      min-height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
+      z-index: 0;
+      padding: @unit3;
+      @media @max1050 {
+        padding: 24px 24px;
+        width: ~"calc(100% - 68px)";
+        .form-block.form-block--md .input-field__container,
+        .form-block.form-block--md .input-field {
+          width: auto;
+          max-width: auto;
+        }
+      }
+      @media @xs {
+        padding: 24px 0 !important;
+      }
+    }
+    .grid-col--email-view {
+      min-height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
+      padding: 0;
+      flex-flow: row nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex: 1;
+    }
+  }
+  &.grid-container--1col {
+    width: 100%;
+    margin: 0;
+    flex-flow: column nowrap;
+    > .grid-col {
+      flex: 1;
+      padding: 0;
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+    @media @max1200 {
+      .menu-mobile-settings {
+        display: block;
+      }
+    }
+    .grid-col--container {
+      flex: 1;
+      // min-height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
+      padding: @unit3;
+      @media @max1050 {
+        padding: 24px 24px;
+        width: ~"calc(100% - 48px)";
+        .form-block.form-block--md .input-field__container,
+        .form-block.form-block--md .input-field {
+          width: auto;
+          max-width: auto;
+        }
+      }
+      @media @xs {
+        padding: 24px 0 !important;
+      }
+    }
+    .grid-col--email-view {
+      min-height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 5px 29px rgba(0, 0, 0, 0.15);
+      padding: 0;
+      flex-flow: row nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex: 1;
+    }
+  }
+  .grid-col {
+    padding: 0 @grid-padding;
+    &.grid-col--h100p {
+      min-height: 100%;
+      .card {
+        min-height: 100%;
+      }
+    }
+  }
+}
 
 /*
  	
@@ -179,77 +183,76 @@
 
 // Positioning
 .center-block {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 // Clearfix
 .clear {
-    &:after {
-        display: table;
-        clear: both;
-        content: " ";
-    }
+  &:after {
+    display: table;
+    clear: both;
+    content: " ";
+  }
 }
 
 //fix grid
 @media @xs {
-    .col-group [class*="col-"] {
-        width: 100%;
-    }
+  .col-group [class*="col-"] {
+    width: 100%;
+  }
 }
 
 //priority 
 #app-wrapper {
-    .h100vh {
-        height: 100vh;
-    }
-    .w100vw {
-        width: 100vw;
-    }
+  .h100vh {
+    height: 100vh;
+  }
+  .w100vw {
+    width: 100vw;
+  }
 }
 
 .grid-container.full-height {
+  height: auto;
+  min-height: ~'calc(100vh - 88px)';
+  position: relative;
+  @media @xs {
     height: auto;
-    min-height: ~'calc(100vh - 88px)';
-    position: relative;
-    @media @xs {
-        height: auto;
-        padding-bottom: 0;
-        >.grid-col {
-            width: ~'calc(100% - 32px)';
-            margin-left: 16px;
-            margin-right: 16px;
-            height: auto;
-        }
-        >.grid-col--container {
-            padding-bottom: 64px !important;
-        }
+    padding-bottom: 0;
+    > .grid-col {
+      width: ~'calc(100% - 32px)';
+      margin-left: 16px;
+      margin-right: 16px;
+      height: auto;
     }
-    .grid-col--container {
-        min-height: auto;
+
+    > .grid-col--container {
+      padding-bottom: 64px !important;
     }
+  }
+  .grid-col--container {
+    min-height: auto;
+  }
 }
 
 
+  @gridstack-columns: 24;
 
-
-@gridstack-columns: 24;
-
-.grid-stack-item (@i) when (@i > 0) {
-    &[data-gs-width='@{i}'] {
-        width: (100% / @gridstack-columns) * @i !important;
+  .grid-stack-item (@i) when (@i > 0) {
+    &#app-wrapper [data-gs-width='@{i}'] {
+      width: (100% / @gridstack-columns) * @i;
     }
-    &[data-gs-x='@{i}'] {
-        left: (100% / @gridstack-columns) * @i !important;
+    &#app-wrapper [data-gs-x='@{i}'] {
+      left: (100% / @gridstack-columns) * @i;
     }
-    &.grid-stack-item[data-gs-min-width='@{i}'] {
-        min-width: (100% / @gridstack-columns) * @i !important;
+    &#app-wrapper .grid-stack-item[data-gs-min-width='@{i}'] {
+      min-width: (100% / @gridstack-columns) * @i;
     }
-    &.grid-stack-item[data-gs-max-width='@{i}'] {
-        max-width: (100% / @gridstack-columns) * @i !important;
+    &#app-wrapper .grid-stack-item[data-gs-max-width='@{i}'] {
+      max-width: (100% / @gridstack-columns) * @i;
     }
 
     .grid-stack-item(@i - 1);
-}
+  }
 
 .grid-stack-item(@gridstack-columns);

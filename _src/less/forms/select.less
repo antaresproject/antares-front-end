@@ -1,6 +1,5 @@
 @select-height: 40px;
 
-
 //select2 custom
 .select2 {
   width: auto;
@@ -279,7 +278,7 @@
 
   & + .select2-container--mdl {
     min-width: 150px;
-    height: 40px;
+    //height: 40px;
     .select2-selection {
       border: 0;
       border-bottom: 1px solid #dadce0;
@@ -559,10 +558,10 @@ select.select2--prefix {
   li.select2-results__option[role=group] {
     padding: 0 !important;
     strong.select2-results__group {
-      padding: 0 24px;
+      padding: 0 16px;
     }
     ul.select2-results__options--nested {
-      padding-left: 16px;
+      //padding-left: 16px;
     }
   }
 
@@ -679,30 +678,61 @@ body .select2-results > .select2-results__options {
     }
   }
 }
-.select2-container--open .select2-dropdown--above{
-  &:before{
+
+.select2-container--open .select2-dropdown--above {
+  &:before {
     transform: rotate(180deg);
     top: auto;
-    bottom:-20px;
+    bottom: -20px;
   }
-  &:after{
+  &:after {
     transform: rotate(180deg);
     top: auto;
-    bottom:-15px;
+    bottom: -15px;
 
   }
 }
 
-
-@media @min768 {
-
-  .card--tabs [data-selectar--mdl=true] + .select2-container--mdl .select2-selection--single .select2-selection__arrow:before {
-
-        top: 6px;
-  }
-
-}
+//@media @min768 {
+//
+//  .card--tabs [data-selectar--mdl=true] + .select2-container--mdl .select2-selection--single .select2-selection__arrow:before {
+//
+//        top: 6px;
+//  }
+//
+//}
 
 .select2 .select2-selection .select2-selection__rendered .select__prefix {
-  color:@primary-grey;
+  color: @primary-grey;
+}
+
+.select2-container .select2-dropdown {
+  width: 100px !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background: transparent;
+}
+
+.select2-dropdown ul.select2-results__options li.select2-results__option {
+  margin: 12px 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.select2-dropdown ul.select2-results__options li[aria-selected="true"] {
+  padding-right: 48px !important;
+}
+
+select + span.select2 {
+  @media @xs{
+    min-width: 150px;
+  }
+  @media @min768 {
+    width: 100% !important;
+  }
 }

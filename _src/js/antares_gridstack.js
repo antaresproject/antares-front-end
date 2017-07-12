@@ -8,8 +8,8 @@
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
- * @package    Global
- * @version    0.9.1
+ * @package    Files
+ * @version    0.9.0
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
@@ -30,7 +30,8 @@ const AntaresGridstack = {
         this.addingWidgets();
         this.widgetGridEnlarge();
         this.helpers();
-        this.indentify();
+        this.stopTouchScroll();
+        this.identify();
 
     },
 
@@ -38,21 +39,50 @@ const AntaresGridstack = {
     showInDom() {
         $('.grid-stack').css('opacity', '1');
     },
+    identify() {
 
-    indentify() {
- 
+        $('.grid-stack-item').each(function() {
 
-        $('.grid-stack-item').each(function () {
-            if ( $(this).find('.tbl-c').length ) {
+            if ($(this).find('.tbl-c').length) {
+
                 $(this).find('.grid-stack-item-content').addClass('card-datatables');
+
+            }
+
+        });
+        
+    },
+    stopTouchScroll(){
+        $( ".move-button" ).mousedown(function() {
+            $('.app-content').perfectScrollbar('destroy');
+        });
+        $( ".move-button" ).mouseup(function() {
+            $('.app-content').perfectScrollbar();
+        });
+    },
+    helpers() {
+
+        //gridstack height automation jintegrer babel external automation tool scafolding
+        $.fn.extend({
+
+            calcHeight: function() {
+
+                var gS = $('.grid-stack').data('gridstack');
+                var gSCH = gS.cellHeight();
+                console.log('cell height: ' + gSCH);
+
+                $('.grid-stack-item').each(function(index, el) {
+
+                    var itemHeight = $(el).data('gs-height');
+                    var updatedHeight = itemHeight * gSCH + 'px';
+                    console.log(updatedHeight);
+
+                });
+
             }
         });
 
-    },
-
-    helpers() {
-
-        $('.grid-stack-item').each(function () {
+        $('.grid-stack-item').each(function(index, el) {
 
             if ($(this).find('.pagination').length) {
                 $(this).addClass('gs-pagination');
@@ -61,7 +91,7 @@ const AntaresGridstack = {
         });
 
         //card RWD go to widget_rwd_toogle
-        $(document).on('click', '.card__mobile-toggle', function () {
+        $(document).on('click', '.card__mobile-toggle', function() {
             $(this).toggleClass('card__mobile-toggle--open');
             $(this).closest('.card').find('.mobile-toogle--target').toggle();
             $(this).closest('.card').toggleClass('card--mobile-toggled');
@@ -72,7 +102,7 @@ const AntaresGridstack = {
 
         //save vars without overwrite with click functions
         var savedPositions = [];
-        $('.grid-stack-item').each(function () {
+        $('.grid-stack-item').each(function() {
             var $this = $(this);
             savedPositions.push({
                 x: $this.attr('data-gs-x'),
@@ -83,8 +113,9 @@ const AntaresGridstack = {
         });
 
         //enlarge mechanics
-        $('#app-wrapper .card .card-maximize').on('click', function () {
+        $('#app-wrapper .card .card-maximize').on('click', function() {
 
+            var self = $(this);
             var widget = $(this).closest('.grid-stack-item');
             var grid = $(this).closest('.grid-stack').data('gridstack');
 
@@ -96,19 +127,22 @@ const AntaresGridstack = {
 
             var openCloseSwitch = $(this).data('openCloseSwitch');
 
+            //identify card number
+            var index = widget.index();
+
             if (!openCloseSwitch) {
                 grid.update(widget, 0, 0, 12, appropriateHeight);
                 $('.app-content').scrollTop(0);
                 widget.addClass('is-maximized');
 
             } else {
-                $('.grid-stack-item').each(function (index, el) {
+                $('.grid-stack-item').each(function(index, el) {
                     grid.update(el, parseInt(savedPositions[index].x, 10), parseInt(savedPositions[index].y, 10), parseInt(savedPositions[index].w, 10), parseInt(savedPositions[index].h, 10));
                     $(el).removeClass('is-maximized');
                 });
             }
 
-            $(this).data('openCloseSwitch', !openCloseSwitch);
+            $(this).data("openCloseSwitch", !openCloseSwitch);
 
         });
 
@@ -119,20 +153,23 @@ const AntaresGridstack = {
         var self = this;
         //draggable
         var $el = $('.card-bar .card-bar__sgl');
-        var $container = $('.main-content .grid-stack');
+        var $container = $(".main-content .grid-stack");
 
         $container.droppable({
             accept: $el,
         });
 
         $el.draggable({
-            stop: function () {
+            stop: function(event, ui) {
+
+                // console.log(ui);
+                // console.log(event);
 
             },
             start() {
                 // self.simulateNewGsi();
             },
-            revert: function (valid) {
+            revert: function(valid, ui) {
 
                 var $self = $(this);
 
@@ -142,7 +179,7 @@ const AntaresGridstack = {
 
                     this.velocity({
                         opacity: '0',
-                    }, 500, function () {
+                    }, 500, function() {
                         $self.remove();
                         self.filterWidgets();
 
@@ -165,12 +202,12 @@ const AntaresGridstack = {
 
     filterWidgets() {
 
-        require('list.js');
+        require("list.js");
 
         let options = {
             valueNames: [{
                 data: ['widget']
-            },],
+            }, ],
             searchClass: 'mdl-textfield__input',
             listClass: 'card-bar__items'
         };
@@ -180,6 +217,8 @@ const AntaresGridstack = {
     },
 
     gridStack() {
+        require('jquery-ui-touch-punch');
+        let grid = $('.grid-stack').data('gridstack');
 
         let gridstack_options = {
             // verticalMargin: 1,
@@ -199,11 +238,13 @@ const AntaresGridstack = {
 
         $('.grid-stack').gridstack(gridstack_options);
 
+
+
     },
 
     cardResizePlugin() {
 
-        $.fn.cardResize = function (newWidth, newHeight, newX, newY) {
+        $.fn.cardResize = function(newWidth, newHeight, newX, newY) {
 
             var grid = $('.grid-stack').data('gridstack'),
                 cardContainer = this.closest('.grid-stack-item'),
@@ -226,7 +267,7 @@ const AntaresGridstack = {
 
     },
 
-    cardResizeDashboard: function () {
+    cardResizeDashboard: function() {
 
         var chart1 = $('.card--chart.card--green'),
             chart2 = $('.card--chart.card--orange'),
@@ -235,15 +276,16 @@ const AntaresGridstack = {
             systemInfo = $('.card--info'),
             news = $('.card--news'),
             systemLogs = $('.card--logs'),
+            w = $(window).width(),
             grid = $('.grid-stack').data('gridstack');
 
         if (!grid) {
             return false;
         }
 
-        enquire.register('screen and (min-width:1200px) and (max-width:1500px) ', {
+        enquire.register("screen and (min-width:1200px) and (max-width:1500px) ", {
 
-            match: function () {
+            match: function() {
 
                 chart1.cardResize(12, 10, 0, 0);
                 chart2.cardResize(12, 10, 0, 10);
@@ -258,9 +300,9 @@ const AntaresGridstack = {
 
         });
 
-        enquire.register('screen and (min-width:1501px)', {
+        enquire.register("screen and (min-width:1501px)", {
 
-            match: function () {
+            match: function() {
 
                 chart1.cardResize(6, 10, 0, 0);
                 chart2.cardResize(6, 10, 6, 0);
@@ -282,13 +324,14 @@ const AntaresGridstack = {
         var $grid = $('.grid-stack');
 
         function enableGrid() {
-
             $('.app-content').addClass('app-content--widgets-movable');
             $(this).children('i').removeClass('icon--widgets-edit').addClass('icon--widgets-edit-alt');
             grid.enable();
-            $grid.find('.grid-stack-item').each(function (index, el) {
+            $grid.find('.grid-stack-item').each(function(index, el) {
                 grid.movable($(el), true);
             });
+
+            // $('.app-content--widgets-movable .grid-stack').draggable(); //active this
 
         }
 
@@ -302,13 +345,13 @@ const AntaresGridstack = {
 
 
         // cDisable on mobile & tabletss
-        enquire.register('screen and (max-width:1200px)', {
-            match: function () {
+        enquire.register("screen and (max-width:1200px)", {
+            match: function() {
                 disableGrid();
             }
         });
 
-        $('#widgets-edit').on('click', function (e) {
+        $('#widgets-edit').on('click', function(e) {
 
             e.preventDefault();
 
@@ -324,18 +367,19 @@ const AntaresGridstack = {
         });
 
         // manual close button
-        $('.card-bar__close').on('click', function () {
+        $('.card-bar__close').on('click', function(e) {
 
             disableGrid();
 
         });
 
         //widgets editable view
-        $(document).on('click', '.remove-button', function () {
+        $(document).on('click', '.remove-button', function() {
 
             var grid = $('.grid-stack').data('gridstack'),
                 $el = $(this).closest('.grid-stack-item');
 
+            var $self = $(this);
 
             APP.swal.init('skin1', 'typeInfo', {
                 title: 'Are you sure?',
@@ -343,7 +387,7 @@ const AntaresGridstack = {
             });
 
             $('.sweet-container').addClass('widget-remove');
-            $('.sweet-container.widget-remove .sweet-confirm').on('click', function () {
+            $('.sweet-container.widget-remove .sweet-confirm').on('click', function() {
 
                 grid.removeWidget($el[0], true);
 
@@ -357,11 +401,11 @@ const AntaresGridstack = {
     }
 };
 
-$(function () {
+$(function() {
     window.AntaresGridstack = AntaresGridstack;
     AntaresGridstack.init();
 });
 
-$(window).on('load', function () {
+$(window).on('load', function() {
     AntaresGridstack.showInDom();
 });
