@@ -51,7 +51,7 @@ That will generate all others system assets.
 You can preview the system on url `http://localhost:9000/`.
 ## Services we're using
 
-<p align="center"><a href="https://www.browserstack.com/" target="_blank"><img width="200" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158719/Logo-01.svg"></a></p>
+<p align="left"><a href="https://www.browserstack.com/" target="_blank"><img width="200" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158719/Logo-01.svg"></a></p>
 
 We're using BrowserStack for cross-browser testing!
 
