@@ -1,3 +1,5 @@
+import { antaresCfg } from './_src/config/antares_cfg';
+
 const banner = `
  * Part of the Antares Project package.
  *
@@ -26,6 +28,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
+
+process.noDeprecation = true;
 
 const htmlOptions = {
   inject: true,
@@ -106,7 +110,10 @@ module.exports = {
       },
       {
         test: /\.ejs/,
-        loader: 'template-html-loader'
+        loader: 'template-html-loader',
+        options: {
+          mainMenuType: antaresCfg.mainMenuType
+        }
       },
       {
         test: /\.css$/,
@@ -441,6 +448,14 @@ module.exports = {
           'view_notification_templates',
           'view_brand_settings'
         ]
+      })
+    ),
+    new HtmlWebpackPlugin(
+      Object.assign(htmlOptions, {
+        title: 'widgets',
+        template: '_src/templates/pages/widgets.ejs',
+        filename: 'widgets.html',
+        chunks: ['app_cache', 'forms_basic', 'view_gridstack']
       })
     )
   ]

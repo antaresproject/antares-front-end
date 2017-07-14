@@ -17,7 +17,7 @@
                 <div class="grid-stack-item-content" data-scroll-area>
                     <div class="card card--pagination">
                         <div class="tbl-c">
-                            <% include ../layout/tab_search_filter %>
+                            <% include ../layout/card_ctrls_filter %>
                                 <% include ../layout/example_datatable %>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
 </template>
 
 <body>
-    <div id="app-wrapper">
+    <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
             <div class="app-content page-datatables page-vue-datatables">
                 <% var breadData= 'Clients List'; %>
@@ -39,8 +39,8 @@
                             <% include ../layout/sidebar_alerts %>
                                 <vue-page-clients-list></vue-page-clients-list>
             </div>
-    </div>
-    <% include ../layout/js_files %>
+            </div>
+            <% include ../layout/js_files %>
 
 </body>
 

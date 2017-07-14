@@ -1,17 +1,18 @@
 .form-validation {
   margin-bottom: @unit3;
 }
-fieldset{
-  .form-block{
-    .type-default{ //for quick default
-      &.radiobtns, &.checkboxs{
-        label{
+
+fieldset {
+  .form-block {
+    .type-default { //for quick default
+      &.radiobtns, &.checkboxs {
+        label {
           position: relative;
           padding-left: 28px;
-          .iradio_billevo, .icheckbox_billevo{
+          .iradio_billevo, .icheckbox_billevo {
             margin: 0;
             position: absolute;
-            top:50%;
+            top: 50%;
             transform: translateY(-50%);
             left: 0;
           }
@@ -20,11 +21,12 @@ fieldset{
     }
   }
 }
+
 fieldset {
   .form-block {
     .type-error, .type-success, .type-warning {
       input, textarea {
-
+          border-radius: 3px;
         padding-right: 32px;
 
         &.valid {
@@ -43,20 +45,23 @@ fieldset {
           }
         }
       }
-      &.radiobtns, &.checkboxs{
-        label{
+      &.radiobtns, &.checkboxs {
+        label {
           position: relative;
           padding-left: 28px;
-          .iradio_billevo, .icheckbox_billevo{
+          .iradio_billevo, .icheckbox_billevo {
             margin: 0;
             position: absolute;
-            top:50%;
+            top: 50%;
             transform: translateY(-50%);
             left: 0;
           }
         }
       }
+      &>.spinner-basic .ui-spinner.ui-corner-all{
+        border-radius: 0;
 
+      }
       &.type-error { // @color-error;
         @type-color: @color-error;
         &:after { // icon
@@ -77,6 +82,7 @@ fieldset {
             border-color: @color-error;
           }
         }
+
         input:not(.switch-checkbox) {
           &::placeholder {
             color: @type-color
@@ -558,6 +564,31 @@ fieldset[name="MDLForms"] {
         .mdl-textfield__label:after {
           background-color: @type-color;
         }
+      }
+    }
+  }
+}
+
+fieldset.spinner {
+  .form-block {
+    .type-error, .type-success, .type-warning {
+      &:after { // icon
+        right: 20px;
+      }
+    }
+    .type-error {
+      .filter-spinner {
+        color: @color-error;
+      }
+    }
+    .type-success {
+      .filter-spinner {
+        color:  @color-success;
+      }
+    }
+    .type-warning {
+      .filter-spinner {
+        color: @color-warning;
       }
     }
   }

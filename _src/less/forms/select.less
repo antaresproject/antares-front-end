@@ -709,21 +709,25 @@ body .select2-results > .select2-results__options {
 .select2-container:not(.select2-container--mdl) .select2-dropdown {
   width: 100px !important;
 }
-div.sweet-container+.select2-container.select2-container--mdl.select2-container--open{
-  .select2-dropdown:after{
-    left: auto !important;
-    right:25.5px !important;
+
+div.sweet-container + .select2-container.select2-container--mdl.select2-container--open {
+  @media @xs {
+    .select2-dropdown:after {
+      left: auto !important;
+      right: 25.5px !important;
+    }
+
+    .select2-dropdown:before {
+      left: auto !important;
+      right: 24px !important;
+    }
   }
-  .select2-dropdown:before{
-    left: auto !important;
-    right: 24px !important;
-  }
-  .select2-results__options{
-    div.ps-scrollbar-y-rail{
+  .select2-results__options {
+    div.ps-scrollbar-y-rail {
       right: 2px !important;
     }
   }
-  @media @xs{
+  @media @xs {
     left: auto !important;
     right: 8px ;
   }
@@ -748,7 +752,7 @@ div.sweet-container+.select2-container.select2-container--mdl.select2-container-
 }
 
 select + span.select2 {
-  @media @xs{
+  @media @xs {
     min-width: 150px;
   }
   @media @min768 {

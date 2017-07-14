@@ -7,1079 +7,1048 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Antares Dashboard</title>
     <% include ../layout/color_template %>
-    <% include ../layout/css_files %>
+        <% include ../layout/css_files %>
 </head>
-<body>
-<% include ../layout/templates_dashboard %>
-<div id="app-wrapper">
-    <% include ../layout/main_menu_html %>
-    <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-    <div class="app-content page-dashboard page-dashboard-html app-content--gridstack">
-        <% var breadData= 'Widgets HTML'; %>
-        <% include ../layout/card_bar %>
-        <% include ../layout/mainhead %>
-        <% include ../layout/sidebar_notifications %>
-        <% include ../layout/sidebar_alerts %>
-        <section class="main-content">
-            <!-- Gridstack -->
-            <div class="grid-stack" style="opacity:0">
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0"
-                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--chart card--scrollbox" data-chart="true">
-                            <div class="card__left">
-                                <div class="card__header">
-                                    <div class="card__header-left">
-                                        <span>Billing</span>
-                                    </div>
-                                    <div class="card__header-right">
-                                        <div class="ddown ddown--view-more ddown--view-more-options">
-                                            <div class="ddown__init ddown__init--clean">
-                                                <a href="#"
-                                                   class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
-                                                            class="zmdi zmdi-more-vert"></i></a>
-                                            </div>
-                                            <div class="ddown__content">
-                                                <form action="" method="post">
-                                                    <ul class="ddown__menu">
-                                                        <li>
-                                                            <input data-daterangepicker="true" class="mr24">
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" data-icheck="true" name="check"
-                                                                   id="billing">
-                                                            <label class="ml8" for="billing">Compare</label>
-                                                        </li>
-                                                    </ul>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <form action="" method="post">
-                                        <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                        <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                        <label class="ml8" for="check[1]">Compare</label>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card__content card__content--chart">
-                                    <div id="chart--one" class="chart">
-                                        <svg class="lineChart--svg"></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__right">
-                                <header>
-                                    <span class="card__title">New Subscriptions</span>
-                                    <span class="card__indicator card__indicator--up compare">27%<i
-                                                class="zmdi zmdi-long-arrow-up"></i></span>
-                                    <span class="card__ammount"><strong>$5599.91</strong><span class="compare"> / $9216.41</span></span>
-                                    <!--<div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">-->
-                                        <!--<i class="zmdi zmdi-caret-down"></i>-->
-                                    <!--</div>-->
-                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                                    class="zmdi zmdi-caret-down"></i></div>
-                                </header>
 
-                                <ul class="datarow mobile-toogle--target" data-scrollable>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>214</strong><span
-                                                        class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>31%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>15</strong><span
-                                                        class="compare">/161</span></span>
-                                            <span class="datarow__percentage compare"><span>11%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Accepted</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>61</strong><span
-                                                        class="compare">/88</span></span>
-                                            <span class="datarow__percentage compare"><span>25%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>135</strong><span
-                                                        class="compare">/198</span></span>
-                                            <span class="datarow__percentage compare"><span>21%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Error</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>123</strong><span
-                                                        class="compare">/187</span></span>
-                                            <span class="datarow__percentage compare"><span>66%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="0"
-                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--chart card--scrollbox" data-chart="true">
-                            <div class="card__left">
-                                <div class="card__header">
-                                    <div class="card__header-left">
-                                        <span>Subscriptions</span>
-                                    </div>
-                                    <div class="card__header-right">
-                                        <div class="ddown ddown--view-more ddown--view-more-options">
-                                            <div class="ddown__init ddown__init--clean">
-                                                <a href="#"
-                                                   class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
+<body>
+    <% include ../layout/templates_dashboard %>
+        <% include ../layout/app_wrapper_start_tag %>
+            <% include ../layout/main_menu_html %>
+                <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+                <div class="app-content page-dashboard page-dashboard-html app-content--gridstack">
+                    <% var breadData= 'Widgets HTML'; %>
+                        <% include ../layout/card_bar %>
+                            <% include ../layout/mainhead %>
+                                <% include ../layout/sidebar_notifications %>
+                                    <% include ../layout/sidebar_alerts %>
+                                        <section class="main-content">
+                                            <!-- Gridstack -->
+                                            <div class="grid-stack" style="opacity:0">
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="10"
+                                                    data-gs-min-width="11" data-gs-min-height="10">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--chart card--scrollbox" data-chart="true">
+                                                                <div class="card__left">
+                                                                    <div class="card__header">
+                                                                        <div class="card__header-left">
+                                                                            <span>Billing</span>
+                                                                        </div>
+                                                                        <div class="card__header-right">
+                                                                            <div class="ddown ddown--view-more ddown--view-more-options">
+                                                                                <div class="ddown__init ddown__init--clean">
+                                                                                    <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
                                                             class="zmdi zmdi-more-vert"></i></a>
-                                            </div>
-                                            <div class="ddown__content">
-                                                <form action="" method="post">
-                                                    <ul class="ddown__menu">
-                                                        <li>
-                                                            <input data-daterangepicker="true" class="mr24">
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" data-icheck="true" name="check"
-                                                                   id="billing">
-                                                            <label class="ml8" for="billing">Compare</label>
-                                                        </li>
-                                                    </ul>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <form action="" method="post">
-                                            <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                            <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                            <label class="ml8" for="check[1]">Compare</label>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card__content card__content--chart">
-                                    <div class="chart" id="chart--two">
-                                        <svg class="lineChart--svg"></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__right">
-                                <header>
-                                    <span class="card__title">New Subscriptions</span>
-                                    <span class="card__indicator card__indicator--down compare">28%<i
-                                                class="zmdi zmdi-long-arrow-down"></i></span>
-                                    <span class="card__ammount"><strong>$2897.98</strong><span class="compare"> / $3484.87</span></span>
-                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                                class="zmdi zmdi-caret-down"></i></div>
-                                </header>
-                                <ul class="datarow mobile-toogle--target " data-scrollable>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Accepted</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>55</strong><span
-                                                        class="compare">/121</span></span>
-                                            <span class="datarow__percentage compare"><span>47%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Accepted</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>31</strong><span
-                                                        class="compare">/41</span></span>
-                                            <span class="datarow__percentage compare"><span>42%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>23</strong>/121</span>
-                                            <span class="datarow__percentage compare"><span>11%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>235</strong><span
-                                                        class="compare">/412</span></span>
-                                            <span class="datarow__percentage compare"><span>44%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10"
-                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--chart card--scrollbox" data-chart="true">
-                            <div class="card__left">
-                                <div class="card__header">
-                                    <div class="card__header-left">
-                                        <span>Orders</span>
-                                    </div>
-                                    <div class="card__header-right">
-                                        <div class="ddown ddown--view-more ddown--view-more-options">
-                                            <div class="ddown__init ddown__init--clean">
-                                                <a href="#"
-                                                   class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
-                                                            class="zmdi zmdi-more-vert"></i></a>
-                                            </div>
-                                            <div class="ddown__content">
-                                                <form action="" method="post">
-                                                    <ul class="ddown__menu">
-                                                        <li>
-                                                            <input data-daterangepicker="true" class="mr24">
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" data-icheck="true" name="check"
-                                                                   id="billing">
-                                                            <label class="ml8" for="billing">Compare</label>
-                                                        </li>
-                                                    </ul>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <form action="" method="post">
-                                            <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                            <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                            <label class="ml8" for="check[1]">Compare</label>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card__content card__content--chart">
-                                    <div class="chart" id="chart--three">
-                                        <svg class="lineChart--svg"></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__right">
-                                <header>
-                                    <span class="card__title">New Subscriptions</span>
-                                    <span class="card__indicator card__indicator--up compare">39%<i
+                                                                                </div>
+                                                                                <div class="ddown__content">
+                                                                                    <form action="" method="post">
+                                                                                        <ul class="ddown__menu">
+                                                                                            <li>
+                                                                                                <input data-daterangepicker="true" class="mr24">
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <input type="checkbox" data-icheck="true" name="check" id="billing">
+                                                                                                <label class="ml8" for="billing">Compare</label>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                            <form action="" method="post">
+                                                                                <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
+                                                                                <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
+                                                                                <label class="ml8" for="check[1]">Compare</label>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card__content card__content--chart">
+                                                                        <div id="chart--one" class="chart">
+                                                                            <svg class="lineChart--svg"></svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card__right">
+                                                                    <header>
+                                                                        <span class="card__title">New Subscriptions</span>
+                                                                        <span class="card__indicator card__indicator--up compare">27%<i
                                                 class="zmdi zmdi-long-arrow-up"></i></span>
-                                    <span class="card__ammount"><strong>$3215.22</strong><span class="compare"> / $4512.21</span></span>
-                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                                class="zmdi zmdi-caret-down"></i></div>
-                                </header>
-                                <ul class="datarow mobile-toogle--target" data-scrollable>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>24</strong><span
+                                                                        <span class="card__ammount"><strong>$5599.91</strong><span class="compare"> / $9216.41</span></span>
+                                                                        <!--<div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">-->
+                                                                        <!--<i class="zmdi zmdi-caret-down"></i>-->
+                                                                        <!--</div>-->
+                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-caret-down"></i></div>
+                                                                    </header>
+
+                                                                    <ul class="datarow mobile-toogle--target" data-scrollable>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
                                                         class="compare">/512</span></span>
-                                            <span class="datarow__percentage compare"><span>11%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Accepted</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>32</strong><span
-                                                        class="compare">/125</span></span>
-                                            <span class="datarow__percentage compare"><span>33%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Accepted</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>42</strong><span
-                                                        class="compare">/112</span></span>
-                                            <span class="datarow__percentage compare"><span>44%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>222</strong><span
-                                                        class="compare">/331</span></span>
-                                            <span class="datarow__percentage compare"><span>71%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pedning</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>221</strong><span
-                                                        class="compare">/598</span></span>
-                                            <span class="datarow__percentage compare"><span>36%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="10"
-                     data-gs-width="12" data-gs-height="10" data-gs-min-width="11" data-gs-min-height="10">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--chart card--scrollbox" data-chart="true">
-                            <div class="card__left">
-                                <div class="card__header">
-                                    <div class="card__header-left">
-                                        <span>Tickets</span>
-                                    </div>
-                                    <div class="card__header-right">
-                                        <div class="ddown ddown--view-more ddown--view-more-options">
-                                            <div class="ddown__init ddown__init--clean">
-                                                <a href="#"
-                                                   class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>214</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>31%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>15</strong><span
+                                                        class="compare">/161</span></span>
+                                                                                <span class="datarow__percentage compare"><span>11%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Accepted</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>61</strong><span
+                                                        class="compare">/88</span></span>
+                                                                                <span class="datarow__percentage compare"><span>25%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>135</strong><span
+                                                        class="compare">/198</span></span>
+                                                                                <span class="datarow__percentage compare"><span>21%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Error</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>123</strong><span
+                                                        class="compare">/187</span></span>
+                                                                                <span class="datarow__percentage compare"><span>66%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="0" data-gs-width="12" data-gs-height="10"
+                                                    data-gs-min-width="11" data-gs-min-height="10">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--chart card--scrollbox" data-chart="true">
+                                                                <div class="card__left">
+                                                                    <div class="card__header">
+                                                                        <div class="card__header-left">
+                                                                            <span>Subscriptions</span>
+                                                                        </div>
+                                                                        <div class="card__header-right">
+                                                                            <div class="ddown ddown--view-more ddown--view-more-options">
+                                                                                <div class="ddown__init ddown__init--clean">
+                                                                                    <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
                                                             class="zmdi zmdi-more-vert"></i></a>
-                                            </div>
-                                            <div class="ddown__content">
-                                                <form action="" method="post">
-                                                    <ul class="ddown__menu">
-                                                        <li>
-                                                            <input data-daterangepicker="true" class="mr24">
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" data-icheck="true" name="check"
-                                                                   id="billing">
-                                                            <label class="ml8" for="billing">Compare</label>
-                                                        </li>
-                                                    </ul>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <form action="" method="post">
-                                            <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                            <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                            <label class="ml8" for="check[1]">Compare</label>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card__content card__content--chart">
-                                    <div class="chart" id="chart--four">
-                                        <svg class="lineChart--svg"></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__right">
-                                <header>
-                                    <span class="card__title">New Subscriptions</span>
-                                    <span class="card__indicator card__indicator--down compare">25%<i
+                                                                                </div>
+                                                                                <div class="ddown__content">
+                                                                                    <form action="" method="post">
+                                                                                        <ul class="ddown__menu">
+                                                                                            <li>
+                                                                                                <input data-daterangepicker="true" class="mr24">
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <input type="checkbox" data-icheck="true" name="check" id="billing">
+                                                                                                <label class="ml8" for="billing">Compare</label>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                            <form action="" method="post">
+                                                                                <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
+                                                                                <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
+                                                                                <label class="ml8" for="check[1]">Compare</label>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card__content card__content--chart">
+                                                                        <div class="chart" id="chart--two">
+                                                                            <svg class="lineChart--svg"></svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card__right">
+                                                                    <header>
+                                                                        <span class="card__title">New Subscriptions</span>
+                                                                        <span class="card__indicator card__indicator--down compare">28%<i
                                                 class="zmdi zmdi-long-arrow-down"></i></span>
-                                    <span class="card__ammount"><strong>$1241.28</strong><span class="compare"> / $2774.01</span></span>
-                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
-                                        <i class="zmdi zmdi-caret-down"></i>
-                                    </div>
-                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                                class="zmdi zmdi-caret-down"></i></div>
-                                </header>
-                                <ul class="datarow mobile-toogle--target" data-scrollable>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pending</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>135</strong><span
+                                                                        <span class="card__ammount"><strong>$2897.98</strong><span class="compare"> / $3484.87</span></span>
+                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-caret-down"></i></div>
+                                                                    </header>
+                                                                    <ul class="datarow mobile-toogle--target " data-scrollable>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Accepted</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>55</strong><span
+                                                        class="compare">/121</span></span>
+                                                                                <span class="datarow__percentage compare"><span>47%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Accepted</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>31</strong><span
+                                                        class="compare">/41</span></span>
+                                                                                <span class="datarow__percentage compare"><span>42%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>23</strong>/121</span>
+                                                                                <span class="datarow__percentage compare"><span>11%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>235</strong><span
+                                                        class="compare">/412</span></span>
+                                                                                <span class="datarow__percentage compare"><span>44%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10" data-gs-width="12" data-gs-height="10"
+                                                    data-gs-min-width="11" data-gs-min-height="10">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--chart card--scrollbox" data-chart="true">
+                                                                <div class="card__left">
+                                                                    <div class="card__header">
+                                                                        <div class="card__header-left">
+                                                                            <span>Orders</span>
+                                                                        </div>
+                                                                        <div class="card__header-right">
+                                                                            <div class="ddown ddown--view-more ddown--view-more-options">
+                                                                                <div class="ddown__init ddown__init--clean">
+                                                                                    <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
+                                                            class="zmdi zmdi-more-vert"></i></a>
+                                                                                </div>
+                                                                                <div class="ddown__content">
+                                                                                    <form action="" method="post">
+                                                                                        <ul class="ddown__menu">
+                                                                                            <li>
+                                                                                                <input data-daterangepicker="true" class="mr24">
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <input type="checkbox" data-icheck="true" name="check" id="billing">
+                                                                                                <label class="ml8" for="billing">Compare</label>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                            <form action="" method="post">
+                                                                                <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
+                                                                                <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
+                                                                                <label class="ml8" for="check[1]">Compare</label>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card__content card__content--chart">
+                                                                        <div class="chart" id="chart--three">
+                                                                            <svg class="lineChart--svg"></svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card__right">
+                                                                    <header>
+                                                                        <span class="card__title">New Subscriptions</span>
+                                                                        <span class="card__indicator card__indicator--up compare">39%<i
+                                                class="zmdi zmdi-long-arrow-up"></i></span>
+                                                                        <span class="card__ammount"><strong>$3215.22</strong><span class="compare"> / $4512.21</span></span>
+                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-caret-down"></i></div>
+                                                                    </header>
+                                                                    <ul class="datarow mobile-toogle--target" data-scrollable>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>24</strong><span
+                                                        class="compare">/512</span></span>
+                                                                                <span class="datarow__percentage compare"><span>11%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Accepted</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>32</strong><span
+                                                        class="compare">/125</span></span>
+                                                                                <span class="datarow__percentage compare"><span>33%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Accepted</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>42</strong><span
+                                                        class="compare">/112</span></span>
+                                                                                <span class="datarow__percentage compare"><span>44%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>222</strong><span
+                                                        class="compare">/331</span></span>
+                                                                                <span class="datarow__percentage compare"><span>71%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pedning</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>221</strong><span
+                                                        class="compare">/598</span></span>
+                                                                                <span class="datarow__percentage compare"><span>36%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="10" data-gs-width="12" data-gs-height="10"
+                                                    data-gs-min-width="11" data-gs-min-height="10">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--chart card--scrollbox" data-chart="true">
+                                                                <div class="card__left">
+                                                                    <div class="card__header">
+                                                                        <div class="card__header-left">
+                                                                            <span>Tickets</span>
+                                                                        </div>
+                                                                        <div class="card__header-right">
+                                                                            <div class="ddown ddown--view-more ddown--view-more-options">
+                                                                                <div class="ddown__init ddown__init--clean">
+                                                                                    <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
+                                                            class="zmdi zmdi-more-vert"></i></a>
+                                                                                </div>
+                                                                                <div class="ddown__content">
+                                                                                    <form action="" method="post">
+                                                                                        <ul class="ddown__menu">
+                                                                                            <li>
+                                                                                                <input data-daterangepicker="true" class="mr24">
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <input type="checkbox" data-icheck="true" name="check" id="billing">
+                                                                                                <label class="ml8" for="billing">Compare</label>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                            <form action="" method="post">
+                                                                                <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
+                                                                                <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
+                                                                                <label class="ml8" for="check[1]">Compare</label>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card__content card__content--chart">
+                                                                        <div class="chart" id="chart--four">
+                                                                            <svg class="lineChart--svg"></svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card__right">
+                                                                    <header>
+                                                                        <span class="card__title">New Subscriptions</span>
+                                                                        <span class="card__indicator card__indicator--down compare">25%<i
+                                                class="zmdi zmdi-long-arrow-down"></i></span>
+                                                                        <span class="card__ammount"><strong>$1241.28</strong><span class="compare"> / $2774.01</span></span>
+                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
+                                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                                        </div>
+                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-caret-down"></i></div>
+                                                                    </header>
+                                                                    <ul class="datarow mobile-toogle--target" data-scrollable>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pending</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>135</strong><span
                                                         class="compare">/198</span></span>
-                                            <span class="datarow__percentage compare"><span>25%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>15</strong><span
+                                                                                <span class="datarow__percentage compare"><span>25%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>15</strong><span
                                                         class="compare">/52</span></span>
-                                            <span class="datarow__percentage compare"><span>15%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Accepted</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>33</strong><span
+                                                                                <span class="datarow__percentage compare"><span>15%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Accepted</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>33</strong><span
                                                         class="compare">/51</span></span>
-                                            <span class="datarow__percentage compare"><span>41%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>31</strong><span
+                                                                                <span class="datarow__percentage compare"><span>41%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>31</strong><span
                                                         class="compare">/71</span></span>
-                                            <span class="datarow__percentage compare"><span>41%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>66</strong><span
+                                                                                <span class="datarow__percentage compare"><span>41%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>66</strong><span
                                                         class="compare">/81</span></span>
-                                            <span class="datarow__percentage compare"><span>72%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--down">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pending</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>66</strong><span
+                                                                                <span class="datarow__percentage compare"><span>72%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--down">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pending</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>66</strong><span
                                                         class="compare">/81</span></span>
-                                            <span class="datarow__percentage compare"><span>20%</span><i
-                                                        class="zmdi zmdi-long-arrow-down"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Cancelled</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>135</strong><span
+                                                                                <span class="datarow__percentage compare"><span>20%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-down"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Cancelled</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>135</strong><span
                                                         class="compare">/198</span></span>
-                                            <span class="datarow__percentage compare"><span>24%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl datarow__sgl--up">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Pending</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>641</strong><span
+                                                                                <span class="datarow__percentage compare"><span>24%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl datarow__sgl--up">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Pending</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>641</strong><span
                                                         class="compare">/998</span></span>
-                                            <span class="datarow__percentage compare"><span>53%</span><i
-                                                        class="zmdi zmdi-long-arrow-up"></i></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20"
-                     data-gs-width="6" data-gs-height="12" data-gs-min-width="6" data-gs-min-height="11">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--info card--scrollbox" data-widget-name="card--info">
-                            <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>System Informations</span>
-                                </div>
-                                <div class="card__header-right">
-                                    <i class="card-maximize zmdi zmdi-window-maximize"></i>
-                                    <div class="ddown ddown--view-more">
-                                        <div class="ddown__init ddown__init--clean">
-                                            <a href="#"
-                                               class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">VIEW
+                                                                                <span class="datarow__percentage compare"><span>53%</span>
+                                                                                <i class="zmdi zmdi-long-arrow-up"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="6" data-gs-height="12"
+                                                    data-gs-min-width="6" data-gs-min-height="11">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--info card--scrollbox" data-widget-name="card--info">
+                                                                <div class="card__header">
+                                                                    <div class="card__header-left">
+                                                                        <span>System Informations</span>
+                                                                    </div>
+                                                                    <div class="card__header-right">
+                                                                        <i class="card-maximize zmdi zmdi-window-maximize"></i>
+                                                                        <div class="ddown ddown--view-more">
+                                                                            <div class="ddown__init ddown__init--clean">
+                                                                                <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">VIEW
                                                 MORE</a>
-                                        </div>
-                                        <div class="ddown__content">
-                                            <div class="ddown__arrow"></div>
-                                            <ul class="ddown__menu">
-                                                <li class="ddown__header mdl-js-button mdl-js-ripple-effect"><a
-                                                            href="#"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a>
-                                                </li>
-                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                                                                            </div>
+                                                                            <div class="ddown__content">
+                                                                                <div class="ddown__arrow"></div>
+                                                                                <ul class="ddown__menu">
+                                                                                    <li class="ddown__header mdl-js-button mdl-js-ripple-effect"><a href="#"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a>
+                                                                                    </li>
+                                                                                    <li><a class="mdl-js-button mdl-js-ripple-effect"
+                                                                                            href="#"><i
                                                                 class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a>
-                                                </li>
-                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                                                                                    </li>
+                                                                                    <li><a class="mdl-js-button mdl-js-ripple-effect"
+                                                                                            href="#"><i
                                                                 class="zmdi zmdi-email"></i><span>Send Email</span></a>
-                                                </li>
-                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                                                                                    </li>
+                                                                                    <li><a class="mdl-js-button mdl-js-ripple-effect"
+                                                                                            href="#"><i
                                                                 class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a>
-                                                </li>
-                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                                                                                    </li>
+                                                                                    <li><a class="mdl-js-button mdl-js-ripple-effect"
+                                                                                            href="#"><i
                                                                 class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a>
-                                                </li>
-                                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                                                                                    </li>
+                                                                                    <li><a class="mdl-js-button mdl-js-ripple-effect"
+                                                                                            href="#"><i
                                                                 class="zmdi zmdi-money-box"></i><span>Add Founds</span></a>
-                                                </li>
-                                                <li class="ddown__sgl--footer">
-                                                    <a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                                                                                    </li>
+                                                                                    <li class="ddown__sgl--footer">
+                                                                                        <a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
                                                                 class="zmdi zmdi-money-box"></i><span>More</span></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__content card__content--flex-column">
-                                <div >
-                                    <span class="card__title">Version</span>
-                                    <span class="card__indicator card__indicator--down compare">1.2.2 <span>An Update is available</span></span>
-                                    <div class="single-row">
-                                        <a href="#"
-                                           class="btn btn--link btn--md btn--red mdl-button mdl-js-button mdl-js-ripple-effect">UPGRADE</a>
-                                        <a href="#"
-                                           class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">CHANGE
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card__content card__content--flex-column">
+                                                                    <div>
+                                                                        <span class="card__title">Version</span>
+                                                                        <span class="card__indicator card__indicator--down compare">1.2.2 <span>An Update is available</span></span>
+                                                                        <div class="single-row">
+                                                                            <a href="#" class="btn btn--link btn--md btn--red mdl-button mdl-js-button mdl-js-ripple-effect">UPGRADE</a>
+                                                                            <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">CHANGE
                                             LOG</a>
-                                    </div>
-                                </div>
-                                <ul class="datarow mobile-toogle--target" data-scrollable>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Licence</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>Monthly</strong></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Expires</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>25.09.2015</strong></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Installed Modules</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>18</strong></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Installed Modules</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>18</strong></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Installed Modules</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>18</strong></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Installed Modules</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>18</strong></span>
-                                        </div>
-                                    </li>
-                                    <!--SINGLE-->
-                                    <li class="datarow__sgl">
-                                        <div class="datarow__left">
-                                            <span class="datarow__status">Free Modules Available</span>
-                                        </div>
-                                        <div class="datarow__right">
-                                            <span class="datarow__data"><strong>8</strong></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="mobile-toogle--box">
-                                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                                class="zmdi zmdi-caret-down"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20"
-                     data-gs-width="6" data-gs-height="10" data-gs-min-width="6" data-gs-min-height="11">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--news card--primary">
-                            <div class="card__overlay">
-                                <div class="card__header">
-                                    <div class="card__header-left">
-                                        <span>News</span>
-                                    </div>
-                                    <div class="card__header-right">
-                                        <div class="card__control card__control--left" data-slickPrev="true"><i
-                                                    class="icon icon--chev-left"></i></div>
-                                        <div class="card__control card__control--right" data-slickNext="true"><i
-                                                    class="icon icon--chev-right"></i></div>
-                                    </div>
-                                </div>
-                                <div class="card__slider" data-slick="true">
-                                    <div>
-                                        <div class="card__info">
-                                            <span class="card__title">Phasellus fermentum in, dolor. Bassel fermentum lorem Ipsum dolor. Ferentium Artotel in, dolor.</span>
-                                            <span class="card__date">Jan 9, 2015</span>
-                                            <span class="card__author">Added by Konrad Keck</span>
-                                        </div>
-                                        <div class="card__content">
-                                            <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span>
-                                        </div>
-                                        <div class="card__footer">
-                                            <button class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
+                                                                        </div>
+                                                                    </div>
+                                                                    <ul class="datarow mobile-toogle--target" data-scrollable>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Licence</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>Monthly</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Expires</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>25.09.2015</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Installed Modules</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>18</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Installed Modules</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>18</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Installed Modules</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>18</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Installed Modules</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>18</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!--SINGLE-->
+                                                                        <li class="datarow__sgl">
+                                                                            <div class="datarow__left">
+                                                                                <span class="datarow__status">Free Modules Available</span>
+                                                                            </div>
+                                                                            <div class="datarow__right">
+                                                                                <span class="datarow__data"><strong>8</strong></span>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="mobile-toogle--box">
+                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-caret-down"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="6" data-gs-y="20" data-gs-width="6" data-gs-height="10"
+                                                    data-gs-min-width="6" data-gs-min-height="11">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--news card--primary">
+                                                                <div class="card__overlay">
+                                                                    <div class="card__header">
+                                                                        <div class="card__header-left">
+                                                                            <span>News</span>
+                                                                        </div>
+                                                                        <div class="card__header-right">
+                                                                            <div class="card__control card__control--left" data-slickPrev="true"><i class="icon icon--chev-left"></i></div>
+                                                                            <div class="card__control card__control--right" data-slickNext="true"><i class="icon icon--chev-right"></i></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card__slider" data-slick="true">
+                                                                        <div>
+                                                                            <div class="card__info">
+                                                                                <span class="card__title">Phasellus fermentum in, dolor. Bassel fermentum lorem Ipsum dolor. Ferentium Artotel in, dolor.</span>
+                                                                                <span class="card__date">Jan 9, 2015</span>
+                                                                                <span class="card__author">Added by Konrad Keck</span>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span>
+                                                                            </div>
+                                                                            <div class="card__footer">
+                                                                                <button class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
                                                 READ MORE
                                             </button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="card__info">
-                                            <span class="card__title">Lorem Epsum Doloris Malis.</span>
-                                            <span class="card__date">Dec 10, 2015</span>
-                                            <span class="card__author">Added by Łukasz Cirut</span>
-                                        </div>
-                                        <div class="card__content">
-                                            <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span>
-                                        </div>
-                                        <div class="card__footer">
-                                            <a href="#"
-                                               class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="card__info">
+                                                                                <span class="card__title">Lorem Epsum Doloris Malis.</span>
+                                                                                <span class="card__date">Dec 10, 2015</span>
+                                                                                <span class="card__author">Added by Łukasz Cirut</span>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span>
+                                                                            </div>
+                                                                            <div class="card__footer">
+                                                                                <a href="#" class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ
                                                 MORE</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="20"
-                     data-gs-width="12" data-gs-height="12" data-gs-min-width="11" data-gs-min-height="12"
-                     data-card-name="system-logs">
-                    <div class="grid-stack-item-content">
-                        <% include ../layout/widget_edit %>
-                        <div class="card card--pagination card--logs" data-widget-name="card--logs">
-                            <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>Logs</span>
-                                </div>
-                                <div class="card__header-right">
-                                    <i class="card-maximize zmdi zmdi-window-maximize"></i>
-                                </div>
-                            </div>
-                            <div class="card__content flex ff-cnw jc-flex-start">
-                                <% include ../layout/tab_search_filter %>
-                                <div class="datarow">
-                                    <ul class="timeline" data-scrollable>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
-                                                    2</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
-                                                <span><span data-tooltip-inline="2016-09-02 08:31:41">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
-                                                    4</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
-                                                <span><span data-tooltip-inline="2016-09-01 19:45:02">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#FF8000"
-                                                 data-tooltip-inline="Tags"></div>
-                                            <div class="timeline__padding">
-                                                Tag Test, has been assigned by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                in module acl_antares with language <a
-                                                        href="http://demo.antaresproject.io/admin/translations">English</a>
-                                                <span><span data-tooltip-inline="2016-09-01 15:25:27">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"
-                                                 data-tooltip-inline="Brands"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
-                                                    4</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
-                                                <span> <span data-tooltip-inline="2016-09-01 14:37:15">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"
-                                                 data-tooltip-inline="Brands"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
-                                                    2</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
-                                                <span><span data-tooltip-inline="2016-09-01 13:36:24">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
-                                                    2</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
-                                                <span><span data-tooltip-inline="2016-09-02 08:31:41">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
-                                                    4</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
-                                                <span><span data-tooltip-inline="2016-09-01 19:45:02">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#FF8000"
-                                                 data-tooltip-inline="Tags"></div>
-                                            <div class="timeline__padding">
-                                                Tag Test, has been assigned by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                in module acl_antares with language <a
-                                                        href="http://demo.antaresproject.io/admin/translations">English</a>
-                                                <span><span data-tooltip-inline="2016-09-01 15:25:27">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"
-                                                 data-tooltip-inline="Brands"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
-                                                    4</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
-                                                <span> <span data-tooltip-inline="2016-09-01 14:37:15">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"
-                                                 data-tooltip-inline="Brands"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
-                                                    2</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
-                                                <span><span data-tooltip-inline="2016-09-01 13:36:24">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
-                                                    2</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
-                                                <span><span data-tooltip-inline="2016-09-02 08:31:41">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
-                                                    4</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
-                                                <span><span data-tooltip-inline="2016-09-01 19:45:02">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#FF8000"
-                                                 data-tooltip-inline="Tags"></div>
-                                            <div class="timeline__padding">
-                                                Tag Test, has been assigned by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                in module acl_antares with language <a
-                                                        href="http://demo.antaresproject.io/admin/translations">English</a>
-                                                <span><span data-tooltip-inline="2016-09-01 15:25:27">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"
-                                                 data-tooltip-inline="Brands"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
-                                                    4</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
-                                                <span> <span data-tooltip-inline="2016-09-01 14:37:15">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                        <li class="timeline__entry--ok">
-                                            <div class="timeline__indicator" data-color="#0080FF"
-                                                 data-tooltip-inline="Brands"></div>
-                                            <div class="timeline__padding">
-                                                Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
-                                                    2</a> has been updated by <a
-                                                        href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>
-                                                with options identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>
-                                                and colors identifier <a
-                                                        href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
-                                                <span><span data-tooltip-inline="2016-09-01 13:36:24">3 days ago</span>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="12" data-gs-y="20" data-gs-width="12" data-gs-height="12"
+                                                    data-gs-min-width="11" data-gs-min-height="12" data-card-name="system-logs">
+                                                    <div class="grid-stack-item-content">
+                                                        <% include ../layout/widget_edit %>
+                                                            <div class="card card--pagination card--logs" data-widget-name="card--logs">
+                                                                <div class="card__header">
+                                                                    <div class="card__header-left">
+                                                                        <span>Logs</span>
+                                                                    </div>
+                                                                    <div class="card__header-right">
+                                                                        <i class="card-maximize zmdi zmdi-window-maximize"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card__content flex ff-cnw jc-flex-start">
+                                                                    <% include ../layout/card_ctrls_filter %>
+                                                                        <div class="datarow">
+                                                                            <ul class="timeline" data-scrollable>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
+                                                    2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-02 08:31:41">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
+                                                    4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 19:45:02">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#FF8000" data-tooltip-inline="Tags"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Tag Test, has been assigned by
+                                                                                        <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        in module acl_antares with language
+                                                                                        <a href="http://demo.antaresproject.io/admin/translations">English</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 15:25:27">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
+                                                    4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                                                                        <span> <span data-tooltip-inline="2016-09-01 14:37:15">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
+                                                    2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 13:36:24">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
+                                                    2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-02 08:31:41">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
+                                                    4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 19:45:02">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#FF8000" data-tooltip-inline="Tags"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Tag Test, has been assigned by
+                                                                                        <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        in module acl_antares with language
+                                                                                        <a href="http://demo.antaresproject.io/admin/translations">English</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 15:25:27">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
+                                                    4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                                                                        <span> <span data-tooltip-inline="2016-09-01 14:37:15">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
+                                                    2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 13:36:24">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
+                                                    2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-02 08:31:41">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
+                                                    4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 19:45:02">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#FF8000" data-tooltip-inline="Tags"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Tag Test, has been assigned by
+                                                                                        <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        in module acl_antares with language
+                                                                                        <a href="http://demo.antaresproject.io/admin/translations">English</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 15:25:27">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/47/edit">Brand
+                                                    4</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">16</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/47/edit">13</a>
+                                                                                        <span> <span data-tooltip-inline="2016-09-01 14:37:15">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="timeline__entry--ok">
+                                                                                    <div class="timeline__indicator" data-color="#0080FF" data-tooltip-inline="Brands"></div>
+                                                                                    <div class="timeline__padding">
+                                                                                        Brand <a href="http://demo.antaresproject.io/admin/brands/40/edit">Brand
+                                                    2</a> has been updated by <a href="http://demo.antaresproject.io/user/1/edit">Admin Demo</a>                                                                                        with options identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">12</a>                                                                                        and colors identifier
+                                                                                        <a href="http://demo.antaresproject.io/admin/brands/40/edit">9</a>
+                                                                                        <span><span data-tooltip-inline="2016-09-01 13:36:24">3 days ago</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
 
-                                    <div class="pagination">
-                                        <div class="pagination-list simple-pagination--list"></div>
-                                        <div class="pagination-current simple-pagination--current antares-pagination">
-                                            <ul>
-                                                <li><a class="current10 active mdl-js-button mdl-js-ripple-effect">10</a></li>
-                                                <li><a  class="current25 mdl-js-button mdl-js-ripple-effect">25</a></li>
-                                                <li><a  class="current50 mdl-js-button mdl-js-ripple-effect">50</a></li>
-                                                <li><a  class="current100 mdl-js-button mdl-js-ripple-effect">100</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                                                            <div class="pagination">
+                                                                                <div class="pagination-list simple-pagination--list"></div>
+                                                                                <div class="pagination-current simple-pagination--current antares-pagination">
+                                                                                    <ul>
+                                                                                        <li><a class="current10 active mdl-js-button mdl-js-ripple-effect">10</a></li>
+                                                                                        <li><a class="current25 mdl-js-button mdl-js-ripple-effect">25</a></li>
+                                                                                        <li><a class="current50 mdl-js-button mdl-js-ripple-effect">50</a></li>
+                                                                                        <li><a class="current100 mdl-js-button mdl-js-ripple-effect">100</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
                 </div>
-            </div>
-        </section>
-    </div>
-</div>
+                </div>
 
-<% include ../layout/js_files %>
+                <% include ../layout/js_files %>
 </body>
 
 </html>

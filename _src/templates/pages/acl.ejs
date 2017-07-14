@@ -5,84 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Access Control List</title>
-    <% include ../layout/color_template %> 
-    <% include ../layout/css_files %>
+    <% include ../layout/color_template %>
+        <% include ../layout/css_files %>
 </head>
 
 <body>
-    <div id="app-wrapper">
+    <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
-        <div class="app-content acl-page">
-            <% var breadData= 'ACL'; %>
-            <% include ../layout/mainhead %> 
-            <% include ../layout/sidebar_notifications %>
-            <% include ../layout/sidebar_alerts %>
-            <section class="main-content nopadding">
-                <div class="grid-container grid-container--footer grid-container--2col grid-container--no-padd">
+            <div class="app-content acl-page">
+                <% var breadData= 'ACL'; %>
+                    <% include ../layout/mainhead %>
+                        <% include ../layout/sidebar_notifications %>
+                            <% include ../layout/sidebar_alerts %>
+                                <section class="main-content nopadding">
+                                    <div class="grid-container grid-container--footer grid-container--2col grid-container--no-padd">
 
-                    <% include ../layout/menu_aside %>
-                    <div class="grid-col grid-col--container">
-                        <div class="menu-mobile-settings--box">
-                            <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
+                                        <% include ../layout/menu_aside %>
+                                            <div class="grid-col grid-col--container">
+                                                <div class="menu-mobile-settings--box">
+                                                    <select class="menu-mobile-settings" data-selectAR--search="true" name="select">
                             </select>
-                        </div>
-                        <script type="text/x-template" id="tree-item">
-                            <li class="acl-node" v-bind:class="{'acl-node--open': model.open, 'acl-node--disabled': model.disabled }">
-                                <div class="acl-node__input">
-                                    <div class="acl-node__arrow mdl-js-button mdl-js-ripple-effect" @click="toggleOpenNode" v-if="model.children">
-                                        <i class="zmdi zmdi-chevron-right"></i>
-                                    </div>                                    
-                                    <input class="acl-checkbox" v-bind:class="{'acl-checkbox--indeterminate': model.indeterminate}" type="checkbox" :name="model.saveName" :id="model.saveName" :disabled="model.disabled" v-model="model.checked">
-                                    <label class="acl-node__label mdl-js-button mdl-js-ripple-effect" :for="model.saveName" @click="openChildren"></label>
-                                </div>
-                                <div class="acl-node__content">
-                                    <div class="acl-node__header" @click="model.checked = !model.checked">
-                                        <div class="acl-node__title">{{model.name}} - {{childCounter}} - {{model.indeterminate}}</div>
-                                        <p class="acl-node__description">{{model.description}}</p>
-                                    </div>                                         
-                                    <ul class="acl-node__list" v-show="model.open" v-if="model.children">
-                                        <tree-item @updateParent="updateChildCounter" :parentCheckbox="checkboxValue"  v-for="model in model.children" :key="model" :model="model">
-                                        </tree-item>
-                                    </ul>
-                                </div>
+                                                </div>
+                                                <script type="text/x-template" id="tree-item">
+                                                    <li class="acl-node" v-bind:class="{'acl-node--open': model.open, 'acl-node--disabled': model.disabled }">
+                                                        <div class="acl-node__input">
+                                                            <div class="acl-node__arrow mdl-js-button mdl-js-ripple-effect" @click="toggleOpenNode" v-if="model.children">
+                                                                <i class="zmdi zmdi-chevron-right"></i>
+                                                            </div>
+                                                            <input class="acl-checkbox" v-bind:class="{'acl-checkbox--indeterminate': model.indeterminate}" type="checkbox" :name="model.saveName"
+                                                                :id="model.saveName" :disabled="model.disabled" v-model="model.checked">
+                                                            <label class="acl-node__label mdl-js-button mdl-js-ripple-effect" :for="model.saveName" @click="openChildren"></label>
+                                                        </div>
+                                                        <div class="acl-node__content">
+                                                            <div class="acl-node__header" @click="model.checked = !model.checked">
+                                                                <div class="acl-node__title">{{model.name}} - {{childCounter}} - {{model.indeterminate}}</div>
+                                                                <p class="acl-node__description">{{model.description}}</p>
+                                                            </div>
+                                                            <ul class="acl-node__list" v-show="model.open" v-if="model.children">
+                                                                <tree-item @updateParent="updateChildCounter" :parentCheckbox="checkboxValue" v-for="model in model.children" :key="model"
+                                                                    :model="model">
+                                                                </tree-item>
+                                                            </ul>
+                                                        </div>
 
-                            </li>
-                        </script>
-                        <section class="acl-container">
-                            <form>
-                                <div class="acl-container__header">
-                                    <div class="ddown mr-24">
-                                        <div id="load-configuration" class="ddown__init btn--dropdown btn btn--md btn--default mdl-js-button mdl-js-ripple-effect" >Load Configuration
-                                            <div class="input-field">
-                                                <select name="select select--arrow" data-flag-select--search data-url="#">
+                                                    </li>
+                                                </script>
+                                                <section class="acl-container">
+                                                    <form>
+                                                        <div class="acl-container__header">
+                                                            <div class="ddown mr-24">
+                                                                <div id="load-configuration" class="ddown__init btn--dropdown btn btn--md btn--default mdl-js-button mdl-js-ripple-effect">Load Configuration
+                                                                    <div class="input-field">
+                                                                        <select name="select select--arrow" data-flag-select--search data-url="#">
                                                     <option value="124124" selected><span class="flag-icon flag-icon-pl"></span> Twoja stara templejt</option>
                                                     <option value="aSDafd">Admin</option>
                                                     <option value="fa34wf4e3">Developer</option>
                                                     <option value="asdasdas">Test</option>
                                                 </select>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="acl-container__body">
+                                                            <div id="acl" class="acl" data-url="http://192.168.1.218/wojtek/_src/js/components/acl/acl.json">
+                                                                <ul>
+                                                                    <tree-item :model="model" v-for="model in tree.children" :key="tree.name">
+                                                                    </tree-item>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <% include ../layout/app_footer %>
+                                                    </form>
+                                                </section>
                                             </div>
-
-                                        </div>
-
                                     </div>
-                                </div>
-                                <div class="acl-container__body" >
-                                        <div id="acl" class="acl" data-url="http://192.168.1.218/wojtek/_src/js/components/acl/acl.json">
-                                            <ul>
-                                                <tree-item :model="model" v-for="model in tree.children" :key="tree.name">
-                                                </tree-item>
-                                            </ul>
-                                        </div>
-                                </div>
-                                <% include ../layout/app_footer %>
-                            </form>
-                        </section>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-<% include ../layout/js_files %>   
-<% include ../layout/js_files %>
+                                </section>
+            </div>
+            </div>
+            <% include ../layout/js_files %>
+                <% include ../layout/js_files %>
 </body>
+
 </html>

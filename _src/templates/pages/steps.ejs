@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Antares Steps Page</title>
-    <% include ../layout/color_template %> 
-    <% include ../layout/css_files %>
+    <% include ../layout/color_template %>
+        <% include ../layout/css_files %>
 
 </head>
+
 <body>
-<div id="app-wrapper">
-    <% include ../layout/main_menu_html %>
-    <div class="app-content page-create">
-        <% var breadData= 'Steps Page'; %>
-        <% include ../layout/mainhead %> 
-        <% include ../layout/sidebar_notifications %>
-        <% include ../layout/sidebar_alerts %>
-        <section class="main-content nopadding">
-            <div class="grid-container grid-container--2col grid-container--no-padd">
-                <div class="grid-col grid-col--menu">
-                    <div class="menu-aside-container">
-                        <ul class="menu-aside menu-aside--steps">
-                            <li class="is-complete">
-                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+    <% include ../layout/app_wrapper_start_tag %>
+        <% include ../layout/main_menu_html %>
+            <div class="app-content page-create">
+                <% var breadData= 'Steps Page'; %>
+                    <% include ../layout/mainhead %>
+                        <% include ../layout/sidebar_notifications %>
+                            <% include ../layout/sidebar_alerts %>
+                                <section class="main-content nopadding">
+                                    <div class="grid-container grid-container--2col grid-container--no-padd">
+                                        <div class="grid-col grid-col--menu">
+                                            <div class="menu-aside-container">
+                                                <ul class="menu-aside menu-aside--steps">
+                                                    <li class="is-complete">
+                                                        <a href="#" class="mdl-js-button mdl-js-ripple-effect">
                                     <span class="step-indicator"><span>1</span></span><span>Group Settings</span>
                                 </a>
-                            </li>
-                            <li class="is-active">
-                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                                    </li>
+                                                    <li class="is-active">
+                                                        <a href="#" class="mdl-js-button mdl-js-ripple-effect">
                                     <span class="step-indicator"><span>2</span></span><span>Users</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mdl-js-button mdl-js-ripple-effect">
                                     <span class="step-indicator"><span>3</span></span><span>Synchronization</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="mdl-js-button mdl-js-ripple-effect">
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mdl-js-button mdl-js-ripple-effect">
                                     <span class="step-indicator"><span>4</span></span><span>Summary</span>
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="grid-col grid-col--container">
-                    <div class="menu-mobile-settings--box">
-                        <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid-col grid-col--container">
+                                            <div class="menu-mobile-settings--box">
+                                                <select class="menu-mobile-settings" data-selectAR--search="true" name="select">
                         </select>
-                    </div>
-                    <section data-lorem>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
-                    <% include ../layout/app_footer %>
-                </div>
+                                            </div>
+                                            <section data-lorem>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                                sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+                                                dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                                officia deserunt mollit anim id est laborum.</section>
+                                            <% include ../layout/app_footer %>
+                                        </div>
+                                    </div>
+                                </section>
             </div>
-        </section>
-    </div>
-</div>
+            </div>
 
-<% include ../layout/js_files %>  
+            <% include ../layout/js_files %>
 </body>
+
 </html>

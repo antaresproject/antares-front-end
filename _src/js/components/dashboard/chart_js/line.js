@@ -10,7 +10,7 @@ export default Line.extend({
     'background',
     'borderLineColor',
     'nTwoBackground',
-    'nTwoBorderLineColor',
+    'nTwoBorderLineColor'
   ],
   mounted() {
     let self = this;
@@ -29,6 +29,7 @@ export default Line.extend({
     if (self.quantityLines === '1') {
       infoTable = {
         // labels: self.bottomBar,
+        labels: quantityColumnsArray,
         datasets: [
           {
             backgroundColor: self.background,
@@ -36,9 +37,9 @@ export default Line.extend({
             borderWidth: 1,
             data: quantityRandom,
             pointBackgroundColor: 'transparent',
-            pointBorderColor: 'transparent',
-          },
-        ],
+            pointBorderColor: 'transparent'
+          }
+        ]
       };
     } else if (self.quantityLines === '2') {
       infoTable = {
@@ -50,7 +51,7 @@ export default Line.extend({
             borderWidth: 1,
             data: quantityRandom,
             pointBackgroundColor: 'transparent',
-            pointBorderColor: 'transparent',
+            pointBorderColor: 'transparent'
           },
           {
             backgroundColor: self.nTwoBackground,
@@ -58,9 +59,9 @@ export default Line.extend({
             borderWidth: 1,
             data: quantityRandom2,
             pointBackgroundColor: 'transparent',
-            pointBorderColor: 'transparent',
-          },
-        ],
+            pointBorderColor: 'transparent'
+          }
+        ]
       };
     }
     self.renderChart(
@@ -79,17 +80,17 @@ export default Line.extend({
                 beginAtZero: false,
                 callback: function(label) {
                   return label + ' $';
-                },
-              },
-            },
+                }
+              }
+            }
           ],
           xAxes: [
             {
-              display: false,
-            },
-          ],
-        },
-      }, // options end
+              display: false
+            }
+          ]
+        }
+      } // options end
     );
-  },
+  }
 });

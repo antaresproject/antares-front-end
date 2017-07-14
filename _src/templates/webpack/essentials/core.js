@@ -13,7 +13,9 @@ import './../../../js/antares_mechanics';
 import './../../../js/components/dropdowns/ddown_single';
 import './../../../js/components/dropdowns/ddown_multi';
 import '../../../js/components/main_menu/main_menu_html';
-// import './../../../js/components/auto_complete/auto_complete';
+
+import './../../../js/components/auto_complete/auto_complete';
+import './../../../js/components/browser_hooks/browser_hooks';
 // import './../../../js/components/main_menu/main_menu_old';
 
 //moved to forms_basic partial

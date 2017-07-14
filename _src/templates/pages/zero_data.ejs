@@ -6,27 +6,28 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Zero Data</title>
     <% include ../layout/color_template %>
-    <% include ../layout/css_files %>
+        <% include ../layout/css_files %>
 </head>
 
 <body>
-    <div id="app-wrapper">
+    <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
             <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
             <div class="app-content page-dashboard">
                 <% include ../layout/card_bar %>
-                <% var breadData= 'Zero Data'; %>
-                <% include ../layout/mainhead %>
-                <% include ../layout/sidebar_notifications %>
-                <% include ../layout/sidebar_alerts %>
-                <div class="main-content">
-                    <div class="grid-stack" style="opacity:0;">
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="14" data-gs-min-width="2" data-gs-min-height="14">
-                            <div class="grid-stack-item-content">
-                                <% include ../layout/widget_edit %>
-                                <div class="card card--clean card--zd">
-                                    <div class="card__header">
-                                        <div class="card__header--left">Zero Data - <span>Extra Small</div>
+                    <% var breadData= 'Zero Data'; %>
+                        <% include ../layout/mainhead %>
+                            <% include ../layout/sidebar_notifications %>
+                                <% include ../layout/sidebar_alerts %>
+                                    <div class="main-content">
+                                        <div class="grid-stack" style="opacity:0;">
+                                            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="14"
+                                                data-gs-min-width="2" data-gs-min-height="14">
+                                                <div class="grid-stack-item-content">
+                                                    <% include ../layout/widget_edit %>
+                                                        <div class="card card--clean card--zd">
+                                                            <div class="card__header">
+                                                                <div class="card__header--left">Zero Data - <span>Extra Small</div>
                                     </div>
                                     <div class="card__content">
                                         <div class="zd zd--xs">

@@ -7,10 +7,14 @@
         </a>
     </div>
     <ul class="breadcrumbs">
-         <li class=""><a href="#">Dashboard</a></li> 
+        <li class=""><a href="#">Dashboard</a></li>
         <li>
             <div class="ddown">
-                <div class="ddown__init ddown__init--white"><a href="#"><%= breadData %></a></div>
+                <div class="ddown__init ddown__init--white">
+                    <a href="#">
+                        <%= breadData %>
+                    </a>
+                </div>
                 <div class="ddown__content">
                     <div class="ddown__arrow"></div>
                     <ul class="ddown__menu">
@@ -43,23 +47,23 @@
         <input type="hidden" name="_protection" value="" class="search-protection">
         <form action="#">
             <!--<div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield">-->
-                <!--<input class="mdl-textfield__input search-box__search-field" type="text" id="main-search" autocomplete>-->
-                <!--<label class="mdl-textfield__label" for="#main-search">Search...</label>-->
+            <!--<input class="mdl-textfield__input search-box__search-field" type="text" id="main-search" autocomplete>-->
+            <!--<label class="mdl-textfield__label" for="#main-search">Search...</label>-->
             <!--</div>-->
             <div class="search-box__mdl-textfiel mdl-textfield mdl-textfield--AR mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input search-box__search-field" type="text" name="sample-valmd1" id="sample3">
-                <label class="mdl-textfield__label" for="sample3">Search...</label>
+                <input class="mdl-textfield__input search-box__search-field" type="text" name="main-search" id="main-search">
+                <label class="mdl-textfield__label" for="main-search">Search...</label>
             </div>
         </form>
         <i class="search-box__close zmdi zmdi-close mr16 "></i>
     </div>
     <div class="item-grp item-grp--40 mr16">
         <div class="item-grp-single" data-tooltip-inline="Widget Edit Toggle">
-            <div class="mdl-js-button mdl-js-ripple-effect widget-edit" id="widgets-edit" >
+            <div class="mdl-js-button mdl-js-ripple-effect widget-edit" id="widgets-edit">
                 <i class="icon--widgets-edit "></i>
             </div>
         </div>
-        <div class="item-grp-single"  data-tooltip-inline="Notifications" data-tooltip-my-position="top left" data-tooltip-target-position="bottom right">
+        <div class="item-grp-single" data-tooltip-inline="Notifications" data-tooltip-my-position="top left" data-tooltip-target-position="bottom right">
             <span class="badge badge--top-right badge--md badge--green">5</span>
             <div class="mdl-js-button mdl-js-ripple-effect" id="main-notifications">
                 <div class="main-head__alerts"><i class="icon--alert"></i></div>

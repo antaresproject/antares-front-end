@@ -190,9 +190,7 @@
     #app-wrapper .card.card--news .card__footer {
         z-index: 12;
     }
-    .card.card--news .card__info{
-        background: transparent;
-    }
+
     .card-container--news .slick-initialized .slick-slide{
         background: transparent;
     }

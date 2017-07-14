@@ -5,170 +5,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Antares Brand Settings</title>
-    <% include ../layout/color_template %> 
-    <% include ../layout/css_files %>
+    <% include ../layout/color_template %>
+        <% include ../layout/css_files %>
 </head>
 
 <body>
-    <div id="app-wrapper">
+    <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
-        <div class="app-content page-brand-settings">
-            <% var breadData= 'Brand Settings'; %>
-            <% include ../layout/mainhead %> 
-            <% include ../layout/sidebar_notifications %>
-            <% include ../layout/sidebar_alerts %>
-            <section class="main-content nopadding">
-                <div class="grid-container grid-container--footer grid-container--2col grid-container--no-padd">
-                    <% include ../layout/menu_aside %>
-                    <div class="grid-col grid-col--container">
-                        <div class="menu-mobile-settings--box">
-                            <select class="menu-mobile-settings" data-selectAR--search="true" name="select" data-selectivity-no-search="true">
-                            </select>
-                        </div>
-                        <section class="generals-form">
-                            <form id="14" class="form-validation" method="post" action="">
-                                <div class="col-group">
-                                    <div class="col-dt-8">
-                                        <fieldset name="inputs">
-                                            <legend>Brand Info</legend>
-                                            <div class="col-group">
-                                                <div class="form-block">
-                                                    <div class="col-16 mb2">
-                                                        <label class="form-block__name">Brand Name</label>
-                                                    </div>
-                                                    <div class="col-16">
-                                                        <div class="input-field">
-                                                            <input type="text" name="Text" placeholder="Brand Name" required>
-                                                        </div>
-                                                    </div>
+            <div class="app-content page-brand-settings">
+                <% var breadData= 'Brand Settings'; %>
+                    <% include ../layout/mainhead %>
+                        <% include ../layout/sidebar_notifications %>
+                            <% include ../layout/sidebar_alerts %>
+                                <section class="main-content nopadding">
+                                    <div class="grid-container grid-container--footer grid-container--2col grid-container--no-padd">
+                                        <% include ../layout/menu_aside %>
+                                            <div class="grid-col grid-col--container">
+                                                <div class="menu-mobile-settings--box">
+                                                    <select class="menu-mobile-settings" data-selectAR--search="true" name="select"></select>
                                                 </div>
-                                                <div class="form-block">
-                                                    <div class="col-16 mb2">
-                                                        <label class="form-block__name">Brand URL</label>
-                                                    </div>
-                                                    <div class="col-16">
-                                                        <div class="input-field">
-                                                            <input type="text" name="Text" placeholder="Brand URL" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-block">
-                                                    <div class="col-16 mb2">
-                                                        <label class="form-block__name">Date Format</label>
-                                                    </div>
-                                                    <div class="col-16">
-                                                        <select name="date-format" data-selectAR="true" required>
+                                                <section class="generals-form">
+                                                    <form id="14" class="form-validation" method="post" action="">
+                                                        <div class="col-group">
+                                                            <div class="col-dt-8">
+                                                                <fieldset name="inputs">
+                                                                    <legend>Brand Info</legend>
+                                                                    <div class="col-group">
+                                                                        <div class="form-block">
+                                                                            <div class="col-16 mb2">
+                                                                                <label class="form-block__name">Brand Name</label>
+                                                                            </div>
+                                                                            <div class="col-16">
+                                                                                <div class="input-field">
+                                                                                    <input type="text" name="Text" placeholder="Brand Name" required>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-block">
+                                                                            <div class="col-16 mb2">
+                                                                                <label class="form-block__name">Brand URL</label>
+                                                                            </div>
+                                                                            <div class="col-16">
+                                                                                <div class="input-field">
+                                                                                    <input type="text" name="Text" placeholder="Brand URL" required>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-block">
+                                                                            <div class="col-16 mb2">
+                                                                                <label class="form-block__name">Date Format</label>
+                                                                            </div>
+                                                                            <div class="col-16">
+                                                                                <select name="date-format" data-selectAR="true" required>
                                                             <option value="04/20/2016">04/20/2016</option>
                                                             <option value="20/04/2016">20/04/2016</option>
                                                             <option value="2016/20/04">2016/20/04</option>
                                                         </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-block">
-                                                    <div class="col-16 mb2">
-                                                        <label class="form-block__name">Default Country</label>
-                                                    </div>
-                                                    <div class="col-16" >
-                                                        <div class="input-field input-field--icon">
-                                                            <span class="input-field__icon">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-block">
+                                                                            <div class="col-16 mb2">
+                                                                                <label class="form-block__name">Default Country</label>
+                                                                            </div>
+                                                                            <div class="col-16">
+                                                                                <div class="input-field input-field--icon">
+                                                                                    <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
-                                                            </span>
-                                                            <select name="default-country" data-flag-select--search required>
+                                                                                    </span>
+                                                                                    <select name="default-country" data-flag-select--search required>
                                                                 <option data-country="us">United States of America</option>
                                                                 <option data-country="pl" selected>Poland</option>
                                                                 <option data-country="it">Italy</option>
                                                                 <option data-country="gb">United Kingdom</option>
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-block">
-                                                    <div class="col-16 mb2">
-                                                        <label class="form-block__name">Default Country</label>
-                                                    </div>
-                                                    <div class="col-16" >
-                                                        <div class="input-field input-field--icon">
-                                                            <span class="input-field__icon">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-block">
+                                                                            <div class="col-16 mb2">
+                                                                                <label class="form-block__name">Default Country</label>
+                                                                            </div>
+                                                                            <div class="col-16">
+                                                                                <div class="input-field input-field--icon">
+                                                                                    <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
-                                                            </span>
-                                                            <select name="default-country" data-flag-select required>
+                                                                                    </span>
+                                                                                    <select name="default-country" data-flag-select required>
                                                                 <option data-country="us">United States of America</option>
                                                                 <option data-country="pl" selected>Poland</option>
                                                                 <option data-country="it">Italy</option>
                                                                 <option data-country="gb">United Kingdom</option>
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-block">
-                                                    <div class="col-16 mb2">
-                                                        <label class="form-block__name">Default Language</label>
-                                                    </div>
-                                                    <div class="col-16">
-                                                        <div class="input-field input-field--icon">
-                                                            <span class="input-field__icon">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-block">
+                                                                            <div class="col-16 mb2">
+                                                                                <label class="form-block__name">Default Language</label>
+                                                                            </div>
+                                                                            <div class="col-16">
+                                                                                <div class="input-field input-field--icon">
+                                                                                    <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
-                                                            </span>
-                                                            <select data-flag-select name="default-language" data-selectAR="true" required>
+                                                                                    </span>
+                                                                                    <select data-flag-select name="default-language" data-selectAR="true" required>
                                                                 <option data-country="us">United States of America - English US</option>
                                                                 <option data-country="pl" selected>Poland - Polish</option>
                                                                 <option data-country="it">Italy - Italian</option>
                                                                 <option data-country="gb">United Kingdom - English UK</option>
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-block">
-                                                    <div class="col-group">
-                                                    <div class="col-13 mb2">
-                                                        <label class="form-block__name p0">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-block">
+                                                                            <div class="col-group">
+                                                                                <div class="col-13 mb2">
+                                                                                    <label class="form-block__name p0">
                                                             <span>Maintenance Mode</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-mobile="true"></i>
+                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true" data-tooltip-mobile="true"></i>
                                                             <div class="tooltip-content">
                                                                 <p>Enable Maintenance Mode</p>
                                                             </div>
                                                         </label>
-                                                    </div>
-                                                    <div class="col-3 mb2">
-                                                        <div class="input-field input-field--short ml-auto">
-                                                            <label class="switch">
+                                                                                </div>
+                                                                                <div class="col-3 mb2">
+                                                                                    <div class="input-field input-field--short ml-auto">
+                                                                                        <label class="switch">
                                                                 <input class="switch-checkbox" name="switch" type="checkbox" required="" aria-required="true">
                                                                 <div class="switch-container">
                                                                     <div class="switch-handle"></div>
                                                                 </div>
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-dt-7 col-dt-offset-1">
-                                        <fieldset name="BrandLogo">
-                                            <legend>Brand Logo</legend>
-                                            <div class="col-group">
-                                                <div class="col-10">
-                                                    <div class="form-block">
-                                                        <div class="input-field mb8">
-                                                            <div class="dropzone dropzone-form brand-logo">
-                                                                <div class="dz-message" data-dz-message>
-                                                                    <div class="dz-m__current">
-                                                                        <img src="img/theme/antares/logo/logo_tear.svg" alt="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="dz-m__header">
-                                                                        <i class="zmdi zmdi-wallpaper"></i>
-                                                                    </div>
-                                                                    <div class="dz-m__content">
-                                                                        <span>Drag &amp; drop,</span>
-                                                                        <span>or click to upload</span>
-                                                                    </div>
-                                                                </div>
+                                                                </fieldset>
                                                             </div>
-                                                        </div>
-                                                        <label class="form-block__name p0 mt8">
+                                                            <div class="col-dt-7 col-dt-offset-1">
+                                                                <fieldset name="BrandLogo">
+                                                                    <legend>Brand Logo</legend>
+                                                                    <div class="col-group">
+                                                                        <div class="col-10">
+                                                                            <div class="form-block">
+                                                                                <div class="input-field mb8">
+                                                                                    <div class="dropzone dropzone-form brand-logo">
+                                                                                        <div class="dz-message" data-dz-message>
+                                                                                            <div class="dz-m__current">
+                                                                                                <img src="img/theme/antares/logo/logo_tear.svg" alt="">
+                                                                                            </div>
+                                                                                            <div class="dz-m__header">
+                                                                                                <i class="zmdi zmdi-wallpaper"></i>
+                                                                                            </div>
+                                                                                            <div class="dz-m__content">
+                                                                                                <span>Drag &amp; drop,</span>
+                                                                                                <span>or click to upload</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <label class="form-block__name p0 mt8">
                                                             <span>Logo</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-mobile="true"></i>
+                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true" data-tooltip-mobile="true"></i>
                                                             <div class="tooltip-content">
                                                                 <p>Logo used in the invoices, as well as in the login page.</p>
                                                                 <p class="tooltip__header mt16">Recommended format:</p>
@@ -177,29 +176,29 @@
                                                                 <p>512 px</p>
                                                             </div>
                                                         </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-block">
-                                                        <div class="input-field mb8">
-                                                            <div class="dropzone dropzone-form brand-favicon">
-                                                                <div class="dz-message" data-dz-message>
-                                                                    <div class="dz-m__current">
-                                                                        <img src="img/theme/antares/logo/logo_tear.svg" alt="">
-                                                                    </div>
-                                                                    <div class="dz-m__header">
-                                                                        <i class="zmdi zmdi-wallpaper"></i>
-                                                                    </div>
-                                                                    <div class="dz-m__content">
-                                                                        <span>Drag &amp; drop,</span>
-                                                                        <span>or click to upload</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <label class="form-block__name p0 mt8">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="form-block">
+                                                                                <div class="input-field mb8">
+                                                                                    <div class="dropzone dropzone-form brand-favicon">
+                                                                                        <div class="dz-message" data-dz-message>
+                                                                                            <div class="dz-m__current">
+                                                                                                <img src="img/theme/antares/logo/logo_tear.svg" alt="">
+                                                                                            </div>
+                                                                                            <div class="dz-m__header">
+                                                                                                <i class="zmdi zmdi-wallpaper"></i>
+                                                                                            </div>
+                                                                                            <div class="dz-m__content">
+                                                                                                <span>Drag &amp; drop,</span>
+                                                                                                <span>or click to upload</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <label class="form-block__name p0 mt8">
                                                             <span>Favicon</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip-mobile="true"></i>
+                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true" data-tooltip-mobile="true"></i>
                                                             <div class="tooltip-content">
                                                                 <p>Logo used in the invoices, as well as in the login page.</p>
                                                                 <p class="tooltip__header mt16">Recommended format:</p>
@@ -208,144 +207,145 @@
                                                                 <p>310x310 px</p>
                                                             </div>
                                                         </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset name="color-inputs">
-                                            <legend>Brand Colors</legend>
-                                            <div class="color-pickers">
-                                                <div class="col-group">
-                                                    <div class="col-16">
-                                                        <div class="cp-row mb16">
-                                                            <div class="cp-brand cp-brand--primary mr16">
-                                                                <div class="cp-brand__preview">
-                                                                    <div class="cp-brand__ar-big"></div>
-                                                                    <span class="cp-brand__title">Main</span>
-                                                                    <!-- <span class="cp-brand__hex">#02A8F3</span> -->
-                                                                    <input type="text" class="cp" name="hex-input" value="#02A8F3" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                                <div class="cp-brand__pallete ">
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="cp-brand cp-brand--secondary mr16">
-                                                                <div class="cp-brand__preview">
-                                                                    <div class="cp-brand__ar-big"></div>
-                                                                    <span class="cp-brand__title">Secondary</span>
-                                                                    <!-- <span class="cp-brand__hex">#2d353d</span> -->
-                                                                    <input type="text" class="cp" name="hex-input" value="#30343d" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                                <div class="cp-brand__pallete">
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="cp-brand cp-brand--tetriary">
-                                                                <div class="cp-brand__preview">
-                                                                    <div class="cp-brand__ar-big"></div>
-                                                                    <span class="cp-brand__title">Background</span>
-                                                                    <!-- <span class="cp-brand__hex">#e4e6eb</span> -->
-                                                                    <input type="text" class="cp" name="hex-input" value="#70c24a" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                                <div class="cp-brand__pallete">
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                    <div class="cp-brand__sgl"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-group">
-                                                    <div class="col-16">
-                                                        <div class="cp-row">
-                                                            <!-- FIRST -->
-                                                            <div class="cp-brand cp-brand--typo cp-brand--primary mr16">
-                                                                <div class="cp-brand__preview">
-                                                                    <span class="cp-brand__big">Aa</span>
-                                                                    <div class="cp-brand__picker">
-                                                                        <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
-                                                                        <input type="hidden" class="color-saver" id="brand-c1" name="brand-c1">
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <input type="text" class="cp" name="hex-input" value="#050505" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                    <!-- <span class="cp-brand__small">AaBbCc</span> -->
-                                                                </div>
-                                                                <div class="cp-brand__preview">
-                                                                    <span class="cp-brand__big">Aa</span>
-                                                                    <div class="cp-brand__picker">
-                                                                        <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
-                                                                        <input type="hidden" class="color-saver" id="brand-c2" name="brand-c2">
+                                                                </fieldset>
+                                                                <fieldset name="color-inputs">
+                                                                    <legend>Brand Colors</legend>
+                                                                    <div class="color-pickers">
+                                                                        <div class="col-group">
+                                                                            <div class="col-16">
+                                                                                <div class="cp-row mb16">
+                                                                                    <div class="cp-brand cp-brand--primary mr16">
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <div class="cp-brand__ar-big"></div>
+                                                                                            <span class="cp-brand__title">Main</span>
+                                                                                            <!-- <span class="cp-brand__hex">#02A8F3</span> -->
+                                                                                            <input type="text" class="cp" name="hex-input" value="#02A8F3" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                        <div class="cp-brand__pallete ">
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="cp-brand cp-brand--secondary mr16">
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <div class="cp-brand__ar-big"></div>
+                                                                                            <span class="cp-brand__title">Secondary</span>
+                                                                                            <!-- <span class="cp-brand__hex">#2d353d</span> -->
+                                                                                            <input type="text" class="cp" name="hex-input" value="#30343d" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                        <div class="cp-brand__pallete">
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="cp-brand cp-brand--tetriary">
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <div class="cp-brand__ar-big"></div>
+                                                                                            <span class="cp-brand__title">Background</span>
+                                                                                            <!-- <span class="cp-brand__hex">#e4e6eb</span> -->
+                                                                                            <input type="text" class="cp" name="hex-input" value="#70c24a" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                        <div class="cp-brand__pallete">
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                            <div class="cp-brand__sgl"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-group">
+                                                                            <div class="col-16">
+                                                                                <div class="cp-row">
+                                                                                    <!-- FIRST -->
+                                                                                    <div class="cp-brand cp-brand--typo cp-brand--primary mr16">
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <span class="cp-brand__big">Aa</span>
+                                                                                            <div class="cp-brand__picker">
+                                                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
+                                                                                                <input type="hidden" class="color-saver" id="brand-c1" name="brand-c1">
+                                                                                            </div>
+                                                                                            <input type="text" class="cp" name="hex-input" value="#050505" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <!-- <span class="cp-brand__small">AaBbCc</span> -->
+                                                                                        </div>
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <span class="cp-brand__big">Aa</span>
+                                                                                            <div class="cp-brand__picker">
+                                                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
+                                                                                                <input type="hidden" class="color-saver" id="brand-c2" name="brand-c2">
+                                                                                            </div>
+                                                                                            <input type="text" class="cp" name="hex-input" value="#084700" data-tooltip-text="Hex is incorrect" maxlength="7">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- SECOND -->
+                                                                                    <div class="cp-brand cp-brand--typo cp-brand--secondary mr16">
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <span class="cp-brand__big">Aa</span>
+                                                                                            <div class="cp-brand__picker">
+                                                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
+                                                                                                <input type="hidden" class="color-saver" id="brand-c3" name="brand-c3">
+                                                                                            </div>
+                                                                                            <input type="text" class="cp" name="hex-input" value="#fafafa" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <span class="cp-brand__big">Aa</span>
+                                                                                            <div class="cp-brand__picker">
+                                                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
+                                                                                                <input type="hidden" class="color-saver" id="brand-c4" name="brand-c4">
+                                                                                            </div>
+                                                                                            <input type="text" class="cp" name="hex-input" value="#7a0000" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- THIRD -->
+                                                                                    <div class="cp-brand cp-brand--typo cp-brand--tetriary">
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <span class="cp-brand__big">Aa</span>
+                                                                                            <div class="cp-brand__picker">
+                                                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
+                                                                                                <input type="hidden" class="color-saver" id="brand-c5" name="brand-c5">
+                                                                                            </div>
+                                                                                            <input type="text" class="cp" name="hex-input" value="#940000" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                        <div class="cp-brand__preview">
+                                                                                            <span class="cp-brand__big">Aa</span>
+                                                                                            <div class="cp-brand__picker">
+                                                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
+                                                                                                <input type="hidden" class="color-saver" id="brand-c6" name="brand-c6">
+                                                                                            </div>
+                                                                                            <input type="text" class="cp" name="hex-input" value="#f88888" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <input type="text" class="cp" name="hex-input" value="#084700" data-tooltip-text="Hex is incorrect" maxlength="7">
-                                                                </div>
+                                                                </fieldset>
                                                             </div>
-                                                            <!-- SECOND -->
-                                                            <div class="cp-brand cp-brand--typo cp-brand--secondary mr16">
-                                                                <div class="cp-brand__preview">
-                                                                    <span class="cp-brand__big">Aa</span>
-                                                                    <div class="cp-brand__picker">
-                                                                        <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
-                                                                        <input type="hidden" class="color-saver" id="brand-c3" name="brand-c3">
-                                                                    </div>
-                                                                    <input type="text" class="cp" name="hex-input" value="#fafafa" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                                <div class="cp-brand__preview">
-                                                                    <span class="cp-brand__big">Aa</span>
-                                                                    <div class="cp-brand__picker">
-                                                                        <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
-                                                                        <input type="hidden" class="color-saver" id="brand-c4" name="brand-c4">
-                                                                    </div>
-                                                                    <input type="text" class="cp" name="hex-input" value="#7a0000" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                            </div>
-                                                            <!-- THIRD -->
-                                                            <div class="cp-brand cp-brand--typo cp-brand--tetriary">
-                                                                <div class="cp-brand__preview">
-                                                                    <span class="cp-brand__big">Aa</span>
-                                                                    <div class="cp-brand__picker">
-                                                                        <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
-                                                                        <input type="hidden" class="color-saver" id="brand-c5" name="brand-c5">
-                                                                    </div>
-                                                                    <input type="text" class="cp" name="hex-input" value="#940000" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                                <div class="cp-brand__preview">
-                                                                    <span class="cp-brand__big">Aa</span>
-                                                                    <div class="cp-brand__picker">
-                                                                        <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
-                                                                        <input type="hidden" class="color-saver" id="brand-c6" name="brand-c6">
-                                                                    </div>
-                                                                    <input type="text" class="cp" name="hex-input" value="#f88888" maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-dt-16">
-                                        <div class="app-content__footer">
-                                            <div class="btn-group">
-                                                <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
-                                                <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+                                                            <div class="col-dt-16">
+                                                                <div class="app-content__footer">
+                                                                    <div class="btn-group">
+                                                                        <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
+                                                                        <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
 
-                                                <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset all</button>
+                                                                        <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset all</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </section>
                                             </div>
-                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                        </section>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-        
-<% include ../layout/js_files %>  </body>
+                                </section>
+            </div>
+            </div>
+
+            <% include ../layout/js_files %>
+</body>
 
 </html>

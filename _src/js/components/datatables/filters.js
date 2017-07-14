@@ -47,6 +47,7 @@ const AntaresDatatablesFilters = {
       step: 1,
       numberFormat: 'C',
       spin: function(event, ui) {
+        // IF YOU TOUCH SPINNER
         var parent = $(this).closest('.ddown__sgl');
         parent
           .find('.filter-spinner--min')
@@ -55,6 +56,13 @@ const AntaresDatatablesFilters = {
             'max',
             parent.find('.filter-spinner--max').attr('aria-valuenow')
           ); // maximum for min spinner
+        parent
+          .find('.filter-spinner--min')
+          .spinner(
+            'option',
+            'min',
+            parent.find('.filter-spinner--min').attr('value')
+          );
         spinnerToSlider(parent);
       }
     });
@@ -73,6 +81,13 @@ const AntaresDatatablesFilters = {
             'min',
             parent.find('.filter-spinner--min').attr('aria-valuenow')
           ); // minimum for max spinner
+        parent
+          .find('.filter-spinner--max')
+          .spinner(
+            'option',
+            'max',
+            parent.find('.filter-spinner--max').attr('value')
+          );
         spinnerToSlider(parent);
       }
     });
@@ -96,13 +111,13 @@ const AntaresDatatablesFilters = {
         var parent = $(this).closest('.ddown__sgl');
 
         var grandParent = $(this).closest('.ddown__content');
-        var dataName = grandParent.attr('data-name');
+        var dataName = grandParent.attr('data-type');
         var dataMin = parseInt(
-          grandParent.attr('data-name', dataName).attr('data-min'),
+          grandParent.attr('data-type', dataName).attr('data-min'),
           10
         );
         var dataMax = parseInt(
-          grandParent.attr('data-name', dataName).attr('data-max'),
+          grandParent.attr('data-type', dataName).attr('data-max'),
           10
         );
         parent.find('.filter-slider').slider('option', 'min', dataMin);
@@ -142,23 +157,23 @@ const AntaresDatatablesFilters = {
   addFilter() {
     var self = this;
 
-    function addTemplate(minVal, maxVal, dataMin, dataMax) {
+    function addTemplate(minVal, maxVal, dataMin, dataMax, tooltipName) {
       $('.card-filter').append(
         '' +
           '<div class="filter">' +
           '<div class="ddown ddown--filter-edit ddown--left mr24">' +
-          '<div data-filter-type="ammount" data-filter-value="$' +
+          '<div data-filter-type="ammount" data-filter-value="' +
           minVal +
-          ' - $' +
+          ' - ' +
           maxVal +
-          '" class="card-filter__sgl ddown__init" data-tooltip-inline="Filter #2"> ' +
-          '<span>$' +
+          '" class="card-filter__sgl ddown__init" data-tooltip-inline="'+tooltipName+'"> ' +
+          '<span>' +
           minVal +
-          ' - $' +
+          ' - ' +
           maxVal +
           '</span> <i class="zmdi zmdi-close filter-close"></i>' +
           '</div>' +
-          '<div class="ddown__content" data-name="services" data-min="' +
+          '<div class="ddown__content" data-type="services" data-min="' +
           dataMin +
           '" data-max="' +
           dataMax +
@@ -206,13 +221,13 @@ const AntaresDatatablesFilters = {
       var maxInp = parseInt(parent.find('.filter-spinner--max').val(), 10);
 
       var grandParent = $(this).closest('.ddown__content');
-      var dataName = grandParent.attr('data-name');
+      var dataName = grandParent.attr('data-type');
       var dataMin = parseInt(
-        grandParent.attr('data-name', dataName).attr('data-min'),
+        grandParent.attr('data-type', dataName).attr('data-min'),
         10
       );
       var dataMax = parseInt(
-        grandParent.attr('data-name', dataName).attr('data-max'),
+        grandParent.attr('data-type', dataName).attr('data-max'),
         10
       );
 
@@ -221,8 +236,10 @@ const AntaresDatatablesFilters = {
         var filterContainer = $(this).closest('.filters').find('.card-filter');
         var parent = $(this).closest('.ddown__sgl'),
           minVal = parent.find('.filter-spinner--min').val(),
-          maxVal = parent.find('.filter-spinner--max').val();
-        var typeAmmount = addTemplate(minVal, maxVal, dataMin, dataMax);
+          maxVal = parent.find('.filter-spinner--max').val(),
+          tooltipName = parent.closest('ul[data-name]').attr('data-name');
+        tooltipName = tooltipName.charAt(0).toUpperCase() + tooltipName.substr(1).toLowerCase(); //first letter big
+          var typeAmmount = addTemplate(minVal, maxVal, dataMin, dataMax, tooltipName);
         filterContainer.prepend(typeAmmount);
         self.values();
         self.editFilter();
@@ -282,11 +299,11 @@ const AntaresDatatablesFilters = {
         var maxInp = parseInt(parent.find('.filter-spinner--max').val(), 10);
         var grandParent = $(this).closest('.ddown__content');
         var dataMin = parseInt(
-          grandParent.attr('data-name', 'services').attr('data-min'),
+          grandParent.attr('data-type', 'services').attr('data-min'),
           10
         );
         var dataMax = parseInt(
-          grandParent.attr('data-name', 'services').attr('data-max'),
+          grandParent.attr('data-type', 'services').attr('data-max'),
           10
         );
         if (maxInp > minInp && minInp > dataMin && maxInp < dataMax) {
@@ -317,11 +334,11 @@ const AntaresDatatablesFilters = {
           $(this)
             .closest('.ddown')
             .find('.card-filter__sgl')
-            .attr('data-filter-value', '$' + minVal + ' - $' + maxVal);
+            .attr('data-filter-value', minVal + ' - ' + maxVal);
           $(this)
             .closest('.ddown')
             .find('.card-filter__sgl span')
-            .text('$' + minVal + ' - $' + maxVal);
+            .text(+minVal + ' - ' + maxVal);
           $(this).closest('.ddown').removeClass('ddown--open');
         } else {
           self.filterAlert('error', parent, minInp, maxInp, dataMin, dataMax);

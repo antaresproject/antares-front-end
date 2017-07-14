@@ -111,8 +111,8 @@ table.dataTable {
     }
   }
   .dataTables_info,
-  // .dataTables_paginate,
-  // .dataTables_length,
+    // .dataTables_paginate,
+    // .dataTables_length,
   .dataTables_filter {
     display: none;
   }
@@ -314,18 +314,21 @@ table {
         padding-bottom: 12px;
       }
     }
+
     .main-content .card .tbl-c table tr td:first-of-type {
       padding-top: 12px;
     }
   }
 }
 
-#app-wrapper .dataTables_wrapper {
-  position: relative !important;
-  padding-right: 8px;
-}
+@media @min1366 {
+  #app-wrapper .dataTables_wrapper {
+    position: relative !important;
+    padding-right: 8px;
+  }
 
-#app-wrapper .card--tabs .dataTables_wrapper {
-  position: relative !important;
-  padding: 0 24px;
+  #app-wrapper .card--tabs .dataTables_wrapper {
+    position: relative !important;
+    padding: 0 24px;
+  }
 }

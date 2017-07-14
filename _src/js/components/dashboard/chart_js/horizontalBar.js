@@ -46,7 +46,7 @@ export default HorizontalBar.extend({
           },
           {
             backgroundColor: self.nTwoBackground,
-            data: quantityRandom,
+            data: quantityRandom2,
             hoverBackgroundColor: self.nTwoHoverBackground,
           },
         ],

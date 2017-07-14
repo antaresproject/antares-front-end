@@ -10,56 +10,56 @@
 </head>
 
 <body>
-    <div id="app-wrapper">
+    <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
-        <!-- DIALOG MODAL | END -->
-        <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-        <div class="app-content page-error page-error--no-logo">
-            <% var breadData= 'Error 400'; %>
-            <% include ../layout/mainhead %>
-            <% include ../layout/sidebar_notifications %>
-            <% include ../layout/sidebar_alerts %>
-                <section class="main-content">
-                    <div class="error-container">
-                        <div class="top-area">
+            <!-- DIALOG MODAL | END -->
+            <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+            <div class="app-content page-error page-error--no-logo">
+                <% var breadData= 'Error 400'; %>
+                    <% include ../layout/mainhead %>
+                        <% include ../layout/sidebar_notifications %>
+                            <% include ../layout/sidebar_alerts %>
+                                <section class="main-content">
+                                    <div class="error-container">
+                                        <div class="top-area">
 
-                            <div class="error-message">
-                                <div class="error-message__bg"></div>
-                                <div class="error-message__text">
-                                    <span class="error-code">400</span>
-                                    <span class="error-desc">Error</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bottom-area">
-                            <div class="error-details">
-                                <h3>Reason</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                                    id est laborum.</p>
-                                <h3>Possible Solution</h3>
-                                <p>Zaorałeś ją na śmierć... Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                    ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
-                                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <div class="btn-group">
-                                    <a href="#" class="go-back btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-long-arrow-left"></i> Back to previous page</a>
-                                    <a href="#" class="open-modal btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Can't solve the problem?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                                            <div class="error-message">
+                                                <div class="error-message__bg"></div>
+                                                <div class="error-message__text">
+                                                    <span class="error-code">400</span>
+                                                    <span class="error-desc">Error</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bottom-area">
+                                            <div class="error-details">
+                                                <h3>Reason</h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                                    id est laborum.</p>
+                                                <h3>Possible Solution</h3>
+                                                <p>Zaorałeś ją na śmierć... Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                                    ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
+                                                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                <div class="btn-group">
+                                                    <a href="#" class="go-back btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-long-arrow-left"></i> Back to previous page</a>
+                                                    <a href="#" class="open-modal btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Can't solve the problem?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
             </div>
-    </div>
+            </div>
 
-    <% include ../layout/error_page_modal %>
-        <% include ../layout/js_files %>
+            <% include ../layout/error_page_modal %>
+                <% include ../layout/js_files %>
 
 </body>
 

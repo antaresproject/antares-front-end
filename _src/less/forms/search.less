@@ -127,8 +127,6 @@
   }
 }
 
-
-
 //modifiers
 //primary on main-head
 .main-head {
@@ -280,7 +278,34 @@
 .search-box {
   form {
     input {
-      font-family: "Roboto", sans-serif ;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+}
+#app-wrapper .main-head{
+  .breadcrumbs{
+    li:first-of-type{
+      opacity: 0.8;
+    }
+    li:nth-child(2){
+      &:before{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+@media only screen and (min-width:768px) and (max-width:1199px) {
+  #app-wrapper {
+    .main-head{
+      .breadcrumbs .ddown__init a{
+        max-width: inherit;
+      }
+    }
+     .main-head .search-box, .main-head .search-box form, .main-head .search-box form .search-box .search-box__mdl-textfield, .main-head .search-box form div {
+      width: auto;
+    }
+    .main-head .search-box form div.mdl-textfield{
+      max-width: 200px;
     }
   }
 }

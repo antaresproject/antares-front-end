@@ -268,6 +268,7 @@
 </template>
 
 <script>
+
     var Velocity = require('./../../external/velocity.js');
     var menuAim = require('./../../external/modified/menu_aim.js');
 
@@ -284,7 +285,6 @@
 
         },
         created() {
-
             var self = this;
             self.dataUrl = $('aside.main-sidebar').attr('data-url');
             // console.log(self.dataUrl);
@@ -298,7 +298,6 @@
 
         },
         mounted: function () {
-
             var self = this;
 
             this.$nextTick(function () {
@@ -821,7 +820,6 @@
 
 
             onReady: function () {
-
                 //VARIABLES
                 var animClass1 = 'animated fadeInLeft',
                     menuToggle = $('.burgericon'),
@@ -993,29 +991,7 @@
     @transition-ripple-off: 400ms;
     @icon-size: 22px;
 
-    /*@media only screen and (min-height: 320px) {*/
-    /*aside.main-sidebar .menu-scroll > ul:last-of-type {*/
-    /*max-height: 100px;*/
-    /*}*/
-    /*}*/
 
-    /*@media only screen and (min-height: 375px) {*/
-    /*aside.main-sidebar .menu-scroll > ul:last-of-type {*/
-    /*max-height: 150px;*/
-    /*}*/
-    /*}*/
-
-    /*@media only screen and (min-height: 414px) {*/
-    /*aside.main-sidebar .menu-scroll > ul:last-of-type {*/
-    /*max-height: 190px;*/
-    /*}*/
-    /*}*/
-
-    /*@media only screen and (min-height: 450px) {*/
-    /*aside.main-sidebar .menu-scroll > ul:last-of-type {*/
-    /*max-height: none;*/
-    /*}*/
-    /*}*/
     @media only screen and (min-height: 320px) and (max-height: 450px) {
         aside.main-sidebar .menu-scroll .main-menu--brand {
 

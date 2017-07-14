@@ -1,78 +1,68 @@
 // BROWSER HOOKS
 // in accompaniment with less/base/disabled_browsers.less
 
-const browserHooks = {
+/* global bowser */
 
-    init() {
+export const browserHooks = {
+  init() {
+    if (window.bowser == null) {
+      console.log('warning! browser detection failed!!!');
+      return false;
+    }
 
-        this.detection();
-        this.edge();
+    this.detection();
+    this.edge();
+  },
 
-    },
+  // methods
+  detection() {
+    const $container = $('html');
 
-    // methods
+    // device
+    if (bowser.mobile) {
+      $container.addClass('is-mobile');
+    }
 
-    detection() {
+    if (bowser.tablet) {
+      $container.addClass('is-tablet');
+    }
 
-        var bowser = require('script-loader!bowser');
+    // browsers
+    if (bowser.chrome) {
+      $container.addClass('is-chrome');
+    }
 
-        let $container = $('html');
+    if (bowser.gecko) {
+      $container.addClass('is-firefox');
+    }
 
-        // device
-        if (bowser.mobile) {
-            $container.addClass('is-mobile');
-        }
+    if (bowser.msie) {
+      $container.addClass('is-ie11');
+    }
 
-        if (bowser.tablet) {
-            $container.addClass('is-tablet');
-        }
+    if (bowser.msedge) {
+      $container.addClass('is-edge');
+    }
 
-        // browsers
-        if (bowser.chrome) {
-            $container.addClass('is-chrome');
-        }
+    // safari
+    if (bowser.mac && bowser.safari) {
+      $container.addClass('is-safari');
+    }
+  },
 
-        if (bowser.gecko) {
-
-            $container.addClass('is-firefox');
-        }
-
-        if (bowser.msie) {
-            $container.addClass('is-ie11');
-        }
-
-        if (bowser.msedge) {
-            $container.addClass('is-edge');
-        }
-
-        //safari
-        if (bowser.mac && bowser.safari) {
-            $('body').addClass('is-safari');
-        }
-
-    },
-
-    edge() {
-
-        // For microsoft edge
-        $('input[type=\'number\']').keypress(function (event) {
-
-            // If this key is not a number...
-            if (event.which < 48 || event.which > 57) {
-                event.preventDefault();
-                return false;
-            }
-        });
-
-    },
-
-
+  edge() {
+    // For microsoft edge
+    $("input[type='number']").keypress(event => {
+      // If this key is not a number...
+      if (event.which < 48 || event.which > 57) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  }
 };
 
-$(function () {
-    window.browserHooks = browserHooks;
-    browserHooks.init();
+$(() => {
+  window.browserHooks = browserHooks;
+  browserHooks.init();
 });
-
-
-

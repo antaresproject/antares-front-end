@@ -23,7 +23,7 @@ window.Pace = pace;
 require('script-loader!jquery');
 require('./../../../js/external/jquery_migrate_3.js');
 require('script-loader!jquery-ui-bundle');
-require('jquery-menu-aim');
+require('jquery.ui.touch');
 require('./../../../js/external/modified/globalize.js');
 var enquire = require('enquire.js');
 window.enquire = enquire;
@@ -40,3 +40,4 @@ require('script-loader!underscore'); // no css
 require('perfect-scrollbar/jquery')($);
 require('./../../../js/external/mdrnzr.js');
 require('jquery-ui-touch-punch');
+require('script-loader!bowser');

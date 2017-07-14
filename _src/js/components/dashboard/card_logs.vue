@@ -28,7 +28,7 @@
                     <!--</div>-->
                     <!--<div class="card-ctrls__right"></div>-->
                 <!--</div>-->
-                <% include ../../../templates/layout/tab_search %>
+                <% include ../../../templates/layout/card_ctrls %>
                 <div class="datarow">
                     <div data-scrollable>
                         <ul class="timeline" >
@@ -321,9 +321,7 @@
     };
 </script>
 <style lang="less">
-    .card--logs .timeline{
-        overflow: hidden;
-    }
+
     .card--logs .timeline__entry {
         padding-right: 8px;
         .timeline__padding {

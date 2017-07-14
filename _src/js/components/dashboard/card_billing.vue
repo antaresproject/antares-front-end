@@ -33,18 +33,9 @@
                     </div>
                 </div>
                 <div class="card__content card__content--chart">
-                    <div :id="chartID" class="chart">
-                        <!-- <line-chart
-                        quantityColumns="12"
-                        borderLineColor="#67c68f"
-                        background="rgba(39,174,96,.3)"
-                        quantityLines="1"
-                        bottomBar="'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'"
-                        ></line-chart> -->
-                    <div :id="chartID" class="chart">
-                        <bar-chart quantityLines="2" quantityColumns="5" background="#ffa726" hoverBackground="#ef9c23" nTwoBackground="#e1e3e6" nTwoHoverBackground="#d4d6d8"></bar-chart>
-                    </div>
-                    </div>
+    <div :id="chartID" class="chart">
+    <line-chart quantityLines="1" quantityColumns="10" background="rgba(39,174,96,.3)" borderLineColor="#67c68f"></line-chart>
+    </div>
                 </div>
             </div>
             <div class="card__right">
@@ -101,7 +92,8 @@ export default {
     name: 'CardBilling',
     components: {
         'card-edit-controls': cardEditControls,
-        'bar-chart': BarChart
+        //        'bar-chart': BarChart
+        'line-chart': LineChart
     },
     data: function () {
         return {
