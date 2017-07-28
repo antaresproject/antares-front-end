@@ -188,6 +188,7 @@
                 </div>
 
             </div>
+
             <div v-if="mm.primaryMenu && mm.secondaryMenu" v-on:click="menuSwitcher()" class="more-trigger"
                  v-bind:class="{ 'is-expanded': mm.menuIconToggle === 'secondary', 'ripple-on-active': mm.rippleOnActive, 'ripple-off-active': mm.rippleOffActive }">
                 <div class="more-trigger__inner">

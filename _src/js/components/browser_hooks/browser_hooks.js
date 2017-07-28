@@ -1,8 +1,3 @@
-// BROWSER HOOKS
-// in accompaniment with less/base/disabled_browsers.less
-
-/* global bowser */
-
 export const browserHooks = {
   init() {
     if (window.bowser == null) {
@@ -17,6 +12,17 @@ export const browserHooks = {
   // methods
   detection() {
     const $container = $('html');
+
+    //system
+      if (bowser.ios) {
+          $container.addClass('is-ios');
+      }
+      if (bowser.android) {
+          $container.addClass('is-android');
+      }
+      if (bowser.windowsphone) {
+          $container.addClass('is-windowsphone');
+      }
 
     // device
     if (bowser.mobile) {

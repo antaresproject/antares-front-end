@@ -1032,7 +1032,8 @@
             updateFromInput(input);
         })
         // Show panel when swatch is clicked
-        .on('mousedown.minicolors touchstart.minicolors', '.minicolors-input-swatch', function(event) {
+        // .on('mousedown.minicolors touchstart.minicolors', '.minicolors-input-swatch', function(event) {
+        .on('mousedown.minicolors touchend.minicolors', '.minicolors-input-swatch', function(event) {
             var input = $(this).parent().find('.minicolors-input');
             event.preventDefault();
             show(input);

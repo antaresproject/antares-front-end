@@ -503,63 +503,108 @@ const AntaresAC = {
             {
                 category: 'contact',
                 content: '<div class="type--contact flex-block"><div class="avatar avatar--active avatar--xs"><img src="img/avatars/avatar_sample_3.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">sucess</span><div class="flex-block__desc">some-adress@domain.com</div></div><div class="flex-block__badge"><span class="label-basic label-basic--success">success</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'contact',
                 content: '<div class="type--contact flex-block"><div class="avatar avatar--active avatar--xs"><img src="img/avatars/avatar_sample_2.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">New Version!</span><div class="flex-block__desc">some-adress@domain.com</div></div><div class="flex-block__badge"><span class="label-basic label-basic--success">success</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'datarow',
                 content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'datarow',
                 content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'datarow',
                 content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
+            },
+            {
+                category: 'datarow',
+                content: '<div class="type--datarow"><div class="datarow__left"><span>3123 anders</span></div><div class="datarow__right"><span>some@adress.com</span></div></div>',
+                url: '#'
             },
             {
                 category: 'datarow',
                 content: '<div class="type--datarow"><div class="datarow__left"><span>asxaxzxvdvszvcxzcv</span></div><div class="datarow__right"><span>some4123@adress.com</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'datarow',
                 content: '<div class="type--datarow"><div class="datarow__left"><span>asdacxxzxvczsdvzscvfdsz</span></div><div class="datarow__right"><span>some123@adress.com</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'file',
                 content: '<div class="type--file flex-block"><div class="avatar avatar--xs"><img src="img/file_icons/icon-pdf.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">andreas</span><div class="flex-block__desc">Some Description</div></div><div class="flex-block__badge"><span class="description">15th of Dec 2016</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'file',
                 content: '<div class="type--file flex-block"><div class="avatar avatar--xs"><img src="img/file_icons/icon-doc.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">Asaasda dasd</span><div class="flex-block__desc">Some Description</div></div><div class="flex-block__badge"><span class="description">15th of Dec 2016</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'label',
                 content: '<div class="type--label"><div class="datarow__left ff-cw contains-id"><span class="id">#1</span><span>andreas</span></div><div class="datarow__right"><span class="label-basic label-basic--pending">Pending</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             },
             {
                 category: 'label',
                 content: '<div class="type--label"><div class="datarow__left ff-cw contains-id"><span class="id">#2</span><span>Aasdasd</span></div><div class="datarow__right"><span class="label-basic label-basic--success">Success</span></div></div>',
-                url: 'https://modulesgarden.com'
+                url: '#'
             }
         ]
     },
 
     updateDOM() {
-        $('body').append("<div class='ac-container'></div>");
+        $('body').append("<div class='ac-container'><div class='ac-container--wrapper'></div></div>");
     },
 
     monkeyPatchAutocomplete() {
@@ -644,7 +689,6 @@ const AntaresAC = {
 
     logic() {
         var self = this;
-
         var searchCache = {};
         var category = null;
         var showAllUrl = '#';
@@ -662,12 +706,15 @@ const AntaresAC = {
                 //     .hide()
                 //     .data("menu"));
             },
+            // _renderItemData: function( ul, item ) {  //if you want not <li>
+            //     return $( "<div>" )
+            //         .data( "item.autocomplete", item )
+            //         .appendTo( ul );
+            // },
 
             _renderMenu: function (ul, items) {
                 var itemsCount = 0;
-                console.log(ul)
                 var that = this;
-                // ul = $('.antares-ac')
                 let currentCategory = '';
                 $(ul).addClass('antares-ac');
                 var categories = [];
@@ -688,11 +735,11 @@ const AntaresAC = {
                         for (var key in self.sampleData.categoryUrls) {
                             if (key.toLowerCase() === item.category.toLowerCase()) {
                                 ul.append(
-                                    "<li class='ui-autocomplete-category'><a href='" +
+                                    "<span class='ui-autocomplete-category'><a href='" +
                                     self.sampleData.categoryUrls[key] +
                                     "'>" +
                                     item.category +
-                                    '</a></li>'
+                                    '</a></span>'
                                 );
                                 currentCategory = item.category;
                             }
@@ -704,9 +751,9 @@ const AntaresAC = {
                             )
                         ) {
                             ul.append(
-                                "<li class='ui-autocomplete-category'>" +
+                                "<span class='ui-autocomplete-category'>" +
                                 item.category +
-                                '</li>'
+                                '</span>'
                             );
                             currentCategory = item.category;
                         }
@@ -746,6 +793,8 @@ const AntaresAC = {
                 //     }
 
                 // }
+
+
             },
 
             focus: function (e, ui) {
@@ -756,7 +805,7 @@ const AntaresAC = {
         $('#main-search').catcomplete({
             delay: 0,
             source: self.sampleData.htmlParse,
-            appendTo: '.ac-container',
+            appendTo: '.ac-container--wrapper',
             autoFocus: true,
             messages: {
                 noResults: '',
@@ -764,9 +813,9 @@ const AntaresAC = {
                 }
             },
             change: function (event, ui) {
-                if (!ui.item) {
-                    $(event.target).val('');
-                }
+                // if (!ui.item) {
+                //     $(event.target).val('');
+                // }
             },
             focus: function (event, ui) {
                 if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
@@ -783,8 +832,25 @@ const AntaresAC = {
             open: function () {
                 $('.antares-ac__footer').removeClass('ui-menu-item');
                 $('.ui-autocomplete-category').prev('li').addClass('last-in-category');
-                $('.ui-autocomplete.antares-ac').perfectScrollbar();
-
+                enquire.register('screen and (min-width: 1367px)', {
+                        match: function () {
+                            $('.ac-container--wrapper').perfectScrollbar();
+                        }
+                    }
+                )
+                setTimeout(function () {
+                    let ulTop = $('.antares-ac').css('top');
+                    let ulLeft = $('.antares-ac').css('left');
+                    // console.log('Top do: '+ulTop)
+                    // console.log('left do: '+ulLeft)
+                    $('.ac-container--wrapper').css('width', $('.antares-ac').css('width'))
+                    $('.ac-container--wrapper').css('left', ulLeft)
+                    $('.ac-container--wrapper').css('top', ulTop)
+                    $('.ac-container--wrapper').css('display', $('.antares-ac').css('display'))
+                    $('.ac-container--wrapper').addClass('ac-open')
+                    // console.log('left after: '+ $('.ac-container--wrapper').css('left'))
+                    // console.log('top after: '+ $('.ac-container--wrapper').css('top'))
+                }, 300);
                 // TEST DATA!!!!!!!
                 // TMP
 
@@ -797,6 +863,13 @@ const AntaresAC = {
                 var parent = $(this).closest('.search-box');
                 var label = parent.find('.mdl-textfield__label');
                 var input = parent.find('#main-search');
+                $('.ac-container--wrapper').css('width', 'auto')
+                $('.ac-container--wrapper').css('left', 'auto')
+                $('.ac-container--wrapper').css('top', 'auto')
+                $('.ac-container--wrapper').css('display', 'none')
+                $('.antares-ac').css('left', 'auto')
+                $('.antares-ac').css('top', 'auto')
+                $('.ac-container--wrapper').removeClass('ac-open')
 
                 if (!input.val()) {
                     label.show();

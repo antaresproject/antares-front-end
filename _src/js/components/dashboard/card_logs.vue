@@ -10,6 +10,11 @@
             </div>
             <div class="card__content  datarow flex ff-cnw jc-flex-start">
 
+
+
+
+
+
                 <!--<div class="card-ctrls">-->
                     <!--<div class="card-ctrls__left">-->
                         <!--<div class="search-box search-box&#45;&#45;dark mr24"><i class="zmdi zmdi-search"></i>-->
@@ -30,7 +35,7 @@
                 <!--</div>-->
                 <% include ../../../templates/layout/card_ctrls %>
                 <div class="datarow">
-                    <div data-scrollable>
+                    <div data-scrollable  class="dataTablesLogs">
                         <ul class="timeline" >
                             <li v-bind:class="{'timeline__entry--ok': log.status === 'ok'}" class="timeline__entry"
                                 v-for="log in logList">
@@ -297,7 +302,7 @@
                 }, {
                     color: c3,
                     status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                    html: '<div> Brand <a href="#">Brand LAST LAST LAST LAST LAST</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
                     tooltipText: 'Brands 11'
                 },],
                 selectFilter: '',

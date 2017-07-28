@@ -44,16 +44,15 @@
             <div class="card__right">
                 <header>
                     <span class="card__title">{{legendTitle}}</span>
-                    <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%
-                        <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
-                    </span>
+                    <span class="card__indicator compare"
+                          v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">
+                        {{ ((value1 / value2) * 100 ).toFixed() }}%
+                            <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
+                        </span>
                     <span class="card__ammount">
                         <strong>{{value1}} </strong>
                         <span class="compare"> / {{value2}}</span>
                     </span>
-                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                        <i class="zmdi zmdi-caret-down"></i>
-                    </div>
                 </header>
                 <ul class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
@@ -111,7 +110,7 @@ export default {
         return {
             cardClass: 'card--chart',
             widgetName: 'card--chart',
-            title: 'Subscriptions',
+            title: 'Subscriptions long long text for check style review',
             legendTitle: 'New Subsribtions',
             value1: 0,
             value2: 0,

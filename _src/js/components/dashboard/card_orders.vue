@@ -47,42 +47,31 @@
             <div class="card__right">
                 <header>
                     <span class="card__title">{{legendTitle}}</span>
-                    <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%
-                        <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': type === 'decline' } "></i>
-                    </span>
+                    <span class="card__indicator compare"
+                          v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">
+                        {{ ((value1 / value2) * 100 ).toFixed() }}%
+                            <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
+                        </span>
                     <span class="card__ammount">
                         <strong>{{value1}} </strong>
                         <span class="compare"> / {{value2}}</span>
                     </span>
-                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                        <i class="zmdi zmdi-caret-down"></i>
-                    </div>
                 </header>
-                <ul class="datarow mobile--toogle-target" data-scrollable>
+                <ul class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
-                    <li v-for="row in datarows" v-bind:key="row" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
-                        <div class="datarow__left">
-                            <span class="datarow__status">{{row.text}}</span>
-                        </div>
-                        <div class="datarow__right">
-                            <span class="datarow__data">
-                                <strong>{{row.value1}}</strong>
-                                <span class="compare">/{{row.value2}}</span>
-                            </span>
-                            <span class="datarow__percentage compare">
-                                <span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%</span>
-                                <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i>
-                            </span>
+                    <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                        <div class="datarow__left"> <span class="datarow__status">{{row.text}}</span> </div>
+                        <div class="datarow__right"> <span class="datarow__data"><strong>{{row.value1}}</strong><span class="compare">/{{row.value2}}</span></span> <span class="datarow__percentage compare"><span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%</span><i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i></span>
                         </div>
                     </li>
                 </ul>
             </div>
     
-            <!-- <div class="mobile-toogle--box">
+           <div class="mobile-toogle--box">
                     <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
                         <i class="zmdi zmdi-caret-down"></i>
                     </div>
-                </div> -->
+                </div>
     
         </div>
     

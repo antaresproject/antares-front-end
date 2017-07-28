@@ -25,7 +25,7 @@ const AntaresTableView = {
         self.dataTablesPaginationButtons();
         this.dataTables();
         this.dataTables0Data();
-
+        this.dataTablesMobileEmailPosition();
         enquire.register('screen and (min-width:767px)', {
             match: function () {
                 self.dataTablesFilterSearch();
@@ -64,6 +64,13 @@ const AntaresTableView = {
         // $('.btn--dropdown:disabled').on('click', function(e) {
         //     e.preventDefault();
         // });
+    },
+    dataTablesScrollTopAfterLength() {
+        $('.dataTables_length, .pagination-current ul').click(function() {
+            $('.dataTables_wrapper.ps-container, .dataTablesLogs.ps-container')
+                .scrollTop(0)
+                .perfectScrollbar('update');
+        });
     },
     dataTablesMultiSelect() {
         //function
@@ -475,11 +482,21 @@ const AntaresTableView = {
         dataTablesOptions.drawCallback();
     },
 
-    dataTablesScrollTopAfterLength(){
-        $('.dataTables_length').click(function () {
-                $('.dataTables_wrapper').perfectScrollbar('update');
+    dataTablesMobileEmailPosition() {
+        $(window).off('resize')
+        function emailPosition() {
+            var lefttab = $('.dataTables_wrapper table .name').offset().left - 8
+            $('.dataTables_wrapper td>a[title="email address"]').css('left', lefttab)
+        }
+        emailPosition()
+        $(window).on('resize', function () {
+            emailPosition()
+        });
+        $('.dataTables_wrapper+.pagination .dataTables_paginate').click(function () {
+            emailPosition()
         })
     }
+
 };
 
 // THESE 2 HAVE TO BE OUTSIDE:

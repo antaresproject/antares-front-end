@@ -21,30 +21,26 @@
 // DEFAULT COMPONENT TEMPLATE
 
 const sampleAntaresComponent = {
+  init() {
+    this.test();
+  },
 
-    init() {
+  // methods
 
-        this.test();
+  test() {
+    alert('thats a test antares component!');
+  },
 
-    },
-
-    // methods
-
-    test() {
-       alert('thats a test antares component!');
-    },
-
-    whenWindowLoadIsNeeded() {
-        console.log('that fires on window Load')
-    }
-
+  whenWindowLoadIsNeeded() {
+    console.log('that fires on window Load');
+  }
 };
 
 $(function() {
-    window.sampleAntaresComponent = sampleAntaresComponent;
-    sampleAntaresComponent.init();
+  window.sampleAntaresComponent = sampleAntaresComponent;
+  sampleAntaresComponent.init();
 });
 
 $(window).on('load', function() {
-    sampleAntaresComponent.whenWindowLoadIsNeeded();
+  sampleAntaresComponent.whenWindowLoadIsNeeded();
 });

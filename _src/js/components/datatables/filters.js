@@ -350,12 +350,10 @@ const AntaresDatatablesFilters = {
   },
   filterAlert(category, parent, minInp, maxInp, dataMin, dataMax) {
     if (
-      (
         minInp === undefined,
         maxInp === undefined,
         dataMin === undefined,
         dataMax === undefined
-      )
     ) {
       minInp = '';
       maxInp = '';

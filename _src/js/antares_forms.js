@@ -46,7 +46,8 @@ const AntaresForms = {
       self.elements.scrollCloseDropdowns(); //only custom code
 
 
-
+      self.elements.urlLocation();
+        self.elements.hideArrowMobileLandscape();
     })();
 
     //MDL reinit
@@ -54,11 +55,65 @@ const AntaresForms = {
   },
 
   helpers() {
+    document.onkeydown = function(e) {
+      //#145
+      var li;
+      var oldScroll;
+      var bottomScroll;
+      if ($('.antares-ac li').hasClass('is-selected')) {
+        li = $('.ac-open .is-selected').height();
+        oldScroll = $('.ac-open .ps-scrollbar-y-rail').css('top');
+        oldScroll = oldScroll.substring(0, oldScroll.length - 2);
+        bottomScroll =
+          $('.ac-container--wrapper ul').height() -
+          $('.ac-container--wrapper').height();
+        console.log(bottomScroll);
+      }
+      switch (e.keyCode) {
+        case 38:
+          if (oldScroll <= 0) {
+            console.log('up if');
+            console.log('START');
+          } else {
+            console.log('up else');
+            var newScroll = parseInt(oldScroll) - li;
+            $('.ac-container--wrapper')
+              .scrollTop(newScroll)
+              .perfectScrollbar('update');
+            console.log(newScroll);
+          }
+          break;
+        case 40:
+          if (oldScroll >= bottomScroll) {
+            console.log('down if');
+            console.log('END');
+          } else {
+            console.log('down else');
+            var newScroll = parseInt(oldScroll) + li;
+            $('.ac-container--wrapper')
+              .scrollTop(newScroll)
+              .perfectScrollbar('update');
+            console.log(newScroll);
+          }
+          break;
+      }
+    };
+
+    enquire.register('screen and (max-width: 1366px)', {
+      //mobile readonly for multiple
+      match: function() {
+        $('select').on('select2:open', function() {
+          $('input').prop('focus', 0);
+        });
+      }
+    });
+
     $(window).on('resize', function() {
       $('select').select2('close');
     });
 
     function menuAsideRWD() {
+      // blue menu
       var mobileMenu = $('.menu-mobile-settings');
       //restrain
       if (!mobileMenu.length) {
@@ -101,6 +156,37 @@ const AntaresForms = {
   },
 
   elements: {
+      hideArrowMobileLandscape(){
+          enquire.register('screen and (max-width: 1366px)', {
+              match: function () {
+                  $('.comiseo-daterangepicker-triggerbutton').bind('click touchstart', function () {
+                      var blockAndTop = $(this).offset().top + $('.comiseo-daterangepicker').height()
+                      var result = $(window).height() - blockAndTop
+                      if (result < 35) {
+                          $('.comiseo-daterangepicker').addClass('without-arrows')
+                      }
+                      else {
+                          $('.comiseo-daterangepicker').removeClass('without-arrows')
+                      }
+                  })
+                  $('.ddown__init').bind('click touchstart', function () {
+                      var parent = $(this).closest('.ddown')
+                      var blockAndTop = $(this).offset().top + parent.find('.ddown__menu').height()
+                      var result = $(window).height() - blockAndTop
+                      if (result < 90) {
+                          parent.find('.ddown__arrow').addClass('without-arrows')
+                      }
+                      else {
+                          parent.find('.ddown__arrow').removeClass('without-arrows')
+                      }
+                  })
+              },
+              unmatch: function () {
+                  $('.comiseo-daterangepicker-triggerbutton').unbind('click touchstart')
+                  $('.ddown__init').unbind('click touchstart')
+              }
+          });
+      },
 
     checkboxesAndRadios() {
       // init only when needed
@@ -182,10 +268,16 @@ const AntaresForms = {
 
       timepicker.datetimepicker({
         datepicker: false,
-        format: 'H:i'
+        format: 'H:i',
         // onChangeDateTime: function() {
         //     $(this).validate();
         // },
+        onGenerate: function(ct, $input) {
+          $input.prop('readonly', true);
+          var $this = $(this);
+          $this.find('.xdsoft_date').removeClass('xdsoft_disabled');
+          $this.find('.xdsoft_time').removeClass('xdsoft_disabled');
+        }
 
         // onShow: function () {
         // $('.app-content[data-scroll-blocked]').addClass('data-scroll-blocked-pickers')
@@ -199,7 +291,14 @@ const AntaresForms = {
       });
       datepicker.datetimepicker({
         timepicker: false,
-        format: 'd.m.Y'
+        format: 'd.m.Y',
+        onGenerate: function(ct, $input) {
+          $input.prop('readonly', true);
+          var $this = $(this);
+          $this.find('.xdsoft_date').removeClass('xdsoft_disabled');
+          $this.find('.xdsoft_time').removeClass('xdsoft_disabled');
+        }
+
         // onShow: function () {
         //     $('.app-content[data-scroll-blocked]').addClass('data-scroll-blocked-pickers')
         // },
@@ -209,7 +308,14 @@ const AntaresForms = {
       });
 
       datetimepicker.datetimepicker({
-        datepicker: true
+        datepicker: true,
+        onGenerate: function(ct, $input) {
+          $input.prop('readonly', true);
+          var $this = $(this);
+          $this.find('.xdsoft_date').removeClass('xdsoft_disabled');
+          $this.find('.xdsoft_time').removeClass('xdsoft_disabled');
+        }
+
         // onShow: function () {
         //     $('.app-content[data-scroll-blocked]').addClass('data-scroll-blocked-pickers')
         // },
@@ -271,82 +377,50 @@ const AntaresForms = {
       // pagination
       require('./external/simple_pagination.js');
 
-      // Consider adding an ID to your table
-      // incase a second table ever enters the picture.
-      var items = $('.datarow .timeline li');
-      var numItems = items.length;
-      var perPage = 10;
+        var perPage = 10;  // dont change position in code of this variable!
 
-      // Only show the first 2 (or first `per_page`) items initially.
-      items.slice(perPage).hide();
-      $('.current10').click(function() {
-        perPage = 10;
-        $('.simple-pagination--list').pagination('updateItemsOnPage', 10);
-        $('.current100').removeClass('active');
-        $('.current25').removeClass('active');
-        $('.current10').addClass('active');
-        $('.current50').removeClass('active');
-        $('.simple-pagination--current')
-          .closest('.pagination')
-          .prev('ul.timeline')
-          .perfectScrollbar('update');
-      });
-      $('.current25').click(function() {
-        perPage = 25;
-        $('.simple-pagination--list').pagination('updateItemsOnPage', 25);
-        $('.current100').removeClass('active');
-        $('.current10').removeClass('active');
-        $('.current25').addClass('active');
-        $('.current50').removeClass('active');
-        $('.simple-pagination--current')
-          .closest('.pagination')
-          .prev('ul.timeline')
-          .perfectScrollbar('update');
-      });
-      $('.current50').click(function() {
-        perPage = 50;
-        $('.simple-pagination--list').pagination('updateItemsOnPage', 50);
-        $('.current100').removeClass('active');
-        $('.current10').removeClass('active');
-        $('.current25').removeClass('active');
-        $('.current50').addClass('active');
-        $('.simple-pagination--current')
-          .closest('.pagination')
-          .prev('ul.timeline')
-          .perfectScrollbar('update');
-      });
-      $('.current100').click(function() {
-        perPage = 100;
-        $('.simple-pagination--list').pagination('updateItemsOnPage', 100);
-        $('.current10').removeClass('active');
-        $('.current25').removeClass('active');
-        $('.current100').addClass('active');
-        $('.current50').removeClass('active');
-        $('.simple-pagination--current')
-          .closest('.pagination')
-          .prev('ul.timeline')
-          .perfectScrollbar('update');
-      });
-      // Now setup the pagination using the `.pagination-page` div.
-      $('.simple-pagination--list').pagination({
-        items: numItems,
-        itemsOnPage: perPage,
-        // currentPage: 0,
-        cssStyle: 'antares-pagination',
-        prevText: '<i class="zmdi zmdi-long-arrow-left"></i>',
-        nextText: '<i class="zmdi zmdi-long-arrow-right"></i>',
-        onPageClick: function(pageNumber) {
-          var showFrom = perPage * (pageNumber - 1);
-          var showTo = showFrom + perPage;
-          items.hide().slice(showFrom, showTo).show();
-          componentHandler.upgradeAllRegistered();
-          $('.simple-pagination--list')
-            .closest('.pagination')
-            .prev('ul.timeline')
-            .perfectScrollbar('update');
+        function  currentNumber(number) {  // after click, variable perPage -> refresh simplePagination
+            $('.current'+number).click(function () {
+                perPage = number;
+                let parent = $(this).closest('.datarow')
+                parent.find('.simple-pagination--list').pagination('updateItemsOnPage', number);
+                parent.find('.current10').removeClass('active');  // all disable
+                parent.find('.current25').removeClass('active');
+                parent.find('.current50').removeClass('active');
+                parent.find('.current100').removeClass('active');
+
+                parent.find('.current'+number).addClass('active'); // enable correct
+                parent.find('> div').perfectScrollbar('update');
+            });
         }
-      });
-      componentHandler.upgradeAllRegistered();
+        currentNumber(10)
+        currentNumber(25)
+        currentNumber(50)
+        currentNumber(100)
+
+        $('.simple-pagination--list').each(function () {
+            let parent = $(this).closest('.datarow')
+            let items = parent.find('.timeline li');
+            let numItems = items.length;
+            items.slice(perPage).hide();
+            $(this).pagination({
+                items: numItems,
+                itemsOnPage: perPage,
+                cssStyle: 'antares-pagination',
+                prevText: '<i class="zmdi zmdi-long-arrow-left"></i>',
+                nextText: '<i class="zmdi zmdi-long-arrow-right"></i>',
+                onPageClick: function (pageNumber) {
+                    var showFrom = perPage * (pageNumber - 1);
+                    var showTo = showFrom + perPage;
+                    items.hide().slice(showFrom, showTo).show();
+                    parent.find('> div').perfectScrollbar('update');
+                    componentHandler.upgradeAllRegistered();
+                }
+            });
+        })
+
+        componentHandler.upgradeAllRegistered();
+
     },
     select() {
       //select close on remove option - fix
@@ -544,6 +618,7 @@ const AntaresForms = {
         //on init
         $('[data-flag-select]').select2({
           minimumResultsForSearch: Infinity,
+            theme: 'selectAR',
           dropdownAutoWidth: true,
           templateResult: function(data) {
             if (data.element && data.element.attributes['data-country']) {
@@ -615,6 +690,7 @@ const AntaresForms = {
 
         $('[data-flag-select--search]').select2({
           dropdownAutoWidth: true,
+            theme: 'selectAR',
           minimumResultsForSearch: 1,
           closeOnSelect: false,
           templateResult: function(data) {
@@ -674,6 +750,17 @@ const AntaresForms = {
           }
         }
       });
+
+      enquire.register('screen and (max-width: 1366px)', {
+        //mobile readonly for multiple
+        match: function() {
+          if ($('.select2-selection').hasClass('select2-selection--multiple')) {
+            $('.select2-selection--multiple')
+              .find('input')
+              .attr('readonly', 'true');
+          }
+        }
+      });
     },
     spinner() {
       $('[data-spinner="true"]').spinner({
@@ -692,56 +779,7 @@ const AntaresForms = {
       $('.mdl-button__ripple-container').on('click', function() {
         $('[data-hasqtip]').qtip('hide');
       });
-      $('[data-tooltip-inline!=""]').qtip({
-        style: {
-          classes: 'ar',
-          tip: {
-            width: 9,
-            height: 5
-          }
-        },
-        position: {
-          viewport: $(window),
-          adjust: {
-            method: 'shift'
-          }
-        },
-        content: {
-          attr: 'data-tooltip-inline'
-        },
-        show: {
-          effect: function() {
-            $(this).fadeIn(300); // "this" refers to the tooltip
-          }
-        },
-        hide: {
-          effect: function() {
-            $(this).fadeOut(300); // "this" refers to the tooltipc1
-          }
-        },
 
-        events: {
-          show: function(event, api) {
-            var $el = $(api.elements.target[0]);
-            $el.qtip(
-              'option',
-              'position.my',
-              $el.data('tooltip-my-position') == undefined
-                ? 'top center'
-                : $el.data('tooltip-my-position')
-            );
-            $el.qtip(
-              'option',
-              'position.at',
-              $el.data('tooltip-target-position') == undefined
-                ? 'bottom center'
-                : $el.data('tooltip-target-position')
-            );
-
-            // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
-          }
-        }
-      });
       enquire.register('screen and (max-width: 1366px)', {
         match: function() {
           $('[data-tooltip-mobile="true"]').each(function() {
@@ -794,6 +832,56 @@ const AntaresForms = {
               }
             });
           });
+          $('[data-tooltip-inline-mobile!=""]').qtip({
+            style: {
+              classes: 'ar',
+              tip: {
+                width: 9,
+                height: 5
+              }
+            },
+            position: {
+              viewport: $(window),
+              adjust: {
+                method: 'shift'
+              }
+            },
+            content: {
+              attr: 'data-tooltip-inline-mobile'
+            },
+            show: {
+              effect: function() {
+                $(this).fadeIn(300); // "this" refers to the tooltip
+              }
+            },
+            hide: {
+              effect: function() {
+                $(this).fadeOut(300); // "this" refers to the tooltipc1
+              }
+            },
+
+            events: {
+              show: function(event, api) {
+                var $el = $(api.elements.target[0]);
+                $el.qtip(
+                  'option',
+                  'position.my',
+                  $el.data('tooltip-my-position') == undefined
+                    ? 'top center'
+                    : $el.data('tooltip-my-position')
+                );
+                $el.qtip(
+                  'option',
+                  'position.at',
+                  $el.data('tooltip-target-position') == undefined
+                    ? 'bottom center'
+                    : $el.data('tooltip-target-position')
+                );
+
+                // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
+              }
+            }
+          });
         },
         unmatch: function() {
           $('[data-hasqtip]').each(function() {
@@ -804,6 +892,56 @@ const AntaresForms = {
 
       enquire.register('screen and (min-width: 1367px)', {
         match: function() {
+          $('[data-tooltip-inline!=""]').qtip({
+            style: {
+              classes: 'ar',
+              tip: {
+                width: 9,
+                height: 5
+              }
+            },
+            position: {
+              viewport: $(window),
+              adjust: {
+                method: 'shift'
+              }
+            },
+            content: {
+              attr: 'data-tooltip-inline'
+            },
+            show: {
+              effect: function() {
+                $(this).fadeIn(300); // "this" refers to the tooltip
+              }
+            },
+            hide: {
+              effect: function() {
+                $(this).fadeOut(300); // "this" refers to the tooltipc1
+              }
+            },
+
+            events: {
+              show: function(event, api) {
+                var $el = $(api.elements.target[0]);
+                $el.qtip(
+                  'option',
+                  'position.my',
+                  $el.data('tooltip-my-position') == undefined
+                    ? 'top center'
+                    : $el.data('tooltip-my-position')
+                );
+                $el.qtip(
+                  'option',
+                  'position.at',
+                  $el.data('tooltip-target-position') == undefined
+                    ? 'bottom center'
+                    : $el.data('tooltip-target-position')
+                );
+
+                // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
+              }
+            }
+          });
           $('[data-tooltip="true"]').each(function() {
             // Notice the .each() loop, discussed below
             $(this).qtip({
@@ -918,7 +1056,6 @@ const AntaresForms = {
       systemDropdowns.init();
       pluginDropdowns.init();
     },
-
     activateWithSelected() {
       $('.card-ctrls').click();
       let table = $('#table-ma');
@@ -1096,34 +1233,9 @@ const AntaresForms = {
     },
     scrollCloseDropdowns() {
       var self = this;
-      $('.app-content').unbind(
-        'mousewheel DOMMouseScroll MozMousePixelScroll touchmove'
-      );
-      $(
-        '.app-content'
-      ).bind(
-        'mousewheel DOMMouseScroll MozMousePixelScroll touchmove',
-        function(event) {
-          var delta = parseInt(
-            event.originalEvent.wheelDelta || -event.originalEvent.detail
-          );
-          if (delta >= 0) {
-            self.closeAllDropdowns();
-          } else if (delta < 0) {
-            self.closeAllDropdowns();
-          } else {
-            return false;
-          }
-        }
-      );
 
-      $('.ddown')
-        .on('mousedown', '.ui-state-active', function(e) {
-          $('.app-content').unbind(
-            'mousewheel DOMMouseScroll MozMousePixelScroll touchmove'
-          );
-        })
-        .on('mouseup', '.ui-state-active', function(e) {
+      function scrollWork(status) {
+        if (status === true) {
           $(
             '.app-content'
           ).bind(
@@ -1141,8 +1253,57 @@ const AntaresForms = {
               }
             }
           );
+        } else {
+          $('.app-content').unbind(
+            'mousewheel DOMMouseScroll MozMousePixelScroll touchmove'
+          );
+        }
+      }
+
+      scrollWork(true); // start work function
+
+      // FOR DROPDOWN WHEN HE HAVE DOUBLE DROPDOWN
+      var parent;
+      $('.ddown').on('click', 'li.has-submenu', function(e) {
+        parent = $(this).closest('.ddown');
+        scrollWork(false);
+      });
+      $(document).click(function() {
+        if (parent !== undefined && parent.not('ddown--open')) {
+          scrollWork(true);
+        }
+      });
+      // FOR DROPDOWN WHEN HE HAVE DOUBLE DROPDOWN END
+
+      // FOR SPINNERS (filter, general_settings)
+      $('.ddown')
+        .on('mousedown', '.ui-state-active', function(e) {
+          scrollWork(false);
+        })
+        .on('mouseup', '.ui-state-active', function(e) {
+          scrollWork(true);
         });
+      // FOR SPINNERS END (filter, general_settings)
+    },
+    urlLocation() {
+      let url = document.location.href;
+      let parts = url.split('/');
+      let lastSegment = parts.pop() || parts.pop(); // link
+      if (lastSegment === 'localhost:9000' || lastSegment === '#') {
+        lastSegment = 'index.html';
+      } else if (lastSegment[lastSegment.length - 1] === '#') {
+        // last symbol '#'
+        lastSegment = lastSegment.substring(0, lastSegment.length - 1); // delete last element
+      } else if (~lastSegment.indexOf('#')) {
+        // Check if there is such an element at the end of the line (Example: '#')
+        var from = lastSegment.search('#');
+        lastSegment = lastSegment.substring(0, from); // remove end after '#'
+      }
+      let link = $('a[href="' + lastSegment + '"]');
+      link.closest('li[data-index]').addClass('is-active');
+      link.css('color', 'white');
     }
+
   }
 };
 

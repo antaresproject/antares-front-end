@@ -62,7 +62,7 @@
 						});
 					}
 					for (var i = start; i < end; i++) {
-						if ($(tableRows[i]).hasClass('disabled') == false) {
+						if ($(tableRows[i]).hasClass('disabled') === false) {
 							$(tableRows[i]).addClass(clickedClass);
 						}
 					}
@@ -73,7 +73,7 @@
 					if (this.className.search(clickedClass) > -1) {
 						$(this).removeClass(clickedClass);
 					} else {
-						if ($(this).hasClass('disabled') == false) {
+						if ($(this).hasClass('disabled') === false) {
 							$(this).addClass(clickedClass);
 						}
 					}
@@ -85,7 +85,7 @@
 					$.each(tableRows, function() {
 						$(this).removeClass(clickedClass);
 					});
-					if ($(this).hasClass('disabled') == false) {
+					if ($(this).hasClass('disabled') === false) {
 						$(this).addClass(clickedClass);
 						lastSelected = this;
 						originalRow = this;
@@ -147,16 +147,16 @@
 				originalRow = $(tableRows[0]);
 			}
 		
-			if (direction == "down") {
-				if ($(currentRow).next('tr').length != 0) {
+			if (direction === "down") {
+				if ($(currentRow).next('tr').length !== 0) {
 					newRow = $(currentRow).next('tr');
 					currentRow = newRow;
 				} else {
 					newRow = currentRow;
 				}
 			}
-			else if (direction == "up") {
-				if ($(currentRow).prev('tr').length != 0) {
+			else if (direction === "up") {
+				if ($(currentRow).prev('tr').length !== 0) {
 					newRow = $(currentRow).prev('tr');
 					currentRow = newRow;
 				} else {
@@ -168,7 +168,7 @@
 				$.each(tableRows, function() {
 					$(this).removeClass(clickedClass);
 				});
-				if ($(newRow).hasClass('disabled') == false) {
+				if ($(newRow).hasClass('disabled') === false) {
 					$(newRow).addClass(clickedClass);
 					lastSelected = currentRow;
 					originalRow = currentRow;
@@ -182,7 +182,7 @@
 				var start = Math.min(first, last);
 				var end = Math.max(first, last)+1;
 				for (var i = start; i < end; i++) {
-					if ($(tableRows[i]).hasClass('disabled') == false) {
+					if ($(tableRows[i]).hasClass('disabled') === false) {
 						$(tableRows[i]).addClass(clickedClass);
 					}
 				}
