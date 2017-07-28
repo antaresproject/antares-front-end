@@ -1,0 +1,316 @@
+// Composed FUll Height Wrapper IE FIX
+// Many, many tries.
+.select2 {
+  flex-basis: 40px;
+  min-width: 90px;
+}
+
+#app-wrapper .form-block .input-field.input-field--icon .input-field__icon {
+  top: 16px;
+}
+
+#app-wrapper .grid-container.full-height .grid-col--container {
+  min-height: calc(100vh - 88px);
+  position: absolute;
+  width: calc(100% - 48px);
+}
+
+.form-block {
+  min-height: 80px;
+}
+
+#app-wrapper .form-block .input-field .input-field__inner {
+  width: 100%;
+}
+
+fieldset[data-id="trademark-logo"] {
+  min-height: 300px;
+}
+
+#app-wrapper .mdl-dialog:before {
+  z-index: 99998;
+}
+
+#app-wrapper dialog .mdl-dialog__canvas {
+  z-index: 99999;
+}
+
+fieldset[data-id="event-basic-data"] .input-field.input-field--desc input {
+  min-height: 36px;
+}
+
+fieldset[data-id="notification-parameters"] .input-field.input-field--short + span .form-block__name {
+  margin-left: 30px;
+}
+
+fieldset[data-id="document-template-for-language-english"] .form-block__name > .input-field.input-field--short {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  margin-right: 30px;
+}
+
+.mdl-dialog.ar-dialog[data-dialog-id='wf-rename'] .mdl-dialog__content.ps-container, .mdl-dialog.ar-dialog[data-dialog-id='wf-newDir'] .mdl-dialog__content.ps-container {
+  min-height: 50px;
+  padding-top: 24px !important;
+}
+
+.header-translation__compare .form-block {
+  min-height: auto;
+}
+
+.header-translations .header-translation__compare .select2-container {
+  min-width: 190px !important;
+}
+
+#app-wrapper .form-block .input-field.input-field--icon .input-field__icon {
+  top: 0;
+}
+
+input {
+  font-family: Roboto, sans-serif;
+
+}
+
+input::placeholder {
+  color: @background-borderd-grey
+}
+
+.main-head .ddown .ddown__menu > li {
+  display: block;
+}
+
+.comiseo-daterangepicker .ui-widget-content + .ui-helper-clearfix .comiseo-daterangepicker-buttonpanel button:last-child {
+  top: 8px
+}
+
+.comiseo-daterangepicker-left .comiseo-daterangepicker-calendar {
+  float: right; // not rwd
+}
+
+.comiseo-daterangepicker .comiseo-daterangepicker-presets {
+  float: left; // not rwd
+}
+
+.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.xdsoft_datetimepicker {
+  &:before {
+    top: -19px;
+  }
+  &:after {
+    top: -15px;
+  }
+}
+
+.comiseo-daterangepicker.ui-widget-content.ui-front {
+  &:before {
+    top: -20px;
+  }
+  &:after {
+    top: -14.5px;
+  }
+}
+
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header {
+  display: block;
+}
+
+.dtp .dtp-close > a {
+  position: absolute;
+  top: -23px;
+  right: 0;
+}
+
+.form-block { //
+  min-height: auto;
+}
+
+.switch .switch-checkbox + .switch-container::after, .switch :checked.switch-checkbox + .switch-container::after {
+  top: -1px;
+}
+
+.app-content .main-content .radio-btns--xs {
+  display: none !important;
+}
+
+.page-dashboard .comiseo-daterangepicker-triggerbutton {
+  margin-top: 16px;
+}
+
+.page-dashboard .comiseo-daterangepicker-triggerbutton > span {
+  margin-top: 2px;
+}
+
+.app-content .main-head {
+  margin-bottom: 24px;
+  padding-top: 16px;
+}
+
+.ddown .ddown__content .ddown__arrow {
+  top: 23px;
+}
+
+.main-head .ddown .ddown__content .ddown__arrow {
+  top: 25px
+}
+
+.ddown .ddown__menu > li.has-submenu::after {
+  top: 40%;
+}
+
+.card-ctrls__left [data-selectar--mdl=true] + .select2-container--mdl {
+  min-width: 34%;
+  margin-left: 80px;
+}
+
+.ddown .ddown__content .ddown__arrow {
+  top: 20px !important;
+}
+
+.ddown .ddown__content .ddown__arrow::before {
+  top: -4.5px;
+}
+
+.select2-container--mdl .select2-dropdown::before, .select2-container--selectAR .select2-dropdown::before {
+  top: -19px;
+}
+
+.select2-container--mdl .select2-dropdown::after, .select2-container--selectAR .select2-dropdown::after {
+  top: -15px;
+}
+
+.ps-container .card-bar .card-bar__search .card-bar__desc {
+  width: 100%;
+}
+
+.app-content--widgets-movable {
+  #widgets-edit::before {
+    top: -53px;
+  }
+}
+
+#widgets-list {
+  .card-bar__close i {
+    top: 52%;
+    left: 51%;
+  }
+}
+
+.comiseo-daterangepicker.ui-widget-content.ui-front::after {
+  left: 20.5px;
+  right: auto;
+}
+
+.comiseo-daterangepicker.ui-widget-content.ui-front::before {
+  left: 19px;
+  right: auto;
+}
+
+.page-brand-settings form fieldset .form-block .input-field--short {
+  position: relative;
+  height: 20px;
+  .switch {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.page-brand-settings fieldset[name='BrandLogo'] .col-group {
+  margin-top: 52px;
+}
+
+.page-brand-settings {
+  .cp-brand .cp-brand__preview {
+    padding: 20px;
+  }
+  .cp-brand.cp-brand--typo .cp-brand__preview {
+    padding: 30px;
+  }
+  .cp-brand--typo {
+    display: block;
+    //max-width: 220px;
+  }
+
+}
+
+.clients-details-gridstack .card .flex.card__content {
+  height: 100%;
+  .mobile-toogle--target {
+    height: 100%;
+  }
+}
+
+.clients-details-gridstack .card--contacts {
+  .card__content {
+    //max-height: 300px !important;
+  }
+  .mobile-target--overflow {
+    overflow: hidden;
+  }
+}
+
+.acl-node .acl-node__label::after {
+  top: 4px;
+}
+
+.zd.zd--sm .zd__description, .zd.zd--default .zd__description {
+  width: 220px;
+}
+
+.zd.zd--lg .zd__description {
+  width: 400px;
+}
+
+.zd.zd--xs .zd__description {
+  width: 170px;
+}
+
+.notification-templates {
+  .main-content {
+    .grid-container {
+      display: block;
+    }
+  }
+}
+
+.card--logs .datarow {
+  height: 100%;
+}
+
+.card-block--logs {
+  .timeline {
+    overflow: visible;
+  }
+}
+
+.page-email-settings .grid-container.grid-container--2col .grid-col--container {
+  min-width: 450px;
+}
+
+.sweet-container .CB.CB--type1 .sweet-content p, .sweet-container .CB.CB--type2 .sweet-content p {
+  max-width: 100%;
+}
+
+.sweet-container .CB--type2 .sweet-content::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu.mobile-ddowns__menu--user .flex-block__title {
+  min-height: 60px;
+}
+.ps-scrollbar-x-rail{
+  display: none !important;
+}
+input::-ms-clear {
+  display: none;
+}
+.app-content.page-login .login-box .login-box__header img {
+  width: 350px;
+}

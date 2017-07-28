@@ -14,7 +14,12 @@
       z-index: 10 !important;
       visibility: visible !important;
       right: -20px;
+      //right: -20px !important;
+      //left: auto !important;
       transition: 400ms;
+      li{
+        cursor: pointer;
+      }
     }
   }
 
@@ -34,7 +39,7 @@
       position: relative;
       line-height: 1;
       right: -8px;
-      top: -1px;
+      top: 0;
       padding-right: 6px;
       color: @primary-c;
     }
@@ -618,16 +623,10 @@
 
     .ddown__menu {
       top: ~'calc(100% + 5px)';
-      right: 20px;
+      //right: 20px;
     }
 
-    .ddown__content {
-      .ddown__arrow {
-        top: 16px !important;
-        right: 60px !important;
-      }
 
-    }
 
     .ddown__label {
       position: relative;
@@ -706,7 +705,7 @@
 
 
     &:after {
-      right: -12px;
+      right: -11.5px;
     }
 
 
@@ -835,10 +834,5 @@
         display: none;
       }
     }
-  }
-}
-.main-head{
-  .ddown__arrow, .ddown__menu {
-    margin-top: 8px;
   }
 }

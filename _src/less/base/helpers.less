@@ -213,7 +213,7 @@
       z-index: 10;
       height: 100%;
       width: 30px;
-      background: linear-gradient(to right, white, transparent)
+      background: linear-gradient(to right, white, rgba(255,255,255,0))
     }
   }
 
@@ -227,7 +227,7 @@
       z-index: 10;
       height: 100%;
       width: 30px;
-      background: linear-gradient(to left, white, transparent)
+      background: linear-gradient(to left, white, rgba(255,255,255,0))
     }
   }
 }
@@ -335,4 +335,10 @@ i.zmdi-help-outline.help--trigger { //help icon
   color: @primary-c-overlay;
   font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
   content: '\f1c3';
+}
+
+@media @md{
+  .hide-mobile{
+    display: none !important;
+  }
 }

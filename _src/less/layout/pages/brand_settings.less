@@ -1,9 +1,14 @@
+#app-wrapper.main-sidebar--top .app-content.page-brand-settings .main-content .app-content__footer{
+  margin-left: -34px;
+}
+#app-wrapper.main-sidebar--top .app-content.page-email-settings .main-content .app-content__footer{
+  margin-left: 0;
+}
 .page-brand-settings {
   .generals-form {
     .col-group {
       padding: 0;
       margin: 0;
-      width: 100%;
       .col-16 {
         padding: 0;
       }
@@ -56,11 +61,9 @@
           }
         }
       }
-      [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow, .select2 .select2-selection .select2-selection__arrow:before {
-        right: 3%;
-      }
+
       .select2-selection--single .select2-selection__arrow {
-        right: 3%;
+        //right: 3%;
         width: 9px;
         height: 32px;
       }
@@ -112,5 +115,37 @@
 @media only screen and (min-width: 992px) and (max-width: 1366px) {
   .page-brand-settings .generals-form .app-content__footer {
     margin-left: -33px;
+  }
+}
+
+.page-brand-settings { // colors for minicolor
+  .standard-color--main {
+    background-color: @primary-bg;
+  }
+  .standard-color--main-first {
+    color: @standard-text-black
+  }
+  .standard-color--main-second {
+    color: @color-success
+  }
+
+  .standard-color--secondary {
+    background-color: @super-dark-grey;
+  }
+  .standard-color--secondary-first {
+    color: @standard-white-second
+  }
+  .standard-color--secondary-second {
+    color: @text-color-dark-cherry
+  }
+
+  .standard-color--background {
+    background-color: @text-color-light-green;
+  }
+  .standard-color--background-first {
+    color:@color-error
+  }
+  .standard-color--background-second {
+    color:@color-warning
   }
 }

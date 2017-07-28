@@ -72,8 +72,8 @@
       .card__edit-icons {
         opacity: 1;
         i {
-          z-index:999;
-          cursor:pointer;
+          z-index: 999;
+          cursor: pointer;
           color: @primary-c;
         }
       }
@@ -83,7 +83,7 @@
 
 .mdl-tabs .card__edit-view {
   .card__edit-icons i.detach-button {
-    display:block;
+    display: block;
   }
 }
 
@@ -97,7 +97,7 @@
   display: none;
 
   .card__edit-icons i.detach-button {
-    display:none;
+    display: none;
   }
 
   .card__edit-overlay {
@@ -258,8 +258,6 @@
     flex-flow: row nowrap;
     align-items: flex-start;
 
-
-
   }
 
   .card-ctrls__right {
@@ -335,11 +333,13 @@
 
       span {
 
-        .truncate(300px);
+        .truncate(210px);
         min-width: 50px;
-
-        @media @min1550 {
-          min-width: 120px;
+        @media @min1366 {
+          .truncate(250px);
+        }
+        @media @min1500 {
+          .truncate(180px);
         }
 
       }
@@ -786,7 +786,7 @@
       color: @standard-white;
       opacity: 0.6;
     }
-    .card_date{
+    .card_date {
       margin-right: 28px;
     }
 
@@ -812,7 +812,7 @@
       button {
         position: relative;
         left: -16px;
-        bottom:0;
+        bottom: 0;
 
       }
 
@@ -840,12 +840,12 @@
       flex-flow: column nowrap;
       justify-content: flex-start;
       display: flex;
-      flex:1;
+      flex: 1;
     }
-      .mobile-toogle--target  {
-        flex:1;
-      }
-      
+    .mobile-toogle--target {
+      flex: 1;
+    }
+
     .card__filter-area {
       width: 100%;
       margin-top: @unit3;
@@ -867,8 +867,6 @@
       .selectivity-input--mdl {
         top: -1px;
       }
-
-
 
       @media @xs {
         margin-right: 0 !important;
@@ -923,6 +921,7 @@
     }
     .timeline {
       margin-bottom: auto;
+      padding-right: 16px;
     }
   }
 
@@ -1392,31 +1391,28 @@
   height: 100%;
 }
 
-
 .card--clean {
 
   width: 100%;
   height: 100%;
 
   .card__content {
-      //padding-top: 16px;
-      flex:1;
+    //padding-top: 16px;
+    flex: 1;
   }
 
 }
 
-
 // box shadow multiplying fix
 
 .mdl-tabs__panel .card {
-  box-shadow:none !important;
+  box-shadow: none !important;
 }
 
 //
 #app-wrapper .card.card--chart .card__right {
-  padding-bottom:0px;
+  padding-bottom: 0px;
 }
-
 
 //#app-wrapper .app-content .grid-stack-item-content.card-datatables {
 //  overflow: hidden;

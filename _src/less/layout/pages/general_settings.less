@@ -28,12 +28,23 @@
     cursor: pointer;
     line-height: 28px;
   }
+  fieldset a[name] {
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      top:-100px;
+      height: 100px;
+    }
+  }
 }
+
 .form-block {
   input {
     transition: 300ms;
   }
 }
+
 .page-settings {
   .form-block .radio-btns [data-type="radio-btn"] input[type="radio"] {
     display: none;
@@ -171,11 +182,9 @@
           }
         }
       }
-      [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow, .select2 .select2-selection .select2-selection__arrow:before {
-        right: 3%;
-      }
+
       .select2-selection--single .select2-selection__arrow {
-        right: 3%;
+        //right: 3%;
         width: 9px;
         height: 32px;
 
@@ -236,6 +245,6 @@
 
 }
 
-.comiseo-daterangepicker-mask{
+.comiseo-daterangepicker-mask {
   //display: none !important;
 }

@@ -1,0 +1,52 @@
+*::-moz-placeholder, *:-ms-input-placeholder, *::-ms-input-placeholder {
+  font-family: Roboto, sans-serif;
+}
+
+@-moz-document url-prefix() {
+  .xdsoft_datetimepicker .xdsoft_datepicker .xdsoft_prev::after, .xdsoft_datetimepicker .xdsoft_datepicker .xdsoft_next::after {
+    left: -10px !important;
+  }
+  .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev::after, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next::after {
+    left: -14px !important;
+  }
+  .switch .switch-checkbox + .switch-container::after, .switch .switch-checkbox:checked + .switch-container::after {
+    top: -1px !important;
+  }
+}
+
+#app-wrapper .app-content .grid-stack-item .grid-stack-item-content {
+  overflow: visible;
+}
+
+.app-content.page-login .login-box .login-box__header img {
+  width: 250px;
+}
+
+.comiseo-daterangepicker .ui-widget-content + .ui-helper-clearfix .comiseo-daterangepicker-buttonpanel button:last-child {
+  bottom: 8px
+}
+
+#app-wrapper .card.card--logs .card__content {
+  max-height: 100%;
+  padding-bottom: 48px;
+  .datarow {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+#app-wrapper .card.card--contacts {
+  height: 100%;
+  padding-bottom: 48px;
+  .datarow {
+    height: 100%;
+  }
+}
+
+.select2-container .select2-results > .select2-results__options {
+  overflow-y: hidden !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

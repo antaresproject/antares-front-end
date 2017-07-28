@@ -9,17 +9,58 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.ac-container .ac-container--wrapper { // all class #145
+  position: absolute;
+  background-color: white;
+  display: none;
+  height: 100%;
+  max-height: 70vh;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  top: 65px !important;
+  @media @max1366 {
+    overflow: auto !important;
+  }
+
+  .ps-scrollbar-y-rail > .ps-scrollbar-y {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    margin-right: 4px;
+  }
+  .ui-autocomplete.antares-ac{
+    &>span{
+      display: block;
+    }
+  }
+  @media @xs {
+    left: 0 !important;
+    top: 60px !important;
+    width: 100%;
+    .ui-autocomplete.antares-ac {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+    .ui-autocomplete.antares-ac{
+      li{
+        .type--datarow{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
 //containg DIV
 .ac-container {
   // dropdown
   font-family: 'Roboto', sans-serif;
   // search input
   .ui-autocomplete.antares-ac {
-    padding: 8px 0 8px 0;
+    padding: 0;
+    position: static !important; //#145
+    width: 400px !important; //#145
     border: 0;
     box-shadow: 1px 0 15px rgba(0, 0, 0, 0.05);
     min-width: @search-width !important;
-    max-height: 70vh;
 
     &.has-footer {
       padding-bottom: 0;

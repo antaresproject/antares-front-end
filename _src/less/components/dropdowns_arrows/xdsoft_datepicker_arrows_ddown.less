@@ -1,0 +1,34 @@
+.xdsoft_datetimepicker {
+  //shadow
+  margin-top: 1px;
+  &:before {
+    .mdl-font();
+    position: absolute;
+    left: 8px;
+    font: normal normal normal 32px/1 'Material-Design-Iconic-Font';
+    content: '\f2f8';
+    color: rgba(0, 0, 0, 0.07);
+    z-index: 1;
+
+    width: 24px;
+    height: 33px;
+    text-align: center;
+    top: -19px;
+  }
+
+  //carret up
+  &:after {
+    .mdl-font();
+    position: absolute;
+    left: 8px;
+    color: #fff;
+    font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
+    z-index: 2;
+    content: '\f2f8';
+
+    width: 24px;
+    height: 33px;
+    text-align: center;
+    top: -15.5px;
+  }
+}

@@ -84,6 +84,7 @@
       }
     }
   }
+
 }
 
 .label--login {
@@ -91,4 +92,13 @@
   position: relative;
   top: -8px;
   font-size: 14px;
+}
+
+@media only screen and (orientation: landscape){
+  .app-content.page-login .login-box{
+    height: auto;
+    .login-box__header{
+      padding-bottom: 0;
+    }
+  }
 }

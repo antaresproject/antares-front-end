@@ -67,7 +67,6 @@
   background-color: @primary-bg;
   width: 100%;
   position: relative;
-
   &.menu-aside-container--fixed {
     position: fixed !important;
     width: 338px;
@@ -79,6 +78,10 @@
   }
 
 }
+.main-sidebar--top .menu-aside-container.menu-aside-container--fixed {
+    top: 80px;
+}
+
 
 .menu-aside {
   padding-top: 10px;
@@ -173,7 +176,8 @@
         .mdl-font();
         position: absolute;
         right: 0;
-        top: 7px;
+        top: 50%;
+        transform: translateY(-50%);
         font: normal normal normal 40px/1 'Material-Design-Iconic-Font';
         content: '\f2f4';
         color: @standard-white;

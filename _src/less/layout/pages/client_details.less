@@ -98,8 +98,6 @@
   color: @text-color-dark-grey;
 }
 
-
-
 .card.card--logs.card--scrollbox .timeline {
   padding: 0 16px 0 24px !important;
 }
@@ -328,15 +326,7 @@
   left: 2px;
 }
 
-.select2-container--mdl .select2-dropdown:before {
-  right: auto !important;
-  left: 16px !important;
-}
 
-.select2-container--mdl .select2-dropdown:after {
-  right: auto !important;
-  left: 17.5px !important;
-}
 
 //search box + dropdown "Show:" end d
 
@@ -365,9 +355,17 @@
   }
 }
 
+//@media @xs {
+//  .select2-container.select2-container--mdl.select2-container--open {
+//    left: auto !important;
+//    right: 8px;
+//  }
+//}
+
 .clients-details-gridstack .card.card--tabs .mdl-tabs__tab-bar {
   //horizontal scroll
-  overflow-x: auto;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: auto;
   .tab-bar--tape {
     width: 400px;
     height: 100%;

@@ -1,0 +1,119 @@
+//CODE FROM MOBILE
+input, textarea {
+  -webkit-appearance: none;
+}
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__input, #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__label {
+  height: 36px
+}
+
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left [data-selectar--mdl=true] + .select2-container--mdl .select2-selection {
+  height: 36px;
+}
+#app-wrapper .app-content section.main-content div.grid-stack .card-datatables.grid-stack-item-content .card.card--pagination {
+  height: auto;
+  .mdl-tabs{
+    height: auto
+  }
+  .card-ctrls {
+    height: auto;
+  }
+  .dataTables_wrapper{
+    height: auto;
+  }
+}
+#app-wrapper .app-content section.main-content div.grid-stack .grid-stack-item-content .card.card--pagination {
+  .card-ctrls {
+    height: 36px;
+  }
+  .card-ctrls__right {
+    height: 50px;
+  }
+  .dataTables_wrapper {
+    height: 100%
+  }
+}
+.page-dashboard .comiseo-daterangepicker-triggerbutton {
+  max-width: 60px !important;
+}
+
+.card .card__content.card__content--flex-column {
+  height: auto;
+}
+
+
+
+.grid-container.grid-container--2col .grid-col--container {
+  width: 100% !important;
+}
+.page-email-settings {
+  .email-additions .btn-group {
+    height: 80px;
+    padding-bottom: 40px;
+  }
+}
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .select2-container--mdl{
+  max-width: 100%;
+}
+
+div.app-content {
+  overflow: scroll; // for scroll input
+  -webkit-overflow-scrolling: touch;
+}
+
+.ui-slider{ // for scroll input because sliders must have his overflow
+  overflow: initial;
+}
+.page-email-settings .email-preview .preview-area{
+  height: auto;
+  padding-bottom: 80px
+}
+
+// BEFORE -> CODE FROM MOBILE
+// NOW ONLY WRITE----------------------------------------
+
+.app-content.page-login .login-box .login-box__header img {
+  width: 250px;
+}
+.card.card--chart .card__right .datarow{
+  max-height: 360px;
+}
+.grid-stack-item .grid-stack-item-content .card.card--news {
+  min-height: 300px;
+}
+#app-wrapper .card.card--logs .card-ctrls.tab-search .card-ctrls__left .select2-container--mdl{
+  margin-right: 0;
+  min-width:140px;
+}
+#app-wrapper .card .card-ctrls.tab-search .search-box.search-box--dark .mdl-textfield__label{
+  top: 0;
+  padding-top: 6px;
+}
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .select2-container .select2-selection--single .select2-selection__rendered{
+  padding-top: 0;
+}
+//.select2-container--open .select2-dropdown--below{
+//  min-width: 150px !important;
+//}
+#app-wrapper .card .card-ctrls.tab-search.tab-search--filter .card-ctrls__right .filters .card-filter{
+  overflow: visible;
+  .filter>.ddown--filter-edit .ddown__menu{
+    position: absolute;
+  top: ~'calc(100% + 5px)' !important;
+  }
+}
+.card.card--chart-small .card__content{
+  height: auto;
+}
+
+
+aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 98px;
+  z-index: 15;
+}
+.app-content {
+  padding-left: 98px;
+  width: 100%;
+}// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END

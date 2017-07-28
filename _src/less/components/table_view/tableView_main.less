@@ -229,6 +229,16 @@ table {
   }
 }
 
+@media @md {
+  .page-datatables {
+    .dataTables_wrapper {
+      .ps-scrollbar-y-rail {
+        display: none;
+      }
+    }
+  }
+}
+
 .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate .paginate_button.disabled {
   pointer-events: auto;
   cursor: not-allowed;
@@ -305,6 +315,13 @@ table {
     height: 100%;
     input {
       height: 100%;
+    }
+  }
+  @media @max450 {
+    section.main-content div.card div.tbl-c table {
+      tr td {
+          padding-bottom: 26px;
+      }
     }
   }
   @media @xs {

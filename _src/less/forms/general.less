@@ -1,3 +1,59 @@
+@media @md {
+  // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
+  body {
+    overflow: visible !important;
+    #app-wrapper {
+      overflow: visible !important;
+      height: 91vh;
+      &.mobile-menu-active {
+        overflow: hidden !important;
+        height: 100%;
+        aside {
+          height: 100%;
+        }
+        .app-content {
+          height: 91vh;
+        }
+      }
+      .app-content {
+        overflow: visible !important;
+        width: 100vw;
+      }
+    }
+  }
+}
+body {
+  #app-wrapper {
+    &.mobile-menu-active {
+      @media screen and (orientation: landscape) {
+        height: 100vh;
+      }
+      aside {
+        @media screen and (orientation: landscape) {
+          height: 100vh;
+        }
+      }
+      .app-content {
+        @media screen and (orientation: landscape) {
+          height: 100vh;
+        }
+      }
+    }
+  }
+}
+
+// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
+
+.widgets-page {
+  .main-content {
+    padding: 0;
+  }
+}
+
+[data-timepicker], [data-datepicker], [data-datetimepicker] {
+  cursor: pointer;
+}
+
 //////////////////////////
 // 7 FORMS VERTC
 //////////////////////////
@@ -7,6 +63,18 @@
       margin-bottom: 40px;
     }
   }
+}
+
+.main-head {
+  max-height: 88px;
+}
+
+input[type='number'] {
+  font-family: Roboto, sans-serif;
+}
+
+input {
+  font-family: Roboto, sans-serif;
 }
 
 .form-block {
@@ -139,8 +207,12 @@
 
   }
 
-  input[disabled],
-  input[readonly] {
+  //input[disabled],
+  //input[readonly] {
+  //  cursor: not-allowed;
+  //  background-color: @background-white-grey;
+  //}
+  input[disabled] {
     cursor: not-allowed;
     background-color: @background-white-grey;
   }
@@ -291,6 +363,14 @@
   }
 }
 
+#app-wrapper .app-content {
+  &.page-brand-settings, &.page-forms, &.page-forms--hor, &.page-settings, &.page-email-settings, &.page-create {
+    .main-content {
+      padding: 0;
+    }
+  }
+}
+
 @media @xs {
   .app-content {
     .main-content {
@@ -313,9 +393,7 @@
               }
             }
           }
-          [data-selectar--mdl="true"] + .select2-container--mdl .select2-selection--single .select2-selection__arrow, .select2 .select2-selection .select2-selection__arrow:before {
-            right: 3%;
-          }
+
           .select2 .select2-selection .select2-selection__rendered {
             line-height: 32px;
             max-width: none;
@@ -500,7 +578,7 @@
   [data-tooltip-inline="Widget Edit Toggle"] {
     display: block !important;
   }
-  @media @md {
+  @media (max-width: 1350px) {
     [data-tooltip-inline="Widget Edit Toggle"] {
       display: none !important;
     }
@@ -513,7 +591,6 @@
     border: 1px solid @color-error !important;
   }
 }
-
 
 fieldset.slider {
   .input-field {

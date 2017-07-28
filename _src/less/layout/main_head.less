@@ -9,10 +9,10 @@
   position: relative;
   z-index: 3;
   transition: @transition;
-  .mdl-js-button.mdl-js-ripple-effect{
+  .mdl-js-button.mdl-js-ripple-effect {
     height: 100%;
     width: 100%;
-    .main-head__settings{
+    .main-head__settings {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -181,17 +181,17 @@
   .main-head {
     .breadcrumbs {
       .ddown--adj-bottom {
-        .ddown__arrow {
-          top: 25px;
-          &:before, &:after {
-            transform: rotate(180deg);
-          }
-          &:before{
-            top: -5.5px;
-          }
-        }
+        //.ddown__arrow {
+        //  top: 25px;
+        //  &:before, &:after {
+        //    transform: rotate(180deg);
+        //  }
+        //  &:before {
+        //    top: -5.5px;
+        //  }
+        //}
         .ddown__menu {
-          transform: translate3d(0,20px,0)!important
+          transform: translate3d(0, 20px, 0) !important
         }
       }
       .ddown .ddown__menu {
@@ -201,6 +201,63 @@
           min-width: 250px;
         }
       }
+    }
+  }
+}
+
+.client-area {
+  display: flex;
+}
+@media only screen and (min-width: 1024px) {
+  #app-wrapper.main-sidebar--ca {
+    &.main-sidebar--top {
+      .main-menu--primary, .main-menu--secondary {
+        padding-right: 120px;
+      }
+      .more-trigger {
+        display: none;
+      }
+      .client-area {
+        height: 80px;
+        top: 0; 
+        width: 126px;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 20;
+        .search-box {
+          display: none !important; //important flex
+        }
+        .item-grp-single {
+          &:first-of-type {
+            display: none !important;
+          }
+          &:nth-child(3) {
+            display: none;
+          }
+          &:nth-child(2) {
+            position: relative;
+            .mdl-js-button {
+              height: 40px;
+              width: 40px;
+            }
+            .badge {
+              z-index: 10;
+            }
+          }
+          .mdl-button__ripple-container {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .main-head {
+      z-index: inherit;
+      .search-box {
+        display: none !important; //important flex
+      }
+
     }
   }
 }
