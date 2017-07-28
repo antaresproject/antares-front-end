@@ -24,7 +24,7 @@
                                                 <div class="menu-mobile-settings--box">
                                                     <select class="menu-mobile-settings" data-selectAR--search="true" name="select"></select>
                                                 </div>
-                                                <section class="generals-form">
+                                                <section class="generals-form" data-preload>
                                                     <form id="14" class="form-validation" method="post" action="">
                                                         <div class="col-group">
                                                             <div class="col-dt-8">
@@ -222,7 +222,8 @@
                                                                                             <div class="cp-brand__ar-big"></div>
                                                                                             <span class="cp-brand__title">Main</span>
                                                                                             <!-- <span class="cp-brand__hex">#02A8F3</span> -->
-                                                                                            <input type="text" class="cp" name="hex-input" value="#02A8F3" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--main"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                         <div class="cp-brand__pallete ">
                                                                                             <div class="cp-brand__sgl"></div>
@@ -235,7 +236,8 @@
                                                                                             <div class="cp-brand__ar-big"></div>
                                                                                             <span class="cp-brand__title">Secondary</span>
                                                                                             <!-- <span class="cp-brand__hex">#2d353d</span> -->
-                                                                                            <input type="text" class="cp" name="hex-input" value="#30343d" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--secondary"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                         <div class="cp-brand__pallete">
                                                                                             <div class="cp-brand__sgl"></div>
@@ -248,7 +250,8 @@
                                                                                             <div class="cp-brand__ar-big"></div>
                                                                                             <span class="cp-brand__title">Background</span>
                                                                                             <!-- <span class="cp-brand__hex">#e4e6eb</span> -->
-                                                                                            <input type="text" class="cp" name="hex-input" value="#70c24a" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--background"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                         <div class="cp-brand__pallete">
                                                                                             <div class="cp-brand__sgl"></div>
@@ -270,7 +273,8 @@
                                                                                                 <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
                                                                                                 <input type="hidden" class="color-saver" id="brand-c1" name="brand-c1">
                                                                                             </div>
-                                                                                            <input type="text" class="cp" name="hex-input" value="#050505" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--main-first"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                             <!-- <span class="cp-brand__small">AaBbCc</span> -->
                                                                                         </div>
                                                                                         <div class="cp-brand__preview">
@@ -279,7 +283,8 @@
                                                                                                 <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
                                                                                                 <input type="hidden" class="color-saver" id="brand-c2" name="brand-c2">
                                                                                             </div>
-                                                                                            <input type="text" class="cp" name="hex-input" value="#084700" data-tooltip-text="Hex is incorrect" maxlength="7">
+                                                                                            <span class="hidden standard-color--main-second"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" data-tooltip-text="Hex is incorrect" maxlength="7">
                                                                                         </div>
                                                                                     </div>
                                                                                     <!-- SECOND -->
@@ -290,7 +295,8 @@
                                                                                                 <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
                                                                                                 <input type="hidden" class="color-saver" id="brand-c3" name="brand-c3">
                                                                                             </div>
-                                                                                            <input type="text" class="cp" name="hex-input" value="#fafafa" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--secondary-first"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                         <div class="cp-brand__preview">
                                                                                             <span class="cp-brand__big">Aa</span>
@@ -298,7 +304,8 @@
                                                                                                 <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
                                                                                                 <input type="hidden" class="color-saver" id="brand-c4" name="brand-c4">
                                                                                             </div>
-                                                                                            <input type="text" class="cp" name="hex-input" value="#7a0000" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--secondary-second"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                     </div>
                                                                                     <!-- THIRD -->
@@ -309,7 +316,8 @@
                                                                                                 <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
                                                                                                 <input type="hidden" class="color-saver" id="brand-c5" name="brand-c5">
                                                                                             </div>
-                                                                                            <input type="text" class="cp" name="hex-input" value="#940000" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--background-first"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                         <div class="cp-brand__preview">
                                                                                             <span class="cp-brand__big">Aa</span>
@@ -317,7 +325,8 @@
                                                                                                 <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
                                                                                                 <input type="hidden" class="color-saver" id="brand-c6" name="brand-c6">
                                                                                             </div>
-                                                                                            <input type="text" class="cp" name="hex-input" value="#f88888" maxlength="7" data-tooltip-text="Hex is incorrect">
+                                                                                            <span class="hidden standard-color--background-second"></span>
+                                                                                            <input type="text" class="cp" name="hex-input" value="" maxlength="7" data-tooltip-text="Hex is incorrect">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -332,7 +341,7 @@
                                                                         <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
                                                                         <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
 
-                                                                        <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset all</button>
+                                                                        <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

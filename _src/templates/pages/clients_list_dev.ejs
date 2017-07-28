@@ -10,11 +10,11 @@
 </head>
 <template id="vue-page-clients-list">
 
-    <section class="main-content" v-cloak>
-        <div class="grid-stack">
+    <section class="main-content">
+        <div class="grid-stack" data-preload>
             <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-min-width="13"
                 data-gs-min-height="18" data-gs-width="24" data-gs-height="18">
-                <div class="grid-stack-item-content" data-scroll-area>
+                <div class="grid-stack-item-content">
                     <div class="card card--pagination">
                         <div class="tbl-c">
                             <% include ../layout/card_ctrls_filter %>
@@ -39,7 +39,6 @@
                             <% include ../layout/sidebar_alerts %>
                                 <vue-page-clients-list></vue-page-clients-list>
             </div>
-            </div>
             <% include ../layout/js_files %>
 
 </body>
@@ -47,11 +46,5 @@
 </html>
 
 <style lang="less">
-    [v-cloak]>* {
-        display: none
-    }
 
-    [v-cloak]::before {
-        content: "loading…"
-    }
 </style>

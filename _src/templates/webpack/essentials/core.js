@@ -5,6 +5,7 @@ var path = './../../../';
 // OfflinePluginRuntime.install();
 
 // EXTERNAL DEPS:
+import './../../../js/components/preloader/preloader';
 import './../../../js/external/material.min';
 // APP COMPONENTS:
 import './../../../js/components/mutator_observer/mutator_observer';
@@ -16,6 +17,7 @@ import '../../../js/components/main_menu/main_menu_html';
 
 import './../../../js/components/auto_complete/auto_complete';
 import './../../../js/components/browser_hooks/browser_hooks';
+
 // import './../../../js/components/main_menu/main_menu_old';
 
 //moved to forms_basic partial
