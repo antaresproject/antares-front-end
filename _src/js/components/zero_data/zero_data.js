@@ -1,76 +1,58 @@
-// 
+//
 // Zero Data Component
 //
 
-
 export default {
+  // Gridstack Resize Version
+  gridstack() {
+    const stringsBase = {
+      xs: 'zd--xs',
+      xsTxt: 'Extra Small',
+      sm: 'zd--sm',
+      smTxt: 'Small',
+      default: 'zd--default',
+      defaultTxt: 'Default',
+      lg: 'zd--lg',
+      lgTxt: 'Large'
+    };
 
-    // Gridstack Resize Version
-    gridstack: function() {
+    const adjustZeroDataSize = function(gsi, $zdElement) {
+      const pathToTitle = $zdElement.closest('.grid-stack-item-content').find('.card__header--left span');
 
-        let classes = {
+      if (gsi.width < 5) {
+        $zdElement.attr('class', 'zd ' + stringsBase.xs);
+        pathToTitle.length ? pathToTitle.text(stringsBase.xsTxt) : false;
+      } else if (gsi.width < 8) {
+        $zdElement.attr('class', 'zd ' + stringsBase.sm);
+        pathToTitle.length ? pathToTitle.text(stringsBase.smTxt) : false;
+      } else if (gsi.width < 12) {
+        $zdElement.attr('class', 'zd ' + stringsBase.default);
+        pathToTitle.length ? pathToTitle.text(stringsBase.defaultTxt) : false;
+      } else {
+        $zdElement.attr('class', 'zd ' + stringsBase.lg);
+        pathToTitle.length ? pathToTitle.text(stringsBase.lgTxt) : false;
+      }
+    };
 
-            xs: 'zd--xs',
-            sm: 'zd--sm',
-            default: 'zd--default',
-            lg: 'zd--lg'
+    $(() => {
+      const grid = $('.grid-stack').data('gridstack');
+      const $grid = $('.grid-stack');
 
+      $grid.on('change', (event, items) => {
+        if (items === undefined) {
+          return false;
         }
 
-        let adjustZeroDataSize = function(gsi, $zdElement) {
+        for (let i = 0; i < items.length; i++) {
+          const $zdDiv = $(items[i].el).find('.zd');
+          const currentGsi = items[i];
 
-            if (gsi.width < 3) {
-
-                $zdElement.attr('class', 'zd ' + classes.xs);
-
-            } else if (gsi.width < 5) {
-
-                $zdElement.attr('class', 'zd ' + classes.sm);
-
-            } else if (gsi.width < 7) {
-
-                $zdElement.attr('class', 'zd ' + classes.default);
-
-            } else {
-
-                $zdElement.attr('class', 'zd ' + classes.lg);
-
-            }
-
-        };
-
-        $(function() {
-
-
-            // if ( !$(.))            
-
-            var grid = $('.grid-stack').data('gridstack');
-            var $grid = $('.grid-stack');
-
-            $grid.on('change', function(event, items) {
-
-                if ( items === undefined ) {
-                    return false;
-                }
-
-                for (var i = 0; i < items.length; i++) {
-
-                    var $zdDiv = $(items[i].el).find('.zd');
-                    var currentGsi = items[i];
-
-                    // check it outs, O.G
-                    if ($zdDiv !== undefined) {
-
-                        adjustZeroDataSize(currentGsi, $zdDiv);
-
-                    }
-
-                }
-
-            });
-
-        });
-
-    }
-
-}
+          // check it outs, O.G
+          if ($zdDiv !== undefined) {
+            adjustZeroDataSize(currentGsi, $zdDiv);
+          }
+        }
+      });
+    });
+  }
+};

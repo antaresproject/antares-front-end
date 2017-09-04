@@ -6,7 +6,7 @@
                 <div class="card__header-left"><span>{{widgetName}} </span>
 
                 </div>
-                <div class="card__header-right"><i class="card-maximize zmdi zmdi-window-maximize"></i></div>
+                <div class="card__header-right"><i class="card-maximize zmdi zmdi-window-maximize mdl-js-button mdl-js-ripple-effect"></i></div>
             </div>
             <div class="card__content  datarow flex ff-cnw jc-flex-start">
 
@@ -18,7 +18,7 @@
                 <!--<div class="card-ctrls">-->
                     <!--<div class="card-ctrls__left">-->
                         <!--<div class="search-box search-box&#45;&#45;dark mr24"><i class="zmdi zmdi-search"></i>-->
-                            <!--<form action="#">-->
+                            <!--<form action="">-->
                                 <!--<div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield ">-->
                                     <!--<input v-model="search" class="mdl-textfield__input search-box__search-field"-->
                                            <!--type="text" id="sample2">-->
@@ -65,311 +65,309 @@
 </template>
 <script>
 
-    import Paginate from 'vuejs-paginate';
+import Paginate from 'vuejs-paginate';
 
-    import cardEditControls from './card_edit_controls.vue';
+import cardEditControls from './card_edit_controls.vue';
 
 //    require('./../../../js/components/datatables/filters');
 
-    var c1 = '#02a8f3';
-    var c2 = '#30343d';
-    var c3 = 'rebeccapurple';
-    export default {
-        name: 'CardLogs',
-        components: {
-            'paginate': Paginate,
-            'card-edit-controls': cardEditControls
-        },
-        data: function () {
-            return {
-                // widgetName: 'card--chart',
-                widgetName: 'logs',
-                cardClass: 'card--logs',
-                search: '',
-                searchPlaceholder: 'Search',
-                optionList: [{
-                    value: 'All',
-                }, {
-                    value: 'warning',
-                }, {
-                    value: 'latest',
-                }],
-                logList: [{
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand 512</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                }, {
-                    color: c1,
-                    status: 'ok',
-                    html: '<div> Brand <a href="#">Brand 5</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">235</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                    tooltipText: 'Brand 2'
-                }, {
-                    color: c2,
-                    status: 'warning',
-                    html: '<div> Brand <a href="#">Brand 21</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                    tooltipText: 'Brands 5'
-                }, {
-                    color: c3,
-                    status: 'latest',
-                    html: '<div> Brand <a href="#">Brand LAST LAST LAST LAST LAST</a> has been updated by <a href="#">Admin Demo</a> with options identifier <a href="#">12</a> and colors identifier <a href="#">9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                    tooltipText: 'Brands 11'
-                },],
-                selectFilter: '',
-            }
-        },
-        mounted: function () {
-            this.selectLiveChange();
-        },
-        methods: {
-            clickCallback: function (pageNum) {
-                console.log(pageNum)
-            },
-            selectLiveChange: function (event) {
-                var self = this;
-                $(document.body).find(self.$el).on("change", ".card--logs-filter", function () {
-                    console.log(this.value);
-                    self.selectFilter = this.value;
-                });
-            }
+var c1 = '#02a8f3';
+var c2 = '#30343d';
+var c3 = 'rebeccapurple';
+export default {
+    name: 'CardLogs',
+    components: {
+        'paginate': Paginate,
+        'card-edit-controls': cardEditControls
+    },
+    data: function () {
+        return {
+            // widgetName: 'card--chart',
+            widgetName: 'logs',
+            cardClass: 'card--logs',
+            search: '',
+            searchPlaceholder: 'Search',
+            optionList: [{
+                value: 'All',
+            }, {
+                value: 'warning',
+            }, {
+                value: 'latest',
+            }],
+            logList: [{
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Brand <a  >Brand LAST LAST LAST LAST LAST</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                tooltipText: 'Brands 11'
+            },],
+            selectFilter: '',
         }
-    };
+    },
+    mounted: function () {
+        this.selectLiveChange();
+    },
+    methods: {
+        clickCallback: function (pageNum) {
+            console.log(pageNum)
+        },
+        selectLiveChange: function (event) {
+            var self = this;
+            $(document.body).find(self.$el).on("change", ".card--logs-filter", function () {
+                console.log(this.value);
+                self.selectFilter = this.value;
+            });
+        }
+    }
+};
 </script>
 <style lang="less">
+.card--logs .timeline__entry {
+    padding-right: 8px;
+    .timeline__padding {
+        >div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
 
-    .card--logs .timeline__entry {
-        padding-right: 8px;
-        .timeline__padding {
-            > div {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+.card--logs .timeline li span:last-child {
+    padding-left: 0;
+}
+
+.pagination {}
+
+.page-item {}
+
+.logs-container {
+    .card__edit-icons {
+        i {
+            color: #fff;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .mobile-toogle--target {
+        display: flex !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    [data-widget-name="logs"] {
+        .card--ctrls__left {
+            .selection {
+                .select2-selection__rendered {
+                    padding-top: 2px;
+                }
             }
         }
     }
-
-    .card--logs .timeline li span:last-child {
-        padding-left: 0;
-    }
-
-    .pagination {
-    }
-
-    .page-item {
-    }
-
-    .logs-container {
-        .card__edit-icons {
-            i {
-                color: #fff;
-            }
-        }
-    }
-    @media only screen and (min-width: 1200px){
-        .mobile-toogle--target{
-            display: flex !important;
-        }
-    }
-    @media only screen and (max-width: 767px){
-        [data-widget-name="logs"]{
-            .card--ctrls__left{
-              .selection{
-                  .select2-selection__rendered{
-                   padding-top: 2px;
-                  }
-              }
-            }
-        }
-    }
-
+}
 </style>

@@ -7,6 +7,7 @@ const menuAside = {
       self.submenuControl();
       self.createSelectRWD();
       self.menuMobileControl();
+      self.activeTabletMenu();
     });
   },
 

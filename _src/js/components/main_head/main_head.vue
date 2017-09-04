@@ -1,32 +1,32 @@
 <template>
     <section class="main-head">
         <div class="burgericon">
-            <a class="" href="#"> <span class="line line-1"></span> <span class="line line-2"></span> <span class="line line-3"></span> </a>
+            <a class=""  > <span class="line line-1"></span> <span class="line line-2"></span> <span class="line line-3"></span> </a>
         </div>
         <ul class="breadcrumbs">
-            <!-- <li class=""><a href="#">Clients</a></li> -->
+            <!-- <li class=""><a  >Clients</a></li> -->
             <li>
                 <div class="ddown">
-                    <div class="ddown__init ddown__init--white"><a href="#">Dashboard</a></div>
+                    <div class="ddown__init ddown__init--white"><a  >Dashboard</a></div>
                     <div class="ddown__content">
                         <div class="ddown__arrow"></div>
                         <ul class="ddown__menu">
-                            <li class="ddown__header"><a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a></li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-email"></i><span>Send Email</span></a></li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a></li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-square-right"></i><span>Login As Client</span></a></li>
-                            <li class="ddown__footer"> <a href="#"><span>More</span></a>
+                            <li class="ddown__header"><a   class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-email"></i><span>Send Email</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-square-right"></i><span>Login As Client</span></a></li>
+                            <li class="ddown__footer"> <a  ><span>More</span></a>
                                 <ul class="ddown__submenu">
-                                    <li><a href="#" class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
-                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
-                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
-                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
-                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
-                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
-                                    <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
+                                    <li><a   class="mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
+                                    <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                                    <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                                    <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
+                                    <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                                    <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
+                                    <li><a class="mdl-js-button mdl-js-ripple-effect"  ><i class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -36,7 +36,7 @@
         </ul>
         <div class="search-box mr16"> <i class="zmdi zmdi-search"></i>
             <input type="hidden" name="_protection" value="" class="search-protection">
-            <form action="#">
+            <form action="">
                 <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield">
                     <input v-shortkey.focus="['f3']" class="mdl-textfield__input search-box__search-field" type="text" id="main-search" autocomplete>
                     <label class="mdl-textfield__label" for="#main-search">Search...</label>
@@ -67,7 +67,7 @@
                         <div class="ddown__arrow"></div>
                         <ul class="ddown__menu">
                             <li class="ddown__header">
-                                <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                                <a class="mdl-js-button mdl-js-ripple-effect"  >
                                     <div class="flex-block">
                                         <div class="avatar avatar--lg"> <img src="img/brand/brand-rsstudio--lg.png" alt="RS Studio"> </div>
                                         <div class="flex-block__content"> <span class="flex-block__title">Paweł Bis</span> <span class="flex-block__desc">paul@rsstudio.net</span> </div>
@@ -75,13 +75,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="mdl-js-button mdl-js-ripple-effect" href="#"> <i class="zmdi zmdi-file-plus"></i> View Profile </a>
+                                <a class="mdl-js-button mdl-js-ripple-effect"  > <i class="zmdi zmdi-file-plus"></i> View Profile </a>
                             </li>
                             <li>
-                                <a class="mdl-js-button mdl-js-ripple-effect" href="#"> <i class="zmdi zmdi-email"></i> Something Else </a>
+                                <a class="mdl-js-button mdl-js-ripple-effect"  > <i class="zmdi zmdi-email"></i> Something Else </a>
                             </li>
                             <li class="ddown__footer">
-                                <a class="mdl-js-button mdl-js-ripple-effect" href="#"> <i class="zmdi zmdi-sign-in"></i> Sign Out </a>
+                                <a class="mdl-js-button mdl-js-ripple-effect"  > <i class="zmdi zmdi-sign-in"></i> Sign Out </a>
                             </li>
                         </ul>
                     </div>
@@ -95,7 +95,7 @@
                 <ul class="ddown__menu">
                     <li class="ddown__header"><span>Change Brand</span></li>
                     <li>
-                        <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                        <a class="mdl-js-button mdl-js-ripple-effect"  >
                             <div class="flex-block">
                                 <div class="avatar avatar--xs"> <img src="img/brand/brand-rsstudio.png" alt="Avatar" /> </div>
                                 <div class="flex-block__content"> <span class="flex-block__title">RS Studio</span> </div>
@@ -103,7 +103,7 @@
                         </a>
                     </li>
                     <li class="is-selected">
-                        <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                        <a class="mdl-js-button mdl-js-ripple-effect"  >
                             <div class="flex-block">
                                 <div class="avatar avatar--xs"> <img src="img/brand/brand-inbs.png" alt="Avatar" /> </div>
                                 <div class="flex-block__content"> <span class="flex-block__title">INBS.software</span> </div>

@@ -9,7 +9,7 @@ export default Bar.extend({
     'background',
     'hoverBackground',
     'nTwoBackground',
-    'nTwoHoverBackground',
+    'nTwoHoverBackground'
   ],
   mounted() {
     let self = this;
@@ -31,9 +31,9 @@ export default Bar.extend({
           {
             backgroundColor: self.background,
             data: quantityRandom,
-            hoverBackgroundColor: self.hoverBackground,
-          },
-        ],
+            hoverBackgroundColor: self.hoverBackground
+          }
+        ]
       };
     } else if (self.quantityLines === '2') {
       infoTable = {
@@ -42,14 +42,14 @@ export default Bar.extend({
           {
             backgroundColor: self.background,
             data: quantityRandom,
-            hoverBackgroundColor: self.hoverBackground,
+            hoverBackgroundColor: self.hoverBackground
           },
           {
             backgroundColor: self.nTwoBackground,
             data: quantityRandom2,
-            hoverBackgroundColor: self.nTwoHoverBackground,
-          },
-        ],
+            hoverBackgroundColor: self.nTwoHoverBackground
+          }
+        ]
       };
     }
     self.renderChart(infoTable, {
@@ -60,16 +60,16 @@ export default Bar.extend({
       scales: {
         yAxes: [
           {
-            display: false,
-          },
+            display: false
+          }
         ],
         xAxes: [
           {
             display: false,
-            barPercentage: 1, //width bar
-          },
-        ],
-      },
+            barPercentage: 1 //width bar
+          }
+        ]
+      }
     }); // options end
-  },
+  }
 });

@@ -9,7 +9,7 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Global
- * @version    0.9.1
+ * @version    0.9.2
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
@@ -18,9 +18,11 @@
 
 */
 
-// DEFAULT COMPONENT TEMPLATE
+/* global enquire */
 
-const sampleAntaresComponent = {
+// COMPONENT NAME
+
+export const sampleAntaresComponent = {
   init() {
     this.test();
   },
@@ -36,11 +38,12 @@ const sampleAntaresComponent = {
   }
 };
 
-$(function() {
-  window.sampleAntaresComponent = sampleAntaresComponent;
+$(() => {
   sampleAntaresComponent.init();
 });
 
-$(window).on('load', function() {
+$(window).on('load', () => {
   sampleAntaresComponent.whenWindowLoadIsNeeded();
 });
+
+window.sampleAntaresComponent = sampleAntaresComponent;

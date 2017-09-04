@@ -1,21 +1,30 @@
 // Menu Active Element
+import { antaresCfg } from './../../../config/antares_cfg';
 
-function menuActiveElement() {
-  const url = document.location.href;
-  const parts = url.split('/');
-  let lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
-  const linkColor = 'white';
+export const activeMenuElement = {
+  init() {
+    const url = document.location.href;
+    const parts = url.split('/');
+    let lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+    var linkColor = 'white';
 
-  if (lastSegment === 'localhost:9000' || lastSegment === 'localhost') {
-    lastSegment = 'index.html';
+    if (antaresCfg.menuSimpleSubmenu) {
+      linkColor = '#5C6066';
+    }
+
+    if (lastSegment === 'localhost:9000' || lastSegment === '#' || url === 'http://demo.antaresproject.io/frontend/') {
+      lastSegment = 'index.html';
+    }
+
+    let link = $('a[href="' + lastSegment + '"]');
+    link.closest('li[data-index]').addClass('is-active');
+    link.closest('li[data-index]').addClass('is-active');
+    if (antaresCfg.menuSimpleSubmenu === true) {
+      link.css('color', '#5c6066');
+    } else {
+      link.css('color', 'white');
+    }
   }
+};
 
-  const link = $('.main-sidebar a[href="' + lastSegment + '"]');
-
-  link.closest('li[data-index]').addClass('is-active');
-  link.css('color', linkColor);
-}
-
-menuActiveElement();
-
-export default menuActiveElement;
+export default activeMenuElement;

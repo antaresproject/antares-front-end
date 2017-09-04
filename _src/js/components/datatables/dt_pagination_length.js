@@ -23,17 +23,7 @@
           d = 2 === b.length && a.isArray(b[0]) ? b[1] : b,
           g = 2 === b.length && a.isArray(b[0]) ? b[0] : b,
           b = a.map(g, function(b, a) {
-            return b == c.page.len()
-              ? '<a class="active mdl-js-button mdl-js-ripple-effect" data-length="' +
-                g[a] +
-                '">' +
-                d[a] +
-                '</a>'
-              : '<a class="mdl-js-button mdl-js-ripple-effect" data-length="' +
-                g[a] +
-                '">' +
-                d[a] +
-                '</a>';
+            return b == c.page.len() ? '<a class="active mdl-js-button mdl-js-ripple-effect" data-length="' + g[a] + '">' + d[a] + '</a>' : '<a class="mdl-js-button mdl-js-ripple-effect" data-length="' + g[a] + '">' + d[a] + '</a>';
           });
         e.html(f.oLanguage.sLengthMenu.replace('_MENU_', b.join(' ')));
         h = c.page.len();
@@ -49,13 +39,13 @@
       return new a.fn.dataTable.LengthLinks(d).container();
     },
     cFeature: 'L',
-    sFeature: 'LengthLinks',
+    sFeature: 'LengthLinks'
   });
 
   //scroll it!
-  $('.tbl-c table').on('page.dt length.dt', function() {
-    setTimeout(function() {
-      // $('.tbl-c').perfectScrollbar('update');
-    }, 150);
-  });
+  // $('.tbl-c table').on('page.dt length.dt', function() {
+  //     setTimeout(function() {
+  //         $('.tbl-c').perfectScrollbar('update');
+  //     }, 150);
+  // });
 })(window, document, jQuery);

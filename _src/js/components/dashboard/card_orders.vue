@@ -1,7 +1,6 @@
 <template>
     <div class="card-container">
         <card-edit-controls></card-edit-controls>
-    
         <div class="card card--chart card-chart--slim" v-bind:class="{'card--compare': compareMode}" :data-widget-name="widgetName" data-chart="true">
             <div class="card__left">
                 <div class="card__header">
@@ -9,33 +8,11 @@
                         <span>{{title}}</span>
                     </div>
                     <div class="card__header-right">
-                        <div class="card__header-right">
-                            <div class="ddown ddown--view-more ddown--view-more-options">
-                                <div class="ddown__init ddown__init--clean">
-                                    <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">
-                                        <i class="zmdi zmdi-more-vert"></i>
-                                    </a>
-                                </div>
-                                <div class="ddown__content">
-                                    <form action="" method="post">
-                                        <ul class="ddown__menu">
-                                            <li>
-                                                <input data-daterangepicker="true" class="mr24">
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" data-icheck="true" name="check" id="orders">
-                                                <label class="ml8" for="orders" v-on:click="compareMode = !compareMode">{{compareText}}</label>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div>
-                            </div>
-                            <form action="" method="post">
-                                <input data-daterangepicker="true" class="mr24">
-                                <input type="checkbox" data-icheck="true" name="check" id="orders">
-                                <label class="ml8" for="orders" v-on:click="compareMode = !compareMode">{{compareText}}</label>
-                            </form>
-                        </div>
+                        <form action="" method="post">
+                            <input data-daterangepicker="true" class="mr24">
+                            <input type="checkbox" data-icheck="true" name="check" id="orders">
+                            <label class="ml8" v-on:click="compareMode = !compareMode" for="orders">{{compareText}}</label>
+                        </form>
                     </div>
                 </div>
                 <div class="card__content card__content--chart">
@@ -45,33 +22,46 @@
                 </div>
             </div>
             <div class="card__right">
-                <header>
+                <div class="mobile-compare">
+                    <input type="checkbox" data-icheck="true" name="check" id="orders">
+                    <label class="ml8" v-on:click="compareMode = !compareMode" for="orders">{{compareText}}</label>
+                </div>
+                <header style="">
                     <span class="card__title">{{legendTitle}}</span>
-                    <span class="card__indicator compare"
-                          v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">
+                    <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">
                         {{ ((value1 / value2) * 100 ).toFixed() }}%
-                            <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
-                        </span>
+                        <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
+                    </span>
                     <span class="card__ammount">
                         <strong>{{value1}} </strong>
                         <span class="compare"> / {{value2}}</span>
                     </span>
                 </header>
-                <ul class="datarow mobile-toogle--target" data-scrollable>
+                <ul  class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
                     <li v-for="row in datarows" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
-                        <div class="datarow__left"> <span class="datarow__status">{{row.text}}</span> </div>
-                        <div class="datarow__right"> <span class="datarow__data"><strong>{{row.value1}}</strong><span class="compare">/{{row.value2}}</span></span> <span class="datarow__percentage compare"><span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%</span><i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i></span>
+                        <div class="datarow__left">
+                            <span class="datarow__status">{{row.text}}</span>
+                        </div>
+                        <div class="datarow__right">
+                            <span class="datarow__data">
+                                <strong>{{row.value1}}</strong>
+                                <span class="compare">/{{row.value2}}</span>
+                            </span>
+                            <span class="datarow__percentage compare">
+                                <span>{{ ((row.value1 / row.value2) * 100 ).toFixed() }}%
+                                </span>
+                                <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': row.type === 'grow', 'zmdi-long-arrow-down': row.type === 'decline' } "></i>
+                            </span>
                         </div>
                     </li>
                 </ul>
-            </div>
-    
-           <div class="mobile-toogle--box">
+                <div class="mobile-toogle--box">
                     <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
                         <i class="zmdi zmdi-caret-down"></i>
                     </div>
                 </div>
+            </div>
     
         </div>
     
@@ -85,7 +75,7 @@
 
 function dataCalc(data) {
 
-    //calcuations to data 
+    //calcuations to data
 
     function add(a, b) {
         return a + b;
@@ -145,87 +135,7 @@ export default {
                 value1: 0,
                 value2: 1,
                 type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 12,
-                value2: 5,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 522,
-                value2: 599,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 212,
-                value2: 521,
-                type: 'decline',
-            }, {
-                text: 'Dismissed',
-                value1: 0,
-                value2: 1,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 12,
-                value2: 5,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 522,
-                value2: 599,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 212,
-                value2: 521,
-                type: 'decline',
-            }, {
-                text: 'Dismissed',
-                value1: 0,
-                value2: 1,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 12,
-                value2: 5,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 522,
-                value2: 599,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 212,
-                value2: 521,
-                type: 'decline',
-            }, {
-                text: 'Dismissed',
-                value1: 0,
-                value2: 1,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 12,
-                value2: 5,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 522,
-                value2: 599,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 212,
-                value2: 521,
-                type: 'decline',
-            }, {
-                text: 'Dismissed',
-                value1: 0,
-                value2: 1,
-                type: 'decline',
-            },]
+            }]
 
         }
     },

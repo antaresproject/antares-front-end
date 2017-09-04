@@ -68,7 +68,7 @@ export const AntaresDdownSingle = {
         this.open();
         this.classMod();
         this.arrowPos();
-        this.brand()
+        this.brand();
     },
 
     // methods
@@ -81,9 +81,10 @@ export const AntaresDdownSingle = {
             menuLi = $(".ddown__menu li");
         $(this);
         $(window).resize(function (event) {
-        $(".ddown--open").removeClass("ddown--open")
-            })
-        , container.on("click", function () { $(".ddown--open")
+            $(".ddown--open").removeClass("ddown--open")
+        })
+            , container.on("click", function () {
+            $(".ddown--open")
                 .removeClass("ddown--open"), $(".breadcrumbs li")
                 .removeClass("is-active"), $(".ddown")
                 .removeClass("ddown--adj-top"), $(".ddown")
@@ -101,11 +102,14 @@ export const AntaresDdownSingle = {
         $(this);
         container.on("click", ".ddown", function (e) {
             return e.stopPropagation(),
+
                 $(".ddown").not($(this)).removeClass("ddown--open ddown-multi--open"),
                 $(".ddown__menu").css({
                     top: "auto",
                     bottom: "auto"
                 }),
+                AntaresDdownGeneral.closeAllDropdowns(),
+
                 $(".ddown").removeClass("ddown--adj-top"),
                 $(".ddown").removeClass("ddown--adj-bottom"),
                 $(".ddown").removeClass("ddown--adj-left"),
@@ -179,38 +183,37 @@ export const AntaresDdownSingle = {
             subMenu = $(".ddown__submenu"),
             menuLi = $(".ddown__menu li");
         $(this);
-    menu.each(function (index, el) {
-        $(this)
-            .children(".ddown__header")
-            .length || $(this)
-            .children(".ddown__footer")
-            .length || $(this)
-            .addClass("ddown__menu--innerpadd")
-    }), subMenu.each(function (index, el) {
-        $(this)
-            .children(".ddown__header")
-            .length || $(this)
-            .children(".ddown__footer")
-            .length || $(this)
-            .addClass("ddown__menu--innerpadd")
-    }), menuLi.each(function (index, el) {
-        $(this)
-            .children(".ddown__submenu")
-            .length && $(this)
-            .addClass("has-submenu")
-    }), ddown.each(function (index, el) {
-        $(this)
-            .find(".ddown__init")
-            .children("i")
-            .length && $(this)
-            .addClass("ddown__shorty")
-    })
-},
+        menu.each(function (index, el) {
+            $(this)
+                .children(".ddown__header")
+                .length || $(this)
+                .children(".ddown__footer")
+                .length || $(this)
+                .addClass("ddown__menu--innerpadd")
+        }), subMenu.each(function (index, el) {
+            $(this)
+                .children(".ddown__header")
+                .length || $(this)
+                .children(".ddown__footer")
+                .length || $(this)
+                .addClass("ddown__menu--innerpadd")
+        }), menuLi.each(function (index, el) {
+            $(this)
+                .children(".ddown__submenu")
+                .length && $(this)
+                .addClass("has-submenu")
+        }), ddown.each(function (index, el) {
+            $(this)
+                .find(".ddown__init")
+                .children("i")
+                .length && $(this)
+                .addClass("ddown__shorty")
+        })
+    },
 
 };
 
-$(function() {
+$(function () {
     window.AntaresDdownSingle = AntaresDdownSingle;
     AntaresDdownSingle.init();
 });
-

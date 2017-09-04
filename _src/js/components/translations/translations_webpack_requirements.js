@@ -24,7 +24,6 @@
  http://www.jacklmoore.com/autosize
  */
 
-
 require('./../../../js/external/modified/context_menu.js'); // css in package
 require('script-loader!datatables');
 require('script-loader!datatables.net-responsive'); // no css

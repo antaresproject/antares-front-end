@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="zd__footer">
-                            <a href="#" class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEW TICKET</a>
+                            <a   class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEW TICKET</a>
                         </div>
                     </div>
 

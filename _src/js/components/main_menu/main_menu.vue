@@ -8,11 +8,11 @@
             <div class="menu-scroll">
                 <ul class="main-menu main-menu--brand">
                     <li v-bind:class="{'is-relative': mm.menuLock}" class="main-menu__brand">
-                        <a href="#">
+                        <a  >
                             <div class="main-sidebar__logo"></div>
                         </a>
                         <div class="submenu submenu--system js-flex-start">
-                            <a href="#" class="submenu__mobile-return">
+                            <a   class="submenu__mobile-return">
                                 <i class="zmdi zmdi-arrow-left"></i>
                                 <span>Brand Menu</span>
                             </a>
@@ -41,14 +41,14 @@
                             </section>
                             <section>
                                 <div class="submenu__content">
-                                    <a href="#" class="flex-block flex-block--bold">
+                                    <a   class="flex-block flex-block--bold">
                                         <div class="avatar avatar--generic avatar--xs"></div>
                                         <div class="flex-block__content"><span
                                                 class="flex-block__title">GimmeMoney</span> <span
                                                 class="flex-block__desc">Basic Plan</span></div>
                                         <span class="flex-block__badge">From $99/mo</span>
                                     </a>
-                                    <a href="#" class="flex-block flex-block--bold">
+                                    <a   class="flex-block flex-block--bold">
                                         <div class="avatar avatar--generic avatar--xs"></div>
                                         <div class="flex-block__content"><span
                                                 class="flex-block__title">GimmeMoney</span> <span
@@ -72,7 +72,7 @@
                             <span class="text">{{item.name}}</span>
                         </a>
                         <!-- submenu -->
-                        <div v-if="item.submenu" class="submenu flex-fs"><a href="#" class="submenu__mobile-return"><i
+                        <div v-if="item.submenu" class="submenu flex-fs"><a   class="submenu__mobile-return"><i
                                 class="zmdi zmdi-arrow-left"></i><span>{{item.name}}</span></a>
                             <section>
                                 <header>
@@ -113,7 +113,7 @@
                         </a>
                         <!-- submenu -->
                         <div v-if="item.submenu" class="submenu flex-fs">
-                            <a href="#" class="submenu__mobile-return">
+                            <a   class="submenu__mobile-return">
                                 <i class="zmdi zmdi-arrow-left"></i><span>{{item.name}}</span>
                             </a>
                             <section>
@@ -154,7 +154,7 @@
                                 <div class="ddown__arrow"></div>
                                 <ul class="ddown__menu">
                                     <li class="ddown__header">
-                                        <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                                        <a class="mdl-js-button mdl-js-ripple-effect"  >
                                             <div class="flex-block">
                                                 <div class="avatar avatar--lg">
                                                     <img src="img/brand/brand-rsstudio--lg.png" alt="RS Studio">
@@ -167,17 +167,17 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                                        <a class="mdl-js-button mdl-js-ripple-effect"  >
                                             <i class="zmdi zmdi-file-plus"></i> View Profile
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                                        <a class="mdl-js-button mdl-js-ripple-effect"  >
                                             <i class="zmdi zmdi-email"></i> Something Else
                                         </a>
                                     </li>
                                     <li class="ddown__footer">
-                                        <a class="mdl-js-button mdl-js-ripple-effect" href="#">
+                                        <a class="mdl-js-button mdl-js-ripple-effect"  >
                                             <i class="zmdi zmdi-sign-in"></i> Sign Out
                                         </a>
                                     </li>
@@ -210,7 +210,7 @@
                     <div class="mobile-ddowns__icon"><i class="zmdi zmdi-caret-down"></i></div>
                     <ul class="mobile-ddowns__menu mobile-ddowns__menu--user">
                         <li class="mobile-ddowns__menu-header">
-                            <a href="#">
+                            <a  >
                                 <div class="flex-block">
                                     <div class="avatar avatar--xs"><img :src="mm.mobileDdownsContent.avatarUrl"
                                                                         :alt="mm.mobileDdownsContent.avatarAlt"/>

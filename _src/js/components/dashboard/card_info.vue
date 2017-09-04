@@ -1,62 +1,67 @@
-<template>
+<template lang="ejs">
     <div class="card-container">
-        <card-edit-controls></card-edit-controls>
-        <div class="card" :class="widgetClass" :data-widget-name="widgetName">
-            <div class="card__header">
-                <div class="card__header-left"><span>{{title}}</span></div>
-                <div class="card__header-right"><i class="card-maximize zmdi zmdi-window-maximize"></i>
-                    <div class="ddown ddown--view-more">
-                        <div class="ddown__init ddown__init--clean"><a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">{{headerButtonText}}</a>
+    <card-edit-controls></card-edit-controls>
+    <div class="card" :class="widgetClass" :data-widget-name="widgetName">
+    <div class="card__header">
+    <div class="card__header-left"><span>{{title}}</span></div>
+    <div class="card__header-right">
+    <i class="card-maximize zmdi zmdi-window-maximize mdl-js-button mdl-js-ripple-effect"></i>
 
-                        </div>
-                        <div class="ddown__content">
-                            <div class="ddown__arrow"></div>
-                            <ul class="ddown__menu">
-                                <li class="ddown__header mdl-js-button mdl-js-ripple-effect"><a href="#"><i
-                                        class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                        class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                        class="zmdi zmdi-email"></i><span>Send Email</span></a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                        class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                        class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a></li>
-                                <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                        class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>
-                                <li class="ddown__sgl--footer"><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
-                                        class="zmdi zmdi-money-box"></i><span>More</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card__content card__content--flex-column">
-                <div>
-                    <span class="card__title">Version</span>
-                    <span class="card__indicator card__indicator--down compare">{{currentVersion}}
-                         <i class="zmdi zmdi-info-outline"></i><span
-                            v-if="updateAvailable">An Update is available!</span></span>
-                    <div class="single-row">
-                        <a v-if="updateAvailable" :href="upgradeLink" class="btn btn--md btn--red mdl-button mdl-js-button mdl-js-ripple-effect">UPGRADE</a>
-                        <a v-if="updateAvailable" :href="changelogLink"
-                           class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">CHANGE LOG</a>
+    <!-- <% include ../../../templates/layout/card_more_btn %> -->
 
-                    </div>
-                </div>
-                <ul class="datarow mobile-toogle--target" data-scrollable>
-                    <!--SINGLE-->
-                    <li v-for="row in datarows" class="datarow__sgl">
-                        <div class="datarow__left"><span class="datarow__status">{{row.left}}</span></div>
-                        <div class="datarow__right"><span class="datarow__data"><strong>{{row.right}}</strong></span></div>
-                    </li>
-                </ul>
-                <div class="mobile-toogle--box">
-                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                            class="zmdi zmdi-caret-down"></i></div>
-                </div>
-            </div>
-        </div>
+    <!--<div class="ddown ddown&#45;&#45;view-more">-->
+    <!--<div class="ddown__init ddown__init&#45;&#45;clean"><a   class="btn btn&#45;&#45;link btn&#45;&#45;md btn&#45;&#45;default mdl-button mdl-js-button mdl-js-ripple-effect card__link">{{headerButtonText}}</a>-->
+
+    <!--</div>-->
+    <!--<div class="ddown__content">-->
+    <!--<div class="ddown__arrow"></div>-->
+    <!--<ul class="ddown__menu">-->
+    <!--<li class="ddown__header mdl-js-button mdl-js-ripple-effect"><a  ><i-->
+    <!--class="zmdi zmdi-account-add"></i><span>Add New Client</span></a></li>-->
+    <!--<li><a class="mdl-js-button mdl-js-ripple-effect"  ><i-->
+    <!--class="zmdi zmdi-file-plus"></i><span>Create Invoice</span></a></li>-->
+    <!--<li><a class="mdl-js-button mdl-js-ripple-effect"  ><i-->
+    <!--class="zmdi zmdi-email"></i><span>Send Email</span></a></li>-->
+    <!--<li><a class="mdl-js-button mdl-js-ripple-effect"  ><i-->
+    <!--class="zmdi zmdi-ticket-star"></i><span>Open New Ticket</span></a></li>-->
+    <!--<li><a class="mdl-js-button mdl-js-ripple-effect"  ><i-->
+    <!--class="zmdi zmdi-accounts-list"></i><span>Add Contact</span></a></li>-->
+    <!--<li><a class="mdl-js-button mdl-js-ripple-effect"  ><i-->
+    <!--class="zmdi zmdi-money-box"></i><span>Add Founds</span></a></li>-->
+    <!--<li class="ddown__sgl&#45;&#45;footer"><a class="mdl-js-button mdl-js-ripple-effect"  ><i-->
+    <!--class="zmdi zmdi-money-box"></i><span>More</span></a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+    </div>
+    </div>
+    <div class="card__content card__content--flex-column">
+    <div>
+    <span class="card__title">Version</span>
+    <span class="card__indicator card__indicator--down compare">{{currentVersion}}
+    <i class="zmdi zmdi-info-outline"></i><span
+    v-if="updateAvailable">An Update is available!</span></span>
+    <div class="single-row">
+    <a v-if="updateAvailable" :href="upgradeLink" class="btn btn--md  btn--red mdl-button mdl-js-button mdl-js-ripple-effect">UPGRADE</a>
+    <a v-if="updateAvailable" :href="changelogLink"
+    class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">CHANGE LOG</a>
+    <div class="mobile-toogle--box">
+    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
+    class="zmdi zmdi-caret-down"></i></div>
+    </div>
+    </div>
+    </div>
+    <ul class="datarow mobile-toogle--target" data-scrollable>
+    <!--SINGLE-->
+    <li v-for="row in datarows" class="datarow__sgl">
+    <div class="datarow__left"><span class="datarow__status">{{row.left}}</span></div>
+    <div class="datarow__right"><span class="datarow__data"><strong>{{row.right}}</strong></span></div>
+
+    </li>
+    </ul>
+
+    </div>
+    </div>
     </div>
 </template>
 <script>
@@ -123,5 +128,20 @@
         methods: {}
     };
 </script>
-<style>
+<style lang="less" scoped>
+    .card-maximize {
+        margin-right: -8px;
+    }
+
+    .card--info {
+        .single-row {
+            .btn--link {
+                padding: 0 8px;
+                margin-right: 0;
+            }
+            .mobile-toogle--box {
+                margin-top: 0;
+            }
+        }
+    }
 </style>

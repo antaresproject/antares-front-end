@@ -1,0 +1,130 @@
+//default
+.drop-open .drop-element.drop-enabled {
+  display: block;
+  z-index: 21;
+}
+.drop-element {
+  display: none;
+}
+//default end
+.this-is-dropczyk--out.drop-element.drop-open--right{
+  .filter-content{
+    left: 180px;
+    &:before{
+      left: 24px;
+      right: auto;
+    }
+    &:after{
+      left: 24px;
+      right: auto;
+    }
+  }
+}
+.this-is-dropczyk {
+
+    .drop-target{
+      line-height: 31px;
+    }
+    .drop-enabled{
+      color: @primary-bg !important;
+      border-bottom: 1px solid @primary-bg;
+
+    }
+}
+
+.this-is-dropczyk--out{
+  .filter-content{
+    position: relative;
+    &:before{
+      content:"\f2f8";
+      position: absolute;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      -webkit-font-smoothing: antialiased;
+      top: -21px;
+      text-align: center;
+      color:  rgba(0, 0, 0, 0.07);
+      font: normal normal normal 34px/1 'Material-Design-Iconic-Font';
+      z-index: 1;
+      @media @xs{
+      display: none;
+      }
+    }
+    &:after{
+      content: '\f2f8';
+      position: absolute;
+      right: 8px;
+      -webkit-font-smoothing: antialiased;
+      top: -16px;
+      text-align: center;
+      color: white;
+      font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      @media @xs{
+        display: none;
+      }
+    }
+  }
+  .dropjs-target{
+
+  }
+  .filter-content{
+    background-color: white;
+    padding: 20px 24px;
+    width: 240px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    &>span{
+      margin-bottom: 16px;
+      color:#ABAEB3;
+    }
+    &>.slider-box{
+      //margin-bottom: 16px;
+    }
+    &>.spinners-box{
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    &>.add-filter, &>.change-filter{
+      width: 100%;
+    }
+
+  }
+}
+.slider-box {
+  padding: 0 8px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 2px;
+    background-color: #dfe3e6;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 2px;
+    background-color: #dfe3e6;
+  }
+}
+.filter--badge{
+  .slider-box{
+    &:before,&:after{
+      height: 0;
+    }
+  }
+  .select--badge + .select2{
+    margin: 16px 0;
+  }
+  .change-filter{
+    width: 100%;
+  }
+}

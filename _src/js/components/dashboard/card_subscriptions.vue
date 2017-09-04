@@ -8,26 +8,6 @@
                         <span>{{title}}</span>
                     </div>
                     <div class="card__header-right">
-                        <div class="ddown ddown--view-more ddown--view-more-options">
-                            <div class="ddown__init ddown__init--clean">
-                                <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">
-                                    <i class="zmdi zmdi-more-vert"></i>
-                                </a>
-                            </div>
-                            <div class="ddown__content">
-                                <form action="" method="post">
-                                    <ul class="ddown__menu">
-                                        <li>
-                                            <input data-daterangepicker="true" class="mr24">
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" data-icheck="true" name="check" id="subscript">
-                                            <label class="ml8" v-on:click="compareMode = !compareMode" for="subscript">{{compareText}}</label>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div>
-                        </div>
                         <form action="" method="post">
                             <input data-daterangepicker="true" class="mr24">
                             <input type="checkbox" data-icheck="true" name="check" id="subscript">
@@ -42,13 +22,16 @@
                 </div>
             </div>
             <div class="card__right">
+                <div class="mobile-compare">
+                    <input type="checkbox" data-icheck="true" name="check" id="subscript">
+                    <label class="ml8" v-on:click="compareMode = !compareMode" for="subscript">{{compareText}}</label>
+                </div>
                 <header>
                     <span class="card__title">{{legendTitle}}</span>
-                    <span class="card__indicator compare"
-                          v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">
+                    <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">
                         {{ ((value1 / value2) * 100 ).toFixed() }}%
-                            <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
-                        </span>
+                        <i class="zmdi" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } "></i>
+                    </span>
                     <span class="card__ammount">
                         <strong>{{value1}} </strong>
                         <span class="compare"> / {{value2}}</span>
@@ -72,12 +55,13 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-            <div class="mobile-toogle--box">
-                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                    <i class="zmdi zmdi-caret-down"></i>
+                <div class="mobile-toogle--box">
+                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -87,11 +71,12 @@ function dataCalc(data) {
     function add(a, b) {
         return a + b;
     }
-    var value1Array = data.datarows.map(function (a) {
+
+    var value1Array = data.datarows.map(function(a) {
         return a.value1
     });
     var value1Sum = value1Array.reduce(add, 0);
-    var value2Array = data.datarows.map(function (a) {
+    var value2Array = data.datarows.map(function(a) {
         return a.value2
     });
     var value2Sum = value2Array.reduce(add, 0);
@@ -106,11 +91,11 @@ export default {
         'card-edit-controls': cardEditControls,
         'bar-chart': BarChart
     },
-    data: function () {
+    data: function() {
         return {
             cardClass: 'card--chart',
             widgetName: 'card--chart',
-            title: 'Subscriptions long long text for check style review',
+            title: 'Subscriptions',
             legendTitle: 'New Subsribtions',
             value1: 0,
             value2: 0,
@@ -144,40 +129,20 @@ export default {
                 value1: 512,
                 value2: 921,
                 type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 333,
-                value2: 1412,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 555,
-                value2: 81,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 512,
-                value2: 921,
-                type: 'grow',
-            }, {
-                text: 'Accepted',
-                value1: 333,
-                value2: 1412,
-                type: 'decline',
             }]
         }
     },
 
 
-    mounted: function () {
+    mounted: function() {
         var self = this;
         dataCalc(this);
         var domElem = $(self.$el);
-        domElem.find('[data-icheck]').on('ifChanged', function (event) {
+        domElem.find('[data-icheck]').on('ifChanged', function(event) {
             self.compareMode = !self.compareMode;
         });
 
-        setTimeout(function () {
+        setTimeout(function() {
             self.setDate();
         }, 1500);
 
@@ -195,7 +160,7 @@ export default {
             var date = moment().subtract(randomNumber(1, 10), 'days').startOf('day').toDate();
 
             enquire.register("screen and (min-width:768px)", {
-                match: function () {
+                match: function() {
                     $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", { start: date });
                 }
             });

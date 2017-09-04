@@ -1,0 +1,78 @@
+body #app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-menu .submenu-open {
+    position: relative;
+    .submenu {
+        background: #fff; // left: 0;
+        right: -37px;
+        left: auto;
+        width: 255px;
+        padding: 0; // box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        .submenu__content .data-list {
+            width: 100%;
+            padding: 0;
+            li {
+                width: 100%;
+                a {
+                    color: @primary-c;
+                }
+            }
+        }
+        .submenu__content{
+            padding: 8px
+        }
+        .badge.badge--dark{
+            background-color: #D3D7DB;
+            color: @primary-c;
+        }
+    }
+}
+body #app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-menu.main-menu--brand .submenu-open {
+    .submenu {
+        right: -100%;
+        @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+            right: auto;
+        }
+    }
+}
+#app-wrapper.main-sidebar--top aside.main-sidebar.simple-submenu ul.main-menu>li.submenu-open>a:after {
+    border-color: transparent transparent #fff transparent !important;
+}
+
+#app-wrapper.main-sidebar--top aside.main-sidebar.simple-submenu {
+    .menu-tooltip {
+        display: none !important;
+    }
+    .main-menu .submenu__content {
+        padding: 16px 8px;
+    }
+    .main-menu {
+        .submenu {
+            min-height: 100px !important;
+            .submenu__content.standard {
+                display: none !important;
+            }
+            .submenu__content.simple {
+                display: block !important;
+            }
+            li {
+                margin-right: 16px;
+                margin-left: 16px;
+            }
+            .data-list {
+                li {
+                    display: flex;
+                    width: auto !important;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 36px;
+                    a {
+                        line-height: 36px;
+                    }
+                    .badge {
+                        margin-right: 16px;
+                        padding: 0 8px;
+                    }
+                }
+            }
+        }
+    }
+}

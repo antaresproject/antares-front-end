@@ -17,103 +17,97 @@
  *
  */
 const AntaresGsFit = {
-    init() {
+  init() {
+    let self = this;
 
-        let self = this;
+    enquire.register('screen and (min-width:768px)', {
+      match: function() {
+        self.GsFitMutate();
+      }
+    });
+  },
+  GsFitMutate() {
+    var self = this;
+    var restrain = function() {
+      if (!$('table.dataTable').length) {
+        return false;
+      }
+    };
+    ready('table.dataTable[data-adjust-height]', function(element) {
+      self.gridstackFit();
+    });
+  },
+  gridstackFit() {
+    var gs = $('.grid-stack').data('gridstack'),
+      cH = gs.cellHeight(),
+      estimatedCellHeightInPx = 32.5,
+      heightFormula;
 
-        enquire.register("screen and (min-width:768px)", {
+    function gridCalc(element) {
+      var heightFormula;
 
-            match : function() {
-                self.GsFitMutate();
-            },
+      var $self = $(element);
+      var gsElement = $self.closest('.grid-stack-item'),
+        currentX = gsElement.data('data-gs-x'),
+        currentY = gsElement.data('data-gs-y'),
+        currentH = gsElement.data('data-gs-height'),
+        currentW = gsElement.data('data-gs-width');
+      gsElement.css('transition-duration', '0ms');
+      setTimeout(function() {
+        var gsElement = $self.closest('.grid-stack-item'),
+          currentX = gsElement.data('data-gs-x'),
+          currentY = gsElement.data('data-gs-y'),
+          currentH = gsElement.data('data-gs-height'),
+          currentW = gsElement.data('data-gs-width');
+        var tableFullHeight = $self.closest('.dataTables_wrapper').outerHeight(true);
+        var tblcHeaderHeight = $self.closest('.tbl-c').find('.card-ctrls').outerHeight(true);
 
-        });
-
-    },
-    GsFitMutate(){
-        var self = this;
-        var restrain = function () {
-            if (!$('table.dataTable').length) {
-                return false;
-            }
-        };
-        ready('table.dataTable[data-adjust-height]', function (element) {
-            self.gridstackFit();
-        });
-    },
-    gridstackFit() {
-        var gs = $('.grid-stack').data('gridstack'),
-            cH = gs.cellHeight(),
-            estimatedCellHeightInPx = 32.5,
-            heightFormula;
-
-        function gridCalc(element) {
-
-            var heightFormula;
-            
-            var $self = $(element);
-            var gsElement = $self.closest('.grid-stack-item'),
-                currentX = gsElement.data('data-gs-x'),
-                currentY = gsElement.data('data-gs-y'),
-                currentH = gsElement.data('data-gs-height'),
-                currentW = gsElement.data('data-gs-width');
-            gsElement.css('transition-duration', '0ms');
-            setTimeout(function () {
-                var gsElement = $self.closest('.grid-stack-item'),
-                    currentX = gsElement.data('data-gs-x'),
-                    currentY = gsElement.data('data-gs-y'),
-                    currentH = gsElement.data('data-gs-height'),
-                    currentW = gsElement.data('data-gs-width');
-                var tableFullHeight = $self.closest('.dataTables_wrapper').outerHeight(true);
-                var tblcHeaderHeight = $self.closest('.tbl-c').find('.card-ctrls').outerHeight(true);
-
-                // Exception for TABS
-                if ($self.closest('.mdl-tabs').length) {
-                    heightFormula = parseInt((tableFullHeight + tblcHeaderHeight + 52) / estimatedCellHeightInPx, 10);
-                } else {
-                    heightFormula = parseInt((tableFullHeight + tblcHeaderHeight) / estimatedCellHeightInPx, 10);
-                }
-                gs.update(gsElement, currentX, currentY, currentW, heightFormula);
-            }, 100);
-            setTimeout(function () {
-                var gsElement = $self.closest('.grid-stack-item'),
-                    currentX = gsElement.data('data-gs-x'),
-                    currentY = gsElement.data('data-gs-y'),
-                    currentH = gsElement.data('data-gs-height'),
-                    currentW = gsElement.data('data-gs-width'),
-                    tableFullHeight = $self.closest('.dataTables_wrapper').outerHeight(true),
-                    tblcHeaderHeight = $self.closest('.tbl-c').find('.card-ctrls').outerHeight(true);
-
-                // Exception for TABS
-                if ($self.closest('.mdl-tabs')[0]) {
-                    heightFormula = parseInt((tableFullHeight + tblcHeaderHeight + 52) / estimatedCellHeightInPx, 10);
-                } else {
-                    heightFormula = parseInt((tableFullHeight + tblcHeaderHeight) / estimatedCellHeightInPx, 10);
-                }
-                var wholeHeight = $self.closest('.grid-stack-item-content').outerHeight(true),
-                    heightDifference = wholeHeight - (tableFullHeight + tblcHeaderHeight),
-                    correction = parseInt(heightDifference / estimatedCellHeightInPx, 10);
-                if (correction > 0) {
-                    gs.update(gsElement, currentX, currentY, currentW, heightFormula - correction);
-                } else if (heightDifference < 0) {
-                    // when small records ammount
-                    gs.update(gsElement, currentX, currentY, currentW, heightFormula - correction + 1);
-                }
-            }, 200);
-            setTimeout(function () {
-                gsElement.css('transition-duration', '150ms');
-                $self.closest('.tbl-c').perfectScrollbar('update');
-            }, 300);
+        // Exception for TABS
+        if ($self.closest('.mdl-tabs').length) {
+          heightFormula = parseInt((tableFullHeight + tblcHeaderHeight + 52) / estimatedCellHeightInPx, 10);
+        } else {
+          heightFormula = parseInt((tableFullHeight + tblcHeaderHeight) / estimatedCellHeightInPx, 10);
         }
+        gs.update(gsElement, currentX, currentY, currentW, heightFormula);
+      }, 100);
+      setTimeout(function() {
+        var gsElement = $self.closest('.grid-stack-item'),
+          currentX = gsElement.data('data-gs-x'),
+          currentY = gsElement.data('data-gs-y'),
+          currentH = gsElement.data('data-gs-height'),
+          currentW = gsElement.data('data-gs-width'),
+          tableFullHeight = $self.closest('.dataTables_wrapper').outerHeight(true),
+          tblcHeaderHeight = $self.closest('.tbl-c').find('.card-ctrls').outerHeight(true);
 
-        $('.tbl-c table').on('page.dt length.dt', function () {
-            gridCalc(this);
-        });
-        gridCalc('table.dataTable');
+        // Exception for TABS
+        if ($self.closest('.mdl-tabs')[0]) {
+          heightFormula = parseInt((tableFullHeight + tblcHeaderHeight + 52) / estimatedCellHeightInPx, 10);
+        } else {
+          heightFormula = parseInt((tableFullHeight + tblcHeaderHeight) / estimatedCellHeightInPx, 10);
+        }
+        var wholeHeight = $self.closest('.grid-stack-item-content').outerHeight(true),
+          heightDifference = wholeHeight - (tableFullHeight + tblcHeaderHeight),
+          correction = parseInt(heightDifference / estimatedCellHeightInPx, 10);
+        if (correction > 0) {
+          gs.update(gsElement, currentX, currentY, currentW, heightFormula - correction);
+        } else if (heightDifference < 0) {
+          // when small records ammount
+          gs.update(gsElement, currentX, currentY, currentW, heightFormula - correction + 1);
+        }
+      }, 200);
+      setTimeout(function() {
+        gsElement.css('transition-duration', '150ms');
+        $self.closest('.tbl-c').perfectScrollbar('update');
+      }, 300);
     }
-};
-$(function () {
-    window.AntaresGsFit = AntaresGsFit;
-    AntaresGsFit.init();
-});
 
+    $('.tbl-c table').on('page.dt length.dt', function() {
+      gridCalc(this);
+    });
+    gridCalc('table.dataTable');
+  }
+};
+$(() => {
+  window.AntaresGsFit = AntaresGsFit;
+  AntaresGsFit.init();
+});

@@ -4,27 +4,8 @@
         <div class="card card--chart card-chart--slim" v-bind:class="{'card--compare ': compareMode}" :data-widget-name="widgetName" data-chart="true">
             <div class="card__left">
                 <div class="card__header">
-                    <div class="card__header-left"> <span>{{title}}</span> </div>
+                    <div class="card__header-left"> <span >{{title}}</span> </div>
                     <div class="card__header-right">
-                        <div class="ddown ddown--view-more ddown--view-more-options">
-                            <div class="ddown__init ddown__init--clean">
-                                <a href="#"  class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">
-                                <i class="zmdi zmdi-more-vert"></i></a>
-                            </div>
-                            <div class="ddown__content">
-                                <form action="" method="post">
-                                    <ul class="ddown__menu">
-                                        <li>
-                                            <input data-daterangepicker="true" class="mr24">
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" data-icheck="true" name="check" id="billing" >
-                                            <label class="ml8" v-on:click="compareMode = !compareMode" for="billing">{{compareText}}</label>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div>
-                        </div>
                         <form action="" method="post">
                             <input data-daterangepicker="true" class="mr24">
                                 <input type="checkbox"  data-icheck="true" name="check" id="billing">
@@ -39,6 +20,10 @@
                 </div>
             </div>
             <div class="card__right">
+                <div class="mobile-compare">
+                    <input type="checkbox"  data-icheck="true" name="check" id="billing">
+                    <label class="ml8" v-on:click="compareMode = !compareMode" for="billing" >{{compareText}}</label>
+                </div>
                 <header>
                     <span class="card__title">{{legendTitle}}</span>
                         <span class="card__indicator compare"
@@ -59,12 +44,13 @@
                         </div>
                     </li>
                 </ul>
+                <div class="mobile-toogle--box">
+                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                <i class="zmdi zmdi-caret-down"></i>
+                </div>
+                </div>
             </div>
-            <div class="mobile-toogle--box">
-                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                                    <i class="zmdi zmdi-caret-down"></i>
-                    </div>
-            </div>
+
         </div>
     </div>
 
@@ -77,11 +63,11 @@ function dataCalc(data) {
     function add(a, b) {
         return a + b;
     }
-    var value1Array = data.datarows.map(function (a) {
+    var value1Array = data.datarows.map(function(a) {
         return a.value1
     });
     var value1Sum = value1Array.reduce(add, 0);
-    var value2Array = data.datarows.map(function (a) {
+    var value2Array = data.datarows.map(function(a) {
         return a.value2
     });
     var value2Sum = value2Array.reduce(add, 0);
@@ -97,6 +83,10 @@ import cardEditControls from './card_edit_controls.vue'
 
 import LineChart from './chart_js/line.js'
 import BarChart from './chart_js/bar.js'
+
+require('./../widget_control/widget_control.js');
+
+
 export default {
     name: 'CardBilling',
     components: {
@@ -104,11 +94,11 @@ export default {
         //        'bar-chart': BarChart
         'line-chart': LineChart
     },
-    data: function () {
+    data: function() {
         return {
             cardClass: 'card--chart',
             widgetName: 'card--chart',
-            title: 'Billing',
+            title: 'Billings',
             legendTitle: 'New Billings',
             value1: 0,
             value2: 0,
@@ -118,52 +108,27 @@ export default {
             compareText: 'Compare',
             chartID: 'chart--one',
             datarows: [{
-                text: 'Cancelled',
-                value1: 21,
-                value2: 512,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 512,
-                value2: 921,
-                type: 'grow',
-            }, {
-                text: 'Accepted',
-                value1: 333,
-                value2: 1412,
+                text: 'New',
+                value1: 127,
+                value2: 265,
                 type: 'decline',
             }, {
-                text: 'Accepted',
+                text: 'Paid',
                 value1: 11,
                 value2: 82,
                 type: 'grow',
             }, {
-                text: 'Pending',
+                text: 'Gateway Fee',
                 value1: 512,
                 value2: 921,
                 type: 'grow',
             }, {
-                text: 'Accepted',
+                text: 'Tax',
                 value1: 333,
                 value2: 1412,
                 type: 'decline',
             }, {
-                text: 'Accepted',
-                value1: 11,
-                value2: 82,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 512,
-                value2: 921,
-                type: 'grow',
-            }, {
-                text: 'Accepted',
-                value1: 333,
-                value2: 1412,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
+                text: 'Transactions',
                 value1: 11,
                 value2: 82,
                 type: 'grow',
@@ -171,16 +136,21 @@ export default {
 
         }
     },
-    mounted: function () {
+    mounted: function() {
+
         var self = this;
         dataCalc(this);
         var domElem = $(self.$el);
-        domElem.find('[data-icheck]').on('ifChanged', function (event) {
+
+        domElem.find('[data-icheck]').on('ifChanged', function(event) {
             self.compareMode = !self.compareMode;
         });
-        setTimeout(function () {
+
+        setTimeout(function() {
             self.setDate();
-        }, 500);
+            // domElem.adjustCardHeight();
+        }, 1500);
+
     },
     methods: {
 
@@ -194,7 +164,7 @@ export default {
 
             var date = moment().subtract(randomNumber(1, 10), 'days').startOf('day').toDate();
             enquire.register("screen and (min-width:768px)", {
-                match: function () {
+                match: function() {
                     $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", { start: date });
                 }
             });

@@ -22,7 +22,8 @@
 
 const antaresPreloader = {
   data: {
-    selector: '[data-preload]'
+    selector: '[data-preload]',
+    timer: 200
   },
 
   init() {
@@ -40,12 +41,29 @@ const antaresPreloader = {
   },
 
   elemShow() {
+    const self = this;
     window.addEventListener('load', () => {
+      const gs = document.getElementsByClassName('grid-stack');
+      const dt = document.getElementsByClassName('tbl-c');
       const preElements = document.querySelectorAll(this.data.selector);
+      // GRIDSTACK!
+      // document.addEventListener('antares-gridstack-loaded', e => {
+      //   for (let i = 0; i < preElements.length; i += 1) {
+      //     preElements[i].style.opacity = 1;
+      //   }
+      // });
+
+      // NOT GRIDSTACK
       for (let i = 0; i < preElements.length; i += 1) {
-        preElements[i].style.opacity = 1;
+        setTimeout(() => {
+          preElements[i].style.opacity = 1;
+        }, self.data.timer);
       }
     });
+
+    // document.addEventListener('antares-datatables-loaded', e => {
+    //   // alert('dt ready');
+    // });
   }
 };
 

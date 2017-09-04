@@ -8,26 +8,6 @@
                         <span>{{title}}</span>
                     </div>
                     <div class="card__header-right">
-                        <div class="ddown ddown--view-more ddown--view-more-options">
-                            <div class="ddown__init ddown__init--clean">
-                                <a href="#" class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link">
-                                    <i class="zmdi zmdi-more-vert"></i>
-                                </a>
-                            </div>
-                            <div class="ddown__content">
-                                <form action="" method="post">
-                                    <ul class="ddown__menu">
-                                        <li>
-                                            <input data-daterangepicker="true" class="mr24">
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" data-icheck="true" name="check" id="tickets">
-                                            <label class="ml8" v-on:click="compareMode = !compareMode" for="tickets">{{compareText}}</label>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div>
-                        </div>
                         <form action="" method="post">
                             <input data-daterangepicker="true" class="mr24">
                             <input type="checkbox" data-icheck="true" name="check" id="tickets">
@@ -37,20 +17,15 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <horizontal-bar
-                                quantityLines="2"
-                                quantityColumns="10"
-
-                                background="rgba(0, 145, 234, 0.3)"
-                                hoverBackground="rgba(0, 145, 234, 0.6)"
-
-                                nTwoBackground="rgba(230, 232, 235, 0.4)"
-                                nTwoHoverBackground="#d4d6d8"
-                        ></horizontal-bar>
+                        <horizontal-bar quantityLines="2" quantityColumns="10" background="rgba(0, 145, 234, 0.3)" hoverBackground="rgba(0, 145, 234, 0.6)" nTwoBackground="rgba(230, 232, 235, 0.4)" nTwoHoverBackground="#d4d6d8"></horizontal-bar>
                     </div>
                 </div>
             </div>
             <div class="card__right">
+                <div class="mobile-compare">
+                    <input type="checkbox" data-icheck="true" name="check" id="tickets">
+                    <label class="ml8" v-on:click="compareMode = !compareMode" for="tickets">{{compareText}}</label>
+                </div>
                 <header>
                     <span class="card__title">{{legendTitle}}</span>
                     <span class="card__indicator compare" v-bind:class="{ 'card__indicator--up': statusType === 'grow', 'card__indicator--down': statusType === 'decline' } ">{{ ((value1 / value2) * 100 ).toFixed() }}%
@@ -79,12 +54,13 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-            <div class="mobile-toogle--box">
-                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
-                    <i class="zmdi zmdi-caret-down"></i>
+                <div class="mobile-toogle--box">
+                    <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" v-bind:class="{ 'zmdi-long-arrow-up': statusType === 'grow', 'zmdi-long-arrow-down': statusType === 'decline' } ">
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
                 </div>
             </div>
+    
         </div>
     </div>
 </template>
@@ -126,51 +102,6 @@ export default {
             compareText: 'Compare',
             chartID: 'chart--four',
             datarows: [{
-                text: 'Pending',
-                value1: 22,
-                value2: 912,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 152,
-                value2: 512,
-                type: 'decline',
-            }, {
-                text: 'Accepted',
-                value1: 215,
-                value2: 6322,
-                type: 'decline',
-            }, {
-                text: 'Removed',
-                value1: 241,
-                value2: 5132,
-                type: 'grow',
-            }, {
-                text: 'Accepted',
-                value1: 12,
-                value2: 5,
-                type: 'grow',
-            }, {
-                text: 'Pending',
-                value1: 22,
-                value2: 912,
-                type: 'grow',
-            }, {
-                text: 'Accepted',
-                value1: 215,
-                value2: 6322,
-                type: 'decline',
-            }, {
-                text: 'Removed',
-                value1: 241,
-                value2: 5132,
-                type: 'grow',
-            }, {
-                text: 'Accepted',
-                value1: 12,
-                value2: 5,
-                type: 'grow',
-            }, {
                 text: 'Pending',
                 value1: 22,
                 value2: 912,
