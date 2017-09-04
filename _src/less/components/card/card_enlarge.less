@@ -1,58 +1,69 @@
 //using modal
 //trigger icon
-.card-enlarge, .card-maximize {
-  cursor: pointer;
-  color: @text-color-light-brown-grey;
-  font-size: 24px;
+.card-enlarge,
+.card-maximize {
+    cursor: pointer;
+    color: @text-color-light-brown-grey;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media @max1200 {
-  .card-enlarge,
-  .card-maximize,
-  .card-minimize {
-    display: none;
-  }
+    .card-enlarge,
+    .card-maximize,
+    .card-minimize {
+        display: none;
+    }
 }
 
 //global
 .jquery-modal {
-  .card--enlarged.modal {
-    margin-bottom: 0;
-    display: flex;
-    flex-flow: column nowrap;
-    width: 90%;
-    height: 100%;
-    padding: 0;
-    &:before {
-      display: none;
+    .card--enlarged.modal {
+        margin-bottom: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 90%;
+        height: 100%;
+        padding: 0;
+        &:before {
+            display: none;
+        }
+        .close-modal {
+            display: none;
+        }
+        .card__header {
+            min-height: 52px;
+        }
+        .card__content {
+            position: relative;
+        }
+        &.card--comments {
+            .comments-message:last-child {
+                margin-bottom: 60px;
+            }
+        }
     }
-    .close-modal {
-      display: none;
-    }
-
-    .card__header {
-      min-height: 52px;
-    }
-    .card__content {
-      position: relative;
-    }
-
-    &.card--comments {
-      .comments-message:last-child {
-        margin-bottom: 60px;
-      }
-    }
-  }
-
 }
 
-.is-maximized {
-  //using gridstack
-  .card-maximize {
-    i {
-      &:before {
-        content: '\f1eb';
-      }
+#app-wrapper .is-maximized {
+    //using gridstack
+    i.card-maximize {
+        &:before {
+            content: '\f1eb';
+        }
     }
-  }
+}
+
+#app-wrapper .card:not(.card--news) {
+    .ddown__init.btn-more {
+        right: 0;
+        left: 0;
+    }
+    //.card__header-right {
+    //    right: -16px;
+    //}
 }

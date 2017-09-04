@@ -1,21 +1,23 @@
 <aside class="main-sidebar main-menu-html">
+    <!-- <aside class="main-sidebar main-menu-html"> -->
     <div class="nav-container">
         <nav>
             <div class="menu-scroll">
                 <ul class="main-menu main-menu--brand">
                     <li class="main-menu__brand has-submenu" data-index="0" data-name="brand">
-                        <a href="#">
+                        <a>
                             <div class="main-sidebar__logo"></div>
                         </a>
                         <div class="submenu submenu--system js-flex-start">
-                            <a href="#" class="submenu__mobile-return">
+                            <a class="submenu__mobile-return">
                                 <i class="zmdi zmdi-arrow-left"></i> <span>Brand Menu</span>
                             </a>
                             <section class="section--2col">
-                                <header>
+                                <!-- <header>
                                     <h3>Main Section</h3>
-                                </header>
-                                <div class="submenu__content">
+                                </header> -->
+                                <div class="submenu__content standard">
+
                                     <div class="submenu__content-left">
                                         <div class="brand-logo"></div>
                                     </div>
@@ -23,7 +25,7 @@
                                         <ul class="datarow">
                                             <li class="datarow__sgl">
                                                 <div class="datarow__left"><span>Plan</span></div>
-                                                <div class="datarow__right"><span>Lite ($99/mo)</span></div>
+                                                <div class="datarow__right"><span>Lite</span></div>
                                             </li>
                                             <li class="datarow__sgl">
                                                 <div class="datarow__left"><span>Payment</span></div>
@@ -76,21 +78,30 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </section>
-                            <section>
-                                <div class="submenu__content">
-                                    <a href="#" class="flex-block flex-block--bold">
-                                        <div class="avatar avatar--generic avatar--xs"></div>
-                                        <div class="flex-block__content"><span class="flex-block__title">GimmeMoney</span> <span class="flex-block__desc">Basic Plan</span></div>
-                                        <span class="flex-block__badge">From $99/mo</span>
-                                    </a>
-                                    <a href="#" class="flex-block flex-block--bold">
-                                        <div class="avatar avatar--generic avatar--xs"></div>
-                                        <div class="flex-block__content"><span class="flex-block__title">GimmeMoney</span> <span class="flex-block__desc">Basic Plan</span></div>
-                                        <span class="flex-block__badge">From $99/mo</span>
-                                    </a>
+
+                                <div class="submenu__content simple hidden">
+                                    <ul class="data-list">
+                                        <li data-name="clients_list">
+                                            <a href="#"><span>Plan</span></a>
+                                            <span class="badge badge--grey badge--md">12</span>
+                                        </li>
+                                        <li data-name="clients_list">
+                                            <a href="#"><span>Payment</span></a>
+                                            <span class="badge badge--grey badge--md">15</span>
+                                        </li>
+                                        <li data-name="clients_list">
+                                            <a href="#"><span>Support</span></a>
+                                            <span class="badge badge--grey badge--md">3 mo.</span>
+                                        </li>
+                                        <li data-name="clients_list">
+                                            <a href="#"><span>Registered</span></a>
+                                            <span class="badge badge--grey badge--md">2y</span>
+                                        </li>
+                                    </ul>
+
                                 </div>
                             </section>
+
                         </div>
                     </li>
                 </ul>
@@ -99,12 +110,12 @@
                         <a href="index.html"><i class="zmdi zmdi-view-dashboard"></i> <span class="text">Dashboard</span></a>
                     </li>
                     <li data-index="1" data-name="pages" class="has-submenu">
-                        <a href="#">
+                        <a>
                             <i class="zmdi zmdi-layers"></i>
                             <span class="text">Pages</span>
                         </a>
                         <div class="submenu flex-fs">
-                            <a href="#" class="submenu__mobile-return">
+                            <a class="submenu__mobile-return">
                                 <i class="zmdi zmdi-arrow-left"></i><span>Pages</span></a>
                             <section>
                                 <header>
@@ -113,31 +124,52 @@
                                 <div class="submenu__content">
                                     <ul class="data-list">
                                         <li data-name="clients_list">
-                                            <a href="clients_list_dev.html"><span>Clients List</span></a>
+                                            <a href="clients_list.html"><span>Clients List</span></a>
+                                            <span class="badge badge--dark badge--md">99</span>
                                         </li>
                                         <li data-name="client_details">
-                                            <a href="clients_details_gridstack.html"><span>Client Details</span></a>
+                                            <a href="clients_details.html"><span>Client Details</span></a>
+
+                                            <span class="badge badge--dark badge--md">21</span>
                                         </li>
                                         <li data-name="brand_settings">
                                             <a href="brand_settings.html"><span>Brand Settings</span></a>
+
+                                            <span class="badge badge--dark badge--md">59</span>
                                         </li>
                                         <li data-name="email_settings">
                                             <a href="email_settings.html"><span>Email Settings</span></a>
+
+                                            <span class="badge badge--dark badge--md">11</span>
                                         </li>
                                         <li data-name="steps_page">
                                             <a href="steps.html"><span>Steps Page</span></a>
+
+                                            <span class="badge badge--dark badge--md">4</span>
                                         </li>
                                         <li data-name="login_page">
                                             <a href="login_page.html"><span>Login Page</span></a>
+
+                                            <span class="badge badge--dark badge--md">2</span>
+                                        </li>
+                                        <li data-name="zero_data">
+                                            <a href="zero_data.html"><span>Zero Data</span></a>
+
+                                            <span class="badge badge--dark badge--md">52</span>
                                         </li>
                                         <li data-name="error_400">
                                             <a href="error_400.html"><span>Error 400</span></a>
+
+                                            <span class="badge badge--dark badge--md">12</span>
                                         </li>
                                         <li data-name="error_404">
                                             <a href="error_404.html"><span>Error 404</span></a>
+
+                                            <span class="badge badge--dark badge--md">5</span>
                                         </li>
                                         <li data-name="error_500">
                                             <a href="error_500.html"><span>Error 500</span></a>
+                                            <span class="badge badge--dark badge--md">1</span>
                                         </li>
                                     </ul>
                                     <div data-menu-item="error_500" class="menu-tooltip">
@@ -152,9 +184,9 @@
                         </div>
                     </li>
                     <li data-index="2" data-name="UI elements" class="has-submenu">
-                        <a href="#"><i class="zmdi zmdi-check-all"></i> <span class="text">UI elements</span></a>
+                        <a><i class="zmdi zmdi-check-all"></i> <span class="text">UI elements</span></a>
                         <div class="submenu flex-fs">
-                            <a href="#" class="submenu__mobile-return">
+                            <a class="submenu__mobile-return">
                                 <i class="zmdi zmdi-arrow-left"></i><span>UI elements</span></a>
                             <section>
                                 <header>
@@ -219,7 +251,7 @@
                     <div class="mobile-ddowns__icon"><i class="zmdi zmdi-caret-down"></i></div>
                     <ul class="mobile-ddowns__menu mobile-ddowns__menu--user">
                         <li class="mobile-ddowns__menu-header">
-                            <a href="#">
+                            <a>
                                 <div class="flex-block">
                                     <div class="avatar avatar--xs"><img src="img/brand/brand-inbs.png" alt="Logged In User Avatar"></div>
                                     <div class="flex-block__content"><span class="flex-block__title">Paweł Bis</span><span class="flex-block__desc">RS Studio</span></div>
@@ -227,10 +259,10 @@
                                 </div>
                             </a>
                         </li>
-                        <li><a href="#"><span>View Profile</span></a></li>
-                        <li><a href="#"><span>Upgrade Plan</span></a></li>
-                        <li><a href="#"><span>Account Billing Aight</span></a></li>
-                        <li><a href="#"><span>Logout</span></a></li>
+                        <li><a><span>View Profile</span></a></li>
+                        <li><a><span>Upgrade Plan</span></a></li>
+                        <li><a><span>Account Billing Aight</span></a></li>
+                        <li><a><span>Logout</span></a></li>
                     </ul>
                 </div>
                 <div class="mobile-ddowns__sgl ddown--brand">
@@ -241,7 +273,7 @@
                     <div class="mobile-ddowns__icon"><i class="zmdi zmdi-caret-down"></i></div>
                     <ul class="mobile-ddowns__menu mobile-ddowns__menu--brand">
                         <li class="mdl-js-button mdl-js-ripple-effect is-selected" data-upgraded=",MaterialButton,MaterialRipple">
-                            <a href="#">
+                            <a>
                                 <div class="flex-block">
                                     <div class="avatar avatar--xs"><img src="img/brand/brand-inbs.png" alt="item.avatarAlt"></div>
                                     <div class="flex-block__content"><span class="flex-block__title">INBS.software</span></div>
@@ -250,7 +282,7 @@
                             </a><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
                         </li>
                         <li class="mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
-                            <a href="#">
+                            <a>
                                 <div class="flex-block">
                                     <div class="avatar avatar--xs"><img src="img/brand/brand-rsstudio.png" alt="item.avatarAlt"></div>
                                     <div class="flex-block__content"><span class="flex-block__title">RS Studio</span>
@@ -259,7 +291,7 @@
                             </a><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
                         </li>
                         <li class="mobile-ddowns-new mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
-                            <a href="#">
+                            <a>
                                 <div class="flex-block">
                                     <div class="avatar avatar--xs"><i class="zmdi zmdi-plus-circle-o"></i></div>
                                     <div class="flex-block__content"><span class="flex-block__title">Add Brands</span>

@@ -7,171 +7,238 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Antares Dashboard</title>
     <% include ../layout/color_template %>
-        <% include ../layout/css_files %>
+    <% include ../layout/css_files %>
 </head>
 
 <body>
-    <script type="text/x-template" id="vue-page-dashboard">
-        <section class="main-content " v-cloak>
-            <div class="grid-container grid-container--2col grid-container--footer grid-container--no-padd">
+<script type="text/x-template" id="vue-page-dashboard">
+    <section class="main-content " v-cloak>
+        <div class="grid-container grid-container--2col grid-container--footer grid-container--no-padd">
 
-                <div class="grid-col grid-col--container" style="background: #ecedf0;">
-                    <div class="grid-stack" data-preload>
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-width="24" data-gs-height="10"
-                            data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-billing></card-chart-billing>
-                            </div>
+            <div class="grid-col grid-col--container" style="background: #ecedf0;">
+                <div class="grid-stack" data-preload>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0"
+                         data-gs-width="12" data-gs-height="10"
+                         data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-billing></card-chart-billing>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10" data-gs-width="18"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-billing></card-chart-billing>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="10"
+                         data-gs-width="10"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-billing></card-chart-billing>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="12"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-billing></card-chart-billing>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="25"
+                         data-gs-width="8"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-billing></card-chart-billing>
                         </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="40"
+                         data-gs-width="6"
+                         data-gs-height="20" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-billing></card-chart-billing>
+                        </div>
+                    </div>
+
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="60"
+                         data-gs-width="12" data-gs-height="10"
+                         data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-subscriptions></card-chart-subscriptions>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="70" data-gs-width="10"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-subscriptions></card-chart-subscriptions>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="85" data-gs-width="8"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-subscriptions></card-chart-subscriptions>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="100" data-gs-width="6"
+                         data-gs-height="20" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-subscriptions></card-chart-subscriptions>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="120"
+                         data-gs-width="12" data-gs-height="10"
+                         data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-orders></card-chart-orders>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="135" data-gs-width="10"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-orders></card-chart-orders>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="150" data-gs-width="8"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-orders></card-chart-orders>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="165" data-gs-width="6"
+                         data-gs-height="20" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-orders></card-chart-orders>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="185"
+                         data-gs-width="12" data-gs-height="10"
+                         data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-tickets></card-chart-tickets>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="195" data-gs-width="10"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-tickets></card-chart-tickets>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="210" data-gs-width="8"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-tickets></card-chart-tickets>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="225" data-gs-width="6"
+                         data-gs-height="20" data-gs-min-width="6" data-gs-min-height="10">
+                        <div class="grid-stack-item-content">
+                            <card-chart-tickets></card-chart-tickets>
+                        </div>
+                    </div>
 
 
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="30" data-gs-width="24" data-gs-height="10"
-                            data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-subscriptions></card-chart-subscriptions>
-                            </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="245"
+                         data-gs-width="12" data-gs-height="15"
+                         data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-info></card-info>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="40" data-gs-width="18"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-subscriptions></card-chart-subscriptions>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="260" data-gs-width="10"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-info></card-info>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="50" data-gs-width="12"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-subscriptions></card-chart-subscriptions>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="275" data-gs-width="8"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-info></card-info>
                         </div>
-
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="60" data-gs-width="24" data-gs-height="10"
-                            data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-orders></card-chart-orders>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="290" data-gs-width="6"
+                         data-gs-height="10" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-info></card-info>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="70" data-gs-width="18"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-orders></card-chart-orders>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="300"
+                         data-gs-width="12" data-gs-height="10"
+                         data-gs-min-width="6" data-gs-min-height="10" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-news></card-news>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="80" data-gs-width="12"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-orders></card-chart-orders>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="310" data-gs-width="10"
+                         data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-news></card-news>
                         </div>
-
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="90" data-gs-width="24" data-gs-height="10"
-                            data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-tickets></card-chart-tickets>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="320" data-gs-width="8"
+                         data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-news></card-news>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="100" data-gs-width="18"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-tickets></card-chart-tickets>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="330" data-gs-width="6"
+                         data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-news></card-news>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="110" data-gs-width="12"
-                            data-gs-height="10" data-gs-min-width="12" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-chart-tickets></card-chart-tickets>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="340"
+                         data-gs-width="12" data-gs-height="15"
+                         data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-logs></card-logs>
                         </div>
-
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="120" data-gs-width="24" data-gs-height="15"
-                            data-gs-min-width="8" data-gs-min-height="11" style="z-index: 1;">
-                            <div class="grid-stack-item-content">
-                                <card-info></card-info>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="355" data-gs-width="10"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-logs></card-logs>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="135" data-gs-width="16"
-                            data-gs-height="15" data-gs-min-width="8" data-gs-min-height="11" style="z-index: 1;">
-                            <div class="grid-stack-item-content">
-                                <card-info></card-info>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="370" data-gs-width="8"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-logs></card-logs>
                         </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="150" data-gs-width="8"
-                            data-gs-height="15" data-gs-min-width="8" data-gs-min-height="11" style="z-index: 1;">
-                            <div class="grid-stack-item-content">
-                                <card-info></card-info>
-                            </div>
-                        </div>
-
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="165" data-gs-width="16" data-gs-height="10"
-                            data-gs-min-width="6" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-news></card-news>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="175" data-gs-width="12"
-                            data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-news></card-news>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="185" data-gs-width="6"
-                            data-gs-height="10" data-gs-min-width="6" data-gs-min-height="10">
-                            <div class="grid-stack-item-content">
-                                <card-news></card-news>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="195" data-gs-width="24" data-gs-height="15"
-                            data-gs-min-width="12" data-gs-min-height="12" data-card-name="system-logs" data-anijs="if: mouseover, on: body, do: swing animated">
-                            <div class="grid-stack-item-content">
-                                <card-logs></card-logs>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="210" data-gs-width="18"
-                            data-gs-height="15" data-gs-min-width="12" data-gs-min-height="12" data-card-name="system-logs" data-anijs="if: mouseover, on: body, do: swing animated">
-                            <div class="grid-stack-item-content">
-                                <card-logs></card-logs>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item hide-mobile" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="225" data-gs-width="12"
-                            data-gs-height="15" data-gs-min-width="12" data-gs-min-height="12" data-card-name="system-logs" data-anijs="if: mouseover, on: body, do: swing animated">
-                            <div class="grid-stack-item-content">
-                                <card-logs></card-logs>
-                            </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0"
+                         data-gs-y="385" data-gs-width="6"
+                         data-gs-height="15" data-gs-min-width="6" data-gs-min-height="11" style="z-index: 1;">
+                        <div class="grid-stack-item-content">
+                            <card-logs></card-logs>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </script>
+        </div>
+    </section>
+</script>
 
-    <% include ../layout/templates_dashboard %>
-        <% include ../layout/app_wrapper_start_tag %>
-            <% include ../layout/main_menu_html %>
-                <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-                <div class="app-content page-dashboard dashboard--vue app-content--gridstack widgets-page">
-                    <% include ../layout/card_bar %>
-                        <% var breadData = 'Widgets'; %>
-                            <% include ../layout/mainhead %>
-                                <% include ../layout/sidebar_notifications %>
-                                    <% include ../layout/sidebar_alerts %>
-                                        <div id="dashboard-container">
-                                            <vue-page-dashboard></vue-page-dashboard>
-                                        </div>
-                </div>
-                </div>
+<% include ../layout/templates_dashboard %>
+<% include ../layout/app_wrapper_start_tag %>
+<% include ../layout/main_menu_html %>
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<div class="app-content page-dashboard dashboard--vue app-content--gridstack widgets-page">
+    <% include ../layout/card_bar %>
+    <% var breadData = 'Widgets'; %>
+    <% include ../layout/mainhead %>
+    <% include ../layout/sidebar_notifications %>
+    <% include ../layout/sidebar_alerts %>
+    <div id="dashboard-container">
+        <vue-page-dashboard></vue-page-dashboard>
+    </div>
+</div>
+</div>
 
-                <% include ../layout/js_files %>
+<% include ../layout/js_files %>
 </body>
 
 </html>

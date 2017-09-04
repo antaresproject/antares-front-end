@@ -1,144 +1,145 @@
 @media @xs {
-  [data-chart="true"] {
-    padding: 0;
-  }
-
-  .col-group {
-    padding: 0;
-  }
-
-  .card.card--chart .card__right {
-    padding: 24px;
-  }
-
+    [data-chart="true"] {
+        padding: 0;
+    }
+    .col-group {
+        padding: 0;
+    }
+    .card.card--chart .card__right {
+        padding: 24px;
+    }
 }
+
 .grid-stack-item .ui-resizable-handle {
-  display: none !important;
+    display: none;
 }
-.app-content--widgets-movable{
-  .grid-stack-item .ui-resizable-handle {
-    display: none !important;
-  }
+
+.app-content--widgets-movable {
+    .grid-stack-item .ui-resizable-handle-s,
+    .grid-stack-item .ui-resizable-handle-w,
+    .grid-stack-item .ui-resizable-handle-n,
+    .grid-stack-item .ui-resizable-handle-e
+    {
+        display: block !important;
+    }
+}
+
+#app-wrapper {
+    .grid-stack-item .ui-resizable-handle.ui-resizable-sw {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1366px) {
+    .app-content .main-head {
+        .main-sidebar--top {
+            padding: 24px 8px; //padding: 24px 8px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .app-content .main-head {
+        padding: 16px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .main-head .ddown--brand {
+        display: none;
+    }
+    .main-head {
+        .item-grp-single:nth-child(4) {
+            display: none;
+        }
+        .item-grp {
+            margin-right: 0 !important;
+        }
+    }
 }
 
 //new general RWD styles
 @media @xs {
-  .main-head {
-    .ddown--brand {
-      display: none;
+    .main-head {
+        .item-grp {
+            margin-right: 0 !important;
+        }
     }
-
-    .item-grp {
-      margin-right: 0 !important;
+    .card .card__ammount {
+        margin-bottom: 0;
     }
-
-  }
-
-  .card .card__ammount {
-    margin-bottom: 0;
-  }
-
-  .card-ctrls {
-    .mdl-textfield__input {
-      margin-left: 30px;
+    .card-ctrls {
+        .mdl-textfield__input {
+            margin-left: 30px;
+        }
+        .mdl-textfield__label {
+            margin-left: 30px;
+            text-indent: 0;
+        }
+        .search-box {
+            .search-box__mdl-textfield {
+                //width: auto !important;
+            }
+            .mdl-textfield__input,
+            .mdl-textfield__label {
+                width: 100% !important;
+            }
+        }
     }
-
-    .mdl-textfield__label {
-      margin-left: 30px;
-      text-indent: 0;
+    .ui-resizable-handle {
+        display: none !important;
+    } //.search-box {
+    //  .search-box__mdl-textfield {
+    //    margin-right: 170px;
+    //  }
+    //}
+    .card.card--chart .card__right .datarow {
+        max-height: none;
+        overflow-y: auto !important;
     }
-
-
-
-    .search-box {
-      .search-box__mdl-textfield {
-        width: auto !important;
-      }
-
-      .mdl-textfield__input,
-      .mdl-textfield__label {
-        width: 100% !important;
-      }
-
-    }
-
-  }
-
-  .generals-form {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .ui-resizable-handle {
-    display: none !important;
-  }
-  //.search-box {
-  //  .search-box__mdl-textfield {
-  //    margin-right: 170px;
-  //  }
-  //}
-  .card.card--chart .card__right .datarow {
-    max-height: none;
-    overflow-y: auto !important;
-  }
-
 }
 
 @media @max1200 {
-
-  .card.card--news .card__footer a,
-  .card.card--news .card__footer button {
-    //bottom: 16px;
-  }
-
-  .grid-stack-item {
-    min-height: inherit !important;
-  }
-
-  .card.card--chart .card__right .datarow {
-    max-height: 200px;
-    overflow-y: scroll !important;
-  }
-
+    .card.card--news .card__footer a,
+    .card.card--news .card__footer button {
+        //bottom: 16px;
+    }
+    .grid-stack-item {
+        min-height: inherit !important;
+    }
+    .card.card--chart .card__right .datarow {
+        max-height: 200px;
+        overflow-y: scroll !important;
+    }
 }
 
 @media @max1550 {
-  .tmp-show {
-    display: none;
-  }
-
-  .tmp-show + .select2 {
-    display: none;
-  }
+    .tmp-show {
+        display: none;
+    }
+    .tmp-show+.select2 {
+        display: none;
+    }
 }
 
 @media @xs {
-  .main-head {
-    .item-grp-single:nth-child(4) {
-      display: none;
+    .select2-results {
+        overflow-y: scroll;
+        max-height: 330px;
     }
-  }
-
-  .select2-results {
-    overflow-y: scroll;
-    max-height: 330px;
-  }
-
-  .comiseo-daterangepicker {
-
-    .comiseo-daterangepicker-presets {
-      display: none;
+    .comiseo-daterangepicker {
+        .comiseo-daterangepicker-presets {
+            display: none;
+        }
     }
-  }
 }
 
 @media @max550 {
-  .grid-stack-item .grid-stack-item-content .card.card--chart .card__content > div {
-    height: 100%;
-  }
-
-  .card.card--chart .card__left {
-    width: 100%;
-    overflow: hidden;
-  }
-
+    .grid-stack-item .grid-stack-item-content .card.card--chart .card__content>div {
+        height: 100%;
+    }
+    .card.card--chart .card__left {
+        width: 100%;
+        overflow: hidden;
+    }
 }

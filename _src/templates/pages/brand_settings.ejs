@@ -13,7 +13,7 @@
     <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
             <div class="app-content page-brand-settings">
-                <% var breadData= 'Brand Settings'; %>
+                <% var breadData = 'Brand Settings'; %>
                     <% include ../layout/mainhead %>
                         <% include ../layout/sidebar_notifications %>
                             <% include ../layout/sidebar_alerts %>
@@ -57,10 +57,10 @@
                                                                             </div>
                                                                             <div class="col-16">
                                                                                 <select name="date-format" data-selectAR="true" required>
-                                                            <option value="04/20/2016">04/20/2016</option>
-                                                            <option value="20/04/2016">20/04/2016</option>
-                                                            <option value="2016/20/04">2016/20/04</option>
-                                                        </select>
+                                                    <option value="04/20/2016">04/20/2016</option>
+                                                    <option value="20/04/2016">20/04/2016</option>
+                                                    <option value="2016/20/04">2016/20/04</option>
+                                                </select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-block">
@@ -73,11 +73,11 @@
                                                                     <span class="flag-icon flag-icon-us"></span>
                                                                                     </span>
                                                                                     <select name="default-country" data-flag-select--search required>
-                                                                <option data-country="us">United States of America</option>
-                                                                <option data-country="pl" selected>Poland</option>
-                                                                <option data-country="it">Italy</option>
-                                                                <option data-country="gb">United Kingdom</option>
-                                                            </select>
+                                                        <option data-country="us">United States of America</option>
+                                                        <option data-country="pl" selected>Poland</option>
+                                                        <option data-country="it">Italy</option>
+                                                        <option data-country="gb">United Kingdom</option>
+                                                    </select>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -91,11 +91,11 @@
                                                                     <span class="flag-icon flag-icon-us"></span>
                                                                                     </span>
                                                                                     <select name="default-country" data-flag-select required>
-                                                                <option data-country="us">United States of America</option>
-                                                                <option data-country="pl" selected>Poland</option>
-                                                                <option data-country="it">Italy</option>
-                                                                <option data-country="gb">United Kingdom</option>
-                                                            </select>
+                                                        <option data-country="us">United States of America</option>
+                                                        <option data-country="pl" selected>Poland</option>
+                                                        <option data-country="it">Italy</option>
+                                                        <option data-country="gb">United Kingdom</option>
+                                                    </select>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -109,33 +109,37 @@
                                                                     <span class="flag-icon flag-icon-us"></span>
                                                                                     </span>
                                                                                     <select data-flag-select name="default-language" data-selectAR="true" required>
-                                                                <option data-country="us">United States of America - English US</option>
-                                                                <option data-country="pl" selected>Poland - Polish</option>
-                                                                <option data-country="it">Italy - Italian</option>
-                                                                <option data-country="gb">United Kingdom - English UK</option>
-                                                            </select>
+                                                        <option data-country="us">United States of America - English
+                                                            US
+                                                        </option>
+                                                        <option data-country="pl" selected>Poland - Polish</option>
+                                                        <option data-country="it">Italy - Italian</option>
+                                                        <option data-country="gb">United Kingdom - English UK</option>
+                                                    </select>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-block">
-                                                                            <div class="col-group">
+                                                                            <div class="col-group" style="width: 100%;">
                                                                                 <div class="col-13 mb2">
                                                                                     <label class="form-block__name p0">
-                                                            <span>Maintenance Mode</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true" data-tooltip-mobile="true"></i>
-                                                            <div class="tooltip-content">
-                                                                <p>Enable Maintenance Mode</p>
-                                                            </div>
-                                                        </label>
+                                                        <span>Maintenance Mode</span>
+                                                        <i class="zmdi zmdi-help-outline help--trigger"
+                                                           data-tooltip="true"></i>
+                                                        <div class="tooltip-content">
+                                                            <p>Enable Maintenance Mode</p>
+                                                        </div>
+                                                    </label>
                                                                                 </div>
                                                                                 <div class="col-3 mb2">
                                                                                     <div class="input-field input-field--short ml-auto">
                                                                                         <label class="switch">
-                                                                <input class="switch-checkbox" name="switch" type="checkbox" required="" aria-required="true">
-                                                                <div class="switch-container">
-                                                                    <div class="switch-handle"></div>
-                                                                </div>
-                                                            </label>
+                                                            <input class="switch-checkbox" name="switch" type="checkbox"
+                                                                   required="" aria-required="true">
+                                                            <div class="switch-container">
+                                                                <div class="switch-handle"></div>
+                                                            </div>
+                                                        </label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -166,16 +170,17 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <label class="form-block__name p0 mt8">
-                                                            <span>Logo</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true" data-tooltip-mobile="true"></i>
-                                                            <div class="tooltip-content">
-                                                                <p>Logo used in the invoices, as well as in the login page.</p>
-                                                                <p class="tooltip__header mt16">Recommended format:</p>
-                                                                <p>PNG (without background)</p>
-                                                                <p class="tooltip__header mt16">Recommended minimum width:</p>
-                                                                <p>512 px</p>
-                                                            </div>
-                                                        </label>
+                                                    <span>Logo</span>
+                                                    <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true"
+                                                    ></i>
+                                                    <div class="tooltip-content">
+                                                        <p>Logo used in the invoices, as well as in the login page.</p>
+                                                        <p class="tooltip__header mt16">Recommended format:</p>
+                                                        <p>PNG (without background)</p>
+                                                        <p class="tooltip__header mt16">Recommended minimum width:</p>
+                                                        <p>512 px</p>
+                                                    </div>
+                                                </label>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
@@ -197,16 +202,17 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <label class="form-block__name p0 mt8">
-                                                            <span>Favicon</span>
-                                                            <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true" data-tooltip-mobile="true"></i>
-                                                            <div class="tooltip-content">
-                                                                <p>Logo used in the invoices, as well as in the login page.</p>
-                                                                <p class="tooltip__header mt16">Recommended format:</p>
-                                                                <p>PNG (without background)</p>
-                                                                <p class="tooltip__header mt16">Recommended minimum size:</p>
-                                                                <p>310x310 px</p>
-                                                            </div>
-                                                        </label>
+                                                    <span>Favicon</span>
+                                                    <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true"
+                                                       ></i>
+                                                    <div class="tooltip-content">
+                                                        <p>Logo used in the invoices, as well as in the login page.</p>
+                                                        <p class="tooltip__header mt16">Recommended format:</p>
+                                                        <p>PNG (without background)</p>
+                                                        <p class="tooltip__header mt16">Recommended minimum size:</p>
+                                                        <p>310x310 px</p>
+                                                    </div>
+                                                </label>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -338,10 +344,12 @@
                                                             <div class="col-dt-16">
                                                                 <div class="app-content__footer">
                                                                     <div class="btn-group">
-                                                                        <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes</button>
-                                                                        <a href="#" class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
+                                                                        <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">Save changes
+                                        </button>
+                                                                        <a class="btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</a>
 
-                                                                        <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset</button>
+                                                                        <button class="btn btn--md btn--link btn--red mdl-button mdl-js-button mdl-js-ripple-effect reset-style" type="button">Reset
+                                        </button>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -21,11 +21,10 @@
   font-weight: 600;
   height: 100%;
   color: lighten(@primary-bg, 20%);
-
   @media @max1050 {
 
     > li {
-      display: none;
+      //display: none;
 
       &:last-child {
         display: flex;
@@ -38,6 +37,7 @@
   }
 
   > li {
+    opacity: 0.8;
     position: relative;
     height: @main-head-height;
     .flex-center();
@@ -88,9 +88,9 @@
 
 
     &.is-active {
-      background: lighten(@primary-bg, 4%);
-      border-radius: 3px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      //background: lighten(@primary-bg, 4%);
+      //border-radius: 3px;
+      //box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
 
     &:first-child {
@@ -101,6 +101,7 @@
 
     &:last-child {
       color: #fff;
+      opacity: 1;
     }
 
     &.dropdown {

@@ -36,7 +36,11 @@
 
 .card--news .card__overlay,
 .card--news .card__overlay .card__slider {
-    height: 93% !important;
+    height: auto;
+}
+
+.card--news .card__slider .slick-list {
+    height: ~'calc(100% - 52px)';
 }
 
 .card.card--news .card__footer .btn-link {
@@ -84,6 +88,13 @@
 //  left: 50%;
 //  transform: translatyX(-50%);
 //}
+@media @xs {
+    ul.mobile-toogle--target,
+    div.mobile-toogle--target {
+        display: none;
+    }
+}
+
 @media @md {
     .card__mobile-toggle {
         display: inline-block;
@@ -114,7 +125,6 @@
     }
     .mobile-toogle--box {
         width: 100%;
-        padding: 8px !important;
         text-align: center;
         .card__mobile-toggle {
             float: inherit !important;
@@ -127,12 +137,14 @@
             display: none;
         }
     }
-    ul.mobile-toogle--target,
-    div.mobile-toogle--target {
-        display: none;
-    }
     #app-wrapper .card--tabs .mdl-tabs .tbl-c {
         overflow-y: hidden !important;
+    }
+}
+
+@media @xs {
+    .mobile-toogle--box {
+        padding: 8px !important;
     }
 }
 
@@ -148,7 +160,7 @@
     }
     .card--chart {
         .mobile-toogle--box {
-            display: block;
+            display: block !important;
         }
     }
 }
@@ -162,7 +174,7 @@
 }
 
 //TOGGLE WITH OVERFLOW
-@media @md {
+@media @xs {
     .mobile-target--overflow {
         max-height: 305px;
         .card__content {
@@ -177,7 +189,7 @@
     }
 }
 
-@media @md {
+@media @xs {
     .card--more-gradient {
         .card__content {
             position: relative;
@@ -188,7 +200,7 @@
                 left: 0;
                 width: 100%;
                 height: 10%;
-                background: linear-gradient(rgba(255,255,255,0),  white);
+                background: linear-gradient(rgba(255, 255, 255, 0), white);
             }
         }
     }
@@ -201,7 +213,7 @@
     }
 }
 
-@media @md {
+@media @xs {
     .clients-details-gridstack {
         .grid-stack-item-content {
             .card.card--contacts.card--more-gradient .card__content:after {
@@ -322,7 +334,7 @@
 }
 
 .card__content .card-ctrls__left .select2 .select2-selection__rendered {
-    line-height: 35px;
+    //line-height: 35px;
 }
 
 @media @min1200 {
@@ -332,5 +344,57 @@
         //    top: 65px;
         //    position: absolute;
         height: 266px !important;
+        width: 100% !important;
     }
+}
+
+@media only screen and (max-width: 1023px) {
+    canvas#line-chart,
+    canvas#bar-chart,
+    canvas#horizontalbar-chart {
+        height: 192px !important;
+        width: 100% !important;
+    }
+}
+
+.card .card__header-right .ddown--three-dots,
+.card .card__header-right .zmdi.card-maximize {
+    margin-right: -16px;
+}
+
+.card .card__header-right {
+    &>*:first-child {
+        margin-right: -8px !important;
+    }
+}
+
+@media @min768 {
+    #app-wrapper aside.main-sidebar {
+        // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 98px;
+        z-index: 15;
+    }
+    #app-wrapper .app-content {
+        width: 100%;
+    } // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
+}
+
+@media only screen and (min-width: 1024px) {
+    #app-wrapper .app-content {
+        padding-left: 98px;
+        &.page-error--clean {
+            padding-left: 0;
+        }
+    }
+}
+
+#app-wrapper.main-sidebar--top .app-content {
+    padding-left: 0;
+}
+
+.page-dashboard .main-content {
+    padding-bottom: 32px;
 }

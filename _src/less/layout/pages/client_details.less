@@ -1,7 +1,6 @@
 //////////////////////////
 // 9 CLIENTS DETAILS
 //////////////////////////////
-
 @media only screen and (max-width: 1199px) {
   #app-wrapper .card--logs,
   #app-wrapper .card--tabs {
@@ -19,11 +18,6 @@
 }
 
 .page-clients-details {
-  @media @xs {
-    .card--tabs {
-      display: none;
-    }
-  }
   .card {
     margin-bottom: @unit3;
   }
@@ -52,33 +46,38 @@
 }
 
 @media @md {
-  .page-dashboard {
-    .grid-col {
-      .card {
-        &.card--scrollbox {
-          &.card--contacts {
-            overflow: hidden;
-            .card__content {
-              overflow: auto;
-            }
-          }
-        }
-      }
-    }
-  }
-
   //#app-wrapper .clients-details-gridstack .card--tabs .mdl-tabs .tbl-c {
   //  overflow: inherit !important;
   //}
   .clients-details-gridstack {
-    height: auto !important;
+    //height: auto !important;
   }
 }
 
-//////////////////////////
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .card--contacts {
+    .mobile-target--overflow {
+      max-height: 305px;
+    }
+    .card__content {
+      overflow: hidden;
+    }
+    .mobile-toogle--box {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+    .card__mobile-toggle {
+      display: block;
+    }
+  }
+}
+
+// .grid-stack-item .card .card__header .card__header-right {
+//     flex: 0;
+// }
 // 9 CLIENTS DETAILS END
 //////////////////////////////
-
 //////////////////////////
 // 9 CLIENTS DETAILS GRIDSTACK
 ////////////////////////////////
@@ -105,7 +104,6 @@
 //.card.card--contacts .card__content {
 //  margin-top: 0 !important;
 //}
-
 .card--contacts .flex-block .flex-block__content .flex-block__desc {
   color: @primary-grey;
   font-weight: 400;
@@ -145,7 +143,6 @@
     .tbl-c table {
       padding: 0 0;
     }
-
     table.collapsed tbody tr:not(.child) td:first-child {
       width: 60px;
       padding-left: 8px;
@@ -153,16 +150,12 @@
     table.collapsed tbody tr:not(.child) td:nth-child(5) {
       padding-right: 16px;
     }
-    .odd,
-    .even {
-      height: 60px;
-    }
+    //.odd,
+    //.even {
+    //  height: 60px;
+    //}
     .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate {
       margin-left: 8px;
-    }
-
-    table thead {
-      display: none;
     }
 
     .card .card-ctrls {
@@ -173,7 +166,6 @@
       }
       margin-bottom: 0;
       margin-top: 0;
-
       .search-box .search-box__mdl-textfield .mdl-textfield__label:after {
         z-index: 10;
       }
@@ -196,7 +188,7 @@
 
 .clients-details-gridstack {
   .grid-stack-item-content .card.card--contacts .card__content {
-    overflow: auto;
+    //overflow: auto;
     padding: 0;
   }
 }
@@ -216,7 +208,6 @@
 //    }
 //  }
 //}
-
 .tbl-c table th.ui-selectee[aria-sort] {
   &:after {
     display: inline-block;
@@ -226,17 +217,44 @@
 .card--slim .datarow.mobile--toogle-target {
   overflow: hidden;
 }
-
+#app-wrapper .clients-details-gridstack {
+  .card .card-ctrls.tab-search.tab-search--standard .search-box .mdl-textfield__label {
+   top:6px
+  }
+}
+@media @md {
+  #app-wrapper .clients-details-gridstack {
+    .card .card-ctrls.tab-search.tab-search--standard .search-box .mdl-textfield__label {
+      padding-top: 6px;
+      height: 100%;
+      font-size: 16px;
+      top: 50%
+    }
+    .card .card-ctrls.tab-search.tab-search--standard .search-box {
+      order: 1 ;
+    }
+  }
+}
+#app-wrapper .card--contacts{
+  .ddown--three-dots{
+    margin-right: -16px !important;
+  }
+}
+@media @xs{
+  #app-wrapper .clients-details-gridstack {
+    .card .card-ctrls.tab-search.tab-search--standard .search-box {
+      order: 4 ;
+    }
+  }
+}
 .card--pagination {
   .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate > span a {
     font-weight: 500;
   }
-  .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate
-  > span a.current {
+  .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate > span a.current {
     background: transparent;
     color: @primary-bg;
   }
-
   .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate > span {
     margin: 0;
   }
@@ -245,10 +263,8 @@
   .dt-pag-left,
   .dt-pag-right {
     width: 30px;
-    height: 30px;
-    //cursor: pointer;
+    height: 30px; //cursor: pointer;
   }
-
   .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate {
     margin-left: -8px;
   }
@@ -264,7 +280,6 @@
   .dataTables_length a {
     margin-right: 0;
   }
-
   .dataTables_length a {
     font-weight: 500;
   }
@@ -290,7 +305,6 @@
 //    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 //  }
 //}
-
 //.select2.select2-container--mdl .select2-selection.select2-selection--single[aria-expanded="true"] {
 //  position: relative;
 //  z-index: 18;
@@ -307,15 +321,12 @@
 //    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 //  }
 //}
-
 //.select2.select2-container--open .select2-selection, .select2:hover .select2-selection, .select2:hover .select2-selection__rendered{
 //  border-color: #dadce0 !important;
 //}
-
 ////////////////////////////
 // 9 CLIENTS DETAILS GRIDSTACK END
 ///////////////////////////
-
 //search box + dropdown "Show:"
 .card-ctrls__left [data-selectar--mdl=true] + .select2-container--mdl {
   min-width: auto;
@@ -326,21 +337,15 @@
   left: 2px;
 }
 
-
-
 //search box + dropdown "Show:" end d
-
 // client_list
 .page-datatables.page-vue-datatables {
   .select2-container {
     font-weight: 500;
-    padding-left: 6px;
-    max-width: 130px;
     width: auto !important;
     flex: none;
   }
-  [data-selectAR--mdl-big=true]
-  + .select2-container--mdl-big .select2-selection__rendered {
+  [data-selectAR--mdl-big=true] + .select2-container--mdl-big .select2-selection__rendered {
     font-size: 18px;
     padding-right: 16px;
     .select2-selection__arrow:before {
@@ -362,21 +367,11 @@
 //  }
 //}
 
-.clients-details-gridstack .card.card--tabs .mdl-tabs__tab-bar {
-  //horizontal scroll
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: auto;
-  .tab-bar--tape {
-    width: 400px;
-    height: 100%;
-  }
-}
-
 /**
-* CSS themes for simplePagination.js
-* Author: Flavius Matis - http://flaviusmatis.github.com/
-* URL: https://github.com/flaviusmatis/simplePagination.js
-*/
+  * CSS themes for simplePagination.js
+  * Author: Flavius Matis - http://flaviusmatis.github.com/
+  * URL: https://github.com/flaviusmatis/simplePagination.js
+  */
 
 ul.simple-pagination {
   list-style: none;
@@ -414,8 +409,9 @@ span.ellipse.clickable {
 }
 
 /*------------------------------------*\
-	Compact Theme Styles
-\*------------------------------------*/
+      Compact Theme Styles
+  \*------------------------------------*/
+
 .compact-theme span {
   cursor: pointer;
 }
@@ -433,29 +429,20 @@ span.ellipse.clickable {
   min-width: 14px;
   padding: 0 7px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  background: #efefef; /* Old browsers */
-  background: -moz-linear-gradient(
-          to top,
-          #ffffff 0%,
-          #efefef 100%
-  ); /* FF3.6+ */
-  background: -webkit-gradient(
-          linear,
-          to left top,
-          to left bottom,
-          color-stop(0%, #ffffff),
-          color-stop(100%, #efefef)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-          to top,
-          #ffffff 0%,
-          #efefef 100%
-  ); /* Chrome10+,Safari5.1+ */
+  background: #efefef;
+  /* Old browsers */
+  background: -moz-linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, to left top, to left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(to top, #ffffff 0%, #efefef 100%);
   /* Opera11.10+ */
   background: -ms-linear-gradient(to top, #ffffff 0%, #efefef 100%);
   /* IE10+ */
-  background: linear-gradient(to top, #ffffff 0%, #efefef 100%); /* W3C */
+  background: linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* W3C */
 }
 
 .compact-theme a:hover,
@@ -465,18 +452,10 @@ span.ellipse.clickable {
   /* Old browsers */
   background: -moz-linear-gradient(to top, #efefef 0%, #bbbbbb 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(
-          linear,
-          to left top,
-          to left bottom,
-          color-stop(0%, #efefef),
-          color-stop(100%, #bbbbbb)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-          to top,
-          #efefef 0%,
-          #bbbbbb 100%
-  ); /* Chrome10+,Safari5.1+ */
+  background: -webkit-gradient(linear, to left top, to left bottom, color-stop(0%, #efefef), color-stop(100%, #bbbbbb));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(to top, #efefef 0%, #bbbbbb 100%);
+  /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(to top, #efefef 0%, #bbbbbb 100%);
   /* Opera11.10+ */
   background: -ms-linear-gradient(to top, #efefef 0%, #bbbbbb 100%);
@@ -499,30 +478,18 @@ span.ellipse.clickable {
 .compact-theme .current {
   background: #bbbbbb;
   /* Old browsers */
-  background: -moz-linear-gradient(
-          to top,
-          #bbbbbb 0%,
-          #efefef 100%
-  ); /* FF3.6+ */
-  background: -webkit-gradient(
-          linear,
-          to left top,
-          to left bottom,
-          color-stop(0%, #bbbbbb),
-          color-stop(100%, #efefef)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-          to top,
-          #bbbbbb 0%,
-          #efefef 100%
-  ); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(
-          to top,
-          #bbbbbb 0%,
-          #efefef 100%
-  ); /* Opera11.10+ */
-  background: -ms-linear-gradient(to top, #bbbbbb 0%, #efefef 100%); /* IE10+ */
-  background: linear-gradient(to top, #bbbbbb 0%, #efefef 100%); /* W3C */
+  background: -moz-linear-gradient(to top, #bbbbbb 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, to left top, to left bottom, color-stop(0%, #bbbbbb), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(to top, #bbbbbb 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(to top, #bbbbbb 0%, #efefef 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(to top, #bbbbbb 0%, #efefef 100%);
+  /* IE10+ */
+  background: linear-gradient(to top, #bbbbbb 0%, #efefef 100%);
+  /* W3C */
   cursor: default;
 }
 
@@ -533,8 +500,9 @@ span.ellipse.clickable {
 }
 
 /* ------------------------------------*\
-	Light Theme Styles
-\*------------------------------------ */
+      Light Theme Styles
+  \*------------------------------------ */
+
 .light-theme span {
   cursor: pointer;
 }
@@ -555,29 +523,16 @@ span.ellipse.clickable {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   background: #efefef;
   /* Old browsers */
-  background: -moz-linear-gradient(
-          to top,
-          #ffffff 0%,
-          #efefef 100%
-  ); /* FF3.6+ */
-  background: -webkit-gradient(
-          linear,
-          to left top,
-          to left bottom,
-          color-stop(0%, #ffffff),
-          color-stop(100%, #efefef)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-          to top,
-          #ffffff 0%,
-          #efefef 100%
-  ); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(
-          to top,
-          #ffffff 0%,
-          #efefef 100%
-  ); /* Opera11.10+ */
-  background: -ms-linear-gradient(to top, #ffffff 0%, #efefef 100%); /* IE10+ */
+  background: -moz-linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, to left top, to left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(to top, #ffffff 0%, #efefef 100%);
+  /* IE10+ */
   background: linear-gradient(to top, #ffffff 0%, #efefef 100%);
   /* W3C */
 }
@@ -606,8 +561,9 @@ span.ellipse.clickable {
 }
 
 /* ------------------------------------*\
-	Dark Theme Styles
-\*------------------------------------ */
+      Dark Theme Styles
+  \*------------------------------------ */
+
 .dark-theme span {
   cursor: pointer;
 }
@@ -626,23 +582,20 @@ span.ellipse.clickable {
   margin: 0 5px 0 0;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  background: #555; /* Old browsers */
+  background: #555;
+  /* Old browsers */
   background: -moz-linear-gradient(to top, #555 0%, #333 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(
-          linear,
-          to left top,
-          to left bottom,
-          color-stop(0%, #555),
-          color-stop(100%, #333)
-  );
+  background: -webkit-gradient(linear, to left top, to left bottom, color-stop(0%, #555), color-stop(100%, #333));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(to top, #555 0%, #333 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(to top, #555 0%, #333 100%);
   /* Opera11.10+ */
-  background: -ms-linear-gradient(to top, #555 0%, #333 100%); /* IE10+ */
-  background: linear-gradient(to top, #555 0%, #333 100%); /* W3C */
+  background: -ms-linear-gradient(to top, #555 0%, #333 100%);
+  /* IE10+ */
+  background: linear-gradient(to top, #555 0%, #333 100%);
+  /* W3C */
 }
 
 .dark-theme a:hover,
@@ -655,8 +608,7 @@ span.ellipse.clickable {
   background: #222;
   color: #fff;
   border-color: #000;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
-  0 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 1px 1px rgba(0, 0, 0, 0.1) inset;
   cursor: default;
 }
 
@@ -717,8 +669,7 @@ span.ellipse.clickable {
   .tbl-c {
     .datarow {
       margin-bottom: 0;
-      height: 100%;
-      // padding-bottom: 32px;
+      height: 100%; // padding-bottom: 32px;
       .dataTables_wrapper {
         .dt-area-bottom.pagination {
           padding: 0;
@@ -783,10 +734,10 @@ span.ellipse.clickable {
   #app-wrapper .main-content .grid-stack .card-datatables .card.card--tabs .mdl-tabs .tbl-c {
     padding: 0;
     .card-ctrls {
-      padding: 0 24px;
+      padding: 0;
     }
     .dataTables_wrapper {
-      margin-right: 8px;
+      //margin-right: 8px;
       padding: 0 24px;
       padding-right: 16px;
     }
@@ -799,4 +750,118 @@ span.ellipse.clickable {
       }
     }
   }
+}
+
+.client-value-chart--blue {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  background: #44c4fd;
+  canvas#line-chart {
+    height: 160px !important;
+    width: 100% !important;
+  }
+}
+
+.clients-details--vue .card--chart-small > .card__content {
+  z-index: 3;
+}
+
+#app-wrapper .grid-stack-item-content .card.card--tabs.grid-size--tablet-lg {
+  .tbl-c {
+    padding: 0;
+    .card-ctrls__left {
+      padding-left: 16px;
+    }
+    .card-ctrls__right {
+      padding-right: 16px;
+    }
+  }
+  .card-ctrls.tab-search .filters {
+    .swiper-filters--box {
+      width: 400px;
+      left: -400px;
+      .swiper-filters {
+        width: 320px;
+        margin-right: auto;
+        margin-left: inherit;
+      }
+      .swiper-filters-prev {
+        left: 330px;
+        opacity: 1;
+        &:after {
+          left: -330px;
+        }
+      }
+      .swiper-filters-next {
+        &:after {
+          right: 67px;
+        }
+      }
+    }
+  }
+}
+
+#app-wrapper .grid-stack-item-content .card.card--tabs.grid-size--tablet-md {
+  .tbl-c {
+    padding: 0;
+    .card-ctrls__left {
+      padding-left: 16px;
+    }
+    .card-ctrls__right {
+      padding-right: 16px;
+    }
+    .this-is-dropczyk .drop-enabled {
+      border-bottom: 0;
+    }
+    .dataTables_wrapper {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  .card-ctrls.tab-search {
+    margin-bottom: 52px;
+    .filters {
+      position: inherit;
+      .swiper-filters--box {
+        //width: ~'calc(100vw - 37px)';
+        width: 100%;
+        left: 0;
+        top: 50px;
+        background: #EBEFF2;
+        .swiper-filters {
+          //tablet-ver
+          width: 100%;
+          margin-right: auto;
+        }
+        .swiper-filters-prev {
+          left: 0;
+          right: auto;
+          &:before {
+            opacity: 1;
+          }
+          &:after {
+            left: -1px;
+            background: linear-gradient(to right, #ebeff2, rgba(0, 0, 0, 0));
+          }
+        }
+        .swiper-filters-next {
+          &:after {
+            right: 0;
+            background: linear-gradient(to left, #ebeff2, rgba(0, 0, 0, 0));
+          }
+        }
+        .swiper-filters-next,
+        .swiper-filters-prev {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+#app-wrapper .page-clients-details .card.card--tabs .card-ctrls.tab-search .card-ctrls__left .select2 .select2-selection .select2-selection__rendered{
+  font-size: 16px;
 }

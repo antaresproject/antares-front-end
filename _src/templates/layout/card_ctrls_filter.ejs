@@ -1,39 +1,42 @@
-<div class="card-ctrls tab-search tab-search--filter">
+<div class="card-ctrls tab-search tab-search--filter swiper--no-slides">
     <div class="card-ctrls__left">
-        <div class="search-box search-box--dark mr24">
+        <select class="mb24 select2-left select--category" name="select" data-selectAR--mdl-big="true" data-prefix="Show: " data-select2--class="card-ctrls--select2">
+            <option value="" selected>All</option>
+            <!-- <option value="" selected>Second very big select for testing fucking dropdown card-ctrls</option> -->
+        </select>
+        <div class="search-box search-box--dark">
             <i class="zmdi zmdi-search"></i>
-            <form action="#">
+            <form action="">
                 <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield ">
                     <input class="mdl-textfield__input search-box__search-field" type="text" id="tableSearch" autocomplete="off">
                     <label class="mdl-textfield__label" for="tableSearch">Search</label>
                 </div>
             </form>
         </div>
-        <select class="mb24 select2-left" name="select" data-selectAR--mdl="true" data-prefix="Show: ">
-            <option value="" selected>All</option>
-        </select>
     </div>
 
     <div class="card-ctrls__right">
         <div class="filters">
             <% include ../layout/card_ddown_filter %>
                 <div class="ddown ddown--left ddown--disabled">
-                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button ml8" id="table-ma" disabled>
-                        With Selected
+                    <div class="ddown__init btn--dropdown btn btn--capitalize btn--md btn--primary mdl-js-button ml8 btn-with-selected" id="table-ma"
+                        disabled>
+                        <span>With Selected</span>
+                        <i class="zmdi zmdi-more-vert"></i>
                     </div>
                     <div class="ddown__content">
                         <div class="ddown__arrow"></div>
                         <ul class="ddown__menu">
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"><i
                                         class="zmdi zmdi-group"></i><span>Client Overview</span></a>
                             </li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"><i
                                         class="zmdi zmdi-rss"></i><span>Client Contacts</span></a>
                             </li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"><i
                                         class="zmdi zmdi-case"></i><span>Log In As Client</span></a>
                             </li>
-                            <li><a class="mdl-js-button mdl-js-ripple-effect" href="#"><i
+                            <li><a class="mdl-js-button mdl-js-ripple-effect"><i
                                         class="zmdi zmdi-cast"></i><span>Archive Client</span></a>
                             </li>
                         </ul>

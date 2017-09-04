@@ -71,7 +71,12 @@
   }
   //setings page
   &.grid-container--2col {
-    @media @max1200 {
+    @media @md {
+      .grid-col--menu {
+        display: none !important;
+      }
+    }
+    @media @xs {
       .grid-col--menu {
         display: none !important;
       }
@@ -85,6 +90,44 @@
       flex-flow: column;
       width: 338px;
       min-width: 338px;
+      @media @max1366 and (min-width: 1024px) {
+        width: 245px;
+        min-width: 245px;
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 60px;
+        min-width: 60px;
+      }
+      .menu-aside {
+        li a {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          height: 55px;
+          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            justify-content: center;
+          }
+          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            i {
+              margin-right: 0;
+            }
+
+            span {
+              display: none;
+            }
+          }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          li.has-submenu > a:after {
+            right: 8px;
+          }
+          li.is-active{
+            &:before{
+              display: none
+            }
+          }
+        }
+      }
     }
     .grid-col--container {
       flex: 1;
@@ -235,24 +278,23 @@
   }
 }
 
+@gridstack-columns: 24;
 
-  @gridstack-columns: 24;
-
-  .grid-stack-item (@i) when (@i > 0) {
-    &#app-wrapper [data-gs-width='@{i}'] {
-      width: (100% / @gridstack-columns) * @i;
-    }
-    &#app-wrapper [data-gs-x='@{i}'] {
-      left: (100% / @gridstack-columns) * @i;
-    }
-    &#app-wrapper .grid-stack-item[data-gs-min-width='@{i}'] {
-      min-width: (100% / @gridstack-columns) * @i;
-    }
-    &#app-wrapper .grid-stack-item[data-gs-max-width='@{i}'] {
-      max-width: (100% / @gridstack-columns) * @i;
-    }
-
-    .grid-stack-item(@i - 1);
+.grid-stack-item (@i) when (@i > 0) {
+  &#app-wrapper [data-gs-width='@{i}'] {
+    width: (100% / @gridstack-columns) * @i;
   }
+  &#app-wrapper [data-gs-x='@{i}'] {
+    left: (100% / @gridstack-columns) * @i;
+  }
+  &#app-wrapper .grid-stack-item[data-gs-min-width='@{i}'] {
+    min-width: (100% / @gridstack-columns) * @i;
+  }
+  &#app-wrapper .grid-stack-item[data-gs-max-width='@{i}'] {
+    max-width: (100% / @gridstack-columns) * @i;
+  }
+
+  .grid-stack-item(@i - 1);
+}
 
 .grid-stack-item(@gridstack-columns);

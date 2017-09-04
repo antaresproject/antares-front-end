@@ -3,13 +3,17 @@
 // IE
 import 'babel-polyfill';
 
+// // passive scroll
+// const onClick = e => e.preventDefault();
+// document.addEventListener('scroll', onClick, { passive: false });
+
 var stylesBlack = [
   'background: #fff',
   'color: #000',
   'display: block',
   'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)',
   'text-align: center',
-  'font-weight: bold'
+  'font-weight: bold',
 ].join(';');
 
 // if ( !PRODUCTION ) {
@@ -18,7 +22,7 @@ var stylesBlack = [
 // }
 
 window.onload = function() {
-  console.log('Antares Initialized.');
+  // console.log('Antares Initialized.');
 };
 
 // if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");

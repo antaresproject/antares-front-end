@@ -1,96 +1,89 @@
 dialog {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
-  height: fit-content;
-  margin: auto;
-  border: solid;
-  padding: 1em;
-  background: @standard-white;
-  color: @standard-black;
-  display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin: auto;
+    border: solid;
+    padding: 1em;
+    background: @standard-white;
+    color: @standard-black;
+    display: none;
 }
 
 dialog[open] {
-  display: block;
-  position: fixed;
+    display: block;
+    position: fixed;
 }
 
-dialog + .backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.4);
+dialog+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
 }
+
 
 /* for small devices, modal dialogs go full-screen */
+
 @media screen and (max-width: 540px) {
-  dialog[_polyfill_modal] {
-
-    /* TODO: implement */
-    top: 0;
-    width: auto;
-    margin: 1em;
-  }
-
+    dialog[_polyfill_modal] {
+        /* TODO: implement */
+        top: 0;
+        width: auto;
+        margin: 1em;
+    }
 }
 
 ._dialog_overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 dialog.fixed {
-  position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 @dialog-size: 40vh;
-
-.mdl-dialog.ar-dialog .mdl-dialog__content.ps-container {
-  padding: 0 24px !important;
+.mdl-dialog.ar-dialog .mdl-dialog__content.ps {
+    padding: 0 24px !important;
 }
 
 .mdl-dialog.ar-dialog {
-  .mdl-dialog__actions {
-    justify-content: flex-end;
-
-    button,
-    a {
-      margin-left: 8px;
-      cursor: pointer;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
+    .mdl-dialog__actions {
+        justify-content: flex-end;
+        button,
+        a {
+            margin-left: 8px;
+            cursor: pointer;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
     }
-
-  }
-
-  &[open] {
-    width: @dialog-size;
-    min-height: @dialog-size;
-    min-width: 300px;
-    border: 0;
-    background: transparent;
-    padding: 0;
+    &[open] {
+        width: @dialog-size;
+        min-height: @dialog-size;
+        min-width: 300px;
+        border: 0;
+        background: transparent;
+        padding: 0;
     }
+}
 
-  }
-
-  .mdl-dialog__canvas {
+.mdl-dialog__canvas {
     flex-flow: column nowrap;
     display: flex;
     height: 100%;
@@ -98,9 +91,9 @@ dialog.fixed {
     position: absolute;
     background: @standard-white;
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  .mdl-dialog__header {
+.mdl-dialog__header {
     width: 100%;
     display: flex;
     height: 52px;
@@ -109,35 +102,29 @@ dialog.fixed {
     justify-content: space-between;
     border-bottom: 1px solid @background;
     padding: 0 24px;
-
     .mdl-dialog__title {
-      color: @background-borderd-grey;
-      font-size: 13px;
-      font-weight: bold;
-      text-transform: uppercase;
+        color: @background-borderd-grey;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
     }
-
     a {
-      line-height: 1;
-      position: relative;
-      width: 24px;
-      height: 24px;
-      .flex-center();
-
-      .mdl-button__ripple-container {
-        border-radius: 50%;
-      }
-
+        line-height: 1;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        .flex-center();
+        .mdl-button__ripple-container {
+            border-radius: 50%;
+        }
     }
-
     .close i {
-      font-size: 18px;
-      line-height: 1;
+        font-size: 18px;
+        line-height: 1;
     }
+}
 
-  }
-
-  .mdl-dialog__content {
+.mdl-dialog__content {
     height: auto;
     flex: 1;
     margin: 24px 0;
@@ -145,70 +132,66 @@ dialog.fixed {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-  }
+}
 
-  .mdl-dialog__actions {
+.mdl-dialog__actions {
     height: 52px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     border-top: 1px solid @background;
     padding: 0 24px;
-
     button,
     a {
-      margin-right: 8px;
-      &:last-child {
-        margin-right: 0;
-      }
+        margin-right: 8px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
-
-  }
+}
 
 dialog::backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .card--files {
-  .mdl-dialog.ar-dialog[open] {
-    min-height: auto;
-    .mdl-dialog__canvas {
-      min-height: 190px;
-      margin-top: -95px;
+    .mdl-dialog.ar-dialog[open] {
+        min-height: auto;
+        .mdl-dialog__canvas {
+            min-height: 190px;
+            margin-top: -95px;
+        }
     }
-
-  }
-
 }
 
 @media only screen and (max-height: 700px) {
-  .mdl-dialog.ar-dialog {
-    .mdl-dialog__content {
-      overflow-y: scroll;
+    .mdl-dialog.ar-dialog {
+        .mdl-dialog__content {
+            overflow-y: scroll;
+        }
     }
-  }
 }
 
 dialog {
-  position: fixed !important;
-  top: 50% !important;
-  -webkit-transform: translate(0, -50%) !important;
-  transform: translate(0, -50%) !important;
+    position: fixed !important;
+    top: 50% !important;
+    -webkit-transform: translate(0, -50%) !important;
+    transform: translate(0, -50%) !important;
 }
 
 body dialog .mdl-dialog__canvas {
-  position: relative !important
+    position: relative !important
 }
 
 body dialog .mdl-dialog.ar-dialog[open] {
-  min-height: auto;
+    min-height: auto;
 }
 
 body .mdl-dialog:before {
-  display: none !important;
+    display: none !important;
 }

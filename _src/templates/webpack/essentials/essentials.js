@@ -17,6 +17,7 @@
 // import './../../../js/external/mdrnzr';
 
 // EXTERNAL DEPS:
+// require('script-loader!default-passive-events');
 var pace = require('./../../../js/external/modified/pace.js');
 window.Pace = pace;
 // require("script-loader!./../../../js/external/jquery.js");
@@ -37,7 +38,11 @@ require('script-loader!jquery-match-height'); //nocss
 require('script-loader!hammerjs'); // no css
 require('script-loader!jquery-hammerjs'); // no css
 require('script-loader!underscore'); // no css
-require('perfect-scrollbar/jquery')($);
+require('perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js');
 require('./../../../js/external/mdrnzr.js');
 require('jquery-ui-touch-punch');
 require('script-loader!bowser');
+require('script-loader!swiper');
+require('script-loader!tether');
+var Drop = require('tether-drop');
+window.Drop = Drop;

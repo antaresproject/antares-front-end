@@ -2,12 +2,11 @@
 @transition-ripple-on: 300ms;
 @transition-ripple-off: 400ms;
 @icon-size: 22px;
-
-@media @xs{
+@media only screen and (max-width: 1023px) {
   @import "rwd/xs";
 }
 
-@media @min768 {
+@media only screen and (min-width: 1024px) {
   @import "rwd/min768";
 }
 
@@ -23,10 +22,13 @@
   filter: blur(7px);
 }
 
+ul.main-menu.main-menu--brand .submenu section {
+  height: 100%;
+}
+
 .more-trigger {
   margin-bottom: 16px;
 }
-
 
 div.more-trigger {
   z-index: 10;
@@ -163,8 +165,11 @@ nav ul.main-menu {
       background-color: #3e4954;
       position: absolute;
       border-radius: 50%;
-      top: 16px;
+      top: 11px;
       left: 25px;
+      @media only screen and (max-width: 1023px) {
+        left: 0;
+      }
       display: block;
       z-index: 9;
       animation-fill-mode: forwards;
@@ -210,50 +215,37 @@ nav ul.main-menu {
 }
 
 .menu-tooltip {
-
   background: #2d353d;
   position: absolute;
   left: 16px;
-  bottom: 32px;
-  //tmp
+  bottom: 32px; //tmp
   min-height: 100px;
   width: ~'calc(100% - 32px )';
   border-radius: 5px;
   padding: 24px;
   display: none;
   opacity: 0;
-
   .menu-tooltip__header {
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     i {
       font-size: 24px;
       color: #02A8F3 !important;
       padding-right: 13px;
-
     }
-
     span {
       color: #fff;
       font-size: 15px;
       font-weight: 500;
-
     }
-
   }
-
   .menu-tooltip__content {
-
     font-size: 13px;
     color: #b8becc;
     font-weight: normal;
     padding-top: 16px;
-
   }
-
 }
 
 #app-wrapper ul.main-menu > li > a span,
@@ -295,7 +287,6 @@ nav .submenu {
     }
   }
 }
-
 
 .nav-container {
   .main-menu {
@@ -339,11 +330,20 @@ nav .submenu {
     }
   }
   .has-submenu {
-    .ps-container {
+    .ps {
       overflow: auto !important;
     }
   }
-
 }
 
+.menu-scroll {
+  .main-menu:not(.main-menu--brand) > li {
+    //opacity: 0;
+  }
+}
 
+@media only screen and (max-width: 1023px) {
+  .main-menu__brand.submenu-open {
+    height: ~'calc(100vh - 70px)' !important;
+  }
+}

@@ -12,8 +12,8 @@
 <body>
     <% include ../layout/app_wrapper_start_tag %>
         <% include ../layout/main_menu_html %>
-            <div class="app-content page-brand-settings">
-                <% var breadData= 'Translations'; %>
+            <div class="app-content page-translations">
+                <% var breadData = 'Translations'; %>
                     <% include ../layout/mainhead %>
                         <% include ../layout/sidebar_notifications %>
                             <% include ../layout/sidebar_alerts %>
@@ -23,26 +23,27 @@
                                             <div class="grid-col grid-col--container card--pagination" data-preload>
                                                 <div class="menu-mobile-settings--box">
                                                     <select class="menu-mobile-settings" data-selectAR--search="true" name="select">
-                            </select>
+                    </select>
                                                 </div>
                                                 <div class="header-translations">
-                                                    <div>
-                                                        <select class="translations-component" data-selectAR--mdl-short="true">
-                                    <option value="all" selected data-url="#">All</option>
-                                    <optgroup label="Core">                                        
-                                            <option  value="foundation" data-url="#" >
-                                                Foundation
-                                            </option>                                         
-                                            <option  value="foundation" data-url="#" >
-                                                Users
-                                            </option> 
-                                    </optgroup> 
-                                </select>
-                                                    </div>
+
                                                     <div class="header-translations__search">
+                                                        <div>
+                                                            <select class="translations-component" data-selectAR--mdl-short="true">
+                                <option value="all" selected data-url="">All</option>
+                                <optgroup label="Core">
+                                    <option value="foundation" data-url="">
+                                        Foundation
+                                    </option>
+                                    <option value="foundation" data-url="">
+                                        Users
+                                    </option>
+                                </optgroup>
+                            </select>
+                                                        </div>
                                                         <div class="search-box  search-box--dark search-box--big mr16">
                                                             <i class="zmdi zmdi-search search-box__open"></i>
-                                                            <form action="#">
+                                                            <form action="">
                                                                 <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield">
                                                                     <input class="mdl-textfield__input search-box__search-field" type="text" id="main-search">
                                                                     <label class="mdl-textfield__label" for="#main-search">Search...</label>
@@ -50,9 +51,10 @@
                                                             </form>
                                                             <i class="search-box__close zmdi zmdi-close mr16 "></i>
                                                         </div>
+
                                                     </div>
                                                     <div class="header-translation__compare">
-                                                        <div class="ddown ddown--flags ddown">
+                                                        <div class="dropjs-translations--target">
                                                             <div class="mdl-js-button mdl-js-ripple-effect btn btn--md ddown__init  btn--default ">
                                                                 <div class="flag-icon flag-icon-fr flag-translate">
                                                                 </div>
@@ -62,42 +64,150 @@
                                                                 <div class="flag-icon flag-icon-us flag-compare">
                                                                 </div>
                                                             </div>
-                                                            <div class="ddown__content">
-                                                                <div class="ddown__menu">
-                                                                    <div class="header-translation__country">
-                                                                        <div class="header-translation__select-text">Translate:
-                                                                        </div>
-                                                                        <div class="form-block">
-                                                                            <div class="input-field input-field--icon input-field--desc-right">
-                                                                                <span class="input-field__icon"><span class="flag-icon"></span></span>
-                                                                                <select class="header-translation__translate-select change-language" name="select" data-flag-select-translations data-selectAR="true">
-                                                            <option data-url="#" data-country="pl" value="124124" ><span class="flag-icon flag-icon-pl"></span>English</option>
-                                                            <option data-url="#" data-country="us" value="aSDafd" selected>Option two... </option>
-                                                            <option data-url="#" data-country="fr" value="fa34wf4e3">Option three...</option>
-                                                            <option data-url="#" data-country="nl" value="asdasdas">Option 4</option>
-                                                        </select>
-                                                                            </div>
-                                                                        </div>
+                                                        </div>
+                                                        <div class="dropjs-translations--content">
+                                                            <div class="header-translation__country">
+                                                                <div class="header-translation__select-text">Translate from:
+                                                                </div>
+                                                                <div class="form-block">
+                                                                    <div class="input-field input-field--icon input-field--desc-right">
+                                                                        <span class="input-field__icon"><span class="flag-icon"></span></span>
+                                                                        <select class="header-translation__translate-select change-language" name="select" data-flag-select-translations data-selectAR="true">
+                                            <option data-url="" data-country="pl" value="124124"><span
+                                                        class="flag-icon flag-icon-pl"></span>English
+                                            </option>
+                                            <option data-url="" data-country="us" value="aSDafd" selected>Option
+                                                two...
+                                            </option>
+                                            <option data-url="" data-country="fr" value="fa34wf4e3">Option
+                                                three...
+                                            </option>
+                                            <option data-url="" data-country="nl" value="asdasdas">Option 4
+                                            </option>
+                                        </select>
                                                                     </div>
-                                                                    <div class="header-translation__country">
-                                                                        <div class="header-translation__select-text">Compare To:
-                                                                        </div>
-                                                                        <div class="form-block">
-                                                                            <div class="input-field input-field--icon input-field--desc-right">
-                                                                                <span class="input-field__icon"><span class="flag-icon"></span></span>
-                                                                                <select class="header-translation__compare-select column-translation" name="select" data-flag-select-translations data-selectAR="true"
-                                                                                    rel="#" default="en">                                        
-                                                            <option data-country="pl" value="124124" selected><span class="flag-icon flag-icon-pl"></span>English</option>
-                                                            <option data-country="us" value="aSDafd">Option two... </option>
-                                                            <option data-country="fr" value="fa34wf4e3">Option three...</option>
-                                                            <option data-country="nl" value="asdasdas">Option 4</option>
-                                                        </select>
-                                                                            </div>
-                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="header-translation__country">
+                                                                <div class="header-translation__select-text">Translate to:
+                                                                </div>
+                                                                <div class="form-block">
+                                                                    <div class="input-field input-field--icon input-field--desc-right">
+                                                                        <span class="input-field__icon"><span class="flag-icon"></span></span>
+                                                                        <select class="header-translation__compare-select column-translation" name="select" data-flag-select-translations data-selectAR="true"
+                                                                            rel="" default="en">
+                                            <option data-country="pl" value="124124" selected><span
+                                                        class="flag-icon flag-icon-pl"></span>English
+                                            </option>
+                                            <option data-country="us" value="aSDafd">Option two...</option>
+                                            <option data-country="fr" value="fa34wf4e3">Option three...</option>
+                                            <option data-country="nl" value="asdasdas">Option 4</option>
+                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div class="header__compare--desktop">
+                                                            <div class="header-translation__country">
+                                                                <div class="header-translation__select-text">Translate from:
+                                                                </div>
+                                                                <div class="form-block">
+                                                                    <div class="input-field input-field--icon input-field--desc-right">
+                                                                        <span class="input-field__icon"><span class="flag-icon"></span></span>
+                                                                        <select class="header-translation__translate-select change-language" name="select" data-flag-select-translations data-selectAR="true">
+                                            <option data-url="" data-country="pl" value="124124"><span
+                                                        class="flag-icon flag-icon-pl"></span>English
+                                            </option>
+                                            <option data-url="" data-country="us" value="aSDafd" selected>Option
+                                                two...
+                                            </option>
+                                            <option data-url="" data-country="fr" value="fa34wf4e3">Option
+                                                three...
+                                            </option>
+                                            <option data-url="" data-country="nl" value="asdasdas">Option 4
+                                            </option>
+                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="header-translation__country">
+                                                                <div class="header-translation__select-text">Translate to:
+                                                                </div>
+                                                                <div class="form-block">
+                                                                    <div class="input-field input-field--icon input-field--desc-right">
+                                                                        <span class="input-field__icon"><span class="flag-icon"></span></span>
+                                                                        <select class="header-translation__compare-select column-translation" name="select" data-flag-select-translations data-selectAR="true"
+                                                                            rel="" default="en">
+                                            <option data-country="pl" value="124124" selected><span
+                                                        class="flag-icon flag-icon-pl"></span>English
+                                            </option>
+                                            <option data-country="us" value="aSDafd">Option two...</option>
+                                            <option data-country="fr" value="fa34wf4e3">Option three...</option>
+                                            <option data-country="nl" value="asdasdas">Option 4</option>
+                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div class="ddown ddown&#45;&#45;flags ddown">-->
+                                                        <!--<div class="mdl-js-button mdl-js-ripple-effect btn btn&#45;&#45;md ddown__init  btn&#45;&#45;default ">-->
+                                                        <!--<div class="flag-icon flag-icon-fr flag-translate">-->
+                                                        <!--</div>-->
+                                                        <!--<div class="arrow">-->
+                                                        <!--<i class="zmdi zmdi-chevron-right"></i>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="flag-icon flag-icon-us flag-compare">-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="ddown__content">-->
+                                                        <!--<div class="ddown__menu">-->
+                                                        <!--<div class="header-translation__country">-->
+                                                        <!--<div class="header-translation__select-text">Translate:-->
+                                                        <!--</div>-->
+                                                        <!--<div class="form-block">-->
+                                                        <!--<div class="input-field input-field&#45;&#45;icon input-field&#45;&#45;desc-right">-->
+                                                        <!--<span class="input-field__icon"><span class="flag-icon"></span></span>-->
+                                                        <!--<select class="header-translation__translate-select change-language"-->
+                                                        <!--name="select" data-flag-select-translations-->
+                                                        <!--data-selectAR="true">-->
+                                                        <!--<option data-url="" data-country="pl" value="124124"><span-->
+                                                        <!--class="flag-icon flag-icon-pl"></span>English-->
+                                                        <!--</option>-->
+                                                        <!--<option data-url="" data-country="us" value="aSDafd" selected>Option-->
+                                                        <!--two...-->
+                                                        <!--</option>-->
+                                                        <!--<option data-url="" data-country="fr" value="fa34wf4e3">Option-->
+                                                        <!--three...-->
+                                                        <!--</option>-->
+                                                        <!--<option data-url="" data-country="nl" value="asdasdas">Option 4-->
+                                                        <!--</option>-->
+                                                        <!--</select>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="header-translation__country">-->
+                                                        <!--<div class="header-translation__select-text">Compare To:-->
+                                                        <!--</div>-->
+                                                        <!--<div class="form-block">-->
+                                                        <!--<div class="input-field input-field&#45;&#45;icon input-field&#45;&#45;desc-right">-->
+                                                        <!--<span class="input-field__icon"><span class="flag-icon"></span></span>-->
+                                                        <!--<select class="header-translation__compare-select column-translation"-->
+                                                        <!--name="select" data-flag-select-translations data-selectAR="true"-->
+                                                        <!--rel="" default="en">-->
+                                                        <!--<option data-country="pl" value="124124" selected><span-->
+                                                        <!--class="flag-icon flag-icon-pl"></span>English-->
+                                                        <!--</option>-->
+                                                        <!--<option data-country="us" value="aSDafd">Option two...</option>-->
+                                                        <!--<option data-country="fr" value="fa34wf4e3">Option three...</option>-->
+                                                        <!--<option data-country="nl" value="asdasdas">Option 4</option>-->
+                                                        <!--</select>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
                                                     </div>
                                                 </div>
                                                 <div class="translations-body">
@@ -130,13 +240,16 @@
                                                                 </div>
                                                                 <div class="translations-new-row__mobile">
                                                                     <a id="translations-new-row__add" name="action" class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
-                                                Add translation
-                                            </a>
+                                        Add translation
+                                    </a>
+                                                                    <a id="translations-new-row__cancel" name="action" class="btn btn--md btn--link btn--default mdl-button mdl-js-button mdl-js-ripple-effect">
+                                        cansel
+                                    </a>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                     </template>
-                                                    <form action="#" method="POST" class="translations-container">
+                                                    <form action="" method="POST" class="translations-container">
                                                         <div class="tbl-c tbl-translations">
                                                             <table data-massable="0" data-scrollable data-table-init="true" class="translations-table" id="tCy" cellspacing="0" width="100%"
                                                                 data-adjust-height="1" data-url="api/translations.json">

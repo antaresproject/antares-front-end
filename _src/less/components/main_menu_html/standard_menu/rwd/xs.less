@@ -26,7 +26,9 @@
     }
     .menu-scroll {
       height: auto;
-      max-height: ~"calc(100vh - 70px)" !important;
+      @media (orientation: landscape){
+      max-height: ~"calc(100vh - 70px)";
+      }
     }
   }
 
@@ -57,7 +59,7 @@
 
   .menu-scroll {
     height: auto;
-    max-height: ~"calc(100vh - 140px)";
+    max-height: ~"calc(100vh - 70px)";
     overflow: auto;
     .main-menu {
       padding-bottom: 0;
@@ -148,3 +150,5 @@
     }
   }
 }
+
+

@@ -1,4 +1,9 @@
 @sidebar-w:360px;
+.main-sidebar--top .sidebar {
+	height: ~"calc(100vh - 80px)";
+	//position: sticky;
+	top: 80px;
+}
 .sidebar {
 	width: @sidebar-w;
 	height: 100vh;
@@ -79,7 +84,9 @@
 			z-index: 9;
 			position: relative;
 		}
-
+		.label-basic--md{
+			line-height: 10px;
+		}
 	}
 
 	.sidebar__footer {

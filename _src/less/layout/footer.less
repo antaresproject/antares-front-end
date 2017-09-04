@@ -16,6 +16,9 @@
     bottom: 0;
     margin-bottom: 0;
   }
+  button,a{
+    font-size: 12px !important;
+  }
 }
 
 @media @xs{
@@ -49,11 +52,16 @@
 //when side menu
 .grid-container--2col {
   .app-content__footer {
-    left: ~'calc(98px + 338px + 24px)';
-  }
-  @media @max1200 {
-    .app-content__footer {
+    //left: ~'calc(98px + 338px + 24px)';
+    @media @max1366 and (min-width: 1024px){
+      //left: ~'calc(98px + 245px + 24px)';
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1023px){
+      left: 24px;
+    }
+    @media @xs{
       left: ~'calc(98px + 24px)';
+
     }
   }
 }

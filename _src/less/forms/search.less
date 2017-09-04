@@ -70,7 +70,7 @@
     //label - placeholder
     .mdl-textfield__label {
       color: @standard-white;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 400;
       top: 8px;
       //bottom:1px;
@@ -146,7 +146,8 @@
         display: none;
       }
       > i {
-        left: -16px;
+        left: auto;
+        right: 0;
       }
     }
 
@@ -235,13 +236,16 @@
 
 .main-head .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .main-head .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
   visibility: hidden;
+  opacity: 0; 
+  transition: 0ms;
 }
 
 .main-head .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .main-head .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
   top: 24px;
   font-size: 13px;
   &:after {
-    background-color: white;
+    //background-color: white;
+    background-color: transparent;
     height: 1px;
   }
 }
@@ -284,10 +288,13 @@
 }
 #app-wrapper .main-head{
   .breadcrumbs{
-    li:first-of-type{
-      opacity: 0.8;
+    &>li:first-of-type{
+
+      @media only screen and (max-width:1023px){
+        display: none;
+      }
     }
-    li:nth-child(2){
+    &>li:nth-child(2){
       &:before{
         opacity: 0.8;
       }

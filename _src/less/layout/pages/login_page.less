@@ -1,6 +1,10 @@
 .app-content.page-login {
-  background: linear-gradient(313deg, #26292f, @super-dark-grey);
-  background-size: 500% 500%;
+  //background: linear-gradient(313deg, #26292f, @super-dark-grey);
+  background-image: linear-gradient(to right, #0079b9 0%, #00adee 100%);
+  //background-size: 500% 500%;
+   @media @xs{
+     overflow: hidden;
+   }
   @keyframes loginBG {
     0% {
       background-position: 0 5%
@@ -20,6 +24,9 @@
   }
   .main-content {
     height: auto;
+    @media @xs{
+      width: 90%;
+    }
   }
   .flex-center();
   &:before {
@@ -30,75 +37,77 @@
   }
   .login-box {
     width: 440px;
+    @media @xs{
+      width: 100%;
+    }
     background-color: @standard-white;
-    padding: @unit2 0;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
-    @media @xs {
-      width: 100vw;
-      height: 100vh;
-    }
-    .login-box__header {
+    box-shadow: 0 2px 35px rgba(0, 0, 0, 0.16);
+    padding: 46px 30px;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      top:-180px;
+      @media @md{
+        top: -120px
+      }
+      @media @xs{
+        top: -80px
+      }
+      left: 0;
+      background-image: url('@{img_path}/logo/logo_sign_white_2.svg');
+      background-position: center;
       width: 100%;
-      .flex-center();
-      padding-top: 40px;
-      padding-bottom: 72px;
+      height: 60px;
+      background-repeat: no-repeat;
     }
-    form {
-      .flex-center();
-      flex-flow: column nowrap;
-      padding: 0 58px;
-    }
-    .btn {
-      margin-top: @unit2;
-    }
-    .btn,
-    .mdl-textfield {
-      width: 100%;
-      .mdl-textfield__input {
-        color: @primary-c;
-      }
-      &.is-dirty {
-        .mdl-textfield__label {
-          top: -3px;
-          font-size: 12px;
-        }
-      }
-      .mdl-textfield__label {
-        top: 16px;
-        font-weight: 400;
-        font-size: 16px;
-      }
+    .form-block:first-of-type{
+      margin-bottom: 0;
     }
 
-    .link-group {
-      padding-top: @unit1;
-      .flex-center();
+    .input-field {
+      .mdl-textfield{
+        width: 100%;
+        padding: 16px 0;
+        .mdl-textfield__label{
+         top: 22px
+        }
+        &.is-focused,&.is-dirty{
+          .mdl-textfield__label{
+            top:0px
+          }
+
+        }
+      }
+      .mdl-textfield__input {
+        color: @primary-bg;
+        letter-spacing: 0.4px;
+      }
+      .mdl-textfield__label:after{
+        bottom: 16px;
+      }
     }
     .login-box__remember {
       display: flex;
       align-items: center;
-      justify-content: center;
       width: 100%;
+      margin-top: 8px;
+      margin-bottom: 16px;
       span {
-        color: @primary-c;
+        color: @text-color-grey;
       }
     }
-  }
-
-}
-
-.label--login {
-  color: @primary-bg;
-  position: relative;
-  top: -8px;
-  font-size: 14px;
-}
-
-@media only screen and (orientation: landscape){
-  .app-content.page-login .login-box{
-    height: auto;
-    .login-box__header{
-      padding-bottom: 0;
+    .mdl-js-button{
+      width:100%;
+    }
+    .password-reset{
+      font-weight: 400;
+      margin-top: 8px;
+      cursor: pointer;
+      display: block;
     }
   }
+
 }
+
+

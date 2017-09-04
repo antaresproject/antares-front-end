@@ -1,42 +1,21 @@
-<div class="card--scroll-block gradient-left--transparent gradient-right--transparent">
-    <div class="card-filter">
-        <!-- EXAMPLE -->
-        <!--<div class="ddown ddown&#45;&#45;filter-edit ddown&#45;&#45;left mr24">-->
-        <!--<div data-filter-type="ammount" data-filter-value="$200 - $2180"-->
-        <!--class="card-filter__sgl ddown__init" data-tooltip-inline="Filter #2">-->
-        <!--<span>$200 - $2180</span> <i class="zmdi zmdi-close filter-close"></i>-->
-        <!--</div>-->
-        <!--<div class="ddown__content">-->
-        <!--<div class="ddown__arrow"></div>-->
-        <!--<ul class="ddown__menu">-->
-        <!--<li class="ddown__label"><span>Filter By</span></li>-->
-        <!--<li class="ddown__sgl ddown__sgl&#45;&#45;range">-->
-        <!--<div class="filter-slider ui-slider&#45;&#45;minimal"-->
-        <!--data-slider-range-filter="true"></div>-->
-        <!--<div class="form-block ff-rnw mb0">-->
-        <!--<div class="spinner-basic">-->
-        <!--<input class="filter-spinner filter-spinner-mode-min filter-spinner&#45;&#45;min"-->
-        <!--value="151" data-spinner="true" name="value">-->
-        <!--</div>-->
-        <!--<span class="ml16 mr16"> - </span>-->
-        <!--<div class="spinner-basic">-->
-        <!--<input class="filter-spinner filter-spinner-mode-max filter-spinner&#45;&#45;max"-->
-        <!--value="1241" data-spinner="true" name="value2">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<a href="#"-->
-        <!--class="btn btn&#45;&#45;uppercase btn&#45;&#45;md btn&#45;&#45;default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--</div>-->
+<div class="swiper-filters--box">
+    <div class="swiper-container swiper-filters">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper card-filters--swiper">
+            <!-- Slides -->
+
+        </div>
     </div>
+    <div class="swiper-filters-next"></div>
+    <div class="swiper-filters-prev"></div>
 </div>
+
 
 <div class="ddown ddown-multi ">
     <!-- BUTTON -->
     <div class="ddown-multi__init btn--dropdown btn btn--capitalize btn--md btn--default mdl-js-button mdl-js-ripple-effect mr-24">
-        Filter
+        <span>Filter</span>
+        <i class="zmdi zmdi-filter-list"></i>
     </div>
     <div class="ddown__content">
         <!-- CHANGE THIS -->
@@ -44,32 +23,102 @@
         <ul class="ddown-multi__menu">
             <li class="ddown-multi__label"><span>Filter By</span></li>
             <li class="has-submenu">
-                <a data-target="services" href="#"><span>Services</span></a>
+                <a data-target="services"><span>Services</span></a>
+            </li>
+            <li class="has-submenu">
+                <a data-target="created"><span>Created</span></a>
+            </li>
+            <li class="has-submenu">
+                <a data-target="status"><span>Status</span></a>
+            </li>
+            <li class="btn-clear">
+                <button class="mdl-js-button mdl-js-ripple-effect btn btn--md btn--default mdl-button btn-filter--clear-all">
+                    Clear All Filters
+                </button>
             </li>
         </ul>
     </div>
-    <div class="ddown__content" data-type="services" data-min="12" data-max="512">
+    <div class="ddown__content filter-content" data-type="services" data-min="111" data-max="512">
         <!-- ON THIS after click on btn 'services' -->
-        <ul data-name="services" class="ddown-multi__submenu">
+        <ul data-name="services" class="ddown-multi__submenu ">
             <li class="ddown-multi__label"><span>Filter By</span></li>
             <li class="ddown-multi__return">
-                <a href="#">
+                <a>
                     <i class="zmdi zmdi-chevron-left"></i>
                     <span>Services</span>
                 </a>
             </li>
             <li class="ddown__sgl ddown__sgl--range">
-                <div class="filter-slider ui-slider--minimal" data-slider-range-filter="true"></div>
-                <div class="form-block ff-rnw mb0">
+                <div class="slider-box">
+                    <div class="filter-slider ui-slider--minimal"
+                         data-slider-range-filter="true"></div>
+                </div>
+
+                <div class="form-block ff-rnw  spinners-box">
                     <div class="spinner-basic">
-                        <input class="filter-spinner filter-spinner-mode-min filter-spinner--min" value="12" type="number" pattern="[0-9]*" name="value">
+                        <input class="filter-spinner filter-spinner-mode-min filter-spinner--min"
+                               type="number" value="10" data-spinner="true" name="value">
                     </div>
                     <span class="ml16 mr16"> - </span>
                     <div class="spinner-basic">
-                        <input class="filter-spinner filter-spinner-mode-max  filter-spinner--max" value="512" type="number" pattern="[0-9]*" name="value2">
+                        <input class="filter-spinner filter-spinner-mode-max filter-spinner--max"
+                               type="number" value="512" data-spinner="true" name="value2">
                     </div>
                 </div>
-                <a href="#" class="btn btn--uppercase btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
+                <a class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
+            </li>
+        </ul>
+        <div class="ddown__arrow"></div>
+    </div>
+    <div class="ddown__content filter-content" data-type="created" data-min="222" data-max="512">
+        <!-- ON THIS after click on btn 'services' -->
+        <ul data-name="created" class="ddown-multi__submenu ">
+            <li class="ddown-multi__label"><span>Filter By</span></li>
+            <li class="ddown-multi__return">
+                <a>
+                    <i class="zmdi zmdi-chevron-left"></i>
+                    <span>Created</span>
+                </a>
+            </li>
+            <li class="ddown__sgl ddown__sgl--range">
+                <div class="slider-box">
+                    <div class="filter-slider ui-slider--minimal"
+                         data-slider-range-filter="true"></div>
+                </div>
+
+                <div class="form-block ff-rnw  spinners-box">
+                    <div class="spinner-basic">
+                        <input class="filter-spinner filter-spinner-mode-min filter-spinner--min"
+                               type="number" value="10" data-spinner="true" name="value">
+                    </div>
+                    <span class="ml16 mr16"> - </span>
+                    <div class="spinner-basic">
+                        <input class="filter-spinner filter-spinner-mode-max filter-spinner--max"
+                               type="number" value="512" data-spinner="true" name="value2">
+                    </div>
+                </div>
+                <a class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
+            </li>
+        </ul>
+        <div class="ddown__arrow"></div>
+    </div>
+    <div class="ddown__content filter-content" data-type="status" data-min="333" data-max="512">
+        <!-- ON THIS after click on btn 'services' -->
+        <ul data-name="status" class="ddown-multi__submenu ">
+            <li class="ddown-multi__label"><span>Filter By</span></li>
+            <li class="ddown-multi__return">
+                <a>
+                    <i class="zmdi zmdi-chevron-left"></i>
+                    <span>Status</span>
+                </a>
+            </li>
+            <li class="ddown__sgl ddown__sgl--range">
+                <select name="select" data-selectAR="true" class="select--badge">
+                    <option value="Active" selected>Active</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In space">In space</option>
+                </select>
+                <a class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
             </li>
         </ul>
         <div class="ddown__arrow"></div>

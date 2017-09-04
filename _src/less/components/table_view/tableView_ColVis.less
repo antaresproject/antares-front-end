@@ -11,14 +11,19 @@ ul.ColVis_collection li {
   padding: 5px 8px;
   border: 1px solid #999;
   cursor: pointer;
-  *cursor: hand;
+  cursor: hand;
   font-size: 0.88em;
   color: black !important;
   white-space: nowrap;
   border-radius: 2px;
   box-shadow: 1px 1px 3px @color-disabled;
   background: @standard-white;
-  background: linear-gradient(to bottom, @standard-white 0%, @background 89%, #f9f9f9 100%);
+  background: linear-gradient(
+    to bottom,
+    @standard-white 0%,
+    @background 89%,
+    #f9f9f9 100%
+  );
 }
 
 .ColVis_Button:hover,
@@ -27,7 +32,12 @@ ul.ColVis_collection li:hover {
   text-decoration: none !important;
   box-shadow: 1px 1px 3px @primary-grey;
   background: @background;
-  background: linear-gradient(to bottom, @background 0%, #e2e2e2 89%, #f4f4f4 100%);
+  background: linear-gradient(
+    to bottom,
+    @background 0%,
+    #e2e2e2 89%,
+    #f4f4f4 100%
+  );
 }
 
 button.ColVis_Button {
@@ -96,7 +106,12 @@ ul.ColVis_collection li span {
 
 ul.ColVis_collection li.ColVis_Special {
   border-color: @primary-c;
-  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(214, 214, 214, 1) 77%, rgba(232, 232, 232, 1) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(237, 237, 237, 1) 0%,
+    rgba(214, 214, 214, 1) 77%,
+    rgba(232, 232, 232, 1) 100%
+  );
 }
 
 ul.ColVis_collection li.ColVis_Special:hover {

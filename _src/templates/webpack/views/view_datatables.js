@@ -8,6 +8,7 @@ require('script-loader!datatables.net-scroller'); // no css
 require('script-loader!datatables.net-buttons'); // no css
 require('script-loader!datatables.net-buttons/js/buttons.colVis.js');
 require('script-loader!datatables.net-rowreorder'); // no css
+require('script-loader!datatables.net-select');
 // require('script-loader!drmonty-datatables-colvis'); // no css
 // require( 'datatables.net-rowreorder' )( window, $ );
 // APP COMPONENTS:

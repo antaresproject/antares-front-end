@@ -12,7 +12,8 @@ require('script-loader!jquery-mask-plugin');
 require('script-loader!velocity-animate');
 //CORE ANTARES
 require('./../../../js/antares_forms.js');
-
+require('./../../../js/external/modified/magnific.js');
+require('./../../../js/components/dropzone/dropzone.js');
 
 // require("dialog-polyfill/dialog-polyfill.css");
 // require("jquery-modal/jquery.modal.css");

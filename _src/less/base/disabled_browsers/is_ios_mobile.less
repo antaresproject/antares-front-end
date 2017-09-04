@@ -4,8 +4,8 @@ input, textarea {
 
 .main-menu-html .nav-container {
   .menu-scroll {
-    height: ~'calc(90vh - 140px)';
-    max-height: inherit;
+    //height: ~'calc(90vh - 110px)';
+    //max-height: inherit;
     .li-submenu-open {
       &.main-menu--brand {
         min-height: 100% !important;
@@ -14,9 +14,9 @@ input, textarea {
   }
   .submenu-is-active {
     .menu-scroll {
-      height: ~'calc(100vh - 130px)';
+      //height: ~'calc(100vh - 130px)';
       @media screen and (orientation: landscape) {
-        height: ~'calc(100vh - 110px)';
+        //height: ~'calc(100vh - 110px)';
       }
     }
   }
@@ -29,6 +29,7 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 
 #app-wrapper.mobile-menu-active {
   height: 89vh;
+
   @media screen and (orientation: landscape) {
     height: 100vh;
   }
@@ -53,7 +54,7 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 }
 
 #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__input, #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__label {
-  height: 36px
+  //height: 36px
 }
 
 #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left [data-selectar--mdl=true] + .select2-container--mdl .select2-selection {
@@ -116,27 +117,27 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   }
 }
 
-.app-content.page-login {
-  .main-content {
-    height: 100%;
-    .login-box {
-      @media @max450 {
-        height: 100%;
-      }
-      @media @xs {
-        height: auto;
-      }
-    }
-  }
-}
+//.app-content.page-login {
+//  .main-content {
+//    height: 100%;
+//    .login-box {
+//      @media @max450 {
+//        height: 100%;
+//      }
+//      @media @xs {
+//        height: auto;
+//      }
+//    }
+//  }
+//}
 
 #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .select2-container--mdl {
   max-width: 160px;
 }
 
-#app-wrapper aside.main-sidebar ul.main-menu li.submenu-open .submenu {
-  height: ~'calc(90vh - 155px)';
-}
+//#app-wrapper aside.main-sidebar ul.main-menu li.submenu-open .submenu {
+//  height: ~'calc(90vh - 155px)';
+//}
 
 div.app-content {
   overflow: scroll; // for scroll input
@@ -186,3 +187,5 @@ div.app-content {
 .page-settings .select2-dropdown ul.select2-results__options li.select2-results__option[aria-selected=true] {
   font-size: 16px;
 }
+
+

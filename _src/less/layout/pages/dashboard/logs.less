@@ -1,5 +1,5 @@
 .timeline__padding {
-  &> div {
+  & > div {
     display: block !important; // because css in vue
     & > span {
       display: inline-block;
@@ -18,34 +18,26 @@
   }
 }
 
-
-
-.card .select2 .select2-selection{
+.card .select2 .select2-selection {
   background-color: transparent;
 }
+
 @media @xs {
-  .card.card--logs .card-ctrls{
-    .search-box .search-box__search-field{
+  .card.card--logs .card-ctrls {
+    .search-box .search-box__search-field {
       padding: 0;
     }
     margin-bottom: 0;
     margin-top: 0;
-
-    .search-box .search-box__mdl-textfield .mdl-textfield__label:after{
+    .search-box .search-box__mdl-textfield .mdl-textfield__label:after {
       z-index: 10;
     }
   }
 
-
   // xs LOGS
   .card-ctrls.card-ctrls--nopadding {
     margin: 0 !important; // tam był important mt16
-
   }
-
-
-
-
 
   //[data-selectar--mdl="true"] + .select2-container--mdl {
   //  padding-right: 0;
@@ -58,13 +50,10 @@
   //    height: 100%;
   //  }
   //}
-
   .select2 .select2-selection .select2-selection__rendered {
     line-height: 37px;
     height: 100%;
   }
-
-
 
   .timeline__padding > div {
     display: block !important; // because css in vue
@@ -82,7 +71,6 @@
         border-radius: 100px;
       }
     }
-
   }
 
   #app-wrapper .card--logs .timeline {
@@ -91,17 +79,259 @@
   }
 
   // xs LOGS END
-  .card-block--logs{
-    .card__content > .datarow{
+  .card-block--logs {
+    .card__content > .datarow {
       margin-top: 16px;
     }
   }
 }
-.card--logs .timeline{
-   overflow: hidden;
- }
-//.card.card--logs .datarow >div:first-of-type{
-//  @media only screen and (min-width: 1200px) {
-//    padding-right: 16px;
-//  }
-//}
+
+.card--logs .timeline {
+  overflow: hidden;
+}
+
+@media @xs {
+  .card.card--logs {
+    .tab-search {
+      padding: 0 16px !important;
+    }
+  }
+}
+
+//tablet size
+.grid-size--tablet-xs {
+  &.card.card--logs {
+    .tab-search + .datarow {
+      padding: 0 16px;
+    }
+    .card__content {
+      padding: 0;
+    }
+    .tab-search {
+      margin: 0 !important;
+      padding: 0 16px 0 !important;
+      height: 42px !important;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #dfe3e6;
+        top: auto;
+      }
+      .card-ctrls__left {
+        .search-box .search-box__mdl-textfield .mdl-textfield__label:after {
+          bottom: 8px;
+        }
+      }
+      .select2 .select2-selection .select2-selection__rendered {
+        .select__prefix {
+          display: none;
+        }
+      }
+      .select2-container--mdl {
+        min-width: inherit;
+      }
+      div.card-ctrls__left .select2-container--mdl {
+        min-width: 120px;
+      }
+      .search-box__mdl-textfield {
+        max-width: 100%;
+      }
+      .card-ctrls__left {
+        .select2-container--mdl {
+          margin-right: 0;
+          width: 100% !important;
+        }
+        .search-box {
+          width: 100%;
+          form {
+            width: 100%;
+            & > div {
+              width: 100% !important;
+            }
+          }
+          & > i {
+            top: 20px
+          }
+          padding-left: 32px;
+          input,
+          label {
+            margin-left: 0;
+            height: 100%;
+          }
+          .mdl-textfield__input,
+          .mdl-textfield__label {
+            width: 100% !important;
+          }
+        }
+        .select2-selection .select2-selection__rendered {
+          max-width: 100% !important;
+        }
+      }
+      .card-ctrls__left {
+        padding: 0 0px;
+        .select2-selection--single .select2-selection__rendered {
+          line-height: 40px;
+        }
+      }
+      .select2 .select2-selection .select2-selection__rendered {
+        font-weight: 400 !important;
+      }
+      .card-ctrls__left {
+        width: 100%;
+        .search-box {
+          position: relative;
+          padding-left: 0;
+          margin-right: 0 !important;
+          .zmdi-search {
+            position: absolute;
+            right: 8px;
+            left: auto;
+          }
+          form {
+            display: none;
+            padding-right: 32px;
+          }
+        }
+        & > .select2 {
+          margin-right: 0 !important;
+          max-width: inherit !important;
+          padding-right: 32px;
+          .select2-selection__rendered {
+            font-size: 13px !important;
+          }
+          .select2-selection {
+            position: relative;
+          }
+          .select2-selection .select2-selection__rendered .select__prefix {
+            display: inline-block !important;
+            margin-right: 8px;
+          }
+        }
+      }
+      &.tab-search--open-search {
+        .search-box {
+          form {
+            display: block;
+          }
+        }
+        .card-ctrls__left .select2 {
+          display: none;
+        }
+      }
+    }
+    .pagination .simple-pagination--list {
+      width: 100%;
+      ul {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        li:first-of-type {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        li:last-of-type {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+    .pagination {
+      padding: 0 16px !important;
+    }
+    .pagination .simple-pagination--current {
+      display: none;
+    }
+    .card.card--pagination .card-ctrls:after {
+      top: 98px;
+    }
+    .card--pagination .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate > span a {
+      &:not(.current) {
+        display: none;
+      }
+    }
+    .card--pagination {
+      .pagination {
+        padding: 0 16px;
+        .pagination-pages {
+          ul.pagination-pages__list {
+            display: none;
+          }
+        }
+      }
+      .tbl-c {
+        .card-ctrls {
+          padding: 4px 22px 0 22px;
+        }
+        .dataTables_wrapper {
+          padding: 0;
+          .pagination {
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+    .grid-stack-item-content .card.card--pagination .tbl-c .pagination--type2 {
+      padding: 0 16px;
+      .dataTables_length {
+        display: none !important;
+      }
+      .dataTables_paginate {
+        width: 100%;
+        margin-left: 0;
+        span {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+  &.card.card--info {
+    .card__content > div {
+      padding: 0 16px !important;
+    }
+    .card__header-right .btn-link {
+      left: auto;
+    }
+    .card__mobile-toggle {
+      margin-right: -12px;
+    }
+    .card__indicator span {
+      display: inherit;
+      color: @primary-c;
+      margin-top: 8px;
+    }
+    .card__indicator .zmdi-info-outline {
+      display: inline-block;
+      font-size: 19px;
+      margin-left: 0;
+      vertical-align: top;
+    }
+    .single-row {
+      .btn {
+        margin-right: 0;
+        line-height: 30px;
+      }
+      .mobile-toogle--box {
+        width: auto;
+      }
+    }
+  }
+}
+
+.page-dashboard-html {
+  .card.card--logs .card__content {
+    padding: 0;
+    .card-ctrls {
+      padding: 0 24px;
+    }
+    .datarow {
+      padding: 0 24px;
+    }
+  }
+}

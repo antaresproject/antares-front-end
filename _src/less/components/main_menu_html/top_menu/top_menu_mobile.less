@@ -37,13 +37,13 @@ aside.main-sidebar {
   //display: none; //animation not correct work with display:none
   transition: @transition;
   width: 0;
-  transform: translateX(-300px);
-  position: relative;
+  transform: translateX(-265px);
+  //position: relative;
   overflow: hidden;
   &:after {
     //.inner-shadow();
   }
-  .ps-scrollbar-y-rail {
+  .ps__scrollbar-y-rail {
     z-index: 1;
   }
   nav {
@@ -519,7 +519,7 @@ aside.main-sidebar {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 10;
+    //z-index: 15;
     width: 265px;
   }
 
@@ -577,5 +577,10 @@ aside.main-sidebar {
         display: block;
       }
     }
+  }
+}
+.menu-scroll {
+  .main-menu:not(.main-menu--brand)>li {
+    opacity: 1;
   }
 }

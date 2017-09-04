@@ -10,8 +10,8 @@
       opacity: 1 !important;
       z-index: 15;
       visibility: visible !important;
-      @media @max1366{
-      transition: 800ms;
+      @media @max1366 {
+        //transition: 800ms;
       }
     }
 
@@ -25,6 +25,9 @@
     .ddown__arrow {
       position: absolute;
       top: 4px;
+      @media @md {
+        //top: 0
+      }
       right: 15px;
       left: auto;
       visibility: hidden;
@@ -86,7 +89,7 @@
   &.ddown__shorty {
     .ddown__content {
       .ddown__arrow {
-        right: -2px;
+        //right: -2px;
       }
     }
   }
@@ -102,4 +105,18 @@
       }
     }
   }
+}
+
+#app-wrapper.main-sidebar--top, #app-wrapper.main-sidebar--top--mobile {
+  .ddown {
+
+    &.ddown__shorty {
+      .ddown__content {
+        .ddown__arrow {
+          right: 15px;
+        }
+      }
+    }
+  }
+
 }

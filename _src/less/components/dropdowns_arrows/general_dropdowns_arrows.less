@@ -2,17 +2,39 @@
 @import "select2_arrows_ddown";
 @import "standard_arrows_ddown";
 @import "xdsoft_datepicker_arrows_ddown";
-.without-arrows{
+.ddown.ddown--open-up .ddown__content .ddown__arrow.without-arrows{
   &:before, &:after{
-    color: transparent !important;
+    transform: rotate(-180deg);
+  }
+  &:after{
+    top: -14px
+  }
+  &:before{
+    top: -8px
   }
 }
 #table-ma {
   & + .ddown__content {
    margin-top: 0;
+    .ddown__arrow{
+      right: 13px;
+    }
+  }
+
+}
+.ddown.ddown--three-dots.ddown--adj-bottom{
+  .ddown__arrow{
+    &:before,&:after{
+      transform: rotate(-180deg);
+    }
+    &:before{
+      top: -8px
+    }
+    &:after{
+      top: -14px
+    }
   }
 }
-
 
 //Dropdown button type - "View More"
 .ddown {
@@ -23,7 +45,7 @@
 
       .ddown__arrow {
         position: absolute;
-        top: 20px;
+        //top: 20px;
         right: 26px;
         left: auto;
 
@@ -44,25 +66,29 @@
 //PLUGIN POSITION ADJUSTMENT
 .ddown {
 
-  &.ddown--adj-bottom {
-
-    .ddown__content {
-
-      .ddown__arrow {
-        top: -11px;
-
-        &:before,
-        &:after {
-          content: '\f2f2';
-        }
-
-        &:before {
-          top: -1.5px;
-        }
-
-      }
-
+  &.ddown--adj-bottom {  //for #177
+    @media @lg{
+      //.ddown__arrow{
+      //  display: none;
+      //}
     }
+  //  .ddown__content {
+  //
+  //    .ddown__arrow {
+  //      top: -11px;
+  //
+  //      &:before,
+  //      &:after {
+  //        content: '\f2f2';
+  //      }
+  //
+  //      &:before {
+  //        top: -1.5px;
+  //      }
+  //
+  //    }
+  //
+  //  }
   }
 
 }

@@ -4,7 +4,18 @@
 @searchW: 250px;
 
 .card-bar {
-  display: none;
+  //display: none;
+  @media @max1366{
+    display: none;
+  }
+  width: 100%;
+  position: absolute;
+  height: @h;
+  z-index: 100;
+  background-color: @super-dark-grey;
+  left: auto;
+  top:-150px;
+  transition: 300ms;
   .card-bar__rel {
     position: relative;
     display: flex;
@@ -71,6 +82,7 @@
       display: flex;
       flex-flow: column nowrap;
       margin-right: 24px;
+      cursor: pointer;
       color: @color2;
       &:hover {
         opacity: 0.8;
@@ -116,7 +128,13 @@
     }
   }
 }
-
+#app-wrapper.main-sidebar--top{
+  .app-content{
+    .card-bar .card-bar__close{
+      top: 12px
+    }
+  }
+}
 //activation
 .app-content--widgets-movable {
 
@@ -126,13 +144,9 @@
 
   .card-bar {
     display: flex;
-    width: 100%;
-    height: @h;
-    z-index: 100;
-    background-color: @super-dark-grey;
+
     position: fixed;
     top: 0;
-    left: auto;
   }
 
   //arrow

@@ -11,12 +11,14 @@ import './../../../js/external/material.min';
 import './../../../js/components/mutator_observer/mutator_observer';
 import './../../../js/antares_notifications';
 import './../../../js/antares_mechanics';
+import './../../../js/components/dropdowns/ddown_general';
 import './../../../js/components/dropdowns/ddown_single';
 import './../../../js/components/dropdowns/ddown_multi';
 import '../../../js/components/main_menu/main_menu_html';
-
 import './../../../js/components/auto_complete/auto_complete';
 import './../../../js/components/browser_hooks/browser_hooks';
+import './../../../js/components/truncator/truncator';
+import './../../../js/components/debouncer/debouncer';
 
 // import './../../../js/components/main_menu/main_menu_old';
 

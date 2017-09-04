@@ -16,12 +16,13 @@
         }
       }
       .app-content {
-        overflow: visible !important;
+        overflow: auto !important;
         width: 100vw;
       }
     }
   }
 }
+
 body {
   #app-wrapper {
     &.mobile-menu-active {
@@ -48,6 +49,10 @@ body {
   .main-content {
     padding: 0;
   }
+  .grid-container.grid-container--footer .grid-col {
+    padding-bottom: 8px !important;
+  }
+
 }
 
 [data-timepicker], [data-datepicker], [data-datetimepicker] {
@@ -363,6 +368,12 @@ input {
   }
 }
 
+@media @md {
+  #app-wrapper .app-content .main-content {
+    padding: 0 8px;
+  }
+}
+
 #app-wrapper .app-content {
   &.page-brand-settings, &.page-forms, &.page-forms--hor, &.page-settings, &.page-email-settings, &.page-create {
     .main-content {
@@ -501,8 +512,8 @@ input {
 
 @media @xs {
   .generals-form {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .form--hor {

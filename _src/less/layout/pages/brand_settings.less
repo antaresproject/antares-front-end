@@ -1,9 +1,11 @@
-#app-wrapper.main-sidebar--top .app-content.page-brand-settings .main-content .app-content__footer{
+#app-wrapper.main-sidebar--top .app-content.page-brand-settings .main-content .app-content__footer {
   margin-left: -34px;
 }
-#app-wrapper.main-sidebar--top .app-content.page-email-settings .main-content .app-content__footer{
+
+#app-wrapper.main-sidebar--top .app-content.page-email-settings .main-content .app-content__footer {
   margin-left: 0;
 }
+
 .page-brand-settings {
   .generals-form {
     .col-group {
@@ -34,6 +36,13 @@
   }
 }
 
+@media only screen and (min-width: 1366px){
+  .page-brand-settings{
+    .app-content__footer{
+      margin-left: -34px
+    }
+  }
+}
 @media @min768max991 {
   .col-group .app-content__footer {
     margin: 0 -24px !important;
@@ -143,9 +152,17 @@
     background-color: @text-color-light-green;
   }
   .standard-color--background-first {
-    color:@color-error
+    color: @color-error
   }
   .standard-color--background-second {
-    color:@color-warning
+    color: @color-warning
+  }
+}
+
+.page-brand-settings {
+  @media @xs {
+    select[name] + span.select2 {
+      width: 100% !important;
+    }
   }
 }
