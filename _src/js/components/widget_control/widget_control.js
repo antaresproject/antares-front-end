@@ -277,7 +277,7 @@ export default {
 
     // card interactions
 
-    if (oTable !== null) {
+    if (typeof oTable !== 'undefined') {
       oTable.on('responsive-display', function() {
         $('.tbl-c').adjustCardHeight();
       });

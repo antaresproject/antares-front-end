@@ -62,25 +62,17 @@ module.exports = {
     //APP VIEWS
     // 'view_charts': ['./_src/templates/webpack/views/view_charts.js'],
     view_datatables: ['./_src/templates/webpack/views/view_datatables.js'],
-    view_brand_settings: [
-      './_src/templates/webpack/views/view_brand_settings.js'
-    ],
+    view_brand_settings: ['./_src/templates/webpack/views/view_brand_settings.js'],
     view_gridstack: ['./_src/templates/webpack/views/view_gridstack.js'],
     view_acl: ['./_src/templates/webpack/views/view_acl.js'],
-    translations_requirements: [
-      './_src/js/components/translations/translations_webpack_requirements.js'
-    ],
+    translations_requirements: ['./_src/js/components/translations/translations_webpack_requirements.js'],
     view_translations: ['./_src/templates/webpack/views/view_translations.js'],
-    view_notification_templates: [
-      './_src/templates/webpack/views/view_notification_templates.js'
-    ],
-    view_clients_details_gridstack: [
-      './_src/templates/webpack/views/view_clients_details_gridstack.js'
-    ],
-    view_widgets_html: ['./_src/templates/webpack/views/view_widgets_html.js'],
+    view_notification_templates: ['./_src/templates/webpack/views/view_notification_templates.js'],
+    view_clients_details: ['./_src/templates/webpack/views/view_clients_details.js'],
+    view_widgets_html: ['./_src/templates/webpack/views/view_widgets_html.js']
     // 'view_router': ['./_src/templates/webpack/views/view_router.js'],
     //CSS
-    css: ['./_src/templates/webpack/essentials/css.js']
+    // css: ['./_src/templates/webpack/essentials/css.js']
   },
   devServer: {
     contentBase: path.join(__dirname, '_dist/'),
@@ -202,7 +194,7 @@ module.exports = {
     new ProgressBarPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // new ExtractTextPlugin("./css/app.css"),
-    new BabiliPlugin({}, require('babel-preset-babili')),
+    // new BabiliPlugin({}, require('babel-preset-babili')),
     // new UglifyJSPlugin({
     //     mangle: true,
     //     sourceMap: false,
@@ -259,26 +251,16 @@ module.exports = {
         title: 'Antares Dashboard HTML',
         template: '_src/templates/pages/widgets_html.ejs',
         filename: 'widgets_html.html',
-        chunks: [
-          'app_cache',
-          'forms_basic',
-          'view_gridstack',
-          'view_widgets_html'
-        ]
+        chunks: ['app_cache', 'forms_basic', 'view_gridstack', 'view_widgets_html']
       })
     ),
 
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Table Dev',
-        template: '_src/templates/pages/clients_list_dev.ejs',
-        filename: 'clients_list_dev.html',
-        chunks: [
-          'app_cache',
-          'forms_basic',
-          'view_gridstack',
-          'view_datatables'
-        ]
+        template: '_src/templates/pages/clients_list.ejs',
+        filename: 'clients_list.html',
+        chunks: ['app_cache', 'forms_basic', 'view_gridstack', 'view_datatables']
       })
     ),
     new HtmlWebpackPlugin(
@@ -310,26 +292,16 @@ module.exports = {
         title: 'Antares Brand List',
         template: '_src/templates/pages/brand_list.ejs',
         filename: 'brand_list.html',
-        chunks: [
-          'app_cache',
-          'forms_basic',
-          'view_gridstack',
-          'view_datatables'
-        ]
+        chunks: ['app_cache', 'forms_basic', 'view_gridstack', 'view_datatables']
       })
     ),
 
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Clients Details - Gridstack Ver.',
-        template: '_src/templates/pages/clients_details_gridstack.ejs',
-        filename: 'clients_details_gridstack.html',
-        chunks: [
-          'app_cache',
-          'forms_basic',
-          'view_datatables',
-          'view_gridstack'
-        ]
+        template: '_src/templates/pages/clients_details.ejs',
+        filename: 'clients_details.html',
+        chunks: ['app_cache', 'forms_basic', 'view_datatables', 'view_gridstack']
       })
     ),
     new HtmlWebpackPlugin(
@@ -407,12 +379,7 @@ module.exports = {
         title: 'Table Filter',
         template: '_src/templates/pages/table_filter.ejs',
         filename: 'table_filter.html',
-        chunks: [
-          'app_cache',
-          'forms_basic',
-          'view_gridstack',
-          'view_datatables'
-        ]
+        chunks: ['app_cache', 'forms_basic', 'view_gridstack', 'view_datatables']
       })
     ),
     new HtmlWebpackPlugin(
@@ -428,13 +395,7 @@ module.exports = {
         title: 'translations',
         template: '_src/templates/pages/translations.ejs',
         filename: 'translations.html',
-        chunks: [
-          'app_cache',
-          'forms_advanced',
-          'view_brand_settings',
-          'translations_requirements',
-          'view_translations'
-        ]
+        chunks: ['app_cache', 'forms_advanced', 'view_brand_settings', 'translations_requirements', 'view_translations']
       })
     ),
     new HtmlWebpackPlugin(
@@ -442,12 +403,7 @@ module.exports = {
         title: 'Notification templates',
         template: '_src/templates/pages/notification_templates.ejs',
         filename: 'notification_templates.html',
-        chunks: [
-          'app_cache',
-          'forms_advanced',
-          'view_notification_templates',
-          'view_brand_settings'
-        ]
+        chunks: ['app_cache', 'forms_advanced', 'view_notification_templates', 'view_brand_settings']
       })
     ),
     new HtmlWebpackPlugin(
