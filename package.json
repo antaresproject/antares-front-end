@@ -11,7 +11,7 @@
     "antares": "set NODE_ENV=development && grunt && webpack --watch",
     "build": "set NODE_ENV=development && grunt && webpack --watch",
     "dev": "set NODE_ENV=development && webpack --watch",
-    "dev-server": "set NODE_ENV=development && webpack-dev-server -d",
+    "dev-server": "set NODE_ENV=development && webpack-dev-server  -d",
     "dashboard": "webpack-dashboard webpack-dev-server"
   },
   "dependencies": {
@@ -38,7 +38,7 @@
     "compression-webpack-plugin": "^0.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-declaration-sorter": "^2.0.0",
-    "css-loader": "^0.28.0",
+    "css-loader": "^0.28.5",
     "css-mqpacker": "^6.0.0",
     "cssnano": "^3.10.0",
     "datatables": "^1.10.13",
@@ -46,6 +46,8 @@
     "datatables.net-responsive": "^2.1.1",
     "datatables.net-rowreorder": "^1.2.0",
     "datatables.net-scroller": "^1.4.2",
+    "datatables.net-select": "^1.2.2",
+    "default-passive-events": "^0.1.1",
     "dialog-polyfill": "^0.4.7",
     "dotdotdot": "^1.7.0",
     "dragula": "^3.7.2",
@@ -58,6 +60,7 @@
     "es6-promise": "^4.1.0",
     "es6-shim": "^0.35.3",
     "eslint": "3.19.0",
+    "eslint-config-cssnano": "^3.1.3",
     "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "favicons-webpack-plugin": "0.0.7",
@@ -87,7 +90,6 @@
     "jquery-hammerjs": "^2.0.0",
     "jquery-mask-plugin": "^1.14.10",
     "jquery-match-height": "^0.7.2",
-    "jquery-menu-aim": "^1.1.0",
     "jquery-minicolors": "^2.1.10",
     "jquery-modal": "^0.8.0",
     "jquery-mousewheel": "^3.1.13",
@@ -113,7 +115,7 @@
     "offline-plugin": "^4.7.0",
     "onecolor": "^3.0.4",
     "pace": "0.0.4",
-    "perfect-scrollbar": "^0.6.16",
+    "perfect-scrollbar": "^0.8.0",
     "pixrem": "^3.0.2",
     "pngquant": "^1.2.0",
     "postcss": "^6.0.1",
@@ -140,7 +142,9 @@
     "style-loader": "^0.18.1",
     "stylelint": "^7.10.1",
     "svg-url-loader": "^2.0.2",
+    "swiper": "^3.4.2",
     "template-html-loader": "^1.0.0",
+    "tether": "^1.4.0",
     "tether-drop": "^1.4.2",
     "tinycolor2": "^1.4.1",
     "trix": "^0.10.1",
@@ -163,7 +167,7 @@
     "vue-resource": "^1.3.3",
     "vue-resource-mock": "^0.0.4",
     "vue-resource-mock-api": "^0.1.0",
-    "vue-slick": "^1.1.3",
+    "vue-slick": "^1.1.9",
     "vue-template-compiler": "^2.2.6",
     "vue2-dragula": "^2.4.4",
     "vuedraggable": "^2.11.0",
@@ -188,8 +192,8 @@
     "uglify-es": "git://github.com/mishoo/UglifyJS2#harmony",
     "uglify-js": "^3.0.10",
     "uglifyjs-webpack-plugin": "^0.4.3",
-    "webpack-bundle-analyzer": "^2.4.0",
-    "webpack-dashboard": "^0.4.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dashboard": "^1.0.0-5",
     "webpack-dev-server": "^2.4.4",
     "webpack-livereload-plugin": "^0.11.0"
   },
@@ -203,6 +207,7 @@
     ]
   },
   "eslintConfig": {
+    "extends": "airbnb",
     "env": {
       "browser": true,
       "commonjs": true,
@@ -219,6 +224,7 @@
     },
     "rules": {
       "linebreak-style": 0,
+      "max-len": "off",
       "semi": 2,
       "indent": [
         "error",
@@ -246,8 +252,7 @@
     },
     "plugins": [
       "prettier"
-    ],
-    "extends": "airbnb"
+    ]
   },
   "babel": {
     "presets": [
