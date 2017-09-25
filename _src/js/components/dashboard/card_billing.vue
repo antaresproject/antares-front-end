@@ -7,9 +7,10 @@
                     <div class="card__header-left"> <span >{{title}}</span> </div>
                     <div class="card__header-right">
                         <form action="" method="post">
+
                             <input data-daterangepicker="true" class="mr24">
-                                <input type="checkbox"  data-icheck="true" name="check" id="billing">
-                                <label class="ml8" v-on:click="compareMode = !compareMode" for="billing" >{{compareText}}</label>
+                        <input type="checkbox"  data-icheck="true" name="check" id="billing">
+                        <label class="ml8" v-on:click="compareMode = !compareMode" for="billing" >{{compareText}}</label>
                         </form>
                     </div>
                 </div>
@@ -21,7 +22,8 @@
             </div>
             <div class="card__right">
                 <div class="mobile-compare">
-                    <input type="checkbox"  data-icheck="true" name="check" id="billing">
+                        <input type="checkbox"  data-icheck="true" name="check" id="billing">
+
                     <label class="ml8" v-on:click="compareMode = !compareMode" for="billing" >{{compareText}}</label>
                 </div>
                 <header>
@@ -84,7 +86,7 @@ import cardEditControls from './card_edit_controls.vue'
 import LineChart from './chart_js/line.js'
 import BarChart from './chart_js/bar.js'
 
-require('./../widget_control/widget_control.js');
+// require('./../widget_control/widget_control.js');
 
 
 export default {
@@ -109,7 +111,7 @@ export default {
             chartID: 'chart--one',
             datarows: [{
                 text: 'New',
-                value1: 127,
+                value1: 128,
                 value2: 265,
                 type: 'decline',
             }, {

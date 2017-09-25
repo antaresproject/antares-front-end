@@ -3,46 +3,35 @@
 //
 
 export const menuMobile = {
+  init() {
+    var self = this;
 
-	init() {
+    enquire.register('screen and (max-width:768px)', {
+      match: function() {
+        self.createSubmenu();
+        self.menuRelocation();
+      }
+    });
+  },
 
-		var self = this;
+  // methods
 
-		enquire.register("screen and (max-width:768px)", {
+  menuRelocation() {},
 
-    		match : function() {
+  createSubmenu() {
+    let moreButtonPri = $('#app-wrapper .main-menu--primary li.more-trigger');
+    let moreButtonSec = $('#app-wrapper .main-menu--secondary li.more-trigger');
+    moreButtonSec.css('display', 'none');
+    moreButtonPri.append("<div class='submenu flex-fs'></div>");
+    let submenu = moreButtonPri.find('> .submenu');
 
-				self.createSubmenu();
-				self.menuRelocation();
-    		
-    		},
-
-		});
-	},
-
-	// methods
-
-	menuRelocation() {
-
-
-
-	},
-
-	createSubmenu() {
-
-		let moreButtonPri = $('#app-wrapper .main-menu--primary li.more-trigger');
-		let moreButtonSec = $('#app-wrapper .main-menu--secondary li.more-trigger');
-		moreButtonSec.css('display', 'none');
-		moreButtonPri.append("<div class='submenu flex-fs'></div>");
-		let submenu = moreButtonPri.find('> .submenu');
-
-		var submenuReturn = `
+    var submenuReturn = `
 		<a href="#" class="submenu__mobile-return">
             <i class="zmdi zmdi-arrow-left"></i>
             <span>More</span>
         </a>`;
 
-        var submenuInsides = `
+    var submenuInsides = `
         <section>
         	<div class="submenu__content">
 	        	<header>
@@ -51,29 +40,30 @@ export const menuMobile = {
 	        </div>
 		</section>`;
 
-		submenu.prepend(submenuReturn);
-		setTimeout(function() {
-			submenu.append(submenuInsides);
-		},30);
+    submenu.prepend(submenuReturn);
+    setTimeout(function() {
+      submenu.append(submenuInsides);
+    }, 30);
 
-		// add menu
+    // add menu
 
-		setTimeout(function() {
-			let menuSecondary = $('.main-menu--secondary');
-			menuSecondary.find('.main-menu--brand').remove();
-			menuSecondary.removeClass('is-hidden');
-			let submenuContent = submenu.find('.submenu__content');
+    setTimeout(function() {
+      let menuSecondary = $('.main-menu--secondary');
+      menuSecondary.find('.main-menu--brand').remove();
+      menuSecondary.removeClass('is-hidden');
+      let submenuContent = submenu.find('.submenu__content');
 
-			submenuContent.append(menuSecondary);
+      submenuContent.append(menuSecondary);
 
-			$(document).find('.main-menu--secondary li').attr('class', '');
-			$(document).find('.main-menu--secondary').attr('class', 'data-list');
-
-		},30);
-
-
-	}
-}
+      $(document)
+        .find('.main-menu--secondary li')
+        .attr('class', '');
+      $(document)
+        .find('.main-menu--secondary')
+        .attr('class', 'data-list');
+    }, 30);
+  }
+};
 
 // All units, fire at will.
 // menuMobile.init();

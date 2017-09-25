@@ -18,32 +18,51 @@
 
 */
 
-$(document).ready(function() {
-    $('.open-modal').on('click', function() {
-        APP.modal.init({
+$(document).ready(() => {
+  // $('.open-modal').on('click', function() {
+  //   APP.modal.init({
+  //     element: '.modal--problem',
+  //     title: 'Something went wrong...',
+  //     buttons: {
+  //       Confirm: {
+  //         type: 'primary',
+  //         action: function() {
+  //           alert('action1');
+  //           $.modal.close();
+  //         }
+  //       },
+  //       Cancel: {
+  //         type: 'default',
+  //         action: function() {
+  //           $.modal.close();
+  //         }
+  //       }
+  //     }
+  //   });
+  // });
+  $('.open-modal').on('click', () => {
+    const currentDialog = document.querySelector('dialog.is-current');
 
-            element: '.modal--problem',
-            title: 'Success Confirmation Modal',
-            buttons: {
-                'Confirm': {
-                    type: 'primary',
-                    action: function() {
-                        alert('action1');
-                        $.modal.close();
-                    },
-                },
-                'Cancel': {
-                    type: 'default',
-                    action: function() {
-                        $.modal.close();
-                    },
-                },
-            }
-        });
+    APP.dialog.init({
+      content: 'Lorem',
+      title: 'asdasd',
+      actionPosition: 'right',
+      width: '95%',
+      height: '500px',
+      buttons: {
+        Confirm: {
+          type: 'primary',
+          action() {
+            alert('Confirmed!');
+          }
+        },
+        Cancel: {
+          type: 'default',
+          action() {
+            window.dialog.close();
+          }
+        }
+      }
     });
-
-    $('.go-back').on('click', function() {
-        history.go(-1);
-    });
-
+  });
 });

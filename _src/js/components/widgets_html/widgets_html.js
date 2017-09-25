@@ -1,11 +1,13 @@
 const widgets_html = {
   init() {
+    if ($('.widgets-html-page').length === 0) {
+      return false;
+    }
     this.slick();
     this.oldControls();
     // this.openMobileToogle();
     this.initChartJS();
   },
-
   slick() {
     if (!$('[data-slick="true"]').length) {
       return false;
@@ -113,7 +115,10 @@ const widgets_html = {
         quantityRandom2.push(Math.floor(Math.random() * 100 + 1));
       }
 
-      var ctx = document.getElementById(targetBlock).getContext('2d');
+      let domObject = document.getElementById(targetBlock);
+
+      let ctx = domObject.getContext('2d');
+
       infoTable = new Chart(ctx, {
         type: 'line',
         data: {
@@ -327,11 +332,10 @@ const widgets_html = {
         }
       });
     }
-
-    lineChartJS('one-line', 10, 'rgba(39,174,96,.3)', '#67c68f');
-    lineDoubleChartJS('two-line', 10, 'rgba(126, 86, 194, 0.3)', '#7e57c2', 'rgba(230, 232, 235, 0.4)', '#e1e3e6');
-    barChartJS('two-bar', 10, '#ffa726', '#ef9c23', '#e1e3e6', '#d4d6d8');
-    barHorChartJS('two-bar--hor', 10, 'rgba(0, 145, 234, 0.3)', 'rgba(0, 145, 234, 0.6)', 'rgba(230, 232, 235, 0.4)', '#d4d6d8');
+          lineChartJS('one-line', 10, 'rgba(39,174,96,.3)', '#67c68f');
+          lineDoubleChartJS('two-line', 10, 'rgba(126, 86, 194, 0.3)', '#7e57c2', 'rgba(230, 232, 235, 0.4)', '#e1e3e6');
+          barChartJS('two-bar', 10, '#ffa726', '#ef9c23', '#e1e3e6', '#d4d6d8');
+          barHorChartJS('two-bar--hor', 10, 'rgba(0, 145, 234, 0.3)', 'rgba(0, 145, 234, 0.6)', 'rgba(230, 232, 235, 0.4)', '#d4d6d8');
   }
 };
 

@@ -23,23 +23,81 @@ input, textarea {
 
 }
 
-aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
+.page-datatables {
+  .search-box {
+    .mdl-js-textfield.search-box__mdl-textfiel {
+      display: none;
+    }
+  }
+  .search-box.search-box--toggled {
+    width: auto;
+    margin-left: inherit !important;
+    margin-right: inherit !important;
+    .search-box__close {
+      right: 4px;
+    }
+    .mdl-js-textfield.search-box__mdl-textfiel {
+      display: block;
+      width: auto;
+      margin-right: 8px;
+      input {
+        font-size: 18px;
+        height: 23px;
+        border-bottom: 0
+      }
+      .mdl-textfield__label {
+        font-size: 18px
+      }
+    }
+  }
+
+}
+
+.main-menu-html .nav-container .menu-scroll {
+}
+
+//#app-wrapper .app-content .main-head .item-grp {
+//  min-width: 120px;
+//}
+
+aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   height: 100%;
 }
 
-#app-wrapper.mobile-menu-active {
-  height: 89vh;
+#app-wrapper {
+  width: auto;
+}
 
-  @media screen and (orientation: landscape) {
-    height: 100vh;
-  }
-  aside {
-    height: 89vh;
-    @media screen and (orientation: landscape) {
-      height: 100vh;
+#app-wrapper.mobile-menu-active {
+  position: fixed;
+  //aside.main-menu-html {
+  //  height: ~'calc(100vh - 70px)';
+  //  .main-menu.main-menu--primary.li-submenu-open, .main-menu.main-menu--secondary.li-submenu-open {
+  //    height: ~'calc(89vh - 135px)';
+  //    overflow: auto;
+  //  }
+  //  @media only screen and (orientation: landscape) {
+  //    height: ~'calc(100vh - 40px)';
+  //  }
+  //}
+  .app-content {
+    transform: translateX(265px);
+    @media only screen and (orientation: landscape) {
+      //height: ~'calc(100vh - 40px)';
     }
   }
-}// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
+}
+
+//  @media screen and (orientation: landscape) {
+//    height: 100vh;
+//  }
+//  aside {
+//    height: 91vh;
+//    @media screen and (orientation: landscape) {
+//      height: 100vh;
+//    }
+//  }
+//}// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
 
 .main-menu-html .nav-container .main-menu li {
   transition: 0ms;
@@ -49,8 +107,20 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   height: auto;
 }
 
-#app-wrapper .main-content .card .card-ctrls.tab-search .card-ctrls__left .search-box {
-  width: auto;
+.main-head .breadcrumbs .ddown .ddown__content {
+  margin-top: 8px;
+}
+
+.card__header-right .ddown .ddown__content {
+  margin-top: 32px !important;
+}
+
+.card .card-ctrls.tab-search .filters .ddown .ddown__content {
+  margin-top: 16px !important;
+}
+
+#app-wrapper .page-clients-details .card .card__header > .card__header-right {
+  flex: 1
 }
 
 #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__input, #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__label {
@@ -79,7 +149,7 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
     height: 36px;
   }
   .card-ctrls__right {
-    height: 50px;
+    //height: 50px;
   }
   .dataTables_wrapper {
     height: 100%
@@ -117,6 +187,10 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   }
 }
 
+#app-wrapper .card .card-ctrls.tab-search .filters .ddown-multi > .btn i {
+  width: 28px;
+}
+
 //.app-content.page-login {
 //  .main-content {
 //    height: 100%;
@@ -139,11 +213,6 @@ aside.main-sidebar {// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 //  height: ~'calc(90vh - 155px)';
 //}
 
-div.app-content {
-  overflow: scroll; // for scroll input
-  -webkit-overflow-scrolling: touch;
-}
-
 .ui-slider { // for scroll input because sliders must have his overflow
   overflow: initial;
 }
@@ -154,11 +223,17 @@ div.app-content {
     margin-bottom: 0;
   }
 }
-
-.btn.btn--md {
-  height: 36px;
+.badge.badge--md{
+  line-height: 20px;
 }
-
+//.btn.btn--md {
+//  height: 36px;
+//}
+#app-wrapper .app-content .main-content .card .tbl-c .card-ctrls.tab-search--filter:not(.swiper--no-slides){
+  @media only screen and (orientation: landscape){
+    margin-bottom: 64px !important;
+  }
+}
 .page-email-settings .btn.btn--md {
   height: auto;
 }
@@ -178,7 +253,6 @@ div.app-content {
 }
 
 .main-head .search-box.search-box--toggled {
-  width: auto;
   input {
     //width: 130px   // se ios10
   }
@@ -188,4 +262,66 @@ div.app-content {
   font-size: 16px;
 }
 
+.card.card--chart .card__header-right .comiseo-daterangepicker-triggerbutton {
+  width: auto;
+}
 
+.card.card--chart .card__header-right form {
+  justify-content: flex-end;
+}
+
+#table-ma + .ddown__content {
+  @media @xs {
+    margin-top: 10px;
+    .ddown__menu{
+      margin-top: 8px;
+    }
+    .ddown__arrow{
+      top: 13px
+    }
+  }
+}
+
+#app-wrapper {
+  &.mobile-menu-active {
+    overflow: hidden !important;
+    height: 90vh;
+    @media only screen and (orientation: landscape) {
+      height: 89vh;
+    }
+    .main-menu.li-submenu-open {
+      height: ~'calc(90vh - 130px)';
+      @media only screen and (orientation: landscape) {
+        height: ~'calc(89vh - 130px)';
+      }
+    }
+    .main-menu.li-submenu-open.main-menu--brand {
+      @media only screen and (orientation: landscape) {
+        height: ~'calc(89vh - 70px)';
+      }
+    }
+  }
+}
+
+nav {
+  .menu-scroll {
+    height: 230px;
+    max-height: ~'calc(85vh - 120px)' !important;
+    //height: ~'calc(90vh - 410px)' !important;
+    //@media only screen and (orientation: landscape) {
+    //  height: ~'calc(85vh - 110px)' !important;
+    //}
+    &.open-second-menu {
+      height: 170px;
+      //  height: ~'calc(90vh - 460px)' !important;
+      //  @media only screen and (orientation: landscape) {
+      //    height: ~'calc(85vh - 190px)' !important;
+      //  }
+    }
+  }
+}
+
+nav.submenu-is-active .menu-scroll {
+  height: ~'calc(90vh - 70px)' !important;
+  max-height: ~'calc(100vh - 70px)' !important;
+}

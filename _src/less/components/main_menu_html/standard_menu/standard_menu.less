@@ -343,7 +343,34 @@ nav .submenu {
 }
 
 @media only screen and (max-width: 1023px) {
+
   .main-menu__brand.submenu-open {
     height: ~'calc(100vh - 70px)' !important;
   }
+}.mobile-ddowns__sgl--open .mobile-ddowns__icon i {
+   transform: rotate(180deg);
+ }
+
+
+@media only screen and (min-width: 1024px) {
+  .nav-container .menu-scroll ul.main-menu {
+
+    &.main-menu--brand > li > a{
+      height: 70px;
+    }
+    &> li > a {
+      height: 80px;
+      & > i {
+        margin-top: 4px;
+        font-size: 28px;
+      }
+      & > span {
+        margin-top: 6px
+      }
+    }
+  }
+}
+
+nav{
+  opacity:0;
 }

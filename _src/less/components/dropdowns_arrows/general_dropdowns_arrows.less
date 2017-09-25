@@ -2,35 +2,49 @@
 @import "select2_arrows_ddown";
 @import "standard_arrows_ddown";
 @import "xdsoft_datepicker_arrows_ddown";
-.ddown.ddown--open-up .ddown__content .ddown__arrow.without-arrows{
-  &:before, &:after{
+
+.ddown.ddown--open-up .ddown__content .ddown__arrow.without-arrows {
+  &:before, &:after {
     transform: rotate(-180deg);
   }
-  &:after{
+  &:after {
     top: -14px
   }
-  &:before{
+  &:before {
     top: -8px
   }
 }
+
 #table-ma {
   & + .ddown__content {
-   margin-top: 0;
-    .ddown__arrow{
+    @media @md {
+      margin-top: -16px;
+    }
+    @media @xs{
+      margin-top: 8px;
+    }
+    .ddown__arrow {
       right: 13px;
+      @media @md {
+        top: 25px;
+      }
+      @media @xs{
+        top: 4px;
+      }
     }
   }
 
 }
-.ddown.ddown--three-dots.ddown--adj-bottom{
-  .ddown__arrow{
-    &:before,&:after{
+
+.ddown.ddown--three-dots.ddown--adj-bottom {
+  .ddown__arrow {
+    &:before, &:after {
       transform: rotate(-180deg);
     }
-    &:before{
+    &:before {
       top: -8px
     }
-    &:after{
+    &:after {
       top: -14px
     }
   }
@@ -60,35 +74,32 @@
   }
 }
 
-
-
-
 //PLUGIN POSITION ADJUSTMENT
 .ddown {
 
-  &.ddown--adj-bottom {  //for #177
-    @media @lg{
+  &.ddown--adj-bottom { //for #177
+    @media @lg {
       //.ddown__arrow{
       //  display: none;
       //}
     }
-  //  .ddown__content {
-  //
-  //    .ddown__arrow {
-  //      top: -11px;
-  //
-  //      &:before,
-  //      &:after {
-  //        content: '\f2f2';
-  //      }
-  //
-  //      &:before {
-  //        top: -1.5px;
-  //      }
-  //
-  //    }
-  //
-  //  }
+    //  .ddown__content {
+    //
+    //    .ddown__arrow {
+    //      top: -11px;
+    //
+    //      &:before,
+    //      &:after {
+    //        content: '\f2f2';
+    //      }
+    //
+    //      &:before {
+    //        top: -1.5px;
+    //      }
+    //
+    //    }
+    //
+    //  }
   }
 
 }
@@ -106,9 +117,9 @@
     }
 
   }
-  &.ddown--brand{
-    .ddown__arrow{
-      right: 12px;
+  &.ddown--brand {
+    .ddown__arrow {
+      right: 14.5px;
     }
   }
 }

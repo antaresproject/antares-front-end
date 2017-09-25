@@ -75,16 +75,12 @@
     .main-head.main-head--slim .search-box input {
         width: 100%;
     }
-}
-
-// TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN)
+} // TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN)
 @media @lg {
     .mobile-toogle--target {
         display: block !important;
     }
-}
-
-//.card__mobile-toggle .mdl-button__ripple-container{
+} //.card__mobile-toggle .mdl-button__ripple-container{
 //  left: 50%;
 //  transform: translatyX(-50%);
 //}
@@ -95,7 +91,7 @@
     }
 }
 
-@media @md {
+@media @max1366 {
     .card__mobile-toggle {
         display: inline-block;
         position: relative;
@@ -142,7 +138,7 @@
     }
 }
 
-@media @xs {
+@media only screen and (max-width: 1366px) {
     .mobile-toogle--box {
         padding: 8px !important;
     }
@@ -165,21 +161,27 @@
     }
 }
 
-@media @md {
+@media @max1366 {
     .card:not(.card-chart--slim):not(.card--info) .card__mobile-toggle.card__mobile-toggle--open {
         .zmdi {
             transform: rotate(-180deg);
         }
     }
-}
-
-//TOGGLE WITH OVERFLOW
+} //TOGGLE WITH OVERFLOW
 @media @xs {
     .mobile-target--overflow {
         max-height: 305px;
+        overflow: hidden;
+        &>div {
+            max-height: inherit !important;
+        }
         .card__content {
             overflow: hidden !important;
         }
+    }
+    .card-container.card--mobile-toggled .card--contacts .mobile-target--overflow {
+        overflow: visible;
+        height: auto;
     }
 }
 
@@ -189,14 +191,14 @@
     }
 }
 
-@media @xs {
+@media @md {
     .card--more-gradient {
         .card__content {
             position: relative;
             &:after {
                 position: absolute;
                 content: '';
-                bottom: 24px;
+                bottom: 4px;
                 left: 0;
                 width: 100%;
                 height: 10%;
@@ -213,7 +215,7 @@
     }
 }
 
-@media @xs {
+@media @md {
     .clients-details-gridstack {
         .grid-stack-item-content {
             .card.card--contacts.card--more-gradient .card__content:after {
@@ -222,20 +224,29 @@
             }
         }
     }
-}
-
-// TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN) END
-@media @md {
-    .list.list--md {
-        margin-bottom: 0;
-    }
-    .card--mobile-toggled .mobile-toogle--target {
-        .list {
-            margin-top: 24px;
+} // TOOGLE FOR MOBILE DIV (SLIDER UP&DOWN) END
+//@media @md {
+//    .list.list--md {
+//        margin-bottom: 0;
+//    }
+//    .card--mobile-toggled .mobile-toogle--target {
+//        .list {
+//            margin-top: 24px;
+//        }
+//    }
+//}
+@media @max1650 {
+    .page-dashboard .comiseo-daterangepicker-triggerbutton {
+        .truncate(105px);
+        display: block !important;
+        padding-left: 0;
+        padding-right: 0;
+        span{
+            display: inline-block !important;
+            vertical-align: bottom;
         }
     }
 }
-
 @media @max1500 {
     .ddown--view-more-options li:first-child {
         position: relative;
@@ -250,11 +261,7 @@
             transform: translateY(-50%);
         }
     }
-    .page-dashboard .comiseo-daterangepicker-triggerbutton {
-        .truncate(105px);
-        padding-left: 0;
-        padding-right: 0;
-    }
+
     .ddown--view-more-options {
         display: block !important;
     }
@@ -369,24 +376,18 @@
 }
 
 @media @min768 {
-    #app-wrapper aside.main-sidebar {
-        // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
-        position: fixed;
-        top: 0;
-        left: 0;
-        min-width: 98px;
-        z-index: 15;
-    }
+
     #app-wrapper .app-content {
         width: 100%;
     } // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
 }
 
 @media only screen and (min-width: 1024px) {
-    #app-wrapper .app-content {
-        padding-left: 98px;
+    #app-wrapper:not(.main-sidebar--top) .app-content {
+
         &.page-error--clean {
             padding-left: 0;
+            margin-left: 0;
         }
     }
 }

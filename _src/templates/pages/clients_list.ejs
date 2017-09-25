@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Antares Clients List</title>
+    <% if(mainMenuType === 'wide'){ %>
+    <% include ../layout/color_template_wide %>
+    <% } else{ %>
     <% include ../layout/color_template %>
-        <% include ../layout/css_files %>
+    <% } %>
+    <% include ../layout/css_files %>
 </head>
 <template id="vue-page-clients-list">
 
     <section class="main-content">
         <div class="grid-stack">
-            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0" data-gs-min-width="13"
-                data-gs-min-height="18" data-gs-width="24" data-gs-height="19">
+            <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0"
+                 data-gs-min-width="13"
+                 data-gs-min-height="8" data-gs-width="24" data-gs-height="17">
                 <div class="grid-stack-item-content">
                     <div class="card card--pagination" data-preload>
                         <div class="tbl-c">
                             <% include ../layout/card_ctrls_filter %>
-                                <% include ../layout/example_datatable %>
+                            <% include ../layout/example_datatable %>
                         </div>
                     </div>
                 </div>
@@ -30,16 +35,30 @@
 </template>
 
 <body>
-    <% include ../layout/app_wrapper_start_tag %>
-        <% include ../layout/main_menu_html %>
-            <div class="app-content page-datatables page-vue-datatables">
-                <% var breadData= 'Clients List'; %>
-                    <% include ../layout/mainhead %>
-                        <% include ../layout/sidebar_notifications %>
-                            <% include ../layout/sidebar_alerts %>
-                                <vue-page-clients-list></vue-page-clients-list>
-            </div>
-            <% include ../layout/js_files %>
+
+<% include ../layout/app_wrapper_start_tag %>
+
+<% if(clientArea){ %>
+<% include ../layout/mode_clientArea/CA_menutop %>
+<% } else{ %>
+<% include ../layout/main_menu_html %>
+<% } %>
+
+<div class="app-content page-datatables page-vue-datatables">
+    <% var breadData = 'Clients List'; %>
+
+    <% if(clientArea){ %>
+    <% include ../layout/mode_clientArea/CA_mainhead %>
+    <% } else{ %>
+    <% include ../layout/mainhead %>
+    <% } %>
+
+    <% include ../layout/sidebar_notifications %>
+    <% include ../layout/sidebar_alerts %>
+
+    <vue-page-clients-list></vue-page-clients-list>
+</div>
+<% include ../layout/js_files %>
 
 </body>
 

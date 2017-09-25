@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Error 404</title>
+    <% if(mainMenuType === 'wide'){ %>
+    <% include ../layout/color_template_wide %>
+    <% } else{ %>
     <% include ../layout/color_template %>
+    <% } %>
         <% include ../layout/css_files %>
 </head>
 
@@ -41,7 +45,7 @@
                                 laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident,
                                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <div class="btn-group">
-                                <a onclick="goBack()" class="go-back btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-long-arrow-left"></i> Back to previous page</a>
+                                <a   onclick="javascript:history.back()" class="go-back btn btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-long-arrow-left"></i> Back to previous page</a>
 
                                 <a class="open-modal btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">Can't solve the problem?</a>
 

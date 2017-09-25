@@ -1,69 +1,154 @@
 .main-menu-html {
-    @import "standard_menu/standard_menu";
+  @import "standard_menu/standard_menu";
 }
 
-#app-wrapper.main-sidebar--expanded {
-    @import "wide_menu/wide_menu";
+#app-wrapper.main-sidebar--expanded.main-sidebar--wide {
+  @import "wide_menu/wide_menu";
+}
+#app-wrapper.main-sidebar--top.main-sidebar--ca {
+  @import "CA_menu/CA_menu";
 }
 
+
+.control-menu-panel{
+  position: fixed;
+  top:80%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 150px;
+  width: 98px;
+  background: rebeccapurple;
+  z-index:300;
+  color: white;
+  display: none;
+  align-items: center;
+}
 #app-wrapper {
-    &.main-sidebar--top {
-        @import "top_menu/top_menu";
+  &.main-sidebar--top {
+    @import "top_menu/top_menu";
+    .main-head, .main-content, .nav-container, .submenu section {
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+
+
+
+      padding-left: 0;
+      padding-right: 0;
+      @media only screen and (max-width: 1450px) {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
     }
-    &.main-sidebar--top--mobile {
-        @media only screen and (max-width: 1023px) {
-            @import "top_menu/top_menu_mobile";
+    .main-content {
+      @media only screen and (max-width: 1199px) {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+
+
+
+
+      }
+    }
+    .page-clients-details, .page-dashboard {
+      .main-content {
+        @media only screen and (max-width: 1199px) {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
         }
+      }
     }
+    &.main-sidebar--ca {
+      .main-head,
+      .main-content,
+      .nav-container,
+      .submenu section {
+        max-width: 1152px !important;
+      }
+    }
+  }
+  &.main-sidebar--top--mobile {
+    @media only screen and (max-width: 1023px) {
+      @import "top_menu/top_menu_mobile";
+    }
+  }
 }
 
 #app-wrapper.main-sidebar--top {
-    #widgets-list .search-box {
-        height: 40px;
-    }
+  #widgets-list .search-box {
+    height: 40px;
+  }
 }
 
 #app-wrapper .main-menu:not(.main-menu--brand) .data-list li {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#app-wrapper:not(.main-sidebar--top) aside{
-     ul.main-menu {
-      .has-submenu {
+#app-wrapper:not(.main-sidebar--top) aside {
+  ul.main-menu {
+    .has-submenu {
+      a:after {
+        opacity: 0;
+      }
+    }
+    .submenu {
+      //width: 0 !important;
+      transition: 300ms;
+      //display: block !important;
+      left: 98px !important;
+      display: block;
+      @media only screen and (max-width: 1023px) {
+        transition: 0ms;
+        left: 0 !important;
+      }
+      section {
+        opacity: 0;
+      }
+    }
+  }
+
+  ul.main-menu {
+    .submenu-open {
+      &.has-submenu {
         a:after {
-          opacity: 0;
+          opacity: 1;
         }
       }
       .submenu {
-        //width: 0 !important;
-        transition: 300ms;
-        display: block !important;
-        left: 98px !important;
-        @media only screen and (max-width: 1023px){
-          transition: 0ms;
-          left: 0 !important;
-        }
+        width: 340px;
         section {
-          opacity: 0;
+          opacity: 1;
         }
       }
     }
-
-    ul.main-menu {
-      .submenu-open {
-        &.has-submenu {
-          a:after {
-            opacity: 1;
-          }
-        }
-        .submenu {
-          width: 340px;
-          section {
-            opacity: 1;
-          }
-        }
-      }
-    }
+  }
 }
+
+nav {
+  .menu-scroll {
+    max-height: ~'calc(90vh - 20px)' !important;
+    @media only screen and (min-width: 768px) and (max-width: 1023px){
+       max-height: ~'calc(90vh - 60px)' !important;
+      .main-menu{
+        max-height: ~'calc(100vh - 215px)' !important;
+      }
+    }
+    @media only screen and (max-width: 767px){
+      max-height: ~'calc(90vh - 80px)' !important;
+    }
+  }
+}
+
+nav.submenu-is-active .menu-scroll {
+  max-height: ~'calc(100vh - 70px)' !important;
+  @media only screen and (min-width: 768px) and (max-width: 1023px){
+    max-height: ~'calc(90vh - 60px)' !important;
+    .main-menu{
+      max-height: none !important;
+    }
+  }
+}
+

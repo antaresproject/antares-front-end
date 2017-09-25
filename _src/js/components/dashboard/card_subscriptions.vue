@@ -39,7 +39,7 @@
                 </header>
                 <ul class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
-                    <li v-for="row in datarows" v-bind:key="row" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                    <li v-for="(row, index) in datarows" v-bind:key="index" class="datarow__sgl" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
                         <div class="datarow__left">
                             <span class="datarow__status">{{row.text}}</span>
                         </div>

@@ -1,9 +1,9 @@
-<aside class="main-sidebar main-menu-html">
+<aside class="main-sidebar main-menu-html" data-menu-on-load="primary">
     <!-- <aside class="main-sidebar main-menu-html"> -->
     <div class="nav-container">
         <nav>
             <div class="menu-scroll">
-                <ul class="main-menu main-menu--brand">
+                <ul class="main-menu--brand main-menu ">
                     <li class="main-menu__brand has-submenu" data-index="0" data-name="brand">
                         <a>
                             <div class="main-sidebar__logo"></div>
@@ -107,7 +107,8 @@
                 </ul>
                 <ul class="main-menu main-menu--primary">
                     <li data-index="0" data-name="dashboard">
-                        <a href="index.html"><i class="zmdi zmdi-view-dashboard"></i> <span class="text">Dashboard</span></a>
+                        <a href="index.html"><i class="zmdi zmdi-view-dashboard"></i> <span
+                                    class="text">Dashboard</span></a>
                     </li>
                     <li data-index="1" data-name="pages" class="has-submenu">
                         <a>
@@ -122,7 +123,7 @@
                                     <h3>Upper Menu</h3>
                                 </header>
                                 <div class="submenu__content">
-                                    <ul class="data-list">
+                                    <ul class="data-list data-list--first">
                                         <li data-name="clients_list">
                                             <a href="clients_list.html"><span>Clients List</span></a>
                                             <span class="badge badge--dark badge--md">99</span>
@@ -152,6 +153,8 @@
 
                                             <span class="badge badge--dark badge--md">2</span>
                                         </li>
+                                    </ul>
+                                    <ul class="data-list data-list--second">
                                         <li data-name="zero_data">
                                             <a href="zero_data.html"><span>Zero Data</span></a>
 
@@ -171,6 +174,9 @@
                                             <a href="error_500.html"><span>Error 500</span></a>
                                             <span class="badge badge--dark badge--md">1</span>
                                         </li>
+                                    </ul>
+                                    <ul class="data-list data-list--thirt">
+
                                     </ul>
                                     <div data-menu-item="error_500" class="menu-tooltip">
                                         <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i> <span>Error 500</span>
@@ -194,9 +200,11 @@
                                 </header>
                                 <div class="submenu__content">
                                     <ul class="data-list">
-                                        <li data-name="forms_vertical"><a href="forms.html"><span>Forms Vertical</span></a></li>
+                                        <li data-name="forms_vertical"><a href="forms.html"><span>Forms Vertical</span></a>
+                                        </li>
                                         <li data-name="forms_horizontal"><a href="forms_hor.html"><span>Forms Horizontal</span></a></li>
-                                        <li data-name="general_settings"><a href="general_settings.html"><span>Addidional UI</span></a></li>
+                                        <li data-name="general_settings"><a href="general_settings.html"><span>Addidional UI</span></a>
+                                        </li>
                                         <li data-name="widgets"><a href="widgets.html"><span>Widgets</span></a></li>
                                     </ul>
                                     <div data-menu-item="general_settings" class="menu-tooltip">
@@ -207,8 +215,10 @@
                                         </div>
                                     </div>
                                     <div data-menu-item="widgets" class="menu-tooltip">
-                                        <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i> <span>Widgets</span></div>
-                                        <div class="menu-tooltip__content">Preview of system widgets in different sizes.</div>
+                                        <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i> <span>Widgets</span>
+                                        </div>
+                                        <div class="menu-tooltip__content">Preview of system widgets in different sizes.
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -218,13 +228,13 @@
                 <ul class="main-menu main-menu--secondary">
                     <li data-name="acl">
                         <a href="acl.html">
-                            <i class="zmdi zmdi-code-setting"></i> 
+                            <i class="zmdi zmdi-code-setting"></i>
                             <span class="text">ACL</span>
                         </a>
                     </li>
                     <li data-name="translations">
                         <a href="translations.html">
-                            <i class="zmdi zmdi-code-setting"></i> 
+                            <i class="zmdi zmdi-code-setting"></i>
                             <span class="text">Translations</span>
                         </a>
                     </li>
@@ -305,3 +315,14 @@
         </nav>
     </div>
 </aside>
+
+<div class="control-menu-panel">
+    <form>
+        <label><input type='radio' id='standard-menu' name='type' value='Standard Menu' />Standard</label>
+        <br>
+        <label><input type='radio' id='top-menu' name='type' value='Top Menu'/>Top</label>
+        <br>
+        <label><input type='radio' id='wide-menu' name='type' value='Wide Menu'/>Wide</label>
+        <br>
+    </form>
+</div>

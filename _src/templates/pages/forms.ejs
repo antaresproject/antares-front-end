@@ -5,16 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Antares Forms</title>
+    <% if(mainMenuType === 'wide'){ %>
+    <% include ../layout/color_template_wide %>
+    <% } else{ %>
     <% include ../layout/color_template %>
+    <% } %>
     <% include ../layout/css_files %>
 </head>
 
 <body>
 <% include ../layout/app_wrapper_start_tag %>
+
+<% if(clientArea){ %>
+<% include ../layout/mode_clientArea/CA_menutop %>
+<% } else{ %>
 <% include ../layout/main_menu_html %>
+<% } %>
+
+
 <div class="app-content page-forms" data-scroll-blocked="true">
     <% var breadData = 'Forms'; %>
+
+    <% if(clientArea){ %>
+    <% include ../layout/mode_clientArea/CA_mainhead %>
+    <% } else{ %>
     <% include ../layout/mainhead %>
+    <% } %>
+
     <% include ../layout/sidebar_notifications %>
     <% include ../layout/sidebar_alerts %>
     <section class="main-content nopadding">
@@ -23,7 +40,7 @@
             <% include ../layout/menu_aside %>
             <div class="grid-col grid-col--container">
                 <div class="menu-mobile-settings--box">
-                    <select class="menu-mobile-settings" data-selectAR--search="true" name="select">
+                    <select class="menu-mobile-settings"  data-select2--class="menu-aside-settings--blue" data-selectAR--search="true" name="select">
                     </select>
                 </div>
                 <section class="generals-form" data-preload>

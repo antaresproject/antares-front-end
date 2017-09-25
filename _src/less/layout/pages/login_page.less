@@ -1,10 +1,27 @@
 .app-content.page-login {
+  height: 100vh;
+  margin-left: 0;
   //background: linear-gradient(313deg, #26292f, @super-dark-grey);
   background-image: linear-gradient(to right, #0079b9 0%, #00adee 100%);
   //background-size: 500% 500%;
-   @media @xs{
-     overflow: hidden;
-   }
+  flex-direction: column;
+  @media @xs {
+    overflow: hidden;
+  }
+  .img-logo {
+    background-image: url('@{img_path}/logo/logo_sign_white_2.svg');
+    background-position: center;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 60px;
+    @media @xs{
+      margin-bottom: 30px;
+    }
+    background-repeat: no-repeat;
+    @media @xs and (orientation: landscape){
+      display: none;
+    }
+  }
   @keyframes loginBG {
     0% {
       background-position: 0 5%
@@ -24,7 +41,7 @@
   }
   .main-content {
     height: auto;
-    @media @xs{
+    @media @xs {
       width: 90%;
     }
   }
@@ -37,44 +54,31 @@
   }
   .login-box {
     width: 440px;
-    @media @xs{
+    @media @xs {
       width: 100%;
+    }
+    @media @xs and (orientation: landscape){
+      padding: 8px 30px;
     }
     background-color: @standard-white;
     box-shadow: 0 2px 35px rgba(0, 0, 0, 0.16);
     padding: 46px 30px;
     position: relative;
-    &:before{
-      content: '';
-      position: absolute;
-      top:-180px;
-      @media @md{
-        top: -120px
-      }
-      @media @xs{
-        top: -80px
-      }
-      left: 0;
-      background-image: url('@{img_path}/logo/logo_sign_white_2.svg');
-      background-position: center;
-      width: 100%;
-      height: 60px;
-      background-repeat: no-repeat;
-    }
-    .form-block:first-of-type{
+
+    .form-block:first-of-type {
       margin-bottom: 0;
     }
 
     .input-field {
-      .mdl-textfield{
+      .mdl-textfield {
         width: 100%;
         padding: 16px 0;
-        .mdl-textfield__label{
-         top: 22px
+        .mdl-textfield__label {
+          top: 22px
         }
-        &.is-focused,&.is-dirty{
-          .mdl-textfield__label{
-            top:0px
+        &.is-focused, &.is-dirty {
+          .mdl-textfield__label {
+            top: 0px
           }
 
         }
@@ -83,7 +87,7 @@
         color: @primary-bg;
         letter-spacing: 0.4px;
       }
-      .mdl-textfield__label:after{
+      .mdl-textfield__label:after {
         bottom: 16px;
       }
     }
@@ -97,10 +101,10 @@
         color: @text-color-grey;
       }
     }
-    .mdl-js-button{
-      width:100%;
+    .mdl-js-button {
+      width: 100%;
     }
-    .password-reset{
+    .password-reset {
       font-weight: 400;
       margin-top: 8px;
       cursor: pointer;

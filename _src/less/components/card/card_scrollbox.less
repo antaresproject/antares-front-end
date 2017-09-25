@@ -1,53 +1,52 @@
 .card {
-  &.card--chart {
-    &.card--scrollbox {
-      .card__right {
-        padding-right: 8px;
-        padding-bottom: 13px;
-        padding-top: 18px;
-      }
-    }
-  }
-
-  &.card--contacts {
-    .card__content {
-      //height: auto;
-      //padding: 0 8px 13px 0;
-    }
-    .card__inner {
-      height: 280px;
-      overflow-y: auto;
-      padding: 0 7px 0 0;
-      margin: 13px 0 0 0;
-      @media @xs {
-        height: 100%;
-      }
-    }
-  }
-  &.card--logs {
-    &.card--scrollbox {
-      .card__content {
-        padding: 0 8px 0 0;
-      }
-      .card-ctrls,
-      .pagination {
-        padding: 0 16px 0 24px;
-      }
-      .timeline {
-        padding: 0 0 0 24px;
-      }
-    }
-  }
-  &.card--info {
-    &.card--scrollbox {
-      .card__content {
-        padding: 13px 8px 13px 24px;
-        .card__inner {
-          padding-bottom: 16px;
-          padding-right: 16px;
-          height: ~'calc(100% - 52px)';
+    &.card--chart {
+        &.card--scrollbox {
+            .card__right {
+                padding-right: 8px;
+                padding-bottom: 13px;
+                padding-top: 18px;
+            }
         }
-      }
     }
-  }
+    &.card--contacts {
+        .card__content {
+            //height: auto;
+            //padding: 0 8px 13px 0;
+        }
+        .card__inner {
+            height: 280px;
+            overflow-y: auto;
+            padding: 0 7px 0 0;
+            margin: 13px 0 0 0;
+            @media @xs {
+                height: 100%;
+            }
+        }
+    }
+    &.card--logs {
+        &.card--scrollbox {
+            .card__content {
+                padding: 0 8px 0 0;
+            }
+            .card-ctrls,
+            .pagination {
+                padding: 0 16px 0 24px;
+            }
+            .timeline {
+                padding: 0 0 0 24px;
+            }
+        }
+    }
+    &.card--info {
+        &.card--scrollbox {
+            .card__content {
+                padding: 13px 8px 13px 24px;
+                .card__inner {
+                    padding-bottom: 16px;
+                    padding-right: 16px;
+                    height: ~'calc(100% - 52px)';
+                }
+            }
+        }
+    }
 }

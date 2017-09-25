@@ -1,3 +1,5 @@
+
+
 #app-wrapper {
   @media @xs {
     aside.main-sidebar ul.main-menu li.submenu-open .submenu .data-list a {
@@ -14,8 +16,7 @@
 
     aside.main-sidebar {
       //display: none; //animation not correct work with display:none
-      transition: @transition;
-      width: 0;
+      //transition: @transition;
       transform: translateX(-265px);
       position: relative;
       overflow: hidden;
@@ -32,7 +33,7 @@
         &.submenu-is-active {
           .main-menu--primary,
           .main-menu--secondary {
-            //height: ~'calc(100vh - 155px)';
+            overflow: auto;
           }
         }
         &.submenu-is-active--brand {
@@ -59,7 +60,7 @@
         //}
         position: relative;
         overflow-y: initial;
-        z-index: 1; //&.main-menu--brand {
+        z-index: 20; //&.main-menu--brand {
         //  height: auto;
         //  z-index: 2;
         //  top: 0;
@@ -418,29 +419,20 @@
         z-index: 15;
         width: 265px;
       }
-      //.app-content {
-      //  &:before {
-      //    height: 0px;
-      //    transition: 300ms;
-      //  }
-      //}
-      .app-content .main-content {
-        z-index: 10;
-        box-shadow: 0 1px 15px rgba(0, 0, 0, 0.15);
-      }
+
       .app-content .main-content * {
         pointer-events: none;
       }
       .main-head {
-        transform: translateX(@sidebar-width-mobile);
+        //transform: translateX(@sidebar-width-mobile);
         opacity: 0.9;
         z-index: 10;
         transition: 300ms;
         pointer-events: all;
-        background: @primary-bg;
+
       }
       .main-content {
-        transform: translateX(@sidebar-width-mobile); // opacity: 0.6;
+        //transform: translateX(@sidebar-width-mobile); // opacity: 0.6;
         transition: 300ms;
       }
       .burgericon {
@@ -457,10 +449,6 @@
       position: absolute;
       z-index: 20;
       width: 265px;
-      //transform: translateX(-265px);
-      & + .app-content {
-        z-index: 19;
-      }
     }
   }
 }

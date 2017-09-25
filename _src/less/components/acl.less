@@ -27,17 +27,23 @@
 }
 
 .acl-container {
+  @media only screen and (max-width: 1199px){
+    margin-top: 35px;
+  }
   .acl-container__header {
     display: flex;
     padding: 0 0 22px 25px;
     margin-left: -25px;
     margin-right: -25px;
     border-bottom: 1px solid @input-border-bottom;
-    @media @xs {
+    @media only screen and (max-width: 1199px) {
       padding: 36px 10px 15px 10px;
       margin-left: 0;
       margin-right: 0;
       justify-content: center;
+    }
+    .select2{
+      max-width: 300px;
     }
   }
   .acl-container__body {

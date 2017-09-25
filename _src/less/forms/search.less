@@ -1,6 +1,6 @@
 .search-box {
   height: 100%;
-  padding-left: 35px;
+  padding-left: 45px;
   display: flex;
   position: relative;
   &:before {
@@ -17,7 +17,6 @@
   > i {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
     position: absolute;
     font: normal normal normal 18px/1 'Material-Design-Iconic-Font';
     content: '\f1c3';
@@ -27,6 +26,11 @@
     left: 0;
     font-size: 24px;
     cursor: pointer;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     &.search-box__close {
       display: none;
     }
@@ -135,19 +139,19 @@
   }
   @media @xs {
     .item-grp {
-      margin-left: 0;
+      margin-left: 12px;
     }
 
     .search-box {
-      margin-left: auto;
+      margin-left: inherit !important;
       padding-left: 0;
-      margin-right: 0;
+      margin-right: auto !important;
       form {
         display: none;
       }
       > i {
         left: auto;
-        right: 0;
+        right: -12px;
       }
     }
 
@@ -236,7 +240,7 @@
 
 .main-head .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .main-head .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
   visibility: hidden;
-  opacity: 0; 
+  opacity: 0;
   transition: 0ms;
 }
 
@@ -258,7 +262,12 @@
 
   .main-head .search-box.search-box--toggled > i:last-of-type {
     top: 50%;
-    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    left:auto;
+    margin-right: 0 !important;
+    min-width: 40px;
   }
 
   .main-head .search-box.search-box--toggled .mdl-textfield {

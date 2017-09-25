@@ -33,9 +33,9 @@ body #app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-men
         }
     }
 }
-#app-wrapper.main-sidebar--top aside.main-sidebar.simple-submenu ul.main-menu>li.submenu-open>a:after {
-    border-color: transparent transparent #fff transparent !important;
-}
+//#app-wrapper.main-sidebar--top aside.main-sidebar.simple-submenu ul.main-menu>li.submenu-open>a:after {
+//    border-color: transparent transparent #fff transparent !important;
+//}
 
 #app-wrapper.main-sidebar--top aside.main-sidebar.simple-submenu {
     .menu-tooltip {
@@ -47,6 +47,10 @@ body #app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-men
     .main-menu {
         .submenu {
             min-height: 100px !important;
+            section{
+                margin: 0;
+                padding: 0;
+            }
             .submenu__content.standard {
                 display: none !important;
             }
@@ -56,6 +60,11 @@ body #app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-men
             li {
                 margin-right: 16px;
                 margin-left: 16px;
+                &:hover{
+                    a{
+                        color: #b8becc !important;
+                    }
+                }
             }
             .data-list {
                 li {

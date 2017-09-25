@@ -1,23 +1,69 @@
+.main-sidebar--top {
+  @media only screen and (min-width: 1024px) {
+    .app-content, .main-head, .main-content {
+      transition: 0ms !important;
+    }
+
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  .app-content .main-content{
+    padding: 0 8px;
+  }
+  .app-content .main-head{
+    padding: 24px 14px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1199px){
+  .app-content .main-content{
+    padding: 0 14px;
+  }
+
+}
 @media @md {
   // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   body {
     overflow: visible !important;
     #app-wrapper {
-      overflow: visible !important;
-      height: 91vh;
+      overflow: visible;
+      //height: 91vh;
       &.mobile-menu-active {
         overflow: hidden !important;
-        height: 100%;
+        height: 100vh;
         aside {
           height: 100%;
         }
         .app-content {
-          height: 91vh;
+          //height: 91vh;
         }
       }
       .app-content {
-        overflow: auto !important;
         width: 100vw;
+        //overflow: hidden;
+      }
+    }
+  }
+}
+
+.mobile-menu-active {
+  .main-menu.li-submenu-open.main-menu--brand {
+    .submenu {
+      overflow: hidden !important;
+      height: auto !important;
+    }
+  }
+}
+
+.card-container.card--mobile-toggled {
+  .card {
+    .mobile-toogle--target {
+      display: block !important;
+      height: auto !important;
+    }
+    .card__content {
+      &:after {
+        height: 0 !important;
       }
     }
   }
@@ -27,16 +73,16 @@ body {
   #app-wrapper {
     &.mobile-menu-active {
       @media screen and (orientation: landscape) {
-        height: 100vh;
+        //height: 100vh;
       }
       aside {
         @media screen and (orientation: landscape) {
-          height: 100vh;
+          //height: 100vh;
         }
       }
       .app-content {
         @media screen and (orientation: landscape) {
-          height: 100vh;
+          //height: 100vh;
         }
       }
     }
@@ -89,6 +135,7 @@ input {
   justify-content: flex-start;
   margin-bottom: @unit2;
   flex-wrap: wrap;
+
   .flex-inputs {
     flex: 1;
     width: 100%;
@@ -154,14 +201,17 @@ input {
   }
 
   input {
-    border: 1px solid @border-light-grey;
     border-radius: 2px;
     background-color: @standard-white;
     font-size: 13px;
     color: @primary-c;
     padding: 0 @unit1;
+    border: 1px solid @border-light-grey;
     .flex-inputs();
     height: 36px;
+    &:hover {
+      border-color: @input-hover-border-color;
+    }
 
     &[type='number'] {
       padding: 0 0 0 @unit1;
@@ -204,10 +254,6 @@ input {
 
     &::-webkit-input-placeholder {
       color: @input-border;
-    }
-
-    &:hover {
-      border-color: @input-hover-border-color;
     }
 
   }
@@ -365,12 +411,6 @@ input {
 
     }
 
-  }
-}
-
-@media @md {
-  #app-wrapper .app-content .main-content {
-    padding: 0 8px;
   }
 }
 

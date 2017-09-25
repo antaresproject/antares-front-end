@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1024px) {
+  .client-area {
+    display: none;
+  }
+
+  div.nav-container nav .mobile-ddowns .ddown--brand {
+    display: none;
+  }
+  div.nav-container nav .mobile-ddowns .ddown--logged {
+    width: 100%;
+    justify-content: space-between;
+    &:after {
+      left: auto !important;
+      right: 14px !important;
+    }
+  }
+  .nav-container nav , .mobile-ddowns .mobile-ddowns__desc{
+    align-items: center;
+    flex-flow: inherit;
+    .mobile-ddowns__label{
+      margin-right: 16px;
+    }
+  }
+  .more-trigger{
+    left: 50% !important;
+  }
+}

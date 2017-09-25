@@ -18,6 +18,8 @@
 
  */
 
+/* global antaresEvents */
+
 export const Antares = function() {};
 Antares.prototype.init = function() {
   var self = this;
@@ -76,7 +78,14 @@ Antares.prototype.init = function() {
   // self.charts.labelBackground();
 };
 Antares.prototype.helpers = function() {
-  var self = this;
+  const self = this;
+
+  antaresEvents.on('something_happend', callback => {
+    callback();
+  });
+
+  antaresEvents.emit('something_happend', () => {
+  });
 
   // $('.main-menu--primary > li:nth-child(3)').addClass('hovered submenu-open');
   //input file manual
@@ -98,7 +107,10 @@ Antares.prototype.helpers = function() {
     };
   })(jQuery);
   $('.ddown-multi__init').on('click', function() {
-    $(this).closest('.ddown-multi').find('.ddown-multi__menu').perfectScrollbar();
+    $(this)
+      .closest('.ddown-multi')
+      .find('.ddown-multi__menu')
+      .perfectScrollbar();
   });
 
   function radioButtonsBigBg() {
@@ -172,25 +184,31 @@ Antares.prototype.helpers = function() {
   // }
   //fix on tags widget
   if ($('.card--tags').length) {
-    $('.card--tags').closest('.grid-stack-item-content').css('overflow', 'visible !important');
+    $('.card--tags')
+      .closest('.grid-stack-item-content')
+      .css('overflow', 'visible !important');
   }
   //plugin
   $.fn.extend({
     animateCss: function(animationName) {
       var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-      $(this).addClass('animated ' + animationName).one(animationEnd, function() {
-        $(this).removeClass('animated ' + animationName);
-        $(this).show();
-      });
+      $(this)
+        .addClass('animated ' + animationName)
+        .one(animationEnd, function() {
+          $(this).removeClass('animated ' + animationName);
+          $(this).show();
+        });
     }
   });
   $.fn.extend({
     animateAndRemove: function(animationName) {
       var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-      $(this).addClass('animated ' + animationName).one(animationEnd, function() {
-        $(this).removeClass('animated ' + animationName);
-        $(this).remove();
-      });
+      $(this)
+        .addClass('animated ' + animationName)
+        .one(animationEnd, function() {
+          $(this).removeClass('animated ' + animationName);
+          $(this).remove();
+        });
     }
   });
 
@@ -203,7 +221,9 @@ Antares.prototype.helpers = function() {
   }
 
   //cpanel FIx
-  $('#translationImport').closest('.input-field__inner').addClass('w100p');
+  $('#translationImport')
+    .closest('.input-field__inner')
+    .addClass('w100p');
 
   ready('.select2-dropdown .select2-results__options', function(element) {
     $(element).attr('data-scrollable', 'true');
@@ -353,7 +373,9 @@ Antares.prototype.components = {
         suppressScrollX: true
       };
       if (relative) {
-        $(selector).perfectScrollbar(perfectScrollbarCFG).css('position', 'relative');
+        $(selector)
+          .perfectScrollbar(perfectScrollbarCFG)
+          .css('position', 'relative');
       } else {
         $(selector).perfectScrollbar(perfectScrollbarCFG);
       }
@@ -419,7 +441,9 @@ Antares.prototype.components = {
     });
     sidebar_a.find(closeSingle).on('click', function(e) {
       e.stopPropagation();
-      $(this).closest('.flex-block').animateAndRemove('fadeOut');
+      $(this)
+        .closest('.flex-block')
+        .animateAndRemove('fadeOut');
     });
 
     sidebar_a.on('click', '.sidebar__footer .btn', function(e) {
@@ -460,7 +484,9 @@ Antares.prototype.components = {
     });
     sidebar_n.find(closeSingle).on('click', function(e) {
       e.stopPropagation();
-      $(this).closest('.flex-block').animateAndRemove('fadeOut');
+      $(this)
+        .closest('.flex-block')
+        .animateAndRemove('fadeOut');
     });
     sidebar_n.on('click', '.sidebar__footer .btn', function(e) {
       sidebar_n.find('.sidebar__list .flex-block').animateAndRemove('fadeOut');
@@ -502,9 +528,13 @@ Antares.prototype.components = {
       if ($(this).scrollTop() > toTop && !isPositionFixed) {
         el.addClass('menu-aside-container--fixed');
       }
-      if ($(this).scrollTop() < toTop && isPositionFixed) {
+      if ($(this).scrollTop() - 100 < toTop && isPositionFixed) {
         el.removeClass('menu-aside-container--fixed');
       }
+      $('.page-settings .grid-container.grid-container--2col .grid-col--menu .menu-aside li a').on('click touchstart',function (e) {
+        console.log(e.target)
+        el.addClass('menu-aside-container--fixed');
+      })
     });
   },
   frameworkPage: function() {

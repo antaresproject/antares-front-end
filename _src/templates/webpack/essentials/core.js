@@ -8,7 +8,7 @@ var path = './../../../';
 import './../../../js/components/preloader/preloader';
 import './../../../js/external/material.min';
 // APP COMPONENTS:
-import './../../../js/components/mutator_observer/mutator_observer';
+import './../../../js/components/mutation_observer/mutation_observer';
 import './../../../js/antares_notifications';
 import './../../../js/antares_mechanics';
 import './../../../js/components/dropdowns/ddown_general';
@@ -19,6 +19,9 @@ import './../../../js/components/auto_complete/auto_complete';
 import './../../../js/components/browser_hooks/browser_hooks';
 import './../../../js/components/truncator/truncator';
 import './../../../js/components/debouncer/debouncer';
+import './../../../js/components/dropdowns/dropjs';
+import './../../../js/components/datatables/mobile_select_mode';
+import './../../../js/components/mode_clientArea/mode_clientArea';
 
 // import './../../../js/components/main_menu/main_menu_old';
 

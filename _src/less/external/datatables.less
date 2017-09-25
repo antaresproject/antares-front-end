@@ -68,7 +68,7 @@ table.dataTable tbody tr.selected {
   background-color: #B0BED9;
 }
 table.dataTable tbody th,
-table.dataTable tbody td {
+table.dataTable tbody td:not(:first-of-type) {
   padding: 5px 0px !important;
 }
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
@@ -449,4 +449,9 @@ table.dataTable td {
   .dataTables_wrapper .dataTables_filter {
     margin-top: 0.5em;
   }
+}
+.ellipsis,.ellipse{
+  width: 24px;
+  height:24px;
+  text-align:center;
 }

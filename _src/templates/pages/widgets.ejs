@@ -6,7 +6,11 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Antares Dashboard</title>
+    <% if(mainMenuType === 'wide'){ %>
+    <% include ../layout/color_template_wide %>
+    <% } else{ %>
     <% include ../layout/color_template %>
+    <% } %>
     <% include ../layout/css_files %>
 </head>
 
@@ -224,12 +228,20 @@
 
 <% include ../layout/templates_dashboard %>
 <% include ../layout/app_wrapper_start_tag %>
+<% if(clientArea){ %>
+<% include ../layout/mode_clientArea/CA_menutop %>
+<% } else{ %>
 <% include ../layout/main_menu_html %>
+<% } %>
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 <div class="app-content page-dashboard dashboard--vue app-content--gridstack widgets-page">
     <% include ../layout/card_bar %>
     <% var breadData = 'Widgets'; %>
+    <% if(clientArea){ %>
+    <% include ../layout/mode_clientArea/CA_mainhead %>
+    <% } else{ %>
     <% include ../layout/mainhead %>
+    <% } %>
     <% include ../layout/sidebar_notifications %>
     <% include ../layout/sidebar_alerts %>
     <div id="dashboard-container">

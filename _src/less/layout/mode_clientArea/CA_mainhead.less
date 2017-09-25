@@ -1,0 +1,38 @@
+.ddown--new-service {
+  & > .btn {
+    text-transform: uppercase;
+    font-weight: 700;
+    &:after {
+      display: none;
+    }
+  }
+  .ddown__content {
+    .ddown__menu {
+      right: 0;
+    }
+    .has-submenu {
+      .ddown__submenu {
+        top: 54px;
+        left: auto;
+        right: 0;
+      }
+
+    }
+  }
+}
+.item-grp-single{
+  display: none;
+  @media only screen and (max-width: 1024px) {
+    display: block;
+    position: relative;
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    &:last-of-type{
+      display: none;
+    }
+  }
+}
+.ddown .ddown__content {
+  margin-top: 0
+}

@@ -1,3 +1,83 @@
 .more-trigger {
+  @media only screen and (min-width: 1024px) {
     left: 65px;
   }
+}
+
+.app-content {
+  @media only screen and (min-width: 1024px) {
+    margin-left: 230px;
+  }
+  z-index: 14;
+
+}
+
+@sidebar-expanded-width: 230px;
+@media only screen and (min-width: 1024px) {
+  aside.main-sidebar {
+      width: @sidebar-expanded-width; //logo
+    .main-sidebar__logo {
+      background-image: url('../img/theme/antares/logo/logo_sign_white.svg');
+      margin-left: 24px;
+      width: 156px;
+      margin-bottom: 0;
+      margin-top: 3px;
+    }
+      ul.main-menu {
+        > li {
+          > a {
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            font-size: 14px;
+            height: 55px;
+            i {
+              margin: 0 27px;
+              width: 18px;
+            }
+            .text {
+              margin-top: 0;
+            }
+          }
+          &.submenu-open .submenu {
+            left: @sidebar-expanded-width;
+          }
+        }
+      }
+
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  aside ul.main-menu .submenu {
+    left: 230px !important;
+  }
+
+}
+
+.page-clients-details .card--contacts {
+  @media only screen and (min-width: 1367px) and (max-width: 1449px) {
+    .flex-block__content {
+      .flex-block__title {
+        width: 80px;
+      }
+      .flex-block__desc {
+        .truncate(80px);
+      }
+    }
+  }
+  @media only screen and (min-width: 1450px) and (max-width: 1599px) {
+    .flex-block__content {
+      .flex-block__title {
+        width: 100px;
+      }
+      .flex-block__desc {
+        .truncate(100px);
+      }
+    }
+  }
+}
+
+.card-bar .card-bar__rel {
+  width: ~'calc(100% - 230px)';
+}

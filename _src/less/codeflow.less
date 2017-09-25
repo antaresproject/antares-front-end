@@ -15,16 +15,23 @@
 @import 'external/plugin_overrides/slick';
 //base
 @import 'base/grid';
-@import 'base/helpers';
 @import 'base/flexbox';
+// moved to defer:
+@import 'external/plugin_overrides/datepicker';
+@import 'external/plugin_overrides/gridstack'; //91 78 108-110
+@import 'external/plugin_overrides/minicolors';
+@import 'external/plugin_overrides/mld';
+@import 'external/plugin_overrides/slick';
 @import 'base/typography';
 @import 'base/above_the_fold';
-@import 'base/disabled_browsers/browser_general';
 @import 'base/print';
+@import 'base/disabled_browsers/browser_general';
+@import 'base/helpers';
 @import 'base/helpers_position';
 @import 'base/helpers_size';
 @import 'base/helpers_font_size';
 @import 'base/touch';
+// moved to defer end:
 // notifications
 @import 'notifications/flash_message';
 @import 'notifications/confirmation_box';
@@ -41,6 +48,8 @@
 @import 'layout/pages/search_results';
 @import 'layout/pages/brand_settings';
 @import 'layout/pages/general_settings'; //17
+@import 'layout/pages/update_client_details';
+@import 'layout/pages/update_client_list';
 @import 'layout/pages/dashboard/general_dashboard';
 @import 'layout/pages/dashboard/system_info';
 @import 'layout/pages/dashboard/charts';
@@ -90,6 +99,7 @@
 @import 'components/widget_edit_bar';
 @import 'components/color_picker'; //520
 @import 'components/color_indicator';
+@import 'components/menu_switcher/menu_switcher';
 // @import 'components/tags';
 @import 'components/dropdowns_arrows/general_dropdowns_arrows';
 @import 'components/demo';
@@ -129,3 +139,5 @@
 @import 'components/widgets_html/widgets_html';
 // tmp dev
 @import 'components/tmp.less';
+//mode
+@import 'layout/mode_clientArea/CA_general';

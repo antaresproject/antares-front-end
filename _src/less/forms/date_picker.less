@@ -531,3 +531,12 @@
     top: auto;
     transform: rotate(180deg);
 } //
+@media only screen and (max-width: 400px){
+    html body .xdsoft_datetimepicker{
+        padding: 0;
+        &>.xdsoft_datepicker.active, &>.xdsoft_timepicker.active{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

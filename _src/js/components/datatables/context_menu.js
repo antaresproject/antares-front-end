@@ -14,7 +14,7 @@
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
  * @link       http://antaresproject.io
- * 
+ *
  */
 const AntaresContextMenu = {
     init() {
@@ -23,35 +23,6 @@ const AntaresContextMenu = {
     arContextMenu() {
 
 
-        enquire.register('screen and (min-width: 320px)', {
-            //mobile readonly for multiple
-            match: function () {
-                if ($('html').hasClass('is-mobile') || $('html').hasClass('is-tablet')) {
-                    var timer;
-                    $('.billevo-table tbody tr').on("touchstart", function () {
-                        var thisTR = $(this)
-                        timer = setTimeout(function () {
-                            $('tr').removeClass('is-selected')
-                            $('.context-menu-list').trigger('contextmenu:hide')
-                            let $self = thisTR;
-                            if ($self.hasClass('child')) {
-                                $self = $self.prev()
-                            }
-                            $self.addClass('is-selected')
-                            if (!$self.hasClass('is-selected')) {
-                                $self.addClass('is-selected');
-                                $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
-                            }
-                        }, 2 * 500);
-                    }).on("touchend", function () {
-                        clearTimeout(timer);
-                    });
-                }
-            },
-            unmatch: function () {
-                $('.billevo-table tbody tr').off("touchstart touchend")
-            }
-        });
 
 
         //each roww
@@ -60,28 +31,29 @@ const AntaresContextMenu = {
             enquire.register('screen and (min-width: 320px)', {
                 match: function () {
                     if ($('html').hasClass('is-mobile') || $('html').hasClass('is-tablet')) {
-                        $.contextMenu({
-                            selector: '.billevo-table tbody tr.is-selected td:not(.dt-actions):not(:first-of-type)',
-                            build: function (trigger, e) {  // 'trigger' this is the last element (td:not(.dt-actions)) that is written by the line above (30 line)
-                                trigger = trigger.closest('tr')
-                                if (trigger.is('.child')) {
-                                    trigger = trigger.prev(".parent")
-                                    return getItems(trigger);
-                                }
-                                else {
-                                    return getItems(trigger);
-                                }
-                            },
-                            trigger: 'left',
-                            events: {
-                                show: function () {
-                                    $('.context-menu-active').each(function () {
-                                        $(this).contextMenu("hide");
-                                    });
 
-                                },
-                            },
-                        });
+                        // $.contextMenu({
+                        //     selector: '.billevo-table tbody tr td:not(.dt-actions):not(:first-of-type)',
+                        //     build: function (trigger, e) {  // 'trigger' this is the last element (td:not(.dt-actions)) that is written by the line above (30 line)
+                        //         trigger = trigger.closest('tr')
+                        //         if (trigger.is('.child')) {
+                        //             trigger = trigger.prev(".parent")
+                        //             return getItems(trigger);
+                        //         }
+                        //         else {
+                        //             return getItems(trigger);
+                        //         }
+                        //     },
+                        //     trigger: 'left',
+                        //     events: {
+                        //         show: function () {
+                        //             $('.context-menu-active').each(function () {
+                        //                 $(this).contextMenu("hide");
+                        //             });
+                        //
+                        //         },
+                        //     },
+                        // });
                     }
                     else {
                         $.contextMenu({
@@ -103,16 +75,17 @@ const AntaresContextMenu = {
                                     $('.context-menu-active').each(function () {
                                         $(this).contextMenu("hide");
                                     });
-                                    let $self = $(this).closest('tr');
-                                    if ($self.hasClass('child')) {
-                                        $self = $self.prev()
-                                    }
-                                    $self.addClass('is-selected')
-                                    if (!$self.hasClass('is-selected')) {
-                                        $self.closest('table').find('tr').removeClass('is-selected');
-                                        $self.addClass('is-selected');
-                                        $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
-                                    }
+                                    // let $self = $(this).closest('tr');
+                                    // if ($self.hasClass('child')) {
+                                    //     $self = $self.prev()
+                                    // }
+                                    $('.dataTables_wrapper tr').removeClass('is-selected')
+                                    // $self.addClass('is-selected')
+                                    // if (!$self.hasClass('is-selected')) {
+                                    //     $self.closest('table').find('tr').removeClass('is-selected');
+                                    //     $self.addClass('is-selected');
+                                    //     $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
+                                    // }
                                 },
                             },
                         });
@@ -133,16 +106,16 @@ const AntaresContextMenu = {
                 trigger: 'left',
                 events: {
                     show: function () {
-                        $('tr').removeClass('is-selected')
+                        // $('tr').removeClass('is-selected')
                         $('.context-menu-active').each(function () {
                             $(this).contextMenu("hide");
                         });
 
-                        var $self = $(this).closest('tr');
-                        $self.addClass('is-selected')
-                        if (!$self.hasClass('is-selected')) {
-                            $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
-                        }
+                        // var $self = $(this).closest('tr');
+                        // $self.addClass('is-selected')
+                        // if (!$self.hasClass('is-selected')) {
+                        //     $self.closest('.tbl-c').find('#table-ma').attr("disabled", true);
+                        // }
                     },
                 },
             });
@@ -255,7 +228,8 @@ const AntaresContextMenu = {
         ready('.tbl-c .dataTable tr', function (element) {
             self.arContextMenu();
         });
-    }
+    },
+
 };
 $(function () {
     window.AntaresContextMenu = AntaresContextMenu;

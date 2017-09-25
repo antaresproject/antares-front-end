@@ -1,0 +1,89 @@
+<meta name="theme-color" content="#02A8F3">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="icon" sizes="32x32" href="img/theme/antares/favicon/favicon-32.png">
+<link rel="icon" sizes="192x192" href="img/theme/antares/favicon/favicon-192.png">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#02A8F3">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#02A8F3">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#02A8F3">
+
+<!-- && manifest -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Antares">
+<meta name="apple-mobile-web-app-title" content="Antares">
+<meta name="description"
+      content="Antares is an open source user management platform developed in cooperation with ModulesGarden. It was designed to revolutionize and streamline the whole process of creating standalone and SaaS applications that are easy to use and scalable to enterprise level.">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- Preloader -->
+
+<style>
+    [data-preload] {
+        opacity: 0;
+    }
+
+    .grid-stack-item-content {
+        background: #fff;
+    }
+
+    aside.main-sidebar {
+        width: 100vw;
+        height: 80px;
+    }
+    @media only screen and (max-width: 1023px){
+        aside.main-sidebar {
+            transform: translateX(-100%);
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        aside.main-sidebar .nav-container {
+            opacity: 0;
+        }
+    }
+
+    .app-content:before {
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 230px;
+        background: #02a8f3;
+        content: "";
+        opacity: 1;
+        transition: .3s;
+    }
+
+    #app-wrapper.main-sidebar--top .main-head, #app-wrapper.main-sidebar--top .main-content, #app-wrapper.main-sidebar--top .nav-container, #app-wrapper.main-sidebar--top .submenu section {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #app-wrapper.main-sidebar--top .main-head--ca.main-head,
+    #app-wrapper.main-sidebar--top.main-sidebar--ca .main-content,
+    #app-wrapper.main-sidebar--top .main-menu-html--ca .nav-container,
+    #app-wrapper.main-sidebar--top .main-menu-html--ca .submenu section {
+        max-width: 1152px;
+    }
+
+    #app-wrapper.main-sidebar--top .main-menu-html--ca .more-trigger {
+        display: none;
+    }
+
+    #app-wrapper.main-sidebar--top .main-menu-html--ca .client-area .item-grp-single:nth-child(2) {
+        position: relative;
+    }
+
+    .badge {
+        display: none;
+    }
+</style>
+<!-- <meta http-equiv="x-dns-prefetch-control" content="off">  -->
+<!-- <meta http-equiv="set-cookie" content="name=value; expires=date; path=url">  -->
+<link rel="manifest" href="manifest.json">

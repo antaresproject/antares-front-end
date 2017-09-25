@@ -1,4 +1,9 @@
-@media @xs {
+@media @xs{
+  #app-wrapper .menu-mobile-settings--box + .generals-form{
+    margin-top: 90px;
+  }
+}
+@media @md {
   #app-wrapper .grid-container.grid-container--2col .grid-col--container {
     padding-top:0 !important;
   }
@@ -9,11 +14,11 @@
   }
   .menu-mobile-settings + .select2 {
     width: 100% !important; 
-    .select2-selection__arrow:before {
+    .select2-selection .select2-selection__arrow:before {
       top: 50% !important;
       transform: translateY(-50%);
       height: auto;
-      right: 7px;
+      right: 36px;
     }
   }
   .menu-mobile-settings--box + .generals-form{
@@ -27,26 +32,37 @@
   }
   .menu-mobile-settings+.select2 .select2-selection .select2-selection__rendered{
     position: relative;
-    padding-left: 63px !important;
+    padding-left: 67px !important;
     line-height: 32px;
     &:before{
       position: absolute;
       top:50%;
-      left: 19px;
+      left: 24px;
       transform: translateY(-50%);
       font: normal normal normal 19px/1 Material-Design-Iconic-Font;
       content: "\f1c6";
       font-size: 24px;
     }
   }
+  .grid-col--container .menu-mobile-settings--box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    .menu-mobile-settings + .select2 .select2-selection{
+      border-radius: 0;
+      height: 54px;
+      display: flex;
+      align-items: center;
+    }
+  }
 }
-
-@media @xs{
+@media @md {
   .grid-container.grid-container--2col .grid-col--menu {
     display: none !important;
   }
 }
-@media @xs {
+@media @md {
   .menu-mobile-settings--box{
     position: relative;
     margin-bottom: 16px;
@@ -110,4 +126,11 @@
 }
 .menu-mobile-settings + .select2 .select2-selection {
   background: @menu-aside-select-mob-tab-bg !important;
+}
+.menu-aside-settings--blue{
+  .select2-dropdown{
+    &:before, &:after{
+      right: 32px;
+    }
+  }
 }

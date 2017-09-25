@@ -1,158 +1,18 @@
-//external
-@import 'variables/colors';
-@import 'external/icomoon';
-@import 'external/less_space';
-@import 'external/jquery_ui_theme';
-@import 'external/trix';
-@import 'external/flags/flag_icon';
-@import 'external/codemirror';
-@import 'external/magnific_popup';
-@import 'external/slick';
-@import 'external/fluidable'; //comment 40 and 35
-@import 'external/qtip';
-@import 'external/swal';
-@import 'external/bs_datepicker';
-@import 'external/jquery_ui_daterangepicker';
-@import 'external/datatables';
-@import 'external/minicolors';
-@import 'external/pace';
-@import 'external/lmdnd';
-@import 'external/libs/animate';
-@import 'external/libs/dialog_polyfill';
-@import 'external/libs/dragula';
-@import 'external/libs/dropzone';
-@import 'external/libs/gridstack';
-@import 'external/libs/jquery_comiseo_daterangepicker';
-@import 'external/libs/jquery_datetimepicker';
-@import 'external/libs/jquery_modal';
-@import 'external/libs/material_design_iconic_font';
-@import 'external/libs/perfect_scrollbar';
-//@import 'external/libs/roboto_fontface';
-@import 'external/libs/select2';
-@import 'external/libs/icheck/icheck_all';
-@import 'external/mdl_antares_theme'; // one line comment + update h1 comment
-// CODEFLOW!!!!!!!!
-// variables
-@import 'variables/colors';
-@import 'variables/mixins';
-@import 'variables/global';
-@import 'variables/rwd';
-// external - core
-@import 'external/material_palette';
-@import 'external/fonts';
-// external plugin overrides
-@import 'external/plugin_overrides/datepicker';
-@import 'external/plugin_overrides/gridstack'; //91 78 108-110
-@import 'external/plugin_overrides/minicolors';
-@import 'external/plugin_overrides/mld';
-@import 'external/plugin_overrides/slick';
-//base
-@import 'base/grid';
-@import 'base/helpers';
-@import 'base/flexbox';
-@import 'base/typography';
-@import 'base/above_the_fold';
-@import 'base/disabled_browsers/browser_general';
-@import 'base/print';
-@import 'base/helpers_position';
-@import 'base/helpers_size';
-@import 'base/helpers_font_size';
-@import 'base/touch';
-// notifications
-@import 'notifications/flash_message';
-@import 'notifications/confirmation_box';
-@import 'notifications/modal';
-@import 'notifications/dialog';
-// layout
-@import 'layout/pages/client_details';
-@import 'layout/pages/create_page';
-@import 'layout/pages/framework_page';
-@import 'layout/pages/login_page';
-@import 'layout/pages/settings_page'; //233
-@import 'layout/pages/email_settings';
-@import 'layout/pages/error_pages';
-@import 'layout/pages/search_results';
-@import 'layout/pages/brand_settings';
-@import 'layout/pages/general_settings'; //17
-@import 'layout/pages/dashboard/general_dashboard';
-@import 'layout/pages/dashboard/system_info';
-@import 'layout/pages/dashboard/charts';
-@import 'layout/pages/dashboard/news';
-@import 'layout/pages/dashboard/logs';
-@import 'layout/structure'; // comment
-@import 'layout/animations';
-@import 'layout/scroll';
-@import 'layout/main_head';
-@import 'layout/preloader';
-@import 'layout/rwd';
-@import 'layout/footer';
-// main-menu
-@import 'layout/sidebar/main_sidebar';
-@import 'layout/sidebar/indicator';
-@import 'layout/sidebar/rwd';
-@import 'layout/sidebar/sidebar_notifications';
-@import 'components/main_menu_html/main_menu_html';
-// components
-@import 'components/card/card'; //1003-1004
-@import 'components/card/card_scrollbox'; //14-15
-@import 'components/card/card_enlarge';
-@import 'components/card/card_tabbified'; //281
-@import 'components/avatar';
-@import 'components/buttons';
-@import 'components/breadcrumbs';
-@import 'components/badge';
-@import 'components/burger';
-@import 'components/search_filter';
-// @import 'components/comments';
-@import 'components/charts';
-@import 'components/datarow';
-@import 'components/context_menu';
-@import 'components/dropdown_basic';
-@import 'components/dropdown_multi'; //2-6
-@import 'components/flex_block';
-@import 'components/notification_templates';
-@import 'components/labels';
-@import 'components/lists';
-@import 'components/jumbo';
-@import 'components/timeline';
-@import 'components/pagination';
-@import 'components/zero_data';
-@import 'components/widget_edit_bar';
-@import 'components/color_picker'; //520
-@import 'components/color_indicator';
-// @import 'components/tags';
-@import 'components/dropdowns_arrows/general_dropdowns_arrows';
-@import 'components/demo';
-@import 'components/todo';
-@import 'components/pattern_lib';
-@import 'components/fullCalendar';
-@import 'components/vue_custom_elements';
-@import 'components/auto_complete';
-// @import 'components/files';
-@import 'components/acl';
-@import 'components/translations';
-@import 'components/select_mobile_tablet';
-@import 'components/table_view/tableView_main';
-@import 'components/table_view/tableView_btnjqueryui';
-@import 'components/table_view/tableView_card';
-@import 'components/table_view/tableView_ColVis';
-@import 'components/table_view/tableView_filters';
-@import 'components/table_view/tableView_helpers';
-@import 'components/table_view/tableView_mods';
-@import 'components/table_view/tableView_RWD';
-@import 'components/table_view/tableView_select';
-@import 'components/table_view/tableView_zerodata';
-// forms
-@import 'forms/search';
-@import 'forms/select'; //252 253
-@import 'forms/validation'; //10
-@import 'forms/tooltip';
-@import 'forms/radio_buttons'; //23
-@import 'forms/general'; // 205-206 246-253
-@import 'forms/date_picker';
-@import 'forms/switch';
-@import 'forms/mods'; //8 9 12
-@import 'forms/range_slider';
-@import 'forms/checkbox';
-// devtests
-@import 'components/widgets_html/widgets_html';
+// @import 'variables/colors';
+// @import 'variables/mixins';
+// @import 'variables/global';
+// @import 'variables/rwd';
+// @import 'base/helpers';
+// @import 'base/helpers_position';
+// @import 'base/helpers_size';
+// @import 'base/helpers_font_size';
+// @import 'base/touch';
+// @import 'external/plugin_overrides/datepicker';
+// @import 'external/plugin_overrides/gridstack'; //91 78 108-110
+// @import 'external/plugin_overrides/minicolors';
+// @import 'external/plugin_overrides/mld';
+// @import 'external/plugin_overrides/slick';
+// @import 'base/typography';
+// @import 'base/above_the_fold';
+// @import 'base/print';
+// @import 'base/disabled_browsers/browser_general';

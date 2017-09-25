@@ -9,6 +9,10 @@
   position: relative;
   z-index: 3;
   transition: @transition;
+  padding: 24px;
+  @media @xs {
+    padding: 12px @unit1;
+  }
   .mdl-js-button.mdl-js-ripple-effect {
     height: 100%;
     width: 100%;
@@ -24,7 +28,7 @@
     }
   }
   &.main-head--slim {
-    .search-box input {
+    .search-box {
       //width: 130px;
     }
     @media @xs {
@@ -67,8 +71,16 @@
   }
   //return search box when removed on mobile
   @media @min768 {
-    .search-box {
+    .search-box  {
       display: flex !important;
+      padding-left: 50px;
+      .mdl-textfield{
+        width: 232px;
+      }
+      .mdl-textfield__label{
+        font-size: 13px !important;
+        margin-top: 3px !important;
+      }
     }
   }
   @media @max1000 {
@@ -76,11 +88,17 @@
       display: none;
     }
   }
-}
-
-@media @xs {
-  .main-head .ddown .ddown__content .ddown__arrow {
-    top: 0
+  @media @md {
+    .ddown .ddown__content .ddown__arrow {
+      top: 25px
+    }
+  }
+  .ddown.ddown--brand {
+    //margin-right: 6px;
+    .mdl-js-button.mdl-js-ripple-effect.btn.btn--md.btn--brand.ddown__init.ddown__init--white {
+      padding: 2px 17px;
+      letter-spacing: 0.5px;
+    }
   }
 }
 
@@ -133,9 +151,14 @@
   }
   //themes
   &.item-grp--40 {
+    margin-right: 12px ;
+    .item-grp-single:last-of-type {
+      margin-left: 12px;
+    }
     .item-grp-single {
       height: @main-head-height;
       width: @main-head-height;
+      margin: 0 5px;
     }
   }
 }
@@ -212,51 +235,37 @@
 #app-wrapper.main-sidebar--ca {
   &.main-sidebar--top nav {
     div.client-area {
-      @media only screen and (max-width: 1023px){
+      @media only screen and (max-width: 1023px) {
         display: none;
       }
-      @media @md and (min-width: 1024px) {
-        right: 80px;
-      }
-      @media @max1366 and (min-width: 1200px) {
-        right: 88px;
-      }
-      @media only screen and (min-width: 1650px) {
-        right: 224px;
-      }
+
     }
   }
 }
 
-@media only screen and (min-width: 1024px)  {
+@media only screen and (min-width: 1024px) {
   #app-wrapper.main-sidebar--ca {
     &.main-sidebar--top {
       .main-menu--primary,
       .main-menu--secondary {
-        padding-right: 120px;
+        //padding-right: 120px;
       }
       .more-trigger {
         display: none;
       }
       .client-area {
         height: 80px;
-        top: 0;
         width: 126px;
         display: flex;
-        position: absolute;
         align-items: center;
         justify-content: space-between;
         z-index: 20;
-        right: 144px;
         .search-box {
           display: none !important; //important flex
         }
         .item-grp-single {
           &:first-of-type {
             display: none !important;
-          }
-          &:nth-child(3) {
-            display: none;
           }
           &:nth-child(2) {
             position: relative;
@@ -265,6 +274,7 @@
               width: 40px;
             }
             .badge {
+              display: block;
               z-index: 10;
             }
           }
@@ -285,4 +295,12 @@
 
 #app-wrapper.mobile-menu-active .app-content .main-head {
   z-index: 11;
+}
+
+.main-head .btn.btn--brand {
+  font-weight: 400;
+}
+
+.main-head .breadcrumbs .ddown .ddown__content {
+  margin-top: -8px;
 }

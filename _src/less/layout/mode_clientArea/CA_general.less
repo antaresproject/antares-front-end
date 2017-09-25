@@ -1,0 +1,27 @@
+#app-wrapper.main-sidebar--ca {
+  .main-head--ca {
+    @import "CA_mainhead";
+  }
+  .main-menu-html--ca {
+    @import "CA_menutop";
+  }
+}
+
+
+[data-name="dashboard-CA"] a:hover .zmdi-toys {
+  animation-name: spin;
+  animation-duration: 600ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 100;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+

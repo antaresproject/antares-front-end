@@ -38,7 +38,7 @@
                 </header>
                 <ul class="datarow mobile-toogle--target" data-scrollable>
                     <!--SINGLE-->
-                    <li v-for="row in datarows" class="datarow__sgl" v-bind:key="row" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
+                    <li v-for="(row, index) in datarows" class="datarow__sgl" v-bind:key="index" v-bind:class="{ 'datarow__sgl--up': row.type === 'grow', 'datarow__sgl--down': row.type === 'decline' } ">
                         <div class="datarow__left">
                             <span class="datarow__status">{{row.text}}</span>
                         </div>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
     </div>
 </template>
@@ -70,11 +70,11 @@ function dataCalc(data) {
     function add(a, b) {
         return a + b;
     }
-    var value1Array = data.datarows.map(function (a) {
+    var value1Array = data.datarows.map(function(a) {
         return a.value1
     });
     var value1Sum = value1Array.reduce(add, 0);
-    var value2Array = data.datarows.map(function (a) {
+    var value2Array = data.datarows.map(function(a) {
         return a.value2
     });
     var value2Sum = value2Array.reduce(add, 0);
@@ -89,7 +89,7 @@ export default {
         'card-edit-controls': cardEditControls,
         'horizontal-bar': HorizontalBar
     },
-    data: function () {
+    data: function() {
         return {
             widgetName: 'card--chart',
             title: 'Tickets',
@@ -129,15 +129,15 @@ export default {
             }]
         }
     },
-    mounted: function () {
+    mounted: function() {
         var self = this;
         dataCalc(this);
         var domElem = $(self.$el);
-        domElem.find('[data-icheck]').on('ifChanged', function (event) {
+        domElem.find('[data-icheck]').on('ifChanged', function(event) {
             self.compareMode = !self.compareMode;
         });
 
-        setTimeout(function () {
+        setTimeout(function() {
             self.setDate();
         }, 1500);
 
@@ -155,7 +155,7 @@ export default {
             var date = moment().subtract(randomNumber(1, 10), 'days').startOf('day').toDate();
 
             enquire.register("screen and (min-width:768px)", {
-                match: function () {
+                match: function() {
                     $(self.$el).find('[data-daterangepicker]').daterangepicker("setRange", { start: date });
                 }
             });

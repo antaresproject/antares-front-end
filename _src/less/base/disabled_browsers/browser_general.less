@@ -18,6 +18,10 @@
   @import 'is_edge';
 }
 
+.is-android.is-mobile {
+  @import 'is_android_mobile';
+}
+
 .is-ios.is-mobile {
   @import 'is_ios_mobile';
 }
@@ -31,4 +35,8 @@ input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
 }

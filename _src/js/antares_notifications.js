@@ -8,17 +8,8 @@ Antares.prototype.swal = {
     $('.sweet-alert').attr('class', 'sweet-alert');
 
     //if exist
-    if (
-      typeof APP.swal[theme] !== 'undefined' &&
-      typeof APP.swal[type] !== 'undefined'
-    ) {
-      var medley = $.extend(
-        {},
-        APP.swal.base,
-        APP.swal[theme],
-        APP.swal[type],
-        custom
-      );
+    if (typeof APP.swal[theme] !== 'undefined' && typeof APP.swal[type] !== 'undefined') {
+      var medley = $.extend({}, APP.swal.base, APP.swal[theme], APP.swal[type], custom);
       //load!
       if (confirmFunction && typeof confirmFunction === 'function') {
         swal(medley, function() {
@@ -46,8 +37,7 @@ Antares.prototype.swal = {
     showCancelButton: true,
     type: 'success',
     title: 'Warning Confirmation Modal',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie mi erat, Pellegestas. ',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie mi erat, Pellegestas. ',
     animation: false
     // html: 'You can use <b>bold text</b>, ' +
     // '<a href="//github.com">links</a> ' +
@@ -158,8 +148,7 @@ Antares.prototype.noti = {
       // easing: 'ease-in-out', // unavailable - no need
       // speed: 150 // unavailable - no need
     },
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>',
+    template: '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>',
     maxVisible: 5,
     // 14000
     timeout: 2500
@@ -259,53 +248,49 @@ Antares.prototype.noti = {
   //types
   typeAlert: {
     type: 'alert',
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-alert-circle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
+    template: '<div class="noty_message"><i class="zmdi zmdi-alert-circle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
   },
   typeSuccess: {
     type: 'success',
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-check-circle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
+    template: '<div class="noty_message"><i class="zmdi zmdi-check-circle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
   },
   typeError: {
     type: 'error',
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-alert-circle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
+    template: '<div class="noty_message"><i class="zmdi zmdi-alert-circle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
   },
   typeWarning: {
     type: 'warning',
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-alert-triangle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
+    template: '<div class="noty_message"><i class="zmdi zmdi-alert-triangle noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
   },
   typeInfo: {
     type: 'information',
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
+    template: '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
   },
   typeConfirm: {
     type: 'confirm',
-    template:
-      '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
+    template: '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>'
   }
 };
 
 // usage
 // APP.modal.init({
-//     title: 'Test Title',
-//     buttons: {
-//         'Confirm': {
-//             type: 'primary',
-//             action: function() {
-//                 alert('action1');
-//             },
-//         },
-//         'Cancel': {
-//             type: 'default',
-//             action: function() {
-//                 $.modal.close();
-//             },
-//         }
-//     }
+//   element: '.my-html-content',
+//   title: 'Success Confirmation Modal',
+//   buttons: {
+//       'Confirm': {
+//           type: 'primary',
+//           action: function() {
+//               alert('action1');
+//               $.modal.close();
+//           },
+//       },
+//       'Cancel': {
+//           type: 'default',
+//           action: function() {
+//               $.modal.close();
+//           },
+//       },
+//   }
 // });
 
 //
@@ -369,9 +354,11 @@ Antares.prototype.dialog = {
   onLoad: function() {
     // Create modal when html is defined
     function dialogModal(showModalButton, dialogElement) {
+      // console.log('dialog go');
       // Variables
       var showModalButton = document.querySelector('.show-dialog');
       var dialog = document.querySelector('dialog');
+      window.dialog = dialog;
 
       // Restrict
       if (!dialog || !showModalButton) {
@@ -407,13 +394,11 @@ Antares.prototype.dialog = {
             });
           });
         } else {
-          dialog
-            .querySelectorAll('.ar-dialog .close')
-            .forEach(function(element, index) {
-              element.addEventListener('click', function() {
-                dialog.close();
-              });
+          dialog.querySelectorAll('.ar-dialog .close').forEach(function(element, index) {
+            element.addEventListener('click', function() {
+              dialog.close();
             });
+          });
           showModalButton.addEventListener('click', function() {
             dialog.showModal();
           });
@@ -428,6 +413,7 @@ Antares.prototype.dialog = {
 
   //for progrramatic use
   init: function(options) {
+    // console.log('dialog init');
     this.cleanUp(options);
     this.addHeader(options);
     this.addContent(options);
@@ -435,6 +421,11 @@ Antares.prototype.dialog = {
     this.display(options);
     this.setSize(options);
     this.extend(options);
+  },
+
+  close() {
+    $('.ar-dialog').removeClass('is-current');
+    $('.ar-dialog').removeAttr('open');
   },
 
   cleanUp: function(options) {
@@ -448,18 +439,15 @@ Antares.prototype.dialog = {
     dialogElement += '<div class="mdl-dialog__canvas">';
     dialogElement += '<div class="mdl-dialog__header">';
     dialogElement += '<span class="mdl-dialog__title">Modal</span>';
-    dialogElement +=
-      '<a class="mdl-js-button mdl-js-ripple-effect close" href="#"><i class="zmdi zmdi-close"></i></a>';
+    dialogElement += '<a class="mdl-js-button mdl-js-ripple-effect close" href="#"><i class="zmdi zmdi-close"></i></a>';
     dialogElement += '</div>';
     dialogElement += '<div class="mdl-dialog__content" data-scrollable>';
     dialogElement += '<p>';
     dialogElement += '</p>';
     dialogElement += '</div>';
     dialogElement += '<div class="mdl-dialog__actions">';
-    dialogElement +=
-      '<button type="button" class="btn btn--s-small btn--primary mdl-js-button mdl-js-ripple-effect mr8">Agree</button>';
-    dialogElement +=
-      '<button type="button" class="btn btn--s-small btn--dark mdl-js-button mdl-js-ripple-effect close">Disagree</button>';
+    dialogElement += '<button type="button" class="btn btn--s-small btn--primary mdl-js-button mdl-js-ripple-effect mr8">Agree</button>';
+    dialogElement += '<button type="button" class="btn btn--s-small btn--dark mdl-js-button mdl-js-ripple-effect close">Disagree</button>';
     dialogElement += '</div>';
     dialogElement += '</div>';
     dialogElement += '</dialog>';
@@ -468,6 +456,7 @@ Antares.prototype.dialog = {
     $('ar-dialog').removeClass('is-current');
     $('body').append(dialogElement);
     var dialog = document.querySelector('dialog.is-current');
+    window.dialog = dialog;
   },
 
   addHeader: function(options) {
@@ -481,13 +470,11 @@ Antares.prototype.dialog = {
     }
 
     // Close buttons
-    dialog
-      .querySelectorAll('.ar-dialog .close')
-      .forEach(function(element, index) {
-        element.addEventListener('click', function() {
-          dialog.close();
-        });
+    dialog.querySelectorAll('.ar-dialog .close').forEach(function(element, index) {
+      element.addEventListener('click', function() {
+        dialog.close();
       });
+    });
   },
 
   addContent: function(options) {
@@ -537,24 +524,16 @@ Antares.prototype.dialog = {
         }
 
         //attach button html
-        $('.ar-dialog.is-current .mdl-dialog__actions').prepend(
-          '<button class="' + btnclass + ' ">' + key + '</button>'
-        );
+        $('.ar-dialog.is-current .mdl-dialog__actions').prepend('<button class="' + btnclass + ' ">' + key + '</button>');
 
         //button assign action method
-        $(
-          '.ar-dialog.is-current .mdl-dialog__actions > *:first-child'
-        ).on('click', function() {
+        $('.ar-dialog.is-current .mdl-dialog__actions > *:first-child').on('click', function() {
           options.buttons[key].action();
         });
       });
     }
 
-    if (
-      !$.isEmptyObject(options) &&
-      'actionPosition' in options &&
-      options.actionPosition == 'right'
-    ) {
+    if (!$.isEmptyObject(options) && 'actionPosition' in options && options.actionPosition == 'right') {
       $('.ar-dialog.is-current').addClass('ar-dialog--actions-right');
     }
   },
@@ -589,15 +568,7 @@ Antares.prototype.dialog = {
   validation: function(errors, form) {
     $('dialog form').on('submit', function() {
       $.each(errors, function(key, value) {
-        var input = form.find(
-          'input[name="' +
-            key +
-            '"], textarea[name="' +
-            key +
-            '"], select[name="' +
-            key +
-            '"]'
-        );
+        var input = form.find('input[name="' + key + '"], textarea[name="' + key + '"], select[name="' + key + '"]');
         if (input.length) {
           input.addClass('error');
           input.parent().append('<span class="error">' + value + '</span>');
@@ -629,15 +600,13 @@ Antares.prototype.dialog = {
         $('.is-programmatic').removeAttr('open');
       });
 
-      dialog
-        .querySelectorAll('.ar-dialog .close')
-        .forEach(function(element, index) {
-          element.addEventListener('click', function() {
-            dialog.close();
-          });
+      dialog.querySelectorAll('.ar-dialog .close').forEach(function(element, index) {
+        element.addEventListener('click', function() {
+          dialog.close();
         });
+      });
 
-      APP.init();
+      APP.dialog.init();
       // AntaresGridstack.init();
     }
   }
@@ -653,7 +622,7 @@ Antares.prototype.modal = {
   orgOptions: {
     showClose: false
   },
-  setWidth: function(options) {
+  setWidth: options => {
     if (!$.isEmptyObject(options) && 'width' in options) {
       var dataWidth = options.width;
       // console.log(dataWidth);
@@ -676,9 +645,7 @@ Antares.prototype.modal = {
       $('.jquery-modal.current .modal .modal__footer').remove();
 
       //create footer when buttons
-      $('.jquery-modal.current .modal').append(
-        '<div class="modal__footer"></div>'
-      );
+      $('.jquery-modal.current .modal').append('<div class="modal__footer"></div>');
 
       //for each button
       Object.keys(options.buttons).forEach(function(key) {
@@ -698,14 +665,10 @@ Antares.prototype.modal = {
         }
 
         //attach button html
-        $('.jquery-modal.current .modal__footer').prepend(
-          '<button class="' + btnclass + ' ">' + key + '</button>'
-        );
+        $('.jquery-modal.current .modal__footer').prepend('<button class="' + btnclass + ' ">' + key + '</button>');
 
         //button assign action method
-        $(
-          '.jquery-modal.current .modal__footer .btn:first-child'
-        ).on('click', function() {
+        $('.jquery-modal.current .modal__footer .btn:first-child').on('click', function() {
           options.buttons[key].action();
         });
       });
@@ -718,9 +681,7 @@ Antares.prototype.modal = {
     //clear
     $('.jquery-modal.current .modal .modal__header').remove();
     //create footer when buttons
-    $('.jquery-modal.current .modal').prepend(
-      '<div class="modal__header"><div class="modal__title">Title</div><a class="modal__close" href="#" rel="modal:close"><i class="zmdi zmdi-close"></i></a></div>'
-    );
+    $('.jquery-modal.current .modal').prepend('<div class="modal__header"><div class="modal__title">Title</div><a class="modal__close" href="#" rel="modal:close"><i class="zmdi zmdi-close"></i></a></div>');
     if (!$.isEmptyObject(options) && 'title' in options) {
       //insert title
       $('.jquery-modal.current .modal__title').html(options.title);
@@ -758,9 +719,9 @@ $(function() {
 });
 
 $(function() {
-  // window.APP = APP;
+  window.APP = APP;
 
-  // APP.dialog.onLoad();
+  APP.dialog.onLoad();
 
   $('.mdl-dialog').on('open', function(event) {
     $('#app-wrapper').addClass('dialog-is-open');

@@ -14,15 +14,15 @@ export const browserHooks = {
     const $container = $('html');
 
     //system
-      if (bowser.ios) {
-          $container.addClass('is-ios');
-      }
-      if (bowser.android) {
-          $container.addClass('is-android');
-      }
-      if (bowser.windowsphone) {
-          $container.addClass('is-windowsphone');
-      }
+    if (bowser.ios) {
+      $container.addClass('is-ios');
+    }
+    if (bowser.android) {
+      $container.addClass('is-android');
+    }
+    if (bowser.windowsphone) {
+      $container.addClass('is-windowsphone');
+    }
 
     // device
     if (bowser.mobile) {

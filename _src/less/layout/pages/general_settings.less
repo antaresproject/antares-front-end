@@ -246,50 +246,11 @@
 
 }
 
-.page-settings {
-  .radio-btns {
-    .radio-btn--disabled {
-      & > span {
-        cursor: not-allowed;
-        opacity: 0.5;
-      }
-    }
-  }
-  .input-field.type--disabled {
-    input, & > textarea, & > [data-tooltip-inline], & > [data-slider], & > [data-slider-range] {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-    & > [data-tooltip-inline] {
-      font-size: 24px;
-    }
-    & > [data-slider] {
-      .ui-slider-handle {
-        left: 0 !important;
-        cursor: not-allowed;
-      }
-      .ui-slider-range{
-        width: 0 !important;
-      }
-    }
-    & > [data-slider-range] {
-      .ui-slider-range{
-        left: 19% !important;
-        width: 47.5% !important;
-      }
-      .ui-slider-handle:first-of-type {
-        left: 19% !important;
-        cursor: not-allowed;
-      }
-      .ui-slider-handle:last-of-type {
-        left: 67% !important;
-        cursor: not-allowed;
-      }
-    }
-    &>.spinner-basic{
-      .ui-spinner-button{
-        display: none;
-      }
+
+@media @xs{
+  #app-wrapper .page-settings .generals-form fieldset[name='RadioCheckSwitch'] {
+    .switchbox,.radiobtns,.checkboxs {
+      display: block;
     }
   }
 }

@@ -1,0 +1,150 @@
+#app-wrapper .page-datatables .main-content  {
+  .card {
+    .swiper-mdl-tabs {
+      .swiper-slide {
+
+        .mdl-tabs__tab {
+          padding: 0 4px;
+          margin: 0 18px;
+        }
+        &:first-of-type {
+          .mdl-tabs__tab {
+            margin-left: 0;
+            margin-right: 18px;
+          }
+        }
+      }
+    }
+    &.card--pagination{
+      padding-bottom: 0;
+    }
+    .tbl-c {
+      margin-bottom: 0;
+      .card-ctrls {
+        margin-top: 20px;
+        margin-bottom: 21px ;
+        @media only screen and (max-width: 1023px) {
+          margin-top: 16px !important;
+        }
+        @media @xs {
+          margin-top: 13px !important;
+          margin-bottom: 44px !important
+        }
+        &.swiper--no-slides {
+          margin-bottom: 21px !important;
+          @media only screen and (max-width: 1023px) {
+            margin-bottom: 0 !important;
+          }
+        }
+        .card-ctrls__left {
+          .search-box {
+            padding-left: 43px;
+            @media only screen and (max-width: 1023px) {
+              padding-left: 33px;
+            }
+            @media @xs {
+              padding-left: 0;
+            }
+            .zmdi-search {
+              margin-left: 8px;
+            }
+            .search-box__mdl-textfield {
+              input {
+                @media @min1200 {
+                  width: 206px;
+                }
+                height: 39px;
+                @media only screen and (max-width: 1023px) {
+                  width: 100%;
+                }
+              }
+              input, label {
+                font-size: 13px;
+                @media @xs {
+                  font-size: 18px !important;
+                }
+              }
+              label {
+                @media @md {
+                  height: 36px;
+                  line-height: 36px;
+                }
+
+              }
+            }
+          }
+          .select2 {
+            @media only screen and (max-width: 1023px) {
+              margin-right: 10px;
+            }
+            .select2-selection__rendered {
+              font-size: 13px;
+              @media @md{
+                font-size: 18px;
+              }
+            }
+            .select2-selection {
+              &:after, &:before {
+                bottom: 1px;
+              }
+            }
+          }
+        }
+      }
+      table tr {
+        //@media @xs {
+        //  th:first-of-type {
+        //    padding-right: 14px;
+        //    text-align: right;
+        //  }
+        //}
+        td:first-child {
+          //text-align: center;
+          //@media only screen and (max-width: 1499px) {
+          //  text-align: left;
+          //}
+          //@media only screen and (max-width: 1023px) {
+          //  padding-left: 8px !important;
+          //}
+        }
+        td.dt-actions {
+          @media only screen and (max-width: 1023px) {
+            padding-right: 16px !important;
+          }
+        }
+      }
+    }
+    .pagination {
+      //height: 69px;
+      margin: 0;
+      position: static;
+      height: 100%;
+
+      .dataTables_paginate {
+        & > .paginate_button {
+          &:first-of-type {
+            margin-left: -11px !important;
+            margin-right: 4px !important;
+          }
+        }
+        .paginate_button {
+          margin: 0 -4px;
+        }
+        & > .paginate_button {
+          &:last-of-type {
+            margin-right: -11px !important;
+            margin-left: 4px !important;
+          }
+        }
+      }
+      .dataTables_length {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+.swiper--no-slides{
+  .btn-clear{
+    display: none !important;
+  }
+}

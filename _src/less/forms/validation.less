@@ -4,12 +4,15 @@
 
 fieldset {
   .form-block {
-    .type-default { //for quick default
-      &.radiobtns, &.checkboxs {
+    .type-default {
+      //for quick default
+      &.radiobtns,
+      &.checkboxs {
         label {
           position: relative;
           padding-left: 28px;
-          .iradio_billevo, .icheckbox_billevo {
+          .iradio_billevo,
+          .icheckbox_billevo {
             margin: 0;
             position: absolute;
             top: 50%;
@@ -24,287 +27,294 @@ fieldset {
 
 fieldset {
   .form-block {
-    .type-error, .type-success, .type-warning {
-      input, textarea {
-          border-radius: 3px;
-        padding-right: 32px;
-
-        &.valid {
-          border: 1px solid @input-border-bottom;
-          background-image: none;
-        }
-      }
-      @media @xs {
-        input {
-
-        }
-
-        span {
-          .select2-selection__rendered {
-            padding-right: 48px !important;
-          }
-        }
-      }
-      &.radiobtns, &.checkboxs {
-        label {
-          position: relative;
-          padding-left: 28px;
-          .iradio_billevo, .icheckbox_billevo {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-          }
-        }
-      }
-      &>.spinner-basic .ui-spinner.ui-corner-all{
-        border-radius: 0;
-
-      }
-      &.type-error { // @color-error;
-        @type-color: @color-error;
-        &:after { // icon
-          position: absolute;
-          font: normal normal normal 19px/1 Material-Design-Iconic-Font;
-          content: "\f136";
-          height: 20px;
-          width: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: @type-color;
-          right: 8px;
-          text-align: center;
-        }
-        span {
-          color: @type-color;
-          &.select2-selection {
-            border-color: @color-error;
-          }
-        }
-
-        input:not(.switch-checkbox) {
-          &::placeholder {
-            color: @type-color;
-          }
-          border: 1px solid @type-color;
-          &[type='number'] {
-            &:hover {
-              background-position: right 20px center;
-            }
-          }
-        }
-        textarea {
-
-          border: 1px solid @type-color;
-        }
-        .comiseo-daterangepicker-triggerbutton {
-          border: 1px solid @type-color;
-        }
-        .file-upload {
-          .comiseo-daterangepicker-triggerbutton {
-            border: 1px solid @type-color;
-          }
-          .switch-checkbox + .switch-container:after {
-            color: @type-color;
-          }
-          .switch-container {
-            .switch-handle {
-              background-color: @type-color;
-            }
-          }
-          &.form-block--inpbtn {
-            padding-right: @unit2;
-          }
-        }
-      }
-      &.type-warning { // @color-warning
-        @type-color: @color-warning;
-        &:after { // icon
-          position: absolute;
-          font: normal normal normal 19px/1 Material-Design-Iconic-Font;
-          content: "\f1f0";
-          height: 20px;
-          width: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: @type-color;
-          right: 8px;
-          text-align: center;
-        }
-        span {
-          color: @type-color;
-          .select2-selection {
-            border-color: @color-warning;
-          }
-        }
-        input:not(.switch-checkbox) {
-          &::placeholder {
-            color: @type-color;
-          }
-          border: 1px solid @type-color;
-          &[type='number'] {
-            &:hover {
-              background-position: right 20px center;
-            }
-          }
-        }
-        textarea {
-          border: 1px solid @type-color;
-        }
-        .comiseo-daterangepicker-triggerbutton {
-          border: 1px solid @type-color;
-        }
-        .file-upload {
-          .comiseo-daterangepicker-triggerbutton {
-            border: 1px solid @type-color;
-          }
-          .switch-checkbox + .switch-container:after {
-            color: @type-color;
-          }
-          .switch-container {
-            .switch-handle {
-              background-color: @type-color;
-            }
-          }
-          &.form-block--inpbtn {
-            padding-right: @unit2;
-          }
-        }
-      }
-      &.type-success { //  @color-success
-        @type-color: @color-success;
-        &:after { // icon
-          position: absolute;
-          font: normal normal normal 19px/1 Material-Design-Iconic-Font;
-          content: "\f26b";
-          height: 20px;
-          width: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: @type-color;
-          right: 8px;
-          text-align: center;
-        }
-        span {
-          color: @type-color;
-          .select2-selection {
-            border-color: @color-success;
-          }
-        }
-        input:not(.switch-checkbox) {
-          &::placeholder {
-            color: @type-color;
-          }
-          border: 1px solid @type-color;
-          &[type='number'] {
-            &:hover {
-              background-position: right 20px center;
-            }
-          }
-        }
-        textarea {
-          border: 1px solid @type-color;
-        }
-        .comiseo-daterangepicker-triggerbutton {
-          border: 1px solid @type-color;
-        }
-        .file-upload {
-          .comiseo-daterangepicker-triggerbutton {
-            border: 1px solid @type-color;
-          }
-          .switch-checkbox + .switch-container:after {
-            color: @type-color;
-          }
-          .switch-container {
-            .switch-handle {
-              background-color: @type-color;
-            }
-          }
-          &.form-block--inpbtn {
-            padding-right: @unit2;
-          }
-        }
+    input,
+    textarea {
+      border-radius: 3px;
+      padding-right: 32px;
+      &.valid {
+        border: 1px solid @input-border-bottom;
+        background-image: none;
       }
     }
-  }
-  .form-errors {
-    color: @color-error;
-    font-size: 13px;
-    padding-bottom: @unit2;
-  }
-  .form-warning {
-    color: @color-warning;
-    font-size: 13px;
-    padding-bottom: @unit2;
-  }
-  .form-success {
-    color: @color-success;
-    font-size: 13px;
-    padding-bottom: @unit2;
-  }
-  .form-validation {
-    .slider-val {
-      display: none;
-    }
-    .ui-slider {
-      &.type-error {
-        .ui-slider-handle {
-          background-color: @color-error;
-        }
-      }
-      &.type-warning {
-        .ui-slider-handle {
-          background-color: @color-warning;
-        }
-      }
-      &.type-success {
-        .ui-slider-handle {
-          background-color: @color-success;
-        }
-      }
-    }
-  }
-
-  .form-validation {
-    .mdl-textfield--AR {
-      flex: 1;
-      flex-flow: row nowrap;
-      display: flex;
-      align-items: center;
-      .mdl-textfield__input {
-        .type-error, .type-warning, .type-success {
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-        }
-      }
+    @media @xs {
+      input {}
       span {
-        .type-error, .type-warning, .type-success {
-          font-size: 13px;
+        .select2-selection__rendered {
+          padding-right: 48px !important;
         }
-      }
-
-      &.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
-      &.mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
-        &:before {
-          width: auto;
-        }
-        color: @primary-grey;
       }
     }
-
-    .mdl-textfield.is-invalid .mdl-textfield__label:after {
-      width: auto !important;
+    &.radiobtns,
+    &.checkboxs {
+      label {
+        position: relative;
+        padding-left: 28px;
+        .iradio_billevo,
+        .icheckbox_billevo {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+        }
+      }
+    }
+    &>.spinner-basic .ui-spinner.ui-corner-all {
+      border-radius: 0;
+    }
+    .type-error {
+      // @color-error;
+      @type-color: @color-error;
+      &:after {
+        // icon
+        position: absolute;
+        font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+        content: "\f136";
+        height: 20px;
+        width: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: @type-color;
+        right: 8px;
+        text-align: center;
+      }
+      span, .select2 .select2-selection span.select2-selection__rendered {
+        color: @type-color;
+        &.select2-selection {
+          border-color: @color-error;
+        }
+      }
+      input:not(.switch-checkbox) {
+        &::placeholder {
+          color: @type-color;
+        }
+        border: 1px solid @type-color;
+        &[type='number'] {
+          &:hover {
+            background-position: right 20px center;
+          }
+        }
+      }
+      textarea {
+        border: 1px solid @type-color;
+      }
+      .comiseo-daterangepicker-triggerbutton {
+        border: 1px solid @type-color;
+      }
+      .file-upload {
+        .comiseo-daterangepicker-triggerbutton {
+          border: 1px solid @type-color;
+        }
+        .switch-checkbox+.switch-container:after {
+          color: @type-color;
+        }
+        .switch-container {
+          .switch-handle {
+            background-color: @type-color;
+          }
+        }
+        &.form-block--inpbtn {
+          padding-right: @unit2;
+        }
+      }
+    }
+    .type-warning {
+      // @color-warning
+      @type-color: @color-warning;
+      &:after {
+        // icon
+        position: absolute;
+        font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+        content: "\f1f0";
+        height: 20px;
+        width: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: @type-color;
+        right: 8px;
+        text-align: center;
+      }
+      span, .select2 .select2-selection span.select2-selection__rendered {
+        color: @type-color;
+        .select2-selection {
+          border-color: @color-warning;
+        }
+      }
+      input:not(.switch-checkbox) {
+        &::placeholder {
+          color: @type-color;
+        }
+        border: 1px solid @type-color;
+        &[type='number'] {
+          &:hover {
+            background-position: right 20px center;
+          }
+        }
+      }
+      textarea {
+        border: 1px solid @type-color;
+      }
+      .comiseo-daterangepicker-triggerbutton {
+        border: 1px solid @type-color;
+      }
+      .file-upload {
+        .comiseo-daterangepicker-triggerbutton {
+          border: 1px solid @type-color;
+        }
+        .switch-checkbox+.switch-container:after {
+          color: @type-color;
+        }
+        .switch-container {
+          .switch-handle {
+            background-color: @type-color;
+          }
+        }
+        &.form-block--inpbtn {
+          padding-right: @unit2;
+        }
+      }
+    }
+    .type-success {
+      //  @color-success
+      @type-color: @color-success;
+      &:after {
+        // icon
+        position: absolute;
+        font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+        content: "\f26b";
+        height: 20px;
+        width: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: @type-color;
+        right: 8px;
+        text-align: center;
+      }
+      span, .select2 .select2-selection span.select2-selection__rendered {
+        color: @type-color;
+        .select2-selection {
+          border-color: @color-success;
+        }
+      }
+      input:not(.switch-checkbox) {
+        &::placeholder {
+          color: @type-color;
+        }
+        border: 1px solid @type-color;
+        &[type='number'] {
+          &:hover {
+            background-position: right 20px center;
+          }
+        }
+      }
+      textarea {
+        border: 1px solid @type-color;
+      }
+      .comiseo-daterangepicker-triggerbutton {
+        border: 1px solid @type-color;
+      }
+      .file-upload {
+        .comiseo-daterangepicker-triggerbutton {
+          border: 1px solid @type-color;
+        }
+        .switch-checkbox+.switch-container:after {
+          color: @type-color;
+        }
+        .switch-container {
+          .switch-handle {
+            background-color: @type-color;
+          }
+        }
+        &.form-block--inpbtn {
+          padding-right: @unit2;
+        }
+      }
     }
   }
+}
 
+.form-errors {
+  color: @color-error;
+  font-size: 13px;
+  padding-bottom: @unit2;
+}
+
+.form-warning {
+  color: @color-warning;
+  font-size: 13px;
+  padding-bottom: @unit2;
+}
+
+.form-success {
+  color: @color-success;
+  font-size: 13px;
+  padding-bottom: @unit2;
+}
+
+.form-validation {
+  .slider-val {
+    display: none;
+  }
+  .ui-slider {
+    &.type-error {
+      .ui-slider-handle {
+        background-color: @color-error;
+      }
+    }
+    &.type-warning {
+      .ui-slider-handle {
+        background-color: @color-warning;
+      }
+    }
+    &.type-success {
+      .ui-slider-handle {
+        background-color: @color-success;
+      }
+    }
+  }
+}
+
+.form-validation {
+  .mdl-textfield--AR {
+    flex: 1;
+    flex-flow: row nowrap;
+    display: flex;
+    align-items: center;
+    .mdl-textfield__input {
+      .type-error,
+      .type-warning,
+      .type-success {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+    span {
+      .type-error,
+      .type-warning,
+      .type-success {
+        font-size: 13px;
+      }
+    }
+    &.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+    &.mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+      &:before {
+        width: auto;
+      }
+      color: @primary-grey;
+    }
+  }
+  .mdl-textfield.is-invalid .mdl-textfield__label:after {
+    width: auto !important;
+  }
 }
 
 fieldset[name="Selects"] {
   .form-block {
     .input-field {
-      &.type-error, &.type-warning, &.type-success {
+      &.type-error,
+      &.type-warning,
+      &.type-success {
         &:after {
           right: 24px;
         }
@@ -316,12 +326,15 @@ fieldset[name="Selects"] {
 fieldset[name="RadioCheckSwitch"] {
   .form-block {
     .input-field {
-      &.type-error { // @color-error;
+      &.type-error {
+        // @color-error;
         @type-color: @color-error;
-        &:after { // icon
+        &:after {
+          // icon
           display: none;
         }
-        .iradio_billevo.checked, .iradio_billevo.hover {
+        .iradio_billevo.checked,
+        .iradio_billevo.hover {
           border-color: @type-color;
         }
         .iradio_billevo.checked:before {
@@ -339,19 +352,22 @@ fieldset[name="RadioCheckSwitch"] {
         .icheckbox_billevo {
           border-color: lighten(@type-color, 30%);
         }
-        .switch .switch-checkbox:checked + .switch-container {
+        .switch .switch-checkbox:checked+.switch-container {
           background-color: @type-color;
         }
         .switch .switch-container {
           background-color: lighten(@type-color, 30%);
         }
       }
-      &.type-warning { // @color-warning;
+      &.type-warning {
+        // @color-warning;
         @type-color: @color-warning;
-        &:after { // icon
+        &:after {
+          // icon
           display: none;
         }
-        .iradio_billevo.checked, .iradio_billevo.hover {
+        .iradio_billevo.checked,
+        .iradio_billevo.hover {
           border-color: @type-color;
         }
         .iradio_billevo.checked:before {
@@ -369,19 +385,22 @@ fieldset[name="RadioCheckSwitch"] {
         .icheckbox_billevo {
           border-color: lighten(@type-color, 30%);
         }
-        .switch .switch-checkbox:checked + .switch-container {
+        .switch .switch-checkbox:checked+.switch-container {
           background-color: @type-color;
         }
         .switch .switch-container {
           background-color: lighten(@type-color, 30%);
         }
       }
-      &.type-success { // @color-success;
+      &.type-success {
+        // @color-success;
         @type-color: @color-success;
-        &:after { // icon
+        &:after {
+          // icon
           display: none;
         }
-        .iradio_billevo.checked, .iradio_billevo.hover {
+        .iradio_billevo.checked,
+        .iradio_billevo.hover {
           border-color: @type-color;
         }
         .iradio_billevo.checked:before {
@@ -399,7 +418,7 @@ fieldset[name="RadioCheckSwitch"] {
         .icheckbox_billevo {
           border-color: lighten(@type-color, 30%);
         }
-        .switch .switch-checkbox:checked + .switch-container {
+        .switch .switch-checkbox:checked+.switch-container {
           background-color: @type-color;
         }
         .switch .switch-container {
@@ -413,36 +432,44 @@ fieldset[name="RadioCheckSwitch"] {
 fieldset[name="Sliders"] {
   .form-block {
     .input-field {
-      &.type-error { // @color-error;
+      &.type-error {
+        // @color-error;
         @type-color: @color-error;
-        &:after { // icon
+        &:after {
+          // icon
           display: none;
         }
         .ui-slider {
-          div, span {
+          div,
+          span {
             background: @type-color;
           }
-
         }
       }
-      &.type-warning { // @color-warning;
+      &.type-warning {
+        // @color-warning;
         @type-color: @color-warning;
-        &:after { // icon
+        &:after {
+          // icon
           display: none;
         }
         .ui-slider {
-          div, span {
+          div,
+          span {
             background: @type-color;
           }
         }
       }
-      &.type-success { // @color-success;
+      &.type-success {
+        // @color-success;
         @type-color: @color-success;
-        &:after { // icon
+        &:after {
+          // icon
           display: none;
         }
         .ui-slider {
-          div, span {
+          div,
+          span {
             background: @type-color;
           }
         }
@@ -454,9 +481,11 @@ fieldset[name="Sliders"] {
 fieldset[name="MDLForms"] {
   .form-block {
     .input-field {
-      &.type-error { // @color-error;
+      &.type-error {
+        // @color-error;
         @type-color: @color-error;
-        &:after { // icon
+        &:after {
+          // icon
           right: auto;
           left: 270px;
         }
@@ -465,7 +494,6 @@ fieldset[name="MDLForms"] {
             right: auto;
             left: 162px;
           }
-
           .mdl-textfield__input {
             padding-right: 24px;
           }
@@ -473,9 +501,8 @@ fieldset[name="MDLForms"] {
         @media @xs {
           &:after {
             right: auto;
-            left: 172px;
+            left: 146px;
           }
-
           .mdl-textfield__input {
             padding-right: 32px;
           }
@@ -491,9 +518,11 @@ fieldset[name="MDLForms"] {
           background-color: @type-color;
         }
       }
-      &.type-warning { // @color-warning;
+      &.type-warning {
+        // @color-warning;
         @type-color: @color-warning;
-        &:after { // icon
+        &:after {
+          // icon
           right: auto;
           left: 270px;
         }
@@ -502,7 +531,6 @@ fieldset[name="MDLForms"] {
             right: auto;
             left: 162px;
           }
-
           .mdl-textfield__input {
             padding-right: 24px;
           }
@@ -510,9 +538,8 @@ fieldset[name="MDLForms"] {
         @media @xs {
           &:after {
             right: auto;
-            left: 172px;
+            left: 146px;
           }
-
           .mdl-textfield__input {
             padding-right: 32px;
           }
@@ -528,9 +555,11 @@ fieldset[name="MDLForms"] {
           background-color: @type-color;
         }
       }
-      &.type-success { // @color-success;
+      &.type-success {
+        // @color-success;
         @type-color: @color-success;
-        &:after { // icon
+        &:after {
+          // icon
           right: auto;
           left: 270px;
         }
@@ -539,7 +568,6 @@ fieldset[name="MDLForms"] {
             right: auto;
             left: 162px;
           }
-
           .mdl-textfield__input {
             padding-right: 24px;
           }
@@ -547,9 +575,8 @@ fieldset[name="MDLForms"] {
         @media @xs {
           &:after {
             right: auto;
-            left: 172px;
+            left: 146px;
           }
-
           .mdl-textfield__input {
             padding-right: 32px;
           }
@@ -571,8 +598,11 @@ fieldset[name="MDLForms"] {
 
 fieldset.spinner {
   .form-block {
-    .type-error, .type-success, .type-warning {
-      &:after { // icon
+    .type-error,
+    .type-success,
+    .type-warning {
+      &:after {
+        // icon
         right: 20px;
       }
     }
@@ -583,7 +613,7 @@ fieldset.spinner {
     }
     .type-success {
       .filter-spinner {
-        color:  @color-success;
+        color: @color-success;
       }
     }
     .type-warning {
@@ -593,3 +623,51 @@ fieldset.spinner {
     }
   }
 }
+.page-settings {
+  .radio-btns {
+    .radio-btn--disabled {
+      & > span {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+  .input-field.type--disabled {
+    input, & > textarea, & > [data-tooltip-inline], & > [data-slider], & > [data-slider-range] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    & > [data-tooltip-inline] {
+      font-size: 24px;
+    }
+    & > [data-slider] {
+      .ui-slider-handle {
+        left: 0 !important;
+        cursor: not-allowed;
+      }
+      .ui-slider-range{
+        width: 0 !important;
+      }
+    }
+    & > [data-slider-range] {
+      .ui-slider-range{
+        left: 19% !important;
+        width: 47.5% !important;
+      }
+      .ui-slider-handle:first-of-type {
+        left: 19% !important;
+        cursor: not-allowed;
+      }
+      .ui-slider-handle:last-of-type {
+        left: 67% !important;
+        cursor: not-allowed;
+      }
+    }
+    &>.spinner-basic{
+      .ui-spinner-button{
+        display: none;
+      }
+    }
+  }
+}
+

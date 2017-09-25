@@ -31,20 +31,19 @@ const AntaresBrandColors = {
         this.updateColorManually();
         this.resetStyle();
     },
-    defaultColors(){
+    defaultColors() {
         function takeDefaultColor(type, order) {
             if (order === undefined) {
-                order = false
+                order = false;
             }
             if (order === false) {
-                var color = $('.standard-color--' + type).css('background-color')
-                var colorTiny = tinycolor(color)
-                $('.standard-color--' + type + '+input').val(colorTiny.toHexString())
-            }
-            else {
-                var color = $('.standard-color--' + type + '-' + order).css('color')
-                var colorTiny = tinycolor(color)
-                $('.standard-color--' + type + '-' + order + '+input').val(colorTiny.toHexString())
+                var color = $('.standard-color--' + type).css('background-color');
+                var colorTiny = tinycolor(color);
+                $('.standard-color--' + type + '+input').val(colorTiny.toHexString());
+            } else {
+                var color = $('.standard-color--' + type + '-' + order).css('color');
+                var colorTiny = tinycolor(color);
+                $('.standard-color--' + type + '-' + order + '+input').val(colorTiny.toHexString());
             }
         }
 
@@ -60,18 +59,7 @@ const AntaresBrandColors = {
     },
     addStyles(indicator, elements, styles, value) {
         $('[data-desc="style-second-first-texts"]').remove();
-        $('head').append(
-            "<style data-desc='brand-colors-" +
-            indicator +
-            "'>" +
-            elements +
-            '{' +
-            styles +
-            ':' +
-            value +
-            ' !important' +
-            '}</style>'
-        );
+        $('head').append("<style data-desc='brand-colors-" + indicator + "'>" + elements + '{' + styles + ':' + value + ' !important' + '}</style>');
         return true;
     },
     clearStyles(indicator) {
@@ -81,7 +69,7 @@ const AntaresBrandColors = {
     resetStyle() {
         var self = this;
         $('.reset-style').click(function () {
-           self.defaultColors()
+            self.defaultColors();
             AntaresBrandColors.colorPickersBig();
             AntaresBrandColors.colorPickersSmall();
         });
@@ -131,19 +119,30 @@ const AntaresBrandColors = {
             format: 'hex',
             letterCase: 'lowercase',
             show: function () {
-                $(this).closest('.cp-brand').css('flex', '2');
-                $(this).closest('.minicolors').css('z-index', '35');
+                $(this)
+                    .closest('.cp-brand')
+                    .css('flex', '2');
+                $(this)
+                    .closest('.minicolors')
+                    .css('z-index', '35');
             },
             hide: function () {
-                $(this).closest('.cp-brand').css('flex', '1');
-                $(this).closest('.minicolors').css('z-index', '1');
+                $(this)
+                    .closest('.cp-brand')
+                    .css('flex', '1');
+                $(this)
+                    .closest('.minicolors')
+                    .css('z-index', '1');
             },
             change: function (value, opacity) {
                 var temp = tinycolor(value);
                 var hex = temp.toHexString();
                 //update dev input
-                $(this).closest('.cp-brand').find('.cp').attr('value', hex);
-                if ($(this).closest('.cp-brand--primary').length) {
+                $(this)
+                    .closest('.cp-brand')
+                    .find('.cp')
+                    .attr('value', hex);
+                if ($(this).closest('.cp-brand--primary').length) { // MAIN----------------------------------------
                     var mr = tinycolor
                         .mostReadable(value, ['#000'], {
                             includeFallbackColors: true,
@@ -158,12 +157,25 @@ const AntaresBrandColors = {
                         .closest('.cp-brand')
                         .find('.cp-brand__title')
                         .css('color', mr);
-                    $(this).closest('.cp-brand').find('input.cp').css('color', mr);
-                    var modPri1 = tinycolor(value).darken(3).toString(),
-                        modPri2 = tinycolor(value).brighten(5).toString(),
-                        modPri3 = tinycolor(value).brighten(10).toString(),
-                        modPri4 = tinycolor(value).lighten(32).toString(),
-                        modPri5 = tinycolor(value).darken(4).toString(),
+                    $(this)
+                        .closest('.cp-brand')
+                        .find('input.cp')
+                        .css('color', mr);
+                    var modPri1 = tinycolor(value)
+                            .darken(3)
+                            .toString(),
+                        modPri2 = tinycolor(value)
+                            .brighten(5)
+                            .toString(),
+                        modPri3 = tinycolor(value)
+                            .brighten(10)
+                            .toString(),
+                        modPri4 = tinycolor(value)
+                            .lighten(32)
+                            .toString(),
+                        modPri5 = tinycolor(value)
+                            .darken(4)
+                            .toString(),
                         primary = 'primary';
                     self.clearStyles(primary);
                     //MAIN COLOR
@@ -190,6 +202,7 @@ const AntaresBrandColors = {
                             '.switch .switch-checkbox:checked + .switch-container',
                             '.app-content__footer .btn--submit',
                             '.menu-aside-container',
+                            '.grid-col--menu, .menu-mobile-settings',
                             '.app-content:before',
                             //new
                             '.mdl-textfield__label:after',
@@ -201,87 +214,45 @@ const AntaresBrandColors = {
                         primaryTargetsBorder = [
                             '.breadcrumbs .ddown__menu',
                             //new
-                            'aside.main-sidebar.main-menu.main-menu--brand li:nth-child(1).submenu-open > a:after',
-                            'aside.main-sidebar ul.main-menu li:nth-child(2).submenu-open > a:after'
+                            'aside.main-sidebar.main-menu.main-menu--brand li:nth-child(1).submenu-open > a:after'
                         ],
-                        primaryTargetsMod1 = [
-                            '.menu-aside li.is-active a',
-                            '.breadcrumbs > li.is-active'
-                        ],
-                        primaryTargetsMod3 = [
-                            '.badge',
-                            '.ddown--brand .ddown__init',
-                            '#table-ma.is-disabled'
-                        ],
-                        primaryTargetsMod4 = [
-                            '.tbl-c .billevo-table tr.is-selected td',
-                            '.tbl-c .billevo-table tr.ui-selected td',
-                            '.tbl-c .billevo-table tr.ui-selecting td'
-                        ],
-                        primaryTargetsMod5 = [
-                            '.tbl-c .billevo-table tr.is-selected td',
-                            '.tbl-c .billevo-table tr.ui-selected td',
-                            '.tbl-c .billevo-table tr.ui-selecting td'
-                        ];
+                        primaryTargetsMod1 = ['.menu-aside li.is-active a', '.breadcrumbs > li.is-active'],
+                        primaryTargetsMod3 = ['.badge', '.ddown--brand .ddown__init', '#table-ma.is-disabled'],
+                        primaryTargetsMod4 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td'],
+                        primaryTargetsMod5 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td'];
+                    //color
+                        $('meta[name="theme-color"]').attr('content', value)
+                        $('meta[name="msapplication-navbutton-color"]').attr('content', value)
+                        $('meta[name="apple-mobile-web-app-status-bar-style"]').attr('content', value)
+                    self.addStyles(primary, '.menu-mobile-settings + .select2 .select2-selection', 'background-color', modPri1);
                     //color
                     for (var i = 0; i < primaryTargets.length; i++) {
                         self.addStyles(primary, primaryTargets[i], 'color', value);
                     }
                     //background
                     for (var j = 0; j < primaryTargetsBackground.length; j++) {
-                        self.addStyles(
-                            primary,
-                            primaryTargetsBackground[j],
-                            'background-color',
-                            value
-                        );
+                        self.addStyles(primary, primaryTargetsBackground[j], 'background-color', value);
                     }
                     //border
                     for (var k = 0; k < primaryTargetsBorder.length; k++) {
-                        let newStyleBorderValue =
-                            'transparent ' + value + ' transparent transparent;';
-                        self.addStyles(
-                            primary,
-                            primaryTargetsBorder[k],
-                            'border-color',
-                            newStyleBorderValue
-                        );
+                        let newStyleBorderValue = 'transparent ' + value + ' transparent transparent;';
+                        self.addStyles(primary, primaryTargetsBorder[k], 'border-color', newStyleBorderValue);
                     }
                     //mod1
                     for (var l = 0; l < primaryTargetsMod1.length; l++) {
-                        self.addStyles(
-                            primary,
-                            primaryTargetsMod1[l],
-                            'background-color',
-                            modPri1
-                        );
+                        self.addStyles(primary, primaryTargetsMod1[l], 'background-color', modPri1);
                     }
                     //mod3
                     for (var h = 0; h < primaryTargetsMod3.length; h++) {
-                        self.addStyles(
-                            primary,
-                            primaryTargetsMod3[h],
-                            'background-color',
-                            modPri3
-                        );
+                        self.addStyles(primary, primaryTargetsMod3[h], 'background-color', modPri3);
                     }
                     //mod4
                     for (var u = 0; u < primaryTargetsMod4.length; u++) {
-                        self.addStyles(
-                            primary,
-                            primaryTargetsMod4[u],
-                            'background-color',
-                            modPri4
-                        );
+                        self.addStyles(primary, primaryTargetsMod4[u], 'background-color', modPri4);
                     }
                     //mod5
                     for (var ub = 0; ub < primaryTargetsMod5.length; ub++) {
-                        self.addStyles(
-                            primary,
-                            primaryTargetsMod5[ub],
-                            'border-color',
-                            modPri5
-                        );
+                        self.addStyles(primary, primaryTargetsMod5[ub], 'border-color', modPri5);
                     }
                     //apply
                     $('.colors-text-main-first').val(value);
@@ -308,7 +279,7 @@ const AntaresBrandColors = {
                     $('.colors-main-mod1').val(modPri1);
                     $('.colors-main-mod2').val(modPri2);
                     $('.colors-main-mod3').val(modPri3);
-                } else if ($(this).closest('.cp-brand--secondary').length) {
+                } else if ($(this).closest('.cp-brand--secondary').length) {  //SECONDARY--------------------
                     var mr3 = tinycolor
                         .mostReadable(value, ['#000'], {
                             includeFallbackColors: true,
@@ -323,35 +294,33 @@ const AntaresBrandColors = {
                         .closest('.cp-brand')
                         .find('.cp-brand__title')
                         .css('color', mr3);
-                    $(this).closest('.cp-brand').find('input.cp').css('color', mr3);
-                    var modSec1 = tinycolor(value).darken(3).toString(),
+                    $(this)
+                        .closest('.cp-brand')
+                        .find('input.cp')
+                        .css('color', mr3);
+                    var modSec1 = tinycolor(value)
+                            .darken(3)
+                            .toString(),
                         modSec2 = tinycolor(value)
                             .brighten(9)
                             .saturate(2)
                             .darken(1)
                             .toString(),
-                        modSec3 = tinycolor(value).brighten(36).toString();
+                        modSec3 = tinycolor(value)
+                            .brighten(36)
+                            .toString();
                     //SECONDARY
                     var secondary = 'secondary';
                     self.clearStyles(secondary);
-                    self.addStyles(
-                        secondary,
-                        'aside.main-sidebar',
-                        'background-color',
-                        value
-                    );
-                    self.addStyles(
-                        secondary,
-                        'aside.main-sidebar ul.main-menu .submenu',
-                        'background-color',
-                        modSec1
-                    );
-                    self.addStyles(
-                        secondary,
-                        'aside.main-sidebar ul.main-menu > li.more-trigger',
-                        'border-color',
-                        modSec1
-                    );
+                    self.addStyles(secondary, 'aside.main-sidebar[data-menu-on-load="primary"]', 'background-color', value);
+                    self.addStyles(secondary, 'aside.main-sidebar[data-menu-on-load="secondary"]', 'background-color', modSec2);
+                    self.addStyles(secondary, 'aside.main-sidebar ul.main-menu:not(.main-menu--brand) .submenu', 'background-color', modSec1);
+                    self.addStyles(secondary, 'aside.main-sidebar ul.main-menu > li.more-trigger', 'border-color', modSec1);
+                    self.addStyles(secondary, 'aside.main-sidebar .menu-scroll ul.main-menu li.has-submenu > a:after', 'border-color', 'transparent ' + modSec1 + ' transparent transparent !important;');
+                    self.addStyles(secondary, '.main-menu-html div.more-trigger .more-trigger__inner', 'background-color', modSec2);
+                    self.addStyles(secondary, '.main-menu-html .nav-container.animation-active div.more-trigger:before', 'background-color', modSec2);
+                    self.addStyles(secondary, '.main-menu-html div.more-trigger.is-expanded .more-trigger__inner', 'background-color', modSec1);
+                    self.addStyles(secondary, 'aside.main-sidebar .menu-tooltip', 'background-color', modSec2);
                     $(this)
                         .closest('.cp-brand')
                         .find('.cp-brand__sgl')
@@ -375,7 +344,7 @@ const AntaresBrandColors = {
                     $('.colors-secondary-mod1').val(modSec1);
                     $('.colors-secondary-mod2').val(modSec2);
                     $('.colors-secondary-mod3').val(modSec3);
-                } else if ($(this).closest('.cp-brand--tetriary').length) {
+                } else if ($(this).closest('.cp-brand--tetriary').length) {   // BACKGROUND--------------------
                     var mr2 = tinycolor
                         .mostReadable(value, ['#000'], {
                             includeFallbackColors: true,
@@ -390,10 +359,22 @@ const AntaresBrandColors = {
                         .closest('.cp-brand')
                         .find('.cp-brand__title')
                         .css('color', mr2);
-                    $(this).closest('.cp-brand').find('input.cp').css('color', mr2);
-                    var modTet1 = tinycolor(value).darken(17).desaturate(8).toString(),
-                        modTet2 = tinycolor(value).darken(4).desaturate(9).toString(),
-                        modTet3 = tinycolor(value).lighten(3).desaturate(7).toString();
+                    $(this)
+                        .closest('.cp-brand')
+                        .find('input.cp')
+                        .css('color', mr2);
+                    var modTet1 = tinycolor(value)
+                            .darken(17)
+                            .desaturate(8)
+                            .toString(),
+                        modTet2 = tinycolor(value)
+                            .darken(4)
+                            .desaturate(9)
+                            .toString(),
+                        modTet3 = tinycolor(value)
+                            .lighten(3)
+                            .desaturate(7)
+                            .toString();
                     //apply
                     $(this)
                         .closest('.cp-brand')
@@ -420,21 +401,20 @@ const AntaresBrandColors = {
                     $('.colors-background-mod3').val(modTet3);
                 }
                 //apply to each big color area
-                $(this).closest('.cp-brand__preview').css('background-color', value);
-                $(this).closest('.cp-brand').find('input.cp').val(value);
+                $(this)
+                    .closest('.cp-brand__preview')
+                    .css('background-color', value);
+                $(this)
+                    .closest('.cp-brand')
+                    .find('input.cp')
+                    .val(value);
             }
         });
         //default colors on init
         (function miniColorValuesBrand() {
-            var dC1 = $(
-                '.color-pickers .col-group:first-child .cp-brand--primary .cp'
-                ).val(),
-                dC2 = $(
-                    '.color-pickers .col-group:first-child .cp-brand--secondary .cp'
-                ).val(),
-                dC3 = $(
-                    '.color-pickers .col-group:first-child .cp-brand--tetriary .cp'
-                ).val();
+            var dC1 = $('.color-pickers .col-group:first-child .cp-brand--primary .cp').val(),
+                dC2 = $('.color-pickers .col-group:first-child .cp-brand--secondary .cp').val(),
+                dC3 = $('.color-pickers .col-group:first-child .cp-brand--tetriary .cp').val();
             $('.cp-brand--primary .cp-brand__ar-big').minicolors('value', {
                 color: dC1
             });
@@ -462,17 +442,27 @@ const AntaresBrandColors = {
             letterCase: 'lowercase',
             theme: 'ar-small',
             show: function () {
-                $(this).closest('.cp-brand').css('flex', '2');
+                $(this)
+                    .closest('.cp-brand')
+                    .css('flex', '2');
             },
             hide: function () {
-                $(this).closest('.cp-brand').css('flex', '1');
+                $(this)
+                    .closest('.cp-brand')
+                    .css('flex', '1');
             },
             change: function (value, opacity) {
                 var temp = tinycolor(value);
                 var hex = temp.toHexString();
                 //update dev input
-                $(this).closest('.cp-brand__preview').find('.cp').attr('value', hex);
-                $(this).closest('.minicolors').next('.color-saver').val(value);
+                $(this)
+                    .closest('.cp-brand__preview')
+                    .find('.cp')
+                    .attr('value', hex);
+                $(this)
+                    .closest('.minicolors')
+                    .next('.color-saver')
+                    .val(value);
                 if ($(this).hasClass('cp-brand__p-sgl--left')) {
                     $(this)
                         .closest('.cp-brand')
@@ -482,20 +472,20 @@ const AntaresBrandColors = {
                         //PRIMARY LEFT
                         var primaryLeft = 'primary-left',
                             primaryLeftTargets = [
-                                '.menu-aside li a span, .menu-aside li a i',
-                                '.breadcrumbs > li:last-child .ddown__init a, .breadcrumbs .ddown .ddown__content .ddown__arrow:after,.breadcrumbs .ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
+                                '.menu-aside li a span, .menu-aside li a i, .menu-aside li a:after, .badge.badge--md',
+                                '.main-head .mdl-textfield--AR label.mdl-textfield__label',
+                                '.ddown.ddown--user .ddown__menu li a,.ddown.ddown--user .ddown__menu li a i:before',
+                                '.ddown.ddown--brand .ddown__menu .flex-block__title,.ddown.ddown--brand .ddown__menu .ddown__footer a',
+                                '.breadcrumbs > li:last-child .ddown__init a, .breadcrumbs > li > a,.breadcrumbs > li:last-child:before, .breadcrumbs .ddown .ddown__content .ddown__arrow:after,.breadcrumbs .ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
                                 '.item-grp  i',
                                 '.btn.btn--brand',
+                                '.menu-mobile-settings + .select2 .select2-selection__rendered',
                                 '.ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i'
                             ];
                         self.clearStyles(primaryLeft);
+                        self.addStyles(primaryLeft, '.burgericon > a .line', 'background', value);
                         for (var q = 0; q < primaryLeftTargets.length; q++) {
-                            self.addStyles(
-                                primaryLeft,
-                                primaryLeftTargets[q],
-                                'color',
-                                value
-                            );
+                            self.addStyles(primaryLeft, primaryLeftTargets[q], 'color', value);
                         }
                         //apply
                         $('.colors-text-main-first').val(value);
@@ -503,19 +493,10 @@ const AntaresBrandColors = {
                     if ($(this).closest('.cp-brand--secondary').length) {
                         //SECONDARY LEFT
                         var secondartLeft = 'secondary-left',
-                            secondartLeftTargets = [
-                                'aside.main-sidebar ul.main-menu > li > a',
-                                'aside.main-sidebar ul.main-menu > li > a .icon',
-                                'aside.main-sidebar ul.main-menu > li > a i'
-                            ];
+                            secondartLeftTargets = ['aside.main-sidebar ul.main-menu > li > a', 'aside.main-sidebar ul.main-menu > li > a .icon', 'aside.main-sidebar ul.main-menu > li > a i', 'aside.main-sidebar ul.main-menu .submenu section .data-list li a', 'aside.main-sidebar ul.main-menu .submenu ul > li span'];
                         self.clearStyles(secondartLeft);
                         for (var a = 0; a < secondartLeftTargets.length; a++) {
-                            self.addStyles(
-                                secondartLeft,
-                                secondartLeftTargets[a],
-                                'color',
-                                value
-                            );
+                            self.addStyles(secondartLeft, secondartLeftTargets[a], 'color', value);
                         }
                         //apply
                         $('.colors-text-secondary-first').val(value);
@@ -526,12 +507,7 @@ const AntaresBrandColors = {
                             tetriaryLeftTargets = ['.form-block label:not(.switch)'];
                         self.clearStyles(tetriaryLeft);
                         for (var s = 0; s < tetriaryLeftTargets.length; s++) {
-                            self.addStyles(
-                                tetriaryLeft,
-                                tetriaryLeftTargets[s],
-                                'color',
-                                value
-                            );
+                            self.addStyles(tetriaryLeft, tetriaryLeftTargets[s], 'color', value);
                         }
                         //apply
                         $('.colors-text-background-first').val(value);
@@ -544,30 +520,14 @@ const AntaresBrandColors = {
                     if ($(this).closest('.cp-brand--primary').length) {
                         //PRIMARY RIGHT
                         var primaryRight = 'primary-right',
-                            primaryRightTargets = [
-                                '.search-box .search-box__search-field',
-                                '.search-box > i',
-                                '.search-box .search-box__mdl-textfield .mdl-textfield__label'
-                            ],
-                            primaryRightTargetsBorder = [
-                                '.search-box .search-box__search-field'
-                            ];
+                            primaryRightTargets = ['.search-box .search-box__search-field', '.search-box > i', '.search-box .search-box__mdl-textfield .mdl-textfield__label'],
+                            primaryRightTargetsBorder = ['.search-box .search-box__search-field'];
                         self.clearStyles(primaryRight);
                         for (var f = 0; f < primaryRightTargets.length; f++) {
-                            self.addStyles(
-                                primaryRight,
-                                primaryRightTargets[f],
-                                'color',
-                                value
-                            );
+                            self.addStyles(primaryRight, primaryRightTargets[f], 'color', value);
                         }
                         for (var d = 0; d < primaryRightTargetsBorder.length; d++) {
-                            self.addStyles(
-                                primaryRight,
-                                primaryRightTargetsBorder[d],
-                                'border-color',
-                                value
-                            );
+                            self.addStyles(primaryRight, primaryRightTargetsBorder[d], 'border-color', value);
                         }
                         //apply
                         $('.colors-text-main-second').val(value);
@@ -582,15 +542,11 @@ const AntaresBrandColors = {
                             'aside.main-sidebar ul.main-menu > li > a:hover i',
                             'aside.main-sidebar ul.main-menu > li.hovered .text',
                             'aside.main-sidebar ul.main-menu > li.hovered .icon',
-                            'aside.main-sidebar ul.main-menu > li.hovered i'
+                            'aside.main-sidebar ul.main-menu > li.hovered i',
+                            'aside.main-sidebar ul.main-menu .submenu section .data-list li a:hover span'
                         ];
                         for (var g = 0; g < secondaryRightTargets.length; g++) {
-                            self.addStyles(
-                                secondaryRight,
-                                secondaryRightTargets[g],
-                                'color',
-                                value
-                            );
+                            self.addStyles(secondaryRight, secondaryRightTargets[g], 'color', value);
                         }
                         //apply
                         $('.colors-text-secondary-second').val(value);
@@ -599,17 +555,15 @@ const AntaresBrandColors = {
                         //TETRIARY RIGHT
                         var tetriaryRight = 'tetriary-right';
                         self.clearStyles(tetriaryRight);
-                        self.addStyles(
-                            tetriaryRight,
-                            'form fieldset legend',
-                            'color',
-                            value
-                        );
+                        self.addStyles(tetriaryRight, 'form fieldset legend', 'color', value);
                         //apply
                         $('.colors-text-background-second').val(value);
                     }
                 }
-                $(this).closest('.cp-brand__preview').find('input.cp').val(value);
+                $(this)
+                    .closest('.cp-brand__preview')
+                    .find('input.cp')
+                    .val(value);
                 //contrast
                 var mr4 = tinycolor
                     .mostReadable(value, ['#000'], {
@@ -628,42 +582,18 @@ const AntaresBrandColors = {
             var primaryTypo = $('.cp-brand--primary.cp-brand--typo'),
                 secondaryTypo = $('.cp-brand--secondary.cp-brand--typo'),
                 tetriaryTypo = $('.cp-brand--tetriary.cp-brand--typo');
-            var smallDC1 = primaryTypo
-                .find('.cp-brand__preview:nth-child(1) .cp')
-                .val();
-            var smallDC2 = primaryTypo
-                .find('.cp-brand__preview:nth-child(2) .cp')
-                .val();
-            var smallDC3 = secondaryTypo
-                .find('.cp-brand__preview:nth-child(1) .cp')
-                .val();
-            var smallDC4 = secondaryTypo
-                .find('.cp-brand__preview:nth-child(2) .cp')
-                .val();
-            var smallDC5 = tetriaryTypo
-                .find('.cp-brand__preview:nth-child(1) .cp')
-                .val();
-            var smallDC6 = tetriaryTypo
-                .find('.cp-brand__preview:nth-child(2) .cp')
-                .val();
-            primaryTypo
-                .find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl')
-                .minicolors('value', {color: smallDC1});
-            primaryTypo
-                .find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl')
-                .minicolors('value', {color: smallDC2});
-            secondaryTypo
-                .find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl')
-                .minicolors('value', {color: smallDC3});
-            secondaryTypo
-                .find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl')
-                .minicolors('value', {color: smallDC4});
-            tetriaryTypo
-                .find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl')
-                .minicolors('value', {color: smallDC5});
-            tetriaryTypo
-                .find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl')
-                .minicolors('value', {color: smallDC6});
+            var smallDC1 = primaryTypo.find('.cp-brand__preview:nth-child(1) .cp').val();
+            var smallDC2 = primaryTypo.find('.cp-brand__preview:nth-child(2) .cp').val();
+            var smallDC3 = secondaryTypo.find('.cp-brand__preview:nth-child(1) .cp').val();
+            var smallDC4 = secondaryTypo.find('.cp-brand__preview:nth-child(2) .cp').val();
+            var smallDC5 = tetriaryTypo.find('.cp-brand__preview:nth-child(1) .cp').val();
+            var smallDC6 = tetriaryTypo.find('.cp-brand__preview:nth-child(2) .cp').val();
+            primaryTypo.find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl').minicolors('value', {color: smallDC1});
+            primaryTypo.find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl').minicolors('value', {color: smallDC2});
+            secondaryTypo.find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl').minicolors('value', {color: smallDC3});
+            secondaryTypo.find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl').minicolors('value', {color: smallDC4});
+            tetriaryTypo.find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl').minicolors('value', {color: smallDC5});
+            tetriaryTypo.find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl').minicolors('value', {color: smallDC6});
         })();
     }
 };

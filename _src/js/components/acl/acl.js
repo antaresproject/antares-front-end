@@ -298,7 +298,6 @@ if (loadPossible) {
   loadConfigurationSelect.on('select2:close', function() {
     $('#load-configuration').removeClass('load-configuration--active');
   });
-
   loadConfigurationSelect.on('select2:selecting', function(e) {
     var selectItemValue = e.params.args.data.element.value;
 

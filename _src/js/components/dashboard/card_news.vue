@@ -8,7 +8,7 @@
                         <span>News</span>
                     </div>
                     <div class="card__header-right">
-                        <div @click="prev" class="card__control card__control--left btn btn--news mdl-js-button mdl-js-ripple-effect">
+                        <div @click="prev" class="card__control card__control--left btn btn--news  mdl-js-button mdl-js-ripple-effect">
                             <i class="icon icon--chev-left"></i>
                         </div>
                         <div @click="next" class="card__control card__control--right btn btn--news ml8 mdl-js-button mdl-js-ripple-effect">
@@ -46,7 +46,7 @@
                                 <i class="zmdi zmdi-account"></i> Added by Łukasz Cirut</span>
                         </div>
                         <div class="card__content">
-                            <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span>
+                            <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret...</span>
                         </div>
                         <div class="card__footer">
                             <a class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ MORE</a>
@@ -77,26 +77,25 @@ export default {
                 arrows: false,
                 autoplay: false,
                 dots: false,
-                speed: 350
+                speed: 350,
+                accessibility: false
             }
         }
     },
     activated: function() {
-        var self = this;
-        self.$nextTick(function() {
-            self.slickUpdate();
-        });
+        // var self = this;
+        // self.$nextTick(function() {
+        //     self.slickUpdate();
+        // });
     },
     created: function() {
-        var self = this;
-        setTimeout(function() {
-            self.slickUpdate();
-        }, 1000);
+
     },
     mounted: function() {
         var self = this;
         $(this.$el).closest('.grid-stack-item').addClass('card-news--gsi');
         this.mockDate();
+        self.slickUpdate();
     },
     methods: {
         mockDate() {
@@ -131,6 +130,7 @@ export default {
     }
 };
 </script>
+
 <style lang="less">
 #app-wrapper .card .card__header .card__header-right .card__control.btn.btn--news {
     width: 40px;
@@ -158,8 +158,11 @@ export default {
     transition: 2s;
 }
 
-.card--news .card__footer .btn .btn--link {
-    margin-bottom: 16px;
+.card--news .card__footer .btn.btn--link {
+    // margin-bottom: 16px;
+    &:hover {
+        background-color: transparent;
+    }
 }
 
 .slick-list {
@@ -170,12 +173,7 @@ export default {
     height: 100%;
 }
 
-.card-container--news .card__edit-view {
-    i {
-        transition: 300ms;
-        color: rgba(255, 255, 255, 0.6);
-    }
-}
+
 
 .card__info {
     max-height: 94px;
@@ -191,9 +189,7 @@ export default {
     }
 }
 
-.grid-stack-item:hover .card-container--news .card__edit-view .card__edit-icons i {
-    color: rgba(255, 255, 255, 0.9);
-}
+
 
 .slick-list {
     height: 100%;
@@ -203,9 +199,7 @@ export default {
     background: #fff !important;
 }
 
-#app-wrapper .app-content--widgets-movable .grid-stack-item-content .card-container--news .card__edit-view {
-    background: #02A8F3;
-}
+
 
 .card-container--news .slick-initialized .slick-slide {
     background: white;

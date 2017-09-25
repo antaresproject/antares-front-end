@@ -1,253 +1,201 @@
 .datarow {
-
-  .list-clear();
-  font-size: 13px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-content: center;
-
-  li.datarow__sgl {
-    margin-bottom: 1px;
+    .list-clear();
     font-size: 13px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-content: center;
-    transition: 300ms;
-    min-height: @data-row-height;
-    width: 100%;
-
-    &:first-child {
-      margin-top: 1px;
+    li.datarow__sgl {
+        margin-bottom: 1px;
+        font-size: 13px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-content: center;
+        transition: 300ms;
+        min-height: @data-row-height;
+        width: 100%;
+        &:first-child {
+            margin-top: 1px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .datarow__left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        .datarow__right {
+            display: flex;
+            align-items: center;
+        } //different states
+        &.datarow__sgl--down {
+            color: @color-down;
+        }
+        &.datarow__sgl--up {
+            color: @color-up;
+        }
     }
-
-    &:last-child {
-      margin-bottom: 0;
+    .datarow__status {
+        color: @text-color-darkgrey;
+        line-height: 15px;
     }
-
-    .datarow__left {
-      display: flex;
-      align-items: center;
-      flex: 1;
+    .datarow__data {
+        color: @primary-c;
+        margin-right: 14px;
+        strong {
+            font-weight: 600;
+            color: @text-color-dark-grey;
+        }
     }
-
-    .datarow__right {
-      display: flex;
-      align-items: center;
+    .datarow__percentage {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        i {
+            font-size: 110%;
+            color: inherit;
+            margin-left: 12px;
+            margin-right: 2px;
+        }
     }
-
-    //different states
-    &.datarow__sgl--down {
-      color: @color-down;
-    }
-
-    &.datarow__sgl--up {
-      color: @color-up;
-    }
-
-  }
-
-  .datarow__status {
-    color: @text-color-darkgrey;
-  }
-
-  .datarow__data {
-    color: @primary-c;
-    margin-right: 14px;
-
-    strong {
-      font-weight: 600;
-      color: @text-color-dark-grey;
-    }
-
-  }
-
-  .datarow__percentage {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-
-    i {
-      font-size: 110%;
-      color: inherit;
-      margin-left: 12px;
-      margin-right: 2px;
-    }
-
-  }
-
 }
 
 //data-row status
 //modifiers
 .card--chart .card__right {
-  .datarow__sgl {
-    font-size: 13px;
-  }
+    .datarow__sgl {
+        font-size: 13px;
+    }
 }
 
 //card system info
 .card--info {
-  .datarow__sgl {
-    .data-row__data {
-      margin-right: 5px;
+    .datarow__sgl {
+        .data-row__data {
+            margin-right: 5px;
+        }
     }
-  }
 }
 
 //card system logs (old)
-
 .card--logs {
-  .datarow__right {
-    justify-content: flex-end;
-    min-width: 100px;
-  }
-
-  .datarow {
-
-    &:last-child {
-      margin-bottom: 0;
+    .datarow__right {
+        justify-content: flex-end;
+        min-width: 100px;
     }
-
-  }
-
-  .datarow__status {
-    display: flex;
-    align-items: center;
-    color: @primary-c;
-    i {
-      font-size: 15px;
-      color: @color-success;
-      margin-right: 17px;
-      font-weight: bold;
-      position: relative;
+    .datarow {
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
-
-    @keyframes status--ok {
-      0% {
-        left: @distance;
-        color: #fff;
-        text-shadow: 0 0 2px;
-      }
-
-      100% {
-        left: 0;
-        color: @color-success;
-        text-shadow: 0 0 0;
-      }
-
+    .datarow__status {
+        display: flex;
+        align-items: center;
+        color: @primary-c;
+        i {
+            font-size: 15px;
+            color: @color-success;
+            margin-right: 17px;
+            font-weight: bold;
+            position: relative;
+        }
+        @keyframes status--ok {
+            0% {
+                left: @distance;
+                color: #fff;
+                text-shadow: 0 0 2px;
+            }
+            100% {
+                left: 0;
+                color: @color-success;
+                text-shadow: 0 0 0;
+            }
+        }
+        @keyframes status--warning {
+            0% {
+                left: @distance;
+                color: #fff;
+                text-shadow: 0 0 2px;
+            }
+            100% {
+                left: 0;
+                color: @color-warning;
+                text-shadow: 0 0 0;
+            }
+        }
+        @keyframes status--info {
+            0% {
+                left: @distance;
+                color: #fff;
+                text-shadow: 0 0 2px;
+            }
+            100% {
+                left: 0;
+                color: @color-warning;
+                text-shadow: 0 0 0;
+            }
+        } //statuses
+        &.datarow__status--ok {
+            i {
+                color: @text-color-light-green;
+            }
+        }
+        &.datarow__status--warning {
+            i {
+                color: @text-color-light-orange;
+            }
+        }
+        &.datarow__status--info {
+            i {
+                color: @btn-blue-light;
+            }
+        }
     }
-
-    @keyframes status--warning {
-      0% {
-        left: @distance;
-        color: #fff;
-        text-shadow: 0 0 2px;
-      }
-
-      100% {
-        left: 0;
-        color: @color-warning;
-        text-shadow: 0 0 0;
-      }
-
-    }
-
-    @keyframes status--info {
-      0% {
-        left: @distance;
-        color: #fff;
-        text-shadow: 0 0 2px;
-      }
-
-      100% {
-        left: 0;
-        color: @color-warning;
-        text-shadow: 0 0 0;
-      }
-
-    }
-
-    //statuses
-    &.datarow__status--ok {
-      i {
-        color: @text-color-light-green;
-      }
-
-    }
-
-    &.datarow__status--warning {
-      i {
-        color: @text-color-light-orange;
-      }
-
-    }
-
-    &.datarow__status--info {
-      i {
-        color: @btn-blue-light;
-      }
-
-    }
-
-  }
-
 }
 
 .card--detail-info {
-  .datarow {
-
-    .datarow__sgl {
-      min-height: 30px;
+    .datarow {
+        .datarow__sgl {
+            min-height: 30px;
+        }
+        .datarow__status {
+            color: @primary-c-overlay;
+        }
+        .datarow__data {
+            margin-right: 0;
+            strong {
+                color: @primary-c;
+            }
+        }
     }
-
-    .datarow__status {
-      color: @primary-c-overlay;
-
-    }
-
-    .datarow__data {
-      margin-right: 0;
-
-      strong {
-        color: @primary-c;
-      }
-    }
-  }
 }
 
 .card--chart-small {
-  .datarow {
-
-    .datarow__sgl {
-      min-height: 30px;
+    .datarow {
+        .datarow__sgl {
+            min-height: 30px;
+        }
+        .datarow__status {
+            color: @primary-c-overlay;
+        }
+        .datarow__data {
+            margin-right: 0;
+            strong {
+                color: @primary-c;
+            }
+        }
     }
-
-    .datarow__status {
-      color: @primary-c-overlay;
-
-    }
-
-    .datarow__data {
-      margin-right: 0;
-
-      strong {
-        color: @primary-c;
-      }
-
-    }
-
-  }
-
 }
 
 .card--info {
-  .datarow .datarow__data {
-    margin-right: 0;
-  }
+    .datarow .datarow__data {
+        margin-right: 0;
+    }
 }
-.datarow__status{
-  width: 100%;
+
+.datarow__status {
+    width: 100%;
 }

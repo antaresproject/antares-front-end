@@ -1,0 +1,34 @@
+.badge.badge--md{
+  line-height: 22px;
+}
+
+.app-content .main-content .generals-form .col-16 {
+  [data-flag-select--search] + .select2, [data-flag-select] + .select2 {
+    .select2-selection .select2-selection__rendered {
+      line-height: 36px
+    }
+  }
+}
+
+&.is-chrome{
+  #app-wrapper {
+    &.mobile-menu-active {
+      overflow: hidden !important;
+      height: 90vh;
+      @media only screen and (orientation: landscape) {
+        height: 85vh;
+      }
+      .main-menu.li-submenu-open:not(.main-menu--brand) {
+        height: ~'calc(90vh - 130px)';
+        @media only screen and (orientation: landscape) {
+          height: ~'calc(85vh - 130px)';
+        }
+      }
+      .main-menu.li-submenu-open.main-menu--brand {
+        @media only screen and (orientation: landscape) {
+          height: ~'calc(85vh - 70px)';
+        }
+      }
+    }
+  }
+}

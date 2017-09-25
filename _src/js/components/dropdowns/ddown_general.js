@@ -18,24 +18,15 @@
 
  */
 
-export const AntaresDdownGeneral = {
-
+const AntaresDdownGeneral = {
     init() {
         this.scrollCloseDropdowns();
-        this.resizeCloseDropdowns();
         this.ddownUpZIndex();
         this.clickCloseDropdownDateRange();
         this.mobileDdownFilter();
-        this.ddownTopCorrect()
+        this.ddownTopCorrect();
     },
-    resizeCloseDropdowns(){
-        var self = this;
-        setTimeout(function(){
-            $( window ).resize(function() {
-                self.closeAllDropdowns()
-            })
-        }, 300);
-    },
+
     ddownTopCorrect() {
         $('.ddown').click(function () {
             let thisDdown = $(this);
@@ -86,15 +77,17 @@ export const AntaresDdownGeneral = {
                 this.closeContextMenu();
                 this.closeDatePicker();
                 this.closeDropJS();
+                this.closeMiniColors();
             },
-            closeDropJS(){
-              $('.this-is-dropczyk--out').removeClass('drop-enabled drop-open')
+            closeDropJS() {
+                $('.this-is-dropczyk--out').removeClass('drop-enabled drop-open');
+                $('.dropJS-content-real--client-contacts').removeClass('drop-enabled drop-open');
             },
             closeContextMenu() {
                 // $(".context-menu-active").contextMenu("hide"); //need open or error in console
                 // $('.billevo-table tbody tr td:not(.dt-actions)').contextMenu( false );
-                if ($('ul').is('.context-menu-list')){
-                    $('.context-menu-list').contextMenu("hide");
+                if ($('ul').is('.context-menu-list')) {
+                    $('.context-menu-list').contextMenu('hide');
                 }
             },
             closeAutocomplete() {
@@ -104,10 +97,16 @@ export const AntaresDdownGeneral = {
                 $('.xdsoft_datetimepicker').css('display', 'none');
             },
             closeSelect2() {
-                $('select').select2('close');
+                if ($('.select2').hasClass('select2-container--open')) {
+                    $('select').select2('close');
+                }
             },
             closeDatePicker() {
                 $('[data-daterangepicker]').daterangepicker('close');
+            },
+            closeMiniColors() {
+                $('.minicolors').removeClass("minicolors-focus")
+                $('.minicolors-panel').css('display', 'none');
             }
         };
         systemDropdowns.init();
@@ -118,49 +117,63 @@ export const AntaresDdownGeneral = {
 
         function scrollWork(status) {
             if (status === true) {
-                $(
-                    '.app-content'
-                ).bind(
-                    'mousewheel DOMMouseScroll MozMousePixelScroll touchmove',
-                    function(event) {
-                        var delta = parseInt(
-                            event.originalEvent.wheelDelta || -event.originalEvent.detail
-                        );
-                        if (delta >= 0) {
-                            self.closeAllDropdowns();
-                        } else if (delta < 0) {
-                            self.closeAllDropdowns();
-                        } else {
-                            return false;
-                        }
+                $('.app-content, .ps').bind('mousewheel DOMMouseScroll MozMousePixelScroll touchmove', function (event) {
+                    var delta = parseInt(event.originalEvent.wheelDelta || -event.originalEvent.detail);
+                    if (delta >= 0) {
+                        self.closeAllDropdowns();
+                    } else if (delta < 0) {
+                        self.closeAllDropdowns();
+                    } else {
+                        return false;
                     }
-                );
+                });
             } else {
-                $('.app-content').unbind(
-                    'mousewheel DOMMouseScroll MozMousePixelScroll touchmove'
-                );
+                $('.app-content, .ps').unbind('mousewheel DOMMouseScroll MozMousePixelScroll touchmove');
             }
         }
 
         scrollWork(true); // start work function
 
+        //for dropdowns where you have address bar
+
+        let newW;
+        let oldW = window.innerHeight;
+        $(window).on('resize', function () {
+            enquire.register('screen and (max-width: 1023px)', {
+                match: function () {
+                    newW = window.innerHeight;
+                    let differenceWidthOldAndNew = oldW - newW
+                    if (oldW !== newW && differenceWidthOldAndNew < 70) {
+                        scrollWork(false);
+                    }
+                }
+            })
+            enquire.register('screen and (min-width: 1024px)', {
+                match: function () {
+                    self.closeAllDropdowns()
+                }
+            })
+        });
+
+
+        //for dropdowns where you have address bar end
+
         // FOR DROPDOWN WHEN HE HAVE DOUBLE DROPDOWN
+
         var parent;
-        $('.ddown').on('click', 'li.has-submenu', function(e) {
+        $('.ddown').on('click touchstart', 'li.has-submenu', function (e) {
             parent = $(this).closest('.ddown');
             scrollWork(false);
         });
+
         // FOR DROPDOWN WHEN HE HAVE DOUBLE DROPDOWN END
 
         //WHEN dropdown > devicesHeight
-        $('.ddown').on('click', function() {
+        $('.ddown').on('click touchstart', function () {
             parent = $(this);
             var ddown = parent.find('.ddown__menu');
-            setTimeout(function() {
-                if (
-                    ddown.height() + $('.ddown__menu').offset().top >
-                    $(window).height()
-                ) {
+            setTimeout(function () {
+                if (ddown.height() + $('.ddown__menu').offset().top > $(window).height()) {
                     console.log('stopwork');
                     scrollWork(false);
                 }
@@ -168,19 +181,20 @@ export const AntaresDdownGeneral = {
         });
         //WHEN dropdown > devicesHeightEND
 
-        $(document).click(function() {
+        $(document).click(function () {
             // pomoc dla dropdowns
             if (parent !== undefined && parent.not('ddown--open')) {
                 scrollWork(true);
+                // console.log('goscrollClose')
             }
         });
 
         // FOR SPINNERS (filter, general_settings)
         $('.ddown')
-            .on('mousedown', '.ui-state-active', function(e) {
+            .on('mousedown', '.ui-state-active', function (e) {
                 scrollWork(false);
             })
-            .on('mouseup', '.ui-state-active', function(e) {
+            .on('mouseup', '.ui-state-active', function (e) {
                 scrollWork(true);
             });
         // FOR SPINNERS END (filter, general_settings)
@@ -188,49 +202,50 @@ export const AntaresDdownGeneral = {
     ddownUpZIndex() {
         $(document).mouseup(function (e) {
             var container = $('.ddown');
-            if (container.has(e.target).length === 0){
+            if (container.has(e.target).length === 0) {
                 $('.grid-stack-item').css('z-index', '0');
-            }
-            else{
+            } else {
                 $('.grid-stack-item').css('z-index', '0');
-                $(e.target).closest('.grid-stack-item').css('z-index', '10');
+                $(e.target)
+                    .closest('.grid-stack-item')
+                    .css('z-index', '10');
             }
         });
-
     },
     clickCloseDropdownDateRange() {
         var self = this;
-        $(document).mouseup(function(e) {
+        $(document).mouseup(function (e) {
             var container = $('.ddown');
             var container2 = $('.input-field--group');
             if (!e.target.closest('.ui-widget-content')) {
-                if (
-                    container.has(e.target).length === 0 ||
-                    container2.has(e.target).length === 0
-                ) {
+                if (container.has(e.target).length === 0 || container2.has(e.target).length === 0) {
                     $('[data-daterangepicker]').daterangepicker('close');
                 }
             }
         });
-        $('.breadcrumbs').click(function() {
+        $('.breadcrumbs').click(function () {
             self.closeAllDropdowns;
             $('.grid-stack-item').css('z-index', '0');
         });
     },
     mobileDdownFilter() {
-        $('.ddown--view-more-options').click(function() {
-            $(this).find('.ddown-multi__submenu').css('display', 'none');
+        $('.ddown--view-more-options').click(function () {
+            $(this)
+                .find('.ddown-multi__submenu')
+                .css('display', 'none');
         });
-        $('.add-filter').click(function() {
+        $('.add-filter').click(function () {
             $(this)
                 .closest('.ddown__content')
                 .find('.ddown-multi__submenu')
                 .removeClass('is-active');
         });
-    },
+    }
 };
 
 $(function () {
     window.AntaresDdownGeneral = AntaresDdownGeneral;
     AntaresDdownGeneral.init();
 });
+
+export default AntaresDdownGeneral;
