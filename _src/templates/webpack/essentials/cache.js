@@ -18,6 +18,9 @@ window.onload = function() {
   console.log('Antares Initialized.');
 };
 
+import { antaresCfg } from './../../../config/antares_cfg';
+window.antaresCfgLocal = antaresCfg;
+
 // if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
 
 // WEBPACK PARTIALS:

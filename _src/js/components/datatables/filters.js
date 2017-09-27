@@ -275,7 +275,9 @@ const AntaresDatatablesFilters = {
         $(window).resize(
             _.debounce(function () {
                 updateCountSwiperSliders(slidesOnPage);
-                mySwiper.update();
+                if (typeof mySwiper.update === 'function') {
+                    mySwiper.update();
+                }
             }, 300)
         );
     },

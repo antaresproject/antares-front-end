@@ -14,14 +14,54 @@
   position: fixed;
   top:80%;
   transform: translateY(-50%);
-  left: 0;
-  height: 150px;
-  width: 98px;
-  background: rebeccapurple;
+  left: -105px;
+  width: 150px;
+  background: rgba(92,96,102,0.6);
+  padding: 16px;
   z-index:300;
   color: white;
   display: none;
   align-items: center;
+  transition: 300ms;
+  @media only screen and (max-width: 1023px){
+    display: none !important;
+  }
+  &:hover{
+    background: rgba(92,96,102,0.9);
+  }
+  &.control-menu-panel--open{
+    left: 0;
+    &:hover{
+      background: rgba(92,96,102,0.6);
+    }
+    .zmdi-plus:before{
+      content: '\f273';
+    }
+  }
+  form{
+    margin-bottom: -6px;
+  }
+  label{
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+  .btn{
+    margin-top: 8px;
+  }
+  .zmdi-plus{
+    position: absolute;
+    top:0;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    cursor: pointer;
+    right: 0;
+    color: white;
+    font-size: 26px;
+  }
 }
 #app-wrapper {
   &.main-sidebar--top {

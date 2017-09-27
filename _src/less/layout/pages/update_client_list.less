@@ -39,9 +39,7 @@
         .card-ctrls__left {
           .search-box {
             padding-left: 43px;
-            @media only screen and (max-width: 1023px) {
-              padding-left: 33px;
-            }
+
             @media @xs {
               padding-left: 0;
             }
@@ -64,13 +62,6 @@
                   font-size: 18px !important;
                 }
               }
-              label {
-                @media @md {
-                  height: 36px;
-                  line-height: 36px;
-                }
-
-              }
             }
           }
           .select2 {
@@ -78,10 +69,7 @@
               margin-right: 10px;
             }
             .select2-selection__rendered {
-              font-size: 13px;
-              @media @md{
                 font-size: 18px;
-              }
             }
             .select2-selection {
               &:after, &:before {

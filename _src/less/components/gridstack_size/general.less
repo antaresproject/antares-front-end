@@ -284,7 +284,7 @@
     }
 }
 
-@media only screen and (max-width: 1199px){
+@media only screen and (max-width: 1199px) {
     #app-wrapper {
         [data-gs-width="8"],
         [data-gs-width="9"],
@@ -384,8 +384,7 @@
     }
 }
 
-@media screen and (min-width: 952px) and (max-width:1450px) {
-
+@media screen and (min-width: 768px) and (max-width: 1450px) {
     div.card.card--chart {
         flex-flow: column;
         .card__left {
@@ -441,7 +440,7 @@
                     margin: 12px 0;
                 }
                 .card__ammount {
-                    margin-bottom: 0px ;
+                    margin-bottom: 0px;
                 }
             }
         }
@@ -462,13 +461,22 @@
     }
 }
 
-@media @md and (orientation: landscape) {
-    div.card.card--chart {
-        .card__right {}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    .card.card--chart {
+        div.card__right>ul {
+            display: inline-block !important;
+            height: auto !important;
+            &>li {
+                display: inline-block !important;
+                .datarow__left {
+                    flex: inherit;
+                }
+            }
+        }
     }
 }
 
-@media @md and (orientation: portrait) {
+@media @md {
     div.card.card--chart {
         flex-flow: column;
         .card__left {
@@ -486,9 +494,9 @@
                 margin: 0 !important;
                 height: 100%;
                 &>li {
-                    display: inline-block;
-                    width: 110px;
+                    display: inline-block; //width: 110px;
                     margin-bottom: 6px;
+                    flex-flow: column nowrap;
                     .datarow__status {
                         font-size: 11px;
                     }
@@ -564,9 +572,13 @@
             }
         }
         div.card__right {
+            max-height: 250px;
+            height: auto;
             flex-flow: column;
             position: relative;
+            justify-content: center;
             header {
+                min-height: 80px !important;
                 padding-left: 16px;
                 width: 100%;
                 .card__title {
@@ -627,7 +639,7 @@
             }
             .card-ctrls__right {
                 padding-right: 16px;
-                @media @xs{
+                @media @xs {
                     padding-right: 4px;
                 }
             }
@@ -654,7 +666,7 @@
                     padding-right: 16px;
                 }
             }
-            @media only screen and (min-width:768px) and (max-width: 1023px) {
+            @media only screen and (min-width: 768px) and (max-width: 1023px) {
                 tbody tr td.dt-actions {
                     text-align: center;
                 }

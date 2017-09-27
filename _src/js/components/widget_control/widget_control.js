@@ -18,9 +18,9 @@
 
  */
 // import axios from 'axios';
-import {antaresCfg} from './../../../config/antares_cfg';
 /* global enquire */
 import _ from 'underscore';
+
 
 // Antares Gridsack Widgets Control
 export default {
@@ -32,10 +32,10 @@ export default {
         this.gsResize();
         this.gsClientsListRWD();
         this.gsClientsDetailsRWD();
-        this.gsDashboardRWD();
         this.gsZeroDataRWD();
         this.gsEditMode();
         this.gsRWDGeneral();
+        this.gsDashboardRWD();
 
         this.rwdHelperDev();
         // this.widgetInternalRWD();
@@ -492,7 +492,7 @@ export default {
                     });
                 }
             });
-            enquire.register('screen and (min-width:1367px) and (max-width: 1450px)', {
+            enquire.register('screen and (min-width:1200px) and (max-width: 1450px)', {
                 match() {
                     window.requestAnimationFrame(() => {
                         c1.cardResize(0, 0, 12, 14);
@@ -505,46 +505,17 @@ export default {
                     });
                 }
             });
-
-
-            if (antaresCfg.mainMenuType === 'wide') {
-                enquire.register('screen and (max-width:1366px) and (min-width:768px) ', {
-                    match() {
-                        c1.cardResize(0, 0, 12, 14);
-                        c2.cardResize(12, 0, 12, 14);
-                        c3.cardResize(0, 14, 12, 14);
-                        c4.cardResize(12, 14, 12, 14);
-                        systemInfo.cardResize(0, 28, 12, 13);
-                        news.cardResize(12, 28, 12, 13);
-                        systemLogs.cardResize(0, 41, 24, 17);
-                    }
-                });
-            }
-            else {
-                enquire.register('screen and (max-width:1366px) and (min-width:1024px) ', {
-                    match() {
-                        c1.cardResize(0, 0, 12, 14);
-                        c2.cardResize(12, 0, 12, 14);
-                        c3.cardResize(0, 14, 12, 14);
-                        c4.cardResize(12, 14, 12, 14);
-                        systemInfo.cardResize(0, 28, 8, 13);
-                        news.cardResize(8, 28, 8, 13);
-                        systemLogs.cardResize(16, 28, 8, 17);
-                    }
-                });
-
-                enquire.register('screen and (max-width:1023px) and (min-width:768px) ', {
-                    match() {
-                        c1.cardResize(0, 0, 12, 12, true);
-                        c2.cardResize(12, 0, 12, 12, true);
-                        c3.cardResize(0, 12, 12, 12, true);
-                        c4.cardResize(12, 12, 12, 12, true);
-                        systemInfo.cardResize(0, 28, 12, 11);
-                        news.cardResize(12, 28, 12, 11);
-                        systemLogs.cardResize(0, 35, 24, 12);
-                    }
-                });
-            }
+            enquire.register('screen and (max-width:1199px) and (min-width:768px) ', {
+                match() {
+                    c1.cardResize(0, 0, 12, 14);
+                    c2.cardResize(12, 0, 12, 14);
+                    c3.cardResize(0, 14, 12, 14);
+                    c4.cardResize(12, 14, 12, 14);
+                    systemInfo.cardResize(0, 28, 12, 13);
+                    news.cardResize(12, 28, 12, 13);
+                    systemLogs.cardResize(0, 41, 24, 17);
+                }
+            });
         }
     },
     gsZeroDataRWD() {
@@ -554,20 +525,31 @@ export default {
         });
 
         var grid = $('.grid-stack').data('gridstack');
-        const dashboard = $('.page-dashboard');
+        const zeroData = $('.page-zero-data');
         const cz1 = $('.card--zd').eq(0);
         const cz2 = $('.card--zd').eq(1);
         const cz3 = $('.card--zd').eq(2);
         const cz4 = $('.card--zd').eq(3);
 
-        if (dashboard.length) {
-            enquire.register('screen and (max-width:1449px) and (min-width:768px) ', {
+        if (zeroData.length) {
+            enquire.register('screen and (max-width:1449px) and (min-width:1024px) ', {
                 match() {
                     setTimeout(function () {
                         // window.requestAnimationFrame(() => {
                         cz1.cardResize(0, 0, 6, 10);
                         cz2.cardResize(0, 10, 10, 12);
                         cz3.cardResize(0, 24, 12, 16);
+                        cz4.cardResize(0, 40, 16, 18);
+                    }, 300);
+                }
+            });
+            enquire.register('screen and (max-width:1023px) and (min-width:768px) ', {
+                match() {
+                    setTimeout(function () {
+                        // window.requestAnimationFrame(() => {
+                        cz1.cardResize(0, 0, 7, 10);
+                        cz2.cardResize(0, 10, 10, 12);
+                        cz3.cardResize(0, 24, 14, 18);
                         cz4.cardResize(0, 40, 16, 18);
                     }, 300);
                 }

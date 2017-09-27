@@ -153,6 +153,10 @@
 
                                             <span class="badge badge--dark badge--md">2</span>
                                         </li>
+                                        <li data-name="clients_list_zd">
+                                            <a href="clients_list_zd.html"><span>Table Zero-Data</span></a>
+                                            <span class="badge badge--dark badge--md">2</span>
+                                        </li>
                                     </ul>
                                     <ul class="data-list data-list--second">
                                         <li data-name="zero_data">
@@ -201,11 +205,15 @@
                                 <div class="submenu__content">
                                     <ul class="data-list">
                                         <li data-name="forms_vertical"><a href="forms.html"><span>Forms Vertical</span></a>
+                                            <span class="badge badge--dark badge--md">23</span>
                                         </li>
-                                        <li data-name="forms_horizontal"><a href="forms_hor.html"><span>Forms Horizontal</span></a></li>
-                                        <li data-name="general_settings"><a href="general_settings.html"><span>Addidional UI</span></a>
+                                        <li data-name="forms_horizontal"><a href="forms_hor.html"><span>Forms Horizontal</span></a>
+                                            <span class="badge badge--dark badge--md">1</span></li>
+                                        <li data-name="general_settings"><a href="general_settings.html"><span>Addidional UI</span>
+                                               </a> <span class="badge badge--dark badge--md">76</span>
                                         </li>
-                                        <li data-name="widgets"><a href="widgets.html"><span>Widgets</span></a></li>
+                                        <li data-name="widgets"><a href="widgets.html"><span>Widgets</span></a>
+                                            <span class="badge badge--dark badge--md">40</span></li>
                                     </ul>
                                     <div data-menu-item="general_settings" class="menu-tooltip">
                                         <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i> <span>Addidional UI</span>
@@ -230,12 +238,6 @@
                         <a href="acl.html">
                             <i class="zmdi zmdi-code-setting"></i>
                             <span class="text">ACL</span>
-                        </a>
-                    </li>
-                    <li data-name="translations">
-                        <a href="translations.html">
-                            <i class="zmdi zmdi-code-setting"></i>
-                            <span class="text">Translations</span>
                         </a>
                     </li>
                 </ul>
@@ -318,11 +320,25 @@
 
 <div class="control-menu-panel">
     <form>
-        <label><input type='radio' id='standard-menu' name='type' value='Standard Menu' />Standard</label>
-        <br>
-        <label><input type='radio' id='top-menu' name='type' value='Top Menu'/>Top</label>
-        <br>
-        <label><input type='radio' id='wide-menu' name='type' value='Wide Menu'/>Wide</label>
-        <br>
+        <label>
+            <input data-icheck="true" type="radio"
+                   name="type"
+                   id="standard-menu" value='Standard Menu'>
+            <span class="mr8">Standard</span>
+        </label>
+        <label>
+            <input data-icheck="true" type="radio"
+                   name="type"
+                   id="top-menu" value='Top Menu'>
+            <span class="mr8">Top</span>
+        </label>
+        <label>
+            <input data-icheck="true" type="radio"
+                   name="type"
+                   id="wide-menu" value='Wide Menu'>
+            <span class="mr8">Wide</span>
+        </label>
+        <a href="" class="btn btn--xs btn--default">Update Menu</a>
+        <i class="zmdi zmdi-plus"></i>
     </form>
 </div>

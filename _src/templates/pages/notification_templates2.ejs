@@ -6,19 +6,19 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Antares notification Templates</title>
     <% if(mainMenuType === 'wide'){ %>
-        <% include ../layout/color_template_wide %>
-            <% } else{ %>
-                <% include ../layout/color_template %>
-                    <% } %>
-                        <% include ../layout/css_files %>
+    <% include ../layout/color_template_wide %>
+    <% } else{ %>
+    <% include ../layout/color_template %>
+    <% } %>
+        <% include ../layout/css_files %>
 </head>
 
 <body>
     <% include ../layout/app_wrapper_start_tag %>
-        <% include ../layout/main_menu_html %>
+    <% include ../layout/main_menu_html %>
             <div class="app-content page-brand-settings notification-templates">
                 <% var breadData= 'Notification Templates'; %>
-                    <% include ../layout/mainhead %>
+                <% include ../layout/mainhead %>
                         <% include ../layout/sidebar_notifications %>
                             <% include ../layout/sidebar_alerts %>
                                 <section class="main-content nopadding">
@@ -98,13 +98,13 @@
                                                                             <div class="ddown__content">
                                                                                 <ul class="ddown__menu">
                                                                                     <li>
-                                                                                        <a id="notification-templates-preview"><i class="mdl-tabs__icon zmdi zmdi-search"></i> Preview</a>
+                                                                                        <a   id="notification-templates-preview"><i class="mdl-tabs__icon zmdi zmdi-search"></i> Preview</a>
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a id="notification-templates-send-email"><i class="mdl-tabs__icon zmdi zmdi-mail-send"></i> Send TEst EMail</a>
+                                                                                        <a   id="notification-templates-send-email"><i class="mdl-tabs__icon zmdi zmdi-mail-send"></i> Send TEst EMail</a>
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a id="notification-templates-variables" class="mdl-tabs--open-variables-panel">
+                                                                                        <a   id="notification-templates-variables" class="mdl-tabs--open-variables-panel">
                                                                         <i class="mdl-tabs__icon zmdi zmdi-code"></i> 
                                                                      Available Variables
                                                                     </a>
@@ -114,15 +114,15 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="left-tabs__desktop-links">
-                                                                        <a class="mdl-js-ripple-effect mdl-js-button">
+                                                                        <a   class="mdl-js-ripple-effect mdl-js-button">
                                                         <i class="mdl-tabs__icon zmdi zmdi-search"></i>
                                                         <span class="mdl-tabs__text">Preview</span>
                                                     </a>
-                                                                        <a class="mdl-js-ripple-effect mdl-js-button">
+                                                                        <a   class="mdl-js-ripple-effect mdl-js-button">
                                                         <i class="mdl-tabs__icon zmdi zmdi-mail-send"></i> 
                                                         <span class="mdl-tabs__text">Send Test E-mail</span>
                                                     </a>
-                                                                        <a class="mdl-js-ripple-effect mdl-js-button mdl-tabs--open-variables-panel">
+                                                                        <a   class="mdl-js-ripple-effect mdl-js-button mdl-tabs--open-variables-panel">
                                                         <i class="mdl-tabs__icon zmdi zmdi-code"></i>
                                                         <span class="mdl-tabs__text">Available Variables </span>
                                                     </a>
@@ -549,7 +549,7 @@ echo "My boat is " . $coLOR . "<br>";
                                                                                 </div>
                                                                             </div>
                                                                             <div class="variables-pane__mobile-button">
-                                                                                <a class="btn w100p btn--primary btn--s-default mdl-button mdl-js-button mdl-js-ripple-effect">Close</a>
+                                                                                <a   class="btn w100p btn--primary btn--s-default mdl-button mdl-js-button mdl-js-ripple-effect">Close</a>
                                                                             </div>
                                                                         </div>
 
@@ -566,8 +566,6 @@ echo "My boat is " . $coLOR . "<br>";
                                 </section>
             </div>
             </div>
-
-            <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </body>
 
 </html>

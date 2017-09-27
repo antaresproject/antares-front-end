@@ -1,3 +1,3 @@
-window.CKEDITOR_BASEPATH = 'js/ckeditor_base/';
-// var CKEDITOR = require('ckeditor')
-require('./../../../js/components/notification_templates/notification_templates.js');
+// var CKEDITOR = require('./../../../js/external/modified/ckeditor/ckeditor.js');
+// window.CKEDITOR_BASEPATH = '/js/external/modified/ckeditor/';
+require('./../../../js/components/notification_templates/ckeditor.js');

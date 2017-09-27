@@ -20,7 +20,6 @@
   justify-content: space-between;
   align-items: center;
   .header-translations__search {
-    margin-right: auto;
     margin-left: 26px;
   }
   .header-translation__compare {
@@ -406,7 +405,7 @@
     .table-key__delete-row {
       position: absolute;
       right: 14px;
-      top: 10px;
+      top: 15px;
     }
   }
 }
@@ -425,7 +424,7 @@
     display: none;
     position: absolute;
     left: 10px;
-    top: 10px;
+    top: 15px;
     width: 24px;
     height: 24px;
     text-align: center;
@@ -553,6 +552,7 @@
       opacity: 0;
       font-size: 24px;
       margin: 0;
+      display: none;
     }
   }
 
@@ -592,7 +592,7 @@
 
 @media only screen and (max-width: 1199px) {
   #app-wrapper {
-    .menu-mobile-settings--box+.header-translations {
+    .menu-mobile-settings--box + .header-translations {
       margin-top: 75px;
     }
   }
@@ -674,13 +674,13 @@
     .translation-row__mobile-open .table-key .table-key__init-edit {
       position: absolute;
       right: 48px;
-      top: 10px;
+      top: 15px;
     }
     .tbl-c table .translation-row .table-key:last-of-type .table-key__inner {
       justify-content: flex-end;
     }
     .translation-row__mobile-open .table-key.table-key--key {
-      width: 60%;
+      width: ~'calc(100% - 60px)';
     }
   }
 }
@@ -767,19 +767,21 @@
   }
 }
 
-.select2-container--translations {
+body >.select2-container--translations {
+  left: auto !important;
+  right: 16px;
   .select2-results__option {
     margin: 2px 0;
   }
 }
-
-@media @xs {
-  .drop.drop-element.dropjs-translations {
-    width: 100%;
-    right: -16px !important;
-    left: auto !important;
+.drop-open .dropjs-translations.drop-element.drop-enabled{
+  min-width: 280px;
+  @media @xs{
+    padding: 0;
+    width: auto;
   }
 }
+
 
 @media @md {
   .drop.drop-element.dropjs-translations .dropjs-translations--content {
@@ -794,3 +796,52 @@
 //    right: 7px;
 //  }
 //}
+#app-wrapper .app-content.page-translations .grid-col.grid-col--container {
+  padding: 16px 0;
+  .translations-body {
+    margin-top: 32px;
+    .app-content__footer{
+      margin: 0;
+    }
+  }
+  .header-translation__compare {
+    @media only screen and (min-width: 1200px) {
+      margin-right: 24px;
+    }
+  }
+  .translations-table {
+    thead th {
+      height: 43px;
+    }
+    tbody tr:not(.translation-new-row) td:first-of-type{
+      @media only screen and (min-width: 1200px) {
+        padding-left: 22px !important;
+      }
+    }
+    tbody .translation-row__counter{
+      margin-right: 0;
+    }
+    tbody tr.translation-new-row td {
+      padding: 8px 0px !important;
+    }
+    tbody tr:not(.translation-new-row) td {
+      padding: 7px 0px !important;
+
+    }
+    .translation-new-row .translation-new-row__key textarea {
+      @media only screen and (min-width: 1200px){
+      margin-right: 16px;
+      }
+    }
+    .table-key {
+      text-align: left;
+      &>div{
+        justify-content: flex-start;
+      }
+      .table-key__init-edit, .table-key__actions, .table-key__delete-row {
+        margin-right: 16px;
+        margin-left: auto;
+      }
+    }
+  }
+}

@@ -1,5 +1,4 @@
 // Menu Active Element
-import { antaresCfg } from './../../../config/antares_cfg';
 
 export const activeMenuElement = {
   init() {
@@ -8,7 +7,7 @@ export const activeMenuElement = {
     let lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
     var linkColor = 'white';
 
-    if (antaresCfg.menuSimpleSubmenu) {
+    if (window.antaresCfgLocal.menuSimpleSubmenu) {
       linkColor = '#5C6066';
     }
 
@@ -19,7 +18,7 @@ export const activeMenuElement = {
     let link = $('a[href="' + lastSegment + '"]');
     link.closest('li[data-index]').addClass('is-active');
     link.closest('li[data-index]').addClass('is-active');
-    if (antaresCfg.menuSimpleSubmenu === true) {
+    if (window.antaresCfgLocal.menuSimpleSubmenu === true) {
       link.css('color', '#5c6066');
     } else {
       link.css('color', 'white');

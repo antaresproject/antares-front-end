@@ -179,7 +179,7 @@
     },
     editCell: function() {
       $('.translations-table').on('click', '.table-key .table-key__init-edit, .table-key .table-key__text', function(event) {
-        $parent = $(this).closest('.table-key');
+        var $parent = $(this).closest('.table-key');
         $parent.toggleClass('table-key--edit');
         var value = $parent.find('.table-key__text').text();
         $parent.find('.table-key__text');
@@ -191,7 +191,7 @@
       });
 
       $('.translations-table').on('click', ' .table-key .table-key__remove', function(event) {
-        $parent = $(this).closest('.table-key');
+        var $parent = $(this).closest('.table-key');
         $parent
           .find('textarea')
           .prop('type', 'hidden')
@@ -200,7 +200,7 @@
       });
 
       $('.translations-table').on('click', '.table-key .table-key__add', function(event) {
-        $parent = $(this).closest('.table-key');
+        var $parent = $(this).closest('.table-key');
         var $input = $parent.find('textarea');
         var inputVal = $input.val();
 

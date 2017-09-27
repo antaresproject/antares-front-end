@@ -20,7 +20,7 @@
 
 /*global componentHandler enquire ready */
 
-import { antaresCfg } from './../config/antares_cfg';
+// import {antaresCfg} from './../config/antares_cfg';
 
 const AntaresForms = {
   init() {
@@ -47,6 +47,7 @@ const AntaresForms = {
     self.elements.openSearchFilters();
 
     self.elements.tablePagination();
+    self.elements.searchLogs();
 
     //MDL reinit
     componentHandler.upgradeAllRegistered();
@@ -177,7 +178,9 @@ const AntaresForms = {
         } else {
           $(this)
             .closest('.tab-search')
-            .addClass('tab-search--open-search').find('input').focus();
+            .addClass('tab-search--open-search')
+            .find('input')
+            .focus();
         }
       });
       //   }
@@ -1189,6 +1192,56 @@ const AntaresForms = {
             .addClass('next');
         });
       }, 300);
+    },
+    searchLogs() {
+      let parent = $('.card--logs');
+      parent.find('.mdl-textfield__input').keyup(function() {
+        if ($(this).value !== '') {
+          let inputLogs = parent.find('.mdl-textfield__input')[0].value;
+          parent
+            .find('.timeline__padding > div')
+            .closest('.timeline__entry--ok,.timeline__entry')
+            .css('display', 'flex');
+          for (let i = 0; i < parent.find('.timeline__padding > div').length; i++) {
+            let textFromLogs = parent.find('.timeline__padding > div')[i];
+            if (!parent.find('.timeline__padding > div')[i].innerText.search(new RegExp(inputLogs, 'i'))) {
+              //magic this
+              $(textFromLogs)
+                .closest('.timeline__entry--ok,.timeline__entry')
+                .css('display', 'flex');
+            } else {
+              $(textFromLogs)
+                .closest('.timeline__entry--ok,.timeline__entry')
+                .css('display', 'none');
+            }
+          }
+          $('.search-box').adjustCardHeight();
+        }
+        if (parent.find('.mdl-textfield__input')[0].value === '') {
+          setTimeout(function() {
+            $('.current10').click();
+          });
+        }
+      });
+      $('select.card-ctrls--select2')
+        .select2()
+        .on('select2:select select2:unselect', function() {
+          let dataTypeLogs = $(this).select2('val');
+          parent.find('.timeline__entry--ok,.timeline__entry').css('display', 'none');
+          for (let i = 0; i < parent.find('.timeline__padding > div').length; i++) {
+            if ($(parent.find('.timeline__indicator')[i]).attr('data-logs-type') === dataTypeLogs) {
+              $(parent.find('.timeline__indicator')[i])
+                .closest('.timeline__entry--ok,.timeline__entry')
+                .css('display', 'flex');
+            }
+          }
+          if (dataTypeLogs === 'All') {
+            setTimeout(function() {
+              $('.current10').click();
+            });
+          }
+          $('.search-box').adjustCardHeight();
+        });
     }
   }
 };

@@ -106,7 +106,7 @@ const AntaresGridstack = {
     require('jquery-ui-touch-punch');
     let gridstack_options = {
       animate: false,
-      minWidth: 1024,
+      minWidth: 1023,
       alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
       resizable: {
         handles: 'e, se, s, sw, w, n'

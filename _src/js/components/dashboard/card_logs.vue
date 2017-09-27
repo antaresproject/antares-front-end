@@ -38,9 +38,9 @@
                     <div data-scrollable  class="dataTablesLogs">
                         <ul class="timeline" >
                             <li v-bind:class="{'timeline__entry--ok': log.status === 'ok'}" class="timeline__entry"
-                                v-for="log in logList">
+                                v-for="log in logList" >
                                 <div class="timeline__indicator" :data-color="log.color"
-                                     :data-tooltip-inline="log.tooltipText"></div>
+                                     :data-tooltip-inline="log.tooltipText" :data-logs-type="log.category"></div>
                                 <div class="timeline__padding" v-html="log.html"></div>
                             </li>
                         </ul>
@@ -97,7 +97,26 @@ export default {
             logList: [{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                html: '<div> Te <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                category: 'Te',
+                tooltipText: 'Brand 2'
+            }, {
+                color: c2,
+                status: 'warning',
+                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                category: 'Brand',
+                tooltipText: 'Brands 5'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div> Te 2 <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
+                category: 'Te',
+                tooltipText: 'Brands 11'
+            }, {
+                color: c1,
+                status: 'ok',
+                html: '<div> Email <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
+                category: 'Email',
                 tooltipText: 'Brand 2'
             }, {
                 color: c2,
@@ -117,22 +136,8 @@ export default {
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
-                color: c1,
-                status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                html: '<div> To epto login <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                category: 'Login',
                 tooltipText: 'Brands 5'
             }, {
                 color: c3,
@@ -316,11 +321,11 @@ export default {
             console.log(pageNum)
         },
         selectLiveChange: function (event) {
-            var self = this;
-            $(document.body).find(self.$el).on("change", ".card--logs-filter", function () {
-                console.log(this.value);
-                self.selectFilter = this.value;
-            });
+//            var self = this;
+//            $(document.body).find(self.$el).on("change", ".card--logs-filter", function () {
+//                console.log(this.value);
+//                self.selectFilter = this.value;
+//            });
         }
     }
 };

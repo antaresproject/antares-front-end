@@ -43,41 +43,6 @@
 .this-is-dropczyk--out {
   .filter-content {
     position: relative;
-    &:before {
-      content: "\f2f8";
-      position: absolute;
-      right: 8px;
-      width: 20px;
-      height: 20px;
-      -webkit-font-smoothing: antialiased;
-      top: -21px;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.07);
-      font: normal normal normal 34px/1 'Material-Design-Iconic-Font';
-      z-index: 1;
-      @media @xs {
-        display: none;
-      }
-    }
-    &:after {
-      content: '\f2f8';
-      position: absolute;
-      right: 8px;
-      -webkit-font-smoothing: antialiased;
-      top: -16px;
-      text-align: center;
-      color: white;
-      font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
-      z-index: 2;
-      width: 20px;
-      height: 20px;
-      @media @xs {
-        display: none;
-      }
-    }
-  }
-  .dropjs-target {
-
   }
   .filter-content {
     background-color: white;
@@ -167,88 +132,10 @@
   background-color: @standard-white;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   margin-top: 8px;
-  @media @xs {
-    transform: inherit !important;
-    position: fixed !important;
-  }
   @media @xs{
     left: auto !important;
-    right: 8px !important;
-  }
-  &.drop-target-attached-bottom {
-    &:before {
-      position: absolute;
-      top: -18px;
-      left: 12px;
-      display: inline-block;
-      width: 15px;
-      color: rgba(0, 0, 0, 0.07);
-      text-align: center;
-      text-rendering: auto;
-      content: '\f2f8';
-      font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
-      z-index: 1;
-      @media @xs{
-        left: auto;
-        right: 20px;
-      }
-    }
-    &:after {
-      position: absolute;
-      top: -16px;
-      left: 12px;
-      display: inline-block;
-      width: 15px;
-      text-align: center;
-      color: white;
-      text-rendering: auto;
-      content: '\f2f8';
-      font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
-      z-index: 2;
-      @media @xs{
-        left: auto;
-        right: 20px;
-      }
-    }
-  }
-  &.drop-target-attached-top, &.drop-abutted-top {
-    &:before {
-      position: absolute;
-      bottom: -18px;
-      left: 12px;
-      display: inline-block;
-      width: 15px;
-      color: rgba(0, 0, 0, 0.07);
-      text-align: center;
-      text-rendering: auto;
-      content: '\f2f8';
-      font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
-      z-index: 1;
-      @media @xs{
-        left: auto;
-        right: 20px;
-      }
-    }
-    &:after {
-      position: absolute;
-      bottom: -16px;
-      left: 12px;
-      display: inline-block;
-      width: 15px;
-      text-align: center;
-      color: white;
-      text-rendering: auto;
-      content: '\f2f8';
-      font: normal normal normal 26px/1 'Material-Design-Iconic-Font';
-      z-index: 2;
-      @media @xs{
-        left: auto;
-        right: 20px;
-      }
-    }
-    &:before, &:after {
-      transform: rotate(180deg);
-    }
+    right: ~'calc(100vw - 48px)' !important;
+    width: 70% !important;
   }
 }
 

@@ -575,11 +575,11 @@ const AntaresTableView = {
                 let parent = container.closest('.grid-stack-item');
 
                 function checkSizeGridTable() {
-                    if (parent.attr('data-gs-width') === '24') {
-                        container.addClass('size-gridstack--max');
-                    } else {
-                        container.removeClass('size-gridstack--max');
-                    }
+                    // if (parent.attr('data-gs-width') === '24') {
+                    //     container.addClass('size-gridstack--max');
+                    // } else {
+                    //     container.removeClass('size-gridstack--max');
+                    // }
                 }
 
                 checkSizeGridTable();
