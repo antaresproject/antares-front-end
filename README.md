@@ -36,19 +36,23 @@ OR
 
 `yarn install`
 
-After that, you can init building process, by typing
+After that, you can init dev build, by typing
 
-`grunt`
-
-in your console to start css generation. 
-
-Upon completion, fire webpack with command:
-
-`webpack-dev-server`
+`npm run dev`
 
 That will generate all others system assets.
 
 You can preview the system on url `http://localhost:9000/`.
+
+You can also use 
+
+`npm run dev-build`
+
+for local file access, or
+
+`npm run prod` 
+
+for generating minimized build.
 ## Browsers support
 
 | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/edge.png" alt="IE / Edge" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/firefox.png" alt="Firefox" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome.png" alt="Chrome" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/safari.png" alt="Safari" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/opera.png" alt="Opera" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
