@@ -7,4 +7,4 @@ before_install:
 install:
   - yarn install
 script:
-  - npm run dev
+  - npm run prod
