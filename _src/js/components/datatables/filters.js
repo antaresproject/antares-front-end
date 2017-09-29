@@ -27,7 +27,7 @@ const AntaresDatatablesFilters = {
         // this.randomNumbers();
     },
     randomNumbers() {
-        $('.ddown-multi .btn--dropdown').click(function () {
+        $('.ddown-multi .btn--dropdown').click(() => {
             var r1;
             var r2;
             $('.ddown-multi .ddown__content .ddown__sgl .slider-box').html('WORK RANDOMIZER (randomNumbers())');
@@ -107,17 +107,38 @@ const AntaresDatatablesFilters = {
             }
         });
         function updateCountSwiperSliders(passedSlidesOnPage) {
+            // console.log(' ')
             var slideWidth = $('.swiper-slide .drop-target').width();
             var slideRealWidth = $('.filters .swiper-slide').width();
             var freeSpaceInSlide = slideRealWidth - slideWidth;
-            if (freeSpaceInSlide - slideWidth > slideWidth) {
+            // if (freeSpaceInSlide - slideWidth > slideWidth) {
+            //     slidesOnPage = passedSlidesOnPage + 1;
+            //     mySwiper.params.slidesPerView = slidesOnPage;
+            //     console.log('IF work')
+            // } else if (freeSpaceInSlide > slideWidth) {
+            //     console.log('ELSE IF work')
+            // } else {
+            //     slidesOnPage = passedSlidesOnPage - 1;
+            //     mySwiper.params.slidesPerView = slidesOnPage;
+            //     console.log('ELSE work')
+            // }
+            if (freeSpaceInSlide > slideWidth) {
                 slidesOnPage = passedSlidesOnPage + 1;
                 mySwiper.params.slidesPerView = slidesOnPage;
-            } else if (freeSpaceInSlide > slideWidth) {
-            } else {
+                // console.log('IF work')
+            } else if (freeSpaceInSlide < slideWidth) {
+                // console.log('ELSE IF work')
+            } else if (freeSpaceInSlide + slideWidth < slideWidth) {
                 slidesOnPage = passedSlidesOnPage - 1;
                 mySwiper.params.slidesPerView = slidesOnPage;
+                // console.log('ELSE work')
             }
+            //   console.log("slidesOnPage: "+slidesOnPage)
+            // console.log("slideWidth: "+slideWidth)
+            // console.log("slideRealWidth: "+slideRealWidth)
+            // console.log("freeSpaceInSlide: "+freeSpaceInSlide)
+            // console.log("freeSpaceInSlide - slideWidth: "+ (freeSpaceInSlide - slideWidth))
+            // console.log("slidesOnPage END: "+slidesOnPage)
 
             if ($('.swiper-filters--box .swiper-slide').length > slidesOnPage) {
                 if (typeof mySwiper.unlockSwipes === 'function') {
@@ -174,6 +195,7 @@ const AntaresDatatablesFilters = {
                                 $('.tab-search--filter').addClass('swiper--no-slides');
                             }
                         }, 500);
+                        updateCountSwiperSliders(slidesOnPage);
                     });
 
                     enquire.register('screen and (max-width: 767px)', {
@@ -254,7 +276,6 @@ const AntaresDatatablesFilters = {
             });
             $('.swiper-filters--box + .ddown .ddown__sgl .add-filter').on('click', function () {
                 // when add filter
-                console.log('click on addfilterbtn');
                 updateCountSwiperSliders(slidesOnPage);
                 updateSwiper(false);
                 updateSwiper(true);
@@ -272,6 +293,15 @@ const AntaresDatatablesFilters = {
         }
 
         activateSwiper(true);
+
+        $('.swiper-filters--box:not(.swiper-filters--no-active)')
+            .closest('.card')
+            .mousedown(function () {
+                $('.swiper-filters--box:not(.swiper-filters--no-active)').addClass('mouse-hand--grab');
+            })
+            .mouseup(function () {
+                $('.swiper-filters--box:not(.swiper-filters--no-active)').removeClass('mouse-hand--grab');
+            });
         $(window).resize(
             _.debounce(function () {
                 updateCountSwiperSliders(slidesOnPage);
@@ -291,7 +321,7 @@ const AntaresDatatablesFilters = {
         hoverCloseDelay: 50,
         // openDelay: 3000,
         focusDelay: 0,
-        blurDelay: 50,
+        blurDelay: 50
 
         // remove: true
     },
@@ -307,7 +337,7 @@ const AntaresDatatablesFilters = {
     },
     dropJSFilters() {
         const self = this;
-        let dropOne
+        let dropOne;
         $('.this-is-dropczyk .dropjs-target').each(function () {
             enquire.register('screen and (max-width: 767px)', {
                 match: function () {
@@ -327,7 +357,7 @@ const AntaresDatatablesFilters = {
                     dropOne.close();
                 },
                 unmatch: function () {
-                    dropOne.destroy()
+                    dropOne.destroy();
                 }
             });
         });
@@ -349,14 +379,14 @@ const AntaresDatatablesFilters = {
                     dropOne.close();
                 },
                 unmatch: function () {
-                    dropOne.destroy()
+                    dropOne.destroy();
                 }
             });
         });
     },
     addDropJSFilters(target) {
         const self = this;
-        let dropTwo
+        let dropTwo;
         enquire.register('screen and (max-width: 767px)', {
             match: function () {
                 dropTwo = new Drop(
@@ -374,7 +404,7 @@ const AntaresDatatablesFilters = {
                 dropTwo.close();
             },
             unmatch: function () {
-                dropTwo.destroy()
+                dropTwo.destroy();
             }
         });
         enquire.register('screen and (min-width: 768px)', {
@@ -393,7 +423,7 @@ const AntaresDatatablesFilters = {
                 dropTwo.close();
             },
             unmatch: function () {
-                dropTwo.destroy()
+                dropTwo.destroy();
             }
         });
     },
@@ -589,6 +619,7 @@ const AntaresDatatablesFilters = {
                 var dataMax = parseInt(parent.attr('data-type', dataName).attr('data-max'), 10);
                 if (maxInp > minInp && minInp >= dataMin && maxInp <= dataMax) {
                     self.filterAlertNumber('success', parent);
+                    self.addFilterDT(parent);
                     var filterContainer = $(this)
                         .closest('.filters')
                         .find('.card-filters--swiper');
@@ -702,6 +733,7 @@ const AntaresDatatablesFilters = {
                 var dataMax = parseInt(parent.attr('data-type', 'services').attr('data-max'), 10);
                 if (maxInp > minInp && minInp > dataMin && maxInp < dataMax) {
                     self.filterAlertNumber('warning', parent);
+                    self.editFilterDT(parent);
                     var values = [];
                     var valMin = parseInt(parent.find('.filter-spinner--min').val(), 10);
                     var valMax = parseInt(
@@ -798,7 +830,7 @@ const AntaresDatatablesFilters = {
                 })
             );
 
-            this.addFilterDT();
+
         } else if (category === 'warning') {
             parent.find('.filter-spinner--min').removeClass('filter-spinner--validation-error');
             parent.find('.filter-spinner--max').removeClass('filter-spinner--validation-error');
@@ -808,7 +840,7 @@ const AntaresDatatablesFilters = {
                 })
             );
 
-            this.editFilterDT(parent);
+
         }
     },
     filterAlertBadge(category, selectedStatus) {
@@ -835,10 +867,10 @@ const AntaresDatatablesFilters = {
             );
         }
     },
-    addFilterDT() {
+    addFilterDT(parent) {
         $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
-            var min = parseInt($('.tbl-c .filters .filter-spinner--min').val(), 10);
-            var max = parseInt($('.tbl-c .filters .filter-spinner--max').val(), 10);
+            var min = parseInt(parent.find('.filter-spinner--min').val(), 10);
+            var max = parseInt(parent.find('.filter-spinner--max').val(), 10);
             var age = parseFloat(data[5]) || 0; // use data for the age column
 
             if ((isNaN(min) && isNaN(max)) || (isNaN(min) && age <= max) || (min <= age && isNaN(max)) || (min <= age && age <= max)) {

@@ -66,13 +66,10 @@
 #app-wrapper {
   &.main-sidebar--top {
     @import "top_menu/top_menu";
-    .main-head, .main-content, .nav-container, .submenu section {
+    .card-bar__rel, .main-head, .main-content, .nav-container, .submenu section {
       max-width: 1400px;
       margin-left: auto;
       margin-right: auto;
-
-
-
       padding-left: 0;
       padding-right: 0;
       @media only screen and (max-width: 1450px) {
@@ -111,6 +108,11 @@
   &.main-sidebar--top--mobile {
     @media only screen and (max-width: 1023px) {
       @import "top_menu/top_menu_mobile";
+    }
+  }
+  &:not(.main-sidebar--top){
+    .main-menu > li >a {
+      padding: 0 20px;
     }
   }
 }

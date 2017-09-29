@@ -165,13 +165,7 @@ export default {
     }
 }
 
-.slick-list {
-    height: ~'calc(100% - 52px)';
-}
 
-.slick-track {
-    height: 100%;
-}
 
 
 
@@ -191,9 +185,6 @@ export default {
 
 
 
-.slick-list {
-    height: 100%;
-}
 
 #app-wrapper .app-content--widgets-movable .mdl-tabs .card-container--news .card__edit-view {
     background: #fff !important;
@@ -218,26 +209,7 @@ export default {
     background: transparent;
 }
 
-.blue-header-background {
-    position: absolute;
-    width: 100%;
-    display: block;
-    height: 27%;
-    top: 50px;
-    max-height: 94px;
-    /*@media only screen and (max-width: 1199px) {*/
-    /*height: 35%;*/
-    /*}*/
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: #02A8F3;
-        width: 100%;
-        height: 100%;
-    }
-}
+
 
 .card__title {
     position: relative;

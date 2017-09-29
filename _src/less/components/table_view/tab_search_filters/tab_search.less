@@ -130,7 +130,7 @@
       }
 
       input {
-        font-size: 16px !important;
+        //font-size: 16px !important;
       }
 
       .mdl-textfield__label {
@@ -368,10 +368,8 @@
     }
     .ddown-multi .ddown-multi__menu {
       width: 260px;
-      top: 0 !important;
     }
     .ddown-multi__submenu {
-      top: 0 !important;
     }
 
 
@@ -447,4 +445,28 @@
 
 #app-wrapper .card-datatables .card.card--tabs .mdl-tabs .tbl-c {
   overflow-y: visible !important;
+}
+.card-datatables .tab-search [data-selectAR--mdl-big="true"] + .select2-container--mdl-big .select2-selection{
+  position: relative;
+  &:before, &:after{
+    bottom: -4px !important;
+  }
+  .select2-selection__arrow{
+    &:before{
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+}
+.card--logs .tab-search [data-selectAR--mdl-big="true"] + .select2-container--mdl-big .select2-selection{
+  position: relative;
+  &:before, &:after{
+    bottom: -1px !important;
+  }
+  .select2-selection__arrow{
+    &:before{
+      top: 45%;
+      transform: translateY(-50%)
+    }
+  }
 }

@@ -7,10 +7,29 @@
 
 // no records to show!
 #app-wrapper .app-content table .dataTables_empty {
-  position: absolute;
-  width: 98.5%;
+  //position: absolute;
+  width: 100%;
+  padding: 0;
+  cursor: auto;
   &:before {
     display: none;
   }
 }
-
+#app-wrapper .app-content .tbl-c--zd-empty table thead th{
+  display: none;
+}
+#app-wrapper .app-content .tbl-c--zd-empty {
+  //justify-content: center;
+  .btn--zd{
+    text-decoration: none;
+  }
+  table{
+    padding-bottom: 0;
+  }
+  tbody tr {
+    height: 100%;
+  }
+  //.pagination{
+  //  display: none;
+  //}
+}

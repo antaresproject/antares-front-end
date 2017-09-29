@@ -142,7 +142,7 @@ export const AntaresMobileSelectMode = {
     selectModeMarked(){
         $('.selected-all--marked').on('click', function () {
             $(this).closest('.tbl-c').find('table tbody tr').addClass('is-selected')
-            $(this).closest('.filters').find('#table-ma').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+            $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
         })
         $('.selected-all--unmarked').on('click', function () {
             $(this).closest('.tbl-c').find('table tbody tr').removeClass('is-selected')
@@ -152,6 +152,7 @@ export const AntaresMobileSelectMode = {
                 self.closest('.btn-selected').find('.btn-with-selected').removeClass('display-flex')
                 self.closest('.tbl-c').removeClass('selected-mode--touch-active')
                 self.closest('.tbl-c').find('.billevo-table tbody tr').off("click")
+                $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
                 // self.closest('.tbl-c').find('#table-ma').html('With Selected');
             })
         })

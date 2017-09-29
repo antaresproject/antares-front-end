@@ -608,7 +608,7 @@ const AntaresAC = {
   },
 
   updateDOM() {
-    $('body').append("<div class='ac-container'><div class='ac-container--wrapper'></div></div>");
+    $('body #app-wrapper').append("<div class='ac-container'><div class='ac-container--wrapper'></div></div>");
   },
 
   monkeyPatchAutocomplete() {

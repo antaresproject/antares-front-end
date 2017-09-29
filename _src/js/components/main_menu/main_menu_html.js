@@ -179,26 +179,28 @@ const AntaresMainMenuHtml = {
             enquire.register('screen and (min-width: 1024px)', {
                 //dla tableta
                 match: function () {
-                    var widthLi = 0;
-                    var menuLength;
-                    var widthOneLi;
-                    var i;
-                    if ($('.menu-scroll').hasClass('open-second-menu')) {
-                        menuLength = $('.menu-scroll> ul.main-menu--secondary > li').length;
-                        for (i = 0; i < menuLength; i++) {
-                            widthOneLi = $($('ul.main-menu--secondary > li')[i]).width() + 32; // 32===margins
-                            widthLi += widthOneLi;
+                    window.requestAnimationFrame(() => {
+                        var widthLi = 0;
+                        var menuLength;
+                        var widthOneLi;
+                        var i;
+                        if ($('.menu-scroll').hasClass('open-second-menu')) {
+                            menuLength = $('.menu-scroll> ul.main-menu--secondary > li').length;
+                            for (i = 0; i < menuLength; i++) {
+                                widthOneLi = $($('ul.main-menu--secondary > li')[i]).width() + 32; // 32===margins
+                                widthLi += widthOneLi;
+                            }
+                        } else {
+                            menuLength = $('.menu-scroll> ul.main-menu--primary > li').length;
+                            for (i = 0; i < menuLength; i++) {
+                                widthOneLi = $($('ul.main-menu--primary > li')[i]).width() + 32;
+                                widthLi += widthOneLi;
+                            }
                         }
-                    } else {
-                        menuLength = $('.menu-scroll> ul.main-menu--primary > li').length;
-                        for (i = 0; i < menuLength; i++) {
-                            widthOneLi = $($('ul.main-menu--primary > li')[i]).width() + 32;
-                            widthLi += widthOneLi;
-                        }
-                    }
-                    var menuWidth = widthLi + $('.menu-scroll .main-menu--brand').width();
-                    $('.more-trigger').css('left', menuWidth + $('.menu-scroll .main-menu--brand').offset().left + 30);
-                    $('.more-trigger').css('opacity', '1');
+                        var menuWidth = widthLi + $('.menu-scroll .main-menu--brand').width();
+                        $('.more-trigger').css('left', menuWidth + $('.menu-scroll .main-menu--brand').offset().left + 30);
+                        $('.more-trigger').css('opacity', '1');
+                    })
                 },
                 unmatch: function () {
                     $('.more-trigger').css('left', '50%');
@@ -209,30 +211,13 @@ const AntaresMainMenuHtml = {
     documentReady() {
         var self = this;
         if (window.antaresCfgLocal.statusMenuList.menuTop === true) {
-            enquire.register('screen and (max-width: 1023px)', {
-                //dla tableta
-                match: function () {
-                    $('.burgericon').on('click', function () {
-                        if ($('#app-wrapper').hasClass('main-sidebar--top--mobile')) {
-                            setTimeout(function () {
-                                self.moreTriggerTopHeight(); //for animation
-                            }, 200);
-                        }
-                    });
-                },
-                unmatch: function () {
-                    $('.burgericon').off;
-                }
-            });
             enquire.register('screen and (min-width: 1024px)', {
                 match: function () {
-                    self.moreTriggerTopHeight(); //for animation
                     $('.main-menu--secondary>li').css('opacity', '0'); //for animation
                     $('.main-menu--primary>li').css('opacity', '1'); //for animation
                 }
             });
         } else {
-            self.moreTriggerTopHeight(); //for animation
             $('.main-menu--secondary>li').css('opacity', '0'); //for animation
             $('.main-menu--primary>li').css('opacity', '1'); //for animation
         }

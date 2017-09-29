@@ -533,7 +533,6 @@
             width: 66%;
             overflow: hidden;
             canvas {
-                height: 266px !important;
             }
         }
         .card__right {
@@ -1327,6 +1326,22 @@
                     .truncate(55px)
                 }
             } // width: 56%;
+        }
+    }
+}
+@media only screen and (min-width: 1501px){
+    .main-sidebar--ca .card.card--chart.card--compare {
+        .card__right {
+            .datarow__left {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+.card.card--chart {
+    .card__right {
+        .datarow__sgl {
+            transition: 0ms !important;
         }
     }
 }

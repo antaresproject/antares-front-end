@@ -14,7 +14,7 @@
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
  * @link       http://antaresproject.io
- * 
+ *
 
  */
 

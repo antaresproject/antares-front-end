@@ -12,13 +12,14 @@
     <% } %>
     <% include ../layout/css_files %>
 </head>
+
+
+<body>
 <template id="vue-page-clients-details">
     <div class="client-value-chart--blue">
         <chart-client-value></chart-client-value>
     </div>
 </template>
-
-<body>
 <% include ../layout/app_wrapper_start_tag %>
 
 <% if(clientArea){ %>
@@ -44,7 +45,7 @@
             <!-- Clients Info -->
             <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="0" data-gs-y="0"
                  data-gs-width="5" data-gs-auto-position="0"
-                 data-gs-height="12" data-gs-min-width="5" data-gs-min-height="10">
+                 data-gs-height="12" data-gs-min-width="5" data-gs-min-height="19">
                 <div class="grid-stack-item-content">
                     <% include ../layout/widget_edit %>
                     <div class="card-container">
@@ -147,7 +148,7 @@
             <!--BIG TABLE (services, invoices, translation....)-->
             <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="0"
                  data-gs-width="14" data-gs-height="19"
-                 data-gs-min-width="13" data-gs-min-height="15" data-gs-auto-position="0">
+                 data-gs-min-width="13" data-gs-min-height="19" data-gs-auto-position="0">
                 <div class="grid-stack-item-content">
                     <% include ../layout/widget_edit %>
                     <div class="card card--pagination card--tabs" data-preload>
@@ -267,7 +268,7 @@
 
 
             <!--Client value-->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="20" data-gs-y="0"
+            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="19" data-gs-y="0"
                  data-gs-width="5" data-gs-height="10"
                  data-gs-min-width="4" data-gs-min-height="10" data-gs-auto-position="0" data-widget-resizable>
                 <div class="grid-stack-item-content">
@@ -381,7 +382,7 @@
 
         </div>
     </section>
-</div>
+
 </div>
 <% include ../layout/js_files %>
 </body>

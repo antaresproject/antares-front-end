@@ -14,7 +14,7 @@
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
  * @link       http://antaresproject.io
- * 
+ *
 
  */
 
@@ -519,10 +519,9 @@ Antares.prototype.components = {
       e.stopPropagation();
       $(this).removeClass('submenu-open');
     });
-
+      var el = $('.menu-aside-container');
     $('.app-content').bind('mousewheel DOMMouseScroll MozMousePixelScroll touchmove', function(e) {
-      var el = $('.menu-aside-container'),
-        toTop = $('.main-head').outerHeight(),
+        var toTop = $('.main-head').outerHeight(),
         isPositionFixed = el.css('position') === 'fixed';
 
       if ($(this).scrollTop() > toTop && !isPositionFixed) {
@@ -531,11 +530,10 @@ Antares.prototype.components = {
       if ($(this).scrollTop() - 100 < toTop && isPositionFixed) {
         el.removeClass('menu-aside-container--fixed');
       }
-      $('.page-settings .grid-container.grid-container--2col .grid-col--menu .menu-aside li a').on('click touchstart',function (e) {
-        console.log(e.target)
-        el.addClass('menu-aside-container--fixed');
-      })
     });
+      $('.grid-container.grid-container--2col .grid-col--menu .menu-aside:not(.menu-aside--links) li:not(.has-submenu) a').on('click touchstart',function (e) {
+          el.addClass('menu-aside-container--fixed');
+      })
   },
   frameworkPage: function() {
     var frameworkPage = $('.page-framework');

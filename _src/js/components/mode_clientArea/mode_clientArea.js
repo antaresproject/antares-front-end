@@ -40,6 +40,8 @@ function checkModeCA() {
   }
 }
 checkModeCA();
+
+
 export const AntaresModeClienArea = {
   init() {
     let self = this;

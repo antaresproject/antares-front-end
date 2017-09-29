@@ -28,25 +28,25 @@ const AntaresDdownGeneral = {
     },
 
     ddownTopCorrect() {
-        $('.ddown').click(function () {
-            let thisDdown = $(this);
-            let btnToTop = thisDdown[0].getBoundingClientRect().top;
-            let heightOfDdown = thisDdown.find('.ddown__menu').height() + 45;
-            let btnToBot = $(window).height() - btnToTop;
-            if (heightOfDdown > btnToTop) {
-                thisDdown.removeClass('ddown--open-up');
-                thisDdown.addClass('ddown--open-bottom');
-                thisDdown.find('.ddown__arrow').removeClass('without-arrows');
-            } else if (heightOfDdown > btnToBot) {
-                thisDdown.removeClass('ddown--open-bottom');
-                thisDdown.addClass('ddown--open-up');
-                thisDdown.find('.ddown__arrow').addClass('without-arrows');
-            } else {
-                thisDdown.removeClass('ddown--open-up');
-                thisDdown.addClass('ddown--open-bottom');
-                thisDdown.find('.ddown__arrow').removeClass('without-arrows');
-            }
-        });
+        // $('.ddown').click(function () {
+        //     let thisDdown = $(this);
+        //     let btnToTop = thisDdown[0].getBoundingClientRect().top;
+        //     let heightOfDdown = thisDdown.find('.ddown__menu').height() + 45;
+        //     let btnToBot = $(window).height() - btnToTop;
+        //     if (heightOfDdown > btnToTop) {
+        //         thisDdown.removeClass('ddown--open-up');
+        //         thisDdown.addClass('ddown--open-bottom');
+        //         thisDdown.find('.ddown__arrow').removeClass('without-arrows');
+        //     } else if (heightOfDdown > btnToBot) {
+        //         thisDdown.removeClass('ddown--open-bottom');
+        //         thisDdown.addClass('ddown--open-up');
+        //         thisDdown.find('.ddown__arrow').addClass('without-arrows');
+        //     } else {
+        //         thisDdown.removeClass('ddown--open-up');
+        //         thisDdown.addClass('ddown--open-bottom');
+        //         thisDdown.find('.ddown__arrow').removeClass('without-arrows');
+        //     }
+        // });
         $('.ddown__menu').removeClass('ddown--open-bottom');
         $('.ddown__menu').removeClass('ddown--open-up');
     },

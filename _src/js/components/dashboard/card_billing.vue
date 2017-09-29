@@ -9,7 +9,7 @@
                         <form action="" method="post">
 
                             <input data-daterangepicker="true" class="mr24">
-                        <input type="checkbox"  data-icheck="true" name="check" id="billing">
+                        <input type="checkbox"  data-icheck="true" name="check" id="billing"  class="compare-mode--checkbox">
                         <label class="ml8" v-on:click="compareMode = !compareMode" for="billing" >{{compareText}}</label>
                         </form>
                     </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="card__right">
                 <div class="mobile-compare">
-                        <input type="checkbox"  data-icheck="true" name="check" id="billing">
+                        <input type="checkbox"  data-icheck="true" name="check" id="billing" class="compare-mode--checkbox">
 
                     <label class="ml8" v-on:click="compareMode = !compareMode" for="billing" >{{compareText}}</label>
                 </div>

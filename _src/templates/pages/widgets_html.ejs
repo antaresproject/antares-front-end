@@ -44,34 +44,13 @@
                     <div class="card card--chart card--scrollbox" data-chart="true" data-preload>
                         <div class="card__left">
                             <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>Billing</span>
-                                </div>
+                                <div class="card__header-left"><span>Biling</span></div>
                                 <div class="card__header-right">
-                                    <div class="ddown ddown--view-more ddown--view-more-options">
-                                        <div class="ddown__init ddown__init--clean">
-                                            <a class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
-                                                        class="zmdi zmdi-more-vert"></i></a>
-                                        </div>
-                                        <div class="ddown__content">
-                                            <form action="" method="post">
-                                                <ul class="ddown__menu">
-                                                    <li>
-                                                        <input data-daterangepicker="true" class="mr24">
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" data-icheck="true" name="check"
-                                                               id="billing">
-                                                        <label class="ml8" for="billing">Compare</label>
-                                                    </li>
-                                                </ul>
-                                            </form>
-                                        </div>
-                                    </div>
                                     <form action="" method="post">
-                                        <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                        <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                        <label class="ml8" for="check[1]">Compare</label>
+
+                                        <input data-daterangepicker="true" class="mr24">
+                                        <input type="checkbox" data-icheck="true" name="billing" id="billing" class="compare-mode--checkbox">
+                                        <label class="ml8" for="billing">Compare</label>
                                     </form>
                                 </div>
                             </div>
@@ -83,20 +62,20 @@
                             </div>
                         </div>
                         <div class="card__right">
+                            <div class="mobile-compare">
+                                <input type="checkbox" data-icheck="true" name="check" id="billing" class="compare-mode--checkbox">
+                                <label class="ml8" for="billing">Compare</label>
+                            </div>
                             <header>
                                 <span class="card__title">New Subscriptions</span>
                                 <span class="card__indicator card__indicator--up compare">27%<i
                                             class="zmdi zmdi-long-arrow-up"></i></span>
                                 <span class="card__ammount"><strong>$5599.91</strong><span
                                             class="compare"> / $9216.41</span></span>
-                                <!--<div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">-->
-                                <!--<i class="zmdi zmdi-caret-down"></i>-->
-                                <!--</div>-->
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                            class="zmdi zmdi-caret-down"></i></div>
+
                             </header>
 
-                            <ul class="datarow mobile-toogle--target" data-scrollable>
+                            <ul  data-scrollable class="datarow mobile-toogle--target">
                                 <!--SINGLE-->
                                 <li class="datarow__sgl datarow__sgl--down">
                                     <div class="datarow__left">
@@ -283,6 +262,11 @@
                                     </div>
                                 </li>
                             </ul>
+                            <div class="mobile-toogle--box">
+                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" >
+                                    <i class="zmdi zmdi-caret-down"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -295,34 +279,13 @@
                     <div class="card card--chart card--scrollbox" data-chart="true" data-preload>
                         <div class="card__left">
                             <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>Subscriptions</span>
-                                </div>
+                                <div class="card__header-left"><span>Subscriptions</span></div>
                                 <div class="card__header-right">
-                                    <div class="ddown ddown--view-more ddown--view-more-options">
-                                        <div class="ddown__init ddown__init--clean">
-                                            <a class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
-                                                        class="zmdi zmdi-more-vert"></i></a>
-                                        </div>
-                                        <div class="ddown__content">
-                                            <form action="" method="post">
-                                                <ul class="ddown__menu">
-                                                    <li>
-                                                        <input data-daterangepicker="true" class="mr24">
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" data-icheck="true" name="check"
-                                                               id="billing">
-                                                        <label class="ml8" for="billing">Compare</label>
-                                                    </li>
-                                                </ul>
-                                            </form>
-                                        </div>
-                                    </div>
                                     <form action="" method="post">
-                                        <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                        <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                        <label class="ml8" for="check[1]">Compare</label>
+
+                                        <input data-daterangepicker="true" class="mr24">
+                                        <input type="checkbox" data-icheck="true" name="subscriptions" id="subscriptions"  class="compare-mode--checkbox">
+                                        <label class="ml8" for="subscriptions">Compare</label>
                                     </form>
                                 </div>
                             </div>
@@ -333,16 +296,19 @@
                             </div>
                         </div>
                         <div class="card__right">
+                            <div class="mobile-compare">
+                                <input type="checkbox" data-icheck="true" name="subscriptions" id="subscriptions" class="compare-mode--checkbox">
+                                <label class="ml8" for="subscriptions">Compare</label>
+                            </div>
                             <header>
                                 <span class="card__title">New Subscriptions</span>
                                 <span class="card__indicator card__indicator--down compare">28%<i
                                             class="zmdi zmdi-long-arrow-down"></i></span>
                                 <span class="card__ammount"><strong>$2897.98</strong><span
                                             class="compare"> / $3484.87</span></span>
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                            class="zmdi zmdi-caret-down"></i></div>
+
                             </header>
-                            <ul class="datarow mobile-toogle--target " data-scrollable>
+                            <ul data-scrollable class="datarow mobile-toogle--target" >
                                 <!--SINGLE-->
                                 <li class="datarow__sgl datarow__sgl--up">
                                     <div class="datarow__left">
@@ -375,7 +341,8 @@
                                         <span class="datarow__status">Pedning</span>
                                     </div>
                                     <div class="datarow__right">
-                                        <span class="datarow__data"><strong>23</strong>/121</span>
+                                       <span class="datarow__data"><strong>55</strong><span
+                                                   class="compare">/121</span></span>
                                         <span class="datarow__percentage compare"><span>11%</span>
                                                                                 <i class="zmdi zmdi-long-arrow-down"></i>
                                                                                 </span>
@@ -395,6 +362,11 @@
                                     </div>
                                 </li>
                             </ul>
+                            <div class="mobile-toogle--box">
+                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" >
+                                    <i class="zmdi zmdi-caret-down"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -407,34 +379,13 @@
                     <div class="card card--chart card--scrollbox" data-chart="true" data-preload>
                         <div class="card__left">
                             <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>Orders</span>
-                                </div>
+                                <div class="card__header-left"><span>Orders</span></div>
                                 <div class="card__header-right">
-                                    <div class="ddown ddown--view-more ddown--view-more-options">
-                                        <div class="ddown__init ddown__init--clean">
-                                            <a class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
-                                                        class="zmdi zmdi-more-vert"></i></a>
-                                        </div>
-                                        <div class="ddown__content">
-                                            <form action="" method="post">
-                                                <ul class="ddown__menu">
-                                                    <li>
-                                                        <input data-daterangepicker="true" class="mr24">
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" data-icheck="true" name="check"
-                                                               id="billing">
-                                                        <label class="ml8" for="billing">Compare</label>
-                                                    </li>
-                                                </ul>
-                                            </form>
-                                        </div>
-                                    </div>
                                     <form action="" method="post">
-                                        <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                        <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                        <label class="ml8" for="check[1]">Compare</label>
+
+                                        <input data-daterangepicker="true" class="mr24">
+                                        <input type="checkbox" data-icheck="true" name="orders" id="orders"  class="compare-mode--checkbox">
+                                        <label class="ml8" for="orders">Compare</label>
                                     </form>
                                 </div>
                             </div>
@@ -445,16 +396,19 @@
                             </div>
                         </div>
                         <div class="card__right">
+                            <div class="mobile-compare">
+                                <input type="checkbox" data-icheck="true" name="orders" id="orders" class="compare-mode--checkbox">
+                                <label class="ml8" for="orders">Compare</label>
+                            </div>
                             <header>
                                 <span class="card__title">New Subscriptions</span>
                                 <span class="card__indicator card__indicator--up compare">39%<i
                                             class="zmdi zmdi-long-arrow-up"></i></span>
                                 <span class="card__ammount"><strong>$3215.22</strong><span
                                             class="compare"> / $4512.21</span></span>
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                            class="zmdi zmdi-caret-down"></i></div>
+
                             </header>
-                            <ul class="datarow mobile-toogle--target" data-scrollable>
+                            <ul data-scrollable class="datarow mobile-toogle--target">
                                 <!--SINGLE-->
                                 <li class="datarow__sgl datarow__sgl--down">
                                     <div class="datarow__left">
@@ -521,6 +475,11 @@
                                     </div>
                                 </li>
                             </ul>
+                            <div class="mobile-toogle--box">
+                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" >
+                                    <i class="zmdi zmdi-caret-down"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -533,34 +492,13 @@
                     <div class="card card--chart card--scrollbox" data-chart="true" data-preload>
                         <div class="card__left">
                             <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>Tickets</span>
-                                </div>
+                                <div class="card__header-left"><span>Tickets</span></div>
                                 <div class="card__header-right">
-                                    <div class="ddown ddown--view-more ddown--view-more-options">
-                                        <div class="ddown__init ddown__init--clean">
-                                            <a class="btn btn--link btn--md btn--default mdl-button mdl-js-button mdl-js-ripple-effect card__link"><i
-                                                        class="zmdi zmdi-more-vert"></i></a>
-                                        </div>
-                                        <div class="ddown__content">
-                                            <form action="" method="post">
-                                                <ul class="ddown__menu">
-                                                    <li>
-                                                        <input data-daterangepicker="true" class="mr24">
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" data-icheck="true" name="check"
-                                                               id="billing">
-                                                        <label class="ml8" for="billing">Compare</label>
-                                                    </li>
-                                                </ul>
-                                            </form>
-                                        </div>
-                                    </div>
                                     <form action="" method="post">
-                                        <input data-daterangepicker="true" class="mr24" data-placeholder="You bettah!">
-                                        <input type="checkbox" data-icheck="true" name="check[1]" id="check[1]">
-                                        <label class="ml8" for="check[1]">Compare</label>
+
+                                        <input data-daterangepicker="true" class="mr24">
+                                        <input type="checkbox" data-icheck="true" name="tickets" id="tickets"  class="compare-mode--checkbox">
+                                        <label class="ml8" for="tickets">Compare</label>
                                     </form>
                                 </div>
                             </div>
@@ -571,19 +509,19 @@
                             </div>
                         </div>
                         <div class="card__right">
+                            <div class="mobile-compare">
+                                <input type="checkbox" data-icheck="true" name="tickets" id="tickets" class="compare-mode--checkbox">
+                                <label class="ml8" for="tickets">Compare</label>
+                            </div>
                             <header>
                                 <span class="card__title">New Subscriptions</span>
                                 <span class="card__indicator card__indicator--down compare">25%<i
                                             class="zmdi zmdi-long-arrow-down"></i></span>
                                 <span class="card__ammount"><strong>$1241.28</strong><span
                                             class="compare"> / $2774.01</span></span>
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
-                                    <i class="zmdi zmdi-caret-down"></i>
-                                </div>
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                            class="zmdi zmdi-caret-down"></i></div>
+
                             </header>
-                            <ul class="datarow mobile-toogle--target" data-scrollable>
+                            <ul data-scrollable class="datarow mobile-toogle--target">
                                 <!--SINGLE-->
                                 <li class="datarow__sgl datarow__sgl--down">
                                     <div class="datarow__left">
@@ -689,13 +627,18 @@
                                     </div>
                                 </li>
                             </ul>
+                            <div class="mobile-toogle--box">
+                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect" >
+                                    <i class="zmdi zmdi-caret-down"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="20" data-gs-width="6"
-                 data-gs-height="10" data-gs-min-width="6" data-gs-min-height="8"
+                 data-gs-height="10" data-gs-min-width="6" data-gs-min-height="6"
                  class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide ui-draggable-disabled ui-resizable-disabled"
                  style="z-index: 0;">
                 <div class="grid-stack-item-content">
@@ -717,7 +660,7 @@
                             </div>
                         </div>
                         <div data-v-709cec76="" data-widget-name="card--info"
-                             class="card card--info grid-size--tablet-xs">
+                             class="card card--info">
                             <div data-v-709cec76="" class="card__header">
                                 <div data-v-709cec76="" class="card__header-left"><span
                                             data-v-709cec76="">System Info</span></div>
@@ -843,12 +786,7 @@
                                                                                              class="datarow__data"><strong
                                                         data-v-709cec76="">Confirmed</strong></span></div>
                                     </li>
-                                    <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                                        <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                                    </div>
-                                    <div class="ps__scrollbar-y-rail" style="top: 0px; height: 96px; right: 0px;">
-                                        <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 23px;"></div>
-                                    </div>
+
                                 </ul>
                             </div>
                         </div>
@@ -868,7 +806,7 @@
                 <div class="grid-stack-item-content">
                     <div class="card-container card-container--news">
                         <% include ../layout/widget_edit %>
-                        <div class="card card--news card--primary" data-preload>
+                        <div class="card card--news" data-preload>
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <div class="card__header-left">
@@ -881,30 +819,37 @@
                                              data-slickNext="true"><i class="icon icon--chev-right"></i></div>
                                     </div>
                                 </div>
+                                <span class="blue-header-background"></span>
                                 <div class="card__slider" data-slick="true">
                                     <div>
                                         <div class="card__info">
-                                            <span class="card__title">Phasellus fermentum in, dolor. Bassel fermentum lorem Ipsum dolor. Ferentium Artotel in, dolor.</span>
-                                            <span class="card__date">Jan 9, 2015</span>
-                                            <span class="card__author">Added by Konrad Keck</span>
+                                            <span class="card__title">Phasellus fermentum in, dolor. otel in, dolor. </span>
+                                            <span class="card__date">
+                                 <i class="zmdi zmdi-calendar-alt"></i> Jan 9, 2015</span>
+                                            <span class="card__author">
+                                <i class="zmdi zmdi-account"></i> Added by Konrad Keck</span>
                                         </div>
                                         <div class="card__content">
                                             <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna...</span>
                                         </div>
                                         <div class="card__footer">
+
                                             <button class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
                                                 READ MORE
                                             </button>
+
                                         </div>
                                     </div>
                                     <div>
                                         <div class="card__info">
-                                            <span class="card__title">Lorem Epsum Doloris Malis.</span>
-                                            <span class="card__date">Dec 10, 2015</span>
-                                            <span class="card__author">Added by Łukasz Cirut</span>
+                                            <span class="card__title">Lorem Epsum Doloris Malis. </span>
+                                            <span class="card__date">
+                                <i class="zmdi zmdi-calendar-alt"></i>Dec 10, 2015</span>
+                                            <span class="card__author">
+                                <i class="zmdi zmdi-account"></i> Added by Łukasz Cirut</span>
                                         </div>
                                         <div class="card__content">
-                                            <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret! Maecenas malesuada, ut molestie a. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</span>
+                                            <span> Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna aloret...</span>
                                         </div>
                                         <div class="card__footer">
                                             <a class="btn btn--link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">READ
@@ -950,31 +895,7 @@
                                                     class="mdl-ripple"></span></span></i></div>
                             </div>
                             <div class="card__content  datarow flex ff-cnw jc-flex-start">
-                                <div class="card-ctrls tab-search tab-search--standard">
-                                    <div class="card-ctrls__left">
-                                        <div class="search-box search-box--dark"><i class="zmdi zmdi-search"></i>
-                                            <form action="">
-                                                <div class="search-box__mdl-textfield mdl-textfield mdl-js-textfield is-upgraded"
-                                                     data-upgraded=",MaterialTextfield"><input type="text"
-                                                                                               id="tableSearch"
-                                                                                               autocomplete="off"
-                                                                                               class="mdl-textfield__input search-box__search-field">
-                                                    <label for="tableSearch" class="mdl-textfield__label">Search</label>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <select name="select" data-selectar--mdl-big="true" data-prefix="Show: "
-                                                data-select2--class="card-ctrls--select2 card-ctrls--select2-search"
-                                                class="mb24 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                            <option value="">All</option>
-                                            <option value="" selected="selected">Option 2</option>
-                                            <option value="">Option 3</option>
-                                            <option value="">Option 4</option>
-                                            <option value="">Option 5</option>
-                                            <option value="">Option 6</option>
-                                            <option value="">Option 7</option>
-                                        </select></div>
-                                </div>
+                                <% include ../layout/card_ctrls %>
                                 <div class="datarow">
                                     <div data-scrollable="" class="dataTablesLogs ps ps--theme_default ps--active-y"
                                          data-ps-id="2c2e86e0-8d26-9d96-052c-7d7f85715384" style="position: relative;">

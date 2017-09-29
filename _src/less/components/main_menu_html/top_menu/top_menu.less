@@ -229,7 +229,7 @@ aside.main-sidebar {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
     height: auto;
     min-height: 320px; // lets go
-    background-color: rgb(62, 73, 84);
+    background-color: #3d434e;
     width: 100%;
     position: absolute;
     top: 80px;
@@ -424,84 +424,81 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
     left: 0;
   }
 }
-
-.card-bar {
-  right: -100%;
-  display: block;
-  width: 300px;
-  height: 100%;
-  position: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.app-content--widgets-movable .card-bar{
   top: 80px;
-  left: auto;
-  background-color: #3d454c;
-  z-index: 100;
-  transition: 300ms;
-  .card-bar__rel {
-    transition: 300ms;
-    opacity: 0;
-  }
-  .card-bar__rel {
-    width: 100%;
-    display: block;
-    opacity: 1;
-  }
-  .card-bar__search {
-    height: 20%;
-    min-width: inherit;
-    max-width: inherit;
-    border-right: 0;
-    border-bottom: 1px solid #2d353d;
-    width: 100%;
-    &:after {
-      top: auto;
-      right: 50%;
-      transform: rotate(45deg);
-      bottom: -6px;
-    }
-  }
-  .card-bar__items {
-    display: inline-block;
-    margin: 0;
-    width: 100%;
-    overflow-y: auto;
-    height: ~'calc(100% - 200px)';
-    a {
-      align-items: center;
-      justify-content: center;
-      margin: 16px 0;
-      padding-right: 0;
-      .image {
-        width: 100%;
-        height: 170px;
-      }
-    }
-  }
 }
+.card-bar{
+  position: fixed;
+  top: -70px
+}
+//.card-bar {
+//  right: -100%;
+//  display: block;
+//  width: 300px;
+//  height: 100%;
+//  position: fixed;
+//  display: -webkit-box;
+//  display: -webkit-flex;
+//  display: -ms-flexbox;
+//  display: flex;
+//  top: 80px;
+//  left: auto;
+//  background-color: #3d454c;
+//  z-index: 100;
+//  transition: 300ms;
+//  .card-bar__rel {
+//    transition: 300ms;
+//    opacity: 0;
+//  }
+//  .card-bar__rel {
+//    width: 100%;
+//    display: block;
+//    opacity: 1;
+//  }
+//  .card-bar__search {
+//    height: 20%;
+//    min-width: inherit;
+//    max-width: inherit;
+//    border-right: 0;
+//    border-bottom: 1px solid #2d353d;
+//    width: 100%;
+//    &:after {
+//      top: auto;
+//      right: 50%;
+//      transform: rotate(45deg);
+//      bottom: -6px;
+//    }
+//  }
+//  .card-bar__items {
+//    display: inline-block;
+//    margin: 0;
+//    width: 100%;
+//    overflow-y: auto;
+//    height: ~'calc(100% - 200px)';
+//    a {
+//      align-items: center;
+//      justify-content: center;
+//      margin: 16px 0;
+//      padding-right: 0;
+//      .image {
+//        width: 100%;
+//        height: 170px;
+//      }
+//    }
+//  }
+//}
 
-.app-content:before {
-  top: 0;
-}
+
 
 .app-content #widgets-edit:before {
   display: none;
 }
 
-.app-content--widgets-movable .main-content {
-  width: 90%;
-}
 
-.app-content--widgets-movable .main-head {
-  width: 90%;
-  margin-top: 0;
-}
 
-.app-content--widgets-movable .card-bar {
-  right: 0;
-}
+
+
+
 
 &.edit-widget-open {
   .main-sidebar {
@@ -577,9 +574,9 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   }
 }
 
-@media only screen and (max-width: 1500px) {
-  .page-dashboard .comiseo-daterangepicker-triggerbutton {
-    .truncate(200px);
-  }
-}
+//@media only screen and (max-width: 1500px) {
+//  .page-dashboard .comiseo-daterangepicker-triggerbutton {
+//    .truncate(200px);
+//  }
+//}
 

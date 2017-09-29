@@ -2,7 +2,8 @@ var path = './../../../';
 
 // EXTERNAL DEPS:
 require('./../../../js/external/modified/context_menu.js'); // css in package
-require('script-loader!datatables');
+// require('script-loader!datatables');
+require('./../../../js/external/modified/dataTables');
 require('script-loader!datatables.net-responsive'); // no css
 require('script-loader!datatables.net-scroller'); // no css
 require('script-loader!datatables.net-buttons'); // no css

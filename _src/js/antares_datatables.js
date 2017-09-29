@@ -182,30 +182,66 @@ const AntaresTableView = {
                     var container = $('.tbl-c');
                     var self = container;
                     if (container.has(e.target).length === 0) {
-                        self.closest('.tbl-c').find('#table-ma').attr('disabled', 'disabled');
-                        self.closest('.tbl-c').find('#table-ma span').html('With Selected');
+                        self
+                            .closest('.tbl-c')
+                            .find('#table-ma')
+                            .attr('disabled', 'disabled');
+                        self
+                            .closest('.tbl-c')
+                            .find('#table-ma span')
+                            .html('With Selected');
                         self.closest('.tbl-c').removeClass('selected-mode--active');
-                        self.closest('.tbl-c').find('table tbody tr td').removeClass('no-arrow');
-                        self.closest('.tbl-c').find('.btn-with-selected').removeClass('display-flex');
+                        self
+                            .closest('.tbl-c')
+                            .find('table tbody tr td')
+                            .removeClass('no-arrow');
+                        self
+                            .closest('.tbl-c')
+                            .find('.btn-with-selected')
+                            .removeClass('display-flex');
                     } else {
                         if (self.find('tr.is-selected').length >= 1) {
-                            self.closest('.tbl-c').find('#table-ma').attr('disabled', false);
-                            self.closest('.tbl-c').find('#table-ma span').html(self.find('tr.is-selected').length + ' items Selected');
+                            self
+                                .closest('.tbl-c')
+                                .find('#table-ma')
+                                .attr('disabled', false);
+                            self
+                                .closest('.tbl-c')
+                                .find('#table-ma span')
+                                .html(self.find('tr.is-selected').length + ' items Selected');
+
+
                             self.closest('.tbl-c').addClass('selected-mode--active');
-                            self.closest('.tbl-c').find('table tbody tr td').addClass('no-arrow');
-                            self.closest('.tbl-c').find('.btn-with-selected').addClass('display-flex');
+                            self
+                                .closest('.tbl-c')
+                                .find('table tbody tr td')
+                                .addClass('no-arrow');
+                            self
+                                .closest('.tbl-c')
+                                .find('.btn-with-selected')
+                                .addClass('display-flex');
                         } else {
                             self.closest('.tbl-c').removeClass('selected-mode--active');
-                            self.closest('.tbl-c').find('#table-ma').attr('disabled', 'disabled');
-                            self.closest('.tbl-c').find('table tbody tr td').removeClass('no-arrow');
-                            self.closest('.tbl-c').find('.btn-with-selected').removeClass('display-flex');
+                            self
+                                .closest('.tbl-c')
+                                .find('#table-ma')
+                                .attr('disabled', 'disabled');
+                            self
+                                .closest('.tbl-c')
+                                .find('table tbody tr td')
+                                .removeClass('no-arrow');
+                            self
+                                .closest('.tbl-c')
+                                .find('.btn-with-selected')
+                                .removeClass('display-flex');
                         }
                     }
                 });
-
             });
             $('.tbl-c').bind('clickoutside', function (event) {
-                $(this).find('tr').removeClass('is-selected');
+                $(this)
+                    .find('tr')
+                    .removeClass('is-selected');
                 $('.tbl-c #table-ma').attr('disabled', true);
             });
 
@@ -239,13 +275,12 @@ const AntaresTableView = {
             .find('.card-ctrls .mdl-textfield__input')
             .keyup(function (e) {
                 var val = $(this).val();
-                if (e.which === 13) {
-                    oTable.search(val).draw();
-                } else {
-                    self.delay(function () {
-                        oTable.search(val).draw();
-                    }, 500);
-                }
+
+                oTable.search(val).draw();
+                $('.dataTables_wrapper')
+                    .closest('.tbl-c')
+                    .find('.card-ctrls')
+                    .adjustCardHeight();
             });
     },
     // dataTablesReWind() {
@@ -318,18 +353,29 @@ const AntaresTableView = {
             });
     },
     dataTables0Data() {
-        var bTable = $('.billevo-table');
-        var cell = $('.billevo-table td');
-        var zeroElement = $('.billevo-table .dataTables_empty');
+        ready('.dataTables_empty', function () {
+            if ($('td').hasClass('dataTables_empty')) {
+                var bTable = $('.billevo-table');
+                var cell = $('.billevo-table td');
+                var zeroElement = $('.billevo-table .dataTables_empty');
 
-        if (cell.length === 1 && zeroElement.length) {
-            bTable.closest('.tbl-c').addClass('tbl-c--zd');
-        }
+                if (cell.length === 1 && zeroElement.length) {
+                    bTable.closest('.tbl-c').addClass('tbl-c--zd tbl-c--zd-empty');
+                }
 
-        var zdContent =
-            '<div class="zd zd--lg"><div class="zd__header"><i class="zmdi zmdi-email"></i></div><div class="zd__content"><div class="zd__title">You dont have any tickets</div><div class="zd__description">Lorem ipsum dolor sit amet. <br> Dolor sit amet.</div></div><div class="zd__footer"><a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEWTICKET</a></div></div>';
+                var zdContent =
+                    '<div class="zd zd--lg"><div class="zd__header"><i class="zmdi zmdi-email"></i></div><div class="zd__content"><div class="zd__title">You dont have any tickets</div><div class="zd__description">DataTables is empty.<br> Dolor sit amet.</div></div><div class="zd__footer"><a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEWTICKET</a></div></div>';
 
-        zeroElement.html(zdContent);
+                zeroElement.html(zdContent);
+                bTable.adjustCardHeight();
+
+
+                // var zdContent =
+                //     '<thead></thead> <tbody><tr><td><div class="zd zd--lg"><div class="zd__header"><i class="zmdi zmdi-email"></i></div><div class="zd__content"><div class="zd__title">You dont have any tickets</div><div class="zd__description">DataTables is empty.<br> Dolor sit amet.</div></div><div class="zd__footer"><a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEWTICKET</a></div></div></td></tr></tbody><tfoot></tfoot>';
+                //
+                // bTable.html(zdContent);
+            }
+        });
     },
     dataTables() {
         let self = this;
@@ -407,10 +453,10 @@ const AntaresTableView = {
                 $('.tbl-c').append($('.tbl-c .pagination'));
                 // window.AntaresForms.elements.select();
 
-                setTimeout(() => {
-                    const dtLoadedEvent = new CustomEvent('antares-datatables-loaded', {detail: 'datatables are ready'});
-                    document.dispatchEvent(dtLoadedEvent);
-                }, 400);
+                // setTimeout(() => {
+                //     const dtLoadedEvent = new CustomEvent('antares-datatables-loaded', {detail: 'datatables are ready'});
+                //     document.dispatchEvent(dtLoadedEvent);
+                // }, 400);
 
                 $('.tbl-c tbody').adjustCardHeight();
             },
@@ -431,7 +477,9 @@ const AntaresTableView = {
                 sLengthMenu: '_MENU_'
             },
             drawCallback() {
+                $('.tbl-c').removeClass('tbl-c--zd tbl-c--zd-empty');
                 let oSettings = this.fnSettings ? this.fnSettings() : this;
+                $('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
 
                 if (oSettings.aoData == null) {
                     return false;
@@ -461,12 +509,10 @@ const AntaresTableView = {
                 }
                 $('.app-content').scrollTop('0');
             }
-
         };
 
         if ($('html').hasClass('is-mobile') || $('html').hasClass('is-tablet')) {
-        }
-        else {
+        } else {
             let dataTablesOptionsWithSelect = Object.assign(dataTablesOptionsNoSelect, {
                 select: {
                     style: 'os',
@@ -476,7 +522,6 @@ const AntaresTableView = {
                 }
             });
         }
-
 
         // init datatables
         // if (!$('html').hasClass('is-mobile') && !$('html').hasClass('is-tablet')) {
@@ -494,60 +539,75 @@ const AntaresTableView = {
         dataTablesOptionsNoSelect.drawCallback();
     },
     dataTablesUpdateTable() {
+        const self = this;
         enquire.register('screen and (max-width: 767px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
         enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
         enquire.register('screen and (min-width: 1024px) and (max-width: 1199px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
         enquire.register('screen and (min-width: 1200px) and (max-width: 1349px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
         enquire.register('screen and (min-width: 1350px) and (max-width: 1499px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
         enquire.register('screen and (min-width: 1500px) and (max-width: 1649px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
         enquire.register('screen and (min-width: 1650px)', {
             match: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             },
             unmatch: function () {
                 oTable.responsive.recalc();
+                self.dataTables0Data();
             }
         });
     },
@@ -562,7 +622,7 @@ const AntaresTableView = {
                 } else {
                     $(row.selector.rows[0]).removeClass('is-selected');
                     $('.dataTables_wrapper').adjustCardHeight();
-                    console.log('work')
+                    console.log('work');
                 }
             });
         });
