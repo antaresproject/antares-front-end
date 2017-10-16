@@ -119,7 +119,8 @@ module.exports = {
         options: {
           // mainMenuType: antaresCfg.statusMenuList.menuTop,
           mainMenuType: antaresCfg.mainMenuType,
-          clientArea: antaresCfg.clientArea
+          clientArea: antaresCfg.clientArea,
+          whichMenu: antaresCfg.whichMenu
         }
       },
       {

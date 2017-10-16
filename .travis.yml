@@ -8,4 +8,4 @@ install:
   - yarn install
 script:
   - grunt 
-  - webpack --config webpack.prod.babel.js
+  - webpack --config webpack.dev.babel.js
