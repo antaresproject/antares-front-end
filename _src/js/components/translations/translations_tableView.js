@@ -23,11 +23,30 @@
 	license: MIT
 	http://www.jacklmoore.com/autosize
 */
+// require('./../../../js/external/modified/context_menu.js'); // css in package
+// require('script-loader!datatables');
+// require('script-loader!datatables.net-responsive'); // no css
+// require('script-loader!datatables.net-scroller'); // no css
+// require('script-loader!datatables.net-buttons'); // no css
+// APP COMPONENTS:
+// require('./../../../js/components/datatables/filters.js');
+// require('./../../../js/components/datatables/gs_fit.js');
+// OUTED BY SERVERSIDE VERSION:
+// require('./../../../js/components/datatables/context_menu.js');
+window.autosize = require('./autosize.js');
+
+require('./../../../js/external/modified/context_menu.js'); // css in package
+require('script-loader!datatables');
+require('script-loader!datatables.net-responsive'); // no css
+require('script-loader!datatables.net-scroller'); // no css
+require('script-loader!datatables.net-buttons'); // no css
+// APP COMPONENTS:
+require('./../../../js/components/datatables/filters.js');
+require('./../../../js/components/datatables/gs_fit.js');
+// OUTED BY SERVERSIDE VERSION:
+require('./../../../js/components/datatables/context_menu.js');
 
 (function() {
-  var autosize = require('./autosize.js');
-  window.autosize = autosize;
-
   var translationsTable = {
     init: function() {
       this.initTable();
@@ -141,21 +160,36 @@
 
       var compareHtml = ['<div class="table-key__inner">' + translation, '<div class="table-key__delete-row">', '<i class="zmdi zmdi-delete"></i>', '</div>', '</div>'].join('\n');
 
-      if (translation.length == 0) {
+      if (translation.length === 0) {
         $('.translation-new-row #translation').addClass('error');
+          window.noty(
+              $.extend({}, APP.noti.errorFM('lg', 'border'), {
+                  text: 'Translation line is empty'
+              })
+          );
       }
-      if (key.length == 0) {
+      if (key.length === 0) {
         $('.translation-new-row #new-key').addClass('error');
+          window.noty(
+              $.extend({}, APP.noti.errorFM('lg', 'border'), {
+                  text: 'Key line is empty'
+              })
+          );
       }
       if (translation.length == 0 || key.length == 0) {
         return;
       }
       var addedRow = this.translationsTable.row.add([' ', keyHtml, translateHtml, compareHtml]).draw();
       this.translationsTable.push('Fini');
-      console.log(this.translationsTable);
 
       $('.translation-new-row #new-key').val('');
       $('.translation-new-row #translation').val('');
+
+        window.noty(
+            $.extend({}, APP.noti.successFM('lg', 'border'), {
+                text: 'Add translation'
+            })
+        );
     },
     deleteRow: function(event) {
       this.translationsTable
@@ -163,6 +197,11 @@
         .remove()
         .draw();
       $('.ps-container').perfectScrollbar('update');
+        window.noty(
+            $.extend({}, APP.noti.errorFM('lg', 'border'), {
+                text: 'Row was deleted'
+            })
+        );
     },
     addCounter: function() {
       var self = this;
@@ -206,6 +245,12 @@
 
         $parent.find('.table-key__text').text(inputVal);
         $parent.removeClass('table-key--edit');
+
+          window.noty(
+              $.extend({}, APP.noti.warningFM('lg', 'border'), {
+                  text: 'Row was changed'
+              })
+          );
       });
       $('.translations-table').on('change', '.table-key .table-key__input', function(event) {
         autosize.update($(this));

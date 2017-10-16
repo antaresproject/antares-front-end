@@ -18,6 +18,8 @@
 
  */
 
+require('./external/outside_click.js');
+
 const AntaresTableView = {
     init() {
         const self = this;
@@ -26,10 +28,10 @@ const AntaresTableView = {
         this.dataTables0Data();
         this.dataTablesOpenRow();
         this.dataTablesGridStackClass();
+        this.dataTablesSelectRows();
         enquire.register('screen and (min-width:767px)', {
             match() {
                 self.dataTablesFilterSearch();
-                self.dataTablesSelectRows();
                 self.dataTablesSelectFilter();
                 self.dataTablesColumnToggle();
                 // self.dataTablesReWind();
@@ -77,174 +79,76 @@ const AntaresTableView = {
     dataTablesMultiSelect() {
     },
     dataTablesSelectRows() {
-        /*
-         * jQuery outside events - v1.1 - 3/16/2010
-         * http://benalman.com/projects/jquery-outside-events-plugin/
-         *
-         * Copyright (c) 2010 "Cowboy" Ben Alman
-         * Dual licensed under the MIT and GPL licenses.
-         * http://benalman.com/about/license/
-         */
-        (function ($, c, b) {
-            $.map('click dblclick mousemove mousedown mouseup mouseover mouseout change select submit keydown keypress keyup'.split(' '), function (d) {
-                a(d);
-            });
-            a('focusin', 'focus' + b);
-            a('focusout', 'blur' + b);
-            $.addOutsideEvent = a;
-
-            function a(g, e) {
-                e = e || g + b;
-                var d = $(),
-                    h = g + '.' + e + '-special-event';
-                $.event.special[e] = {
-                    setup: function () {
-                        d = d.add(this);
-                        if (d.length === 1) {
-                            $(c).bind(h, f);
-                        }
-                    },
-                    teardown: function () {
-                        d = d.not(this);
-                        if (d.length === 0) {
-                            $(c).unbind(h);
-                        }
-                    },
-                    add: function (i) {
-                        var j = i.handler;
-                        i.handler = function (l, k) {
-                            l.target = k;
-                            j.apply(this, arguments);
-                        };
-                    }
-                };
-
-                function f(i) {
-                    $(d).each(function () {
-                        var j = $(this);
-                        if (this !== i.target && !j.has(i.target).length) {
-                            j.triggerHandler(e, [i.target]);
-                        }
-                    });
-                }
-            }
-        })(jQuery, document, 'outside');
-
         function multiselectWithMouse() {
-            //   $('.tbl-c').on('click', 'tr', function() {
-            //     $(this).closest('table').find('tr').removeClass('is-selected');
-            //     $(this).addClass('is-selected');
-            //   });
-
-            $('.tbl-c').bind('clickoutside', function (event) {
-                $(this)
-                    .find('tr')
-                    .removeClass('is-selected');
-            });
-
-            enquire.register('screen and (min-width:1024px)', {
-                //  for tablet selectable because we need contextMenu priorytet
-                match() {
-                    if ($('html').hasClass('is-mobile') || $('html').hasClass('is-tablet')) {
-                        // console.log('touch devices')
-                    } else {
-                        $('.tbl-c table').selectable({
-                            delay: 100,
-                            distance: 100,
-                            start() {
-                                $(this)
-                                    .find('.is-selected')
-                                    .removeClass('is-selected');
-                            },
-                            stop(event, ui) {
-                                $(this)
-                                    .find('.ui-selected')
-                                    .removeClass('ui-selected')
-                                    .addClass('is-selected');
-                            }
-                        });
-                    }
-                },
-                unmatch: function () {
-                    $('.tbl-c table').selectable('destroy');
-                }
-            });
-            enquire.register('screen and (max-width:1023px)', {
-                //  for tablet selectable because we need contextMenu priorytet
-                // tmp off
-                match: function () {
-                    // $('.tbl-c').selectable('destroy');
-                }
-            });
-
-            $(document).mouseup(e => {
-                window.requestAnimationFrame(() => {
-                    var container = $('.tbl-c');
-                    var self = container;
-                    if (container.has(e.target).length === 0) {
-                        self
-                            .closest('.tbl-c')
-                            .find('#table-ma')
-                            .attr('disabled', 'disabled');
-                        self
-                            .closest('.tbl-c')
-                            .find('#table-ma span')
-                            .html('With Selected');
-                        self.closest('.tbl-c').removeClass('selected-mode--active');
-                        self
-                            .closest('.tbl-c')
-                            .find('table tbody tr td')
-                            .removeClass('no-arrow');
-                        self
-                            .closest('.tbl-c')
-                            .find('.btn-with-selected')
-                            .removeClass('display-flex');
-                    } else {
-                        if (self.find('tr.is-selected').length >= 1) {
-                            self
-                                .closest('.tbl-c')
-                                .find('#table-ma')
-                                .attr('disabled', false);
-                            self
-                                .closest('.tbl-c')
-                                .find('#table-ma span')
-                                .html(self.find('tr.is-selected').length + ' items Selected');
-
-
-                            self.closest('.tbl-c').addClass('selected-mode--active');
-                            self
-                                .closest('.tbl-c')
-                                .find('table tbody tr td')
-                                .addClass('no-arrow');
-                            self
-                                .closest('.tbl-c')
-                                .find('.btn-with-selected')
-                                .addClass('display-flex');
+            if ($('html').hasClass('is-mobile') || $('html').hasClass('is-tablet')) {
+                // console.log('touch devices')
+            } else {
+                $('.tbl-c table').selectable({
+                    delay: 10,
+                    distance: 10,
+                    start(event, ui) {
+                        if (event.ctrlKey || event.shiftKey) {
                         } else {
-                            self.closest('.tbl-c').removeClass('selected-mode--active');
-                            self
-                                .closest('.tbl-c')
-                                .find('#table-ma')
-                                .attr('disabled', 'disabled');
-                            self
-                                .closest('.tbl-c')
-                                .find('table tbody tr td')
-                                .removeClass('no-arrow');
-                            self
-                                .closest('.tbl-c')
-                                .find('.btn-with-selected')
-                                .removeClass('display-flex');
+                            $(this)
+                                .find('.is-selected')
+                                .removeClass('is-selected');
+                        }
+                    },
+                    stop(event, ui) {
+                        $(this)
+                            .find('.ui-selected.odd,.ui-selected.even')
+                            .removeClass('ui-selected')
+                            .addClass('is-selected');
+                        if (event.ctrlKey || event.shiftKey) {
+                        } else {
+                            $(this)
+                                .find('.ui-selected')
+                                .removeClass('ui-selected');
                         }
                     }
                 });
-            });
-            $('.tbl-c').bind('clickoutside', function (event) {
-                $(this)
-                    .find('tr')
-                    .removeClass('is-selected');
-                $('.tbl-c #table-ma').attr('disabled', true);
-            });
+            }
+            let containerTbody = $('.dataTables_wrapper tbody');
+            let parentTblc = containerTbody.closest('.tbl-c')
 
+            containerTbody.mouseup(e => {
+                window.requestAnimationFrame(() => {
+                    if (parentTblc.find('tr.is-selected').length >= 1) {
+                        parentTblc.find('#table-ma').attr('disabled', false);
+                        parentTblc.find('#table-ma span').html(parentTblc.find('tr.is-selected').length + ' items Selected');
+                        parentTblc.addClass('selected-mode--active');
+
+                        parentTblc.find('table tbody tr td').addClass('no-arrow');
+                        parentTblc.find('.btn-with-selected').addClass('display-flex');
+                    } else {
+                        parentTblc.removeClass('selected-mode--active');
+                        parentTblc.removeClass('selected-mode--touch-active');
+                        parentTblc.find('#table-ma').attr('disabled', 'disabled');
+                        parentTblc.find('table tbody tr td').removeClass('no-arrow');
+                        parentTblc.find('.btn-with-selected').removeClass('display-flex');
+                    }
+                });
+            });
+            containerTbody.bind('clickoutside', function (event) {
+                parentTblc.find('tr').removeClass('is-selected');
+                parentTblc.find('#table-ma').attr('disabled', true);
+                parentTblc.find('#table-ma span').html('0 Items Selected');
+                parentTblc.removeClass('selected-mode--active');
+                parentTblc.removeClass('selected-mode--touch-active');
+                parentTblc.find('table tbody tr td').removeClass('no-arrow');
+                parentTblc.find('.btn-with-selected').removeClass('display-flex');
+            });
+            parentTblc.find('#tableSearch').keydown(function () {
+                if (parentTblc.hasClass('selected-mode--active')){
+                    parentTblc.find('tr').removeClass('is-selected');
+                    parentTblc.find('#table-ma').attr('disabled', true);
+                    parentTblc.find('#table-ma span').html('0 Items Selected');
+                    parentTblc.removeClass('selected-mode--active');
+                    parentTblc.removeClass('selected-mode--touch-active');
+                    parentTblc.find('table tbody tr td').removeClass('no-arrow');
+                    parentTblc.find('.btn-with-selected').removeClass('display-flex');
+                }
+            })
             $('#table-ma .is-disabled').on('click', function (e) {
                 e.preventDefault();
             });
@@ -363,12 +267,10 @@ const AntaresTableView = {
                     bTable.closest('.tbl-c').addClass('tbl-c--zd tbl-c--zd-empty');
                 }
 
-                var zdContent =
-                    '<div class="zd zd--lg"><div class="zd__header"><i class="zmdi zmdi-email"></i></div><div class="zd__content"><div class="zd__title">You dont have any tickets</div><div class="zd__description">DataTables is empty.<br> Dolor sit amet.</div></div><div class="zd__footer"><a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEWTICKET</a></div></div>';
+                var zdContent = '<div class="zd zd--lg"><div class="zd__header"><i class="zmdi zmdi-email"></i></div><div class="zd__content"><div class="zd__title">You dont have any tickets</div><div class="zd__description">DataTables is empty.<br> Dolor sit amet.</div></div><div class="zd__footer"><a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEWTICKET</a></div></div>';
 
                 zeroElement.html(zdContent);
                 bTable.adjustCardHeight();
-
 
                 // var zdContent =
                 //     '<thead></thead> <tbody><tr><td><div class="zd zd--lg"><div class="zd__header"><i class="zmdi zmdi-email"></i></div><div class="zd__content"><div class="zd__title">You dont have any tickets</div><div class="zd__description">DataTables is empty.<br> Dolor sit amet.</div></div><div class="zd__footer"><a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN NEWTICKET</a></div></div></td></tr></tbody><tfoot></tfoot>';
@@ -459,6 +361,8 @@ const AntaresTableView = {
                 // }, 400);
 
                 $('.tbl-c tbody').adjustCardHeight();
+
+                antaresEvents.emit('datatables-loaded');
             },
             oLanguage: {
                 // sProcessing: "<img src='http://i.imgur.com/zGCAUHJ.gif'>",
@@ -479,7 +383,11 @@ const AntaresTableView = {
             drawCallback() {
                 $('.tbl-c').removeClass('tbl-c--zd tbl-c--zd-empty');
                 let oSettings = this.fnSettings ? this.fnSettings() : this;
-                $('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+                $('#table-ma span').html(
+                    $(this)
+                        .closest('.tbl-c')
+                        .find('tr.is-selected').length + ' items Selected'
+                );
 
                 if (oSettings.aoData == null) {
                     return false;
@@ -622,7 +530,6 @@ const AntaresTableView = {
                 } else {
                     $(row.selector.rows[0]).removeClass('is-selected');
                     $('.dataTables_wrapper').adjustCardHeight();
-                    console.log('work');
                 }
             });
         });

@@ -31,6 +31,26 @@ const antaresPreloader = {
     this.elemShow();
   },
 
+  element(elem, boolean) {
+    if (!$(elem)) {
+      return false;
+    }
+    if (boolean === true || boolean === 'true') {
+      $(elem).attr('data-is-loading', true);
+    } else {
+      $(elem).removeAttr('data-is-loading');
+    }
+  },
+  global(boolean) {
+    if (boolean === true || boolean === 'true') {
+      let $elem = $('[data-is-preloading]');
+      $('#app-wrapper').attr('data-is-preloading', true);
+    } else {
+      let $elem = $('[data-is-preloading]');
+      $elem.removeAttr('data-is-preloading');
+    }
+  },
+
   // methods
   elemHide() {
     const preElements = document.querySelectorAll(this.data.selector);

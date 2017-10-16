@@ -17,7 +17,6 @@ export const activeMenuElement = {
 
     let link = $('a[href="' + lastSegment + '"]');
     link.closest('li[data-index]').addClass('is-active');
-    link.closest('li[data-index]').addClass('is-active');
     if (window.antaresCfgLocal.menuSimpleSubmenu === true) {
       link.css('color', '#5c6066');
     } else {

@@ -17,8 +17,11 @@
  *
 
  */
+
 // import axios from 'axios';
-/* global enquire */
+
+/* global enquire antaresEvents */
+
 import _ from 'underscore';
 
 // Antares Gridsack Widgets Control
@@ -30,12 +33,11 @@ export default {
     this.gsHeightAdjust();
     this.gsResize();
     this.gsClientsListRWD();
-    this.gsClientsDetailsRWD();
     this.gsZeroDataRWD();
     this.gsEditMode();
     this.gsRWDGeneral();
     this.gsDashboardRWD();
-
+    this.gsClientsDetailsRWD();
     this.rwdHelperDev();
     // this.widgetInternalRWD();
     // this.clickClassHelper(false);
@@ -185,14 +187,15 @@ export default {
     const grid = $('.grid-stack').data('gridstack');
     const $grid = $('.grid-stack');
 
-    $grid.on('change', (event, items) => {
-      if (items == null) {
-        return false;
-      }
-      for (let i = 0; i < items.length; i++) {
-        let $GSItem = $(items[i].el);
-        addGridStackRWDClasses($GSItem);
-      }
+    grid.on('change', (event, items) => {
+      console.log(items);
+      // if (items == null) {
+      //   return false;
+      // }
+      // for (let i = 0; i < items.length; i++) {
+      //   let $GSItem = $(items[i].el);
+      //   addGridStackRWDClasses($GSItem);
+      // }
     });
   },
 
@@ -208,6 +211,10 @@ export default {
       const gsiHeight = gsi.outerHeight(true);
       const card = gsi.find('.card');
       const cardHeight = card.outerHeight(true);
+
+      if ($('.app-content').hasClass('app-content--widgets-movable')) {
+        return false;
+      }
 
       if (windowW > 1449 && !card.hasClass('card--pagination')) {
         // console.log('screen too wide for widget adaptations');
@@ -336,6 +343,7 @@ export default {
         });
       }
     });
+
     // card logs
 
     $('.card--logs').on('click', '.pagination', (index, el) => {
@@ -356,6 +364,7 @@ export default {
         }
       });
     });
+
     $('tbl-c:not(.selected-mode--active)').on('click', 'td:first-of-type', (index, el) => {
       window.requestAnimationFrame(() => {
         if (parseInt($(window).width(), 10) > 767) {
@@ -376,9 +385,6 @@ export default {
     function gsiAdjust() {
       $('.grid-stack-item').each((index, elem) => {
         window.requestAnimationFrame(() => {
-          if (window.innerWidth < 768) {
-            return false;
-          }
           $(elem)
             .find('.card__content')
             .adjustCardHeight();
@@ -390,15 +396,71 @@ export default {
     }
 
     // on load
-    if (thisWW > 767) {
-      gsiAdjust();
-    }
+    // if (thisWW > 767) {
+    //   gsiAdjust();
+    // }
 
-    $(window).resize(
-      _.debounce(() => {
+    // $(window).resize(
+    //   _.debounce(() => {
+    //     gsiAdjust();
+    //   }, 1150)
+    // );
+    //   enquire.register('screen and (max-width: 767px)', {
+    //       match: function () {
+    //           gsiAdjust();
+    //       },
+    //       unmatch: function () {
+    //           gsiAdjust();
+    //       }
+    //   });
+    enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
+      match: function() {
         gsiAdjust();
-      }, 120)
-    );
+      },
+      unmatch: function() {
+        gsiAdjust();
+      }
+    });
+    enquire.register('screen and (min-width: 1024px) and (max-width: 1199px)', {
+      match: function() {
+        gsiAdjust();
+      },
+      unmatch: function() {
+        gsiAdjust();
+      }
+    });
+    enquire.register('screen and (min-width: 1200px) and (max-width: 1349px)', {
+      match: function() {
+        gsiAdjust();
+      },
+      unmatch: function() {
+        gsiAdjust();
+      }
+    });
+    enquire.register('screen and (min-width: 1350px) and (max-width: 1499px)', {
+      match: function() {
+        gsiAdjust();
+      },
+      unmatch: function() {
+        gsiAdjust();
+      }
+    });
+    enquire.register('screen and (min-width: 1500px) and (max-width: 1649px)', {
+      match: function() {
+        gsiAdjust();
+      },
+      unmatch: function() {
+        gsiAdjust();
+      }
+    });
+    enquire.register('screen and (min-width: 1650px)', {
+      match: function() {
+        gsiAdjust();
+      },
+      unmatch: function() {
+        gsiAdjust();
+      }
+    });
   },
   saveGridParams() {
     const self = this;
@@ -490,7 +552,7 @@ export default {
           });
         }
       });
-      enquire.register('screen and (min-width: 1451px)', {
+      enquire.register('screen and (min-width: 1450px)', {
         match() {
           window.requestAnimationFrame(() => {
             c1.cardResize(0, 0, 12, 10);
@@ -503,7 +565,7 @@ export default {
           });
         }
       });
-      enquire.register('screen and (min-width:1200px) and (max-width: 1450px)', {
+      enquire.register('screen and (min-width:1200px) and (max-width: 1449px)', {
         match() {
           window.requestAnimationFrame(() => {
             c1.cardResize(0, 0, 12, 14);
@@ -569,6 +631,7 @@ export default {
   },
   gsEditMode() {
     const grid = $('.grid-stack').data('gridstack');
+
     const $grid = $('.grid-stack');
 
     function enableGrid() {
@@ -587,14 +650,16 @@ export default {
     }
 
     function disableGrid() {
-      window.requestAnimationFrame(() => {
-        grid.disable();
-        $('#widgets-edit')
-          .children('i')
-          .removeClass('icon--widgets-edit-alt')
-          .addClass('icon--widgets-edit');
-        $('.app-content').removeClass('app-content--widgets-movable');
-      });
+      if (grid) {
+        window.requestAnimationFrame(() => {
+          grid.disable();
+          $('#widgets-edit')
+            .children('i')
+            .removeClass('icon--widgets-edit-alt')
+            .addClass('icon--widgets-edit');
+          $('.app-content').removeClass('app-content--widgets-movable');
+        });
+      }
     }
 
     // Disable on mobile & tabletss
@@ -656,6 +721,9 @@ export default {
     };
   },
   gsClientsListRWD() {
+    if (!$('.page-datatables').length) {
+      return false;
+    }
     const grid = $('.grid-stack').data('gridstack');
     const cardTable = $('.grid-stack')
       .find('.tbl-c')
@@ -667,18 +735,19 @@ export default {
     });
   },
   gsClientsDetailsRWD() {
+    if (!$('.page-clients-details').length) {
+      return false;
+    }
+
     const grid = $('.grid-stack').data('gridstack');
     const cardInfo = $('.card--detail-info');
     const cardContacts = $('.card--contacts');
     const cardTabs = $('.card--tabs');
     const cardLogs = $('.card--logs');
     const cardSmallChart = $('.card--chart-small');
-    if (!$('.page-clients-details').length) {
-      return false;
-    }
+
     // how to? paramaters: newX, newY, newWidth, newGsiHeightVal
     enquire.register('screen and (min-width:1366px)', {
-      // enquire.register('screen and (min-width:1025px)', {
       match() {
         cardInfo.cardResize(0, 0, 5, 20);
         cardTabs.cardResize(5, 0, 14, 19);
@@ -688,23 +757,21 @@ export default {
       }
     });
     enquire.register('screen and (min-width:1024px) and (max-width:1365px)', {
-      // enquire.register('screen and (min-width:1025px)', {
       match() {
         cardInfo.cardResize(0, 0, 8, 20);
         cardTabs.cardResize(8, 0, 16, 18);
         cardSmallChart.cardResize(0, 31, 8, 12);
         cardContacts.cardResize(0, 20, 8, 11);
-        cardLogs.cardResize(8, 18, 16, 10);
+        cardLogs.cardResize(8, 19, 16, 10);
       }
     });
     enquire.register('screen and (min-width:768px) and (max-width:1023px)', {
-      // enquire.register('screen and (min-width:1025px)', {
       match() {
         cardInfo.cardResize(0, 0, 9, 20);
         cardTabs.cardResize(9, 0, 15, 18);
         cardSmallChart.cardResize(0, 31, 9, 12);
         cardContacts.cardResize(0, 20, 9, 11);
-        cardLogs.cardResize(9, 18, 15, 10);
+        cardLogs.cardResize(9, 19, 15, 10);
       }
     });
   },

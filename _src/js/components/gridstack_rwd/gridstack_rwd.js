@@ -249,7 +249,6 @@ export default {
         target.closest('.grid-stack-item').addClass('grid-size--xl');
       }
 
-      console.log('gridstack rwd classupdate');
     });
   },
   deleteGridstackItemsIfSizeBig() {
@@ -362,7 +361,6 @@ export default {
           }
         });
 
-        // console.log('gridstack add classes');
       });
     });
   }

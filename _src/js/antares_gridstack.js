@@ -68,7 +68,7 @@ const AntaresGridstack = {
         $('.grid-stack-item').each(function(index, el) {
           var itemHeight = $(el).data('gs-height');
           var updatedHeight = itemHeight * gSCH + 'px';
-          console.log(updatedHeight);
+          // console.log(updatedHeight);
         });
       }
     });

@@ -10,7 +10,7 @@
                                 <a v-for="tab in tabs" @click="setActiveTab($event)" :href="'#'+tab.tabName" class="mdl-tabs__tab" v-bind:class="{'is-active': tab.isActive}" :key="tab.tabName">{{tab.tabName}}</a>
                             </transition-group>
                         </draggable>
-                    </div> 
+                    </div>
                 </div>
                 <div v-for="tab in tabs" class="mdl-tabs__panel" v-bind:class="{'is-active': tab.isActive}" :id="tab.tabName">
                     <card-tabs v-if="tab.type === 'tabs'"></card-tabs>
@@ -129,8 +129,8 @@ export default {
             window.AntaresCharts.init()
         });
         this.eventListener();
-        
-        
+
+
         window.AntaresForms.elements.tooltip();
         // this.setTabBarActive();
     },
@@ -143,9 +143,9 @@ export default {
 
                 // console.log(type);
                 self.detatchTab(type);
-            
+
             });
-          
+
         },
         setTabBarActive() {
             var self = this;
@@ -185,7 +185,7 @@ export default {
                 var movedTabName = draggedItem[0].innerText.toLowerCase();
                 self.$nextTick(function() {
                     for (var i = 0; i < self.tabs.length; i++) {
-                        if (self.tabs[i].tabName == movedTabName) {}
+                        if (self.tabs[i].tabName == movedTabName) { }
                     }
                 });
                 if (self.tabs.length === 1) {
@@ -216,7 +216,7 @@ export default {
                         self.tabs.splice(index, 1);
                     }
                 }
-                if (self.tabs.length === 1) {}
+                if (self.tabs.length === 1) { }
                 return true;
             }
         },
@@ -226,7 +226,7 @@ export default {
 
             $(evt.target).css('border-left', '2px solid #02a8f3')
 
-            if ( $(evt.target).hasClass('card-container') ) {
+            if ($(evt.target).hasClass('card-container')) {
 
                 $('.card-container').css('border', 'none');
                 $(evt.target).css('border-left', '2px solid #02a8f3')
@@ -265,7 +265,7 @@ export default {
 
             // console.log(cardType);
 
-            if ( self.tabs.length > 1  ) {
+            if (self.tabs.length > 1) {
 
                 for (var i = 0, l = self.tabs.length; i < l; i++) {
                     if (self.tabs[i].tabName.toLowerCase() === cardType.toLowerCase()) {
@@ -283,7 +283,7 @@ export default {
 
 
 
-                
+
 
             } else {
 
@@ -317,17 +317,17 @@ export default {
                 $draggedGsi.velocity({
                     opacity: 0
                 }, {
-                    duration: 700,
-                    complete: function() {
-                        self.addNewTab(draggedType);
-                        setTimeout(function() {
-                            self.$nextTick(function() {
-                                self.addNewTab(self.draggedOnType);
-                                antaresStore.commit('widgetRemove', draggedId);
-                            });
-                        }, 200);
-                    }
-                })
+                        duration: 700,
+                        complete: function() {
+                            self.addNewTab(draggedType);
+                            setTimeout(function() {
+                                self.$nextTick(function() {
+                                    self.addNewTab(self.draggedOnType);
+                                    antaresStore.commit('widgetRemove', draggedId);
+                                });
+                            }, 200);
+                        }
+                    })
             });
         },
         eventDropOnTabs: function() {
@@ -361,16 +361,16 @@ export default {
                 $draggedGsi.velocity({
                     opacity: 0
                 }, {
-                    duration: 100,
-                    complete: function() {
-                        setTimeout(function() {
-                            self.$nextTick(function() {
-                                self.addNewTab(draggedType);
-                                antaresStore.commit('widgetRemove', draggedId);
-                            });
-                        }, 200)
-                    }
-                })
+                        duration: 100,
+                        complete: function() {
+                            setTimeout(function() {
+                                self.$nextTick(function() {
+                                    self.addNewTab(draggedType);
+                                    antaresStore.commit('widgetRemove', draggedId);
+                                });
+                            }, 200)
+                        }
+                    })
             });
         },
         // CORRECT!
@@ -423,8 +423,8 @@ export default {
             let activeTab = $(event.target),
                 activeTabIndex = activeTab.index();
 
-                // console.log(self.tabs[activeTabIndex].type);
-                self.activeTabType = self.tabs[activeTabIndex].type;
+            // console.log(self.tabs[activeTabIndex].type);
+            self.activeTabType = self.tabs[activeTabIndex].type;
 
 
 
@@ -539,6 +539,8 @@ export default {
             }
         },
         rebuildGridstack: function() {
+
+
             var grid = $('.grid-stack').data('gridstack');
             grid.removeAll(false);
             $('.grid-stack-item').each(function() {
@@ -546,6 +548,8 @@ export default {
             });
             grid.disable();
             grid.enable();
+
+
         },
         autoDestruct: function() {
             var self = this;
@@ -676,9 +680,17 @@ export default {
 
 #app-wrapper .card__edit-view {}
 
+
+
 /*#app-wrapper .app-content--widgets-movable .card__edit-view {*/
-    /*width: 140px;*/
-    /*height: 51px;*/
+
+
+/*width: 140px;*/
+
+
+/*height: 51px;*/
+
+
 /*}*/
 
 #app-wrapper .app-content--widgets-movable .mdl-tabs-container .card__edit-view {
@@ -753,8 +765,7 @@ export default {
         }
     }
     .mdl-tabs__arrow {
-        z-index: 999 !important;
-        // position: relative;
+        z-index: 999 !important; // position: relative;
         background: #fff !important;
     }
     table tr td {

@@ -84,8 +84,7 @@ Antares.prototype.helpers = function() {
     callback();
   });
 
-  antaresEvents.emit('something_happend', () => {
-  });
+  antaresEvents.emit('something_happend', () => {});
 
   // $('.main-menu--primary > li:nth-child(3)').addClass('hovered submenu-open');
   //input file manual
@@ -519,21 +518,6 @@ Antares.prototype.components = {
       e.stopPropagation();
       $(this).removeClass('submenu-open');
     });
-      var el = $('.menu-aside-container');
-    $('.app-content').bind('mousewheel DOMMouseScroll MozMousePixelScroll touchmove', function(e) {
-        var toTop = $('.main-head').outerHeight(),
-        isPositionFixed = el.css('position') === 'fixed';
-
-      if ($(this).scrollTop() > toTop && !isPositionFixed) {
-        el.addClass('menu-aside-container--fixed');
-      }
-      if ($(this).scrollTop() - 100 < toTop && isPositionFixed) {
-        el.removeClass('menu-aside-container--fixed');
-      }
-    });
-      $('.grid-container.grid-container--2col .grid-col--menu .menu-aside:not(.menu-aside--links) li:not(.has-submenu) a').on('click touchstart',function (e) {
-          el.addClass('menu-aside-container--fixed');
-      })
   },
   frameworkPage: function() {
     var frameworkPage = $('.page-framework');
@@ -591,8 +575,8 @@ Antares.prototype.components = {
           tabBar.find('.mdl-tabs__tab').each(function() {
             singleTabsWidth += $(this).outerWidth();
           });
-          console.log(tabBarWidth);
-          console.log(singleTabsWidth);
+          // console.log(tabBarWidth);
+          // console.log(singleTabsWidth);
           if (singleTabsWidth > tabBarWidth) {
             tabContainer.addClass('mdl-tabs--arows');
           } else {
@@ -718,7 +702,7 @@ Antares.prototype.RWD = {
   }
 };
 //not needed
-require('./antares_notifications.js');
+// require('./antares_notifications.js');
 //fire on document ready
 $(function() {
   window.APP = new Antares();

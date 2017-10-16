@@ -19,50 +19,54 @@
 */
 
 $(document).ready(() => {
-  // $('.open-modal').on('click', function() {
-  //   APP.modal.init({
-  //     element: '.modal--problem',
-  //     title: 'Something went wrong...',
-  //     buttons: {
-  //       Confirm: {
-  //         type: 'primary',
-  //         action: function() {
-  //           alert('action1');
-  //           $.modal.close();
-  //         }
-  //       },
-  //       Cancel: {
-  //         type: 'default',
-  //         action: function() {
-  //           $.modal.close();
-  //         }
-  //       }
-  //     }
-  //   });
-  // });
-  $('.open-modal').on('click', () => {
-    const currentDialog = document.querySelector('dialog.is-current');
-
-    APP.dialog.init({
-      content: 'Lorem',
-      title: 'asdasd',
-      actionPosition: 'right',
-      width: '95%',
-      height: '500px',
+  $('.open-modal').on('click', function() {
+    APP.modal.init({
+      element: '.modal--problem',
+      title: 'Something went wrong...',
       buttons: {
         Confirm: {
           type: 'primary',
-          action() {
-            alert('Confirmed!');
+          action: function() {
+            alert('action1');
+            $.modal.close();
           }
         },
         Cancel: {
           type: 'default',
-          action() {
-            window.dialog.close();
+          action: function() {
+            $.modal.close();
           }
         }
       }
     });
   });
+  // $('.open-modal').on('click', () => {
+  //   const currentDialog = document.querySelector('dialog.is-current');
+  //
+  //   APP.dialog.init({
+  //     content: 'There are many variations of pa Ipsum genera any variations of pa Ipsum genera any variations of pa Ipsum genera any variations of pa Ipsum genera',
+  //     title: 'This is Diablog box TEST',
+  //     actionPosition: 'right',
+  //
+  //     buttons: {
+  //       Confirm: {
+  //         type: 'primary',
+  //         action() {
+  //             window.noty(
+  //                 $.extend({}, APP.noti.successFM('lg', 'border'), {
+  //                     text: 'Confirmed!'
+  //                 })
+  //             );
+  //             window.dialog.close();
+  //         }
+  //       },
+  //       Cancel: {
+  //         type: 'default',
+  //         action() {
+  //           window.dialog.close();
+  //         }
+  //       }
+  //     }
+  //   });
+  // });
 });

@@ -1,4 +1,4 @@
-export const browserHooks = {
+const browserHooks = {
   init() {
     if (window.bowser == null) {
       console.log('warning! browser detection failed!!!');
@@ -48,6 +48,7 @@ export const browserHooks = {
 
     if (bowser.msedge) {
       $container.addClass('is-edge');
+      antaresEvents.emit('is-edge');
     }
 
     // safari
@@ -68,7 +69,9 @@ export const browserHooks = {
   }
 };
 
+window.browserHooks = browserHooks;
 $(() => {
-  window.browserHooks = browserHooks;
   browserHooks.init();
 });
+
+export default browserHooks;

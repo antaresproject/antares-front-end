@@ -80,7 +80,7 @@ const AntaresDdownGeneral = {
                 this.closeMiniColors();
             },
             closeDropJS() {
-                $('.this-is-dropczyk--out').removeClass('drop-enabled drop-open');
+                $('.antares-dropjs-filter--out').removeClass('drop-enabled drop-open');
                 $('.dropJS-content-real--client-contacts').removeClass('drop-enabled drop-open');
             },
             closeContextMenu() {
@@ -98,7 +98,7 @@ const AntaresDdownGeneral = {
             },
             closeSelect2() {
                 if ($('.select2').hasClass('select2-container--open')) {
-                    $('select').select2('close');
+                    $('select.select2-hidden-accessible').select2('close');
                 }
             },
             closeDatePicker() {

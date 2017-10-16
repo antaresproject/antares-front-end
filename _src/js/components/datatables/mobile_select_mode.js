@@ -38,7 +38,7 @@ export const AntaresMobileSelectMode = {
           .attr('disabled', true)
           .removeClass('display-flex');
         $('.billevo-table tbody tr').off('click');
-        $('#table-ma span').html('With Selected');
+        $('#table-ma span').html('0 Items Selected');
       }
 
       function quickSelectRowDataTable($self) {
@@ -121,7 +121,8 @@ export const AntaresMobileSelectMode = {
           }
         });
       });
-    } else {
+    }
+    else {
       setTimeout(function() {
         function updatePaginationSelectMode() {
           setTimeout(function() {
@@ -129,10 +130,11 @@ export const AntaresMobileSelectMode = {
             $('.dataTables_paginate span').on('click', function() {
               $('.tbl-c').removeClass('selected-mode--touch-active');
               $('table tbody tr').removeClass('is-selected');
-              $('#table-ma span').html('With Selected');
+              $('#table-ma span').html('0 Items Selected');
               $('.tbl-c').removeClass('selected-mode--active');
             });
-            updatePaginationSelectMode();
+
+
           }, 1000);
         }
         updatePaginationSelectMode();
@@ -140,11 +142,12 @@ export const AntaresMobileSelectMode = {
     }
   },
     selectModeMarked(){
-        $('.selected-all--marked').on('click', function () {
+        $('.selected-all--marked').on('click touchstart', function () {
             $(this).closest('.tbl-c').find('table tbody tr').addClass('is-selected')
-            $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+            $(this).closest('.filters').find('#table-ma').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+            console.log($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
         })
-        $('.selected-all--unmarked').on('click', function () {
+        $('.selected-all--unmarked').on('click touchstart', function () {
             $(this).closest('.tbl-c').find('table tbody tr').removeClass('is-selected')
             var self = $(this)
             window.requestAnimationFrame(() => {
@@ -152,8 +155,16 @@ export const AntaresMobileSelectMode = {
                 self.closest('.btn-selected').find('.btn-with-selected').removeClass('display-flex')
                 self.closest('.tbl-c').removeClass('selected-mode--touch-active')
                 self.closest('.tbl-c').find('.billevo-table tbody tr').off("click")
-                $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
-                // self.closest('.tbl-c').find('#table-ma').html('With Selected');
+                $(this).closest('.filters').find('#table-ma').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+                // self.closest('.tbl-c').find('#table-ma').html('0 Items Selected');
+                let parentTblc = self.closest('.tbl-c')
+                parentTblc.find('tr').removeClass('is-selected');
+                parentTblc.find('#table-ma').attr('disabled', true);
+                parentTblc.find('#table-ma span').html('0 Items Selected');
+                parentTblc.removeClass('selected-mode--active');
+                parentTblc.removeClass('selected-mode--touch-active');
+                parentTblc.find('table tbody tr td').removeClass('no-arrow');
+                parentTblc.find('.btn-with-selected').removeClass('display-flex');
             })
         })
 

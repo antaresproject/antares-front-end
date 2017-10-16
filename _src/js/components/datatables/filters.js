@@ -23,7 +23,6 @@ const AntaresDatatablesFilters = {
         this.closeFilter();
         this.editFilter();
         this.filtersSwiper();
-        this.dropJSFilters();
         // this.randomNumbers();
     },
     randomNumbers() {
@@ -64,19 +63,19 @@ const AntaresDatatablesFilters = {
         });
         enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
             match: function () {
-                slidesOnPage = 3;
+                slidesOnPage = 4;
                 mySwiper.params.slidesPerView = slidesOnPage;
             }
         });
         enquire.register('screen and (min-width: 1024px) and (max-width: 1199px)', {
             match: function () {
-                slidesOnPage = 3;
+                slidesOnPage = 6;
                 mySwiper.params.slidesPerView = slidesOnPage;
             }
         });
         enquire.register('screen and (min-width: 1200px) and (max-width: 1350px)', {
             match: function () {
-                slidesOnPage = 4;
+                slidesOnPage = 8;
                 mySwiper.params.slidesPerView = slidesOnPage;
             }
         });
@@ -107,38 +106,22 @@ const AntaresDatatablesFilters = {
             }
         });
         function updateCountSwiperSliders(passedSlidesOnPage) {
-            // console.log(' ')
             var slideWidth = $('.swiper-slide .drop-target').width();
             var slideRealWidth = $('.filters .swiper-slide').width();
             var freeSpaceInSlide = slideRealWidth - slideWidth;
-            // if (freeSpaceInSlide - slideWidth > slideWidth) {
-            //     slidesOnPage = passedSlidesOnPage + 1;
-            //     mySwiper.params.slidesPerView = slidesOnPage;
-            //     console.log('IF work')
-            // } else if (freeSpaceInSlide > slideWidth) {
-            //     console.log('ELSE IF work')
-            // } else {
-            //     slidesOnPage = passedSlidesOnPage - 1;
-            //     mySwiper.params.slidesPerView = slidesOnPage;
-            //     console.log('ELSE work')
-            // }
+
             if (freeSpaceInSlide > slideWidth) {
                 slidesOnPage = passedSlidesOnPage + 1;
                 mySwiper.params.slidesPerView = slidesOnPage;
-                // console.log('IF work')
-            } else if (freeSpaceInSlide < slideWidth) {
-                // console.log('ELSE IF work')
             } else if (freeSpaceInSlide + slideWidth < slideWidth) {
                 slidesOnPage = passedSlidesOnPage - 1;
                 mySwiper.params.slidesPerView = slidesOnPage;
-                // console.log('ELSE work')
+            } else if (freeSpaceInSlide < slideWidth) {
+                if (freeSpaceInSlide + slideWidth - 20 < slideWidth) {
+                    slidesOnPage = passedSlidesOnPage - 1;
+                    mySwiper.params.slidesPerView = slidesOnPage;
+                }
             }
-            //   console.log("slidesOnPage: "+slidesOnPage)
-            // console.log("slideWidth: "+slideWidth)
-            // console.log("slideRealWidth: "+slideRealWidth)
-            // console.log("freeSpaceInSlide: "+freeSpaceInSlide)
-            // console.log("freeSpaceInSlide - slideWidth: "+ (freeSpaceInSlide - slideWidth))
-            // console.log("slidesOnPage END: "+slidesOnPage)
 
             if ($('.swiper-filters--box .swiper-slide').length > slidesOnPage) {
                 if (typeof mySwiper.unlockSwipes === 'function') {
@@ -156,28 +139,11 @@ const AntaresDatatablesFilters = {
         function activateSwiper() {
             function updateSwiper(status) {
                 if (status === true) {
-                    let thisSlider;
-                    $('.swiper-slide').on('click', function () {
-                        thisSlider = $(this);
-                        setTimeout(function () {
-                            if (thisSlider.find('.drop').hasClass('drop-enabled')) {
-                                mySwiper.lockSwipes();
-                            }
-                        }, 100);
-                    });
-                    $(document).on('click', function (e) {
-                        if (thisSlider !== undefined) {
-                            if (thisSlider.has(e.target).length === 0) {
-                                mySwiper.unlockSwipes();
-                            }
-                        }
-                    });
 
-                    setTimeout(function () {
-                        if (typeof mySwiper.update === 'function') {
-                            mySwiper.update();
-                        }
-                    }, 500);
+
+                    if (typeof mySwiper.update === 'function') {
+                        mySwiper.update();
+                    }
 
                     $('.swiper-filters--box .filter-close').on('click', function () {
                         // when delete filter
@@ -186,29 +152,24 @@ const AntaresDatatablesFilters = {
                             updateSwiper(true);
                             $('.filters .swiper-wrapper').css('transform', 'translate3d(0px, 0px, 0px)');
                         }, 400);
-                        $('.this-is-dropczyk--out').removeClass('drop-enabled drop-open');
-                        $('.this-is-dropczyk').removeClass('drop-enabled');
+                        $('.antares-dropjs-filter--out').removeClass('drop-enabled drop-open');
+                        $('.antares-dropjs-filter').removeClass('drop-enabled');
                         setTimeout(function () {
                             if ($('.swiper-filters--box .swiper-wrapper').children().length > 0) {
                                 $('.tab-search--filter').removeClass('swiper--no-slides');
                             } else {
                                 $('.tab-search--filter').addClass('swiper--no-slides');
+                                $('.tbl-c').adjustCardHeight();
+
                             }
                         }, 500);
                         updateCountSwiperSliders(slidesOnPage);
+
                     });
 
                     enquire.register('screen and (max-width: 767px)', {
                         //mobile readonly for multiple
                         match: function () {
-                            setTimeout(function () {
-                                $('.drop-target').on('click touchstart', function () {
-                                    var leftForDropArrow = $(this).offset().left + $(this).width() / 2 - 4;
-                                    $('.drop-element').removeClass('drop-arrow--up drop-arrow--down');
-                                    $('.drop-element').addClass('drop-arrow--up');
-                                    $('.drop-element .dropjs-arrows').css('left', leftForDropArrow);
-                                });
-                            }, 500);
                         },
                         unmatch: function () {
                             $('.drop-target').off('click');
@@ -219,7 +180,7 @@ const AntaresDatatablesFilters = {
                         match: function () {
                             setTimeout(function () {
                                 $('.drop-target').on('click', function () {
-                                    let openDrop = $('.this-is-dropczyk--out.drop-element.drop-enabled');
+                                    let openDrop = $('.antares-dropjs-filter--out.drop-element.drop-enabled');
                                     let leftForDrop = openDrop.offset().left;
                                     if (leftForDrop > 30) {
                                         openDrop.removeClass('drop-open--right');
@@ -232,13 +193,11 @@ const AntaresDatatablesFilters = {
                         },
                         unmatch: function () {
                             $('.drop-target').off('click');
-                            $('.this-is-dropczyk--out.drop-element').removeClass('drop-open--right');
+                            $('.antares-dropjs-filter--out.drop-element').removeClass('drop-open--right');
                         }
                     });
                 } else {
-                    //not work slidet filters
                     $('.swiper-slide').off('click');
-                    $(document).off('click');
                     $('.swiper-filters--box .filter-close').off('click');
                     $('.drop-target').off('click');
                 }
@@ -260,12 +219,26 @@ const AntaresDatatablesFilters = {
                     }, 100);
                 }
             }); //update after resize gridstack
+
+            function cancelSelectMode() {
+                let containerTbody = $('.dataTables_wrapper tbody');
+                let parentTblc = containerTbody.closest('.tbl-c')
+                parentTblc.find('tr').removeClass('is-selected');
+                parentTblc.find('#table-ma').attr('disabled', true);
+                parentTblc.find('#table-ma span').html('0 Items Selected');
+                parentTblc.removeClass('selected-mode--active');
+                parentTblc.removeClass('selected-mode--touch-active');
+                parentTblc.find('table tbody tr td').removeClass('no-arrow');
+                parentTblc.find('.btn-with-selected').removeClass('display-flex');
+            }
+
             $('.card-bar__close').on('click', e => {
                 setTimeout(function () {
                     updateCountSwiperSliders(slidesOnPage);
                     updateSwiper(false);
                     updateSwiper(true);
                 }, 100);
+                cancelSelectMode()
             }); //update after resize gridstack
 
             $('.filters .btn-filter--clear-all').click(function () {
@@ -273,6 +246,7 @@ const AntaresDatatablesFilters = {
                     updateSwiper(false);
                     updateSwiper(true);
                 }, 200);
+                cancelSelectMode()
             });
             $('.swiper-filters--box + .ddown .ddown__sgl .add-filter').on('click', function () {
                 // when add filter
@@ -285,8 +259,11 @@ const AntaresDatatablesFilters = {
                         $('.filters .swiper-wrapper').css('transform', 'translate3d(0px, 0px, 0px)');
                     } else {
                         $('.tab-search--filter').addClass('swiper--no-slides');
+                        $('.tbl-c').adjustCardHeight();
+
                     }
                 }, 300);
+                cancelSelectMode()
             });
 
             updateSwiper(true);
@@ -316,7 +293,7 @@ const AntaresDatatablesFilters = {
         openOn: 'click',
         constrainToWindow: true,
         constrainToScrollParent: false,
-        classes: 'this-is-dropczyk--out drop',
+        classes: 'antares-dropjs-filter--out drop',
         hoverOpenDelay: 0,
         hoverCloseDelay: 50,
         // openDelay: 3000,
@@ -335,97 +312,26 @@ const AntaresDatatablesFilters = {
             ]
         }
     },
-    dropJSFilters() {
-        const self = this;
-        let dropOne;
-        $('.this-is-dropczyk .dropjs-target').each(function () {
-            enquire.register('screen and (max-width: 767px)', {
-                match: function () {
-                    dropOne = new Drop(
-                        Object.assign(
-                            {
-                                target: $(this).find('span')[0],
-                                content: $(this).next('.dropjs-wrapper')[0]
-                            },
-                            self.dropCgf,
-                            self.mobileDropJS
-                        )
-                    );
 
-                    dropOne.open();
-                    dropOne.position();
-                    dropOne.close();
-                },
-                unmatch: function () {
-                    dropOne.destroy();
-                }
-            });
-        });
-        $('.this-is-dropczyk .dropjs-target').each(function () {
-            enquire.register('screen and (min-width: 768px)', {
-                match: function () {
-                    dropOne = new Drop(
-                        Object.assign(
-                            {
-                                target: $(this).find('span')[0],
-                                content: $(this).next('.dropjs-wrapper')[0]
-                            },
-                            self.dropCgf
-                        )
-                    );
-
-                    dropOne.open();
-                    dropOne.position();
-                    dropOne.close();
-                },
-                unmatch: function () {
-                    dropOne.destroy();
-                }
-            });
-        });
-    },
     addDropJSFilters(target) {
         const self = this;
         let dropTwo;
-        enquire.register('screen and (max-width: 767px)', {
-            match: function () {
-                dropTwo = new Drop(
-                    Object.assign(
-                        {
-                            target: target.find('span')[target.length - 1],
-                            content: target.next('.dropjs-wrapper')[0]
-                        },
-                        self.dropCgf,
-                        self.mobileDropJS
-                    )
-                );
-                dropTwo.open();
-                dropTwo.position();
-                dropTwo.close();
-            },
-            unmatch: function () {
-                dropTwo.destroy();
-            }
-        });
-        enquire.register('screen and (min-width: 768px)', {
-            match: function () {
-                dropTwo = new Drop(
-                    Object.assign(
-                        {
-                            target: target.find('span')[target.length - 1],
-                            content: target.next('.dropjs-wrapper')[0]
-                        },
-                        self.dropCgf
-                    )
-                );
-                dropTwo.open();
-                dropTwo.position();
-                dropTwo.close();
-            },
-            unmatch: function () {
-                dropTwo.destroy();
-            }
-        });
+
+        dropTwo = new Drop(
+            Object.assign(
+                {
+                    target: target.find('span')[target.length - 1],
+                    content: target.next('.dropjs-wrapper')[0]
+                },
+                self.dropCgf,
+                self.mobileDropJS
+            )
+        );
+        dropTwo.open();
+        dropTwo.position();
+        dropTwo.close();
+
+
     },
     values() {
         function spinnerToSlider(parent) {
@@ -453,7 +359,7 @@ const AntaresDatatablesFilters = {
                 // IF YOU TOUCH SPINNER
                 var parent = $(this).closest('.filter-content');
                 parent.find('.filter-spinner--min').spinner('option', 'max', parent.find('.filter-spinner--max').attr('aria-valuenow')); // maximum for min spinner
-                parent.find('.filter-spinner--min').spinner('option', 'min', parent.find('.filter-spinner--min').attr('value'));
+                parent.find('.filter-spinner--min').spinner('option', 'min', parent.attr('data-min'));
                 spinnerToSlider(parent);
             }
         });
@@ -466,10 +372,11 @@ const AntaresDatatablesFilters = {
                 // IF YOU TOUCH SPINNER
                 var parent = $(this).closest('.filter-content');
                 parent.find('.filter-spinner--max').spinner('option', 'min', parent.find('.filter-spinner--min').attr('aria-valuenow')); // minimum for max spinner
-                parent.find('.filter-spinner--max').spinner('option', 'max', parent.find('.filter-spinner--max').attr('value'));
+                parent.find('.filter-spinner--max').spinner('option', 'max', parent.attr('data-max'));
                 spinnerToSlider(parent);
             }
         });
+
 
         var slider = $('[data-slider]'),
             rangeSlider = $('[data-slider-range-filter]');
@@ -492,7 +399,6 @@ const AntaresDatatablesFilters = {
             //two dot
             create: function () {
                 var parent = $(this).closest('.filter-content');
-
                 var dataName = parent.attr('data-type');
                 var dataMin = parseInt(parent.attr('data-type', dataName).attr('data-min'), 10);
                 var dataMax = parseInt(parent.attr('data-type', dataName).attr('data-max'), 10);
@@ -511,107 +417,95 @@ const AntaresDatatablesFilters = {
                 parent.find('.filter-spinner--min').spinner('option', 'max', parent.find('.filter-spinner--max').attr('aria-valuenow'));
             }
         });
+
+
     },
     addFilter() {
         var self = this;
 
-        function addTemplateNumber(typeFilter, minVal, maxVal, dataMin, dataMax, tooltipName) {
-            $('.card-filters--swiper').append(
-                '<div class="swiper-slide">' +
-                '<div class="filter filter-type--number this-is-dropczyk">' +
-                '<div class="card-filter__sgl ddown__init dropjs-target" data-filter-type="ammount" data-filter-value="' +
-                minVal +
-                ' - ' +
-                maxVal +
-                '" >' + //data-tooltip-inline="Serv"
-                '<span>' +
-                minVal +
-                ' - ' +
-                maxVal +
-                '</span>' +
-                '<i class="zmdi zmdi-close filter-close"></i>' +
-                '</div>' +
-                '<div class="dropjs-wrapper">' +
-                '<div class="dropjs-arrows"></div>' +
-                '<div class="filter-content filter--number" data-type="' +
-                typeFilter +
-                '" data-min="' +
-                dataMin +
-                '" data-max="' +
-                dataMax +
-                '">' +
-                '<span>Filter By ' +
-                typeFilter.charAt(0).toUpperCase() +
-                typeFilter.substr(1) +
-                '</span>' +
-                '<div class="slider-box">' +
-                '<div class="filter-slider ui-slider--minimal" data-slider-range-filter="true"></div>' +
-                '</div>' +
-                '<div class="form-block ff-rnw  spinners-box">' +
-                '<div class="spinner-basic">' +
-                '<input class="filter-spinner filter-spinner-mode-min filter-spinner--min" type="number" value="' +
-                minVal +
-                '" data-spinner="true" name="value">' +
-                '</div>' +
-                '<span class="ml16 mr16"> - </span>' +
-                '<div class="spinner-basic">' +
-                '<input class="filter-spinner filter-spinner-mode-max filter-spinner--max" type="number" value="' +
-                maxVal +
-                '" data-spinner="true" name="value2">' +
-                '</div>' +
-                '</div>' +
-                '<a class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect change-filter change-filter--number">Confirm</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>'
-            );
+        function addTemplateNumber(targetFilter, typeFilter, minVal, maxVal, dataMin, dataMax) {
+            let templateElement = $('.filter-type--number').closest('.swiper-slide--template').clone();
+            let nameFilter = typeFilter.charAt(0).toUpperCase() + typeFilter.substr(1)
+            templateElement.removeClass('swiper-slide--template').addClass('swiper-slide').removeClass('display-none')
+            templateElement.find('.dropjs-target--template').removeClass('dropjs-target--template').addClass('dropjs-target')
+            templateElement.find('.filter').attr('data-type', typeFilter)
+            templateElement.find('.filter-spinner-mode-min--template').removeClass('filter-spinner-mode-min--template').addClass('filter-spinner-mode-min')
+            templateElement.find('.filter-spinner-mode-max--template').removeClass('filter-spinner-mode-max--template').addClass('filter-spinner-mode-max')
+            templateElement.find('.dropjs-target').attr('data-filter-value', minVal + ' - ' + maxVal).children('span').html(minVal + ' - ' + maxVal)
+            templateElement.find('.filter-content').attr('data-type', typeFilter).attr('data-min', dataMin).attr('data-max', dataMax).children('span').html('Filter By ' + nameFilter)
+            templateElement.find('.filter-spinner--min').attr('value', minVal)
+            templateElement.find('.filter-spinner--max').attr('value', maxVal)
+            templateElement.find('.filter-slider').attr('data-slider-range-filter', true)
+            targetFilter.closest('.filters').find('.card-filters--swiper').append(templateElement)
         }
 
-        function addTemplateBadge(typeFilter, selectedStatus) {
-            var thisSlide = $('.card-filters--swiper');
-            thisSlide.append(
-                '<div class="swiper-slide">' +
-                '<div class="filter filter-type--badge this-is-dropczyk">' +
-                '<div class="card-filter__sgl ddown__init dropjs-target" data-filter-value="' +
-                typeFilter.charAt(0).toUpperCase() +
-                typeFilter.substr(1) +
-                '" >' + //data-tooltip-inline="Serv"
-                '<span>' +
-                selectedStatus +
-                '</span>' +
-                '<i class="zmdi zmdi-close filter-close"></i>' +
-                '</div>' +
-                '<div class="dropjs-wrapper">' +
-                '<div class="dropjs-arrows"></div>' +
-                '<div class="filter-content filter--badge" data-type="' +
-                typeFilter +
-                '" >' +
-                '<span>Filter By ' +
-                typeFilter.charAt(0).toUpperCase() +
-                typeFilter.substr(1) +
-                '</span>' +
-                '<div class="slider-box">' +
-                '<select name="select" data-selectAR="true" class="select--badge">' +
-                '<option value="Active">Active</option>' +
-                '<option value="Pending">Pending</option>' +
-                '<option value="In space">In space</option>' +
-                '</select>' +
-                '<a  class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect change-filter change-filter--badge">Confirm</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>'
-            );
-            for (let i = 0; i < thisSlide.find('.slider-box option').length; i++) {
-                if (thisSlide.find('.slider-box option')[i].value === selectedStatus) {
-                    $(thisSlide.find('.slider-box option')[i]).attr('selected', 'selected');
+        function addTemplateBadge(targetFilter, typeFilter, selectedStatus) {
+            let templateElement = $('.filter-type--badge').closest('.swiper-slide--template').clone();
+            let nameFilter = typeFilter.charAt(0).toUpperCase() + typeFilter.substr(1)
+            let thisSlider = targetFilter.closest('.filters').find('.card-filters--swiper')
+
+            templateElement.removeClass('swiper-slide--template').addClass('swiper-slide').removeClass('display-none')
+            templateElement.find('.dropjs-target--template').removeClass('dropjs-target--template').addClass('dropjs-target')
+            templateElement.find('.select--badge').attr('data-selectAR', true)
+            templateElement.find('.filter').attr('data-type', typeFilter)
+            templateElement.find('.dropjs-target').attr('data-filter-value', nameFilter).children('span').html(selectedStatus)
+            templateElement.find('.filter-content').attr('data-type', typeFilter).children('span').html('Filter By ' + nameFilter)
+            thisSlider.append(templateElement)
+            for (let i = 0; i < thisSlider.find('.slider-box option').length; i++) {
+                if (thisSlider.find('.slider-box option')[i].value === selectedStatus) {
+                    $(thisSlider.find('.slider-box option')[i]).attr('selected', 'selected');
                 }
             }
+        }
+
+        function addTemplateDatePicker(targetFilter, typeFilter, thisTextDatePicker) {
+            let templateElement = $('.filter-type--date-picker').closest('.swiper-slide--template').clone();
+            let nameFilter = typeFilter.charAt(0).toUpperCase() + typeFilter.substr(1)
+
+            templateElement.removeClass('swiper-slide--template').addClass('swiper-slide').removeClass('display-none')
+            templateElement.find('.dropjs-target--template').removeClass('dropjs-target--template').addClass('dropjs-target')
+            templateElement.find('.filter').attr('data-type', typeFilter)
+            templateElement.find('[data-daterangepicker]').attr('data-default-data', thisTextDatePicker)
+            templateElement.find('.filter-content').attr('data-type', typeFilter).attr('data-daterangepicker-text', thisTextDatePicker).children('span').html('Filter By ' + nameFilter)
+            templateElement.find('input').attr('data-daterangepicker--filter', true)
+            templateElement.find('.dropjs-target').attr('data-filter-value', nameFilter).children('span').html(thisTextDatePicker)
+            targetFilter.closest('.filters').find('.card-filters--swiper').append(templateElement)
+
+
         }
 
         $('.ddown-multi .add-filter').on('click', function () {
             var parent = $(this).closest('.filter-content');
             var typeFilter = parent.attr('data-type');
             if (typeFilter === 'services' || typeFilter === 'created') {
+                if (typeFilter === 'services') {
+                    let countFilter = $('.swiper-filters--box').attr('data-filter-' + typeFilter)
+                    if (countFilter === undefined) {
+                        $('.swiper-filters--box').attr('data-filter-' + typeFilter, '1')
+                    }
+                    else if (countFilter === '5') {
+                        self.filterAlertNumber('error', parent);
+                        return false
+                    }
+                    else {
+                        countFilter++;
+                        $('.swiper-filters--box').attr('data-filter-' + typeFilter, countFilter)
+                    }
+                }
+                else if (typeFilter === 'created') {
+                    let countFilter = $('.swiper-filters--box').attr('data-filter-' + typeFilter)
+                    if (countFilter === undefined) {
+                        $('.swiper-filters--box').attr('data-filter-' + typeFilter, '1')
+                    }
+                    else if (countFilter === '5') {
+                        self.filterAlertNumber('error', parent);
+                        return false
+                    }
+                    else {
+                        countFilter++;
+                        $('.swiper-filters--box').attr('data-filter-' + typeFilter, countFilter)
+                    }
+                }
                 var minInp = parseInt(parent.find('.filter-spinner--min').val(), 10);
                 var maxInp = parseInt(parent.find('.filter-spinner--max').val(), 10);
                 var dataName = parent.attr('data-type');
@@ -628,27 +522,22 @@ const AntaresDatatablesFilters = {
                         maxVal = parent.find('.filter-spinner--max').val(),
                         tooltipName = parent.closest('ul[data-name]').attr('data-name');
                     // tooltipName = tooltipName.charAt(0).toUpperCase() + tooltipName.substr(1).toLowerCase(); //first letter big
-                    var typeAmmount;
-                    typeAmmount = addTemplateNumber(typeFilter, minVal, maxVal, dataMin, dataMax, tooltipName);
-                    filterContainer.prepend(typeAmmount);
+                    typeAmmount = addTemplateNumber(parent, typeFilter, minVal, maxVal, dataMin, dataMax);
+                    AntaresForms.elements.tooltip();
+
+                    $(this).closest('.filter-content').find('.ddown-multi__submenu').hide();
+                    $('.antares-dropjs-filter').off('mousedown mouseup'); // for restart mouesedown filters scroll
+                    AntaresDdownGeneral.scrollCloseDropdowns();
                     self.values();
                     self.editFilter();
-                    AntaresForms.elements.tooltip();
-                    $(this)
-                        .closest('.filter-content')
-                        .find('.ddown-multi__submenu')
-                        .hide();
-                    $('.this-is-dropczyk').off('mousedown mouseup'); // for restart mouesedown filters scroll
-                    AntaresDdownGeneral.scrollCloseDropdowns();
                     self.addDropJSFilters(filterContainer.find('.dropjs-target'));
                 } else {
                     self.filterAlertNumber('error', parent, minInp, maxInp, dataMin, dataMax);
                 }
-            } else if (typeFilter === 'status') {
-                var parent = parent;
+            }
+            else if (typeFilter === 'status') {
                 var selectedStatus = parent.find('.select2-selection__rendered').attr('title');
                 var haveSameStatusFilter = false;
-
                 for (let i = 0; i < $('.filter-type--badge').length; i++) {
                     if ($('.filter-type--badge span')[i].textContent === selectedStatus) {
                         haveSameStatusFilter = true;
@@ -656,46 +545,96 @@ const AntaresDatatablesFilters = {
                 }
                 if (haveSameStatusFilter === false) {
                     self.filterAlertBadge('success', selectedStatus);
-                    var filterContainer = $(this)
-                        .closest('.filters')
-                        .find('.card-filters--swiper');
+                    var filterContainer = $(this).closest('.filters').find('.card-filters--swiper');
                     var parent = $(this).closest('.filter-content');
-                    var typeAmmount = addTemplateBadge(typeFilter, selectedStatus);
+                    let targetFilter = parent
+                    var typeAmmount = addTemplateBadge(targetFilter, typeFilter, selectedStatus);
                     filterContainer.prepend(typeAmmount);
                     self.editFilter();
                     AntaresForms.elements.tooltip();
-                    $(this)
-                        .closest('.filter-content')
-                        .find('.ddown-multi__submenu')
-                        .hide();
-                    $('.this-is-dropczyk').off('mousedown mouseup'); // for restart mouesedown filters scroll
+                    $(this).closest('.filter-content').find('.ddown-multi__submenu').hide();
+                    $('.antares-dropjs-filter').off('mousedown mouseup'); // for restart mouesedown filters scroll
                     AntaresDdownGeneral.scrollCloseDropdowns();
                     self.addDropJSFilters(filterContainer.find('.dropjs-target'));
                 } else if (haveSameStatusFilter === true) {
                     self.filterAlertBadge('error', selectedStatus);
                 }
-            } else {
-                console.log('choose');
+            }
+            else if (typeFilter === 'datePicker') {
+                let parent = $(this).closest('.filter-content');
+                let thisTextDatePicker = parent.find('.comiseo-daterangepicker-triggerbutton')[0].textContent
+                let filterContainer = $(this).closest('.filters').find('.card-filters--swiper');
+                if (thisTextDatePicker === 'Select date range...') {
+                }
+                else {
+                    let typeAmmount = addTemplateDatePicker(parent, typeFilter, thisTextDatePicker);
+                    filterContainer.prepend(typeAmmount);
+                    self.addDropJSFilters(filterContainer.closest('.filters').find('.dropjs-target'));
+
+                    $('.drop.antares-dropjs-filter--out.drop-element [data-daterangepicker-text="'+thisTextDatePicker+'"').find('[data-daterangepicker--filter="true"]').daterangepicker({
+                        mirrorOnCollision: true,
+                        verticalOffset: 0,
+                    })
+
+                    let thisOriginalTextDatePicker = parent.find("[data-daterangepicker]").daterangepicker("getRange")
+                    $('[data-daterangepicker-text="' + thisTextDatePicker + '"] [data-daterangepicker--filter]').daterangepicker("setRange", thisOriginalTextDatePicker);
+                    self.editFilter();
+
+                    $('.drop.antares-dropjs-filter--out .comiseo-daterangepicker-triggerbutton').off('click.dateDrop').on('click.dateDrop', function () {
+                        if ($(this).closest('.drop').hasClass('dropjs-display-block')) {
+                            $(this).closest('.drop').removeClass('dropjs-display-block')
+                        }
+                        else {
+                            $(this).closest('.drop').addClass('dropjs-display-block')
+                        }
+                    })
+                    $('.comiseo-daterangepicker-buttonpanel button,.comiseo-daterangepicker-presets li').off('click.dateDrop').on('click.dateDrop', function () {
+                        if ($('.drop').hasClass('dropjs-display-block')) {
+                            setTimeout(function () {
+                                $('body').addClass('drop-open')
+                                $('.drop.dropjs-display-block').addClass('drop-enabled drop-open').removeClass('dropjs-display-block')
+                            }, 300)
+                        }
+                        else {
+                            $('.drop').removeClass('dropjs-display-block')
+                        }
+                    })
+                    $(this).closest('.filter-content').find('.ddown-multi__submenu').hide();
+
+                }
+
+            }
+            else {
             }
         });
     },
     closeFilter() {
-        var self = this;
+        let self = this;
         $('.filters .btn-filter--clear-all').click(function () {
-            $('.filters .swiper-slide').remove();
-            $('.filters .ddown--filter-edit').remove();
-            $('.filters .card-filter__sgl').remove();
+            let thisBtnClear = $(this)
+            let swiperLine = thisBtnClear.closest('.filters').find('.swiper-filters--box')
+            for (let i = 0; i < swiperLine[0].attributes.length; i++) {  //delete count attributes
+                let thisAttr = swiperLine[0].attributes[i].name
+                if (thisAttr.substr(0, 11) === 'data-filter') {
+                    swiperLine.attr(thisAttr, 0)
+                }
+            }
+            swiperLine.find('.swiper-slide').remove();
+            swiperLine.find('.ddown--filter-edit').remove();
+            swiperLine.find('.card-filter__sgl').remove();
             window.noty(
                 $.extend({}, APP.noti.errorFM('lg', 'border'), {
                     text: 'Deleted ALL filters'
                 })
             );
             setTimeout(function () {
-                $('.filters .ddown-multi').removeClass('ddown-multi--open');
-                if ($('.swiper-filters--box .swiper-wrapper').children().length > 0) {
-                    $('.tab-search--filter').removeClass('swiper--no-slides');
+                thisBtnClear.closest('.filters').find('.ddown-multi').removeClass('ddown-multi--open');
+                if (swiperLine.find('.swiper-wrapper').children().length > 0) {
+                    swiperLine.closest('.tab-search--filter').removeClass('swiper--no-slides');
                 } else {
-                    $('.tab-search--filter').addClass('swiper--no-slides');
+                    swiperLine.closest('.tab-search--filter').addClass('swiper--no-slides');
+                    $('.tbl-c').adjustCardHeight();
+
                 }
             }, 300);
         });
@@ -706,6 +645,11 @@ const AntaresDatatablesFilters = {
                 .closest('.card-filter__sgl')
                 .addClass('animated fadeOutRight');
             setTimeout(function () {
+                var typeFilter = $self.closest('.filter').attr('data-type');
+                let countFilter = $('.swiper-filters--box').attr('data-filter-' + typeFilter)
+                countFilter--;
+                $('.swiper-filters--box').attr('data-filter-' + typeFilter, countFilter)
+
                 $self.closest('.swiper-slide').remove();
                 $self.closest('.ddown--filter-edit').remove();
                 $self.closest('.card-filter__sgl').remove();
@@ -750,7 +694,7 @@ const AntaresDatatablesFilters = {
                     var minVal = parent.find('.filter-spinner--min').val();
                     var maxVal = parent.find('.filter-spinner--max').val();
 
-                    var originTarget = $('.drop-enabled').closest('.this-is-dropczyk');
+                    var originTarget = $('.drop-enabled').closest('.antares-dropjs-filter');
                     originTarget.find('.card-filter__sgl').attr('data-filter-value', minVal + ' - ' + maxVal);
                     originTarget.find('.card-filter__sgl span').text(minVal + ' - ' + maxVal);
 
@@ -761,12 +705,13 @@ const AntaresDatatablesFilters = {
                 } else {
                     self.filterAlertNumber('error', parent, minInp, maxInp, dataMin, dataMax);
                 }
-            } else if ($(this).hasClass('change-filter--badge')) {
+            }
+            else if ($(this).hasClass('change-filter--badge')) {
                 var newSelectStatus = $(this)
                     .closest('.slider-box')
                     .find('.select2-selection__rendered')
                     .attr('title');
-                var originTarget = $('.drop-enabled').closest('.this-is-dropczyk');
+                var originTarget = $('.drop-enabled').closest('.antares-dropjs-filter');
                 var haveSameStatusFilter = false;
                 for (let i = 0; i < $('.filter-type--badge').length; i++) {
                     if ($('.filter-type--badge span')[i].textContent === newSelectStatus) {
@@ -789,8 +734,28 @@ const AntaresDatatablesFilters = {
                     );
                 }
             }
+            else if ($(this).hasClass('change-filter--date-picker')) {
+                let newDate = $(this).closest('.slider-box').find('.comiseo-daterangepicker-triggerbutton')[0].outerText
+                let oldDate = $(this).closest('[data-daterangepicker-text]');
+                let allSliderDatePicker = $('.swiper-filters--box [data-type="datePicker"]')
+                for (let i = 0; i < allSliderDatePicker.length; i++) {
+                    let correctTargetText = $(allSliderDatePicker[i]).find('.antares-dropjs-filter--out.drop.drop-target')
+                    if (correctTargetText.text() === oldDate.attr('data-daterangepicker-text')) {
+                        correctTargetText.text(newDate)
+                        oldDate.attr('data-daterangepicker-text', newDate)
+                    }
+                }
+                $('.drop').removeClass('drop-enabled');
+                $('.drop').removeClass('drop-open');
+                $('.drop').removeClass('drop-after-open');
+                $('body').removeClass('drop-open');
+                window.noty(
+                    $.extend({}, APP.noti.warningFM('lg', 'border'), {
+                        text: 'CHANGE DATEPICKER (devwarning)'
+                    })
+                );
+            }
         });
-        self.values();
     },
     filterAlertNumber(category, parent, minInp, maxInp, dataMin, dataMax) {
         if ((minInp === undefined, maxInp === undefined, dataMin === undefined, dataMax === undefined)) {
@@ -820,7 +785,14 @@ const AntaresDatatablesFilters = {
                         text: 'maxInp > dataMax'
                     })
                 );
+            } else if (minInp === '', maxInp === '', dataMin === '', dataMax === '') {
+                window.noty(
+                    $.extend({}, APP.noti.errorFM('lg', 'border'), {
+                        text: 'Maximum number of categories'
+                    })
+                );
             }
+
         } else if (category === 'success') {
             parent.find('.filter-spinner--min').removeClass('filter-spinner--validation-error');
             parent.find('.filter-spinner--max').removeClass('filter-spinner--validation-error');
@@ -904,7 +876,8 @@ const AntaresDatatablesFilters = {
             .columns()
             .search('')
             .draw();
-    }
+    },
+
 };
 
 $(() => {

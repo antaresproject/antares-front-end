@@ -12,11 +12,11 @@ Antares.prototype.swal = {
       var medley = $.extend({}, APP.swal.base, APP.swal[theme], APP.swal[type], custom);
       //load!
       if (confirmFunction && typeof confirmFunction === 'function') {
-        swal(medley, function() {
+        window.swal(medley, function() {
           return confirmFunction();
         });
       } else {
-        swal(medley);
+        window.swal(medley);
       }
 
       //update mdl
@@ -28,7 +28,7 @@ Antares.prototype.swal = {
   },
 
   close: function() {
-    swal.closeModal();
+    window.swal.closeModal();
   },
   base: {
     allowEscapeKey: true,
@@ -94,47 +94,6 @@ Antares.prototype.swal = {
     return $.extend({}, this.base, this.skin2, this.typeInfo);
   }
 };
-
-// //noty theme
-// $.noty.layouts.centerFull = {
-//     name: 'CenterFull',
-//     options: { // overrides options
-
-//     },
-//     container: {
-//         object: '<ul id="noty_CenterFull_layout_container" />',
-//         selector: 'ul#noty_CenterFull_layout_container',
-//         style: function() {
-//             $(this).css({
-//                 margin: 0,
-//                 padding: 0,
-//                 listStyleType: 'none',
-//                 zIndex: 10000000,
-//                 // width: 'auto'
-
-//             });
-
-//             $(this).css({
-//                 left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px'
-//             });
-//         }
-//     },
-//     parent: {
-//         object: '<li />',
-//         selector: 'li',
-//         css: {}
-//     },
-//     css: {
-//         display: 'none',
-//         width: 'auto'
-//     },
-//     addClass: ''
-// };
-
-//
-//usage
-// noty($.extend( {}, APP.noti.successFM("lg", "full"), {text: "abracadarba, epsium!"}));
-//
 
 Antares.prototype.noti = {
   base: {
@@ -272,89 +231,11 @@ Antares.prototype.noti = {
   }
 };
 
-// usage
-// APP.modal.init({
-//   element: '.my-html-content',
-//   title: 'Success Confirmation Modal',
-//   buttons: {
-//       'Confirm': {
-//           type: 'primary',
-//           action: function() {
-//               alert('action1');
-//               $.modal.close();
-//           },
-//       },
-//       'Cancel': {
-//           type: 'default',
-//           action: function() {
-//               $.modal.close();
-//           },
-//       },
-//   }
-// });
-
-//
-//INIT SAMPLE
-//
-
-// APP.dialog.init({
-//     content: 'Lorem',
-//     title: 'asdasd',
-//     actionPosition: 'right',
-//     width:'95%',
-//     height:'500px',
-//     buttons: {
-//         Confirm: {
-//             type: "primary",
-//             action: function() {
-//                 alert("action1");
-//             }
-//         },
-//         Cancel: {
-//             type: "default",
-//             action: function() {
-//                 alert("action2");
-//             }
-//         },
-//         Custom: {
-//             type: "red",
-//             action: function() {
-//                 APP.dialog.init({
-//                     content: '<button class="btn-link btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect show-dialog">Click</button>',
-//                     title: 'asdasd',
-//                     actionPosition: 'rig6ht',
-//                     buttons: {
-//                         Confirm: {
-//                             type: "primary",
-//                             action: function() {
-//                                 alert("action1");
-//                             }
-//                         },
-//                         Cancel: {
-//                             type: "default",
-//                             action: function() {
-//                                 alert("action2");
-//                             }
-//                         },
-//                         Abort: {
-//                             type: "red",
-//                             action: function() {
-//                                alert("action3");
-//                             }
-//                         }
-//                     }
-//                 });
-//             }
-//         }
-//     }
-// });
-
 Antares.prototype.dialog = {
   // clean html use - onLoad
   onLoad: function() {
     // Create modal when html is defined
     function dialogModal(showModalButton, dialogElement) {
-      // console.log('dialog go');
       // Variables
       var showModalButton = document.querySelector('.show-dialog');
       var dialog = document.querySelector('dialog');
@@ -375,7 +256,6 @@ Antares.prototype.dialog = {
         //my custom
         //add class if non existent
         dialog.classList.add('ar-dialog');
-
         //mechanics if mutiple
         if ($('dialog').length > 1) {
           $('.show-dialog').each(function(index, el) {
@@ -463,8 +343,7 @@ Antares.prototype.dialog = {
     var dialog = document.querySelector('dialog.is-current');
 
     if (!$.isEmptyObject(options) && 'title' in options) {
-      console.log(options.title);
-
+        $('body').addClass('dialog-is-open');
       // Dialog Title
       $('dialog.is-current .mdl-dialog__title').text(options.title);
     }
@@ -473,6 +352,7 @@ Antares.prototype.dialog = {
     dialog.querySelectorAll('.ar-dialog .close').forEach(function(element, index) {
       element.addEventListener('click', function() {
         dialog.close();
+          $('body').removeClass('dialog-is-open')
       });
     });
   },
@@ -485,6 +365,7 @@ Antares.prototype.dialog = {
     if (!$.isEmptyObject(options) && 'ajaxURL' in options) {
       $.get(options.ajaxURL, function(response) {
         $('.ar-dialog.is-current .mdl-dialog__content').html(response);
+          $('.ar-dialog.is-current .mdl-dialog__content').perfectScrollbar()
       });
     } else if (!$.isEmptyObject(options) && 'content' in options) {
       //jquery selector or string = hmm?
@@ -512,13 +393,13 @@ Antares.prototype.dialog = {
         var btnclass = 'btn btn--s-small btn--primary';
 
         if (options.buttons[key].type === 'primary') {
-          btnclass = 'btn btn--s-small btn--primary';
+          btnclass = 'btn btn--sm btn--primary mdl-js-button mdl-js-ripple-effect';
         } else if (options.buttons[key].type === 'default') {
-          btnclass = 'btn btn--s-small btn--default';
+          btnclass = 'btn btn--sm btn--default close mdl-js-button mdl-js-ripple-effect';
         } else if (options.buttons[key].type === 'red') {
-          btnclass = 'btn btn--s-small btn--red';
+          btnclass = 'btn btn--sm btn--red mdl-js-button mdl-js-ripple-effect';
         } else if (options.buttons[key].type === 'dark') {
-          btnclass = 'btn btn--s-small btn--dark';
+          btnclass = 'btn btn--sm btn--dark mdl-js-button mdl-js-ripple-effect';
         } else {
           console.log('modal footer button type unknown');
         }
@@ -530,6 +411,9 @@ Antares.prototype.dialog = {
         $('.ar-dialog.is-current .mdl-dialog__actions > *:first-child').on('click', function() {
           options.buttons[key].action();
         });
+          $('.ar-dialog.is-current .mdl-dialog__actions').on('click',function () {
+           $('body').removeClass('dialog-is-open')
+          })
       });
     }
 
@@ -625,7 +509,6 @@ Antares.prototype.modal = {
   setWidth: options => {
     if (!$.isEmptyObject(options) && 'width' in options) {
       var dataWidth = options.width;
-      // console.log(dataWidth);
       $('.jquery-modal.current .modal').css('width', dataWidth);
     }
   },
@@ -633,6 +516,7 @@ Antares.prototype.modal = {
     if (!$.isEmptyObject(options) && 'element' in options) {
       var target = $(options.element);
       target.modal(this.orgOptions);
+        $('body').addClass('dialog-is-open')
     } else {
       //start with DOM
       $('[data-modal="true"]').modal(this.orgOptions);
@@ -653,13 +537,13 @@ Antares.prototype.modal = {
         var btnclass = 'btn btn--md btn--primary';
 
         if (options.buttons[key].type === 'primary') {
-          btnclass = 'btn btn--md btn--primary';
+          btnclass = 'btn btn--md btn--primary mdl-js-button mdl-js-ripple-effect';
         } else if (options.buttons[key].type === 'default') {
-          btnclass = 'btn btn--md btn--default';
+          btnclass = 'btn btn--md btn--default close mdl-js-button mdl-js-ripple-effect';
         } else if (options.buttons[key].type === 'red') {
-          btnclass = 'btn btn--md btn--red';
+          btnclass = 'btn btn--md btn--red mdl-js-button mdl-js-ripple-effect';
         } else if (options.buttons[key].type === 'dark') {
-          btnclass = 'btn btn--md btn--dark';
+          btnclass = 'btn btn--md btn--dark mdl-js-button mdl-js-ripple-effect';
         } else {
           console.log('modal footer button type unknown');
         }
@@ -670,6 +554,8 @@ Antares.prototype.modal = {
         //button assign action method
         $('.jquery-modal.current .modal__footer .btn:first-child').on('click', function() {
           options.buttons[key].action();
+            $('body').removeClass('dialog-is-open')
+
         });
       });
     } else {
@@ -681,11 +567,16 @@ Antares.prototype.modal = {
     //clear
     $('.jquery-modal.current .modal .modal__header').remove();
     //create footer when buttons
-    $('.jquery-modal.current .modal').prepend('<div class="modal__header"><div class="modal__title">Title</div><a class="modal__close" href="#" rel="modal:close"><i class="zmdi zmdi-close"></i></a></div>');
+    $('.jquery-modal.current .modal').prepend('<div class="modal__header"><div class="modal__title">Title</div><a class="modal__close mdl-js-button mdl-js-ripple-effect close" href="#" rel="modal:close"><i class="zmdi zmdi-close "></i></a></div>');
     if (!$.isEmptyObject(options) && 'title' in options) {
       //insert title
       $('.jquery-modal.current .modal__title').html(options.title);
     }
+    $('.modal__close').click(function () {
+        $('body').removeClass('dialog-is-open')
+    })
+      componentHandler.upgradeAllRegistered();
+
   }
 };
 
@@ -700,7 +591,6 @@ $(function() {
     // } else {
 
     // }
-
     // Prevent scrolling by storing the page's current scroll offset
     scrollV = document.body.scrollTop;
     scrollH = document.body.scrollLeft;
@@ -709,7 +599,6 @@ $(function() {
 
     setTimeout(function() {
       window.history.pushState('page2', 'Title', url);
-      console.log('hash removed');
     }, 220);
 
     // Restore the scroll offset, should be flicker free
@@ -722,20 +611,4 @@ $(function() {
   window.APP = APP;
 
   APP.dialog.onLoad();
-
-  $('.mdl-dialog').on('open', function(event) {
-    $('#app-wrapper').addClass('dialog-is-open');
-  });
-  $('.mdl-dialog').on('close', function(event) {
-    $('#app-wrapper').removeClass('dialog-is-open');
-  });
 });
-
-// $.fn.ARmodal = function(options) {
-//     $.modal.close();
-//     var mixin = $.extend({}, APP.modal.orgOptions, options);
-//     console.log(mixin);
-//     $(this).modal(mixin);
-//     APP.modal.addHeader();
-//     APP.modal.addFooter();
-// };

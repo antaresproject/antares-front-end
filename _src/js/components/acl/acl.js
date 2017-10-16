@@ -325,7 +325,7 @@ if (loadPossible) {
   loadConfigurationSelect.on('select2:selecting', function(e) {
     var selectItemValue = e.params.args.data.element.value;
     e.preventDefault();
-    swal(
+    APP.swal(
       $.extend({}, APP.swal.cb1Warning(), {
         title: loadConfigurationSelect.data('title'),
         text: loadConfigurationSelect.data('description'),
@@ -346,7 +346,9 @@ if (loadPossible) {
 
   $(() => {
     $('#sendAclForm').on('click', function() {
-      $(this).closest('form').submit();
+      $(this)
+        .closest('form')
+        .submit();
     });
 
     $('#acl-form').on('submit', function(event) {

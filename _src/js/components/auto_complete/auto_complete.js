@@ -584,14 +584,12 @@ const AntaresAC = {
       },
       {
         category: 'file',
-        content:
-          '<div class="type--file flex-block"><div class="avatar avatar--xs"><img src="img/file_icons/icon-pdf.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">andreas</span><div class="flex-block__desc">Some Description</div></div><div class="flex-block__badge"><span class="description">15th of Dec 2016</span></div></div>',
+        content: '<div class="type--file flex-block"><div class="avatar avatar--xs"><img src="img/file_icons/icon-pdf.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">andreas</span><div class="flex-block__desc">Some Description</div></div><div class="flex-block__badge"><span class="description">15th of Dec 2016</span></div></div>',
         url: '#'
       },
       {
         category: 'file',
-        content:
-          '<div class="type--file flex-block"><div class="avatar avatar--xs"><img src="img/file_icons/icon-doc.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">Asaasda dasd</span><div class="flex-block__desc">Some Description</div></div><div class="flex-block__badge"><span class="description">15th of Dec 2016</span></div></div>',
+        content: '<div class="type--file flex-block"><div class="avatar avatar--xs"><img src="img/file_icons/icon-doc.png"><div></div></div><div class="flex-block__content"><span class="flex-block__title">Asaasda dasd</span><div class="flex-block__desc">Some Description</div></div><div class="flex-block__badge"><span class="description">15th of Dec 2016</span></div></div>',
         url: '#'
       },
       {
@@ -625,7 +623,7 @@ const AntaresAC = {
       //   );
       return (
         $('<li></li>')
-          .data('item.autocomplete', item)
+          .data('ui-autocomplete-item', item)
           // .append(t)
           .appendTo(ul)
       );
@@ -708,7 +706,7 @@ const AntaresAC = {
       },
       // _renderItemData: function( ul, item ) {  //if you want not <li>
       //     return $( "<div>" )
-      //         .data( "item.autocomplete", item )
+      //         .data( "ui-autocomplete-item", item )
       //         .appendTo( ul );
       // },
 
@@ -809,7 +807,9 @@ const AntaresAC = {
       },
       open: function() {
         $('.antares-ac__footer').removeClass('ui-menu-item');
-        $('.ui-autocomplete-category').prev('li').addClass('last-in-category');
+        $('.ui-autocomplete-category')
+          .prev('li')
+          .addClass('last-in-category');
         enquire.register('screen and (min-width: 1367px)', {
           match: function() {
             $('.ac-container--wrapper').perfectScrollbar();
@@ -857,7 +857,7 @@ const AntaresAC = {
 
         // enter select URL
         var url = ui.item.url;
-
+        url;
         if (url != undefined) {
           window.location.replace(url);
         }
@@ -869,7 +869,10 @@ const AntaresAC = {
     $('#main-search')
       .on('input', function() {
         if (!$(this).val()) {
-          $(this).closest('.search-box').find('.mdl-textfield__label').show();
+          $(this)
+            .closest('.search-box')
+            .find('.mdl-textfield__label')
+            .show();
         }
       })
       .on('focus', function() {
@@ -892,7 +895,9 @@ const AntaresAC = {
     // remove ui styling
     $('.ac-container').on('mouseover', '.ui-menu-item', function() {
       $(this).removeClass('ui-state-active');
-      $(this).find('.ui-menu-item-wrapper').removeClass('ui-state-active');
+      $(this)
+        .find('.ui-menu-item-wrapper')
+        .removeClass('ui-state-active');
     });
   }
 };

@@ -85,7 +85,6 @@ const AntaresBrandColors = {
                     .minicolors('value', $(this).val());
                 $(this).qtip('destroy');
             } else if ($(this).val().length === 7 && !theColor.isValid()) {
-                console.log('incorrectColor');
                 $(this).qtip({
                     style: {
                         classes: 'ar',
@@ -195,7 +194,9 @@ const AntaresBrandColors = {
                             '.timeline li.timeline__entry--ok:before',
                             '.timeline li a',
                             '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block',
-                            '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block .flex-block__title'
+                            '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block .flex-block__title',
+                            'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl.mobile-ddowns__sgl--open:after',
+
                         ],
                         primaryTargetsBackground = [
                             '.app-content:before',
@@ -209,7 +210,8 @@ const AntaresBrandColors = {
                             '.card.card--chart-small .card__header',
                             '.card.card--chart-small .card__header-chart',
                             '.card.card--primary-light',
-                            '.btn.btn--primary'
+                            '.btn.btn--primary',
+                            'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu',
                         ],
                         primaryTargetsBorder = [
                             '.breadcrumbs .ddown__menu',
@@ -219,7 +221,7 @@ const AntaresBrandColors = {
                         primaryTargetsMod1 = ['.menu-aside li.is-active a', '.breadcrumbs > li.is-active'],
                         primaryTargetsMod3 = ['.badge', '.ddown--brand .ddown__init', '#table-ma.is-disabled'],
                         primaryTargetsMod4 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td'],
-                        primaryTargetsMod5 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td'];
+                        primaryTargetsMod5 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header'];
                     //color
                         $('meta[name="theme-color"]').attr('content', value)
                         $('meta[name="msapplication-navbutton-color"]').attr('content', value)
@@ -480,10 +482,15 @@ const AntaresBrandColors = {
                                 '.item-grp  i',
                                 '.btn.btn--brand',
                                 '.menu-mobile-settings + .select2 .select2-selection__rendered',
-                                '.ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i'
+                                '.ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
+                                '.menu-mobile-settings + .select2 .select2-selection .select2-selection__rendered, .menu-mobile-settings + .select2 .select2-selection .select2-selection__rendered:before, .menu-mobile-settings + .select2 .select2-selection__arrow:before',
+                                'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu.mobile-ddowns__menu--user span',
+                                'aside.main-sidebar .mobile-ddowns  span',
+                                'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.is-selected .flex-block:after'
                             ];
                         self.clearStyles(primaryLeft);
                         self.addStyles(primaryLeft, '.burgericon > a .line', 'background', value);
+                        self.addStyles(primaryLeft, 'aside.main-sidebar .mobile-ddowns  .mdl-button__ripple-container .mdl-ripple ', 'background', value);
                         for (var q = 0; q < primaryLeftTargets.length; q++) {
                             self.addStyles(primaryLeft, primaryLeftTargets[q], 'color', value);
                         }

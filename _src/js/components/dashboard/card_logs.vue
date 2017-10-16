@@ -35,7 +35,7 @@
                 <!--</div>-->
                 <% include ../../../templates/layout/card_ctrls %>
                 <div class="datarow">
-                    <div data-scrollable  class="dataTablesLogs">
+                    <div  class="dataTablesLogs">
                         <ul class="timeline" >
                             <li v-bind:class="{'timeline__entry--ok': log.status === 'ok'}" class="timeline__entry"
                                 v-for="log in logList" >
@@ -80,7 +80,7 @@ export default {
         'paginate': Paginate,
         'card-edit-controls': cardEditControls
     },
-    data: function () {
+    data: function() {
         return {
             // widgetName: 'card--chart',
             widgetName: 'logs',
@@ -313,19 +313,19 @@ export default {
             selectFilter: '',
         }
     },
-    mounted: function () {
+    mounted: function() {
         this.selectLiveChange();
     },
     methods: {
-        clickCallback: function (pageNum) {
+        clickCallback: function(pageNum) {
             console.log(pageNum)
         },
-        selectLiveChange: function (event) {
-//            var self = this;
-//            $(document.body).find(self.$el).on("change", ".card--logs-filter", function () {
-//                console.log(this.value);
-//                self.selectFilter = this.value;
-//            });
+        selectLiveChange: function(event) {
+            //            var self = this;
+            //            $(document.body).find(self.$el).on("change", ".card--logs-filter", function () {
+            //                console.log(this.value);
+            //                self.selectFilter = this.value;
+            //            });
         }
     }
 };

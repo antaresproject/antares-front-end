@@ -17,7 +17,8 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <horizontal-bar quantityLines="2" quantityColumns="10" background="rgba(0, 145, 234, 0.3)" hoverBackground="rgba(0, 145, 234, 0.6)" nTwoBackground="rgba(230, 232, 235, 0.4)" nTwoHoverBackground="#d4d6d8"></horizontal-bar>
+                        <horizontal-bar :chart-data="chartJSMessage" :options="chartJSOptions"></horizontal-bar>
+
                     </div>
                 </div>
             </div>
@@ -66,7 +67,7 @@
 </template>
 <script>
 function dataCalc(data) {
-    //calcuations to data 
+    //calcuations to data
     function add(a, b) {
         return a + b;
     }
@@ -126,7 +127,9 @@ export default {
                 value1: 12,
                 value2: 5,
                 type: 'grow',
-            }]
+            }],
+            chartJSMessage: {},
+            chartJSOptions: {}
         }
     },
     mounted: function() {
@@ -140,11 +143,61 @@ export default {
         setTimeout(function() {
             self.setDate();
         }, 1500);
-
+        self.updateChartJSTickets()
+        domElem.find('.compare-mode--checkbox').on('ifToggled', function () {
+            self.updateChartJSTickets()
+        })
+//        setInterval(() => {
+//            self.updateChartJSTickets()
+//        }, 100)
     },
     methods: {
+        updateChartJSTickets () {
+            let quantityColumnsArray = [];
+            let quantityRandom = [];
+            let quantityRandom2 = [];
+            for (let i = 0; i < 10; i++) {
+                quantityColumnsArray.push('Data Stream ' + (i + 1));
+                quantityRandom.push(Math.floor(Math.random() * 100 + 1));
+                quantityRandom2.push(Math.floor(Math.random() * 100 + 1));
+            }
+            this.chartJSMessage = {
+                labels: quantityColumnsArray,
+                datasets: [
+                    {
+                        backgroundColor: "rgba(0, 145, 234, 0.3)",
+                        data: quantityRandom,
+                        hoverBackgroundColor: "rgba(0, 145, 234, 0.6)"
+                    },
+                    {
+                        backgroundColor: "rgba(230, 232, 235, 0.4)",
+                        data: quantityRandom2,
+                        hoverBackgroundColor: "#d4d6d8"
+                    }
+                ]
+            }
+            this.chartJSOptions = {
+                //options start
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: false,
+                scales: {
+                    yAxes: [
+                        {
+                            display: false,
+                        },
+                    ],
+                    xAxes: [
+                        {
+                            display: false,
+                            barPercentage: 1,
+                        },
+                    ],
+                },
+            }
+        },
 
-        setDate() {
+    setDate() {
 
             var self = this;
 

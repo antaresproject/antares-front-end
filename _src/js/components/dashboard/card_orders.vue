@@ -17,7 +17,8 @@
                 </div>
                 <div class="card__content card__content--chart">
                     <div :id="chartID" class="chart">
-                        <line-chart quantityLines="2" quantityColumns="10" background="rgba(126, 86, 194, 0.3)" borderLineColor="#7e57c2" nTwoBackground="rgba(230, 232, 235, 0.4)" nTwoBorderLineColor="#e1e3e6"></line-chart>
+                        <line-chart :chart-data="chartJSMessage" :options="chartJSOptions"></line-chart>
+
                     </div>
                 </div>
             </div>
@@ -135,8 +136,9 @@ export default {
                 value1: 0,
                 value2: 1,
                 type: 'decline',
-            }]
-
+            }],
+            chartJSMessage: {},
+            chartJSOptions: {}
         }
     },
     mounted: function () {
@@ -154,10 +156,72 @@ export default {
         setTimeout(function () {
             self.setDate();
         }, 1500);
+        self.updateChartJSOrders()
+        domElem.find('.compare-mode--checkbox').on('ifToggled', function () {
+            self.updateChartJSOrders()
+        })
+
+//        setInterval(() => {
+//            self.updateChartJSOrders()
+//        }, 100)
     },
 
     methods: {
-
+        updateChartJSOrders () {
+            let quantityColumnsArray = [];
+            let quantityRandom = [];
+            let quantityRandom2 = [];
+            for (let i = 0; i < 10; i++) {
+                quantityColumnsArray.push('Data Stream ' + (i + 1));
+                quantityRandom.push(Math.floor(Math.random() * 100 + 1));
+                quantityRandom2.push(Math.floor(Math.random() * 100 + 1));
+            }
+            this.chartJSMessage = {
+                labels: quantityColumnsArray,
+                datasets: [
+                     {
+                        backgroundColor: "rgba(126, 86, 194, 0.3)",
+                         borderColor: "#7e57c2",
+                         borderWidth: 1,
+                         data: quantityRandom,
+                         pointBackgroundColor: 'transparent',
+                         pointBorderColor: 'transparent'
+                     },
+                     {
+                         backgroundColor: "rgba(230, 232, 235, 0.4)",
+                         borderColor: "#e1e3e6",
+                         borderWidth: 1,
+                         data: quantityRandom2,
+                         pointBackgroundColor: 'transparent',
+                         pointBorderColor: 'transparent'
+                     }
+                 ]
+            }
+            this.chartJSOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: false,
+                scales: {
+                    yAxes: [
+                        {
+                            display: false,
+                            // display:false,    //#76 Artificial error
+                            ticks: {
+                                beginAtZero: false,
+                                callback: function (label) {
+                                    return label + ' $';
+                                }
+                            }
+                        }
+                    ],
+                    xAxes: [
+                        {
+                            display: false
+                        }
+                    ]
+                }
+            }
+        },
         setDate() {
 
             var self = this;
