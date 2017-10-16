@@ -7,4 +7,5 @@ before_install:
 install:
   - yarn install
 script:
-  - npm run prod
+  - grunt 
+  - webpack --config webpack.dev.prod.js

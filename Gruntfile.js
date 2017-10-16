@@ -94,17 +94,17 @@ module.exports = function(grunt) {
             }),
             // disable comments
             require('postcss-discard-comments'),
-            require('postcss-zindex'),
+            // require('postcss-zindex'),
             // //merge same rules
-            require('postcss-merge-rules'),
+            // require('postcss-merge-rules'),
             // //sort
-            require('css-declaration-sorter')({
-              order: 'smacss'
-            }),
+            // require('css-declaration-sorter')({
+            //   order: 'smacss'
+            // }),
             // join media querries
-            require('css-mqpacker'),
+            // require('css-mqpacker'),
 
-            require('postcss-unique-selectors'),
+            // require('postcss-unique-selectors'),
             require('postcss-discard-unused'),
             require('postcss-discard-empty'),
             require('postcss-discard-duplicates'),
