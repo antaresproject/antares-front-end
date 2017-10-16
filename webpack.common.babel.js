@@ -27,7 +27,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const DashboardPlugin = require('webpack-dashboard/plugin');
+// const DashboardPlugin = require('webpack-dashboard/plugin');
 
 process.noDeprecation = true;
 
@@ -222,7 +222,7 @@ module.exports = {
     //   //  goes into the vendor chunk)
     // }),
     new webpack.BannerPlugin(banner),
-    new DashboardPlugin(),
+    // new DashboardPlugin(),
     new ProgressBarPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
 
@@ -498,13 +498,13 @@ module.exports = {
         chunks: ['app_cache', 'forms_standard', 'view_gridstack']
       })
     ),
-      new HtmlWebpackPlugin(
-          Object.assign(htmlOptions, {
-              title: 'Antares Notifications Preview',
-              template: path.resolve(__dirname, '_src/templates/pages/ui_pages/ui_notification_preview.ejs'),
-              filename: 'ui_notification_preview.html',
-              chunks: ['app_cache', 'forms_standard', 'view_gridstack']
-          })
-      )
+    new HtmlWebpackPlugin(
+      Object.assign(htmlOptions, {
+        title: 'Antares Notifications Preview',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/ui_notification_preview.ejs'),
+        filename: 'ui_notification_preview.html',
+        chunks: ['app_cache', 'forms_standard', 'view_gridstack']
+      })
+    )
   ]
 };
