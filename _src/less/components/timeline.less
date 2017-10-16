@@ -44,25 +44,26 @@
       padding-left: 32px;
       flex: 1;
     }
-
     &:last-of-type {
       overflow: hidden;
     }
-
     &:last-child {
       margin-bottom: 0;
     }
-
     &:after {
       position: absolute;
       top: 17px;
       left: 7.5px;
       width: 0;
-      height: 150%;
+      height: 100%;
       border-left: 2px solid @input-border-bottom;
       content: "";
     }
-
+    &.is-logs--show {
+        &:after {
+          border-width: 0px;
+        }
+    }
     a {
       color: @color-link;
       cursor: pointer !important;

@@ -53,11 +53,13 @@ dialog.fixed {
     transform: translate(0, -50%);
 }
 
-@dialog-size: 40vh;
+
 .mdl-dialog.ar-dialog .mdl-dialog__content.ps {
     padding: 0 24px !important;
 }
-
+body.dialog-is-open{
+    overflow: hidden !important;
+}
 .mdl-dialog.ar-dialog {
     .mdl-dialog__actions {
         justify-content: flex-end;
@@ -65,14 +67,15 @@ dialog.fixed {
         a {
             margin-left: 8px;
             cursor: pointer;
+            font-family: 'Roboto', sans-serif;
             &:first-child {
                 margin-left: 0;
             }
         }
     }
     &[open] {
-        width: @dialog-size;
-        min-height: @dialog-size;
+        width: 90vw;
+        min-height: 10vh;
         min-width: 300px;
         border: 0;
         background: transparent;
@@ -108,8 +111,9 @@ dialog.fixed {
     a {
         line-height: 1;
         position: relative;
-        width: 24px;
-        height: 24px;
+        width: 40px;
+        height: 40px;
+        margin-right: -16px;
         .flex-center();
         .mdl-button__ripple-container {
             border-radius: 50%;
@@ -129,6 +133,16 @@ dialog.fixed {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
+    max-height: 70vh;
+    @media only screen and (min-width: 1200px){
+        &.ps>.ps__scrollbar-y-rail{
+            display: block;
+        }
+    }
+    @media @md{
+        overflow-y: auto !important;
+        max-height: 40vh;
+    }
 }
 
 .mdl-dialog__actions {
@@ -185,8 +199,9 @@ body dialog .mdl-dialog__canvas {
     position: relative !important
 }
 
-body dialog .mdl-dialog.ar-dialog[open] {
-    min-height: auto;
+body dialog.mdl-dialog.ar-dialog[open] {
+    height: auto;
+    max-height: 90vh;
 }
 
 body .mdl-dialog:before {

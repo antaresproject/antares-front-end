@@ -1,5 +1,13 @@
-input, textarea {
+input,
+textarea {
   -webkit-appearance: none;
+}
+
+.page-settings select + span.select2,
+.page-forms select + span.select2 {
+  //min-width: auto !important;
+  //max-width: auto !important;
+  width: 100% !important;
 }
 
 .main-menu-html .nav-container {
@@ -20,10 +28,9 @@ input, textarea {
       }
     }
   }
-
 }
 
-.page-datatables {
+.page-datatables .main-content {
   .search-box {
     .mdl-js-textfield.search-box__mdl-textfiel {
       display: none;
@@ -43,14 +50,13 @@ input, textarea {
       input {
         font-size: 18px;
         height: 23px;
-        border-bottom: 0
+        border-bottom: 0;
       }
       .mdl-textfield__label {
-        font-size: 18px
+        font-size: 18px;
       }
     }
   }
-
 }
 
 .main-menu-html .nav-container .menu-scroll {
@@ -59,8 +65,8 @@ input, textarea {
 //#app-wrapper .app-content .main-head .item-grp {
 //  min-width: 120px;
 //}
-
-aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
+aside.main-sidebar {
+  // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   height: 100%;
 }
 
@@ -69,8 +75,7 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 }
 
 #app-wrapper.mobile-menu-active {
-  position: fixed;
-  //aside.main-menu-html {
+  position: fixed; //aside.main-menu-html {
   //  height: ~'calc(100vh - 70px)';
   //  .main-menu.main-menu--primary.li-submenu-open, .main-menu.main-menu--secondary.li-submenu-open {
   //    height: ~'calc(89vh - 135px)';
@@ -82,7 +87,6 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   //}
   .app-content {
     transform: translateX(265px);
-
     @media only screen and (orientation: landscape) {
       //height: ~'calc(100vh - 40px)';
     }
@@ -99,7 +103,6 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 //    }
 //  }
 //}// FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
-
 .main-menu-html .nav-container .main-menu li {
   transition: 0ms;
 }
@@ -108,26 +111,23 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   height: auto;
 }
 
-
-
-
-
 #app-wrapper .page-clients-details .card .card__header > .card__header-right {
-  flex: 1
+  flex: 1;
 }
 
-#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__input, #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__label {
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__input,
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .search-box .mdl-textfield__label {
   //height: 36px
 }
 
-#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left [data-selectar--mdl=true] + .select2-container--mdl .select2-selection {
+#app-wrapper .card .card-ctrls.tab-search .card-ctrls__left [data-selectar--mdl='true'] + .select2-container--mdl .select2-selection {
   height: 36px;
 }
 
 #app-wrapper .app-content section.main-content div.grid-stack .card-datatables.grid-stack-item-content .card.card--pagination {
   height: auto;
   .mdl-tabs {
-    height: auto
+    height: auto;
   }
   .card-ctrls {
     height: auto;
@@ -145,7 +145,7 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
     //height: 50px;
   }
   .dataTables_wrapper {
-    height: 100%
+    height: 100%;
   }
 }
 
@@ -171,7 +171,7 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
     div {
       margin-bottom: 8px;
     }
-    a {
+    & > a {
       margin-bottom: 8px;
     }
   }
@@ -197,7 +197,6 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 //    }
 //  }
 //}
-
 #app-wrapper .card .card-ctrls.tab-search .card-ctrls__left .select2-container--mdl {
   max-width: 160px;
 }
@@ -205,8 +204,8 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 //#app-wrapper aside.main-sidebar ul.main-menu li.submenu-open .submenu {
 //  height: ~'calc(90vh - 155px)';
 //}
-
-.ui-slider { // for scroll input because sliders must have his overflow
+.ui-slider {
+  // for scroll input because sliders must have his overflow
   overflow: initial;
 }
 
@@ -216,29 +215,31 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
     margin-bottom: 0;
   }
 }
-.badge.badge--md{
+
+.badge.badge--md {
   line-height: 20px;
 }
+
 //.btn.btn--md {
 //  height: 36px;
 //}
-#app-wrapper .app-content .main-content .card .tbl-c .card-ctrls.tab-search--filter:not(.swiper--no-slides){
-  @media only screen and (orientation: landscape){
+#app-wrapper .app-content .main-content .card .tbl-c .card-ctrls.tab-search--filter:not(.swiper--no-slides) {
+  @media only screen and (orientation: landscape) {
     margin-bottom: 64px !important;
   }
 }
+
 .page-email-settings .btn.btn--md {
   height: auto;
 }
 
 .page-email-settings .email-preview .preview-area {
   height: auto;
-  padding-bottom: 80px
+  padding-bottom: 80px;
 }
 
 #app-wrapper .card .card-ctrls.tab-search.tab-search--filter .card-ctrls__right .filters .card-filter {
   overflow: visible;
-
 }
 
 .card.card--chart-small .card__content {
@@ -251,7 +252,7 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   }
 }
 
-.page-settings .select2-dropdown ul.select2-results__options li.select2-results__option[aria-selected=true] {
+.page-settings .select2-dropdown ul.select2-results__options li.select2-results__option[aria-selected='true'] {
   font-size: 16px;
 }
 
@@ -263,47 +264,62 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   justify-content: flex-end;
 }
 
-
 #app-wrapper {
   &.mobile-menu-active {
     overflow: hidden !important;
-    height: 90vh;
-    @media only screen and (orientation: landscape) {
-      height: 89vh;
-    }
     .main-menu.li-submenu-open {
       height: ~'calc(90vh - 130px)';
-      @media only screen and (orientation: landscape) {
-        height: ~'calc(89vh - 130px)';
-      }
+
+        @media only screen and (orientation: landscape) {
+          height: ~'calc(89vh - 100px)';
+        }
     }
     .main-menu.li-submenu-open.main-menu--brand {
-      @media only screen and (orientation: landscape) {
-        height: ~'calc(89vh - 70px)';
-      }
+      height: ~'calc(90vh - 90px)';
+        @media only screen and (orientation: landscape) {
+          height: ~'calc(86vh - 20px)';
+        }
     }
   }
 }
+@media only screen and (orientation: portrait){
+#app-wrapper.mobile-menu-active aside {
+  height: 90vh;
+}
+}
+@media only screen and (orientation: landscape){
+  #app-wrapper.mobile-menu-active aside {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 330px) {
+  #app-wrapper.mobile-menu-active aside {
+    height: 86vh;
+  }
+}
+.select2-container--open.card-ctrls--select2 .select2-dropdown--below {
+  width: 100% !important;
+  min-width: 150px !important;
+}
+nav.submenu-is-active .menu-scroll {
+  height: ~'calc(100vh - 70px) !important';
+  @media only screen and (orientation: portrait) {
+    max-height: ~'calc(90vh - 90px) !important';
+  }
+}
 
-nav {
+nav:not(.submenu-is-active) {
   .menu-scroll {
     height: 230px;
-    max-height: ~'calc(85vh - 120px)' !important;
-    //height: ~'calc(90vh - 410px)' !important;
+    max-height: ~'calc(85vh - 90px)' !important; //height: ~'calc(90vh - 410px)' !important;
     //@media only screen and (orientation: landscape) {
     //  height: ~'calc(85vh - 110px)' !important;
     //}
     &.open-second-menu {
-      height: 270px;
-      //  height: ~'calc(90vh - 460px)' !important;
+      height: 170px; //  height: ~'calc(90vh - 460px)' !important;
       //  @media only screen and (orientation: landscape) {
       //    height: ~'calc(85vh - 190px)' !important;
       //  }
     }
   }
-}
-
-nav.submenu-is-active .menu-scroll {
-  height: ~'calc(90vh - 70px)' !important;
-  max-height: ~'calc(100vh - 70px)' !important;
 }

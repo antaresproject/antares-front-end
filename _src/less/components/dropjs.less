@@ -14,7 +14,7 @@
 }
 
 //default end
-.this-is-dropczyk--out.drop-element.drop-open--right {
+.antares-dropjs-filter--out.drop-element.drop-open--right {
   .filter-content {
     left: 180px;
     &:before {
@@ -28,7 +28,7 @@
   }
 }
 
-.this-is-dropczyk {
+.antares-dropjs-filter {
 
   .drop-target {
     line-height: 31px;
@@ -39,8 +39,11 @@
 
   }
 }
-
-.this-is-dropczyk--out {
+.dropjs-display-block{
+  display: block !important;
+  z-index: 30;
+}
+.antares-dropjs-filter--out {
   .filter-content {
     position: relative;
   }
@@ -49,6 +52,13 @@
     padding: 20px 24px;
     width: 240px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    &[data-type="datePicker"]{
+      width: 300px;
+      .input-field{
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+    }
     & > span {
       margin-bottom: 16px;
       color: #ABAEB3;

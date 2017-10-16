@@ -1,40 +1,108 @@
-.page-settings {
-  .form-block {
-    .col-group {
-      width: 100%;
-      position: relative;
-      > div {
-        .form-block__name {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          display: block;
-          text-align: right;
-          width: 25%;
-        }
+.gen-settings--single {
+  & > h1, & > a > h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: 50px;
+    @media @md {
+      margin-top: 80px;
+    }
+  }
+  a > h2 {
+    padding: 8px 16px 24px 16px;
+    color: #3d454c;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.gen-settings--full {
+  & > h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: 50px;
+    @media @md {
+      margin-top: 80px;
+    }
+  }
+  a > h2 {
+    padding: 8px 16px 24px 16px;
+    color: #3d454c;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.page-forms {
+  .gen-settings--full {
+    a > h2 {
+      padding: 8px 0px 24px 0px;
+      @media @xs {
+        padding: 8px 10px 24px 10px;
       }
-      .select2-container {
-        //width: 100% !important;
+    }
+  }
+}
+
+@media @xs {
+  .page-forms--hor {
+    .mdl-textfield {
+      width: auto;
+    }
+    .comiseo-daterangepicker-triggerbutton.ui-button {
+      min-width: inherit;
+      &:after {
+        right: 8px;
       }
-      .spinner-basic {
-        width: 100%;
-        .ui-spinner {
-          width: 100%;
+    }
+    fieldset[name="inputs"] {
+      .select2-container--selectAR, .select2-container--mdl {
+        width: auto !important;
+        .select2-selection__rendered {
+          max-width: 150px;
         }
       }
     }
   }
-  .form-block label:not(.switch) {
-    cursor: pointer;
-    line-height: 28px;
+}
+
+.page-settings {
+  .comiseo-daterangepicker-triggerbutton.ui-button {
+    min-width: inherit;
+    &:after {
+      right: 8px;
+    }
   }
-  fieldset a[name] {
-    position: relative;
-    &:before {
-      position: absolute;
-      content: "";
-      top: -100px;
-      height: 100px;
+  .form-block {
+    .col-group {
+
+    }
+  }
+  //.form-block label:not(.file-upload) {
+  //  cursor: pointer;
+  //  line-height: 28px;
+  //  display: block;
+  //}
+
+  @media @xs {
+    fieldset[name="Buttons"] {
+      .col-group .col-group {
+        display: block;
+        & > .col-6, & > .col-12 {
+          margin-bottom: 8px;
+          text-align: center;
+        }
+      }
+    }
+
+    fieldset[name="Selects"] {
+      .select2-container--selectAR {
+        width: auto !important;
+        .select2-selection__rendered {
+          max-width: 150px;
+        }
+      }
     }
   }
 }
@@ -45,9 +113,24 @@
   }
 }
 
+.form-block .col-group.col-group--flex-start {
+  align-items: flex-start;
+  .form-block__name {
+    margin-top: 8px;
+  }
+}
+
 .page-settings {
   .form-block .radio-btns [data-type="radio-btn"] input[type="radio"] {
     display: none;
+  }
+  .form-block {
+    .input-field--desc {
+      flex-flow: column;
+      .input-field__desc {
+        margin-top: 4px;
+      }
+    }
   }
   .form-block .input-field--desc-right .input-field__desc {
     margin-left: 8px;
@@ -65,192 +148,98 @@
 }
 
 @media @xs {
-
-
-  .page-settings {
-    .form-block {
-      .col-group {
-        .form-block__name {
-          max-width: 40%;
-          width: 100% !important;
-        }
-        .input-field, .radio-btns {
-          float: right;
-          width: 60%;
-        }
-        .select2 {
-          width: 60% !important;
-          float: right;
-        }
-        .form-block > .col-group > div:last-child .switch {
-          display: table;
-        }
-        .comiseo-daterangepicker-triggerbutton.ui-button {
-          min-width: 100%;
-        }
-      }
-    }
-
-    .switchbox {
-      display: block;
-    }
-    .radiobtns, .checkboxs {
-      display: block;
-      label {
-        display: block
-      }
-    }
-
-  }
-
-  .select2 .select2-selection .select2-selection__rendered {
-    max-width: 280px !important;
-  }
-
-}
-
-@media @xs {
   .grid-container--2col .app-content__footer {
     left: auto;
 
   }
 
-    .grid-container.grid-container--2col .grid-col--container {
-      margin-top: 0;
-    }
-
-    .menu-mobile-settings + .select2 {
-      display: block;
-      top: 0;
-      //padding: 16px 24px;
-      z-index: 1;
-      span {
-        color: white
-      }
-      .select2-selection__arrow:before {
-        top: 50%;
-        //right: 12px;
-        transform: translateY(-50%);
-        color: white
-      }
-      .select2-selection__rendered {
-        line-height: 32px;
-        height: auto;
-      }
-    }
-    .menu-mobile-settings + .select2 .select2-selection {
-      height: 54px;
-      background: #02a8f3;
-      color: white;
-      position: relative;
-      display: flex;
-      align-items: center;
-      .select2-selection__rendered{
-        display: flex;
-        align-items: center;
-      }
-    }
-}
-
-@media @min768max991 {
-  .page-settings .generals-form .col-group .col-8 .col-group .select2-container--selectAR {
-    width: 300px !important;
+  .grid-container.grid-container--2col .grid-col--container {
+    margin-top: 0;
   }
 
-  .page-settings .generals-form .col-group .col-16 .select2-container--default {
-    width: 300px !important;
+  .menu-mobile-settings + .select2 {
+    display: block;
+    top: 0;
+    //padding: 16px 24px;
+    z-index: 1;
+    span {
+      color: white
+    }
+    .select2-selection__arrow:before {
+      top: 50%;
+      //right: 12px;
+      transform: translateY(-50%);
+      color: white
+    }
+    .select2-selection__rendered {
+      line-height: 32px;
+      height: auto;
+    }
+  }
+
+  .menu-mobile-settings + .select2 .select2-selection {
+    height: 54px;
+    background: #02a8f3;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .select2-selection__rendered {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
 @media @xs {
-  .page-settings .generals-form .col-group .col-8 .col-group .select2-container--selectAR {
-    width: 100% !important;
-  }
-
-  .page-settings .generals-form .col-group .col-16 .select2-container--default {
-    width: 100% !important;
-  }
-
-  .page-settings {
-    .generals-form {
-      .col-group {
-        .col-8 {
-          .col-group {
-            .select2-selection__rendered {
-              max-width: 270px !important;
-              line-height: 32px;
-            }
-          }
-        }
-      }
-
-      .select2-selection--single .select2-selection__arrow {
-        //right: 3%;
-        width: 9px;
-        height: 32px;
-
-      }
-      .form-block .input-field--desc, .form-block .input-field--desc-right {
-        display: block;
-      }
-    }
-  }
-
-  .page-settings { // for buttonss
-    fieldset[name="Buttons"],
-    fieldset[name="Button Links"],
-    fieldset[name="Button XS"],
-    fieldset[name="Button SM"],
-    fieldset[name="Button MD"],
-    fieldset[name="Button LG"],
-    fieldset[name="Button XL"] {
-      .form-block {
-        text-align: center;
-      }
-      .col-4 {
-        margin: 8px 0;
-      }
-    }
-  }
-}
-
-.page-settings {
-  fieldset[name="inputs"] {
-    .form-block .radio-btns {
-      margin-left: -8px;
-    }
-  }
-  fieldset[name="RadioCheckSwitch"] {
-    .form-block .switchbox {
-      margin-left: -8px;
-    }
-  }
-  @media @max450 {
-    fieldset[name="RadioCheckSwitch"] .form-block .switchbox, .form-block .col-group .radio-btns {
-      width: 62%;
-    }
-  }
-  @media @xs {
-    fieldset[name="RadioCheckSwitch"] .form-block .switchbox, .form-block .col-group .radio-btns {
-      width: 61%;
-    }
-  }
-  @media @xs {
-    fieldset[name="ButtonsWithIcon"] .form-block {
-      text-align: center;
-      .btn {
-        margin: 8px 0;
-      }
-    }
-  }
-
-}
-
-
-@media @xs{
   #app-wrapper .page-settings .generals-form fieldset[name='RadioCheckSwitch'] {
-    .switchbox,.radiobtns,.checkboxs {
+    .switchbox, .radiobtns, .checkboxs {
       display: block;
     }
+  }
+}
+
+.page-settings .main-content {
+  .menu-mobile-settings--box + .single--general-settings {
+    @media @md {
+      margin-top: 100px;
+    }
+  }
+  .grid-system {
+    margin-left: 10px;
+    margin-right: 10px;
+    .col-group {
+      .col-group {
+        div[class*="col-"] {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+  .ex-grid--background {
+    background: rgba(68, 196, 253, 0.5);
+    border-radius: 3px;
+    color: @standard-white;
+    padding: 4px;
+    transition: 300ms;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:hover {
+      background: rgba(68, 196, 253, 0.7);
+    }
+  }
+  .ex-grid--background-nested {
+    background: rgba(68, 196, 253, 0.5);
+    border-radius: 3px;
+    color: @standard-white;
+    padding: 4px;
+    transition: 300ms;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid white
   }
 }

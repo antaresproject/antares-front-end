@@ -18,17 +18,30 @@
     border-bottom: 1px solid @input-border-bottom;
     padding-bottom: 15px;
     margin-bottom: 15px;
+    &>.form-block {
+      align-items: flex-start;
+      &> .col-group {
+        display: block;
+      }
+    }
+    &>legend{
+      padding-left: 0;
+      padding-right: 0;
+    }
+
   }
   .page-notification-templates__name {
     .input-field {
       position: relative;
     }
+
     .page-notification-templates__switch {
       position: absolute;
       right: -89px;
       top: -25px;
       .form-block__name {
-        margin-bottom: 8px;;
+        margin-bottom: 8px;
+        margin-right: 8px;
       }
       .switch {
         position: absolute;
@@ -139,6 +152,11 @@
       margin-left: -13px;
     }
     .page-notification-templates__name {
+      margin-left: -10px;
+      margin-right: -10px;
+      &>.col-group:first-of-type{
+        margin-bottom: 16px;
+      }
       .page-notification-templates__switch {
         display: flex;
         position: absolute;
@@ -150,11 +168,6 @@
         .switch {
           position: relative;
         }
-      }
-    }
-    .page-notification-templates__info {
-      legend {
-        width: 57%;
       }
     }
   }

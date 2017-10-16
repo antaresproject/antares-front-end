@@ -5,64 +5,70 @@
 #app-wrapper.main-sidebar--expanded.main-sidebar--wide {
   @import "wide_menu/wide_menu";
 }
+
 #app-wrapper.main-sidebar--top.main-sidebar--ca {
   @import "CA_menu/CA_menu";
 }
 
 
-.control-menu-panel{
+
+.control-menu-panel {
   position: fixed;
-  top:80%;
-  transform: translateY(-50%);
-  left: -105px;
-  width: 150px;
-  background: rgba(92,96,102,0.6);
+  top: 15%;
+  right: -120px;
+  width: 160px;
+  background: rgba(92, 96, 102, 0.6);
   padding: 16px;
-  z-index:300;
+  z-index: 300;
   color: white;
   display: none;
   align-items: center;
   transition: 300ms;
-  @media only screen and (max-width: 1023px){
+  padding-left: 50px;
+  @media only screen and (max-width: 1023px) {
     display: none !important;
   }
-  &:hover{
-    background: rgba(92,96,102,0.9);
+  &:hover {
+    background: rgba(92, 96, 102, 0.9);
   }
-  &.control-menu-panel--open{
-    left: 0;
-    &:hover{
-      background: rgba(92,96,102,0.6);
+  &.control-menu-panel--open {
+    right: 0;
+    &:hover {
+      background: rgba(92, 96, 102, 0.6);
     }
-    .zmdi-plus:before{
-      content: '\f273';
+    .zmdi-settings:before {
+      content: '\f2ee';
+    }
+    form {
     }
   }
-  form{
+  form {
     margin-bottom: -6px;
   }
-  label{
+  label {
     width: 100%;
     display: block;
     cursor: pointer;
   }
-  .btn{
+  .btn {
     margin-top: 8px;
   }
-  .zmdi-plus{
+  .zmdi-settings {
     position: absolute;
-    top:0;
-    height:100%;
+    top: 0;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 44px;
     cursor: pointer;
-    right: 0;
+    left: 0;
     color: white;
     font-size: 26px;
+    transition: 300ms;
   }
 }
+
 #app-wrapper {
   &.main-sidebar--top {
     @import "top_menu/top_menu";
@@ -81,10 +87,6 @@
       @media only screen and (max-width: 1199px) {
         padding-left: 8px !important;
         padding-right: 8px !important;
-
-
-
-
 
       }
     }
@@ -110,8 +112,8 @@
       @import "top_menu/top_menu_mobile";
     }
   }
-  &:not(.main-sidebar--top){
-    .main-menu > li >a {
+  &:not(.main-sidebar--top) {
+    .main-menu > li > a {
       padding: 0 20px;
     }
   }
@@ -130,6 +132,11 @@
 }
 
 #app-wrapper:not(.main-sidebar--top) aside {
+  @media only screen and (max-height: 700px) {
+   .menu-tooltip {
+      left: 364px;
+    }
+  }
   ul.main-menu {
     .has-submenu {
       a:after {
@@ -137,17 +144,18 @@
       }
     }
     .submenu {
-      //width: 0 !important;
       transition: 300ms;
-      //display: block !important;
       left: 98px !important;
       display: block;
+      overflow: visible;
       @media only screen and (max-width: 1023px) {
         transition: 0ms;
         left: 0 !important;
       }
       section {
         opacity: 0;
+        overflow: auto;
+        height: 100%;
       }
     }
   }
@@ -172,13 +180,13 @@
 nav {
   .menu-scroll {
     max-height: ~'calc(90vh - 20px)' !important;
-    @media only screen and (min-width: 768px) and (max-width: 1023px){
-       max-height: ~'calc(90vh - 60px)' !important;
-      .main-menu{
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      max-height: ~'calc(90vh - 60px)' !important;
+      .main-menu {
         max-height: ~'calc(100vh - 215px)' !important;
       }
     }
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 767px) {
       max-height: ~'calc(90vh - 80px)' !important;
     }
   }
@@ -186,9 +194,9 @@ nav {
 
 nav.submenu-is-active .menu-scroll {
   max-height: ~'calc(100vh - 70px)' !important;
-  @media only screen and (min-width: 768px) and (max-width: 1023px){
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     max-height: ~'calc(90vh - 60px)' !important;
-    .main-menu{
+    .main-menu {
       max-height: none !important;
     }
   }

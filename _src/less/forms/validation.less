@@ -4,44 +4,17 @@
 
 fieldset {
   .form-block {
-    .type-default {
-      //for quick default
-      &.radiobtns,
-      &.checkboxs {
-        label {
-          position: relative;
-          padding-left: 28px;
-          .iradio_billevo,
-          .icheckbox_billevo {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-fieldset {
-  .form-block {
     input,
     textarea {
       border-radius: 3px;
-      padding-right: 32px;
+      //padding-right: 32px;
       &.valid {
         border: 1px solid @input-border-bottom;
         background-image: none;
       }
     }
     @media @xs {
-      input {}
-      span {
-        .select2-selection__rendered {
-          padding-right: 48px !important;
-        }
+      input {
       }
     }
     &.radiobtns,
@@ -59,7 +32,7 @@ fieldset {
         }
       }
     }
-    &>.spinner-basic .ui-spinner.ui-corner-all {
+    & > .spinner-basic .ui-spinner.ui-corner-all {
       border-radius: 0;
     }
     .type-error {
@@ -105,7 +78,7 @@ fieldset {
         .comiseo-daterangepicker-triggerbutton {
           border: 1px solid @type-color;
         }
-        .switch-checkbox+.switch-container:after {
+        .switch-checkbox + .switch-container:after {
           color: @type-color;
         }
         .switch-container {
@@ -161,7 +134,7 @@ fieldset {
         .comiseo-daterangepicker-triggerbutton {
           border: 1px solid @type-color;
         }
-        .switch-checkbox+.switch-container:after {
+        .switch-checkbox + .switch-container:after {
           color: @type-color;
         }
         .switch-container {
@@ -217,7 +190,7 @@ fieldset {
         .comiseo-daterangepicker-triggerbutton {
           border: 1px solid @type-color;
         }
-        .switch-checkbox+.switch-container:after {
+        .switch-checkbox + .switch-container:after {
           color: @type-color;
         }
         .switch-container {
@@ -352,7 +325,7 @@ fieldset[name="RadioCheckSwitch"] {
         .icheckbox_billevo {
           border-color: lighten(@type-color, 30%);
         }
-        .switch .switch-checkbox:checked+.switch-container {
+        .switch .switch-checkbox:checked + .switch-container {
           background-color: @type-color;
         }
         .switch .switch-container {
@@ -385,7 +358,7 @@ fieldset[name="RadioCheckSwitch"] {
         .icheckbox_billevo {
           border-color: lighten(@type-color, 30%);
         }
-        .switch .switch-checkbox:checked+.switch-container {
+        .switch .switch-checkbox:checked + .switch-container {
           background-color: @type-color;
         }
         .switch .switch-container {
@@ -418,7 +391,7 @@ fieldset[name="RadioCheckSwitch"] {
         .icheckbox_billevo {
           border-color: lighten(@type-color, 30%);
         }
-        .switch .switch-checkbox:checked+.switch-container {
+        .switch .switch-checkbox:checked + .switch-container {
           background-color: @type-color;
         }
         .switch .switch-container {
@@ -477,35 +450,14 @@ fieldset[name="Sliders"] {
     }
   }
 }
-
 fieldset[name="MDLForms"] {
   .form-block {
     .input-field {
       &.type-error {
         // @color-error;
         @type-color: @color-error;
-        &:after {
-          // icon
-          right: auto;
-          left: 270px;
-        }
-        @media only screen and (max-width: 349px) {
-          &:after {
-            right: auto;
-            left: 162px;
-          }
-          .mdl-textfield__input {
-            padding-right: 24px;
-          }
-        }
-        @media @xs {
-          &:after {
-            right: auto;
-            left: 146px;
-          }
-          .mdl-textfield__input {
-            padding-right: 32px;
-          }
+        .mdl-textfield__input {
+          padding-right: 24px;
         }
         input:not(.switch-checkbox) {
           border: 1px solid transparent;
@@ -521,28 +473,8 @@ fieldset[name="MDLForms"] {
       &.type-warning {
         // @color-warning;
         @type-color: @color-warning;
-        &:after {
-          // icon
-          right: auto;
-          left: 270px;
-        }
-        @media only screen and (max-width: 349px) {
-          &:after {
-            right: auto;
-            left: 162px;
-          }
-          .mdl-textfield__input {
-            padding-right: 24px;
-          }
-        }
-        @media @xs {
-          &:after {
-            right: auto;
-            left: 146px;
-          }
-          .mdl-textfield__input {
-            padding-right: 32px;
-          }
+        .mdl-textfield__input {
+          padding-right: 24px;
         }
         input:not(.switch-checkbox) {
           border: 1px solid transparent;
@@ -558,28 +490,8 @@ fieldset[name="MDLForms"] {
       &.type-success {
         // @color-success;
         @type-color: @color-success;
-        &:after {
-          // icon
-          right: auto;
-          left: 270px;
-        }
-        @media only screen and (max-width: 349px) {
-          &:after {
-            right: auto;
-            left: 162px;
-          }
-          .mdl-textfield__input {
-            padding-right: 24px;
-          }
-        }
-        @media @xs {
-          &:after {
-            right: auto;
-            left: 146px;
-          }
-          .mdl-textfield__input {
-            padding-right: 32px;
-          }
+        .mdl-textfield__input {
+          padding-right: 24px;
         }
         input:not(.switch-checkbox) {
           border: 1px solid transparent;
@@ -595,7 +507,6 @@ fieldset[name="MDLForms"] {
     }
   }
 }
-
 fieldset.spinner {
   .form-block {
     .type-error,
@@ -623,6 +534,7 @@ fieldset.spinner {
     }
   }
 }
+
 .page-settings {
   .radio-btns {
     .radio-btn--disabled {
@@ -645,12 +557,12 @@ fieldset.spinner {
         left: 0 !important;
         cursor: not-allowed;
       }
-      .ui-slider-range{
+      .ui-slider-range {
         width: 0 !important;
       }
     }
     & > [data-slider-range] {
-      .ui-slider-range{
+      .ui-slider-range {
         left: 19% !important;
         width: 47.5% !important;
       }
@@ -663,8 +575,8 @@ fieldset.spinner {
         cursor: not-allowed;
       }
     }
-    &>.spinner-basic{
-      .ui-spinner-button{
+    & > .spinner-basic {
+      .ui-spinner-button {
         display: none;
       }
     }

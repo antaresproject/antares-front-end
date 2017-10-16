@@ -129,14 +129,9 @@
         @media @xs {
           th:first-of-type {
             padding-right: 14px;
-            text-align: right;
           }
         }
         td:first-child {
-          text-align: center;
-          @media only screen and (max-width: 1499px) {
-            text-align: left;
-          }
           @media only screen and (max-width: 1023px) {
             padding-left: 8px !important;
           }
@@ -256,7 +251,7 @@
       }
     }
   }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1199px) {
     .card--mobile-toggled .card--contacts .mobile-target--overflow {
       &:after {
         opacity: 0;
@@ -302,6 +297,9 @@
                 width: 206px;
               }
               height: 36px;
+              @media @xs{
+                height: 34px;
+              }
             }
             input, label {
               font-size: 13px;

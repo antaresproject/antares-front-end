@@ -32,9 +32,7 @@
     @media @md and (orientation: landscape) {
       max-width: 220px;
     }
-    @media @xs and (orientation: portrait) {
-      max-width: 150px;
-    }
+
     @media @xs and (orientation: landscape) {
       max-width: 500px;
     }
@@ -46,6 +44,7 @@
 
 .tab-search .card-ctrls__right {
   display: flex;
+  z-index: 23;
 }
 
 @import 'tab_filters';
@@ -121,7 +120,12 @@
       //        }
       //    }
       //}
-
+      .card .card-ctrls.tab-search .filters .swiper-filters--box.swiper-filters--no-active {
+        margin-right: 0;
+        .swiper-wrapper {
+          justify-content: inherit;
+        }
+      }
       .card-datatables .card .card-ctrls.tab-search.tab-search--filter:not(.swiper--no-slides) {
         margin-bottom: 44px;
       }
@@ -210,6 +214,12 @@
       .swiper-filters--box {
         height: 31px;
       }
+      .card .card-ctrls.tab-search .filters .swiper-filters--box.swiper-filters--no-active {
+        margin-right: 0;
+        .swiper-wrapper {
+          justify-content: inherit;
+        }
+      }
       .card-datatables {
         .card .card-ctrls.tab-search {
           margin-top: 8px;
@@ -287,6 +297,12 @@
       }
       .swiper-filters--box {
         height: 31px;
+      }
+      .card .card-ctrls.tab-search .filters .swiper-filters--box.swiper-filters--no-active {
+        margin-right: 0;
+        .swiper-wrapper {
+          justify-content: inherit;
+        }
       }
       .filters .ddown.ddown-multi .ddown-multi__menu .btn-clear {
         display: none;

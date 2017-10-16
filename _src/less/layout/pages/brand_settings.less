@@ -1,13 +1,23 @@
 #app-wrapper.main-sidebar--top .app-content.page-brand-settings .main-content .app-content__footer {
-  margin-left: -34px;
+  margin-left: -16px;
 }
-
 
 #app-wrapper.main-sidebar--top .app-content.page-email-settings .main-content .app-content__footer {
   margin-left: 0;
 }
 
 .page-brand-settings {
+  form fieldset .form-block .input-field--short{
+    justify-content: flex-end;
+  }
+  @media only screen and (min-width: 1200px) {
+    .menu-mobile-settings--box + .generals-form {
+      margin-top: 24px;
+    }
+  }
+  legend{
+    padding-left: 8px;
+  }
   .generals-form {
     .col-group {
       padding: 0;
@@ -18,36 +28,9 @@
     }
   }
   .form-block {
-    .col-group {
-      .input-field.input-field--short {
-        @media @xs {
-          position: relative;
-        }
-        .switch {
-          margin-right: -8px;
-          margin-left: auto;
-          @media @xs {
-            position: absolute;
-            right: 8px;
-            top: -22px;
-          }
-        }
-      }
+    .col-group .col-4 .input-field--short {
+      justify-content: flex-end;
     }
-  }
-}
-
-@media only screen and (min-width: 1366px) {
-  .page-brand-settings {
-    .app-content__footer {
-      margin-left: -34px
-    }
-  }
-}
-
-@media @min768max991 {
-  .col-group .app-content__footer {
-    margin: 0 -24px !important;
   }
 }
 
@@ -79,9 +62,6 @@
         height: 32px;
       }
 
-      .form-block .input-field--desc, .form-block .input-field--desc-right {
-        display: block;
-      }
     }
     .cp-brand.cp-brand--typo {
       min-height: 150px;
@@ -120,12 +100,6 @@
         height: auto;
       }
     }
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1366px) {
-  .page-brand-settings .generals-form .app-content__footer {
-    margin-left: -33px;
   }
 }
 

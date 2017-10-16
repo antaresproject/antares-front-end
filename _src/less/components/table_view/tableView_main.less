@@ -48,10 +48,12 @@ table.dataTable {
       //padding: 6px 10px 6px 0;
       &:last-child,
       &.dt-actions {
-        @media only screen and(max-width: 1023px) {
-          text-align: center;
-        }
+        text-align: right;
         i {
+          padding-right: 16px;
+          @media @xs {
+            padding-right: 8px;
+          }
           font-size: 24px;
           color: @table-color-dark;
           cursor: pointer;
@@ -425,22 +427,38 @@ table {
     }
   }
 }
+
 @media @xs {
-  .btn-selected{
+  .btn-selected {
     display: none !important;
   }
 }
-.btn-selected{
+
+.btn-selected {
   display: flex;
 }
-#app-wrapper .tbl-c.selected-mode--touch-active {
-  .search-box, .filters .ddown.ddown-multi{
-    @media @xs{
-    display: none;
+
+@media @xs {
+  #app-wrapper .main-content .tbl-c.selected-mode--active {
+    .btn-selected {
+      display: flex !important;
+    }
+    .search-box, .filters .ddown.ddown-multi {
+      display: none;
     }
   }
-  @media @xs{
-    .btn-selected{
+
+
+}
+
+#app-wrapper .tbl-c.selected-mode--touch-active {
+  .search-box, .filters .ddown.ddown-multi {
+    @media @xs {
+      display: none;
+    }
+  }
+  @media @xs {
+    .btn-selected {
       display: flex !important;
     }
   }

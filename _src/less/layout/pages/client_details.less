@@ -59,7 +59,7 @@
     .mobile-target--overflow {
       max-height: 305px;
       overflow: hidden;
-      &>div {
+      & > div {
         max-height: inherit !important;
       }
 
@@ -76,7 +76,8 @@
       display: block;
     }
   }
-  .card-container.card--mobile-toggled .card--contacts .mobile-target--overflow{
+
+  .card-container.card--mobile-toggled .card--contacts .mobile-target--overflow {
     overflow: visible;
     height: auto;
   }
@@ -358,6 +359,7 @@
     }
   }
 }
+
 #app-wrapper .page-datatables .main-content {
   .card {
     .tbl-c .card-ctrls.tab-search .card-ctrls__left .search-box .zmdi-search {
@@ -365,14 +367,37 @@
     }
   }
 }
+
 .search-box:before,
 .search-box > i {
   left: 2px;
 }
 
+#app-wrapper .main-content .card .card-ctrls.tab-search .filters .swiper-filters--box .swiper-filters {
+  height: 100%;
+  .swiper-slide .filter {
+    height: 100%;
+    .ddown__init {
+      height: 100%;
+    }
+  }
+}
+
 //search box + dropdown "Show:" end d
 // client_list
 .page-datatables.page-vue-datatables {
+  @media only screen and (min-width: 1351px) {
+    .card .card-ctrls.tab-search .filters .swiper-filters--box.swiper-filters--no-active {
+      margin-right: 80px !important;
+    }
+    .card .card-ctrls.tab-search .filters .swiper-filters--box {
+      margin-right: 150px !important;
+    }
+  }
+
+  .card-ctrls__right .filters .ddown .btn-with-selected {
+    display: flex !important;
+  }
   .select2-container {
     font-weight: 500;
     width: auto !important;
@@ -730,9 +755,7 @@ span.ellipse.clickable {
       display: flex;
       align-items: center;
       padding: 0 4px;
-      &:hover {
-        background-color: #e1e5e8;
-      }
+
       .dtr-title {
         font-weight: 700;
         margin-right: 4px;
@@ -844,7 +867,7 @@ span.ellipse.clickable {
 //    .card-ctrls__right {
 //      padding-right: 16px;
 //    }
-//    .this-is-dropczyk .drop-enabled {
+//    .antares-dropjs-filter .drop-enabled {
 //      border-bottom: 0;
 //    }
 //    .dataTables_wrapper {

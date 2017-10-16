@@ -7,7 +7,6 @@
   border-top: 1px solid @background;
   position: fixed;
   bottom: 0;
-  margin: 0 -@unit3;
   padding: 0 @unit3;
   background-color: @standard-white;
   z-index: 99;
@@ -24,45 +23,6 @@
 @media @xs{
   .app-content__footer {
     padding: 0 8px !important;
-  }
-}
-
-@media @min768max991 {
-  .col-group {
-    .app-content__footer {
-      margin: 0 -16px;
-    }
-  }
-}
-
-//exceptions
-.page-create {
-  .app-content__footer {
-    justify-content: flex-end;
-    width: ~'calc(100% - 438px)';
-    @media @max1050 {
-      width: ~'calc(100% - 98px)';
-    }
-    @media @xs {
-      width: 100% !important;
-    }
-  }
-}
-
-//when side menu
-.grid-container--2col {
-  .app-content__footer {
-    //left: ~'calc(98px + 338px + 24px)';
-    @media @max1366 and (min-width: 1024px){
-      //left: ~'calc(98px + 245px + 24px)';
-    }
-    @media only screen and (min-width: 768px) and (max-width: 1023px){
-      left: 24px;
-    }
-    @media @xs{
-      left: ~'calc(98px + 24px)';
-
-    }
   }
 }
 

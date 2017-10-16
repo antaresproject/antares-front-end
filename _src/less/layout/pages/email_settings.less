@@ -268,7 +268,8 @@
         .ddown__menu {
           //top: 14px !important;
           //right: none;
-          left: 0
+          left: 0;
+          transform: translate3d(0, 0, 0) !important;
         }
         #Brands + .ddown__content {
           .ddown__menu {
@@ -338,19 +339,15 @@
   left: 0;
 }
 
-.page-email-settings .app-content__footer {
-  margin: 0;
-  @media only screen and (min-width: 768px) and (max-width: 1023px){
-    margin: 0 -24px
-  }
-}
 
 @media only screen and (max-width: 1049px) {
   .grid-container.grid-container--2col .grid-col--container {
     width: auto;
   }
 }
-
+.page-email-settings .grid-container.grid-container--2col .grid-col--container.email-preview {
+    box-shadow: none;
+}
 @media @xs {
   .page-email-settings {
 

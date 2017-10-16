@@ -28,11 +28,7 @@
 }
 
 #app-wrapper .card.card--logs .card__content {
-  max-height: 100%;
-  padding-bottom: 48px;
   .datarow {
-    height: 100%;
-    overflow: hidden;
   }
 }
 
@@ -43,7 +39,11 @@
     height: 100%;
   }
 }
-
+.page-clients-details, .page-dashboard {
+  .main-content{
+    padding-bottom: 100px;
+  }
+}
 .select2-container .select2-results > .select2-results__options {
   overflow-y: hidden !important;
 }
@@ -56,4 +56,11 @@ input::placeholder{
 }
 .xdsoft_datetimepicker::before {
   font: 30px/1 "Material-Design-Iconic-Font"
+}
+
+.dataTables_wrapper .dataTable colgroup col{
+  width: auto !important;
+}
+#app-wrapper.main-sidebar--top .more-trigger{
+  margin-left: 16px;
 }

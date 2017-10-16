@@ -106,7 +106,7 @@
 
 #app-wrapper .card .selected-mode--active .card-ctrls.tab-search .filters {
   .swiper-filters--box {
-    right: 240px;
+    //right: 240px;
   }
 }
 
@@ -122,6 +122,7 @@
           left: -580px;
         }
       }
+
     }
   }
 }
@@ -135,6 +136,20 @@
     top: 3px;
     transition: 0ms;
     z-index: 1;
+    @media only screen and (min-width: 1351px) {
+      &.swiper-filters--no-active {
+        margin-right: 16px;
+        .swiper-filters-next, .swiper-filters-prev {
+          display: none;
+        }
+        //.swiper-filters {
+        //  width: auto;
+        //}
+        .swiper-wrapper {
+          justify-content: flex-end;
+        }
+      }
+    }
     .swiper-filters--clear-all {
       display: none;
       position: absolute;
@@ -186,6 +201,9 @@
           min-width: 60px;
         }
         text-align: center; //transition: 300ms;
+        .antares-dropjs-filter--out{
+        padding-left: 8px;
+        }
         //animation-name: showFilter;
         //animation-duration: 1s;
         .filter .ddown__init {
@@ -198,6 +216,9 @@
             font-size: 13px;
             color: #5c6066;
             cursor: pointer;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
             &:hover {
               color: black
             }
@@ -250,6 +271,7 @@
       }
     }
     &.swiper-filters--no-active {
+
       .swiper-filters-next,
       .swiper-filters-prev {
         opacity: 0 !important;
@@ -539,17 +561,22 @@
       }
     }
   }
+
+}
+
+.tab-search--filter .ddown.ddown-multi .ddown__content .input-field button.comiseo-daterangepicker-triggerbutton {
+  text-align: left
 }
 
 .swiper-filters--box:not(.swiper-filters--no-active) {
   cursor: url('@{img_path}/favicon/hand.svg'), auto;
-  &.mouse-hand--grab *{
+  &.mouse-hand--grab * {
     cursor: url('@{img_path}/favicon/grab.svg'), auto !important;
   }
 }
 
 @media @xs {
-  .this-is-dropczyk--out.drop-element {
+  .antares-dropjs-filter--out.drop-element {
     //position: fixed !important;
     //left: 50% !important;
     //transform: translateX(-50%) !important;
@@ -613,4 +640,16 @@
   #app-wrapper .page-datatables .tab-search--filter .card-ctrls__left .search-box__mdl-textfield input {
     width: 260px;
   }
+}
+
+
+//#app-wrapper .main-content .card-datatables .card .card-ctrls.tab-search.tab-search--filter .swiper-filters--box{
+//  height: 100%;
+//  .swiper-slide{
+//    width: auto;
+//    margin-right: 8px;
+//  }
+//}
+.drop-open .comiseo-daterangepicker .comiseo-daterangepicker-buttonpanel .btn:nth-child(2){
+  display: none;
 }

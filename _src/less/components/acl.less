@@ -32,9 +32,7 @@
   }
   .acl-container__header {
     display: flex;
-    padding: 0 0 22px 25px;
-    margin-left: -25px;
-    margin-right: -25px;
+    padding: 16px 25px;
     border-bottom: 1px solid @input-border-bottom;
     @media only screen and (max-width: 1199px) {
       padding: 36px 10px 15px 10px;
@@ -47,14 +45,16 @@
     }
   }
   .acl-container__body {
-    padding-top: 26px;
+    padding: 18px 28px;
   }
   .tbl-c {
     padding: 0 !important;
     box-shadow: 0 !important;
   }
 }
-
+.acl-page .grid-col--container{
+  padding-bottom: 0 !important;
+}
 .acl-body {
   margin-top: 40px;
 }
@@ -62,7 +62,7 @@
 .acl {
   padding-left: 30px;
   @media @xs {
-    padding: 0 10px 0 46px;
+    padding: 0 10px 0 16px;
     margin-bottom: 65px;
   }
   ul {
@@ -87,7 +87,7 @@
 .acl-node {
   display: flex;
   align-items: flex-start;
-  padding: 7px 0;
+  padding: 6px 0;
   .acl-node__arrow {
     font-size: 24px;
     position: absolute;
@@ -189,11 +189,11 @@
     color: @primary-c;
     font-size: 14px;
     line-height: 22px;
+    margin-bottom: 3px;
   }
 
   .acl-node__description {
     font-size: 13px;
-    margin-bottom: 4px;
     line-height: 20px;
     color: @text-color-darkgrey;
   }

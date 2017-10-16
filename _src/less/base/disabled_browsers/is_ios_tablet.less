@@ -11,6 +11,11 @@ input, textarea {
   height: 36px;
 }
 
+.select2-container--open.card-ctrls--select2 .select2-dropdown--below {
+  width: 100% !important;
+  min-width: 150px !important;
+}
+
 //#app-wrapper .app-content section.main-content div.grid-stack .card-datatables.grid-stack-item-content .card.card--pagination {
 //  height: auto;
 //  .mdl-tabs{
@@ -30,9 +35,7 @@ input, textarea {
   .card-ctrls__right {
     height: 50px;
   }
-  .dataTables_wrapper {
-    height: 100%
-  }
+
 }
 
 .card .card__content.card__content--flex-column {
@@ -96,6 +99,10 @@ div.app-content {
   padding-top: 0;
 }
 
+#app-wrapper .app-content .main-content .grid-stack-item .card .card__header > .card__header-left, #app-wrapper .app-content .main-content .grid-stack-item .card .card__header > .card__header-right {
+  flex: inherit;
+}
+
 //.select2-container--open .select2-dropdown--below{
 //  min-width: 150px !important;
 //}
@@ -125,8 +132,6 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 
 // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
 
-
-
 .card.card--chart-small .card__content {
   height: auto
 }
@@ -136,12 +141,21 @@ aside.main-sidebar { // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
 //  width: auto !important;
 //}
 
-
-
-#app-wrapper {
-  aside.main-sidebar {
-    nav {
-      height: 97vh;
+//#app-wrapper {
+//  aside.main-sidebar {
+//    nav {
+//      height: 97vh;
+//    }
+//  }
+//}
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  #app-wrapper.mobile-menu-active {
+    height: 97.5vh;
+    aside{
+      height: 100%;
+      .mobile-ddowns{
+        bottom: 24px  !important;
+      }
     }
   }
 }

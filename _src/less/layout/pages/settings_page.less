@@ -97,9 +97,12 @@
   top: 80px;
 }
 
+.menu-aside + .menu-aside{
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
 .menu-aside {
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+
   .list-clear();
   width: 100%;
   @media @md {
@@ -199,6 +202,10 @@
         content: '\f2f4';
         color: @standard-white;
       }
+    }
+    &.has-submenu.submenu-open.is-active:before{
+      color: transparent;
+      content: '';
     }
     a {
       padding: 15px @unit3;

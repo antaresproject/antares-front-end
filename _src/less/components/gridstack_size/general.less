@@ -121,7 +121,25 @@
         }
     }
 }
-
+div.card.card--chart {
+    .card__left {
+        .card__header-left {
+            flex: inherit !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 16px;
+            span{
+                max-width: inherit !important;
+            }
+        }
+        .card__header-right {
+            flex: inherit !important;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
 // 24.08.2017 disable widgets_control
 @media @xs {
     div.card.card--chart {
@@ -129,8 +147,9 @@
         .card__left {
             width: 100%;
             .card__header-left {
-                flex: inherit;
+
             }
+
         }
         .card__right {
             padding: 0;
@@ -384,7 +403,7 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1450px) {
+@media screen and (min-width: 768px) and (max-width: 1449px) {
     div.card.card--chart {
         flex-flow: column;
         .card__left {
@@ -666,11 +685,7 @@
                     padding-right: 16px;
                 }
             }
-            @media only screen and (min-width: 768px) and (max-width: 1023px) {
-                tbody tr td.dt-actions {
-                    text-align: center;
-                }
-            }
+
         }
     }
 }

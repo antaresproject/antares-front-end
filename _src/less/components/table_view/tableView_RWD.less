@@ -1,26 +1,26 @@
 .tbl-c {
-    @media @min768 {
-        table td,
-        table th {
-            user-select: none;
-        }
+  @media @min768 {
+    table td,
+    table th {
+      user-select: none;
     }
+  }
+  @media @xs {
+    padding: 0;
+  }
+  table {
     @media @xs {
-        padding: 0;
+      padding: 0 @unit1;
     }
-    table {
-        @media @xs {
-            padding: 0 @unit1;
-        }
-    }
+  }
 }
 
 // btn
 @media screen and (max-width: 640px) {
-    div.dt-buttons {
-        float: none !important;
-        text-align: center
-    }
+  div.dt-buttons {
+    float: none !important;
+    text-align: center
+  }
 }
 
 // card
@@ -50,133 +50,134 @@
 //  }
 //}
 
-    td[tabindex] {
-        &:before {
-            vertical-align: sub;
-            font-size: 20px !important;
-            color: @primary-bg;
-        }
-    }
-table tr.child td.child ul li {
-    text-align: left;
-    padding: 4px 8px;
-    font-size: 13px;
-    &:hover {
-        background-color: #e1e5e8;
-    }
-    .dtr-title {
-        color: #9fa5b3;
-    }
+td[tabindex] {
+  &:before {
+    vertical-align: sub;
+    font-size: 20px !important;
+    color: @primary-bg;
+  }
 }
+
+table tr.child td.child ul li {
+  text-align: left;
+  padding: 4px 33px;
+  font-size: 13px;
+
+  .dtr-title {
+    color: #9fa5b3;
+  }
+}
+
 @media @md {
-    .search-box:before,
-    .search-box>i {
-        left: 0;
-    }
+  .search-box:before,
+  .search-box > i {
+    left: 0;
+  }
 
-    .tbl-c {
-        padding: 0 16px;
-    }
-    //.tbl-c table tr td:first-child,
-    //.tbl-c table tr th:first-child {
-    //    padding-left: 10px;
-    //}
-    .tbl-c .billevo-table tr:hover .child {
-        background-color: white;
-    }
+  .tbl-c {
+    padding: 0 16px;
+  }
 
-    .page-brand-list {
-        table.collapsed tbody tr:not(.child) td:first-child {
-            padding-left: 45px !important;
-        }
-        table.collapsed tbody tr:not(.child) td:first-child:before {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            padding-left: 16px;
-        }
+  //.tbl-c table tr td:first-child,
+  //.tbl-c table tr th:first-child {
+  //    padding-left: 10px;
+  //}
+  .tbl-c .billevo-table tr:hover .child {
+    background-color: white;
+  }
+
+  .page-brand-list {
+    table.collapsed tbody tr:not(.child) td:first-child {
+      padding-left: 45px !important;
     }
+    table.collapsed tbody tr:not(.child) td:first-child:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 16px;
+    }
+  }
 }
 
 @media @xs {
-    table tr.child td.child ul li {
-        padding: 4px 24px;
-    }
 
-    .odd,
-    .even {
-        position: relative;
-        td>a[title="email address"] {
-            position: relative;
-            left: 22.5%;
-            margin-top: 4px;
-        }
-        td {
-            text-align: left;
-        }
-        td:first-child {
 
-        }
-        td:nth-child(8) {
-            text-align: right;
-            padding-right: 16px;
-        }
+  .odd,
+  .even {
+    position: relative;
+    td > a[title="email address"] {
+      position: relative;
+      left: 22.5%;
+      margin-top: 4px;
     }
-    .tbl-c {
-        padding: 0;
-        table {
-            padding: 0;
-        }
+    td {
+      text-align: left;
     }
-    .tbl-c table tr td {
-        //padding: 12px 0 26px 0; //padding: 16px 0 16px 0;
+    td:first-child {
+
     }
-    .tbl-c .dt-area-bottom {
-        padding: 0 8px;
+    td:nth-child(8) {
+      text-align: right;
+      padding-right: 16px;
     }
-    .filters .ddown-multi .ddown-multi__submenu[data-name="withSelected"] {
-        .ddown-multi__label {
-            padding: 0 24px;
-        }
-        .ddown-multi__return {
-            margin-bottom: 8px;
-        }
-        &>li {
-            padding: 0;
-            &>a {
-                padding: 0 24px;
-            }
-        }
+  }
+
+  .tbl-c {
+    padding: 0;
+    table {
+      padding: 0;
     }
+  }
+
+  .tbl-c table tr td {
+    //padding: 12px 0 26px 0; //padding: 16px 0 16px 0;
+  }
+
+  .tbl-c .dt-area-bottom {
+    padding: 0 8px;
+  }
+
+  .filters .ddown-multi .ddown-multi__submenu[data-name="withSelected"] {
+    .ddown-multi__label {
+      padding: 0 24px;
+    }
+    .ddown-multi__return {
+      margin-bottom: 8px;
+    }
+    & > li {
+      padding: 0;
+      & > a {
+        padding: 0 24px;
+      }
+    }
+  }
 }
 
 @media @max450 {
-    .odd,
-    .even {
-        td>a[title="email address"] {
-            position: absolute;
-        }
+  .odd,
+  .even {
+    td > a[title="email address"] {
+      position: absolute;
     }
-    .tbl-c table tr td {
-        padding: 12px 0 12px 0;
-    }
-    .main-content .card .tbl-c table {
-        margin: 0 !important;
-    }
+  }
+
+  .tbl-c table tr td {
+    padding: 12px 0 12px 0;
+  }
+
+  .main-content .card .tbl-c table {
+    margin: 0 !important;
+  }
 }
-
-
-
-
 
 table.dataTable thead th,
 table.dataTable thead td {
-    padding: 0;
-    height: 47px;
+  padding: 0;
+  height: 47px;
 }
 
 @media @md {
-    table.dataTable tr {
-        user-select: none;
-    }
+  table.dataTable tr {
+    user-select: none;
+  }
 }

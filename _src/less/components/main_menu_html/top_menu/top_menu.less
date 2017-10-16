@@ -148,7 +148,7 @@ aside.main-sidebar .main-sidebar__logo {
 }
 
 .app-content {
-  margin-top: @menu-top-height;
+  padding-top: @menu-top-height;
   padding-bottom: @menu-top-height;
   @media only screen and (max-width: 1023px) {
     margin-top: 0;
@@ -158,8 +158,11 @@ aside.main-sidebar .main-sidebar__logo {
 aside.main-sidebar {
   width: 100vw;
   height: @menu-top-height;
-  position: absolute;
+  //position: absolute;
   z-index: 15;
+  //@media @md{
+    position: fixed;
+  //}
   @media only screen and (max-width: 1023px) {
     height: 0;
   }
@@ -212,9 +215,27 @@ aside.main-sidebar {
   li.main-menu__brand {
     margin: 0;
   }
+  .submenu__content-right {
+    display: flex;
+    .brand-name {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    .datarow {
+      width: 100%;
+      margin: 0 32px;
+      margin-top: 32px;
+      height: max-content;
+      &:first-of-type{
+        margin-left: 0;
+      }
+    }
+  }
 }
 
-.main-menu--primary,
+    .main-menu--primary,
 .main-menu--secondary {
   display: flex;
   flex-flow: row nowrap; // flex-flow: row nowrap;
@@ -239,7 +260,7 @@ aside.main-sidebar {
       position: relative;
       .data-list {
         width: 300px;
-        display: inline-grid;
+        display: inline-table;
         margin: 0 32px;
         &:first-of-type {
           margin-left: 0;

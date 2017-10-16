@@ -60,26 +60,19 @@
 }
 
 .page-clients-details .card--contacts {
-  @media only screen and (min-width: 1367px) and (max-width: 1449px) {
     .flex-block__content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       .flex-block__title {
-        width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .flex-block__desc {
-        .truncate(80px);
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
-  }
-  @media only screen and (min-width: 1450px) and (max-width: 1599px) {
-    .flex-block__content {
-      .flex-block__title {
-        width: 100px;
-      }
-      .flex-block__desc {
-        .truncate(100px);
-      }
-    }
-  }
 }
 
 .card-bar .card-bar__rel {

@@ -7,20 +7,23 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px){
-  .app-content .main-content{
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .app-content .main-content {
     padding: 0 8px;
   }
-  .app-content .main-head{
+
+  .app-content .main-head {
     padding: 24px 14px;
   }
 }
-@media only screen and (min-width: 1024px) and (max-width: 1199px){
-  .app-content .main-content{
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .app-content .main-content {
     padding: 0 14px;
   }
 
 }
+
 @media @md {
   // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES
   body {
@@ -132,8 +135,8 @@ input {
 .form-block {
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   margin-bottom: @unit2;
   flex-wrap: wrap;
 
@@ -196,7 +199,7 @@ input {
   label:not(.switch) {
     font-size: 13px;
     color: @color-dark-grey;
-    padding-right: @unit2;
+    //padding-right: @unit2;
     font-weight: 500;
 
   }
@@ -244,6 +247,9 @@ input {
       height: 52px;
       font-size: 15px;
       padding: 0 @unit2;
+      @media @xs {
+        padding: 0 0;
+      }
     }
 
     &:focus,
@@ -486,109 +492,53 @@ input {
 //////////////////////////
 // 8 FORMS HOR
 ////////////////////////////
-.form--hor .form-block {
-  flex-flow: row nowrap;
+.form-block .col-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.form--hor {
-  .form-block {
-    align-items: center;
-    label:not(.switch) {
-      align-items: center;
+.page-settings {
+  .generals-form {
+    .form-block__name {
       justify-content: flex-end;
-      line-height: 22px;
       text-align: right;
     }
-    .col-group {
-      width: 100%;
-      position: relative;
-      > div {
-        .form-block__name {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-    }
+  }
+  .input-field .mdl-textfield {
+    width: 100%;
   }
 }
 
-@media @min768max991 {
-  .form--hor {
-    .form-block {
-      .col-group {
-        .form-block__name {
-          max-width: 50%;
-          width: 100%;
-        }
-        .col-2 {
-          label {
-            max-width: 12%;
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media @min992 {
-  .form--hor {
-    .form-block {
-      .col-group {
-        .form-block__name {
-          max-width: 25%;
-          width: 100%;
-        }
-        .col-2 {
-          label {
-            max-width: 12%;
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media @xs {
+.page-forms--hor {
   .generals-form {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .form--hor {
-    .form-block {
-      .col-group {
-        .form-block__name {
-          max-width: 35%;
-          width: 100%;
-        }
-        .input-field {
-          float: right;
-          width: 65%;
-        }
-
-        .dropzone-form .dz-message .dz-m__current img {
-          //width: 90%;
-        }
-        .comiseo-daterangepicker-triggerbutton.ui-button {
-          min-width: 100%;
-        }
-      }
+    .form--hor .form-block__name {
+      justify-content: flex-end;
+      text-align: right;
     }
   }
+  .input-field .mdl-textfield {
+    width: 100%;
+  }
+}
 
-  .app-content {
-    .main-content {
-      .generals-form {
-        .col-16 {
-          .form-block .select2-container .select2-selection--multiple .select2-selection__rendered input.select2-search__field {
-            width: auto !important;
-          }
-        }
-      }
+.input-field {
+  input[name="with-button"] {
+    margin-right: 8px !important;
+  }
+  &.input-btn--left {
+    flex-flow: row-reverse !important;
+    & > input[name="with-button"] {
+      margin-left: 8px !important;
+      margin-right: 0px !important;
     }
+  }
+}
+
+.input-field .spinner-basic {
+  width: 100%;
+  .ui-spinner {
+    width: 100%;
   }
 }
 
@@ -649,3 +599,121 @@ fieldset.slider {
     padding: 0 8px;
   }
 }
+
+
+.page-brand-settings  .generals-form .app-content__footer{
+  margin-left: -16px;
+}
+
+.generals-form {
+  margin-left: 6px;
+  margin-right: 6px;
+  @media @xs {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .app-content__footer {
+    margin-left: -6px;
+  }
+}
+.main-sidebar--wide.main-sidebar--expanded{
+  .page-forms.page-single-form .generals-form .app-content__footer{
+    left: auto;
+    width: ~'calc(100% - 280px)';
+    @media only screen and (min-width: 1024px) {
+      margin-left: -16px
+    }
+  }
+}
+.main-sidebar--top .page-forms.page-single-form {
+  .grid-container.grid-container--1col > .grid-col {
+    padding: 0;
+      margin: 0;
+    .generals-form .app-content__footer{
+      margin-left: -16px;
+    }
+  }
+}
+.page-forms.page-single-form {
+  .grid-container.grid-container--1col > .grid-col {
+    padding: 0;
+    @media only screen and (max-width: 1023px) {
+      margin: 0;
+      .app-content__footer{
+        left: 0;
+      }
+    }
+    .gen-settings--full > h1 {
+      margin-top: 30px;
+      @media @xs{
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.page-forms.page-single-form .generals-form {
+  .app-content__footer {
+    margin-left: 0px;
+  }
+}
+
+.page-forms .generals-form {
+  margin-left: 16px;
+  margin-right: 16px;
+  @media @xs {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .app-content__footer {
+    margin-left: -16px;
+  }
+}
+
+.btn-with-icon {
+  .form-block {
+    align-items: flex-start;
+  }
+  .btns--block {
+    width: 100%;
+    @media @xs {
+      margin-left: 0;
+    }
+    .col-group {
+      align-items: flex-start;
+    }
+  }
+}
+
+.alerts--block {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+fieldset[name="Buttons"]:not(.btn-with-icon) {
+  .btns--block {
+    margin-left: -10px;
+    @media @xs {
+      margin-left: 0;
+    }
+  }
+}
+
+fieldset[name="Buttons"] {
+  .btns--block {
+    a {
+      margin: 8px 16px;
+    }
+  }
+  @media @xs {
+    &.btn-with-icon {
+      .col-group {
+        flex-flow: column;
+        .col-12 {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+

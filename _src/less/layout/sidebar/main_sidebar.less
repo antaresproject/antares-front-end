@@ -117,7 +117,7 @@ aside.main-sidebar {
             position: absolute;
             right: 0;
             top: 23px;
-            content: "";
+            content: '';
           }
         }
       }
@@ -133,7 +133,7 @@ aside.main-sidebar {
           position: absolute;
           right: 0;
           top: 23px;
-          content: "";
+          content: '';
           transition: 300ms;
         }
       }
@@ -240,10 +240,10 @@ aside.main-sidebar {
       .submenu__mobile-return {
         display: none;
       }
+
       section {
         width: 100%; // border-top: 1px solid @menu-border-color;
         border: 0px;
-        padding: 24px;
         &:first-child {
           padding-top: 0;
         }
@@ -309,8 +309,7 @@ aside.main-sidebar {
           }
         }
         background-color: #fff;
-        color: lighten(@secondary-bg,
-        6%);
+        color: lighten(@secondary-bg, 6%);
         section {
           border-bottom: 0;
           padding-bottom: 16px;
@@ -346,7 +345,9 @@ aside.main-sidebar {
                 .datarow {
                   .datarow__sgl {
                     min-height: 23px;
-                    padding-bottom: 2px;
+                    line-height: 40px;
+                    margin: 0;
+                    padding: 0;
                   }
                   .datarow__left {
                     color: @text-color-darkgrey;
@@ -396,6 +397,9 @@ aside.main-sidebar {
       left: 98px;
       z-index: 101;
       opacity: 1;
+      & > section {
+        padding: 24px;
+      }
     }
   }
   .mobile-ddowns {
@@ -797,7 +801,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
                 .mdl-font();
                 font: normal normal normal 24px/1 'Material-Design-Iconic-Font';
                 content: '\f2ee';
-                color: #474C56;
+                color: #474c56;
                 border-radius: 50%;
                 .flex-center();
                 position: absolute;
@@ -872,7 +876,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
             padding-right: @unit2;
             color: @text-color-darkgrey;
             i {
-              font-size: 19px
+              font-size: 19px;
             }
           }
           .mobile-ddowns__label {
@@ -1085,7 +1089,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   #app-wrapper {
     &.mobile-menu-active {
       .app-content {
-        transform: translateX(265px)
+        transform: translateX(265px);
       }
     }
   }
@@ -1101,10 +1105,27 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
         display: block !important;
       }
     }
-    &>li.submenu-open {
-       & > .submenu {
+    & > li.submenu-open {
+      & > .submenu {
         display: block !important;
       }
+    }
+  }
+}
+
+// active link
+
+#app-wrapper aside.main-sidebar ul.main-menu .submenu li {
+  &.is-active {
+    a {
+      color: #fff;
+    }
+  }
+}
+#app-wrapper aside.main-sidebar.simple-submenu ul.main-menu .submenu li {
+  &.is-active {
+    a {
+      color: #30343d;
     }
   }
 }

@@ -277,7 +277,6 @@
 //    }
 //}
 .main-sidebar--top .page-dashboard .comiseo-daterangepicker-triggerbutton {
-  .truncate(105px);
   display: block !important;
   padding-left: 0;
   padding-right: 0;
@@ -289,7 +288,6 @@
 
 @media @max1650 {
   .page-dashboard .comiseo-daterangepicker-triggerbutton {
-    .truncate(105px);
     display: block !important;
     padding-left: 0;
     padding-right: 0;
@@ -422,6 +420,12 @@
   }
 }
 
+@media only screen and (max-width: 1449px) {
+  .chartjs-render-monitor {
+    max-height: 270px;
+  }
+}
+
 .card .card__header-right .ddown--three-dots,
 .card .card__header-right .zmdi.card-maximize {
   margin-right: -16px;
@@ -459,8 +463,9 @@
 .page-dashboard .main-content {
   padding-bottom: 32px;
 }
-@media only screen and (min-width: 1200px){
-#app-wrapper .page-dashboard.dashboard--vue .main-content .card--logs .card-ctrls.tab-search--standard .card-ctrls__left .search-box .mdl-textfield.search-box__mdl-textfield label{
-  top: 6px
-}
+
+@media only screen and (min-width: 1200px) {
+  #app-wrapper .page-dashboard.dashboard--vue .main-content .card--logs .card-ctrls.tab-search--standard .card-ctrls__left .search-box .mdl-textfield.search-box__mdl-textfield label {
+    top: 6px
+  }
 }
