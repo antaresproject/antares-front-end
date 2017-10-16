@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<% var pageTitle = 'Brand Settings'; %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Antares Brand Settings</title>
+        <title> <%=pageTitle %></title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
@@ -46,35 +46,35 @@
                 <section class="generals-form" data-preload>
                     <form id="14" class="form-validation" method="post" action="">
                         <div class="col-group">
-                            <div class="col-dt-8">
+                            <div class="col-mb-24 col-12">
                                 <fieldset name="inputs">
                                     <legend>Brand Info</legend>
                                     <div class="col-group">
                                         <div class="form-block">
-                                            <div class="col-16 mb2">
+                                            <div class="col-mb-24 mb2">
                                                 <label class="form-block__name">Brand Name</label>
                                             </div>
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="input-field">
                                                     <input type="text" name="Text" placeholder="Brand Name" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-block">
-                                            <div class="col-16 mb2">
+                                            <div class="col-mb-24 mb2">
                                                 <label class="form-block__name">Brand URL</label>
                                             </div>
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="input-field">
                                                     <input type="text" name="Text" placeholder="Brand URL" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-block">
-                                            <div class="col-16 mb2">
+                                            <div class="col-mb-24 mb2">
                                                 <label class="form-block__name">Date Format</label>
                                             </div>
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <select name="date-format" data-selectAR="true" required>
                                                     <option value="04/20/2016">04/20/2016</option>
                                                     <option value="20/04/2016">20/04/2016</option>
@@ -83,10 +83,10 @@
                                             </div>
                                         </div>
                                         <div class="form-block">
-                                            <div class="col-16 mb2">
+                                            <div class="col-mb-24 mb2">
                                                 <label class="form-block__name">Default Country</label>
                                             </div>
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="input-field input-field--icon">
                                                                                     <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
@@ -101,10 +101,10 @@
                                             </div>
                                         </div>
                                         <div class="form-block">
-                                            <div class="col-16 mb2">
+                                            <div class="col-mb-24 mb2">
                                                 <label class="form-block__name">Default Country</label>
                                             </div>
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="input-field input-field--icon">
                                                                                     <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
@@ -119,10 +119,10 @@
                                             </div>
                                         </div>
                                         <div class="form-block">
-                                            <div class="col-16 mb2">
+                                            <div class="col-mb-24 mb2">
                                                 <label class="form-block__name">Default Language</label>
                                             </div>
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="input-field input-field--icon">
                                                                                     <span class="input-field__icon">
                                                                     <span class="flag-icon flag-icon-us"></span>
@@ -141,7 +141,7 @@
                                         </div>
                                         <div class="form-block">
                                             <div class="col-group" style="width: 100%;">
-                                                <div class="col-13 mb2">
+                                                <div class="col-mb-18  mb2">
                                                     <label class="form-block__name p0">
                                                         <span>Maintenance Mode</span>
                                                         <i class="zmdi zmdi-help-outline help--trigger"
@@ -151,7 +151,7 @@
                                                         </div>
                                                     </label>
                                                 </div>
-                                                <div class="col-3 mb2">
+                                                <div class="col-mb-6  mb2">
                                                     <div class="input-field input-field--short ml-auto">
                                                         <label class="switch">
                                                             <input class="switch-checkbox" name="switch" type="checkbox"
@@ -167,11 +167,11 @@
                                     </div>
                                 </fieldset>
                             </div>
-                            <div class="col-dt-7 col-dt-offset-1">
+                            <div class="col-mb-24 col-12">
                                 <fieldset name="BrandLogo">
                                     <legend>Brand Logo</legend>
                                     <div class="col-group">
-                                        <div class="col-10">
+                                        <div class="col-12">
                                             <div class="form-block">
                                                 <div class="input-field mb8">
                                                     <div class="dropzone dropzone-form brand-logo">
@@ -203,7 +203,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="form-block">
                                                 <div class="input-field mb8">
                                                     <div class="dropzone dropzone-form brand-favicon">
@@ -241,7 +241,7 @@
                                     <legend>Brand Colors</legend>
                                     <div class="color-pickers">
                                         <div class="col-group">
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="cp-row mb16">
                                                     <div class="cp-brand cp-brand--primary mr16">
                                                         <div class="cp-brand__preview">
@@ -292,7 +292,7 @@
                                             </div>
                                         </div>
                                         <div class="col-group">
-                                            <div class="col-16">
+                                            <div class="col-mb-24">
                                                 <div class="cp-row">
                                                     <!-- FIRST -->
                                                     <div class="cp-brand cp-brand--typo cp-brand--primary mr16">
@@ -376,7 +376,7 @@
                                     </div>
                                 </fieldset>
                             </div>
-                            <div class="col-dt-16">
+                            <div class="col-mb-24 col-24">
                                 <div class="app-content__footer">
                                     <div class="btn-group">
                                         <button class="btn btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect"

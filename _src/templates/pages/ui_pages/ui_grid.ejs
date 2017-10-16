@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<% var pageTitle = 'Antares Grid'; %>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <title>
+            <%= pageTitle %>
+        </title>
+        <% if(mainMenuType === 'wide'){ %>
+            <% include ../../layout/color_template_wide %>
+                <% } else{ %>
+                    <% include ../../layout/color_template %>
+                        <% } %>
+
+                            <% include ../../layout/css_files %>
+    </head>
+
+    <body>
+        <% include ../../layout/app_wrapper_start_tag %>
+
+            <% if(clientArea){ %>
+                <% include ../../layout/mode_clientArea/CA_menutop %>
+                    <% } else{ %>
+                        <% include ../../layout/main_menu_html %>
+                            <% } %>
+
+                                <div class="app-content page-settings gen-grid page-forms">
+                                    <% var breadData = 'Antares Grid'; %>
+
+                                        <% if(clientArea){ %>
+                                            <% include ../../layout/mode_clientArea/CA_mainhead %>
+                                                <% } else{ %>
+                                                    <% include ../../layout/mainhead %>
+                                                        <% } %>
+
+                                                            <% include ../../layout/sidebar_notifications %>
+                                                                <% include ../../layout/sidebar_alerts %>
+                                                                    <section class="main-content" data-preload>
+                                                                        <div class="grid-container grid-container--2col grid-container--footer grid-container--no-padd">
+                                                                            <div class="grid-col grid-col--menu">
+                                                                                <div class="menu-aside-container" data-scrollable>
+                                                                                    <ul class="menu-aside">
+                                                                                        <li class="is-active">
+                                                                                            <a href="#AntaresGrid" class="mdl-js-button mdl-js-ripple-effect">
+                                                                                                <span>Grid Standard</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="#AntaresGridOffset" class="mdl-js-button mdl-js-ripple-effect">
+                                                                                                <span>Grid with offset</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="#AntaresGridPullPush" class="mdl-js-button mdl-js-ripple-effect">
+                                                                                                <span>Grid with pull/push</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="#AntaresGridNested" class="mdl-js-button mdl-js-ripple-effect">
+                                                                                                <span>Grid nested</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="#AntaresGridFixRatio" class="mdl-js-button mdl-js-ripple-effect">
+                                                                                                <span>Grid with fixed ratio</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-col grid-col--container">
+                                                                                <div class="menu-mobile-settings--box">
+                                                                                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue" data-selectAR--search="true" name="select"
+                                                                                        id="select-anchor">
+                                                                                    </select>
+                                                                                </div>
+                                                                                <section class="generals-form grid-system gen-settings--full">
+                                                                                    <h1>Grid</h1>
+                                                                                    <form>
+                                                                                        <fieldset name="Grid" class="mb32">
+                                                                                            <a name="AntaresGrid">
+                                                                                                <h2>Grid Standard</h2>
+                                                                                            </a>
+                                                                                            <div class="col-group text-c">
+                                                                                                <div class="col-24">
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-4">
+                                                                                                            <div class="ex-grid--background">col-4</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-20">
+                                                                                                            <div class="ex-grid--background">col-20</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-6">
+                                                                                                            <div class="ex-grid--background">col-6</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-18">
+                                                                                                            <div class="ex-grid--background">col-18</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-8">
+                                                                                                            <div class="ex-grid--background">col-8</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-16">
+                                                                                                            <div class="ex-grid--background">col-16</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-10">
+                                                                                                            <div class="ex-grid--background">col-10</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-14">
+                                                                                                            <div class="ex-grid--background">col-14</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-12">
+                                                                                                            <div class="ex-grid--background">col-12</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-12">
+                                                                                                            <div class="ex-grid--background">col-12</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-24">
+                                                                                                            <div class="ex-grid--background">col-24</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </fieldset>
+                                                                                    </form>
+                                                                                    <form>
+                                                                                        <fieldset name="Grid" class="mb32">
+                                                                                            <a name="AntaresGridOffset">
+                                                                                                <h2>Grid with offset</h2>
+                                                                                            </a>
+                                                                                            <div class="col-group text-c">
+                                                                                                <div class="col-24">
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-15 col-mb-offset-9">
+                                                                                                            <div class="ex-grid--background">col-15 with col-offset-9</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-10 col-mb-offset-4">
+                                                                                                            <div class="ex-grid--background">col-10 with col-offset-4</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-18 col-mb-offset-6">
+                                                                                                            <div class="ex-grid--background">col-18 with col-offset-6</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-13 col-mb-offset-9">
+                                                                                                            <div class="ex-grid--background">col-13 with col-offset-9</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </fieldset>
+                                                                                    </form>
+                                                                                    <form>
+                                                                                        <fieldset name="Grid" class="mb32">
+                                                                                            <a name="AntaresGridPullPush">
+                                                                                                <h2>Grid with pull/push</h2>
+                                                                                            </a>
+                                                                                            <div class="col-group text-c">
+                                                                                                <div class="col-24">
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-9 col-mb-push-15">
+                                                                                                            <div class="ex-grid--background">col-9 with col-push-15</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-15 col-mb-pull-9">
+                                                                                                            <div class="ex-grid--background">col-15 with col-pull-9</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-10 col-mb-push-14">
+                                                                                                            <div class="ex-grid--background">col-10 with col-push-14</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-14 col-mb-pull-10">
+                                                                                                            <div class="ex-grid--background">col-14 with col-pull-10</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-4 col-mb-push-20">
+                                                                                                            <div class="ex-grid--background">col-4 with col-push-20</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-20 col-mb-pull-4">
+                                                                                                            <div class="ex-grid--background">col-20 with col-pull-4</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-13 col-mb-push-11">
+                                                                                                            <div class="ex-grid--background">col-13 with col-push-11</div>
+                                                                                                        </div>
+                                                                                                        <div class="col-mb-11 col-mb-pull-13">
+                                                                                                            <div class="ex-grid--background">col-11 with col-pull-13</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </fieldset>
+                                                                                    </form>
+                                                                                    <form>
+                                                                                        <fieldset name="Grid" class="mb32">
+                                                                                            <a name="AntaresGridNested">
+                                                                                                <h2>Grid nested</h2>
+                                                                                            </a>
+                                                                                            <div class="col-group text-c">
+                                                                                                <div class="col-24">
+
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-mb-24">
+                                                                                                            <div class="ex-grid--background-nested">
+                                                                                                                <div class="col-group">
+                                                                                                                    <div class="col-mb-6">
+                                                                                                                        <div class="ex-grid--background-nested">col-6</div>
+                                                                                                                    </div>
+                                                                                                                    <div class="col-mb-18">
+                                                                                                                        <div class="ex-grid--background-nested">
+                                                                                                                            <p>col-18</p>
+                                                                                                                            <div class="col-group">
+                                                                                                                                <div class="col-mb-10">
+                                                                                                                                    <div class="ex-grid--background-nested">col-10</div>
+                                                                                                                                </div>
+                                                                                                                                <div class="col-mb-14">
+                                                                                                                                    <div class="ex-grid--background-nested">
+                                                                                                                                        <p>col-14</p>
+                                                                                                                                        <div class="col-group">
+                                                                                                                                            <div class="col-mb-17">
+                                                                                                                                                <div class="ex-grid--background-nested">
+                                                                                                                                                    col-17
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="col-mb-7">
+                                                                                                                                                <div class="ex-grid--background-nested">
+                                                                                                                                                    col-7
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </fieldset>
+                                                                                    </form>
+                                                                                    <form>
+                                                                                        <fieldset name="Grid" class="mb32">
+                                                                                            <a name="AntaresGridFixRatio">
+                                                                                                <h2>Grid with fixed ratio</h2>
+                                                                                            </a>
+                                                                                            <div class="col-group text-c">
+                                                                                                <div class="col-24">
+                                                                                                    <div class="col-group">
+                                                                                                        <div class="col-6">
+                                                                                                            <div class="col-group">
+                                                                                                                <div class="col-fixed-landscape">
+                                                                                                                    <div class="ex-grid--background col-content">
+                                                                                                                        col-fixed-landscape (16:14)
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="col-6">
+                                                                                                            <div class="col-group">
+                                                                                                                <div class="col-fixed-hd">
+                                                                                                                    <div class="ex-grid--background col-content">
+                                                                                                                        col-fixed-hd (16:9)
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="col-6">
+                                                                                                            <div class="col-group">
+                                                                                                                <div class="col-fixed-portrait">
+                                                                                                                    <div class="ex-grid--background col-content">
+                                                                                                                        col-portrait (14:16)
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="col-6">
+                                                                                                            <div class="col-group">
+                                                                                                                <div class="col-fixed-square">
+                                                                                                                    <div class="ex-grid--background col-content">
+                                                                                                                        col-fixed-square (1:1)
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                    </div>
+
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </fieldset>
+                                                                                    </form>
+
+                                                                                </section>
+                                                                                <% include ../../layout/app_footer %>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                </div>
+                                <% include ../../layout/js_files %>
+                                    <script>
+
+                                    </script>
+    </body>
+
+</html>

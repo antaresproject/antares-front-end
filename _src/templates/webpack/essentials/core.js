@@ -1,4 +1,8 @@
-var path = './../../../';
+import { antaresCfg } from './../../../config/antares_cfg';
+
+if (antaresCfg.performanceMode === true) {
+  window.t0 = performance.now();
+}
 
 // WEBPACK CONFIG RELATED:
 // import * as OfflinePluginRuntime from 'offline-plugin/runtime';
@@ -14,6 +18,7 @@ import './../../../js/antares_mechanics';
 import './../../../js/components/dropdowns/ddown_general';
 import './../../../js/components/dropdowns/ddown_single';
 import './../../../js/components/dropdowns/ddown_multi';
+import './../../../js/components/menu_aside/menu_aside';
 import '../../../js/components/main_menu/main_menu_html';
 import './../../../js/components/auto_complete/auto_complete';
 import './../../../js/components/browser_hooks/browser_hooks';
@@ -22,6 +27,13 @@ import './../../../js/components/debouncer/debouncer';
 import './../../../js/components/dropdowns/dropjs';
 import './../../../js/components/datatables/mobile_select_mode';
 import './../../../js/components/mode_clientArea/mode_clientArea';
+
+window.onload = function() {
+  if (antaresCfg.performanceMode === true) {
+    window.t1 = performance.now();
+    console.log('System Load Time: ' + (window.t1 - window.t0) + ' milliseconds.');
+  }
+};
 
 // import './../../../js/components/main_menu/main_menu_old';
 

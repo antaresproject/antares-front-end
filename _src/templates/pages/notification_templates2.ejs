@@ -1,144 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<% var pageTitle = 'Notification Templates'; %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Antares notification Templates</title>
+    <title><%= pageTitle %></title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
     <% include ../layout/color_template %>
     <% } %>
-        <% include ../layout/css_files %>
+    <% include ../layout/css_files %>
 </head>
 
 <body>
-    <% include ../layout/app_wrapper_start_tag %>
-    <% include ../layout/main_menu_html %>
-            <div class="app-content page-brand-settings notification-templates">
-                <% var breadData= 'Notification Templates'; %>
-                <% include ../layout/mainhead %>
-                        <% include ../layout/sidebar_notifications %>
-                            <% include ../layout/sidebar_alerts %>
-                                <section class="main-content nopadding">
-                                    <div class="grid-container grid-container--footer grid-container--1col grid-container--no-padd">
-                                        <div class="grid-col grid--notification  grid-col--container">
-                                            <form action="">
-                                                <div class="page-notification-templates">
-                                                    <fieldset class="page-notification-templates__info">
-                                                        <legend>
-                                                            Template Information
-                                                        </legend>
-                                                        <div class="col-group page-notification-templates__name">
-                                                            <div class="form-block">
-                                                                <div class="col-6">
-                                                                    <label class="form-block__name">Template Name</label>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="input-field">
-                                                                        <input type="text" value="Invoice Created" name="Text" placeholder="RS Studio" required="">
-                                                                        <div class="page-notification-templates__switch">
-                                                                            <label class="form-block__name">Published</label>
-                                                                            <label class="switch">
-                                                                    <input class="switch-checkbox" name="published" type="checkbox" checked="">
-                                                                    <span class="switch-container"><span class="switch-handle"></span></span>
-                                                                </label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-group">
-                                                            <div class="form-block">
-                                                                <div class="col-6">
-                                                                    <label class="form-block__name">Type</label>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="input-field">
-                                                                        <input type="text" value="Email" name="email" placeholder="RS Studio" readonly>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                    <fieldset>
-                                                        <div class="page-notification-templates__content">
-                                                            <legend>
-                                                                Template Content
-                                                            </legend>
-                                                            <div class="page-notification-templates__lang">
-                                                                <div class="page-notification-templates__lang-text">
-                                                                    Edit template for:
-                                                                </div>
-                                                                <div class="form-block nomargin">
-                                                                    <div class="input-field input-field--icon">
-                                                                        <span class="input-field__icon"><span class="flag-icon"></span></span>
-                                                                        <select name="select" data-flag-select data-selectAR="true">
-                                                        <option data-country="us" value="aSDafd">Option two... </option>
-                                                        <option data-country="fr" value="fa34wf4e3">Option three...</option>
-                                                        <option data-country="nl" value="asdasdas">Option 4</option>
-                                                    </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-                                                            <div class="left-tabs">
-                                                                <div class="mdl-tabs__tab-bar">
-                                                                    <div class="mdl-tabs__left-content">
-                                                                        <a href="#wyswig-panel" class="mdl-tabs__tab is-active">Wyswig</a>
-                                                                        <a href="#html-panel" class="mdl-tabs__tab">HTML</a>
-                                                                        <a href="#php-panel" class="mdl-tabs__tab">PHP</a>
-                                                                    </div>
+<% include ../layout/app_wrapper_start_tag %>
+<% include ../layout/main_menu_html %>
+<div class="app-content page-brand-settings notification-templates">
+    <% var breadData = 'Notification Templates'; %>
+    <% include ../layout/mainhead %>
+    <% include ../layout/sidebar_notifications %>
+    <% include ../layout/sidebar_alerts %>
+    <section class="main-content nopadding">
+        <div class="grid-container grid-container--footer grid-container--1col grid-container--no-padd">
+            <div class="grid-col grid--notification  grid-col--container">
+                <form action="">
+                    <div class="page-notification-templates">
+                        <fieldset class="page-notification-templates__info">
+                            <legend>
+                                Template Information
+                            </legend>
+                            <div class="col-group page-notification-templates__name">
+                                <div class="form-block">
+                                    <div class="col-6">
+                                        <label class="form-block__name">Template Name</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-field">
+                                            <input type="text" value="Invoice Created" name="Text"
+                                                   placeholder="RS Studio" required="">
+                                            <div class="page-notification-templates__switch">
+                                                <label class="form-block__name">Published</label>
+                                                <label class="switch">
+                                                    <input class="switch-checkbox" name="published" type="checkbox"
+                                                           checked="">
+                                                    <span class="switch-container"><span
+                                                                class="switch-handle"></span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-group">
+                                <div class="form-block">
+                                    <div class="col-6">
+                                        <label class="form-block__name">Type</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-field">
+                                            <input type="text" value="Email" name="email" placeholder="RS Studio"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="page-notification-templates__content">
+                                <legend>
+                                    Template Content
+                                </legend>
+                                <div class="page-notification-templates__lang">
+                                    <div class="page-notification-templates__lang-text">
+                                        Edit template for:
+                                    </div>
+                                    <div class="form-block nomargin">
+                                        <div class="input-field input-field--icon">
+                                            <span class="input-field__icon"><span class="flag-icon"></span></span>
+                                            <select name="select" data-flag-select data-selectAR="true">
+                                                <option data-country="us" value="aSDafd">Option two...</option>
+                                                <option data-country="fr" value="fa34wf4e3">Option three...</option>
+                                                <option data-country="nl" value="asdasdas">Option 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                                <div class="left-tabs">
+                                    <div class="mdl-tabs__tab-bar">
+                                        <div class="mdl-tabs__left-content">
+                                            <a href="#wyswig-panel" class="mdl-tabs__tab is-active">Wyswig</a>
+                                            <a href="#html-panel" class="mdl-tabs__tab">HTML</a>
+                                            <a href="#php-panel" class="mdl-tabs__tab">PHP</a>
+                                        </div>
 
-                                                                    <div class="left-tabs__mobile-drop-down">
-                                                                        <div class="ddown left-tabs__mmobile-dropdown">
-                                                                            <div class="ddown__init ddown__init--clean btn-more mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more-vert"></i></div>
-                                                                            <div class="ddown__content">
-                                                                                <ul class="ddown__menu">
-                                                                                    <li>
-                                                                                        <a   id="notification-templates-preview"><i class="mdl-tabs__icon zmdi zmdi-search"></i> Preview</a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a   id="notification-templates-send-email"><i class="mdl-tabs__icon zmdi zmdi-mail-send"></i> Send TEst EMail</a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a   id="notification-templates-variables" class="mdl-tabs--open-variables-panel">
-                                                                        <i class="mdl-tabs__icon zmdi zmdi-code"></i> 
-                                                                     Available Variables
-                                                                    </a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="left-tabs__desktop-links">
-                                                                        <a   class="mdl-js-ripple-effect mdl-js-button">
-                                                        <i class="mdl-tabs__icon zmdi zmdi-search"></i>
-                                                        <span class="mdl-tabs__text">Preview</span>
-                                                    </a>
-                                                                        <a   class="mdl-js-ripple-effect mdl-js-button">
-                                                        <i class="mdl-tabs__icon zmdi zmdi-mail-send"></i> 
-                                                        <span class="mdl-tabs__text">Send Test E-mail</span>
-                                                    </a>
-                                                                        <a   class="mdl-js-ripple-effect mdl-js-button mdl-tabs--open-variables-panel">
-                                                        <i class="mdl-tabs__icon zmdi zmdi-code"></i>
-                                                        <span class="mdl-tabs__text">Available Variables </span>
-                                                    </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="left-tabs__panels">
+                                        <div class="left-tabs__mobile-drop-down">
+                                            <div class="ddown left-tabs__mmobile-dropdown">
+                                                <div class="ddown__init ddown__init--clean btn-more mdl-js-button mdl-js-ripple-effect">
+                                                    <i class="zmdi zmdi-more-vert"></i></div>
+                                                <div class="ddown__content">
+                                                    <ul class="ddown__menu">
+                                                        <li>
+                                                            <a id="notification-templates-preview"><i
+                                                                        class="mdl-tabs__icon zmdi zmdi-search"></i>
+                                                                Preview</a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="notification-templates-send-email"><i
+                                                                        class="mdl-tabs__icon zmdi zmdi-mail-send"></i>
+                                                                Send TEst EMail</a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="notification-templates-variables"
+                                                               class="mdl-tabs--open-variables-panel">
+                                                                <i class="mdl-tabs__icon zmdi zmdi-code"></i>
+                                                                Available Variables
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="left-tabs__desktop-links">
+                                            <a class="mdl-js-ripple-effect mdl-js-button">
+                                                <i class="mdl-tabs__icon zmdi zmdi-search"></i>
+                                                <span class="mdl-tabs__text">Preview</span>
+                                            </a>
+                                            <a class="mdl-js-ripple-effect mdl-js-button">
+                                                <i class="mdl-tabs__icon zmdi zmdi-mail-send"></i>
+                                                <span class="mdl-tabs__text">Send Test E-mail</span>
+                                            </a>
+                                            <a class="mdl-js-ripple-effect mdl-js-button mdl-tabs--open-variables-panel">
+                                                <i class="mdl-tabs__icon zmdi zmdi-code"></i>
+                                                <span class="mdl-tabs__text">Available Variables </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="left-tabs__panels">
 
-                                                                    <div class="mdl-tabs__panel is-active " id="wyswig-panel">
-                                                                        <textarea name="wyswig-editor" id="wysiwyg" rows="10" cols="80" class="hidden">
+                                        <div class="mdl-tabs__panel is-active " id="wyswig-panel">
+                                                                        <textarea name="wyswig-editor" id="wysiwyg"
+                                                                                  rows="10" cols="80" class="hidden">
 
 
                                                     </textarea>
-                                                                    </div>
-                                                                    <div class="mdl-tabs__panel" id="html-panel">
-                                                                        <fieldset>
-                                                                            <textarea name="html-editor" id="html-editor" rows="10" cols="80">
+                                        </div>
+                                        <div class="mdl-tabs__panel" id="html-panel">
+                                            <fieldset>
+                                                                            <textarea name="html-editor"
+                                                                                      id="html-editor" rows="10"
+                                                                                      cols="80">
 <h2>Login to Antares from new device detected</h2>
 <table style="width:100%" cellspacing="0" cellpadding="0">
     <tbody>
@@ -174,7 +187,7 @@
                                 </ul>
 
                                 <p>This device has been added to your list of known devices, which you can view here:</p>
-                                <a href="http://billevo.local/admin/logger/devices/index" target="_blank" >
+                                <a href="http://billevo.local/admin/logger/devices/index" target="_blank">
                                     http://billevo.local/admin/logger/devices/index
                                 </a>
                                 <p>
@@ -197,7 +210,7 @@
                         </tr>
                         <tr>
                             <td style="font-size:12px;font-weight:bold;color:#a2a2a2;line-height:1.5em;font-family:Helvetica,Arial,sans-serif;width:100%;text-align:center;padding:8px">
-                                Delivered by <a   style="color:black" target="_blank">
+                                Delivered by <a style="color:black" target="_blank">
                                     Antares Platform
                                 </a>
                             </td>
@@ -209,11 +222,12 @@
     </tbody>
 </table>
                                                         </textarea>
-                                                                        </fieldset>
-                                                                    </div>
-                                                                    <div class="mdl-tabs__panel" id="php-panel">
-                                                                        <fieldset>
-                                                                            <textarea name="php-editor" id="php-editor" rows="10" cols="80">
+                                            </fieldset>
+                                        </div>
+                                        <div class="mdl-tabs__panel" id="php-panel">
+                                            <fieldset>
+                                                                            <textarea name="php-editor" id="php-editor"
+                                                                                      rows="10" cols="80">
 
 
 
@@ -226,346 +240,387 @@ echo "My boat is " . $coLOR . "<br>";
 
 
                                                         </textarea>
-                                                                        </fieldset>
-                                                                    </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="variables-pane">
+                                    <div class="variables-pane__top">
+                                        Available Variables
+                                        <div class="variables-pane__close mdl-tabs--close-variables-panel">
+                                            <i class="zmdi zmdi-close"></i>
+                                        </div>
+                                    </div>
+                                    <div class="variables-pane__inner">
+                                        <div class="variables-pane__top variables-pane__top--mobile ">
+                                            Available Variables
+                                            <div class="variables-pane__close mdl-tabs--close-variables-panel">
+                                                <i class="zmdi zmdi-close"></i>
+                                            </div>
+                                        </div>
+                                        <div class="variables-pane__content">
+                                            <div class="variables-pane__instructions-type">
+                                                <div class="variables-pane__instructions-group">Instructions</div>
+                                                <div class="variables-pane__instructions">
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            foreach
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#var-foreach"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
                                                                 </div>
                                                             </div>
-                                                            <div class="variables-pane">
-                                                                <div class="variables-pane__top">
-                                                                    Available Variables
-                                                                    <div class="variables-pane__close mdl-tabs--close-variables-panel">
-                                                                        <i class="zmdi zmdi-close"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="variables-pane__inner">
-                                                                    <div class="variables-pane__top variables-pane__top--mobile ">
-                                                                        Available Variables
-                                                                        <div class="variables-pane__close mdl-tabs--close-variables-panel">
-                                                                            <i class="zmdi zmdi-close"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="variables-pane__content">
-                                                                        <div class="variables-pane__instructions-type">
-                                                                            <div class="variables-pane__instructions-group">Instructions</div>
-                                                                            <div class="variables-pane__instructions">
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        foreach
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#var-foreach"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="var-foreach">
+                                                            <pre id="var-foreach">
 [[foreach]]
     {% for element in [[list]] %}
          {{ element.attribute }}
     {% endfor %}
 [[/foreach]]                                                                                                                                                           
                                                                         </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        If
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#var-if"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="var-if">
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            If
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#var-if"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="var-if">
 [[if]]
     {% if [[element.attribute]] == 'foo' %} 
         foo attribute
     {% endif %}
 [[/if]]                                                                                                                                                           
                                                                         </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="variables-pane__instructions-type">
-                                                                            <div class="variables-pane__instructions-group">Brand</div>
-                                                                            <div class="variables-pane__instructions">
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Brand List
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#brand-list"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="brand-list">
-[[ brands::brand_list ]]                                                                                                                                                              
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="variables-pane__instructions-type">
-                                                                            <div class="variables-pane__instructions-group">Foundation</div>
-                                                                            <div class="variables-pane__instructions">
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Site Name
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#site-name"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="site-name">
-​[[ foundation::​site.name ]]                                                                                                                                                             
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Site Description
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#site-description"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="site-description">
-​[[ foundation::​site.description ]]                                                                                                                                                           
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Driver
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-driver"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-driver">
-​[[ foundation::​email.driver ]]                                                                                                                                                         
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Host
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-host"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-host">
-​[[ foundation::​email.host]]                                                                                                                                                           
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Port
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-port"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-port">
-​[[ foundation::​email.port ]]                                                                                               
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Form
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-form"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-form">
-​[[ foundation::​email.from ]]                                                                                                                                                          
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Encryption
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-encryption"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-encryption">
-​​[[ foundation::​email.encryption ]]                                                                                               
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Username
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-username"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true" data-clipboard-target="#email-username"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-username">
-​[[ foundation::​email.username ]]                                                                                                                                                          
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Email Queue
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true" data-clipboard-target="#email-sendmail"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre id="email-sendmail">
-​[[ foundation::​email.sendmail ]]                                                                                                                                                         
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Site Description
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre>
-​[[ foundation::​site.description ]]                                                                                                                                                           
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="variables-pane__row">
-                                                                                    <div class="variables-pane__instruction-name">
-                                                                                        Site Description
-                                                                                    </div>
-                                                                                    <div class="variables-pane__instruction-content">
-                                                                                        <div class="variables-pane__copy-tools">
-                                                                                            <i class="zmdi zmdi-copy variables-pane__copy" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Copy
-                                                                                            </div>
-                                                                                            <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction" data-tooltip="true"></i>
-                                                                                            <div class="tooltip-content">
-                                                                                                Insert
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <pre>
-​[[ foundation::​site.description ]]                                                                                                                                                           
-                                                                        </pre>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="variables-pane__mobile-button">
-                                                                                <a   class="btn w100p btn--primary btn--s-default mdl-button mdl-js-button mdl-js-ripple-effect">Close</a>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="variables-pane__instructions-type">
+                                                <div class="variables-pane__instructions-group">Brand</div>
+                                                <div class="variables-pane__instructions">
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Brand List
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#brand-list"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
                                                                 </div>
                                                             </div>
+                                                            <pre id="brand-list">
+[[ brands::brand_list ]]                                                                                                                                                              
+                                                                        </pre>
                                                         </div>
-                                                    </fieldset>
+                                                    </div>
                                                 </div>
-                                                <% include ../layout/app_footer %>
-                                            </form>
+                                            </div>
+                                            <div class="variables-pane__instructions-type">
+                                                <div class="variables-pane__instructions-group">Foundation</div>
+                                                <div class="variables-pane__instructions">
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Site Name
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#site-name"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="site-name">
+​[[ foundation::​site.name ]]                                                                                                                                                             
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Site Description
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#site-description"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="site-description">
+​[[ foundation::​site.description ]]                                                                                                                                                           
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Driver
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-driver"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-driver">
+​[[ foundation::​email.driver ]]                                                                                                                                                         
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Host
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-host"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-host">
+​[[ foundation::​email.host]]                                                                                                                                                           
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Port
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-port"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-port">
+​[[ foundation::​email.port ]]                                                                                               
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Form
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-form"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-form">
+​[[ foundation::​email.from ]]                                                                                                                                                          
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Encryption
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-encryption"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-encryption">
+​​[[ foundation::​email.encryption ]]                                                                                               
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Username
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-username"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-username"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-username">
+​[[ foundation::​email.username ]]                                                                                                                                                          
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Email Queue
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"
+                                                                   data-clipboard-target="#email-sendmail"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre id="email-sendmail">
+​[[ foundation::​email.sendmail ]]                                                                                                                                                         
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Site Description
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre>
+​[[ foundation::​site.description ]]                                                                                                                                                           
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="variables-pane__row">
+                                                        <div class="variables-pane__instruction-name">
+                                                            Site Description
+                                                        </div>
+                                                        <div class="variables-pane__instruction-content">
+                                                            <div class="variables-pane__copy-tools">
+                                                                <i class="zmdi zmdi-copy variables-pane__copy"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Copy
+                                                                </div>
+                                                                <i class="zmdi zmdi-arrow-right variables-pane__paste insert-instruction"
+                                                                   data-tooltip="true"></i>
+                                                                <div class="tooltip-content">
+                                                                    Insert
+                                                                </div>
+                                                            </div>
+                                                            <pre>
+​[[ foundation::​site.description ]]                                                                                                                                                           
+                                                                        </pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="variables-pane__mobile-button">
+                                                    <a class="btn w100p btn--primary btn--s-default mdl-button mdl-js-button mdl-js-ripple-effect">Close</a>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
-                                </section>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <% include ../layout/app_footer %>
+                </form>
             </div>
-            </div>
+        </div>
+    </section>
+</div>
+</div>
 </body>
 
 </html>

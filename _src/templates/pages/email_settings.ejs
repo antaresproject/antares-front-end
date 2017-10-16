@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<% var pageTitle = 'Email Settings'; %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Antares Email Settings</title>
+    <title><%=pageTitle %></title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
@@ -36,7 +36,7 @@
     <section class="main-content nopadding" data-preload>
         <div class="grid-container grid-container--2col grid-container--no-padd">
             <% include ../layout/menu_aside %>
-            <div class="grid-col grid-col--container">
+            <div  style="z-index:3" class="grid-col grid-col--container">
                 <div class="menu-mobile-settings--box">
                     <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue" data-selectAR--search="true" name="select"></select>
                 </div>
@@ -134,7 +134,7 @@
                     </form>
                 </div>
             </div>
-            <div class="email-preview">
+            <div class="email-preview grid-col  grid-col--container" style="z-index: 2">
                 <div class="preview-area">
                     <iframe id="preview" frameBorder="0"></iframe>
                 </div>

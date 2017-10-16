@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<% var pageTitle = 'Client Details'; %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Antares Clients Details</title>
+    <title> <%=pageTitle %></title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
@@ -104,7 +104,7 @@
                                                     <span class="datarow__status">Currency</span>
                                                 </div>
                                                 <div class="datarow__right">
-                                                                                    <span class="datarow__data">
+                                                                                                                        <span class="datarow__data">
                                                     <strong>USA Dollar ($)</strong>
                                                 </span>
                                                 </div>
@@ -114,7 +114,7 @@
                                                     <span class="datarow__status">Language</span>
                                                 </div>
                                                 <div class="datarow__right">
-                                                                                    <span class="datarow__data">
+                                                                                                                        <span class="datarow__data">
                                                     <strong>Polish</strong>
                                                 </span>
                                                 </div>
@@ -124,7 +124,7 @@
                                                     <span class="datarow__status">Group</span>
                                                 </div>
                                                 <div class="datarow__right">
-                                                                                    <span class="datarow__data">
+                                                                                                                        <span class="datarow__data">
                                                     <strong>Default</strong>
                                                 </span>
                                                 </div>
@@ -148,7 +148,8 @@
             <!--BIG TABLE (services, invoices, translation....)-->
             <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="0"
                  data-gs-width="14" data-gs-height="19"
-                 data-gs-min-width="13" data-gs-min-height="19" data-gs-auto-position="0">
+                 data-gs-min-width="13" data-gs-min-height="18"
+                 data-gs-auto-position="0">
                 <div class="grid-stack-item-content">
                     <% include ../layout/widget_edit %>
                     <div class="card card--pagination card--tabs" data-preload>
@@ -174,7 +175,10 @@
                                             <i class="zmdi zmdi-email"></i>
                                         </div>
                                         <div class="zd__content">
-                                            <div class="zd__title">No invoices to display.</div>
+                                            <div class="zd__title">No invoices
+                                                to
+                                                display.
+                                            </div>
                                             <div class="zd__description">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
                                                 fermentum magna ac efficitur.
@@ -199,7 +203,10 @@
                                             <i class="zmdi zmdi-email"></i>
                                         </div>
                                         <div class="zd__content">
-                                            <div class="zd__title">No transactions to display.</div>
+                                            <div class="zd__title">No transactions
+                                                to
+                                                display.
+                                            </div>
                                             <div class="zd__description">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
                                                 fermentum magna ac efficitur.
@@ -223,7 +230,10 @@
                                             <i class="zmdi zmdi-email"></i>
                                         </div>
                                         <div class="zd__content">
-                                            <div class="zd__title">No quotes to display.</div>
+                                            <div class="zd__title">No quotes
+                                                to
+                                                display.
+                                            </div>
                                             <div class="zd__description">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
                                                 fermentum magna ac efficitur.
@@ -246,7 +256,10 @@
                                             <i class="zmdi zmdi-email"></i>
                                         </div>
                                         <div class="zd__content">
-                                            <div class="zd__title">No tickets to display.</div>
+                                            <div class="zd__title">No tickets
+                                                to
+                                                display.
+                                            </div>
                                             <div class="zd__description">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
                                                 fermentum magna ac efficitur.
@@ -270,7 +283,8 @@
             <!--Client value-->
             <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="19" data-gs-y="0"
                  data-gs-width="5" data-gs-height="10"
-                 data-gs-min-width="4" data-gs-min-height="10" data-gs-auto-position="0" data-widget-resizable>
+                 data-gs-min-width="4" data-gs-min-height="10"
+                 data-gs-auto-position="0" data-widget-resizable>
                 <div class="grid-stack-item-content">
                     <% include ../layout/widget_edit %>
                     <div class="card card--chart-small chart" data-preload>
@@ -302,7 +316,8 @@
             <!-- Contacts-->
             <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="0" data-gs-y="19"
                  data-gs-width="5" data-gs-height="10"
-                 data-gs-min-width="5" data-gs-min-height="6" data-gs-auto-position="0">
+                 data-gs-min-width="5" data-gs-min-height="6"
+                 data-gs-auto-position="0">
                 <div class="grid-stack-item-content">
                     <% include ../layout/widget_edit %>
                     <div class="card-container">
@@ -331,9 +346,9 @@
             <!-- Contacts -->
 
             <!-- Logs -->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="22"
+            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="28"
                  data-gs-width="14" data-gs-height="16"
-                 data-gs-min-width="13" data-gs-min-height="16" data-gs-auto-position="0">
+                 data-gs-min-width="13" data-gs-min-height="15">
                 <div class="grid-stack-item-content">
                     <% include ../layout/widget_edit %>
                     <div class="card card--pagination card--logs card-block--logs" data-preload>
@@ -350,7 +365,7 @@
                         <div class="card__content datarow flex ff-cnw jc-flex-start">
                             <% include ../layout/card_ctrls %>
                             <div class="datarow">
-                                <div data-scrollable class="dataTablesLogs">
+                                <div class="dataTablesLogs">
                                     <% include ../layout/example_timeline %>
                                 </div>
                                 <div class="pagination">

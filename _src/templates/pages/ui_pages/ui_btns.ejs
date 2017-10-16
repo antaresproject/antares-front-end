@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<% var pageTitle = 'Antares Buttons'; %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title><%= pageTitle %></title>
+    <% if(mainMenuType === 'wide'){ %>
+    <% include ../../layout/color_template_wide %>
+    <% } else{ %>
+    <% include ../../layout/color_template %>
+    <% } %>
+
+
+
+    <% include ../../layout/css_files %>
+</head>
+
+<body>
+<% include ../../layout/app_wrapper_start_tag %>
+
+<% if(clientArea){ %>
+<% include ../../layout/mode_clientArea/CA_menutop %>
+<% } else{ %>
+<% include ../../layout/main_menu_html %>
+<% } %>
+
+<div class="app-content page-settings">
+    <% var breadData = 'Antares Buttons'; %>
+
+    <% if(clientArea){ %>
+    <% include ../../layout/mode_clientArea/CA_mainhead %>
+    <% } else{ %>
+    <% include ../../layout/mainhead %>
+    <% } %>
+
+    <% include ../../layout/sidebar_notifications %>
+    <% include ../../layout/sidebar_alerts %>
+    <section class="main-content" data-preload>
+        <div class="grid-container grid-container--2col grid-container--footer grid-container--no-padd">
+            <div class="grid-col grid-col--menu">
+                <div class="menu-aside-container" data-scrollable>
+                    <ul class="menu-aside">
+                        <li class="is-active">
+                            <a href="#AntaresButtons" class="mdl-js-button mdl-js-ripple-effect"><span>Buttons</span></a>
+                        </li>
+                        <li>
+                            <a href="#AntaresButtonsWithIcon" class="mdl-js-button mdl-js-ripple-effect"><span>Buttons with icon</span></a>
+                        </li>
+                        <li>
+                            <a href="#AntaresButtonsSizes" class="mdl-js-button mdl-js-ripple-effect"><span>Buttons sizes</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-col grid-col--container">
+                <div class="menu-mobile-settings--box">
+                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue"
+                            data-selectAR--search="true" name="select" id="select-anchor">
+                    </select>
+                </div>
+                <section class="generals-form gen-settings--single">
+                    <h1>General buttons</h1>
+                    <form method="post" action="">
+                        <fieldset name="Buttons">
+                            <a name="AntaresButtons">
+                                <h2>Buttons</h2>
+                            </a>
+                            <% include ../ui_components/ui_btn %>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Buttons" class="btn-with-icon">
+                            <a name="AntaresButtonsWithIcon">
+                                <h2>Buttons with icon</h2>
+                            </a>
+                            <% include ../ui_components/ui_btn_with_icon %>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Buttons">
+                            <a name="AntaresButtonsSizes">
+                                <h2>Buttons sizes</h2>
+                            </a>
+                            <% include ../ui_components/ui_btn_sizes %>
+                        </fieldset>
+                    </form>
+
+                </section>
+                <% include ../../layout/app_footer %>
+            </div>
+        </div>
+    </section>
+</div>
+<% include ../../layout/js_files %>
+<script>
+
+</script>
+</body>
+
+</html>

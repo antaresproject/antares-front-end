@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<% var pageTitle = 'Dashboard'; %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Antares Dashboard</title>
+    <title><%=pageTitle %></title>
 
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<script type="text/x-template" id="vue-page-dashboard">
+<script type="text/x-template" id="vue-page-dashboard" >
     <section class="main-content" v-cloak>
         <div class="grid-stack">
             <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0"

@@ -13,6 +13,7 @@
 
 <div class="ddown ddown-multi ">
     <!-- BUTTON -->
+    <% include filter_templates %>
     <div class="ddown-multi__init btn--dropdown btn btn--capitalize btn--md btn--default mdl-js-button mdl-js-ripple-effect mr-24">
         <span>Filter</span>
         <i class="zmdi zmdi-filter-list"></i>
@@ -29,6 +30,9 @@
             </li>
             <li class="has-submenu">
                 <a data-target="status"><span>Status</span></a>
+            </li>
+            <li class="has-submenu">
+                <a data-target="date"><span>Date</span></a>
             </li>
             <li class="btn-clear">
                 <button class="mdl-js-button mdl-js-ripple-effect btn btn--md btn--default mdl-button btn-filter--clear-all">
@@ -115,6 +119,24 @@
                     <option value="Pending">Pending</option>
                     <option value="In space">In space</option>
                 </select>
+                <a class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
+            </li>
+        </ul>
+    </div>
+    <div class="ddown__content filter-content" data-type="datePicker">
+        <!-- ON THIS after click on btn 'services' -->
+        <ul data-name="date" class="ddown-multi__submenu ">
+            <li class="ddown-multi__label"><span>Filter By</span></li>
+            <li class="ddown-multi__return">
+                <a>
+                    <i class="zmdi zmdi-chevron-left"></i>
+                    <span>Date</span>
+                </a>
+            </li>
+            <li class="ddown__sgl ddown__sgl--range">
+                <div class="input-field input-field--group">
+                    <input data-daterangepicker="true" placeholder="Placeholder">
+                </div>
                 <a class="btn btn--md btn--default mdl-js-button mdl-js-ripple-effect add-filter">Confirm</a>
             </li>
         </ul>

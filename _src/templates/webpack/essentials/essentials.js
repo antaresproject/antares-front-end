@@ -35,7 +35,6 @@ require('script-loader!dialog-polyfill');
 require('script-loader!jquery-modal');
 require('script-loader!qtip2');
 require('./../../../js/external/modified/swal.js');
-
 require('script-loader!jquery-match-height'); //nocss
 require('script-loader!hammerjs'); // no css
 require('script-loader!jquery-hammerjs'); // no css

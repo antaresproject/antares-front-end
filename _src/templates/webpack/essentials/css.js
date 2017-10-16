@@ -16,4 +16,4 @@
 // import externalCss from './../../../../_dist/css/external.css';
 // import antaresCss from './../../../../_dist/css/antares.css';
 
-import './../../../../_dist/css/defer.css';
+// import './../../../../_dist/css/defer.css';

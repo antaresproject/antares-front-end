@@ -2,8 +2,7 @@ var path = './../../../';
 
 // EXTERNAL DEPS:
 require('./../../../js/external/modified/context_menu.js'); // css in package
-// require('script-loader!datatables');
-require('./../../../js/external/modified/dataTables');
+require('script-loader!datatables');
 require('script-loader!datatables.net-responsive'); // no css
 require('script-loader!datatables.net-scroller'); // no css
 require('script-loader!datatables.net-buttons'); // no css
@@ -18,6 +17,12 @@ require('./../../../js/components/datatables/gs_fit.js');
 // OUTED BY SERVERSIDE VERSION:
 require('./../../../js/antares_datatables.js');
 require('./../../../js/components/datatables/context_menu.js');
+
+import edgeHelpers from './../../../js/components/browser_hooks/edge';
+
+$(window).on('load', () => {
+  edgeHelpers.datatables();
+});
 
 // require('jquery');
 // require("./example.js");

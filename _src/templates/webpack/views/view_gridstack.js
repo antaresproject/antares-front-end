@@ -22,13 +22,19 @@ require('./../../../js/antares_gridstack.js');
 import zeroData from './../../../js/components/zero_data/zero_data';
 import widgetControl from './../../../js/components/widget_control/widget_control';
 import gridstackRWD from './../../../js/components/gridstack_rwd/gridstack_rwd';
+import edgeHelpers from './../../../js/components/browser_hooks/edge';
 
 $(() => {
-  zeroData.gridstack();
   widgetControl.init();
-  gridstackRWD.init();
+  zeroData.gridstack();
+  // gridstackRWD.init();
+});
+
+$(window).on('load', () => {
+  edgeHelpers.gridstack();
 });
 
 // assign
 window.widgetControl = widgetControl;
-window.gridstackRWD = gridstackRWD;
+// window.gridstackRWD = gridstackRWD;
+window.edgeHelpers = edgeHelpers;

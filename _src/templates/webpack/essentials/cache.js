@@ -14,10 +14,6 @@ var stylesBlack = ['background: #fff', 'color: #000', 'display: block', 'text-sh
 // 	console.log('%cenv: ' + ENV, stylesBlack);
 // }
 
-window.onload = function() {
-  console.log('Antares Initialized.');
-};
-
 import { antaresCfg } from './../../../config/antares_cfg';
 window.antaresCfgLocal = antaresCfg;
 

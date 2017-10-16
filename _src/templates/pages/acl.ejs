@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+<% var pageTitle = 'Access Control List'; %>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Access Control List</title>
+    <title><%= pageTitle %></title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
@@ -42,20 +42,21 @@
                             <input class="acl-checkbox"
                                    v-bind:class="{'acl-checkbox--indeterminate': model.indeterminate}" type="checkbox"
                                    :name="model.saveName"
-                                   :id="model.saveName" :disabled="model.disabled" v-model="model.checked">
+                                   :id="model.saveName" :disabled="model.disabled"
+                                   v-model="model.checked">
                             <label class="acl-node__label mdl-js-button mdl-js-ripple-effect" :for="model.saveName"
                                    @click="openChildren"></label>
                         </div>
                         <div class="acl-node__content">
                             <div class="acl-node__header" @click="model.checked = !model.checked">
-                                <div class="acl-node__title">{{model.name}} - {{childCounter}} -
-                                    {{model.indeterminate}}
+                                <div class="acl-node__title">{{model.name}} - {{childCounter}}
+                                    - {{model.indeterminate}}
                                 </div>
                                 <p class="acl-node__description">{{model.description}}</p>
                             </div>
                             <ul class="acl-node__list" v-show="model.open" v-if="model.children">
                                 <tree-item @updateParent="updateChildCounter" :parentCheckbox="checkboxValue"
-                                           v-for="model in model.children" :key="model"
+                                           v-for="(model,index) in model.children" :key="index"
                                            :model="model">
                                 </tree-item>
                             </ul>
