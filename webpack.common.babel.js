@@ -10,7 +10,7 @@ const banner = `
  * bundled with this package in the LICENSE file.
  *
  * @package    Global
- * @version    0.9.1
+ * @version    0.9.2
  * @author     Antares Team
  * @license    BSD License (3-clause)
  * @copyright  (c) 2017, Antares Project
@@ -83,7 +83,6 @@ module.exports = {
     view_brand_settings: ['./_src/templates/webpack/views/view_brand_settings.js'],
     view_gridstack: ['./_src/templates/webpack/views/view_gridstack.js'],
     view_acl: ['./_src/templates/webpack/views/view_acl.js'],
-    translations_requirements: ['./_src/js/components/translations/translations_webpack_requirements.js'],
     view_translations: ['./_src/templates/webpack/views/view_translations.js'],
     view_notification_templates: ['./_src/templates/webpack/views/view_notification_templates.js'],
     view_clients_details_gridstack: ['./_src/templates/webpack/views/view_clients_details_gridstack.js'],
@@ -226,6 +225,7 @@ module.exports = {
     new DashboardPlugin(),
     new ProgressBarPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
+
     // new ExtractTextPlugin("./css/app.css"),
     // new UglifyJSPlugin({
     //     mangle: true,
@@ -276,7 +276,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Dashboard',
-        template: '_src/templates/pages/dashboard.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/dashboard.ejs'),
         filename: 'index.html',
         // chunks: ['antares_app']
         chunks: ['app_cache', 'forms_standard', 'view_gridstack']
@@ -286,7 +286,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Dashboard HTML',
-        template: '_src/templates/pages/widgets_html.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/widgets_html.ejs'),
         filename: 'widgets_html.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_widgets_html']
       })
@@ -295,7 +295,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Clients List',
-        template: '_src/templates/pages/clients_list.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/clients_list.ejs'),
         filename: 'clients_list.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_datatables']
       })
@@ -303,23 +303,24 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Clients List',
-        template: '_src/templates/pages/clients_list_zd.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/clients_list_zd.ejs'),
         filename: 'clients_list_zd.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_datatables']
       })
     ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
-        title: 'Antares Settings',
-        template: '_src/templates/pages/general_settings.ejs',
-        filename: 'general_settings.html',
+        title: 'Form Elements',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/form_elements.ejs'),
+        filename: 'form_elements.html',
         chunks: ['app_cache', 'forms_standard', 'view_brand_settings']
       })
     ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Email Settings',
-        template: '_src/templates/pages/email_settings.ejs',
+
+        template: path.resolve(__dirname, '_src/templates/pages/email_settings.ejs'),
         filename: 'email_settings.html',
         chunks: ['app_cache', 'forms_standard', 'view_brand_settings']
       })
@@ -327,7 +328,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Brand Settings',
-        template: '_src/templates/pages/brand_settings.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/brand_settings.ejs'),
         filename: 'brand_settings.html',
         chunks: ['app_cache', 'forms_standard', 'view_brand_settings']
       })
@@ -335,7 +336,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Brand List',
-        template: '_src/templates/pages/brand_list.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/brand_list.ejs'),
         filename: 'brand_list.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_datatables']
       })
@@ -344,7 +345,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Clients Details - Gridstack Ver.',
-        template: '_src/templates/pages/clients_details.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/clients_details.ejs'),
         filename: 'clients_details.html',
         chunks: ['app_cache', 'forms_standard', 'view_datatables', 'view_gridstack']
       })
@@ -352,31 +353,31 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Zero Data',
-        template: '_src/templates/pages/zero_data.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/zero_data.ejs'),
         filename: 'zero_data.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack']
       })
     ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
-        title: 'Forms',
-        template: '_src/templates/pages/forms.ejs',
-        filename: 'forms.html',
+        title: 'Form Elements',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/form_layouts.ejs'),
+        filename: 'form_layouts.html',
         chunks: ['app_cache', 'forms_standard']
       })
     ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
-        title: 'Forms',
-        template: '_src/templates/pages/forms_horizontal.ejs',
-        filename: 'forms_hor.html',
+        title: 'Form Elements',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/form_single.ejs'),
+        filename: 'form_single.html',
         chunks: ['app_cache', 'forms_standard']
       })
     ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: '400',
-        template: '_src/templates/pages/error_400.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/error_400.ejs'),
         filename: 'error_400.html',
         chunks: ['app_cache', 'forms_standard', 'view_error_page']
       })
@@ -384,7 +385,8 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: '500',
-        template: '_src/templates/pages/error_500.ejs',
+
+        template: path.resolve(__dirname, '_src/templates/pages/error_500.ejs'),
         filename: 'error_500.html',
         chunks: ['app_cache', 'forms_standard', 'view_error_page']
       })
@@ -392,7 +394,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: '404',
-        template: '_src/templates/pages/error_404.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/error_404.ejs'),
         filename: 'error_404.html',
         chunks: ['app_cache', 'forms_standard', 'view_error_page']
       })
@@ -400,7 +402,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Create',
-        template: '_src/templates/pages/steps.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/steps.ejs'),
         filename: 'steps.html',
         chunks: ['app_cache', 'forms_standard']
       })
@@ -408,7 +410,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Create',
-        template: '_src/templates/pages/installator.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/installator.ejs'),
         filename: 'installator.html',
         chunks: ['app_cache', 'forms_standard']
       })
@@ -416,7 +418,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Login',
-        template: '_src/templates/pages/login.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/login.ejs'),
         filename: 'login_page.html',
         chunks: ['app_cache', 'forms_standard']
       })
@@ -424,7 +426,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Table Filter',
-        template: '_src/templates/pages/table_filter.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/table_filter.ejs'),
         filename: 'table_filter.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_datatables']
       })
@@ -432,7 +434,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'acl',
-        template: '_src/templates/pages/acl.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/acl.ejs'),
         filename: 'acl.html',
         chunks: ['app_cache', 'forms_standard', 'view_acl']
       })
@@ -440,15 +442,16 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'translations',
-        template: '_src/templates/pages/translations.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/translations.ejs'),
         filename: 'translations.html',
-        chunks: ['app_cache', 'forms_standard', 'view_brand_settings', 'translations_requirements', 'view_translations']
+        // chunks: ['app_cache', 'forms_standard', 'view_datatables', 'view_translations']
+        chunks: ['app_cache', 'forms_standard', 'view_translations']
       })
     ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Notification templates',
-        template: '_src/templates/pages/notification_templates.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/notification_templates.ejs'),
         filename: 'notification_templates.html',
         chunks: ['app_cache', 'forms_standard', 'view_notification_templates', 'view_brand_settings']
       })
@@ -456,7 +459,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'widgets',
-        template: '_src/templates/pages/widgets.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/widgets.ejs'),
         filename: 'widgets.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack']
       })
@@ -465,10 +468,43 @@ module.exports = {
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Dashboard CA',
-        template: '_src/templates/pages/mode_clientArea/dashboard_CA.ejs',
+        template: path.resolve(__dirname, '_src/templates/pages/mode_clientArea/dashboard_CA.ejs'),
         filename: 'dashboard_CA.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack']
       })
-    )
+    ),
+
+    new HtmlWebpackPlugin(
+      Object.assign(htmlOptions, {
+        title: 'Antares Buttons',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/ui_btns.ejs'),
+        filename: 'ui_btns.html',
+        chunks: ['app_cache', 'forms_standard', 'view_gridstack']
+      })
+    ),
+    new HtmlWebpackPlugin(
+      Object.assign(htmlOptions, {
+        title: 'Antares Alerts',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/ui_alerts.ejs'),
+        filename: 'ui_alerts.html',
+        chunks: ['app_cache', 'forms_standard', 'view_gridstack']
+      })
+    ),
+    new HtmlWebpackPlugin(
+      Object.assign(htmlOptions, {
+        title: 'Antares Grid',
+        template: path.resolve(__dirname, '_src/templates/pages/ui_pages/ui_grid.ejs'),
+        filename: 'ui_grid.html',
+        chunks: ['app_cache', 'forms_standard', 'view_gridstack']
+      })
+    ),
+      new HtmlWebpackPlugin(
+          Object.assign(htmlOptions, {
+              title: 'Antares Notifications Preview',
+              template: path.resolve(__dirname, '_src/templates/pages/ui_pages/ui_notification_preview.ejs'),
+              filename: 'ui_notification_preview.html',
+              chunks: ['app_cache', 'forms_standard', 'view_gridstack']
+          })
+      )
   ]
 };

@@ -100,7 +100,6 @@
     color: @c;
   }
 
-
   &.btn--s-small {
     font-size: 12px;
     padding: 0 8px;
@@ -108,7 +107,6 @@
     line-height: 32px;
     text-align: center;
   }
-
   &.btn--s-default {
     font-size: 13px;
     padding: 0 16px;
@@ -116,7 +114,6 @@
     line-height: 36px;
     text-align: center;
   }
-
   &.btn--s-medium {
     font-size: 13px;
     padding: 0 16px;
@@ -124,7 +121,6 @@
     line-height: 40px;
     text-align: center;
   }
-
   &.btn--s-large {
     font-size: 14px;
     padding: 0 24px;
@@ -132,7 +128,6 @@
     line-height: 46px;
     text-align: center;
   }
-
   &.btn--s-extra-large {
     font-size: 15px;
     padding: 0 24px;
@@ -140,7 +135,6 @@
     line-height: 52px;
     text-align: center;
   }
-
   &.btn--s-xxl {
     font-size: 16px;
     padding: 0 24px;
@@ -148,10 +142,6 @@
     line-height: 60px;
     text-align: center;
   }
-
-
-
-
 
   &:active {
     //active shadow
@@ -597,6 +587,40 @@
     }
 
   }
+  &.btn--green {
+    @bg: @color-success;
+    @bg-hover-and-active: lighten(@color-success, 10%);
+    @c: #fff;
+    background-color: @bg;
+    color: @c;
+
+    //hover
+    &:hover {
+      background-color: @bg-hover-and-active;
+    }
+
+    &.btn--forced-hover {
+      background-color: @bg-hover-and-active;
+    }
+
+    //active
+    &:active {
+      background-color: @bg-hover-and-active;
+    }
+
+    &.btn--forced-active {
+      background-color: @bg-hover-and-active;
+    }
+
+    //disabled
+    &[disabled],
+    &:disabled {
+      opacity: 0.5;
+      background-color: @bg;
+      color: @c;
+    }
+
+  }
 
   //icons (default settings). Position padding and left/right add on &.btn-xs/md/sm/lg/xl
   &.btn--icon-left, &.btn--icon {
@@ -749,6 +773,20 @@
     }
     &.btn--red {
       @c: @color-alert;
+      color: @c;
+      background-color: transparent;
+      //disabled
+      &[disabled],
+      &:disabled {
+        color: @c;
+        background-color: transparent;
+      }
+      &:hover {
+        background-color: @bg-hover;
+      }
+    }
+    &.btn--green {
+      @c: @color-success;
       color: @c;
       background-color: transparent;
       //disabled

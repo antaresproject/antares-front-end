@@ -27,6 +27,7 @@ import './../../../js/components/debouncer/debouncer';
 import './../../../js/components/dropdowns/dropjs';
 import './../../../js/components/datatables/mobile_select_mode';
 import './../../../js/components/mode_clientArea/mode_clientArea';
+import './../../../js/components/notifications_preview/notifications_preview';
 
 window.onload = function() {
   if (antaresCfg.performanceMode === true) {

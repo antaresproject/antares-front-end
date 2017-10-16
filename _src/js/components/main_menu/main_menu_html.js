@@ -55,6 +55,17 @@ const AntaresMainMenuHtml = {
         });
     },
     controlMenu() {
+        function createCookie(name, value, exp_y, exp_m, exp_d, path, domain, secure) {
+            var cookie_string = name + '=' + escape(value);
+            if (exp_y) {
+                var expires = new Date(exp_y, exp_m, exp_d);
+                cookie_string += '; expires=' + expires.toGMTString();
+            }
+            if (path) cookie_string += '; path=' + escape(path);
+            if (domain) cookie_string += '; domain=' + escape(domain);
+            if (secure) cookie_string += '; secure';
+            document.cookie = cookie_string;
+        }
         function checkMenuType() {
             function getCookie(cookie_name) {
                 var results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
@@ -80,83 +91,37 @@ const AntaresMainMenuHtml = {
                 $('#app-wrapper').addClass('main-sidebar--wide');
                 $('#app-wrapper').addClass('main-sidebar--expanded');
             }
-
-            // if (window.antaresCfgLocal.mainMenuType === 'top') {
-            //     // menuTopActive = window.antaresCfgLocal.mainMenuType;
-            //     menuTopActive = true;
-            // }
-            // else if (window.antaresCfgLocal.mainMenuType === 'default') {
-            //     menuTopActive = false;
-            //     $('#app-wrapper').addClass('main-sidebar--default')
-            // }
-            // else if (window.antaresCfgLocal.mainMenuType === 'wide') {
-            //     menuWideActive = true;
-            //     $('#app-wrapper').addClass('main-sidebar--wide')
-            // }
-            // if (window.antaresCfgLocal.menuSimpleSubmenu === true) {
-            //     // menuTopActive = window.antaresCfgLocal.mainMenuType;
-            //     $(() => {
-            //         $('.main-menu-html').addClass('simple-submenu');
-            //     });
-            // }
+            else if(getCookie('statusMenu') === null){
+                window.antaresCfgLocal.statusMenuList.menuStandard = true;
+                window.antaresCfgLocal.statusMenuList.menuTop = false;
+                window.antaresCfgLocal.statusMenuList.menuWide = false;
+                $('#standard-menu').attr('checked', 'checked');
+                createCookie('statusMenu', 'standard');
+            }
         }
 
         checkMenuType();
         function changeViewMenu() {
-            function createCookie(name, value, exp_y, exp_m, exp_d, path, domain, secure) {
-                var cookie_string = name + '=' + escape(value);
-
-                if (exp_y) {
-                    var expires = new Date(exp_y, exp_m, exp_d);
-                    cookie_string += '; expires=' + expires.toGMTString();
-                }
-
-                if (path) cookie_string += '; path=' + escape(path);
-
-                if (domain) cookie_string += '; domain=' + escape(domain);
-
-                if (secure) cookie_string += '; secure';
-
-                document.cookie = cookie_string;
-            }
-
             function deleteCookie(cookie_name) {
                 var cookie_date = new Date(); // Текущая дата и время
                 cookie_date.setTime(cookie_date.getTime() - 1);
                 document.cookie = cookie_name += '=; expires=' + cookie_date.toGMTString();
             }
-
             deleteCookie('statusMenu');
-            if (
-                $('#standard-menu')
-                    .closest('.iradio_billevo')
-                    .hasClass('checked')
-            ) {
+            if ($('#standard-menu').closest('.iradio_billevo').hasClass('checked')) {
                 createCookie('statusMenu', 'standard');
-            } else if (
-                $('#top-menu')
-                    .closest('.iradio_billevo')
-                    .hasClass('checked')
-            ) {
-                // console.log('must create top');
+            } else if ($('#top-menu').closest('.iradio_billevo').hasClass('checked')) {
                 createCookie('statusMenu', 'top');
-            } else if (
-                $('#wide-menu')
-                    .closest('.iradio_billevo')
-                    .hasClass('checked')
-            ) {
-                // console.log('must create wide');
+            } else if ($('#wide-menu').closest('.iradio_billevo').hasClass('checked')) {
                 createCookie('statusMenu', 'wide');
             }
             location.reload();
         }
 
         $('.control-menu-panel').css('display', 'flex');
-
         $('.control-menu-panel .btn').click(function () {
             changeViewMenu();
         });
-
         $('.control-menu-panel .zmdi-settings').click(function () {
             if ($('.control-menu-panel').hasClass('control-menu-panel--open')) {
                 $('.control-menu-panel').removeClass('control-menu-panel--open');

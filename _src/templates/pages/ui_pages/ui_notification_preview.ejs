@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<% var pageTitle = 'Antares Notifications Preview'; %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title><%= pageTitle %></title>
+    <% if(mainMenuType === 'wide'){ %>
+    <% include ../../layout/color_template_wide %>
+    <% } else{ %>
+    <% include ../../layout/color_template %>
+    <% } %>
+
+
+
+    <% include ../../layout/css_files %>
+</head>
+
+<body>
+<% include ../../layout/app_wrapper_start_tag %>
+
+<% if(clientArea){ %>
+<% include ../../layout/mode_clientArea/CA_menutop %>
+<% } else{ %>
+<% include ../../layout/main_menu_html %>
+<% } %>
+
+<div class="app-content page-settings">
+    <% var breadData = 'Antares Notifications Preview'; %>
+
+    <% if(clientArea){ %>
+    <% include ../../layout/mode_clientArea/CA_mainhead %>
+    <% } else{ %>
+    <% include ../../layout/mainhead %>
+    <% } %>
+
+    <% include ../../layout/sidebar_notifications %>
+    <% include ../../layout/sidebar_alerts %>
+    <section class="main-content" data-preload>
+        <div class="grid-container grid-container--2col grid-container--footer grid-container--no-padd">
+            <div class="grid-col grid-col--menu">
+                <div class="menu-aside-container" data-scrollable>
+                    <ul class="menu-aside">
+                        <li class="is-active">
+                            <a href="#AntaresModal" class="mdl-js-button mdl-js-ripple-effect"><span>Modal</span></a>
+                        </li>
+                        <li>
+                            <a href="#AntaresDialog" class="mdl-js-button mdl-js-ripple-effect"><span>Dialog</span></a>
+                        </li>
+                        <li>
+                            <a href="#AntaresNoty" class="mdl-js-button mdl-js-ripple-effect"><span>Noty</span></a>
+                        </li>
+                        <li>
+                            <a href="#AntaresSweetAlert" class="mdl-js-button mdl-js-ripple-effect"><span>Sweet alert</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-col grid-col--container">
+                <div class="menu-mobile-settings--box">
+                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue"
+                            data-selectAR--search="true" name="select" id="select-anchor">
+                    </select>
+                </div>
+                <section class="generals-form gen-settings--single">
+                    <h1>Notifications Preview</h1>
+                    <form method="post" action="">
+                        <fieldset name="Modal">
+                            <a name="AntaresModal">
+                                <h2>Modal</h2>
+                            </a>
+                            <div class="form-block">
+                                <div class="col-group">
+                                    <div class="col-mb-24">
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--primary mdl-button open-box--modal">Modal</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Dialog">
+                            <a name="AntaresDialog">
+                                <h2>Dialog</h2>
+                            </a>
+                            <div class="form-block">
+                                <div class="col-group">
+                                    <div class="col-mb-24">
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--primary mdl-button open-box--dialog">Dialog</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Noty">
+                            <a name="AntaresNoty">
+                                <h2>Noty</h2>
+                            </a>
+                            <div class="form-block">
+                                <div class="col-group">
+                                    <div class="col-mb-24">
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--green mdl-button open-box--noty-success">Success</a>
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--red mdl-button open-box--noty-alert">Alert</a>
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--orange mdl-button open-box--noty-warning">Warning</a>
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--primary mdl-button open-box--noty-info">Info</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Alert">
+                            <a name="AntaresSweetAlert">
+                                <h2>Sweet alert</h2>
+                            </a>
+                            <div class="form-block">
+                                <div class="col-group">
+                                    <div class="col-mb-24">
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--primary mdl-button open-box--sweet-alert-theme1">Sweet alert theme 1</a>
+                                        <a class="mdl-js-button mdl-js-ripple-effect btn btn--xl btn--primary mdl-button open-box--sweet-alert-theme2">Sweet alert theme 2</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+                <% include ../../layout/app_footer %>
+            </div>
+        </div>
+    </section>
+</div>
+<% include ../../layout/error_page_modal %>
+<% include ../../layout/error_page_dialog %>
+<% include ../../layout/js_files %>
+<script>
+
+</script>
+</body>
+
+</html>

@@ -65,4 +65,3 @@ for generating minimized build.
 
 We're using BrowserStack for cross-browser testing!
 
-

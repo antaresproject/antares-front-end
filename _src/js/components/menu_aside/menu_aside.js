@@ -128,12 +128,18 @@ const menuAside = {
       });
     });
 
-    $('.grid-container.grid-container--2col .grid-col--menu .menu-aside:not(.menu-aside--links) li:not(.has-submenu) a[href]').on('click touchstart', function(e) {
-      el.addClass('menu-aside-container--fixed');
-      el.find('li').removeClass('is-active');
-      $(this)
-        .closest('li')
-        .addClass('is-active');
+    $('.grid-container.grid-container--2col .grid-col--menu .menu-aside:not(.menu-aside--links) li:not(.has-submenu) a').on('click touchstart', function(e) {
+      window.requestAnimationFrame(() => {
+        let scrollOnPage = $('.app-content')[0].scrollTop;
+        if (scrollOnPage >= 100) {
+          el.addClass('menu-aside-container--fixed');
+          el.find('li').removeClass('is-active');
+          $(this)
+            .closest('li')
+            .addClass('is-active');
+          lastScrollTop = scrollOnPage;
+        }
+      });
     });
   },
   menuAsideRWD() {

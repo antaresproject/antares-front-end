@@ -1,6 +1,6 @@
 {
   "name": "Antares_Front-End",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "license": "BSD-3-Clause",
   "description": "Open Source Laravel User Management Platform for standalone and SaaS applications. Based on Laravel, PHP7 ready, using flexible design patterns that keep the code clean and elegant.Speed up your work even up to 50% by using built-in workflow improvements.",
   "repository": {
@@ -14,7 +14,9 @@
     "dev-build": "grunt styles-clean-dev && webpack --config webpack.dev.babel.js",
     "dashboard": "webpack-dashboard webpack-dev-server --open --config webpack.dev.babel.js",
     "dev": "grunt styles-clean-dev && webpack-dev-server --open --config webpack.dev.babel.js",
-    "prod": "grunt styles-clean-prod && webpack --config webpack.prod.babel.js"
+    "prod": "grunt styles-clean-prod && webpack --config webpack.prod.babel.js",
+    "go": "webpack-dev-server --config webpack.dev.babel.js",
+    "backend": "webpack -d --watch --config webpack.dev.babel.js"
   },
   "dependencies": {
     "animejs": "^2.0.2",
@@ -179,7 +181,8 @@
     "vuequery": "^1.0.0",
     "vuex": "^2.4.0",
     "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.7.1",
+    "webpack-monitor": "^1.0.11"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -204,8 +207,13 @@
     "webpack-merge": "^4.1.0"
   },
   "browserslist": {
-    "production": ["last 4 version", "ie 11"],
-    "development": ["last 1 version"]
+    "production": [
+      "last 4 version",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 version"
+    ]
   },
   "eslintConfig": {
     "extends": "airbnb",
@@ -227,28 +235,49 @@
       "linebreak-style": 0,
       "max-len": "off",
       "semi": 2,
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        2
+      ],
       "prettier/prettier": [
         "error",
         {
           "singleQuote": true
         }
       ],
-      "space-before-function-paren": ["error", "never"],
-      "comma-dangle": ["error", "never"],
-      "func-names": ["error", "never"],
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "func-names": [
+        "error",
+        "never"
+      ],
       "no-unused-vars": 0
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   },
   "babel": {
-    "plugins": ["syntax-dynamic-import"],
+    "plugins": [
+      "syntax-dynamic-import"
+    ],
     "presets": [
       [
         "env",
         {
           "targets": {
-            "browsers": ["last 2 versions", "safari >= 7", "ie >= 11", "edge >= 14"]
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7",
+              "ie >= 11",
+              "edge >= 14"
+            ]
           }
         }
       ]

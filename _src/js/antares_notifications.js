@@ -108,7 +108,7 @@ Antares.prototype.noti = {
       // speed: 150 // unavailable - no need
     },
     template: '<div class="noty_message"><i class="zmdi zmdi-info noty_icon"></i><span class="noty_text"></span><i class="zmdi zmdi-close noty_close"></i></div>',
-    maxVisible: 5,
+    maxVisible: 7,
     // 14000
     timeout: 2500
   },
