@@ -162,19 +162,11 @@ require('./../../../js/components/datatables/context_menu.js');
 
       if (translation.length === 0) {
         $('.translation-new-row #translation').addClass('error');
-          window.noty(
-              $.extend({}, APP.noti.errorFM('lg', 'border'), {
-                  text: 'Translation line is empty'
-              })
-          );
+        AntaresNoty.callNoty('alert', 'Translation line is empty', 'lg', 'border');
       }
       if (key.length === 0) {
         $('.translation-new-row #new-key').addClass('error');
-          window.noty(
-              $.extend({}, APP.noti.errorFM('lg', 'border'), {
-                  text: 'Key line is empty'
-              })
-          );
+        AntaresNoty.callNoty('alert', 'Key line is empty', 'lg', 'border');
       }
       if (translation.length == 0 || key.length == 0) {
         return;
@@ -185,11 +177,7 @@ require('./../../../js/components/datatables/context_menu.js');
       $('.translation-new-row #new-key').val('');
       $('.translation-new-row #translation').val('');
 
-        window.noty(
-            $.extend({}, APP.noti.successFM('lg', 'border'), {
-                text: 'Add translation'
-            })
-        );
+      AntaresNoty.callNoty('success', 'Add translation', 'lg', 'border');
     },
     deleteRow: function(event) {
       this.translationsTable
@@ -197,11 +185,7 @@ require('./../../../js/components/datatables/context_menu.js');
         .remove()
         .draw();
       $('.ps-container').perfectScrollbar('update');
-        window.noty(
-            $.extend({}, APP.noti.errorFM('lg', 'border'), {
-                text: 'Row was deleted'
-            })
-        );
+      AntaresNoty.callNoty('alert', 'Row was deleted', 'lg', 'border');
     },
     addCounter: function() {
       var self = this;
@@ -246,11 +230,7 @@ require('./../../../js/components/datatables/context_menu.js');
         $parent.find('.table-key__text').text(inputVal);
         $parent.removeClass('table-key--edit');
 
-          window.noty(
-              $.extend({}, APP.noti.warningFM('lg', 'border'), {
-                  text: 'Row was changed'
-              })
-          );
+        AntaresNoty.callNoty('warning', 'Row was changed', 'lg', 'border');
       });
       $('.translations-table').on('change', '.table-key .table-key__input', function(event) {
         autosize.update($(this));

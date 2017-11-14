@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <% var pageTitle = 'Login Page'; %>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%=pageTitle %></title>
-    <% include ../layout/color_template %>
-    <% include ../layout/css_files %>
-</head>
 
-<body>
-<div class="app-content page-login">
-    <div class="img-logo"></div>
-    <section class="main-content">
-        <div class="login-box">
-            <form action="" method="get" id="login-form">
-                <fieldset name="MDLForms">
-                    <div class="form-block">
-                        <div class="input-field">
-                            <div class="mdl-textfield mdl-textfield--AR mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" name="sample-valmd1"  id="sample3">
-                                <label class="mdl-textfield__label" for="sample3">Email Address</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-block">
-                        <div class="input-field">
-                            <div class="mdl-textfield mdl-textfield--AR mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="password" name="sample-valmd1" id="sample3">
-                                <label class="mdl-textfield__label" for="sample3">Password</label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <title>
+            <%=pageTitle %>
+        </title>
+        <% include ../layout/color_template %>
+            <% include ../layout/css_files %>
+    </head>
 
-                <div class="login-box__remember">
-                    <input type="checkbox" data-icheck="true" name="check[1]" id="login-box__remember">
-                    <span>Remember me</span>
+    <body>
+        <div class="app-content page-login">
+            <div class="img-logo"></div>
+            <section class="main-content">
+                <div class="login-box">
+                    <form action="" method="get" id="login-form" data-preload>
+                        <fieldset name="MDLForms">
+                            <div class="form-block">
+                                <div class="input-field">
+                                    <div class="mdl-textfield mdl-textfield--AR mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" value="your@adress.com" type="text" name="sample-valmd1" id="login">
+                                        <label class="mdl-textfield__label" for="login">Email Address</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-block">
+                                <div class="input-field">
+                                    <div class="mdl-textfield mdl-textfield--AR mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" value="password" type="password" name="sample-valmd1" id="password">
+                                        <label class="mdl-textfield__label" for="password">Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="login-box__remember">
+                            <input type="checkbox" data-icheck="true" name="remember_login" id="login-box__remember">
+                            <span>Remember me</span>
+                        </div>
+                        <form action="">
+                            <a class="btn btn--submit btn--s-extra-large btn--primary mdl-button mdl-js-button mdl-js-ripple-effect" form="login-form">LOGIN</a>
+                        </form>
+                        <div class="link-group">
+                            <a class="password-reset" title="Password Reset">Reset password</a>
+                        </div>
+                    </form>
                 </div>
-                <a class="btn btn--submit btn--s-extra-large btn--primary mdl-button mdl-js-button mdl-js-ripple-effect"
-                   form="login-form">LOGIN</a>
-                <div class="link-group">
-                    <a class="password-reset" title="Password Reset">Reset password</a>
-                </div>
-            </form>
+            </section>
         </div>
-    </section>
-</div>
 
-<% include ../layout/js_files %>
-</body>
+        <% include ../layout/js_files %>
+    </body>
 
 </html>

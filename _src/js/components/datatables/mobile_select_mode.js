@@ -144,8 +144,9 @@ export const AntaresMobileSelectMode = {
     selectModeMarked(){
         $('.selected-all--marked').on('click touchstart', function () {
             $(this).closest('.tbl-c').find('table tbody tr').addClass('is-selected')
-            $(this).closest('.filters').find('#table-ma').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+            $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
             console.log($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+            oTable.rows('.is-selected').select();
         })
         $('.selected-all--unmarked').on('click touchstart', function () {
             $(this).closest('.tbl-c').find('table tbody tr').removeClass('is-selected')
@@ -155,7 +156,7 @@ export const AntaresMobileSelectMode = {
                 self.closest('.btn-selected').find('.btn-with-selected').removeClass('display-flex')
                 self.closest('.tbl-c').removeClass('selected-mode--touch-active')
                 self.closest('.tbl-c').find('.billevo-table tbody tr').off("click")
-                $(this).closest('.filters').find('#table-ma').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
+                $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
                 // self.closest('.tbl-c').find('#table-ma').html('0 Items Selected');
                 let parentTblc = self.closest('.tbl-c')
                 parentTblc.find('tr').removeClass('is-selected');
@@ -165,6 +166,7 @@ export const AntaresMobileSelectMode = {
                 parentTblc.removeClass('selected-mode--touch-active');
                 parentTblc.find('table tbody tr td').removeClass('no-arrow');
                 parentTblc.find('.btn-with-selected').removeClass('display-flex');
+                oTable.rows('.is-selected').deselect();
             })
         })
 

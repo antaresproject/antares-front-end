@@ -28,11 +28,13 @@
     }
     &.search-logs--in-progress,
     &.select-logs--in-progress {
-        .timeline__entry {
+        .timeline__entry,.timeline__entry--ok {
             display: none !important;
         }
         .timeline__entry.search-logs--this-line,
-        .timeline__entry.select-logs--this-line {
+        .timeline__entry--ok.search-logs--this-line,
+        .timeline__entry.select-logs--this-line,
+        .timeline__entry--ok.select-logs--this-line {
             display: flex !important;
         }
     }

@@ -72,7 +72,7 @@ import cardEditControls from './card_edit_controls.vue';
 //    require('./../../../js/components/datatables/filters');
 
 var c1 = '#02a8f3';
-var c2 = '#30343d';
+var c2 = 'orange';
 var c3 = 'rebeccapurple';
 export default {
     name: 'CardLogs',
@@ -97,219 +97,256 @@ export default {
             logList: [{
                 color: c1,
                 status: 'ok',
-                html: '<div> Te <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                category: 'Te',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                html: '<div>Brand <a>Brand 1 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
                 category: 'Brand',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Te 2 <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                category: 'Te',
-                tooltipText: 'Brands 11'
-            }, {
-                color: c1,
-                status: 'ok',
-                html: '<div> Email <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                category: 'Email',
-                tooltipText: 'Brand 2'
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
-                color: c1,
-                status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> To epto login <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
+                html: '<div> Login <a>Login 1 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
                 category: 'Login',
-                tooltipText: 'Brands 5'
+                tooltipText: 'Login'
             }, {
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div>Email <a>Email 1 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 2 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
+                html: '<div> Login <a>Login 2 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
             }, {
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
+                html: '<div>Email <a>Email 2 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c2,
+                status: 'warning',
+                html: '<div> Login <a>Login 3 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
             }, {
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 3 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c2,
+                status: 'warning',
+                html: '<div> Login <a>Login 4 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 4 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 3 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div> Login <a>Login 5 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 4 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div> Login <a>Login 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 5 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 5 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c1,
+                status: 'ok',
+                html: '<div>Brand <a>Brand 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c1,
+                status: 'ok',
+                html: '<div>Brand <a>Brand 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c1,
+                status: 'ok',
+                html: '<div>Brand <a>Brand 1 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
+                html: '<div> Login <a>Login 1 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
             }, {
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div>Email <a>Email 1 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 2 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
+                html: '<div> Login <a>Login 2 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
             }, {
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
+                html: '<div>Email <a>Email 2 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c2,
+                status: 'warning',
+                html: '<div> Login <a>Login 3 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
             }, {
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 3 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
+                color: c2,
+                status: 'warning',
+                html: '<div> Login <a>Login 4 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
+            }, {
+                color: c3,
+                status: 'latest',
+                html: '<div>Email <a>Email 4 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 3 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div> Login <a>Login 5 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
+                html: '<div>Brand <a>Brand 4 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
             }, {
                 color: c2,
                 status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
-                color: c3,
-                status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div> Login <a>Login 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>21</a> and colors identifier <a>23</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">4 days ago</span></div>',
+                category: 'Login',
+                tooltipText: 'Login'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
+                html: '<div>Brand <a>Brand 5 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div>Email <a>Email 5 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
+                html: '<div>Brand <a>Brand 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div>Email <a>Email 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
+                html: '<div>Brand <a>Brand 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand 512</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            }, {
+                html: '<div>Email <a>Email 6 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            },{
                 color: c1,
                 status: 'ok',
-                html: '<div> Brand <a  >Brand 5</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >235</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-14-02 22:31:41" id="date-format-WLs0W" >5 days ago</span></span></div>',
-                tooltipText: 'Brand 2'
-            }, {
-                color: c2,
-                status: 'warning',
-                html: '<div> Brand <a  >Brand 21</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W" >12 days ago</span></span></div>',
-                tooltipText: 'Brands 5'
-            }, {
+                html: '<div>Brand <a>Brand 7 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>12</a> and colors identifier <a>9</a> <span data-tooltip-inline="2016-01-12 11:31:45" id="date-format-WLs0W">12 days ago</span></div>',
+                category: 'Brand',
+                tooltipText: 'Brand'
+            },{
                 color: c3,
                 status: 'latest',
-                html: '<div> Brand <a  >Brand LAST LAST LAST LAST LAST</a> has been updated by <a  >Admin Demo</a> with options identifier <a  >12</a> and colors identifier <a  >9</a> <span> <span data-tooltip-inline="2017-26-12 02:31:41" id="date-format-WLs0W" >2 days ago</span></span></div>',
-                tooltipText: 'Brands 11'
-            },],
+                html: '<div>Email <a>Email 7 Standard</a> has been updated by <a>Admin Demo</a> with options identifier <a>46</a> and colors identifier <a>76</a> <span data-tooltip-inline="2016-01-12 16:11:42" id="date-format-WLs0W">23 days ago</span></div>',
+                category: 'Email',
+                tooltipText: 'Email'
+            }],
             selectFilter: '',
         }
     },

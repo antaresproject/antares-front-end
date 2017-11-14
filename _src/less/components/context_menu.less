@@ -1,160 +1,164 @@
 .context-menu-list {
-    .list-clear();
-    display: inline-block;
-    min-width: 180px;
-    max-width: 360px;
-    font-family: inherit;
-    font-size: inherit;
-    list-style-type: none;
-    width: 280px;
-    height: auto;
+  .list-clear();
+  display: inline-block;
+  min-width: 180px;
+  max-width: 360px;
+  font-family: inherit;
+  font-size: inherit;
+  list-style-type: none;
+  width: 280px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: opacity 400ms;
+  z-index: 1;
+  border: 0;
+  padding: 8px 0;
+  position: absolute;
+  .context-menu-item {
+    width: 100%;
+    font-size: 13px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 36px;
+    position: relative;
+    padding: 0 24px;
+    color: @primary-c;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     background-color: #fff;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    transition: opacity 400ms;
-    z-index: 1;
-    border: 0;
-    padding: 8px 0;
-    position: absolute;
-    .context-menu-item {
-        width: 100%;
-        font-size: 13px;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: flex-start;
-        line-height: 36px;
-        position: relative;
-        padding: 0 24px;
-        color: @primary-c;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-color: #fff;
-        i {
-            font-size: 24px;
-            color: @primary-c;
-            margin-right: 16px;
-        }
-        span {
-            color: @primary-c;
-            font-weight: 500;
-        }
-        &.context-menu-hover,
-        &:hover {
-            background-color: #ecedf0;
-            cursor: pointer;
-        }
+    i {
+      font-size: 24px;
+      color: @primary-c;
+      margin-right: 16px;
+      text-align: center;
+      width: 20px;
     }
+    span {
+      color: @primary-c;
+      font-weight: 500;
+    }
+    &.context-menu-hover,
+    &:hover {
+      background-color: #ecedf0;
+      cursor: pointer;
+    }
+    &.context-active {
+      i, span {
+        color: @primary-bg
+      }
+    }
+  }
 }
 
 .context-menu-separator {
-    padding: 0;
-    margin: 5px 0;
-    border-bottom: 1px solid @background;
+  padding: 0;
+  margin: 5px 0;
+  border-bottom: 1px solid @background;
 }
 
-.context-menu-item>label>input,
-.context-menu-item>label>textarea {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+.context-menu-item > label > input,
+.context-menu-item > label > textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .context-menu-item.context-menu-hover {
-    color: #fff;
-    cursor: pointer;
-    background-color: @color-info;
+  color: #fff;
+  cursor: pointer;
+  background-color: @color-info;
 }
 
 .context-menu-item.context-menu-disabled {
-    color: @primary-c;
-    background-color: #fff;
+  color: @primary-c;
+  background-color: #fff;
 }
 
 .context-menu-item.context-menu-disabled {
-    color: @primary-c;
+  color: @primary-c;
 }
 
 .context-menu-input.context-menu-hover,
 .context-menu-item.context-menu-disabled.context-menu-hover {
-    cursor: default;
-    background-color: @background;
+  cursor: default;
+  background-color: @background;
 }
 
 .context-menu-icon.context-menu-hover:before {
-    color: #fff;
+  color: #fff;
 }
 
 .context-menu-submenu:after {
-    position: absolute;
-    top: 25%;
-    width: 0;
-    height: 0;
-    right: 25px;
-    color: @primary-c;
-    font: normal normal normal 19px/1 Material-Design-Iconic-Font;
-    line-height: 1;
-    text-rendering: auto;
-    content: "\f2fb";
-    z-index: 1;
+  position: absolute;
+  top: 25%;
+  width: 0;
+  height: 0;
+  right: 25px;
+  color: @primary-c;
+  font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+  line-height: 1;
+  text-rendering: auto;
+  content: "\f2fb";
+  z-index: 1;
 }
-
 
 /**
  * Inputs
  */
 
 .context-menu-item.context-menu-input {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
-
 
 /* vertically align inside labels */
 
-.context-menu-input>label>* {
-    vertical-align: top;
+.context-menu-input > label > * {
+  vertical-align: top;
 }
-
 
 /* position checkboxes and radios as icons */
 
-.context-menu-input>label>input[type="checkbox"],
-.context-menu-input>label>input[type="radio"] {
-    position: relative;
-    top: 3px;
+.context-menu-input > label > input[type="checkbox"],
+.context-menu-input > label > input[type="radio"] {
+  position: relative;
+  top: 3px;
 }
 
-.context-menu-input>label,
-.context-menu-input>label>input[type="text"],
-.context-menu-input>label>textarea,
-.context-menu-input>label>select {
-    display: block;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+.context-menu-input > label,
+.context-menu-input > label > input[type="text"],
+.context-menu-input > label > textarea,
+.context-menu-input > label > select {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.context-menu-input>label>textarea {
-    height: 100px;
+.context-menu-input > label > textarea {
+  height: 100px;
 }
 
-.context-menu-item>.context-menu-list {
-    height: 0;
-    overflow: hidden;
-    opacity: 0; //
-    padding: 0;
+.context-menu-item > .context-menu-list {
+  height: 0;
+  overflow: hidden;
+  opacity: 0; //
+  padding: 0;
 }
 
-.context-menu-item.context-menu-visible>.context-menu-list {
-    top: -5px !important;
-    height: auto;
-    opacity: 1;
-    padding: 8px 0;
+.context-menu-item.context-menu-visible > .context-menu-list {
+  top: -5px !important;
+  height: auto;
+  opacity: 1;
+  padding: 8px 0;
 }
 
 .context-menu-accesskey {
-    text-decoration: underline;
+  text-decoration: underline;
 }

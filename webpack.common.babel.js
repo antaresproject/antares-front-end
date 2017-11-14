@@ -38,10 +38,10 @@ const htmlOptions = {
   showErrors: true,
   minify: {
     html5: true,
-    removeComments: true,
-    sortClassName: true,
-    preserveLineBreaks: true,
-    collapseWhitespace: true,
+    removeComments: false,
+    sortClassName: false,
+    preserveLineBreaks: false,
+    collapseWhitespace: false,
     decodeEntities: true
   },
   sortClassName: true,
@@ -205,6 +205,9 @@ module.exports = {
     jquery: '$'
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false
+    }),
     // new webpack.EnvironmentPlugin([
     //     "NODE_ENV"
     // ]),
@@ -297,6 +300,14 @@ module.exports = {
         title: 'Clients List',
         template: path.resolve(__dirname, '_src/templates/pages/clients_list.ejs'),
         filename: 'clients_list.html',
+        chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_datatables']
+      })
+    ),
+    new HtmlWebpackPlugin(
+      Object.assign(htmlOptions, {
+        title: 'Clients List',
+        template: path.resolve(__dirname, '_src/templates/pages/clients_list_multi.ejs'),
+        filename: 'clients_list_multi.html',
         chunks: ['app_cache', 'forms_standard', 'view_gridstack', 'view_datatables']
       })
     ),

@@ -1,27 +1,46 @@
-let EventEmitter2 = require('eventemitter2').EventEmitter2;
+const EventEmitter2 = require('eventemitter2').EventEmitter2;
+
 window.antaresEvents = new EventEmitter2({
-  //
-  // set this to `true` to use wildcards. It defaults to `false`.
-  //
   wildcard: true,
-
-  //
-  // the delimiter used to segment namespaces, defaults to `.`.
-  //
   delimiter: '::',
+  newListener: true,
+  maxListeners: 40,
+  verboseMemoryLeak: true
+});
 
-  //
-  // set this to `true` if you want to emit the newListener event. The default value is `true`.
-  //
-  newListener: false,
+// listeners
 
-  //
-  // the maximum amount of listeners that can be assigned to an event, default 10.
-  //
-  maxListeners: 20,
+const systemComponents = {
+  datatables: false,
+  gridstack: false,
+  vue: false,
+  notifications: false
+};
 
-  //
-  // show event name in memory leak message when more than maximum amount of listeners is assigned, default false
-  //
-  verboseMemoryLeak: false
+function perfLog() {
+  // console.log(systemComponents);
+}
+
+antaresEvents.once('performance.gridstack_loaded', () => {
+  systemComponents.gridstack = true;
+  perfLog();
+});
+
+antaresEvents.once('performance.datatables_loaded', () => {
+  systemComponents.datatables = true;
+  perfLog();
+});
+
+antaresEvents.once('performance.vue_loaded', () => {
+  systemComponents.Vue = true;
+  perfLog();
+});
+
+antaresEvents.once('performance.notifications', () => {
+  systemComponents.notifications = true;
+  perfLog();
+});
+
+antaresEvents.onAny((event, value) => {
+  // console.log(event);
 });

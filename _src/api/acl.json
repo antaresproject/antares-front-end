@@ -1,0 +1,144 @@
+{
+    "name": "Tree Root",
+    "open": true,
+    "checked": false,
+    "children": [{
+      "saveName": "custom-fields3434",
+      "name": "Custom Fields",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      "indeterminate": false,
+      "checked": false
+    }, {
+      "saveName": "billing",
+      "name": "Billing",
+      "indeterminate": false,
+      "checked": false,
+      "open": true,
+      "children": [{
+        "saveName": "create",
+        "name": "Create",
+        "indeterminate": false,
+        "checked": false
+      }, {
+        "saveName": "edit",
+        "name": "Edit",
+        "indeterminate": false,
+        "checked": false
+      }, {
+        "saveName": "detele",
+        "name": "Delete",
+        "indeterminate": false,
+        "checked": false
+      }]
+    }, {
+      "saveName": "configurasdfsdftion22",
+      "name": "Configuration",
+      "indeterminate": false,
+      "checked": false,
+      "open": true,
+      "children": [{
+        "saveName": "configdsfsdfuration5",
+        "name": "LVL2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "indeterminate": false,
+        "checked": false
+      }, {
+        "saveName": "customsdf-fsdfsdfields6",
+        "name": "Custom Fields",
+        "description": "2222 ipsum dolor sit amet, consectetur",
+        "indeterminate": false,
+        "checked": false,
+        "open": false
+      }, {
+        "saveName": "staff-msdfsdfanagmenfd23423t2",
+        "name": "Staff Management",
+        "description": "2222 ipsum dolor sit amet, consectetur",
+        "indeterminate": false,
+        "checked": false,
+        "open": true,
+        "children": [{
+          "saveName": "configura2sdfsdftion2",
+          "name": "LVL3",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+          "indeterminate": false,
+          "checked": false
+        }, {
+          "saveName": "staff-sdfdasf-fields3",
+          "name": "Custom Fields",
+          "description": "2222 ipsum dolor sit amet, consectetur",
+          "indeterminate": false,
+          "checked": false,
+          "open": false
+        }, {
+          "saveName": "dfsdfsdfsdfsdf-managment65",
+          "name": "Staff Management",
+          "description": "2222 ipsum dolor sit amet, consectetur",
+          "indeterminate": false,
+          "checked": false,
+          "open": true,
+          "children": [{
+            "saveName": "configuration5",
+            "name": "LVL4",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "indeterminate": false,
+            "checked": false
+          }, {
+            "saveName": "custohhfdgdsdfsdfsfgm-fields6",
+            "name": "Custom Fields",
+            "description": "2222 ipsum dolor sit amet, consectetur",
+            "indeterminate": false,
+            "checked": false,
+            "open": false
+          }, {
+            "saveName": "sta4567jkhjkhff-sdfdasf",
+            "name": "Staff Management",
+            "description": "2222 ipsum dolor sit amet, consectetur",
+            "indeterminate": false,
+            "checked": false,
+            "open": true,
+            "children": [{
+              "saveName": "ashhhdfasdfasdf",
+              "name": "Configuration",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+              "indeterminate": false,
+              "checked": true
+            }, {
+              "saveName": "cushhtom-fields2133",
+              "name": "Custom Fields",
+              "description": "2222 ipsum dolor sit amet, consectetur",
+              "indeterminate": false,
+              "checked": false,
+              "open": false
+            }, {
+              "saveName": "staff-sadfasdfsadf",
+              "name": "Staff Management",
+              "description": "2222 ipsum dolor sit amet, consectetur",
+              "indeterminate": false,
+              "checked": true,
+              "open": true
+            }]
+          }]
+        }]
+      }]
+    }, {
+      "saveName": "213casonfigurasdfsdftion12322",
+      "name": "U123ser Administration123123213",
+      "indeterminate": true,
+      "checked": false,
+      "open": true,
+      "children": [{
+        "saveName": "1231co4124214nfigdsfsdfuration5",
+        "name": "C123213on7457 456figurati123on",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "indeterminate": false,
+        "checked": false
+      }, {
+        "saveName": "sta657 ff-msdfsdfanagment2",
+        "name": "Sta6 754f Mana567 4567gement",
+        "description": "2222 ipsum dolor sit am567 4567et, consectetur",
+        "indeterminate": false,
+        "checked": true,
+        "open": true
+      }]
+    }]
+}

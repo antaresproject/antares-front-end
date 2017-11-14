@@ -90,12 +90,17 @@
   }
   ul.select2-results__options {
     li.select2-results__option {
-      line-height: 36px;
-      min-height: 36px;
+      //line-height: 36px;
+      //min-height: 36px;
       padding: 0 24px;
       color: @primary-c;
       font-size: 13px;
       font-weight: 400; //OPT GROUP
+      line-height: 36px;
+      span{
+        //display: flex;
+        align-items: center;
+      }
       &[role=group] {
         height: auto;
         &:hover {
@@ -211,6 +216,9 @@
       margin: 8px 8px 0 0;
       line-height: 1;
       padding: 5px 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       height: auto;
       background-color: @primary-bg;
       color: @standard-white;

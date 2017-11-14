@@ -21,23 +21,51 @@
 
 export const listOfDropJS = {
     init() {
-        this.clientContactsDrop();
+        this.initDropJS()
     },
 
-
-    clientContactsDrop() {
-        $('.dropJS-target--client-contacts').each(function () {
-            let dropClientContact = new Drop(
-                {
-                    position: 'bottom left',
-                    openOn: 'click',
-                    classes: 'dropJS-content-real--client-contacts drop',
-                    target: $(this)[0],
-                    content: $(this).next('.dropJS-content--client-contacts')[0]
+    initDropJS(){
+        $('[data-dropJS--target]').each(function () {
+            let dropJS = new Drop({
+                position: 'bottom left',
+                openOn: 'click',
+                classes: 'data-dropJS--target',
+                target: $(this)[0],
+                content: $(this).find('[data-dropJS--wrapper]')[0],
+                tetherOptions: {
+                    constraints: [
+                        {
+                            to: 'scrollParent',
+                            pin: true
+                        }
+                    ]
                 }
-            )
+            })
+            dropJS.open();
+            dropJS.position();
+            dropJS.close();
         })
-    },
+        $('[data-dropJS-hover--target]').each(function () {
+            let dropJShover = new Drop({
+                position: 'right top',
+                openOn: 'hover',
+                classes: 'data-dropJS--target',
+                target: $(this)[0],
+                content: $(this).find('[data-dropJS-hover--wrapper]')[0],
+                tetherOptions: {
+                    constraints: [
+                        {
+                            to: 'scrollParent',
+                            pin: true
+                        }
+                    ]
+                }
+            })
+            dropJShover.open();
+            dropJShover.position();
+            dropJShover.close();
+        })
+    }
 
 };
 

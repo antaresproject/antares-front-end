@@ -16,5 +16,5 @@ require('codemirror/addon/hint/css-hint.js');
 require('codemirror/addon/hint/html-hint.js');
 require('codemirror/keymap/sublime.js');
 // plugins
-require('script-loader!tinycolor2'); //no css
+require('script-loader!tinycolor2/dist/tinycolor-min'); //no css
 require('./../../../js/external/modified/jquery.minicolors.js');

@@ -39,6 +39,8 @@ const AntaresVue = {
     } else if ($('.clients-details--vue').length) {
       self.clientDetails();
     }
+
+    antaresEvents.emit('performance.vue_loaded');
   },
 
   // methods

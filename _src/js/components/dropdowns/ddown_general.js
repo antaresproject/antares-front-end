@@ -80,8 +80,7 @@ const AntaresDdownGeneral = {
                 this.closeMiniColors();
             },
             closeDropJS() {
-                $('.antares-dropjs-filter--out').removeClass('drop-enabled drop-open');
-                $('.dropJS-content-real--client-contacts').removeClass('drop-enabled drop-open');
+                $('.drop').removeClass('drop-enabled drop-open');
             },
             closeContextMenu() {
                 // $(".context-menu-active").contextMenu("hide"); //need open or error in console
@@ -102,7 +101,7 @@ const AntaresDdownGeneral = {
                 }
             },
             closeDatePicker() {
-                $('[data-daterangepicker]').daterangepicker('close');
+                $('[data-daterangepicker],[data-daterangepicker--filter="true"]').daterangepicker('close');
             },
             closeMiniColors() {
                 $('.minicolors').removeClass("minicolors-focus")
@@ -213,20 +212,21 @@ const AntaresDdownGeneral = {
         });
     },
     clickCloseDropdownDateRange() {
-        var self = this;
-        $(document).mouseup(function (e) {
-            var container = $('.ddown');
-            var container2 = $('.input-field--group');
-            if (!e.target.closest('.ui-widget-content')) {
-                if (container.has(e.target).length === 0 || container2.has(e.target).length === 0) {
-                    $('[data-daterangepicker]').daterangepicker('close');
-                }
-            }
-        });
-        $('.breadcrumbs').click(function () {
-            self.closeAllDropdowns;
-            $('.grid-stack-item').css('z-index', '0');
-        });
+        // var self = this;
+        // $(document).mouseup(function (e) {
+        //     var container = $('.ddown');
+        //     var container2 = $('.input-field--group');
+        //     console.log(e.target)
+        //     if (!e.target.closest('.ui-widget-content')) {
+        //         if (container.has(e.target).length === 0 || container2.has(e.target).length === 0) {
+        //             $('[data-daterangepicker]').daterangepicker('close');
+        //         }
+        //     }
+        // });
+        // $('.breadcrumbs').click(function () {
+        //     self.closeAllDropdowns;
+        //     $('.grid-stack-item').css('z-index', '0');
+        // });
     },
     mobileDdownFilter() {
         $('.ddown--view-more-options').click(function () {

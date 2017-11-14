@@ -14,8 +14,9 @@
     }
   }
   .email-additions {
-    @media @md{
-      margin-top: 64px;
+    @media @md {
+      margin-top: 68px;
+      padding-bottom: 16px;
     }
     width: 100%;
     display: flex;
@@ -27,14 +28,34 @@
     border-bottom: 1px solid @background;
     @media @xs {
       & > .flex.btn-group {
-        width: 400px !important;
+        //width: 400px !important;
       }
     }
     .btn-group {
       padding: 14px 0;
     }
     .ddown__init, .btn {
-      line-height: 28px;
+      height: 36px;
+
+    }
+    .btn-group .ddown .ddown__init {
+      display: inline-block;
+      &.btn {
+        overflow: inherit;
+        background-color: #dfe3e6;
+        color: #5c6066;
+        width: auto;
+        display: flex;
+        padding-right: 16px;
+        @media only screen and (max-width: 1023px){
+          padding-right: 24px;
+        }
+        align-items: center;
+        i{
+          color: #5c6066;
+          font-size: 22px;
+        }
+      }
     }
   }
   .mdl-tabs {
@@ -109,6 +130,17 @@
   }
 }
 
+@media only screen and (max-width: 520px) {
+  .page-email-settings {
+    .mdl-tabs .email-additions .flex.btn-group {
+      width: 280px !important;
+      & > div, & > a {
+        margin: 8px 0;
+      }
+    }
+  }
+}
+
 @media @max1200 {
   .grid-container.grid-container--2col.grid-container--email .grid-col--container {
     flex-flow: column nowrap;
@@ -117,7 +149,6 @@
 
   .page-email-settings {
     .email-additions {
-      padding: 0;
       .btn-group {
         width: 100%;
         flex-flow: row wrap;
@@ -125,7 +156,7 @@
         justify-content: space-around;
         margin: 0 16px;
         .ddown, .btn {
-          margin: 8px 0;
+          //margin: 8px 0;
         }
       }
     }
@@ -218,7 +249,6 @@
       margin: 0;
     }
 
-
     .CodeMirror {
       height: 200px;
     }
@@ -229,7 +259,7 @@
       text-align: center;
       margin-right: 4px;
       margin-left: 4px;
-      padding: 0 0 16px 0;
+      padding: 0 0 0 0;
       margin-top: 8px;
       @media only screen and (max-height: 330px) {
         padding: 8px 80px !important;
@@ -269,7 +299,7 @@
           //top: 14px !important;
           //right: none;
           left: 0;
-          transform: translate3d(0, 0, 0) !important;
+          transform: translate3d(0, 40px, 0) !important;
         }
         #Brands + .ddown__content {
           .ddown__menu {
@@ -307,7 +337,7 @@
         flex-flow: row wrap;
       }
       .btn-group .btn {
-        margin: 0 10px;
+        //margin: 0 10px;
       }
     }
 
@@ -322,13 +352,6 @@
   }
 }
 
-@media @max450 {
-  .page-email-settings .mdl-tabs .email-additions .flex.btn-group {
-    width: 400px !important;
-
-  }
-}
-
 @media only screen and (min-width: 1200px) and (max-width: 1366px) {
   .page-email-settings .menu-mobile-settings + .select2 .select2-selection {
     margin-bottom: 0;
@@ -339,15 +362,16 @@
   left: 0;
 }
 
-
 @media only screen and (max-width: 1049px) {
   .grid-container.grid-container--2col .grid-col--container {
     width: auto;
   }
 }
+
 .page-email-settings .grid-container.grid-container--2col .grid-col--container.email-preview {
-    box-shadow: none;
+  box-shadow: none;
 }
+
 @media @xs {
   .page-email-settings {
 

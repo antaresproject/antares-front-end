@@ -100,8 +100,6 @@ const AntaresForms = {
       }
     });
 
-
-
     window.requestAnimationFrame(() => {
       $('input[hover]')
         .closest('.iradio_billevo')
@@ -203,6 +201,17 @@ const AntaresForms = {
         }
       });
 
+      enquire.register('screen and (max-width:768px)', {
+        match: function() {
+          $('[data-daterangepicker--filter="true"]').daterangepicker('destroy');
+          $('[data-daterangepicker--filter="true"]').daterangepicker(
+            $.extend({}, dateRangeOptionsDashboard, {
+              initialText: 'Select time period to analize'
+            })
+          );
+        }
+      });
+
       $('.page-dashboard [data-daterangepicker]').daterangepicker(
         $.extend({}, dateRangeOptionsDashboard, {
           initialText: 'Select time period to analize'
@@ -214,16 +223,6 @@ const AntaresForms = {
         match: function() {
           $('.page-dashboard [data-daterangepicker]').daterangepicker('destroy');
           $('.page-dashboard [data-daterangepicker]').daterangepicker(
-            $.extend({}, dateRangeOptionsDashboard, {
-              initialText: 'Select time period to analize'
-            })
-          );
-        }
-      });
-      enquire.register('screen and (max-width:768px)', {
-        match: function() {
-          $('[data-daterangepicker--filter="true"]').daterangepicker('destroy');
-          $('[data-daterangepicker--filter="true"]').daterangepicker(
             $.extend({}, dateRangeOptionsDashboard, {
               initialText: 'Select time period to analize'
             })
@@ -799,183 +798,86 @@ const AntaresForms = {
         $('[data-hasqtip]').qtip('hide');
       });
 
-      function tooltipMobile() {
-        enquire.register('screen and (max-width: 1366px)', {
-          match() {
-            $('[data-tooltip-mobile="true"]').each(function() {
-              // Notice the .each() loop, discussed below
-              $(this).qtip({
-                style: {
-                  classes: 'ar',
-                  tip: {
-                    width: 9,
-                    height: 5
-                  }
-                },
-                content: {
-                  text: $(this).next('div.tooltip-content') // Use the "div" element next to this for the content
-                },
-                position: {
-                  viewport: $(window),
-                  adjust: {
-                    method: 'shift'
-                  }
-                },
-                show: {
-                  effect() {
-                    $(this).fadeIn(300); // "this" refers to the tooltip
-                  }
-                },
-                hide: {
-                  effect() {
-                    $(this).fadeOut(300); // "this" refers to the tooltip
-                  }
-                },
-                events: {
-                  show(event, api) {
-                    var $el = $(api.elements.target[0]);
-                    $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
-                    $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
-                  }
-                }
-              });
-            });
-            $('[data-tooltip-inline-mobile!=""]').qtip({
-              style: {
-                classes: 'ar',
-                tip: {
-                  width: 9,
-                  height: 5
-                }
-              },
-              position: {
-                viewport: $(window),
-                adjust: {
-                  method: 'shift'
-                }
-              },
-              content: {
-                attr: 'data-tooltip-inline-mobile'
-              },
-              show: {
-                effect() {
-                  $(this).fadeIn(300); // "this" refers to the tooltip
-                }
-              },
-              hide: {
-                effect() {
-                  $(this).fadeOut(300); // "this" refers to the tooltipc1
-                }
-              },
-
-              events: {
-                show(event, api) {
-                  var $el = $(api.elements.target[0]);
-                  $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
-                  $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
-
-                  // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
-                }
-              }
-            });
-          },
-          unmatch() {
-            $('[data-hasqtip]').each(function() {
-              $(this).qtip('destroy');
-            });
-          }
-        });
-      }
-
       function tooltipDesktop() {
-        enquire.register('screen and (min-width: 1367px)', {
-          match() {
-            $('[data-tooltip-inline!=""]').qtip({
-              style: {
-                classes: 'ar',
-                tip: {
-                  width: 9,
-                  height: 5
-                }
-              },
-              position: {
-                viewport: $(window),
-                adjust: {
-                  method: 'shift'
-                }
-              },
-              content: {
-                attr: 'data-tooltip-inline'
-              },
-              show: {
-                effect() {
-                  $(this).fadeIn(300); // "this" refers to the tooltip
-                }
-              },
-              hide: {
-                effect() {
-                  $(this).fadeOut(300); // "this" refers to the tooltipc1
-                }
-              },
-
-              events: {
-                show: function(event, api) {
-                  var $el = $(api.elements.target[0]);
-                  $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
-                  $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
-
-                  // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
-                }
-              }
-            });
-            $('[data-tooltip="true"]').each(function() {
-              // Notice the .each() loop, discussed below
-              $(this).qtip({
-                style: {
-                  classes: 'ar',
-                  tip: {
-                    width: 9,
-                    height: 5
-                  }
-                },
-                content: {
-                  text: $(this).next('div.tooltip-content') // Use the "div" element next to this for the content
-                },
-                position: {
-                  viewport: $(window),
-                  adjust: {
-                    method: 'shift'
-                  }
-                },
-                show: {
-                  effect: function() {
-                    $(this).fadeIn(300); // "this" refers to the tooltip
-                  }
-                },
-                hide: {
-                  effect: function() {
-                    $(this).fadeOut(300); // "this" refers to the tooltip
-                  }
-                },
-                events: {
-                  show: function(event, api) {
-                    var $el = $(api.elements.target[0]);
-                    $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
-                    $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
-                  }
-                }
-              });
-            });
+        $('[data-tooltip-inline!=""]').qtip({
+          style: {
+            classes: 'ar',
+            tip: {
+              width: 9,
+              height: 5
+            }
           },
-          unmatch: function() {
-            $('[data-hasqtip]').each(() => {
-              $(this).qtip('destroy');
-            });
+          position: {
+            viewport: $(window),
+            adjust: {
+              method: 'shift'
+            }
+          },
+          content: {
+            attr: 'data-tooltip-inline'
+          },
+          show: {
+            effect() {
+              $(this).fadeIn(300); // "this" refers to the tooltip
+            }
+          },
+          hide: {
+            effect() {
+              $(this).fadeOut(300); // "this" refers to the tooltipc1
+            }
+          },
+
+          events: {
+            show: function(event, api) {
+              var $el = $(api.elements.target[0]);
+              $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
+              $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
+
+              // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
+            }
           }
         });
-
-        tooltipDesktop();
+        $('[data-tooltip="true"]').each(function() {
+          // Notice the .each() loop, discussed below
+          $(this).qtip({
+            style: {
+              classes: 'ar',
+              tip: {
+                width: 9,
+                height: 5
+              }
+            },
+            content: {
+              text: $(this).next('div.tooltip-content') // Use the "div" element next to this for the content
+            },
+            position: {
+              viewport: $(window),
+              adjust: {
+                method: 'shift'
+              }
+            },
+            show: {
+              effect: function() {
+                $(this).fadeIn(300); // "this" refers to the tooltip
+              }
+            },
+            hide: {
+              effect: function() {
+                $(this).fadeOut(300); // "this" refers to the tooltip
+              }
+            },
+            events: {
+              show: function(event, api) {
+                var $el = $(api.elements.target[0]);
+                $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
+                $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
+              }
+            }
+          });
+        });
       }
+
+      tooltipDesktop();
     },
     activateWithSelected() {
       $('.card-ctrls').click();
@@ -1120,7 +1022,7 @@ const AntaresForms = {
     },
     tablePagination() {
       setTimeout(function() {
-        let table = $('.tbl-c .dataTables_wrapper+.dt-area-bottom.pagination.pagination--type2');
+        let table = $('.pagination--type2');
         table.find('a').addClass('mdl-js-button mdl-js-ripple-effect');
         componentHandler.upgradeAllRegistered();
         table.find('a').removeClass('prev');
@@ -1183,6 +1085,7 @@ const AntaresForms = {
             .closest('.timeline__entry')
             .addClass('search-logs--this-line');
           $('.timeline').adjustCardHeight();
+          AntaresForms.elements.logsCorrectTimelineBorder();
         }
 
         parent.find('.mdl-textfield__input').keyup(function() {
@@ -1214,8 +1117,8 @@ const AntaresForms = {
               $('.timeline__entry').removeClass('search-logs--this-line');
               $('.timeline').adjustCardHeight();
             }
-            AntaresForms.elements.logsCorrectTimelineBorder();
           }
+          AntaresForms.elements.logsCorrectTimelineBorder();
         });
       }
 
@@ -1225,9 +1128,16 @@ const AntaresForms = {
         .select2()
         .on('select2:select select2:unselect', function() {
           let dataTypeLogs = $(this).select2('val');
+          $(this)
+            .closest('.card__content')
+            .find('.timeline__entry--ok, .timeline__entry')
+            .removeClass('select-logs--this-line');
           parent.find('.timeline').addClass('select-logs--in-progress');
+          parent.addClass('pagination--hide');
+          var counterLines = 0;
           for (let i = 0; i < parent.find('.timeline__padding > div').length; i++) {
             if ($(parent.find('.timeline__indicator')[i]).attr('data-logs-type') === dataTypeLogs) {
+              counterLines = counterLines + 1;
               $(parent.find('.timeline__indicator')[i])
                 .closest('.timeline__entry--ok,.timeline__entry')
                 .addClass('select-logs--this-line');
@@ -1238,9 +1148,11 @@ const AntaresForms = {
               $('.current10').click();
               $('.timeline__entry').removeClass('select-logs--this-line');
               parent.find('.timeline').removeClass('select-logs--in-progress');
+              parent.removeClass('pagination--hide');
+              AntaresForms.elements.logsCorrectTimelineBorder();
             });
           }
-          $('.search-box').adjustCardHeight();
+          $('.timeline').adjustCardHeight();
           AntaresForms.elements.logsCorrectTimelineBorder();
         });
     },
@@ -1302,6 +1214,7 @@ const AntaresForms = {
       });
     },
     logsCorrectTimelineBorder() {
+      $('.card--logs .timeline > li').removeClass('is-logs--show');
       $('.card--logs .timeline > li:visible:last').addClass('is-logs--show');
     }
   }

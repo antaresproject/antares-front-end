@@ -131,12 +131,12 @@ const menuAside = {
     $('.grid-container.grid-container--2col .grid-col--menu .menu-aside:not(.menu-aside--links) li:not(.has-submenu) a').on('click touchstart', function(e) {
       window.requestAnimationFrame(() => {
         let scrollOnPage = $('.app-content')[0].scrollTop;
+        el.find('li').removeClass('is-active');
+        $(this)
+          .closest('li')
+          .addClass('is-active');
         if (scrollOnPage >= 100) {
           el.addClass('menu-aside-container--fixed');
-          el.find('li').removeClass('is-active');
-          $(this)
-            .closest('li')
-            .addClass('is-active');
           lastScrollTop = scrollOnPage;
         }
       });
@@ -151,6 +151,11 @@ const menuAside = {
     }
     mobileMenu.find('option').remove();
     var groups = [];
+
+    var activeElementLink = $('.menu-aside li.is-active')
+      .find('a')
+      .attr('href');
+
     $('.menu-aside li').each(function() {
       var link = $(this)
         .find('> a')
@@ -171,13 +176,19 @@ const menuAside = {
           //deal with submenu children
         } else if ($(this).parent('.menu-aside__submenu').length) {
           // console.log(groups)
-
           mobileMenu.find('optgroup[label="' + groups[0] + '"]').append('<option value="' + link + '">' + text + '</option>');
         } else {
           //normal options
           groups = [];
           mobileMenu.append('<option value="' + link + '">' + text + '</option>');
         }
+      }
+    });
+
+    // set active element
+    mobileMenu.find('option').each((index, item) => {
+      if ($(item).val() === activeElementLink) {
+        mobileMenu.val(activeElementLink).trigger('change.select2');
       }
     });
   }

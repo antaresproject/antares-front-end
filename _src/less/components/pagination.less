@@ -16,6 +16,15 @@
   }
 }
 
+.card--logs.pagination--hide {
+  padding-bottom: 16px !important;
+  .pagination {
+    display: none !important;
+    height: 1px !important;
+    min-height: 1px !important;
+  }
+}
+
 .grid-stack-item-content .card {
   &.card--pagination {
     // add '.card--pagination' to .card
@@ -610,7 +619,7 @@ a.disabled {
 }
 
 .pagination .simple-pagination--current {
-  @media @md{
+  @media @md {
     display: none;
   }
   ul {
@@ -623,9 +632,11 @@ a.disabled {
 
 @media @xs {
   // on clients_fdetails big table[
-  .card--pagination .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate > span a {
-    &:not(.current), &:not(.prev), &:not(.next) {
-      display: none;
+  .page-datatables, .page-clients-details {
+    .card--pagination .tbl-c .dataTables_wrapper .pagination--type2 .dataTables_paginate > span a {
+      &:not(.current), &:not(.prev), &:not(.next) {
+        display: none;
+      }
     }
   }
 }
@@ -646,7 +657,7 @@ a.disabled {
   }
 }
 
-.grid-stack-item-content .card.card--pagination .tbl-c .pagination--type2 {
+.main-content .card--pagination .tbl-c .pagination--type2 {
   // SECOND PAGINATION ON BIG TABLE AND CLIENTLIST------------------
   @media @xs {
     padding: 0 16px;
@@ -701,4 +712,8 @@ a.disabled {
       font-weight: 700;
     }
   }
+}
+
+.page-translations .card--pagination .tbl-c .pagination--type2 {
+  padding-left: 16px;
 }

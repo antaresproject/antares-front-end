@@ -197,6 +197,7 @@ const AntaresBrandColors = {
                             '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block .flex-block__title',
                             'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl.mobile-ddowns__sgl--open:after',
 
+
                         ],
                         primaryTargetsBackground = [
                             '.app-content:before',
@@ -212,6 +213,7 @@ const AntaresBrandColors = {
                             '.card.card--primary-light',
                             '.btn.btn--primary',
                             'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu',
+
                         ],
                         primaryTargetsBorder = [
                             '.breadcrumbs .ddown__menu',
@@ -219,7 +221,7 @@ const AntaresBrandColors = {
                             'aside.main-sidebar.main-menu.main-menu--brand li:nth-child(1).submenu-open > a:after'
                         ],
                         primaryTargetsMod1 = ['.menu-aside li.is-active a', '.breadcrumbs > li.is-active'],
-                        primaryTargetsMod3 = ['.badge', '.ddown--brand .ddown__init', '#table-ma.is-disabled'],
+                        primaryTargetsMod3 = ['.badge', '.ddown--brand .ddown__init', '#table-ma.is-disabled','.btn.btn--brand'],
                         primaryTargetsMod4 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td'],
                         primaryTargetsMod5 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header'];
                     //color
@@ -323,6 +325,13 @@ const AntaresBrandColors = {
                     self.addStyles(secondary, '.main-menu-html .nav-container.animation-active div.more-trigger:before', 'background-color', modSec2);
                     self.addStyles(secondary, '.main-menu-html div.more-trigger.is-expanded .more-trigger__inner', 'background-color', modSec1);
                     self.addStyles(secondary, 'aside.main-sidebar .menu-tooltip', 'background-color', modSec2);
+                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns','background-color', modSec2);
+                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar ul.main-menu li.submenu-open .submenu .submenu__mobile-return','background-color', modSec2);
+                    self.addStyles(secondary, 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu','background-color', modSec1);
+                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl.mobile-ddowns__sgl--open:after','color', modSec1);
+                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header','border-color', modSec2);
+                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl','border-color', modSec1);
+                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li:hover','background-color', modSec3);
                     $(this)
                         .closest('.cp-brand')
                         .find('.cp-brand__sgl')
@@ -476,10 +485,12 @@ const AntaresBrandColors = {
                             primaryLeftTargets = [
                                 '.menu-aside li a span, .menu-aside li a i, .menu-aside li a:after, .badge.badge--md',
                                 '.main-head .mdl-textfield--AR label.mdl-textfield__label',
+                                '.breadcrumbs > li:last-child a', '.breadcrumbs > li:last-child a:after',
                                 '.ddown.ddown--user .ddown__menu li a,.ddown.ddown--user .ddown__menu li a i:before',
                                 '.ddown.ddown--brand .ddown__menu .flex-block__title,.ddown.ddown--brand .ddown__menu .ddown__footer a',
                                 '.breadcrumbs > li:last-child .ddown__init a, .breadcrumbs > li > a,.breadcrumbs > li:last-child:before, .breadcrumbs .ddown .ddown__content .ddown__arrow:after,.breadcrumbs .ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
                                 '.item-grp  i',
+                                '.data-dropJS--target.drop-target i',
                                 '.btn.btn--brand',
                                 '.menu-mobile-settings + .select2 .select2-selection__rendered',
                                 '.ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',

@@ -20,7 +20,18 @@
     }
   }
 }
-.item-grp-single{
+
+.ddown.ddown--open .ddown__menu {
+  @media @xs {
+    transform: translate3d(0, 40px, 0) !important
+  }
+}
+
+.item-grp-single > .mdl-js-button > span {
+  border-radius: 50%;
+}
+
+.item-grp-single {
   display: none;
   @media only screen and (max-width: 1024px) {
     display: block;
@@ -28,11 +39,12 @@
     margin-right: 16px;
     width: 40px;
     height: 40px;
-    &:last-of-type{
+    &:last-of-type {
       display: none;
     }
   }
 }
+
 .ddown .ddown__content {
   margin-top: 0
 }

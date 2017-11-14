@@ -29,6 +29,7 @@ const AntaresTableView = {
         this.dataTablesOpenRow();
         this.dataTablesGridStackClass();
         this.dataTablesSelectRows();
+        this.dataTablesDblClick();
         enquire.register('screen and (min-width:767px)', {
             match() {
                 self.dataTablesFilterSearch();
@@ -43,6 +44,7 @@ const AntaresTableView = {
             }
         });
         self.dataTablesPaginationButtons();
+        antaresEvents.emit('performance.datatables_loaded');
     },
 
     // methods
@@ -52,6 +54,17 @@ const AntaresTableView = {
             clearTimeout(timer);
             timer = setTimeout(callback, ms);
         };
+    },
+    dataTablesDblClick() {
+        $('table td').on('dblclick', e => {
+            let firstCMLinkHref = $(e.target)
+                .closest('tr')
+                .find('.cm-actions')
+                .find('a:first')
+                .attr('href');
+
+            window.location = firstCMLinkHref;
+        });
     },
     dataTablesHelpers() {
         $('.tbl-c').each(function (index, el) {
@@ -72,7 +85,7 @@ const AntaresTableView = {
     dataTablesScrollTopAfterLength() {
         $('.dataTables_length, .pagination-current ul').click(() => {
             $('.dataTables_wrapper.ps, .dataTablesLogs.ps')
-                .scrollTop(0)
+            // .scrollTop(0)
                 .perfectScrollbar('update');
         });
     },
@@ -98,34 +111,41 @@ const AntaresTableView = {
                         $(this)
                             .find('.ui-selected.odd,.ui-selected.even')
                             .removeClass('ui-selected')
-                            .addClass('is-selected');
+                            .addClass('is-selected--ST');
+                        oTable.rows('.is-selected--ST').select();
                         if (event.ctrlKey || event.shiftKey) {
                         } else {
                             $(this)
                                 .find('.ui-selected')
                                 .removeClass('ui-selected');
                         }
+                        $(this)
+                            .find('tr')
+                            .removeClass('is-selected--ST');
                     }
                 });
             }
             let containerTbody = $('.dataTables_wrapper tbody');
-            let parentTblc = containerTbody.closest('.tbl-c')
+            let parentTblc = containerTbody.closest('.tbl-c');
 
             containerTbody.mouseup(e => {
                 window.requestAnimationFrame(() => {
                     if (parentTblc.find('tr.is-selected').length >= 1) {
                         parentTblc.find('#table-ma').attr('disabled', false);
-                        parentTblc.find('#table-ma span').html(parentTblc.find('tr.is-selected').length + ' items Selected');
                         parentTblc.addClass('selected-mode--active');
 
                         parentTblc.find('table tbody tr td').addClass('no-arrow');
                         parentTblc.find('.btn-with-selected').addClass('display-flex');
+
+                        parentTblc.find('#table-ma span').html(parentTblc.find('tr.is-selected').length + ' items Selected');
                     } else {
                         parentTblc.removeClass('selected-mode--active');
                         parentTblc.removeClass('selected-mode--touch-active');
                         parentTblc.find('#table-ma').attr('disabled', 'disabled');
                         parentTblc.find('table tbody tr td').removeClass('no-arrow');
                         parentTblc.find('.btn-with-selected').removeClass('display-flex');
+                        parentTblc.find('#table-ma span').html('0 items Selected');
+                        oTable.rows('.is-selected').deselect();
                     }
                 });
             });
@@ -137,9 +157,10 @@ const AntaresTableView = {
                 parentTblc.removeClass('selected-mode--touch-active');
                 parentTblc.find('table tbody tr td').removeClass('no-arrow');
                 parentTblc.find('.btn-with-selected').removeClass('display-flex');
+                oTable.rows('.is-selected').deselect();
             });
             parentTblc.find('#tableSearch').keydown(function () {
-                if (parentTblc.hasClass('selected-mode--active')){
+                if (parentTblc.hasClass('selected-mode--active')) {
                     parentTblc.find('tr').removeClass('is-selected');
                     parentTblc.find('#table-ma').attr('disabled', true);
                     parentTblc.find('#table-ma span').html('0 Items Selected');
@@ -147,8 +168,9 @@ const AntaresTableView = {
                     parentTblc.removeClass('selected-mode--touch-active');
                     parentTblc.find('table tbody tr td').removeClass('no-arrow');
                     parentTblc.find('.btn-with-selected').removeClass('display-flex');
+                    oTable.rows('.is-selected').deselect();
                 }
-            })
+            });
             $('#table-ma .is-disabled').on('click', function (e) {
                 e.preventDefault();
             });
@@ -329,28 +351,19 @@ const AntaresTableView = {
             aTargets: [2],
             //select search
             initComplete: function () {
-                let column = $('[data-table-init="true"]')
-                        .DataTable()
-                        .column(3),
+                let column = $('[data-table-init="true"]').DataTable().column(3),
                     select = $('.tbl-c .card-ctrls select.select--category');
 
                 select.on('change', function () {
                     var val = $.fn.dataTable.util.escapeRegex(
-                        $(this)
-                            .children('option:selected')
-                            .val()
+                        $(this).children('option:selected').val()
                     );
-
                     column.search(val ? '^' + val + '$' : '', true, false).draw();
                 });
 
-                column
-                    .data()
-                    .unique()
-                    .sort()
-                    .each(function (d, j) {
-                        select.append('<option value="' + d + '">' + d + '</option>');
-                    });
+                column.data().unique().sort().each(function (d, j) {
+                    select.append('<option value="' + d + '">' + d + '</option>');
+                });
 
                 $('.tbl-c').append($('.tbl-c .pagination'));
                 // window.AntaresForms.elements.select();
@@ -361,6 +374,33 @@ const AntaresTableView = {
                 // }, 400);
 
                 $('.tbl-c tbody').adjustCardHeight();
+
+
+                let thisTable = $(this)
+
+                thisTable.find('[data-length]').each(function () {
+                    let thisTDChildLength = $(this)
+                    let lengthOfTD = thisTDChildLength.attr('data-length')
+                    let widthGridContainer = thisTDChildLength.closest('[data-gs-width]').attr('data-gs-width')
+                    let coef = 0;
+                    if (widthGridContainer <=8) {
+                        coef = 10
+                    }
+                    else if(widthGridContainer <=12){
+                        coef = 20
+                    }
+                    else if(widthGridContainer <=24){
+                        coef = 30
+                    }
+                    if (lengthOfTD > coef && coef !== 0){
+                        thisTDChildLength.closest('td').addClass('truncate-active')
+                        thisTDChildLength.closest('td').attr('data-tooltip-inline',thisTDChildLength.text())
+                    }
+                })
+
+                AntaresForms.elements.tooltip()
+                thisTable.resize();
+
 
                 antaresEvents.emit('datatables-loaded');
             },
@@ -415,7 +455,7 @@ const AntaresTableView = {
                         $('.tbl-c tbody').adjustCardHeight();
                     });
                 }
-                $('.app-content').scrollTop('0');
+                // $('.app-content').scrollTop('0');
             }
         };
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%=pageTitle %></title>
+    <title><%= pageTitle %></title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
@@ -15,8 +15,7 @@
 
 
 <body>
-<template id="vue-page-clients-list">
-
+<script type="text/x-template" id="vue-page-clients-list">
     <section class="main-content">
         <div class="grid-stack">
             <div class="grid-stack-item" data-gs-no-resize="1" data-gs-no-move="1" data-gs-x="0" data-gs-y="0"
@@ -31,11 +30,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-
-
-</template>
+</script>
 <% include ../layout/app_wrapper_start_tag %>
 
 <% if(clientArea){ %>

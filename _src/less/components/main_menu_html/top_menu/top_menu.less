@@ -61,8 +61,8 @@ nav {
   margin-bottom: 0;
   height: 80px;
   top: 0 !important;
-  transition: 300ms;
   opacity: 0;
+  transition: 0ms;
   &.ripple-on-active {
     &:before {
       animation: menuRippleOn @transition-ripple-on ease-in-out;
@@ -137,11 +137,9 @@ aside.main-sidebar .main-sidebar__logo {
 
 .menu-tooltip {
   background: #2d353d;
-  position: absolute;
   left: auto;
-  right: 0;
-  top: -25px;
-  height: 250px;
+  margin-left: auto;
+  position: static;
   width: 306px;
   bottom: 32px; //tmp
   // min-height:100px;
@@ -396,10 +394,17 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   }
 }
 
+@media only screen and (min-width: 1024px){
 .app-content.page-dashboard {
   padding-bottom: 80px; //because 'height:100vh'
 }
-
+}
+@media only screen and (max-width: 1024px){
+  .app-content.page-dashboard {
+    padding-bottom: 0; //because 'height:100vh'
+    padding-top: 0; //because 'height:100vh'
+  }
+}
 .page-brand-settings {
   .cp-row {
     display: block;
@@ -424,7 +429,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
     content: '';
     width: 100%;
     background-color: #02a8f3;
-    height: 170px;
+    height: 250px;
     z-index: -10;
     top: 228px;
     left: 0;
@@ -570,18 +575,6 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1366px) {
-
-  .main-sidebar nav ul.main-menu .submenu-open .submenu {
-    padding: 8px 88px;
-  }
-}
-
-@media only screen and (min-width: 1367px) and (max-width: 1649px) {
-  .more-trigger {
-    right: 118px;
-  }
-}
 
 
 

@@ -59,7 +59,7 @@ const AntaresContextMenu = {
                         $.contextMenu({
                             selector: '.billevo-table tbody tr td:not(.dt-actions)',
                             build: function (trigger, e) {  // 'trigger' this is the last element (td:not(.dt-actions)) that is written by the line above (30 line)
-                                $('tr').removeClass('is-selected')
+                                // $('tr').removeClass('is-selected')
                                 trigger = trigger.closest('tr')
                                 if (trigger.is('.child')) {
                                     trigger = trigger.prev(".parent")
@@ -75,11 +75,12 @@ const AntaresContextMenu = {
                                     $('.context-menu-active').each(function () {
                                         $(this).contextMenu("hide");
                                     });
+
                                     // let $self = $(this).closest('tr');
                                     // if ($self.hasClass('child')) {
                                     //     $self = $self.prev()
                                     // }
-                                    $('.dataTables_wrapper tr').removeClass('is-selected')
+                                    // $('.dataTables_wrapper tr').removeClass('is-selected')
                                     // $self.addClass('is-selected')
                                     // if (!$self.hasClass('is-selected')) {
                                     //     $self.closest('table').find('tr').removeClass('is-selected');
@@ -148,7 +149,7 @@ const AntaresContextMenu = {
                     var $el = $(el),
                         $name = $el.find('>a span:first').text(),
                         $text = $el.find('>a span:first').text(),
-                        $icon = $icon[1],
+                        $icon ,
                         $href = $el.find('>a').attr('href');
                     element[$name] = {
                         'callback': function () {

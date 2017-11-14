@@ -26,6 +26,14 @@ const AntaresGridstack = {
     this.helpers();
     this.stopTouchScroll();
     this.identify();
+    this.loginPage();
+    antaresEvents.emit('performance.gridstack_loaded');
+  },
+
+  loginPage() {
+    if ($('.login-box').length) {
+      $('.mdl-textfield').addClass('is-focused');
+    }
   },
 
   // methods
@@ -117,9 +125,6 @@ const AntaresGridstack = {
       width: 24
     };
     $('.grid-stack').gridstack(gridstack_options);
-
-    const gsLoadedEvent = new CustomEvent('antares-gridstack-loaded', { detail: 'gridstack is ready' });
-    document.dispatchEvent(gsLoadedEvent);
   }
 };
 

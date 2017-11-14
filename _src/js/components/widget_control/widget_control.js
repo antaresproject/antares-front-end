@@ -216,8 +216,13 @@ export default {
         return false;
       }
 
+      //logs exception
+      // if (card.hasClass('card--logs')) {
+      //   console.log('asdasd');
+      // }
       if (windowW > 1449 && !card.hasClass('card--pagination')) {
         // console.log('screen too wide for widget adaptations');
+
         return false;
       }
 

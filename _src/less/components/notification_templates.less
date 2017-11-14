@@ -18,13 +18,13 @@
     border-bottom: 1px solid @input-border-bottom;
     padding-bottom: 15px;
     margin-bottom: 15px;
-    &>.form-block {
+    .form-block {
       align-items: flex-start;
-      &> .col-group {
+      & > .col-group {
         display: block;
       }
     }
-    &>legend{
+    & > legend {
       padding-left: 0;
       padding-right: 0;
     }
@@ -154,7 +154,7 @@
     .page-notification-templates__name {
       margin-left: -10px;
       margin-right: -10px;
-      &>.col-group:first-of-type{
+      & > .col-group:first-of-type {
         margin-bottom: 16px;
       }
       .page-notification-templates__switch {
@@ -173,7 +173,7 @@
   }
 }
 
-@media @md {
+@media only screen and (max-width: 1023px) {
   .page-notification-templates {
     .mdl-tabs {
       border: 0;
@@ -190,10 +190,10 @@
 
 @media @xs {
   .page-notification-templates {
-    .page-notification-templates__info,.page-notification-templates__content {
+    .page-notification-templates__info, .page-notification-templates__content {
       padding: 0 16px;
     }
-    .page-notification-templates__lang-text,.mdl-tabs__right-content {
+    .page-notification-templates__lang-text, .mdl-tabs__right-content {
       display: none;
     }
   }
@@ -243,12 +243,15 @@
   }
 }
 
-
 .variables-pane {
   z-index: 80;
   transition: 0.5s;
   width: 500px;
   min-width: 500px;
+  @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    width: 350px;
+    min-width: 350px;
+  }
   margin-right: -500px;
   position: relative;
   overflow: hidden;
@@ -351,7 +354,7 @@
   }
 }
 
-@media @md {
+@media only screen and (max-width: 1023px) {
   .variables-pane {
     position: fixed;
     visibility: hidden;
@@ -405,7 +408,6 @@
   }
 }
 
-
 // Damn Fixes, thats what it is
 
 .left-tabs__desktop-links {
@@ -423,7 +425,7 @@
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    position:relative;
+    position: relative;
 
     padding: 0 16px;
     font-size: 13px;
@@ -432,7 +434,7 @@
     line-height: 51px;
     text-transform: uppercase;
 
-    i, span, a  {
+    i, span, a {
       color: #8a9099;
 
     }
@@ -445,14 +447,13 @@
   }
 }
 
-@media only screen and (max-width:1500px) {
+@media only screen and (max-width: 1500px) {
 
   .mdl-tabs--open-variables-panel {
 
     .left-tabs__desktop-links {
 
-      display:none;
-
+      display: none;
 
     }
 
@@ -460,8 +461,7 @@
 
 }
 
-
-@media only screen and (max-width:960px) {
+@media only screen and (max-width: 960px) {
   .left-tabs {
     .left-tabs__mobile-drop-down {
       display: block;

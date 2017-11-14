@@ -10,8 +10,6 @@
   @import "CA_menu/CA_menu";
 }
 
-
-
 .control-menu-panel {
   position: fixed;
   top: 15%;
@@ -133,7 +131,7 @@
 
 #app-wrapper:not(.main-sidebar--top) aside {
   @media only screen and (max-height: 700px) {
-   .menu-tooltip {
+    .menu-tooltip {
       left: 364px;
     }
   }
@@ -202,3 +200,63 @@ nav.submenu-is-active .menu-scroll {
   }
 }
 
+#app-wrapper.main-sidebar--top aside.main-menu-html .main-menu--brand .menu-columns {
+  margin-top: 24px;
+  margin-left: -8px;
+}
+
+#app-wrapper aside.main-menu-html .main-menu--brand .menu-columns {
+  ul > li {
+    span {
+      font-weight: 500;
+    }
+    span:first-of-type {
+      color: #8a9099;
+    }
+    span:last-of-type {
+      color: #5c6066;
+    }
+  }
+}
+
+#app-wrapper.main-sidebar--top aside.main-menu-html .menu-columns {
+  ul > li {
+
+    margin-right: 24px;
+  }
+}
+
+#app-wrapper:not(.main-sidebar--top) aside.main-menu-html .menu-columns {
+  .col-6 {
+    width: 100%;
+  }
+}
+
+#app-wrapper aside.main-menu-html .menu-columns {
+  width: 100%;
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ul > li {
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: justify !important;
+
+    a {
+      font-weight: 400;
+      color: #b8becc;
+      width: 100%;
+      @media only screen and (max-width: 1023px) {
+        padding-left: 0 !important;
+      }
+      &:hover {
+        color: #e0e7f6;
+      }
+    }
+  }
+}

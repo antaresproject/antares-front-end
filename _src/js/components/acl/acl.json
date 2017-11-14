@@ -1,5 +1,4 @@
 {
-    "tree": {
         "name": "Tree Root",
         "open": true,
         "checked": false,
@@ -142,5 +141,4 @@
                 "open": true
             }]
         }]
-    }
 }

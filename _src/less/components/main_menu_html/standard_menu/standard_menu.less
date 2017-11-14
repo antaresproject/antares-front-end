@@ -1,6 +1,6 @@
-@transition: 300ms;
-@transition-ripple-on: 300ms;
-@transition-ripple-off: 400ms;
+@transition: 500ms;
+@transition-ripple-on: 500ms;
+@transition-ripple-off: 500ms;
 @icon-size: 22px;
 @media only screen and (max-width: 1023px) {
   @import "rwd/xs";
@@ -34,12 +34,11 @@ div.more-trigger {
   z-index: 10;
   position: absolute;
   width: 98px;
-  transition: 100ms ease-out;
   .more-trigger__inner {
     z-index: 1;
   }
   &.is-expanded {
-    transition: 300ms ease-out;
+    transition: 500ms ease-out;
     .more-trigger__inner {
       position: relative;
       background-color: #02A8F3;
@@ -124,8 +123,6 @@ nav ul.main-menu {
   overflow: auto;
 }
 
-
-
 .nav-container.animation-active {
   overflow: hidden;
   .submenu {
@@ -176,7 +173,7 @@ nav ul.main-menu {
       &:before {
         display: block;
         z-index: 9;
-        animation: menuRippleOn @transition-ripple-on cubic-bezier(.17, .67, .98, .11);
+        animation: menuRippleOn @transition-ripple-on cubic-bezier(0.45, 0.05, 0.55, 0.95);
         animation-fill-mode: forwards;
       }
     }
@@ -326,9 +323,11 @@ nav .submenu {
       display: block;
     }
   }
-  .has-submenu {
-    .ps {
-      overflow: auto !important;
+  @media @md {
+    .has-submenu {
+      .ps {
+        overflow: auto !important;
+      }
     }
   }
 }
@@ -344,18 +343,19 @@ nav .submenu {
   .main-menu__brand.submenu-open {
     height: ~'calc(100vh - 70px)' !important;
   }
-}.mobile-ddowns__sgl--open .mobile-ddowns__icon i {
-   transform: rotate(180deg);
- }
+}
 
+.mobile-ddowns__sgl--open .mobile-ddowns__icon i {
+  transform: rotate(180deg);
+}
 
 @media only screen and (min-width: 1024px) {
   .nav-container .menu-scroll ul.main-menu {
 
-    &.main-menu--brand > li > a{
+    &.main-menu--brand > li > a {
       height: 70px;
     }
-    &> li > a {
+    & > li > a {
       height: 80px;
       & > i {
         margin-top: 4px;
@@ -368,6 +368,6 @@ nav .submenu {
   }
 }
 
-nav{
-  opacity:0;
+nav {
+  opacity: 0;
 }

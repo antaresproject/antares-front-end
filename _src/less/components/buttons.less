@@ -1,57 +1,12 @@
-.btn-more {
-  font-size: inherit;
-  padding: 0 16px;
-  min-width: auto;
-  line-height: 1;
-  position: relative;
-  right: -16px;
-  cursor: pointer;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  color: @text-color-grey;
-  .flex-center();
-  .mdl-button__ripple-container {
-    border-radius: 50%;
-  }
-  i {
-    color: @text-color-grey;
-  }
-}
-.ddown .ddown__init {
-  &.btn--dropdown {
-
-    background-color: @background;
-    text-transform: uppercase;
-
-    &:after {
-      top: 0;
-    }
-  }
-}
-.table-controls {
-  .btn-more {
-    font-size: 24px;
-    right: 0;
-  }
-}
-.btn-group {
-  > * {
-    margin-right: 8px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
-.btn {                    // KING
-  @box-shadow-active: 0 5px 12px rgba(0, 0, 0, .15);
+.btn {
+  // KING
+  @box-shadow-active: 0 5px 12px rgba(0, 0, 0, 0.15);
   display: inline-block;
   border-radius: 2px;
   border: 0;
   transition: @button-transition;
   text-transform: uppercase;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   height: auto;
   overflow: hidden;
   white-space: nowrap;
@@ -64,22 +19,28 @@
   font-weight: 500;
   line-height: 36px;
   text-align: center;
-  @padding-for-icon:36px;
+  @padding-for-icon: 36px;
   @font-size-for-icon: 20px;
   @left-or-right: 12px;
 
-  &.btn--icon-left, &.btn--icon {
-    padding-left: @padding-for-icon;
-    &:before{
-      left: @left-or-right;
-      font-size: @font-size-for-icon;
+  .btn-more {
+    font-size: inherit;
+    padding: 0 16px;
+    min-width: auto;
+    line-height: 1;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    color: @text-color-grey;
+    .flex-center();
+    .mdl-button__ripple-container {
+      border-radius: 50%;
     }
-  }
-  &.btn--icon-right {
-    padding-right: @padding-for-icon;
-    &:before{
-      right: @left-or-right;
-      font-size: @font-size-for-icon;
+    i {
+      color: @text-color-grey;
+      font-size: 20px;
     }
   }
 
@@ -90,7 +51,10 @@
   background-color: @bg;
   color: @c;
   //hover
-  &:hover, &.btn--forced-hover, &:active, &.btn--forced-active {
+  &:hover,
+  &.btn--forced-hover,
+  &:active,
+  &.btn--forced-active {
     background-color: @bg-hover-and-active;
   }
   &[disabled],
@@ -164,20 +128,11 @@
     font-weight: 500;
     text-align: center;
 
-    @padding-for-icon:24px;
+    @padding-for-icon: 24px;
     @font-size-for-icon: 16px;
     @left-or-right: 8px;
-    &.btn--icon-left, &.btn--icon {
-      padding-left: @padding-for-icon;
-      &:before{
-        left: @left-or-right;
-        font-size: @font-size-for-icon;
-      }
-    }
-    &.btn--icon-right {
-      padding-right: @padding-for-icon;
-      &:before{
-        right: @left-or-right;
+    &.btn--icon {
+      i {
         font-size: @font-size-for-icon;
       }
     }
@@ -189,24 +144,14 @@
     font-weight: 500;
     text-align: center;
 
-    @padding-for-icon:30px;
+    @padding-for-icon: 30px;
     @font-size-for-icon: 18px;
     @left-or-right: 10px;
-    &.btn--icon-left, &.btn--icon {
-      padding-left: @padding-for-icon;
-      &:before{
-        left: @left-or-right;
+    &.btn--icon {
+      i {
         font-size: @font-size-for-icon;
       }
     }
-    &.btn--icon-right {
-      padding-right: @padding-for-icon;
-      &:before{
-        right: @left-or-right;
-        font-size: @font-size-for-icon;
-      }
-    }
-
   }
   &.btn--md {
     font-size: 13px;
@@ -215,20 +160,11 @@
     line-height: 36px;
     text-align: center;
 
-    @padding-for-icon:36px;
+    @padding-for-icon: 36px;
     @font-size-for-icon: 20px;
     @left-or-right: 12px;
-    &.btn--icon-left, &.btn--icon {
-      padding-left: @padding-for-icon;
-      &:before{
-        left: @left-or-right;
-        font-size: @font-size-for-icon;
-      }
-    }
-    &.btn--icon-right {
-      padding-right: @padding-for-icon;
-      &:before{
-        right: @left-or-right;
+    &.btn--icon {
+      i {
         font-size: @font-size-for-icon;
       }
     }
@@ -240,20 +176,11 @@
     font-weight: 500;
     text-align: center;
 
-    @padding-for-icon:42px;
+    @padding-for-icon: 42px;
     @font-size-for-icon: 22px;
     @left-or-right: 16px;
-    &.btn--icon-left, &.btn--icon {
-      padding-left: @padding-for-icon;
-      &:before{
-        left: @left-or-right;
-        font-size: @font-size-for-icon;
-      }
-    }
-    &.btn--icon-right {
-      padding-right: @padding-for-icon;
-      &:before{
-        right: @left-or-right;
+    &.btn--icon {
+      i {
         font-size: @font-size-for-icon;
       }
     }
@@ -265,24 +192,17 @@
     line-height: 52px;
     text-align: center;
 
-    @padding-for-icon:48px;
+    @padding-for-icon: 48px;
     @font-size-for-icon: 26px;
     @left-or-right: 16px;
-    &.btn--icon-left, &.btn--icon {
-      padding-left: @padding-for-icon;
-      &:before{
-        left: @left-or-right;
+    &.btn--icon {
+      i {
         font-size: @font-size-for-icon;
       }
     }
-    &.btn--icon-right {
-      padding-right: @padding-for-icon;
-      &:before{
-        right: @left-or-right;
-        font-size: @font-size-for-icon;
-      }
-    }
+
   }
+
   //tmp
   &.btn--brand {
     background: @btn--brand;
@@ -297,9 +217,7 @@
       color: #fff;
       font-size: 19px;
     }
-
   }
-
 
   //for inputs
   &.btn--s-small {
@@ -381,7 +299,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--default {
     @bg: @input-border-bottom;
@@ -415,7 +332,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--dark {
     @bg: @secondary-bg;
@@ -449,7 +365,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--orange {
     @bg: @btn-orange;
@@ -483,7 +398,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--indigo {
     @bg: @btn-purple-blue;
@@ -517,7 +431,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--blue {
     @bg: @color-info;
@@ -551,7 +464,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--red {
     @bg: @color-alert;
@@ -585,7 +497,6 @@
       background-color: @bg;
       color: @c;
     }
-
   }
   &.btn--green {
     @bg: @color-success;
@@ -619,29 +530,7 @@
       background-color: @bg;
       color: @c;
     }
-
   }
-
-  //icons (default settings). Position padding and left/right add on &.btn-xs/md/sm/lg/xl
-  &.btn--icon-left, &.btn--icon {
-    &:before {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
-      content: '\f278';
-    }
-  }
-  &.btn--icon-right {
-    &:before {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
-      content: '\f278';
-    }
-  }
-
 
   &.btn--lowercase {
     text-transform: lowercase !important;
@@ -657,7 +546,8 @@
     min-width: auto !important;
   }
 
-  &.btn--link {       //GRAND KING
+  &.btn--link {
+    //GRAND KING
     @bg-hover: @btn-link-grey-hover;
     @bg-active: @btn-link-grey-active;
     display: inline-block;
@@ -698,7 +588,6 @@
         color: @btn-primary-color;
         background-color: transparent;
       }
-
     }
     &.btn--default {
       @c: @primary-c;
@@ -713,7 +602,6 @@
         color: @c;
         background-color: transparent;
       }
-
     }
     &.btn--dark {
       @c: @secondary-bg;
@@ -802,6 +690,55 @@
   }
 }
 
+// UTILITIES:
+
 #table-ma:disabled {
   pointer-events: none !important;
+}
+
+.ddown .ddown__init {
+  &.btn--dropdown {
+    background-color: @background;
+    text-transform: uppercase;
+
+    &:after {
+      top: 0;
+    }
+  }
+}
+
+.table-controls {
+  .btn-more {
+    font-size: 24px;
+    right: 0;
+  }
+}
+
+.btn-group {
+  > * {
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.btn-with-icon .col-group .col-mb-12 {
+  display: flex;
+
+}
+.btn--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.btn--icon-right {
+    i {
+      margin-left: 8px;
+    }
+  }
+  &.btn--icon-left{
+    i{
+      margin-right: 8px;
+    }
+  }
 }

@@ -64,7 +64,7 @@ AntaresNotifications.prototype.noti = {
       if (typeof APP.noti[arg] !== 'undefined') {
         contentArr.push(APP.noti[arg]);
       } else {
-        console.log('bad argument');
+        // console.log('bad argument');
       }
     });
 

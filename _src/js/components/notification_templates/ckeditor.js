@@ -6,8 +6,10 @@
     init: function() {
       this.initCodeMirror();
       if ($(window).width() > 768) {
+          console.log('work desc')
         this.initCKEditor();
       } else {
+          console.log('work mob')
         this.initMobileCKE();
       }
       this.reszie();
@@ -84,7 +86,7 @@
         width: '100%',
         fullPage: true,
         allowedContent: true,
-        skin: 'antares',
+        // skin: 'antares',
         toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'NumberedList', 'BulletedList', 'SpellChecker', 'Maximize']]
       });
       CKEDITOR.instances.wysiwyg.setData($('#html-editor').val());

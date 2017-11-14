@@ -77,16 +77,20 @@ const AntaresMainMenuHtml = {
                 window.antaresCfgLocal.statusMenuList.menuStandard = true;
                 window.antaresCfgLocal.statusMenuList.menuTop = false;
                 window.antaresCfgLocal.statusMenuList.menuWide = false;
+                window.antaresCfgLocal.statusMenuList.modeClientArea = false;
                 $('#standard-menu').attr('checked', 'checked');
-            } else if (getCookie('statusMenu') === 'top') {
+            }
+            else if (getCookie('statusMenu') === 'top') {
                 window.antaresCfgLocal.statusMenuList.menuStandard = false;
                 window.antaresCfgLocal.statusMenuList.menuTop = true;
                 window.antaresCfgLocal.statusMenuList.menuWide = false;
+                window.antaresCfgLocal.statusMenuList.modeClientArea = false;
                 $('#top-menu').attr('checked', 'checked');
             } else if (getCookie('statusMenu') === 'wide') {
                 window.antaresCfgLocal.statusMenuList.menuStandard = false;
                 window.antaresCfgLocal.statusMenuList.menuTop = false;
                 window.antaresCfgLocal.statusMenuList.menuWide = true;
+                window.antaresCfgLocal.statusMenuList.modeClientArea = false;
                 $('#wide-menu').attr('checked', 'checked');
                 $('#app-wrapper').addClass('main-sidebar--wide');
                 $('#app-wrapper').addClass('main-sidebar--expanded');
@@ -95,6 +99,7 @@ const AntaresMainMenuHtml = {
                 window.antaresCfgLocal.statusMenuList.menuStandard = true;
                 window.antaresCfgLocal.statusMenuList.menuTop = false;
                 window.antaresCfgLocal.statusMenuList.menuWide = false;
+                window.antaresCfgLocal.statusMenuList.modeClientArea = false;
                 $('#standard-menu').attr('checked', 'checked');
                 createCookie('statusMenu', 'standard');
             }
@@ -115,6 +120,7 @@ const AntaresMainMenuHtml = {
             } else if ($('#wide-menu').closest('.iradio_billevo').hasClass('checked')) {
                 createCookie('statusMenu', 'wide');
             }
+
             location.reload();
         }
 

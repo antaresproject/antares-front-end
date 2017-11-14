@@ -1,46 +1,10 @@
-.gen-settings--single {
-  & > h1, & > a > h1 {
+.grid-col {
+  h1 {
     text-align: center;
     margin-bottom: 32px;
     margin-top: 50px;
     @media @md {
       margin-top: 80px;
-    }
-  }
-  a > h2 {
-    padding: 8px 16px 24px 16px;
-    color: #3d454c;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-  }
-}
-
-.gen-settings--full {
-  & > h1 {
-    text-align: center;
-    margin-bottom: 32px;
-    margin-top: 50px;
-    @media @md {
-      margin-top: 80px;
-    }
-  }
-  a > h2 {
-    padding: 8px 16px 24px 16px;
-    color: #3d454c;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-  }
-}
-
-.page-forms {
-  .gen-settings--full {
-    a > h2 {
-      padding: 8px 0px 24px 0px;
-      @media @xs {
-        padding: 8px 10px 24px 10px;
-      }
     }
   }
 }
@@ -70,6 +34,7 @@
 .page-settings {
   .comiseo-daterangepicker-triggerbutton.ui-button {
     min-width: inherit;
+    margin: 0;
     &:after {
       right: 8px;
     }
@@ -95,12 +60,19 @@
         }
       }
     }
-
-    fieldset[name="Selects"] {
-      .select2-container--selectAR {
-        width: auto !important;
-        .select2-selection__rendered {
-          max-width: 150px;
+  }
+  fieldset[name="Selects"] {
+    .select2 {
+      width: 100% !important;
+      .select2-selection__rendered {
+        @media only screen and (max-width: 320px) {
+          max-width: 190px;
+        }
+        @media only screen and (min-width: 321px) and (max-width: 380px){
+          max-width: 230px;
+        }
+        @media  only screen and (min-width: 381px) and (max-width: 767px){
+          max-width: 250px;
         }
       }
     }
@@ -117,6 +89,47 @@
   align-items: flex-start;
   .form-block__name {
     margin-top: 8px;
+  }
+  .input-field{
+    &:after{
+      top: 8px;
+      transform: none;
+      right: 16px;
+    }
+  }
+}
+.mdl-tabs.error{
+  border: 1px solid @color-error;
+}
+.form-block .col-group.error{
+  align-items: flex-start;
+  .form-block__name {
+    margin-top: 8px;
+  }
+  @type-color: @color-error;
+  p,div,span{
+    color: @type-color
+  }
+  .input-field{
+    &:after {
+      // icon
+      position: absolute;
+      font: normal normal normal 19px/1 Material-Design-Iconic-Font;
+      content: "\f136";
+      height: 20px;
+      width: 20px;
+      color: @type-color;
+      text-align: center;
+      top: 8px;
+      transform: none;
+      right: 16px;
+    }
+    input:not(.switch-checkbox) {
+      &::placeholder {
+        color: @type-color;
+      }
+      border: 1px solid @type-color;
+    }
   }
 }
 
@@ -147,10 +160,10 @@
   }
 }
 
-fieldset[name="Noty"],fieldset[name="Alert"] {
+fieldset[name="Noty"], fieldset[name="Alert"] {
   .btn {
     margin-right: 8px;
-
+    margin-bottom: 8px;
   }
 }
 
@@ -202,6 +215,14 @@ fieldset[name="Noty"],fieldset[name="Alert"] {
   #app-wrapper .page-settings .generals-form fieldset[name='RadioCheckSwitch'] {
     .switchbox, .radiobtns, .checkboxs {
       display: block;
+    }
+  }
+}
+
+@media @xs {
+  .page-settings .main-content fieldset[name="GridFixedRation"] {
+    .ex-grid--background {
+      margin-bottom: 0 !important;
     }
   }
 }

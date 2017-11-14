@@ -13,9 +13,6 @@
   &.ddown--open {
     .ddown__menu {
       display: block;
-      @media @md {
-        transform: translate3d(0, 30px, 0) !important;
-      }
       transform: translate3d(0, 20px, 0) !important;
       opacity: 1 !important;
       z-index: 10 !important;
@@ -42,7 +39,7 @@
       line-height: 1;
       right: -8px;
       top: 0;
-      padding-right: 6px;
+      padding-right: 2px;
       color: @primary-c;
     }
     // carets modfiers
@@ -560,7 +557,7 @@
     }
     @media @max1050 {
       a {
-        .truncate(110px);
+        //.truncate(110px);
       }
     }
   }

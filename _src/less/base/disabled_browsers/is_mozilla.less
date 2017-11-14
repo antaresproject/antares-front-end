@@ -13,12 +13,15 @@
     top: -1px !important;
   }
 }
+
 #app-wrapper .app-content .grid-stack-item .grid-stack-item-content {
   overflow: visible;
 }
-.main-menu-html nav ul.main-menu{
+
+.main-menu-html nav ul.main-menu {
   overflow: visible;
 }
+
 .app-content.page-login .login-box .login-box__header img {
   width: 250px;
 }
@@ -34,16 +37,20 @@
 
 #app-wrapper .card.card--contacts {
   height: 100%;
-  padding-bottom: 48px;
   .datarow {
     height: 100%;
+    @media only screen and (min-width: 1366px) {
+      padding-bottom: 50px;
+    }
   }
 }
+
 .page-clients-details, .page-dashboard {
-  .main-content{
+  .main-content {
     padding-bottom: 100px;
   }
 }
+
 .select2-container .select2-results > .select2-results__options {
   overflow-y: hidden !important;
 }
@@ -51,16 +58,15 @@
 input[type="number"] {
   -moz-appearance: textfield;
 }
-input::placeholder{
+
+input::placeholder {
   opacity: 0.6;
 }
+
 .xdsoft_datetimepicker::before {
   font: 30px/1 "Material-Design-Iconic-Font"
 }
 
-.dataTables_wrapper .dataTable colgroup col{
+.dataTables_wrapper .dataTable colgroup col {
   width: auto !important;
-}
-#app-wrapper.main-sidebar--top .more-trigger{
-  margin-left: 16px;
 }

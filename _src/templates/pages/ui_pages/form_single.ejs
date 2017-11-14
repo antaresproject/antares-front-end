@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <% var pageTitle = 'Form Single'; %>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%= pageTitle %></title>
+    <title>
+        <%= pageTitle %>
+    </title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../../layout/color_template_wide %>
     <% } else{ %>
@@ -36,12 +39,12 @@
     <section class="main-content nopadding ">
         <div class="grid-container grid-container--1col grid-container--footer grid-container--no-padd">
             <div class="grid-col grid-col--container">
-                <section class="generals-form gen-settings--full" data-preload>
+                <section class="generals-form" data-preload>
                     <h1>Form Vertical</h1>
                     <form id="14" method="post" action="">
                         <fieldset name="inputs">
                             <a name="AntaresFormsVert" id="AntaresFormsVert">
-                                <h2>Error list</h2>
+                                <legend>Form Grid example</legend>
                             </a>
                             <div class="form-errors"></div>
                             <div class="col-group">
@@ -68,301 +71,90 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-group">
-                                <div class="form-block">
-                                    <div class="col-mb-24">
-                                        <label class="form-block__name">Password</label>
-                                    </div>
-                                    <div class="col-mb-24">
-                                        <div class="input-field">
-                                            <input type="password" name="Password" placeholder="RS Studio"
-                                                   required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-group">
-                                <div class="form-block">
-                                    <div class="col-mb-24">
-                                        <label class="form-block__name">Control element with icon</label>
-                                    </div>
-                                    <div class="col-mb-24">
-                                        <div class="input-field input-field--icon">
-                                            <div class="input-field__icon">
-                                                <i class="zmdi zmdi-upload"></i>
-                                            </div>
-                                            <input type="text" name="with_desc" placeholder="Placeholder"
-                                                   required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-group">
-                                <div class="col-mb-24">
-                                    <button type="submit" name="action"
-                                            class="btn btn--submit btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
-                                        SEND
-                                    </button>
-                                </div>
-                            </div>
                         </fieldset>
-
-                    </form>
-                    <form id="1" method="post" action="">
-                        <fieldset name="inputs">
-                            <a name="" id="">
-                                <h2>Input - simple types</h2>
-                            </a>
-                            <div class="col-group">
-                                <div class="form-block">
-                                    <div class="col-mb-24">
-                                        <label class="form-block__name">Text</label>
-                                    </div>
-                                    <div class="col-mb-24">
-                                        <div class="input-field">
-                                            <input type="text" name="Text" placeholder="RS Studio" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-group">
-                                <div class="form-block">
-                                    <div class="col-mb-24">
-                                        <label class="form-block__name">Number</label>
-                                    </div>
-                                    <div class="col-mb-24">
-                                        <div class="input-field">
-                                            <input type="number" name="Number" placeholder="12345" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-group">
-                                <div class="form-block">
-                                    <div class="col-mb-24">
-                                        <label class="form-block__name">Password</label>
-                                    </div>
-                                    <div class="col-mb-24">
-                                        <div class="input-field">
-                                            <input type="password" name="Password" placeholder="RS Studio"
-                                                   required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-group">
-                                <div class="form-block">
-                                    <div class="col-mb-24">
-                                        <label class="form-block__name">Control element error with icon</label>
-                                    </div>
-                                    <div class="col-mb-24">
-                                        <div class="input-field">
-                                            <input type="text" name="with_desc" placeholder="Placeholder"
-                                                   required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-group">
-                                <div class="col-mb-24">
-                                    <button type="submit" name="action"
-                                            class="btn btn--submit btn--md btn--primary mdl-button mdl-js-button mdl-js-ripple-effect">
-                                        SEND
-                                    </button>
-                                </div>
-                            </div>
-                        </fieldset>
-
                     </form>
 
                     <h1>Form Horizontal</h1>
                     <form class="form-validation form--hor" id="form-valid-test" method="post" action="">
                         <fieldset name="inputs">
                             <a name="AntaresFormsHoriz" id="AntaresFormsHoriz">
-                                <h2>Error list</h2>
+                                <legend>Form Grid example</legend>
                             </a>
-                            <div class="form-errors" id="form-errors"></div>
                             <div class="form-block ">
                                 <div class="col-group">
-                                    <div class="col-mb-8 col-mb-8 col-6">
+                                    <div class="col-mb-8 col-6 col-dt-4 col-ld-3">
                                         <label class="form-block__name">Text</label>
                                     </div>
-                                    <div class="col-mb-16 col-18">
+                                    <div class="col-mb-16 col-18 col-dt-10 col-ld-4">
                                         <div class="input-field">
-                                            <input type="text" name="testName" id="testName"
-                                                   placeholder="RS Studio" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-block">
-                                <div class="col-group">
-                                    <div class="col-mb-8 col-mb-8 col-6">
-                                        <label class="form-block__name">Number</label>
-                                    </div>
-                                    <div class="col-mb-16 col-18">
-                                        <div class="input-field">
-                                            <input type="number" name="Number" placeholder="12345" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-block">
-
-                                <div class="col-group">
-                                    <div class="col-mb-8 col-mb-8 col-6">
-                                        <label class="form-block__name">Password</label>
-                                    </div>
-                                    <div class="col-mb-16 col-18">
-                                        <div class="input-field">
-                                            <input type="password" name="Password" placeholder="RS Studio"
+                                            <input type="text" name="testName" id="testName" placeholder="RS Studio"
                                                    required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-block">
+                            <div class="form-block ">
                                 <div class="col-group">
-                                    <div class="col-mb-8 col-mb-8 col-6">
-                                        <label class="form-block__name">Control element error with
-                                            icon</label>
+                                    <div class="col-mb-8 col-6 col-dt-4 col-ld-3">
+                                        <label class="form-block__name">Longer Text</label>
                                     </div>
-                                    <div class="col-mb-16 col-18">
+                                    <div class="col-mb-16 col-18 col-dt-12 col-ld-7">
                                         <div class="input-field">
-                                            <div class="input-field">
-                                                <input type="text" name="with_desc" placeholder="Placeholder"
-                                                       required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="form-block">
-                            <div class="col-group">
-                                <div class="col-mb-8 col-mb-8 col-6">
-                                </div>
-                                <div class="col-mb-16 col-18">
-                                    <div class="input-field">
-                                        <div class="input-field">
-                                            <button type="submit" name="action"
-                                                    class="btn btn--submit btn--md btn--primary mdl-button mdl-button mdl-js-button mdl-js-ripple-effect">
-                                                SEND
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                    <form id="1" class="form-validation form--hor" method="post" action="">
-                        <fieldset name="inputs">
-                            <a name="" id="">
-                                <h2>Input - simple types</h2>
-                            </a>
-                            <div class="form-block">
-
-                                <div class="col-group">
-                                    <div class="col-mb-8 col-mb-8 col-6">
-                                        <label class="form-block__name">Text</label>
-                                    </div>
-                                    <div class="col-mb-16 col-18">
-                                        <div class="input-field">
-                                            <input type="text" name="Text" placeholder="RS Studio" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-block">
-
-                                <div class="col-group">
-                                    <div class="col-mb-8 col-6">
-                                        <label class="form-block__name">Text disabled</label>
-                                    </div>
-                                    <div class="col-mb-16 col-18">
-                                        <div class="input-field">
-                                            <input type="text" name="Text" placeholder="RS Studio" disabled
+                                            <input type="text" name="testName" id="testName" placeholder="RS Studio"
                                                    required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-block">
-
+                            <div class="form-block ">
                                 <div class="col-group">
-                                    <div class="col-mb-8 col-6">
-                                        <label class="form-block__name">Text read only</label>
+                                    <div class="col-mb-8 col-6 col-dt-4 col-ld-3">
+                                        <label class="form-block__name">Significantly Longer
+                                            Text
+                                        </label>
                                     </div>
-                                    <div class="col-mb-16 col-18">
+                                    <div class="col-mb-16 col-18 col-dt-14 col-ld-12">
                                         <div class="input-field">
-                                            <input type="text" name="Text" placeholder="RS Studio" readonly
+                                            <input type="text" name="testName" id="testName" placeholder="RS Studio"
                                                    required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-block">
-
+                            <div class="form-block ">
                                 <div class="col-group">
-                                    <div class="col-mb-8 col-6">
-                                        <label class="form-block__name">Number</label>
+                                    <div class="col-mb-8 col-6 col-dt-4 col-ld-3">
+                                        <label class="form-block__name">Really, really, really
+                                            longer text</label>
                                     </div>
-                                    <div class="col-mb-16 col-18">
+                                    <div class="col-mb-16 col-18 col-dt-20 col-ld-16">
                                         <div class="input-field">
-                                            <input type="number" name="Number" placeholder="12345" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-block">
-
-                                <div class="col-group">
-                                    <div class="col-mb-8 col-6">
-                                        <label class="form-block__name">Password</label>
-                                    </div>
-                                    <div class="col-mb-16 col-18">
-                                        <div class="input-field">
-                                            <input type="password" name="Password" placeholder="RS Studio"
+                                            <input type="text" name="testName" id="testName" placeholder="RS Studio"
                                                    required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-block">
-
+                            <div class="form-block ">
                                 <div class="col-group">
-                                    <div class="col-mb-8 col-6">
-                                        <label class="form-block__name">Control element error with
-                                            icon</label>
+                                    <div class="col-mb-8 col-6 col-dt-4 col-ld-3">
+                                        <label class="form-block__name">That's just absurd.
+                                            Can we even make
+                                            label this wide?</label>
                                     </div>
-                                    <div class="col-mb-16 col-18">
+                                    <div class="col-mb-16 col-18 col-dt-20 col-ld-21">
                                         <div class="input-field">
-                                            <input type="text" name="with_desc" placeholder="Placeholder"
+                                            <input type="text" name="testName" id="testName" placeholder="RS Studio"
                                                    required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
-                        <div class="form-block">
-                            <div class="col-group">
-                                <div class="col-mb-8 col-6">
-                                </div>
-                                <div class="col-mb-16 col-18">
-                                    <div class="input-field">
-                                        <div class="input-field">
-                                            <button type="submit" name="action"
-                                                    class="btn btn--submit btn--md btn--primary mdl-button mdl-button mdl-js-button mdl-js-ripple-effect">
-                                                SEND
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
 
                     </form>
+
                     <% include ../../layout/app_footer %>
                 </section>
             </div>

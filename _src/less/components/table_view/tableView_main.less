@@ -34,6 +34,15 @@ table.dataTable {
     tr td,
     tr th {
       border-bottom: 1px solid @background;
+      &.check-truncate{
+        white-space: nowrap;
+      }
+      &.truncate-active{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 30px;
+      }
     }
     tr th {
       color: lighten(@secondary-bg, 45%);

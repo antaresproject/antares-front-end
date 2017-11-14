@@ -42,12 +42,36 @@
                             data-selectAR--search="true" name="select" id="select-anchor">
                     </select>
                 </div>
-                <section class="generals-form gen-settings--full">
+                <section class="generals-form">
                     <h1>Form Elements</h1>
+                    <form method="post" action="">
+                        <fieldset name="Buttons">
+                            <a name="AntaresButtons">
+                                <legend>Buttons</legend>
+                            </a>
+                            <% include ../ui_components/ui_btn %>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Buttons" class="btn-with-icon">
+                            <a name="AntaresButtonsWithIcon">
+                                <legend>Buttons with icon</legend>
+                            </a>
+                            <% include ../ui_components/ui_btn_with_icon %>
+                        </fieldset>
+                    </form>
+                    <form method="post" action="">
+                        <fieldset name="Buttons">
+                            <a name="AntaresButtonsSizes">
+                                <legend>Buttons sizes</legend>
+                            </a>
+                            <% include ../ui_components/ui_btn_sizes %>
+                        </fieldset>
+                    </form>
                     <form>
                         <fieldset name="inputs">
                             <a name="AntaresInputs" id="AntaresInputs">
-                                <h2>Inputs - simple</h2>
+                                <legend>Inputs - simple</legend>
                             </a>
                             <% include ../ui_components/ui_input_simple %>
                         </fieldset>
@@ -55,7 +79,7 @@
                     <form>
                         <fieldset name="Selects">
                             <a name="AntaresSelects">
-                                <h2>Selects</h2>
+                                <legend>Selects</legend>
                             </a>
                             <% include ../ui_components/ui_selects %>
                         </fieldset>
@@ -63,7 +87,7 @@
                     <form>
                         <fieldset class="more-inputs">
                             <a name="AntaresRareInput">
-                                <h2>More inputs</h2>
+                                <legend>More inputs</legend>
                             </a>
                             <% include ../ui_components/ui_more_input %>
                         </fieldset>
@@ -71,7 +95,7 @@
                     <form>
                         <fieldset name="Input-with-button">
                             <a name="AntaresInputWithButton">
-                                <h2>Input with button</h2>
+                                <legend>Input with button</legend>
                             </a>
                             <% include ../ui_components/ui_input_with_btn %>
                         </fieldset>
@@ -79,7 +103,7 @@
                     <form>
                         <fieldset>
                             <a name="AntaresTextarea">
-                                <h2>Textarea and tooltip</h2>
+                                <legend>Textarea and tooltip</legend>
                             </a>
 
                             <% include ../ui_components/ui_textarea %>
@@ -87,18 +111,18 @@
                     </form>
 
                     <form>
-                        <fieldset name="AntaresAdditionals">
-                            <a name="AntaresAdditionals">
-                                <h2>Additionals</h2>
+                        <fieldset name="AntaresDatepickers">
+                            <a name="AntaresDatepickers">
+                                <legend>Datepickers</legend>
                             </a>
-                            <% include ../ui_components/ui_additionals %>
+                            <% include ../ui_components/ui_datepickers %>
                         </fieldset>
                     </form>
 
                     <form>
                         <fieldset name="RadioCheckSwitch">
                             <a name="AntaresSwitch">
-                                <h2>Switch</h2>
+                                <legend>Switch</legend>
                             </a>
                             <% include ../ui_components/ui_switch %>
                         </fieldset>
@@ -106,7 +130,7 @@
                     <form>
                         <fieldset name="RadioCheckSwitch">
                             <a name="AntaresRadio">
-                                <h2>Radio</h2>
+                                <legend>Radio</legend>
                             </a>
                             <% include ../ui_components/ui_radio %>
                         </fieldset>
@@ -114,7 +138,7 @@
                     <form>
                         <fieldset name="RadioCheckSwitch">
                             <a name="AntaresCheckbox">
-                                <h2>Checkbox</h2>
+                                <legend>Checkbox</legend>
                             </a>
                             <% include ../ui_components/ui_checkbox %>
                         </fieldset>
@@ -122,7 +146,7 @@
                     <form>
                         <fieldset name="Sliders" class="slider">
                             <a name="AntaresStandardSlider">
-                                <h2>Slider</h2>
+                                <legend>Slider</legend>
                             </a>
                             <% include ../ui_components/ui_sliders %>
                         </fieldset>
@@ -130,7 +154,7 @@
                     <form>
                         <fieldset name="spinners" class="spinner">
                             <a name="AntaresSpinner">
-                                <h2>Spinners</h2>
+                                <legend>Spinners</legend>
                             </a>
                             <% include ../ui_components/ui_spinners %>
                         </fieldset>
@@ -138,7 +162,7 @@
                     <form>
                         <fieldset name="MDLForms">
                             <a name="AntaresMDForms">
-                                <h2>MD Forms</h2>
+                                <legend>MD Forms</legend>
                             </a>
                             <% include ../ui_components/ui_md_forms %>
                         </fieldset>
@@ -146,7 +170,7 @@
                     <form>
                         <fieldset name="inputFIle">
                             <a name="AntaresInputFile">
-                                <h2>Input file</h2>
+                                <legend>Input file</legend>
                             </a>
                             <% include ../ui_components/ui_input_file %>
                         </fieldset>

@@ -1,20 +1,26 @@
 #app-wrapper.main-sidebar--ca {
   .main-head--ca {
-    @import "CA_mainhead";
+    @import 'CA_mainhead';
   }
   .main-menu-html--ca {
-    @import "CA_menutop";
+    @import 'CA_menutop';
+  }
+
+  // buttons
+  .main-head .mdl-js-button.mdl-js-ripple-effect {
+    width: auto !important;
+    height: auto !important;
   }
 }
 
-
-[data-name="dashboard-CA"] a:hover .zmdi-toys {
+[data-name='dashboard-CA'] a:hover .zmdi-toys {
   animation-name: spin;
   animation-duration: 600ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   z-index: 100;
 }
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -24,4 +30,10 @@
   }
 }
 
-
+#app-wrapper {
+  @media only screen and (max-width: 1023px) {
+    .main-menu-html--ca + .app-content {
+      padding: 0;
+    }
+  }
+}

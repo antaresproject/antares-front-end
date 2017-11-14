@@ -24,15 +24,27 @@
         opacity: 0;
     }
 
+    #app-wrapper.main-sidebar--top .main-menu.main-menu--primary > li a i, #app-wrapper.main-sidebar--top .main-menu.main-menu--secondary > li a i {
+        margin-right: 16px;
+    }
+
     .grid-stack-item-content {
         background: #fff;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .app-content.page-dashboard {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
     }
 
     aside.main-sidebar {
         width: 100vw;
         height: 80px;
     }
-    @media only screen and (max-width: 1023px){
+
+    @media only screen and (max-width: 1023px) {
         aside.main-sidebar {
             transform: translateX(-100%);
         }

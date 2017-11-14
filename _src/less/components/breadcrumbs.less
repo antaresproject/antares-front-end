@@ -21,13 +21,13 @@
   font-weight: 600;
   height: 100%;
   color: lighten(@primary-bg, 20%);
-  @media only screen and (max-width:1023px) {
+  @media only screen and (max-width: 1023px) {
 
     > li {
       //display: none;
 
       &:last-child {
-        display: flex;
+        display: flex !important;
 
         &:before {
           display: none;
@@ -45,13 +45,10 @@
     text-transform: capitalize;
     padding: 0 16px;
 
-
     &:last-child {
 
-      .ddown__init {
-        a {
-          color: #fff;
-        }
+      a {
+        color: #fff;
       }
     }
 
@@ -84,8 +81,6 @@
     a {
       z-index: 1;
     }
-
-
 
     &.is-active {
       //background: lighten(@primary-bg, 4%);
@@ -131,7 +126,7 @@
       }
     }
   }
-  li > .ddown{
+  li > .ddown {
     padding-top: 2px;
   }
 }
@@ -148,43 +143,57 @@
   }
 }
 
+@media @xs {
+  .breadcrumbs {
+    .ddown__init {
+      &>a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 349px) {
   .breadcrumbs {
-    li {
+    .ddown__init {
       margin-right: 0;
-      .ddown__init a {
+      &>a {
         max-width: 55px;
       }
     }
   }
 }
 
-@media only screen and (min-width:350px) and (max-width: 399px) {
+@media only screen and (min-width: 350px) and (max-width: 399px) {
   .breadcrumbs {
-    li {
+    .ddown__init {
       margin-right: 0;
-      .ddown__init a {
+      &>a {
         max-width: 105px;
       }
     }
   }
 }
 
-@media only screen and (min-width:400px) and (max-width: 549px) {
+@media only screen and (min-width: 400px) and (max-width: 549px) {
   .breadcrumbs {
-    li {
+    .ddown__init {
       margin-right: 0;
-      .ddown__init a {
+      &>a {
         max-width: 145px;
       }
     }
   }
 }
-@media only screen and (min-width:550px) and (max-width: 767px){
+
+@media only screen and (min-width: 550px) and (max-width: 767px) {
   .breadcrumbs {
-    li {
+    .ddown__init {
       margin-right: 0;
-      .ddown__init a {
+      &>a {
         max-width: 290px;
       }
     }

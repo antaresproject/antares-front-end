@@ -1,12 +1,8 @@
 //default
 .drop-open .drop-element.drop-enabled {
   display: block;
-  @media @xs{
-    padding-left: 8px;
-    padding-right: 8px;
-    width: 100%;
-  }
-  z-index: 21;
+
+  z-index: 18;
 }
 
 .drop-element {
@@ -29,9 +25,10 @@
 }
 
 .antares-dropjs-filter {
-
+  span{
+    border-bottom: 1px solid transparent;
+  }
   .drop-target {
-    line-height: 31px;
   }
   .drop-enabled {
     color: @primary-bg !important;
@@ -39,10 +36,12 @@
 
   }
 }
-.dropjs-display-block{
+
+.dropjs-display-block {
   display: block !important;
   z-index: 30;
 }
+
 .antares-dropjs-filter--out {
   .filter-content {
     position: relative;
@@ -52,9 +51,9 @@
     padding: 20px 24px;
     width: 240px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    &[data-type="datePicker"]{
+    &[data-type="datePicker"] {
       width: 300px;
-      .input-field{
+      .input-field {
         margin-top: 16px;
         margin-bottom: 16px;
       }
@@ -141,12 +140,41 @@
 .drop-open .dropJS-content-real--client-contacts.drop-element {
   background-color: @standard-white;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  @media @xs{
+  @media @xs {
     left: auto !important;
     right: ~'calc(100vw - 48px)' !important;
     width: 70% !important;
     padding: 0;
   }
+}
+
+  .main-head .breadcrumbs {
+    .data-dropJS--target {
+
+      position: relative;
+      a {
+        &:after {
+          .mdl-font();
+          content: '\f2f2';
+          font: normal normal normal 19px/1 'Material-Design-Iconic-Font';
+          position: absolute;
+          line-height: 1;
+          right: -16px;
+          @media @xs{
+            right: -10px
+          }
+          top: 50%;
+          transform: translateY(-50%);
+          color: white;
+        }
+      }
+    }
+  }
+
+.edit-contacts--tools .data-dropJS--target.drop-target i {
+  color: black;
+  margin-left: 0;
+  font-size: 18px;
 }
 
 .dropjs--dropdown {
@@ -180,5 +208,104 @@
         text-align: center;
       }
     }
+  }
+}
+
+div[data-dropjs--target] div[data-dropjs--wrapper] {
+  display: none;
+}
+
+.data-dropJS--target.drop-target {
+  cursor: pointer;
+  li, a, i {
+    color: white;
+  }
+  i {
+    margin-left: 4px;
+  }
+}
+
+.drop-open .data-dropJS--target.drop-element {
+  padding-right: 24px;
+  .default-dropJS--style {
+    background-color: @standard-white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    .default-dropJS--dropdown {
+      margin: 0;
+      list-style-type: none;
+      width: 240px;
+      padding: 8px 0;
+      li {
+        font-size: 13px;
+        line-height: 36px;
+        cursor: pointer;
+        &:hover {
+          a {
+            background-color: @background;
+          }
+        }
+        a {
+          height: 100%;
+          padding: 0 24px;
+          width: auto;
+          color: @primary-c;
+          display: flex;
+          align-items: center;
+          i {
+            width: 24px;
+            margin-right: 16px;
+            color: @text-color-grey;
+            font-size: 24px;
+            text-align: center;
+            &.zmdi-caret-right {
+              margin-right: -8px;
+              margin-left: auto;
+            }
+          }
+          .flex-block {
+            margin-bottom: 0;
+            padding: 4px 0;
+            .flex-block__content {
+              line-height: 20px;
+              .flex-block__desc {
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        & > span {
+          color: #8a9099;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 12px;
+          padding: 8px 24px;
+        }
+        &.is-selected {
+          .flex-block {
+            color: @primary-bg;
+            &:after {
+              position: relative;
+              margin-left: auto;
+              color: @primary-bg;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              display: inline-block;
+              text-rendering: auto;
+              z-index: 1;
+              content: "\f26b";
+              font: normal normal normal 24px/1 Material-Design-Iconic-Font;
+            }
+          }
+        }
+      }
+      &.dropJS-dropdown--header {
+        border-bottom: 1px solid #dfe3e6;
+      }
+      &.dropJS-dropdown--footer {
+        border-top: 1px solid #dfe3e6;
+      }
+
+    }
+
   }
 }

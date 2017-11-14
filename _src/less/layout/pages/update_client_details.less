@@ -195,10 +195,18 @@
       }
     }
     .edit-contacts--tools {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin-left: auto;
+      .mdl-js-button {
+        width: 40px;
+        height:40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > span {
+          border-radius: 50%;
+        }
+      }
     }
     .mobile-target--overflow {
       position: relative;
@@ -297,7 +305,7 @@
                 width: 206px;
               }
               height: 36px;
-              @media @xs{
+              @media @xs {
                 height: 34px;
               }
             }
