@@ -398,7 +398,7 @@ const AntaresTableView = {
                     }
                 })
 
-                AntaresForms.elements.tooltip()
+                // AntaresForms.elements.tooltip()
                 thisTable.resize();
 
 

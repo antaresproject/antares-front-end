@@ -356,10 +356,8 @@ const AntaresMainMenuHtml = {
                             $('.main-menu--secondary>li').css('opacity', '0');
                             self.moreTriggerTopHeight();
                             parent.css('background-color', '#30343d');
-                        }, 100);
-                        setTimeout(function () {
                             $('.main-menu--primary>li').css('opacity', '1');
-                        }, 300);
+                        }, 50);
                         setTimeout(function () {
                             statusAnimation = false;
                             $('.nav-container').removeClass('animation-active');
@@ -382,13 +380,11 @@ const AntaresMainMenuHtml = {
                     if (statusAnimation === true) {
                         $('.more-trigger').addClass('ripple-on-active');
                         setTimeout(function () {
-                            $('.main-menu--secondary>li').css('opacity', '1');
                             $('.main-menu--primary>li').css('opacity', '0');
                             self.moreTriggerTopHeight();
-                        }, 100);
-                        setTimeout(function () {
                             parent.css('background-color', 'rgb(62, 73, 84)');
-                        }, 300);
+                            $('.main-menu--secondary>li').css('opacity', '1');
+                        }, 50);
                         setTimeout(function () {
                             statusAnimation = false;
                             $('.nav-container').removeClass('animation-active');

@@ -16,7 +16,6 @@ import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
 
-
 if (loadPossible) {
   var VueQuery = require('vuequery');
   window.VueQuery = VueQuery;
@@ -118,13 +117,15 @@ if (loadPossible) {
         tree: {}
       };
     },
-    created:function () {
-        this.$http.get('/api/acl.json').then(response => {
-            this.tree = response.body;
-        }, response => {
-            console.log('error');
-        });
-
+    created: function() {
+      this.$http.get('api/acl.json').then(
+        response => {
+          this.tree = response.body;
+        },
+        response => {
+          console.log('error');
+        }
+      );
     }
   });
 

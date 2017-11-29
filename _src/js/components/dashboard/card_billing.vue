@@ -1,5 +1,5 @@
 <template lang="ejs">
-    <div class="card-container">
+    <div class="card-container chart--mobile">
     <card-edit-controls></card-edit-controls>
     <div class="card card--chart card-chart--slim" v-bind:class="{'card--compare ': compareMode}" :data-widget-name="widgetName" data-chart="true">
     <div class="card__left">
@@ -133,6 +133,86 @@
                     type: 'decline',
                 }, {
                     text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions',
+                    value1: 11,
+                    value2: 82,
+                    type: 'grow',
+                }, {
+                    text: 'Transactions LAST',
                     value1: 11,
                     value2: 82,
                     type: 'grow',

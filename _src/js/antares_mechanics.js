@@ -379,7 +379,13 @@ Antares.prototype.components = {
         $(selector).perfectScrollbar(perfectScrollbarCFG);
       }
     }
-
+      enquire.register('screen and (min-width:768px)', {
+          match: function() {
+              addScroll('.card--unadjustable .datarow .dataTablesLogs', true);
+              setTimeout(function () {
+                  addScroll('.card--unadjustable > .dataTables_wrapper', true);
+              }, 300);
+          }})
     enquire.register('screen and (min-width:1200px)', {
       match: function() {
         //main

@@ -24,599 +24,602 @@ require('script-loader!tinycolor2');
 require('./../../external/modified/jquery.minicolors.js');
 
 const AntaresBrandColors = {
-    init() {
-        this.defaultColors();
-        this.colorPickersSmall();
-        this.colorPickersBig();
-        this.updateColorManually();
-        this.resetStyle();
-    },
-    defaultColors() {
-        function takeDefaultColor(type, order) {
-            if (order === undefined) {
-                order = false;
-            }
-            if (order === false) {
-                var color = $('.standard-color--' + type).css('background-color');
-                var colorTiny = tinycolor(color);
-                $('.standard-color--' + type + '+input').val(colorTiny.toHexString());
-            } else {
-                var color = $('.standard-color--' + type + '-' + order).css('color');
-                var colorTiny = tinycolor(color);
-                $('.standard-color--' + type + '-' + order + '+input').val(colorTiny.toHexString());
-            }
-        }
-
-        takeDefaultColor('main');
-        takeDefaultColor('main', 'first');
-        takeDefaultColor('main', 'second');
-        takeDefaultColor('secondary');
-        takeDefaultColor('secondary', 'first');
-        takeDefaultColor('secondary', 'second');
-        takeDefaultColor('background');
-        takeDefaultColor('background', 'first');
-        takeDefaultColor('background', 'second');
-    },
-    addStyles(indicator, elements, styles, value) {
-        $('[data-desc="style-second-first-texts"]').remove();
-        $('head').append("<style data-desc='brand-colors-" + indicator + "'>" + elements + '{' + styles + ':' + value + ' !important' + '}</style>');
-        return true;
-    },
-    clearStyles(indicator) {
-        $('[data-desc="brand-colors-' + indicator + '"]').remove();
-        return true;
-    },
-    resetStyle() {
-        var self = this;
-        $('.reset-style').click(function () {
-            self.defaultColors();
-            AntaresBrandColors.colorPickersBig();
-            AntaresBrandColors.colorPickersSmall();
-        });
-    },
-    updateColorManually() {
-        $('input.cp').on('keyup', function () {
-            var theColor = tinycolor($(this).val());
-            //if is hex and not accept 3digit format
-            if (theColor.isValid() && $(this).val().length === '7') {
-                $(this)
-                    .closest('.cp-brand__preview')
-                    .find('.minicolors-input')
-                    .minicolors('value', $(this).val());
-                $(this).qtip('destroy');
-            } else if ($(this).val().length === 7 && !theColor.isValid()) {
-                $(this).qtip({
-                    style: {
-                        classes: 'ar',
-                        tip: {
-                            width: 9,
-                            height: 5
-                        }
-                    },
-                    content: {
-                        text: $(this).data('tooltip-text')
-                    },
-                    show: {
-                        ready: true
-                    },
-                    hide: {
-                        delay: 1000
-                    },
-                    position: {
-                        viewport: $(window)
-                    }
-                });
-            }
-        });
-    },
-    colorPickersBig() {
-        //default values
-        var self = this;
-        $('.cp-brand__ar-big').minicolors({
-            theme: 'ar-big',
-            textfield: false,
-            format: 'hex',
-            letterCase: 'lowercase',
-            show: function () {
-                $(this)
-                    .closest('.cp-brand')
-                    .css('flex', '2');
-                $(this)
-                    .closest('.minicolors')
-                    .css('z-index', '35');
-            },
-            hide: function () {
-                $(this)
-                    .closest('.cp-brand')
-                    .css('flex', '1');
-                $(this)
-                    .closest('.minicolors')
-                    .css('z-index', '1');
-            },
-            change: function (value, opacity) {
-                var temp = tinycolor(value);
-                var hex = temp.toHexString();
-                //update dev input
-                $(this)
-                    .closest('.cp-brand')
-                    .find('.cp')
-                    .attr('value', hex);
-                if ($(this).closest('.cp-brand--primary').length) { // MAIN----------------------------------------
-                    var mr = tinycolor
-                        .mostReadable(value, ['#000'], {
-                            includeFallbackColors: true,
-                            level: 'AAA',
-                            size: 'small'
-                        })
-                        .toHexString();
-                    $('.cp-brand--typo.cp-brand--primary')
-                        .find('input.cp')
-                        .css('color', mr);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__title')
-                        .css('color', mr);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('input.cp')
-                        .css('color', mr);
-                    var modPri1 = tinycolor(value)
-                            .darken(3)
-                            .toString(),
-                        modPri2 = tinycolor(value)
-                            .brighten(5)
-                            .toString(),
-                        modPri3 = tinycolor(value)
-                            .brighten(10)
-                            .toString(),
-                        modPri4 = tinycolor(value)
-                            .lighten(32)
-                            .toString(),
-                        modPri5 = tinycolor(value)
-                            .darken(4)
-                            .toString(),
-                        primary = 'primary';
-                    self.clearStyles(primary);
-                    //MAIN COLOR
-                    var primaryTargets = [
-                            '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block:after',
-                            'aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col .submenu__content .submenu__content-right .datarow .datarow__right i',
-                            '.flex-block .flex-block__badge',
-                            '.dropzone-form .dz-message .dz-m__content span',
-                            '.ddown .ddown__menu > li:hover > a',
-                            '.ddown .ddown__menu > li:hover > a i',
-                            'i.zmdi-help-outline.help--trigger:hover',
-                            //new
-                            'aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col .submenu__content .submenu__content-right .datarow .datarow__right i',
-                            '.main-menu .is-active .icon, .main-menu .is-active i, .main-menu .is-active .text',
-                            '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block, .ddown.ddown--brand .ddown__menu li.is-selected .flex-block .flex-block__title',
-                            '#table-ma',
-                            '.timeline li.timeline__entry--ok:before',
-                            '.timeline li a',
-                            '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block',
-                            '.ddown.ddown--brand .ddown__menu li.is-selected .flex-block .flex-block__title',
-                            'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl.mobile-ddowns__sgl--open:after',
-
-
-                        ],
-                        primaryTargetsBackground = [
-                            '.app-content:before',
-                            '.switch .switch-checkbox:checked + .switch-container',
-                            '.app-content__footer .btn--submit',
-                            '.menu-aside-container',
-                            '.grid-col--menu, .menu-mobile-settings',
-                            '.app-content:before',
-                            //new
-                            '.mdl-textfield__label:after',
-                            '.card.card--chart-small .card__header',
-                            '.card.card--chart-small .card__header-chart',
-                            '.card.card--primary-light',
-                            '.btn.btn--primary',
-                            'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu',
-
-                        ],
-                        primaryTargetsBorder = [
-                            '.breadcrumbs .ddown__menu',
-                            //new
-                            'aside.main-sidebar.main-menu.main-menu--brand li:nth-child(1).submenu-open > a:after'
-                        ],
-                        primaryTargetsMod1 = ['.menu-aside li.is-active a', '.breadcrumbs > li.is-active'],
-                        primaryTargetsMod3 = ['.badge', '.ddown--brand .ddown__init', '#table-ma.is-disabled','.btn.btn--brand'],
-                        primaryTargetsMod4 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td'],
-                        primaryTargetsMod5 = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header'];
-                    //color
-                        $('meta[name="theme-color"]').attr('content', value)
-                        $('meta[name="msapplication-navbutton-color"]').attr('content', value)
-                        $('meta[name="apple-mobile-web-app-status-bar-style"]').attr('content', value)
-                    self.addStyles(primary, '.menu-mobile-settings + .select2 .select2-selection', 'background-color', modPri1);
-                    //color
-                    for (var i = 0; i < primaryTargets.length; i++) {
-                        self.addStyles(primary, primaryTargets[i], 'color', value);
-                    }
-                    //background
-                    for (var j = 0; j < primaryTargetsBackground.length; j++) {
-                        self.addStyles(primary, primaryTargetsBackground[j], 'background-color', value);
-                    }
-                    //border
-                    for (var k = 0; k < primaryTargetsBorder.length; k++) {
-                        let newStyleBorderValue = 'transparent ' + value + ' transparent transparent;';
-                        self.addStyles(primary, primaryTargetsBorder[k], 'border-color', newStyleBorderValue);
-                    }
-                    //mod1
-                    for (var l = 0; l < primaryTargetsMod1.length; l++) {
-                        self.addStyles(primary, primaryTargetsMod1[l], 'background-color', modPri1);
-                    }
-                    //mod3
-                    for (var h = 0; h < primaryTargetsMod3.length; h++) {
-                        self.addStyles(primary, primaryTargetsMod3[h], 'background-color', modPri3);
-                    }
-                    //mod4
-                    for (var u = 0; u < primaryTargetsMod4.length; u++) {
-                        self.addStyles(primary, primaryTargetsMod4[u], 'background-color', modPri4);
-                    }
-                    //mod5
-                    for (var ub = 0; ub < primaryTargetsMod5.length; ub++) {
-                        self.addStyles(primary, primaryTargetsMod5[ub], 'border-color', modPri5);
-                    }
-                    //apply
-                    $('.colors-text-main-first').val(value);
-                    $(this)
-                        .closest('.color-pickers')
-                        .find('.cp-brand--typo.cp-brand--primary')
-                        .find('.cp-brand__preview')
-                        .css('background-color', value);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(0)
-                        .css('background-color', modPri1);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(1)
-                        .css('background-color', modPri2);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(2)
-                        .css('background-color', modPri3);
-                    $('.colors-main-mod1').val(modPri1);
-                    $('.colors-main-mod2').val(modPri2);
-                    $('.colors-main-mod3').val(modPri3);
-                } else if ($(this).closest('.cp-brand--secondary').length) {  //SECONDARY--------------------
-                    var mr3 = tinycolor
-                        .mostReadable(value, ['#000'], {
-                            includeFallbackColors: true,
-                            level: 'AAA',
-                            size: 'small'
-                        })
-                        .toHexString();
-                    $('.cp-brand--typo.cp-brand--secondary')
-                        .find('input.cp')
-                        .css('color', mr3);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__title')
-                        .css('color', mr3);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('input.cp')
-                        .css('color', mr3);
-                    var modSec1 = tinycolor(value)
-                            .darken(3)
-                            .toString(),
-                        modSec2 = tinycolor(value)
-                            .brighten(9)
-                            .saturate(2)
-                            .darken(1)
-                            .toString(),
-                        modSec3 = tinycolor(value)
-                            .brighten(36)
-                            .toString();
-                    //SECONDARY
-                    var secondary = 'secondary';
-                    self.clearStyles(secondary);
-                    self.addStyles(secondary, 'aside.main-sidebar[data-menu-on-load="primary"]', 'background-color', value);
-                    self.addStyles(secondary, 'aside.main-sidebar[data-menu-on-load="secondary"]', 'background-color', modSec2);
-                    self.addStyles(secondary, 'aside.main-sidebar ul.main-menu:not(.main-menu--brand) .submenu', 'background-color', modSec1);
-                    self.addStyles(secondary, 'aside.main-sidebar ul.main-menu > li.more-trigger', 'border-color', modSec1);
-                    self.addStyles(secondary, 'aside.main-sidebar .menu-scroll ul.main-menu li.has-submenu > a:after', 'border-color', 'transparent ' + modSec1 + ' transparent transparent !important;');
-                    self.addStyles(secondary, '.main-menu-html div.more-trigger .more-trigger__inner', 'background-color', modSec2);
-                    self.addStyles(secondary, '.main-menu-html .nav-container.animation-active div.more-trigger:before', 'background-color', modSec2);
-                    self.addStyles(secondary, '.main-menu-html div.more-trigger.is-expanded .more-trigger__inner', 'background-color', modSec1);
-                    self.addStyles(secondary, 'aside.main-sidebar .menu-tooltip', 'background-color', modSec2);
-                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns','background-color', modSec2);
-                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar ul.main-menu li.submenu-open .submenu .submenu__mobile-return','background-color', modSec2);
-                    self.addStyles(secondary, 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu','background-color', modSec1);
-                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl.mobile-ddowns__sgl--open:after','color', modSec1);
-                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header','border-color', modSec2);
-                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl','border-color', modSec1);
-                    self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li:hover','background-color', modSec3);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(0)
-                        .css('background-color', modSec1);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(1)
-                        .css('background-color', modSec2);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(2)
-                        .css('background-color', modSec3);
-                    $(this)
-                        .closest('.color-pickers')
-                        .find('.cp-brand--typo.cp-brand--secondary')
-                        .find('.cp-brand__preview')
-                        .css('background-color', value);
-                    $('.colors-secondary-mod1').val(modSec1);
-                    $('.colors-secondary-mod2').val(modSec2);
-                    $('.colors-secondary-mod3').val(modSec3);
-                } else if ($(this).closest('.cp-brand--tetriary').length) {   // BACKGROUND--------------------
-                    var mr2 = tinycolor
-                        .mostReadable(value, ['#000'], {
-                            includeFallbackColors: true,
-                            level: 'AAA',
-                            size: 'small'
-                        })
-                        .toHexString();
-                    $('.cp-brand--typo.cp-brand--tetriary')
-                        .find('input.cp')
-                        .css('color', mr2);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__title')
-                        .css('color', mr2);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('input.cp')
-                        .css('color', mr2);
-                    var modTet1 = tinycolor(value)
-                            .darken(17)
-                            .desaturate(8)
-                            .toString(),
-                        modTet2 = tinycolor(value)
-                            .darken(4)
-                            .desaturate(9)
-                            .toString(),
-                        modTet3 = tinycolor(value)
-                            .lighten(3)
-                            .desaturate(7)
-                            .toString();
-                    //apply
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(0)
-                        .css('background-color', modTet1);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(1)
-                        .css('background-color', modTet2);
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__sgl')
-                        .eq(2)
-                        .css('background-color', modTet3);
-                    $(this)
-                        .closest('.color-pickers')
-                        .find('.cp-brand--typo.cp-brand--tetriary')
-                        .find('.cp-brand__preview')
-                        .css('background-color', value);
-                    $('.colors-background-mod1').val(modTet1);
-                    $('.colors-background-mod2').val(modTet2);
-                    $('.colors-background-mod3').val(modTet3);
-                }
-                //apply to each big color area
-                $(this)
-                    .closest('.cp-brand__preview')
-                    .css('background-color', value);
-                $(this)
-                    .closest('.cp-brand')
-                    .find('input.cp')
-                    .val(value);
-            }
-        });
-        //default colors on init
-        (function miniColorValuesBrand() {
-            var dC1 = $('.color-pickers .col-group:first-child .cp-brand--primary .cp').val(),
-                dC2 = $('.color-pickers .col-group:first-child .cp-brand--secondary .cp').val(),
-                dC3 = $('.color-pickers .col-group:first-child .cp-brand--tetriary .cp').val();
-            $('.cp-brand--primary .cp-brand__ar-big').minicolors('value', {
-                color: dC1
-            });
-            $('.cp-brand--secondary .cp-brand__ar-big').minicolors('value', {
-                color: dC2
-            });
-            $('.cp-brand--tetriary .cp-brand__ar-big').minicolors('value', {
-                color: dC3
-            });
-        })();
-        //additional click on pallets
-        $('.cp-brand__pallete').on('click', function () {
-            $(this)
-                .siblings('.cp-brand__preview')
-                .find('.minicolors-input')
-                .minicolors('show');
-        });
-    },
-    colorPickersSmall() {
-        //Small color pickers
-        var self = this;
-        $('.cp-brand__p-sgl').minicolors({
-            textfield: false,
-            format: 'hex',
-            letterCase: 'lowercase',
-            theme: 'ar-small',
-            show: function () {
-                $(this)
-                    .closest('.cp-brand')
-                    .css('flex', '2');
-            },
-            hide: function () {
-                $(this)
-                    .closest('.cp-brand')
-                    .css('flex', '1');
-            },
-            change: function (value, opacity) {
-                var temp = tinycolor(value);
-                var hex = temp.toHexString();
-                //update dev input
-                $(this)
-                    .closest('.cp-brand__preview')
-                    .find('.cp')
-                    .attr('value', hex);
-                $(this)
-                    .closest('.minicolors')
-                    .next('.color-saver')
-                    .val(value);
-                if ($(this).hasClass('cp-brand__p-sgl--left')) {
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__preview:first-child .cp-brand__big')
-                        .css('color', value);
-                    if ($(this).closest('.cp-brand--primary').length) {
-                        //PRIMARY LEFT
-                        var primaryLeft = 'primary-left',
-                            primaryLeftTargets = [
-                                '.menu-aside li a span, .menu-aside li a i, .menu-aside li a:after, .badge.badge--md',
-                                '.main-head .mdl-textfield--AR label.mdl-textfield__label',
-                                '.breadcrumbs > li:last-child a', '.breadcrumbs > li:last-child a:after',
-                                '.ddown.ddown--user .ddown__menu li a,.ddown.ddown--user .ddown__menu li a i:before',
-                                '.ddown.ddown--brand .ddown__menu .flex-block__title,.ddown.ddown--brand .ddown__menu .ddown__footer a',
-                                '.breadcrumbs > li:last-child .ddown__init a, .breadcrumbs > li > a,.breadcrumbs > li:last-child:before, .breadcrumbs .ddown .ddown__content .ddown__arrow:after,.breadcrumbs .ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
-                                '.item-grp  i',
-                                '.data-dropJS--target.drop-target i',
-                                '.btn.btn--brand',
-                                '.menu-mobile-settings + .select2 .select2-selection__rendered',
-                                '.ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
-                                '.menu-mobile-settings + .select2 .select2-selection .select2-selection__rendered, .menu-mobile-settings + .select2 .select2-selection .select2-selection__rendered:before, .menu-mobile-settings + .select2 .select2-selection__arrow:before',
-                                'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu.mobile-ddowns__menu--user span',
-                                'aside.main-sidebar .mobile-ddowns  span',
-                                'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.is-selected .flex-block:after'
-                            ];
-                        self.clearStyles(primaryLeft);
-                        self.addStyles(primaryLeft, '.burgericon > a .line', 'background', value);
-                        self.addStyles(primaryLeft, 'aside.main-sidebar .mobile-ddowns  .mdl-button__ripple-container .mdl-ripple ', 'background', value);
-                        for (var q = 0; q < primaryLeftTargets.length; q++) {
-                            self.addStyles(primaryLeft, primaryLeftTargets[q], 'color', value);
-                        }
-                        //apply
-                        $('.colors-text-main-first').val(value);
-                    }
-                    if ($(this).closest('.cp-brand--secondary').length) {
-                        //SECONDARY LEFT
-                        var secondartLeft = 'secondary-left',
-                            secondartLeftTargets = ['aside.main-sidebar ul.main-menu > li > a', 'aside.main-sidebar ul.main-menu > li > a .icon', 'aside.main-sidebar ul.main-menu > li > a i', 'aside.main-sidebar ul.main-menu .submenu section .data-list li a', 'aside.main-sidebar ul.main-menu .submenu ul > li span'];
-                        self.clearStyles(secondartLeft);
-                        for (var a = 0; a < secondartLeftTargets.length; a++) {
-                            self.addStyles(secondartLeft, secondartLeftTargets[a], 'color', value);
-                        }
-                        //apply
-                        $('.colors-text-secondary-first').val(value);
-                    }
-                    if ($(this).closest('.cp-brand--tetriary').length) {
-                        //TETRIARY LEFT
-                        var tetriaryLeft = 'tetriary-left',
-                            tetriaryLeftTargets = ['.form-block label:not(.switch)'];
-                        self.clearStyles(tetriaryLeft);
-                        for (var s = 0; s < tetriaryLeftTargets.length; s++) {
-                            self.addStyles(tetriaryLeft, tetriaryLeftTargets[s], 'color', value);
-                        }
-                        //apply
-                        $('.colors-text-background-first').val(value);
-                    }
-                } else if ($(this).hasClass('cp-brand__p-sgl--right')) {
-                    $(this)
-                        .closest('.cp-brand')
-                        .find('.cp-brand__preview:last-child .cp-brand__big')
-                        .css('color', value);
-                    if ($(this).closest('.cp-brand--primary').length) {
-                        //PRIMARY RIGHT
-                        var primaryRight = 'primary-right',
-                            primaryRightTargets = ['.search-box .search-box__search-field', '.search-box > i', '.search-box .search-box__mdl-textfield .mdl-textfield__label'],
-                            primaryRightTargetsBorder = ['.search-box .search-box__search-field'];
-                        self.clearStyles(primaryRight);
-                        for (var f = 0; f < primaryRightTargets.length; f++) {
-                            self.addStyles(primaryRight, primaryRightTargets[f], 'color', value);
-                        }
-                        for (var d = 0; d < primaryRightTargetsBorder.length; d++) {
-                            self.addStyles(primaryRight, primaryRightTargetsBorder[d], 'border-color', value);
-                        }
-                        //apply
-                        $('.colors-text-main-second').val(value);
-                    }
-                    if ($(this).closest('.cp-brand--secondary').length) {
-                        //SECONDARY RIGHT
-                        var secondaryRight = 'secondary-right';
-                        self.clearStyles(secondaryRight);
-                        var secondaryRightTargets = [
-                            'aside.main-sidebar ul.main-menu > li > a:hover',
-                            'aside.main-sidebar ul.main-menu > li > a:hover .icon',
-                            'aside.main-sidebar ul.main-menu > li > a:hover i',
-                            'aside.main-sidebar ul.main-menu > li.hovered .text',
-                            'aside.main-sidebar ul.main-menu > li.hovered .icon',
-                            'aside.main-sidebar ul.main-menu > li.hovered i',
-                            'aside.main-sidebar ul.main-menu .submenu section .data-list li a:hover span'
-                        ];
-                        for (var g = 0; g < secondaryRightTargets.length; g++) {
-                            self.addStyles(secondaryRight, secondaryRightTargets[g], 'color', value);
-                        }
-                        //apply
-                        $('.colors-text-secondary-second').val(value);
-                    }
-                    if ($(this).closest('.cp-brand--tetriary').length) {
-                        //TETRIARY RIGHT
-                        var tetriaryRight = 'tetriary-right';
-                        self.clearStyles(tetriaryRight);
-                        self.addStyles(tetriaryRight, 'form fieldset legend', 'color', value);
-                        //apply
-                        $('.colors-text-background-second').val(value);
-                    }
-                }
-                $(this)
-                    .closest('.cp-brand__preview')
-                    .find('input.cp')
-                    .val(value);
-                //contrast
-                var mr4 = tinycolor
-                    .mostReadable(value, ['#000'], {
-                        includeFallbackColors: true,
-                        level: 'AAA',
-                        size: 'small'
-                    })
-                    .toHexString();
-                $(this)
-                    .closest('.cp-brand__preview')
-                    .find('input.cp')
-                    .css('color', mr4);
-            }
-        });
-        (function miniColorValuesTypo() {
-            var primaryTypo = $('.cp-brand--primary.cp-brand--typo'),
-                secondaryTypo = $('.cp-brand--secondary.cp-brand--typo'),
-                tetriaryTypo = $('.cp-brand--tetriary.cp-brand--typo');
-            var smallDC1 = primaryTypo.find('.cp-brand__preview:nth-child(1) .cp').val();
-            var smallDC2 = primaryTypo.find('.cp-brand__preview:nth-child(2) .cp').val();
-            var smallDC3 = secondaryTypo.find('.cp-brand__preview:nth-child(1) .cp').val();
-            var smallDC4 = secondaryTypo.find('.cp-brand__preview:nth-child(2) .cp').val();
-            var smallDC5 = tetriaryTypo.find('.cp-brand__preview:nth-child(1) .cp').val();
-            var smallDC6 = tetriaryTypo.find('.cp-brand__preview:nth-child(2) .cp').val();
-            primaryTypo.find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl').minicolors('value', {color: smallDC1});
-            primaryTypo.find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl').minicolors('value', {color: smallDC2});
-            secondaryTypo.find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl').minicolors('value', {color: smallDC3});
-            secondaryTypo.find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl').minicolors('value', {color: smallDC4});
-            tetriaryTypo.find('.cp-brand__preview:nth-child(1) .cp-brand__p-sgl').minicolors('value', {color: smallDC5});
-            tetriaryTypo.find('.cp-brand__preview:nth-child(2) .cp-brand__p-sgl').minicolors('value', {color: smallDC6});
-        })();
+  init() {
+    this.defaultColors();
+    this.colorPickersSmall();
+    this.colorPickersBig();
+    // this.updateColorManually();
+    this.resetStyle();
+  },
+  setLastChosenColorsOnLoad() {
+    setTimeout(function() {
+      $('.minicolors-input.cp').each(function() {
+        let colorToBeSet = $(this).val();
+        $(this).minicolors('value', colorToBeSet);
+      });
+    }, 1500);
+  },
+  defaultColors() {
+    function takeDefaultColor(type, order) {
+      if (order === undefined) {
+        order = false;
+      }
+      if (order === false) {
+        var color = $('.standard-color--' + type).css('background-color');
+        var colorTiny = tinycolor(color);
+        $('.standard-color--' + type + '+input').val(colorTiny.toHexString());
+      } else {
+        var color = $('.standard-color--' + type + '-' + order).css('color');
+        var colorTiny = tinycolor(color);
+        $('.standard-color--' + type + '-' + order)
+          .closest('.cp-brand__ar-big')
+          .find('.cp')
+          .val(colorTiny.toHexString());
+      }
     }
+
+    takeDefaultColor('main');
+    takeDefaultColor('main', 'first');
+    takeDefaultColor('main', 'second');
+    takeDefaultColor('secondary');
+    takeDefaultColor('secondary', 'first');
+    takeDefaultColor('secondary', 'second');
+    takeDefaultColor('background');
+    takeDefaultColor('background', 'first');
+    takeDefaultColor('background', 'second');
+  },
+  addStyles(indicator, elements, styles, value, id) {
+    $('[data-desc=brand-colors-' + indicator + '_' + id + ']').remove();
+    window.requestAnimationFrame(function() {
+      $('head').append("<style class='antares-bc' data-desc='brand-colors-" + indicator + '_' + id + "'>" + elements + '{' + styles + ':' + value + ' !important' + '}</style>');
+
+      var currentBrandValues = $('.antares-bc').text();
+
+      if ($('textarea.brand-colors-container').length > 0) {
+        $('textarea.brand-colors-container').val(currentBrandValues);
+      }
+    });
+
+    return true;
+  },
+  clearStyles(indicator) {
+    $('[data-desc="brand-colors-' + indicator + '"]').remove();
+    return true;
+  },
+  resetStyle() {
+    var self = this;
+    $('.reset-style').click(function() {
+      self.defaultColors();
+      AntaresBrandColors.colorPickersBig();
+      AntaresBrandColors.colorPickersSmall();
+    });
+  },
+  updateColorManually() {
+    $('input.cp').on('keyup', function() {
+      var theColor = tinycolor($(this).val());
+      //if is hex and not accept 3digit format
+      if (theColor.isValid() && $(this).val().length === '7') {
+        $(this)
+          .closest('.cp-brand__preview')
+          .find('.minicolors-input')
+          .minicolors('value', $(this).val());
+        $(this).qtip('destroy');
+      } else if ($(this).val().length === 7 && !theColor.isValid()) {
+        $(this).qtip({
+          style: {
+            classes: 'ar',
+            tip: {
+              width: 9,
+              height: 5
+            }
+          },
+          content: {
+            text: $(this).data('tooltip-text')
+          },
+          show: {
+            ready: true
+          },
+          hide: {
+            delay: 1000
+          },
+          position: {
+            viewport: $(window)
+          }
+        });
+      }
+    });
+  },
+  colorPickersBig() {
+    //default values
+    var self = this;
+    let $self = $(this);
+    $('.cp-brand__ar-big input').each(function() {
+      let $thisMiniColor = $(this);
+      let defaultColor = $thisMiniColor.attr('value');
+      $thisMiniColor.minicolors({
+        theme: 'ar-big',
+        textfield: false,
+        format: 'hex',
+        letterCase: 'lowercase',
+        animationSpeed: 50,
+        animationEasing: 'swing',
+        changeDelay: 0,
+        control: 'hue',
+        defaultValue: '',
+        hideSpeed: 100,
+        inline: false,
+        keywords: '',
+        opacity: false,
+        position: 'bottom left',
+        showSpeed: 100,
+        show: function() {
+          $(this)
+            .closest('.cp-brand')
+            .css('flex', '2');
+          $(this)
+            .closest('.minicolors')
+            .css('z-index', '35');
+        },
+        hide: function() {
+          $(this)
+            .closest('.cp-brand')
+            .css('flex', '1');
+          $(this)
+            .closest('.minicolors')
+            .css('z-index', '1');
+        },
+        change: function(value, opacity) {
+          let $selfInChange = $(this);
+          var zeroColor = tinycolor(value).toString(),
+            darkenColor = tinycolor(value)
+              .darken(6)
+              .toString(),
+            normalColor = tinycolor(value)
+              .brighten(9)
+              .saturate(2)
+              .darken(3)
+              .toString(),
+            lighterColor = tinycolor(value)
+              .brighten(20)
+              .toString();
+          var mr = tinycolor
+            .mostReadable(value, ['#000'], {
+              includeFallbackColors: true,
+              level: 'AAA',
+              size: 'small'
+            })
+            .toHexString();
+
+          if ($selfInChange.closest('.cp-brand--primary').length) {
+            // MAIN----------------------------------------
+            $('meta[name="theme-color"], meta[name="msapplication-navbutton-color"], meta[name="apple-mobile-web-app-status-bar-style"]').attr('content', value);
+            $('.cp-brand--typo.cp-brand--primary')
+              .find('input.cp')
+              .css('color', mr);
+            $selfInChange
+              .closest('.cp-brand')
+              .find('.cp-brand__title')
+              .css('color', mr);
+            $selfInChange
+              .closest('.cp-brand')
+              .find('input.cp')
+              .css('color', mr);
+            self.clearStyles(primary);
+            var primary = 'primary';
+
+            var zeroMode = ['.grid-col--menu, .menu-mobile-settings', '.app-content:before', '.menu-aside-container', '.comiseo-daterangepicker .comiseo-daterangepicker-buttonpanel .btn--primary:hover'],
+              darkenMode = ['.breadcrumbs > li.is-active', '.menu-mobile-settings + .select2 .select2-selection', '#app-wrapper.main-sidebar--top--mobile.mobile-menu-active .main-head', '.card-bar .card-bar__close'],
+              normalMode = [
+                '.ddown--brand .ddown__init',
+                '#table-ma.is-disabled',
+                '.btn.btn--brand',
+                '.switch .switch-checkbox:checked + .switch-container',
+                '.app-content__footer .btn--submit',
+                '.menu-aside li.is-active a',
+                // '.mdl-textfield__label:after',
+                '.table-key .table-key__mobile-open.table-key__mobile-open--open',
+                '.card.card--chart-small .card__header',
+                '.card.card--chart-small .card__header-chart',
+                '.card.card--primary-light',
+                '.btn.btn--primary',
+                '.select2-container .select2-selection--multiple .select2-selection__rendered li.select2-selection__choice',
+                'table.collapsed tbody tr.parent td:first-child:before',
+                '.icheckbox_billevo:active',
+                '.icheckbox_billevo:focus',
+                '.icheckbox_billevo:hover',
+                '#app-wrapper .icheckbox_billevo.hover',
+                'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu',
+                '.ddown.ddown-multi .ddown-multi__submenu > li.ddown-multi__return',
+                '.icheckbox_billevo.checked',
+                '.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after',
+                '.form-block .radio-btns [data-type="radio-btn"] input:checked + .btn',
+                '#notification-counter, .main-head .item-grp-single .badge ',
+                '.error-container .top-area',
+                '.mdl-tabs__tab .mdl-tabs__ripple-container .mdl-ripple'
+              ],
+              lightMode = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header', '.btn.btn--highlight'];
+
+            var primaryColorNormal = [
+              '.grid-stack-item-content .card.card--pagination .tbl-c .pagination--type2 .dataTables_paginate span > .mdl-js-button.current',
+              '.dataTables_length a.active',
+              '.timeline li a',
+              '.pagination .antares-pagination ul li .active, .pagination .antares-pagination ul li.active span',
+              '#app-wrapper .tbl-c--zd .zd .zd__header i',
+              '.card--info .col-group.admin',
+              '.tbl-c table tr td a:not(.btn--primary)',
+              '.mdl-tabs .mdl-tabs__tab.is-active',
+              '.app-content.page-login .login-box .password-reset',
+              '.mdl-badge--no-background',
+              '.zd__header i',
+              // '.item-grp  i',
+              '.ddown.ddown--user .ddown__menu li a i:before',
+              'aside.main-sidebar .menu-tooltip .menu-tooltip__header i',
+              '.select2-dropdown ul.select2-results__options li.select2-results__option[aria-selected="true"]:after',
+              'aside.main-sidebar .menu-tooltip .menu-tooltip__header span'
+            ];
+
+            var primaryBackgroundLighter = ['.tbl-c .antares-table tr.is-selected td, .tbl-c .antares-table tr.ui-selected td, .tbl-c .antares-table tr.ui-selecting td', '.error-container .top-area .error-message'];
+
+            for (var io = 0; io < primaryBackgroundLighter.length; io++) {
+              self.addStyles(primary, primaryBackgroundLighter[io], 'background', lighterColor, 'lighterColor');
+            }
+
+            self.addStyles(tetriary, '.error-container .bottom-area', 'background', normalColor, 'normalMode');
+
+            for (var iu = 0; iu < primaryColorNormal.length; iu++) {
+              self.addStyles(primary, primaryColorNormal[iu], 'color', normalColor, 'normalMode');
+            }
+
+            var primaryColorLighter = ['.breadcrumbs > li:not(".active"):first-child'];
+
+            for (var xu = 0; xu < primaryColorLighter.length; xu++) {
+              self.addStyles(primary, primaryColorLighter[xu], 'color', lighterColor, 'lighterColor');
+            }
+
+            var primaryColorDarken = ['.app-content.page-login .login-box .input-field .mdl-textfield__input'];
+            for (var xu = 0; xu < primaryColorDarken.length; xu++) {
+              self.addStyles(primary, primaryColorDarken[xu], 'color', darkenColor, 'darkenMode');
+            }
+
+            // gradient
+            let gradient = 'linear-gradient(to right, ' + darkenColor + ' 0%, ' + lighterColor + ' 100%)';
+            self.addStyles(primary, '.app-content.page-login', 'background-image', gradient, 'normalColor');
+
+            for (var z = 0; z < zeroMode.length; z++) {
+              self.addStyles(primary, zeroMode[z], 'background-color', zeroColor, 'zeroMode');
+            }
+            for (var l = 0; l < darkenMode.length; l++) {
+              self.addStyles(primary, darkenMode[l], 'background-color', darkenColor, 'darkenMode');
+            }
+            for (var h = 0; h < normalMode.length; h++) {
+              self.addStyles(primary, normalMode[h], 'background-color', normalColor, 'normalMode');
+            }
+            for (var u = 0; u < lightMode.length; u++) {
+              self.addStyles(primary, lightMode[u], 'background-color', lighterColor, 'lighterColor');
+            }
+
+            let primaryBorderDarken = ['.antares-dropjs-filter .drop-enabled', '.table-key .table-key__input', '.icheck-label:hover > .icheckbox_billevo, .icheckbox_billevo.hover'];
+
+            for (var z = 0; z < primaryBorderDarken.length; z++) {
+              self.addStyles(primary, primaryBorderDarken[z], 'border-color', darkenColor, 'darkenColor');
+            }
+            self.addStyles(primary, '.antares-dropjs-filter .drop-enabled', 'color', darkenColor, 'darkenColor');
+            self.addStyles(primary, 'aside.main-sidebar .main-menu .submenu__content .is-active span', 'color', lighterColor, 'lighterColor');
+
+            $('.colors-text-main-first').val(zeroColor);
+
+            let thisColorPicker = $selfInChange.closest('.cp-brand').find('.cp-brand__sgl');
+            thisColorPicker.eq(0).css('background-color', darkenColor);
+            thisColorPicker.eq(1).css('background-color', normalColor);
+            thisColorPicker.eq(2).css('background-color', lighterColor);
+            $selfInChange
+              .closest('.color-pickers')
+              .find('.cp-brand--typo.cp-brand--primary')
+              .find('.cp-brand__preview')
+              .css('background-color', zeroColor);
+            $('.colors-main-mod1').val(darkenColor);
+            $('.colors-main-mod2').val(normalColor);
+            $('.colors-main-mod3').val(lighterColor);
+          } else if ($selfInChange.closest('.cp-brand--secondary').length) {
+            //SECONDARY--------------------
+            $('.cp-brand--typo.cp-brand--secondary')
+              .find('input.cp')
+              .css('color', mr);
+            $selfInChange
+              .closest('.cp-brand')
+              .find('.cp-brand__title')
+              .css('color', mr);
+            $selfInChange
+              .closest('.cp-brand')
+              .find('input.cp')
+              .css('color', mr);
+            var secondary = 'secondary';
+            self.clearStyles(secondary);
+
+            var zeroMode = ['aside.main-sidebar[data-menu-on-load="primary"]', '.color-pickers .cp-brand--typo.cp-brand--secondary .cp-brand__preview'],
+              darkenMode = ['aside.main-sidebar ul.main-menu:not(.main-menu--brand) .submenu', 'aside.main-sidebar ul.main-menu > li.more-trigger', '.main-menu-html div.more-trigger.is-expanded .more-trigger__inner', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu', '#app-wrapper.main-sidebar--top .main-sidebar nav ul.main-menu .submenu-open .submenu'],
+              normalMode = ['aside.main-sidebar[data-menu-on-load="secondary"]', '.main-menu-html div.more-trigger .more-trigger__inner', '.main-menu-html .nav-container.animation-active div.more-trigger:before', 'aside.main-sidebar .menu-tooltip', '#app-wrapper aside.main-sidebar .mobile-ddowns', '#app-wrapper aside.main-sidebar ul.main-menu li.submenu-open .submenu .submenu__mobile-return'],
+              lightMode = ['#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li:hover', '#app-wrapper .card-bar', 'body #app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-menu .submenu-open .submenu'];
+
+            for (var z = 0; z < zeroMode.length; z++) {
+              self.addStyles(secondary, zeroMode[z], 'background-color', zeroColor, 'zeroColor');
+            }
+            for (var l = 0; l < darkenMode.length; l++) {
+              self.addStyles(secondary, darkenMode[l], 'background-color', darkenColor, 'darkenColor');
+            }
+            for (var h = 0; h < normalMode.length; h++) {
+              self.addStyles(secondary, normalMode[h], 'background-color', normalColor, 'normalColor');
+            }
+            for (var u = 0; u < lightMode.length; u++) {
+              self.addStyles(secondary, lightMode[u], 'background-color', lighterColor, 'lighterColor');
+            }
+
+            self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl.mobile-ddowns__sgl--open:after', 'color', darkenColor, 'darkenColor');
+            self.addStyles(secondary, '.select2-dropdown ul.select2-results__options li.select2-results__option[aria-selected="true"]', 'color', darkenColor, 'darkenColor');
+            self.addStyles(secondary, '.select2-dropdown ul.select2-results__options li.select2-results__option[aria-selected="true"]:after', 'color', darkenColor, 'darkenColor');
+            self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header', 'border-color', normalColor, 'normalColor');
+            self.addStyles(secondary, '#app-wrapper aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl', 'border-color', darkenColor, 'darkenColor');
+            self.addStyles(secondary, '#app-wrapper.main-sidebar--top .main-sidebar.simple-submenu nav ul.main-menu .submenu-open a:after', 'border-color', 'transparent ' + zeroColor + ' transparent transparent', 'zeroColor');
+            self.addStyles(secondary, '#app-wrapper.main-sidebar--top .main-sidebar.simple-submenu[data-menu-on-load="secondary"] nav ul.main-menu .submenu-open a:after', 'border-color', 'transparent ' + normalColor + ' transparent transparent', 'zeroColor');
+            self.addStyles(secondary, '#app-wrapper.main-sidebar--top aside.main-sidebar ul.main-menu > li.submenu-open > a:after', 'border-color', 'transparent ' + zeroColor + ' transparent transparent', 'zeroColor');
+            self.addStyles(secondary, '#app-wrapper:not(.main-sidebar--top) aside[data-menu-on-load="secondary"] ul.main-menu .submenu-open.has-submenu a:after', 'border-color', 'transparent ' + zeroColor + ' transparent transparent', 'zeroColor');
+            self.addStyles(secondary, '#app-wrapper.main-sidebar--top aside.main-sidebar[data-menu-on-load="secondary"] ul.main-menu > li.submenu-open > a:after', 'border-color', 'transparent ' + normalColor + ' transparent transparent', 'normalColor');
+            self.addStyles(secondary, '#app-wrapper:not(.main-sidebar--top) aside[data-menu-on-load="secondary"] ul.main-menu .submenu-open.has-submenu a:after', 'border-color', 'transparent ' + normalColor + ' transparent transparent', 'normalColor');
+
+            let thisColorPicker = $selfInChange.closest('.cp-brand').find('.cp-brand__sgl');
+            thisColorPicker.eq(0).css('background-color', darkenColor);
+            thisColorPicker.eq(1).css('background-color', normalColor);
+            thisColorPicker.eq(2).css('background-color', lighterColor);
+            $selfInChange
+              .closest('.color-pickers')
+              .find('.cp-brand--typo.cp-brand--secondary')
+              .find('.cp-brand__preview')
+              .css('background-color', zeroColor);
+            $('.colors-secondary-mod1').val(darkenColor);
+            $('.colors-secondary-mod2').val(normalColor);
+            $('.colors-secondary-mod3').val(lighterColor);
+          } else if ($selfInChange.closest('.cp-brand--tetriary').length) {
+            // BACKGROUND--------------------
+
+            $('.cp-brand--typo.cp-brand--tetriary')
+              .find('input.cp')
+              .css('color', mr);
+            $selfInChange
+              .closest('.cp-brand')
+              .find('.cp-brand__title')
+              .css('color', mr);
+            $selfInChange
+              .closest('.cp-brand')
+              .find('input.cp')
+              .css('color', mr);
+            var tetriary = 'tetriary';
+
+            var normalModeBorder = ['fieldset .form-block input', 'fieldset .form-block textarea', '.select2 .select2-selection'],
+              zeroMode = [],
+              darkenMode = ['body'],
+              normalMode = ['.ps > .ps__scrollbar-y-rail > .ps__scrollbar-y'],
+              lightMode = [];
+
+            for (var b = 0; b < normalModeBorder.length; b++) {
+              self.addStyles(tetriary, normalModeBorder[b], 'border-color', normalColor, 'normalColor');
+            }
+            for (var z = 0; z < zeroMode.length; z++) {
+              self.addStyles(tetriary, zeroMode[z], 'background-color', zeroColor, 'zeroColor');
+            }
+            for (var l = 0; l < darkenMode.length; l++) {
+              self.addStyles(tetriary, darkenMode[l], 'background-color', darkenColor, 'darkenColor');
+            }
+            for (var h = 0; h < normalMode.length; h++) {
+              self.addStyles(tetriary, normalMode[h], 'background-color', normalColor, 'normalColor');
+            }
+            for (var u = 0; u < lightMode.length; u++) {
+              self.addStyles(tetriary, lightMode[u], 'background-color', lighterColor, 'lighterColor');
+            }
+
+            let thisColorPicker = $selfInChange.closest('.cp-brand').find('.cp-brand__sgl');
+            thisColorPicker.eq(0).css('background-color', darkenColor);
+            thisColorPicker.eq(1).css('background-color', normalColor);
+            thisColorPicker.eq(2).css('background-color', lighterColor);
+            $selfInChange
+              .closest('.color-pickers')
+              .find('.cp-brand--typo.cp-brand--tetriary')
+              .find('.cp-brand__preview')
+              .css('background-color', zeroColor);
+            $('.colors-background-mod1').val(darkenColor);
+            $('.colors-background-mod2').val(normalColor);
+            $('.colors-background-mod3').val(lighterColor);
+          }
+
+          $selfInChange.closest('.cp-brand__preview').css('background-color', zeroColor);
+          // $selfInChange
+          //   .closest('.cp-brand')
+          //   .find('input.cp')
+          //   .val(zeroColor);
+        }
+      });
+      $('.cp-brand__pallete').on('click', function() {
+        $thisMiniColor.minicolors('show');
+      });
+      $('.reset-style').click(function() {
+        $thisMiniColor.minicolors('value', defaultColor);
+      });
+    });
+  },
+  colorPickersSmall() {
+    //Small color pickers
+    var self = this;
+    $('.cp-brand__p-sgl input').each(function() {
+      let $thisMiniColor = $(this);
+      let defaultColor = $thisMiniColor.attr('value');
+      $thisMiniColor.minicolors({
+        textfield: false,
+        format: 'hex',
+        theme: 'ar-small',
+        letterCase: 'lowercase',
+        animationSpeed: 50,
+        animationEasing: 'swing',
+        changeDelay: 0,
+        control: 'hue',
+        defaultValue: '',
+        hideSpeed: 100,
+        inline: false,
+        keywords: '',
+        opacity: false,
+        position: 'bottom left',
+        showSpeed: 100,
+        show: function() {
+          $(this)
+            .closest('.cp-brand')
+            .css('flex', '2');
+        },
+        hide: function() {
+          $(this)
+            .closest('.cp-brand')
+            .css('flex', '1');
+        },
+        change: function(value, opacity) {
+          var temp = tinycolor(value);
+          var hex = temp.toHexString();
+          //update dev input
+          $(this)
+            .closest('.cp-brand__preview')
+            .find('.cp')
+            .attr('value', hex);
+          $(this)
+            .closest('.minicolors')
+            .next('.color-saver')
+            .val(value);
+          if (
+            $(this)
+              .closest('.cp-brand__p-sgl')
+              .hasClass('cp-brand__p-sgl--left')
+          ) {
+            $(this)
+              .closest('.cp-brand')
+              .find('.cp-brand__preview:first-child .cp-brand__big')
+              .css('color', value);
+            if ($(this).closest('.cp-brand--primary').length) {
+              //PRIMARY LEFT
+              var primaryLeft = 'primary-left',
+                primaryLeftTargets = [
+                  '.menu-aside li a span, .menu-aside li a i, .menu-aside li a:after, .badge.badge--md',
+                  '.main-head .mdl-textfield--AR label.mdl-textfield__label',
+                  '.ddown.ddown--brand .ddown__menu .flex-block__title,.ddown.ddown--brand .ddown__menu .ddown__footer a',
+                  '.breadcrumbs > li:last-child .ddown__init a, .breadcrumbs > li > a,.breadcrumbs > li:last-child:before, .breadcrumbs .ddown .ddown__content .ddown__arrow:after,.breadcrumbs .ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i',
+                  '.btn.btn--brand',
+                  '.menu-mobile-settings + .select2 .select2-selection__rendered',
+                  '.ddown .ddown__init.ddown__init--white:after, .ddown .ddown__init.ddown__init--white i'
+                ];
+              self.clearStyles(primaryLeft);
+              self.addStyles(primaryLeft, '.burgericon > a .line', 'background', value, 'standard_value');
+              for (var q = 0; q < primaryLeftTargets.length; q++) {
+                self.addStyles(primaryLeft, primaryLeftTargets[q], 'color', value, 'standard_value');
+              }
+              //apply
+              $('.colors-text-main-first').val(value);
+            }
+            if ($(this).closest('.cp-brand--secondary').length) {
+              //SECONDARY LEFT
+              var secondartLeft = 'secondary-left',
+                secondartLeftTargets = ['aside.main-sidebar ul.main-menu > li > a', 'aside.main-sidebar ul.main-menu .submenu section .data-list li a', 'aside.main-sidebar ul.main-menu .submenu ul > li span'];
+              self.clearStyles(secondartLeft);
+              for (var a = 0; a < secondartLeftTargets.length; a++) {
+                self.addStyles(secondartLeft, secondartLeftTargets[a], 'color', value, 'standard_value');
+              }
+              //apply
+              $('.colors-text-secondary-first').val(value);
+            }
+            if ($(this).closest('.cp-brand--tetriary').length) {
+              //TETRIARY LEFT
+              var tetriaryLeft = 'tetriary-left',
+                tetriaryLeftTargets = ['.form-block label:not(.switch)'];
+              self.clearStyles(tetriaryLeft);
+              for (var s = 0; s < tetriaryLeftTargets.length; s++) {
+                self.addStyles(tetriaryLeft, tetriaryLeftTargets[s], 'color', value, 'standard_value');
+              }
+              //apply
+              $('.colors-text-background-first').val(value);
+            }
+          } else if (
+            $(this)
+              .closest('.cp-brand__p-sgl')
+              .hasClass('cp-brand__p-sgl--right')
+          ) {
+            $(this)
+              .closest('.cp-brand')
+              .find('.cp-brand__preview:last-child .cp-brand__big')
+              .css('color', value);
+            if ($(this).closest('.cp-brand--primary').length) {
+              //PRIMARY RIGHT
+              var primaryRight = 'primary-right',
+                primaryRightTargets = [],
+                primaryRightTargetsBorder = ['.search-box .search-box__search-field'];
+              self.clearStyles(primaryRight);
+              for (var f = 0; f < primaryRightTargets.length; f++) {
+                self.addStyles(primaryRight, primaryRightTargets[f], 'color', value, 'standard_value');
+              }
+              for (var d = 0; d < primaryRightTargetsBorder.length; d++) {
+                self.addStyles(primaryRight, primaryRightTargetsBorder[d], 'border-color', value, 'standard_value');
+              }
+              //apply
+              $('.colors-text-main-second').val(value);
+            }
+            if ($(this).closest('.cp-brand--secondary').length) {
+              //SECONDARY RIGHT
+              var secondaryRight = 'secondary-right';
+              self.clearStyles(secondaryRight);
+              var secondaryRightTargets = [
+                'aside.main-sidebar ul.main-menu > li > a:hover',
+                'aside.main-sidebar ul.main-menu > li > a:hover .icon',
+                'aside.main-sidebar ul.main-menu > li > a:hover i',
+                'aside.main-sidebar ul.main-menu > li.hovered .text',
+                'aside.main-sidebar ul.main-menu > li.hovered .icon',
+                'aside.main-sidebar .menu-scroll ul.main-menu > li.is-active > a > i',
+                'aside.main-sidebar .menu-scroll ul.main-menu > li.is-active > a > .text',
+                'aside.main-sidebar ul.main-menu > li.hovered > a i',
+                'aside.main-sidebar ul.main-menu .submenu section .data-list li a:hover span'
+              ];
+              for (var g = 0; g < secondaryRightTargets.length; g++) {
+                self.addStyles(secondaryRight, secondaryRightTargets[g], 'color', value, 'standard_value');
+              }
+              //apply
+              $('.colors-text-secondary-second').val(value);
+            }
+            if ($(this).closest('.cp-brand--tetriary').length) {
+              //TETRIARY RIGHT
+              var tetriaryRight = 'tetriary-right';
+              self.clearStyles(tetriaryRight);
+              self.addStyles(tetriaryRight, 'form fieldset legend', 'color', value, 'standard_value');
+              //apply
+              $('.colors-text-background-second').val(value);
+            }
+          }
+          //contrast
+          var mr4 = tinycolor
+            .mostReadable(value, ['#000'], {
+              includeFallbackColors: true,
+              level: 'AAA',
+              size: 'small'
+            })
+            .toHexString();
+          $(this)
+            .closest('.cp-brand__preview')
+            .find('input.cp')
+            .css('color', mr4);
+        }
+      });
+      $('.reset-style').click(function() {
+        $thisMiniColor.minicolors('value', defaultColor);
+      });
+    });
+  }
 };
 
-$(function () {
-    window.AntaresBrandColors = AntaresBrandColors;
-    AntaresBrandColors.init();
+$(function() {
+  window.AntaresBrandColors = AntaresBrandColors;
+  AntaresBrandColors.init();
+});
+
+$(window).on('load', () => {
+  AntaresBrandColors.setLastChosenColorsOnLoad();
 });

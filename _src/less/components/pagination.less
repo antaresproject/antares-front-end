@@ -30,14 +30,21 @@
     // add '.card--pagination' to .card
     position: relative;
     padding-bottom: @height-pagination;
+    &.card--logs{
+      padding-bottom: 0 !important;
+      .pagination{
+        padding: 0 !important;
+      }
+    }
     .pagination {
+      z-index: 4;
       height: @height-pagination;
       min-height: @height-pagination;
       padding: 0 24px;
       @media @xs {
         padding: 0 16px;
       }
-      position: absolute;
+      //position: absolute;
       width: 100%;
       bottom: 0;
       left: 0;
@@ -275,7 +282,7 @@
     }
   }
   &.card--pagination.card--mobile-toggled {
-    padding-bottom: 56px;
+    padding-bottom: 62px;
   }
 }
 

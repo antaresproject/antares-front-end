@@ -16,7 +16,7 @@
  * @link       http://antaresproject.io
  * 
 
-*/
+ */
 
 
 'use strict';
@@ -48,27 +48,22 @@ var DropzoneAntares = (function () {
                 (new Dropzone($(this).get(0), attributes)).on('addedfile', function (file) {
                     var read = new FileReader();
                     read.readAsDataURL(file);
-
                     read.onloadend = function () {
                         srcBase.push(read.result);
                     };
-
                     $.each($('.dz-preview'), function (index) {
-
                         var image = $(this).find('.dz-image img');
                         image.hide();
                         setTimeout(function () {
-
                             image.attr('src', srcBase[index]);
                             image.show();
-
                         }, 100);
-
                     });
                 });
             });
         }
     }
+
     DropzoneAntares.prototype.replaceBase64 = function (data) {
         var image = $('.dz-preview:last-child .dz-image img');
         image.hide();
@@ -102,7 +97,7 @@ var DropzoneAntares = (function () {
 
 $(document).ready(function () {
     var handler = '.dropzone-form';
-    var dropzone = new DropzoneAntares($(handler), { url: 'test' });
+    var dropzone = new DropzoneAntares($(handler), {url: 'test'});
     dropzone.manualUpload();
     // $('#app-wrapper').on('DOMNodeInserted', handler, function() {
     //     dropzone.manualUpload();

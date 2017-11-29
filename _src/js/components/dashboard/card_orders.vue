@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container">
+    <div class="card-container chart--laptop">
         <card-edit-controls></card-edit-controls>
         <div class="card card--chart card-chart--slim" v-bind:class="{'card--compare': compareMode}" :data-widget-name="widgetName" data-chart="true">
             <div class="card__left">

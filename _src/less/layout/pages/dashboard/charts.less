@@ -1,7 +1,5 @@
 @media @xs {
-  .page-dashboard .card-container .card--chart {
-    flex-flow: column nowrap !important;
-  }
+
 
   .page-dashboard .card--chart .card__mobile-toggle:before {
     content: "";
@@ -71,7 +69,11 @@
 
   // md CARD BILLING SUB .... END
 }
-
+@media @max1366{
+.card.card--chart .chart{
+  height: 200px !important;
+}
+}
 // widgets
 div[data-widget-name="card--chart"] {
   .card__header {
@@ -86,4 +88,13 @@ div[data-widget-name="card--chart"] {
   }
 }
 
-
+.card__content--chart > div.chart{
+  position: relative;
+  &>div{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%
+  }
+}

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <% var pageTitle = 'Brand Settings'; %>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-        <title> <%=pageTitle %></title>
+    <title>
+        <%= pageTitle %>
+    </title>
     <% if(mainMenuType === 'wide'){ %>
     <% include ../layout/color_template_wide %>
     <% } else{ %>
@@ -22,17 +25,14 @@
 <% include ../layout/main_menu_html %>
 <% } %>
 
-
 <div class="app-content page-brand-settings">
     <% var breadData = 'Brand Settings'; %>
-
 
     <% if(clientArea){ %>
     <% include ../layout/mode_clientArea/CA_mainhead %>
     <% } else{ %>
     <% include ../layout/mainhead %>
     <% } %>
-
 
     <% include ../layout/sidebar_notifications %>
     <% include ../layout/sidebar_alerts %>
@@ -41,7 +41,8 @@
             <% include ../layout/menu_aside %>
             <div class="grid-col grid-col--container">
                 <div class="menu-mobile-settings--box">
-                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue" data-selectAR--search="true" name="select"></select>
+                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue"
+                            data-selectAR--search="true" name="select"></select>
                 </div>
                 <section class="generals-form" data-preload>
                     <form id="14" class="form-validation" method="post" action="">
@@ -49,10 +50,26 @@
                             <div class="col-mb-24 col-12">
                                 <fieldset name="inputs">
                                     <legend>Brand Info</legend>
+                                    <div class="form-block">
+
+                                        <div class="col-group">
+                                            <div class="col-mb-24 mb2">
+                                                <label class="form-block__name">Number</label>
+                                            </div>
+                                            <div class="col-mb-24">
+                                                <div class="input-field">
+                                                    <input type="number" name="Number" placeholder="12345" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-group">
                                         <div class="form-block">
                                             <div class="col-mb-24 mb2">
-                                                <label class="form-block__name">Brand Name</label>
+                                                <label class="form-block__name">Brand
+                                                    Name
+                                                </label>
                                             </div>
                                             <div class="col-mb-24">
                                                 <div class="input-field">
@@ -62,7 +79,9 @@
                                         </div>
                                         <div class="form-block">
                                             <div class="col-mb-24 mb2">
-                                                <label class="form-block__name">Brand URL</label>
+                                                <label class="form-block__name">Brand
+                                                    URL
+                                                </label>
                                             </div>
                                             <div class="col-mb-24">
                                                 <div class="input-field">
@@ -72,7 +91,9 @@
                                         </div>
                                         <div class="form-block">
                                             <div class="col-mb-24 mb2">
-                                                <label class="form-block__name">Date Format</label>
+                                                <label class="form-block__name">Date
+                                                    Format
+                                                </label>
                                             </div>
                                             <div class="col-mb-24">
                                                 <select name="date-format" data-selectAR="true" required>
@@ -84,74 +105,113 @@
                                         </div>
                                         <div class="form-block">
                                             <div class="col-mb-24 mb2">
-                                                <label class="form-block__name">Default Country</label>
+                                                <label class="form-block__name">Default
+                                                    Country
+                                                </label>
                                             </div>
                                             <div class="col-mb-24">
                                                 <div class="input-field input-field--icon">
-                                                                                    <span class="input-field__icon">
-                                                                    <span class="flag-icon flag-icon-us"></span>
-                                                                                    </span>
+                                                                                                                        <span class="input-field__icon">
+                                                                                                                            <span class="flag-icon flag-icon-us"></span>
+                                                                                                                        </span>
                                                     <select name="default-country" data-flag-select--search required>
-                                                        <option data-country="us">United States of America</option>
+                                                        <option data-country="us">United
+                                                            States
+                                                            of
+                                                            America
+                                                        </option>
                                                         <option data-country="pl" selected>Poland</option>
                                                         <option data-country="it">Italy</option>
-                                                        <option data-country="gb">United Kingdom</option>
+                                                        <option data-country="gb">United
+                                                            Kingdom
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-block">
                                             <div class="col-mb-24 mb2">
-                                                <label class="form-block__name">Default Country</label>
+                                                <label class="form-block__name">Default
+                                                    Country
+                                                </label>
                                             </div>
                                             <div class="col-mb-24">
                                                 <div class="input-field input-field--icon">
-                                                                                    <span class="input-field__icon">
-                                                                    <span class="flag-icon flag-icon-us"></span>
-                                                                                    </span>
+                                                                                                                        <span class="input-field__icon">
+                                                                                                                            <span class="flag-icon flag-icon-us"></span>
+                                                                                                                        </span>
                                                     <select name="default-country" data-flag-select required>
-                                                        <option data-country="us">United States of America</option>
+                                                        <option data-country="us">United
+                                                            States
+                                                            of
+                                                            America
+                                                        </option>
                                                         <option data-country="pl" selected>Poland</option>
                                                         <option data-country="it">Italy</option>
-                                                        <option data-country="gb">United Kingdom</option>
+                                                        <option data-country="gb">United
+                                                            Kingdom
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-block">
                                             <div class="col-mb-24 mb2">
-                                                <label class="form-block__name">Default Language</label>
+                                                <label class="form-block__name">Default
+                                                    Language
+                                                </label>
                                             </div>
                                             <div class="col-mb-24">
                                                 <div class="input-field input-field--icon">
-                                                                                    <span class="input-field__icon">
-                                                                    <span class="flag-icon flag-icon-us"></span>
-                                                                                    </span>
+                                                                                                                        <span class="input-field__icon">
+                                                                                                                            <span class="flag-icon flag-icon-us"></span>
+                                                                                                                        </span>
                                                     <select data-flag-select name="default-language"
                                                             data-selectAR="true" required>
-                                                        <option data-country="us">United States of America - English
+                                                        <option data-country="us">United
+                                                            States
+                                                            of
+                                                            America
+                                                            -
+                                                            English
                                                             US
                                                         </option>
-                                                        <option data-country="pl" selected>Poland - Polish</option>
-                                                        <option data-country="it">Italy - Italian</option>
-                                                        <option data-country="gb">United Kingdom - English UK</option>
+                                                        <option data-country="pl" selected>Poland
+                                                            -
+                                                            Polish
+                                                        </option>
+                                                        <option data-country="it">Italy
+                                                            -
+                                                            Italian
+                                                        </option>
+                                                        <option data-country="gb">United
+                                                            Kingdom
+                                                            -
+                                                            English
+                                                            UK
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-block">
                                             <div class="col-group" style="width: 100%;">
-                                                <div class="col-mb-18  mb2">
+                                                <div class="col-13 mb2">
                                                     <label class="form-block__name p0">
-                                                        <span>Maintenance Mode</span>
+                                                                                                                            <span>Maintenance
+                                                                                                                                Mode
+                                                                                                                            </span>
                                                         <i class="zmdi zmdi-help-outline help--trigger"
                                                            data-tooltip="true"></i>
                                                         <div class="tooltip-content">
-                                                            <p>Enable Maintenance Mode</p>
+                                                            <p>Enable
+                                                                Maintenance
+                                                                Mode
+                                                            </p>
                                                         </div>
                                                     </label>
                                                 </div>
-                                                <div class="col-mb-6  mb2">
+                                                <div class="col-3 mb2">
                                                     <div class="input-field input-field--short ml-auto">
                                                         <label class="switch">
                                                             <input class="switch-checkbox" name="switch" type="checkbox"
@@ -163,6 +223,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </fieldset>
@@ -183,22 +244,51 @@
                                                                 <i class="zmdi zmdi-wallpaper"></i>
                                                             </div>
                                                             <div class="dz-m__content">
-                                                                <span>Drag &amp; drop,</span>
-                                                                <span>or click to upload</span>
+                                                                                                                                    <span>Drag
+                                                                                                                                        &amp;
+                                                                                                                                        drop,
+                                                                                                                                    </span>
+                                                                <span>or
+                                                                                                                                        click
+                                                                                                                                        to
+                                                                                                                                        upload
+                                                                                                                                    </span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <label class="form-block__name p0 mt8">
                                                     <span>Logo</span>
-                                                    <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true"
-                                                    ></i>
+                                                    <i class="zmdi zmdi-help-outline help--trigger"
+                                                       data-tooltip="true"></i>
                                                     <div class="tooltip-content">
-                                                        <p>Logo used in the invoices, as well as in the login page.</p>
-                                                        <p class="tooltip__header mt16">Recommended format:</p>
-                                                        <p>PNG (without background)</p>
-                                                        <p class="tooltip__header mt16">Recommended minimum width:</p>
-                                                        <p>512 px</p>
+                                                        <p>Logo
+                                                            used
+                                                            in
+                                                            the
+                                                            invoices,
+                                                            as
+                                                            well
+                                                            as
+                                                            in
+                                                            the
+                                                            login
+                                                            page.
+                                                        </p>
+                                                        <p class="tooltip__header mt16">Recommended
+                                                            format:
+                                                        </p>
+                                                        <p>PNG
+                                                            (without
+                                                            background)
+                                                        </p>
+                                                        <p class="tooltip__header mt16">Recommended
+                                                            minimum
+                                                            width:
+                                                        </p>
+                                                        <p>512
+                                                            px
+                                                        </p>
                                                     </div>
                                                 </label>
                                             </div>
@@ -215,22 +305,51 @@
                                                                 <i class="zmdi zmdi-wallpaper"></i>
                                                             </div>
                                                             <div class="dz-m__content">
-                                                                <span>Drag &amp; drop,</span>
-                                                                <span>or click to upload</span>
+                                                                                                                                    <span>Drag
+                                                                                                                                        &amp;
+                                                                                                                                        drop,
+                                                                                                                                    </span>
+                                                                <span>or
+                                                                                                                                        click
+                                                                                                                                        to
+                                                                                                                                        upload
+                                                                                                                                    </span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <label class="form-block__name p0 mt8">
                                                     <span>Favicon</span>
-                                                    <i class="zmdi zmdi-help-outline help--trigger" data-tooltip="true"
-                                                    ></i>
+                                                    <i class="zmdi zmdi-help-outline help--trigger"
+                                                       data-tooltip="true"></i>
                                                     <div class="tooltip-content">
-                                                        <p>Logo used in the invoices, as well as in the login page.</p>
-                                                        <p class="tooltip__header mt16">Recommended format:</p>
-                                                        <p>PNG (without background)</p>
-                                                        <p class="tooltip__header mt16">Recommended minimum size:</p>
-                                                        <p>310x310 px</p>
+                                                        <p>Logo
+                                                            used
+                                                            in
+                                                            the
+                                                            invoices,
+                                                            as
+                                                            well
+                                                            as
+                                                            in
+                                                            the
+                                                            login
+                                                            page.
+                                                        </p>
+                                                        <p class="tooltip__header mt16">Recommended
+                                                            format:
+                                                        </p>
+                                                        <p>PNG
+                                                            (without
+                                                            background)
+                                                        </p>
+                                                        <p class="tooltip__header mt16">Recommended
+                                                            minimum
+                                                            size:
+                                                        </p>
+                                                        <p>310x310
+                                                            px
+                                                        </p>
                                                     </div>
                                                 </label>
                                             </div>
@@ -245,12 +364,9 @@
                                                 <div class="cp-row mb16">
                                                     <div class="cp-brand cp-brand--primary mr16">
                                                         <div class="cp-brand__preview">
-                                                            <div class="cp-brand__ar-big"></div>
+                                                            <div class="cp-brand__ar-big"><input  class="cp" type="text" value="02A8F3"></div>
                                                             <span class="cp-brand__title">Main</span>
-                                                            <!-- <span class="cp-brand__hex">#02A8F3</span> -->
                                                             <span class="hidden standard-color--main"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                         <div class="cp-brand__pallete ">
                                                             <div class="cp-brand__sgl"></div>
@@ -260,12 +376,9 @@
                                                     </div>
                                                     <div class="cp-brand cp-brand--secondary mr16">
                                                         <div class="cp-brand__preview">
-                                                            <div class="cp-brand__ar-big"></div>
+                                                            <div class="cp-brand__ar-big"><input  class="cp" type="text" value="2d353d"></div>
                                                             <span class="cp-brand__title">Secondary</span>
-                                                            <!-- <span class="cp-brand__hex">#2d353d</span> -->
                                                             <span class="hidden standard-color--secondary"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                         <div class="cp-brand__pallete">
                                                             <div class="cp-brand__sgl"></div>
@@ -275,12 +388,9 @@
                                                     </div>
                                                     <div class="cp-brand cp-brand--tetriary">
                                                         <div class="cp-brand__preview">
-                                                            <div class="cp-brand__ar-big"></div>
+                                                            <div class="cp-brand__ar-big"><input  class="cp" type="text" value="ecedf0"></div>
                                                             <span class="cp-brand__title">Background</span>
-                                                            <!-- <span class="cp-brand__hex">#e4e6eb</span> -->
                                                             <span class="hidden standard-color--background"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                         <div class="cp-brand__pallete">
                                                             <div class="cp-brand__sgl"></div>
@@ -299,25 +409,16 @@
                                                         <div class="cp-brand__preview">
                                                             <span class="cp-brand__big">Aa</span>
                                                             <div class="cp-brand__picker">
-                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
-                                                                <input type="hidden" class="color-saver" id="brand-c1"
-                                                                       name="brand-c1">
+                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"><input  class="cp" type="text" value="050505"></div>
                                                             </div>
                                                             <span class="hidden standard-color--main-first"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
-                                                            <!-- <span class="cp-brand__small">AaBbCc</span> -->
                                                         </div>
                                                         <div class="cp-brand__preview">
                                                             <span class="cp-brand__big">Aa</span>
                                                             <div class="cp-brand__picker">
-                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
-                                                                <input type="hidden" class="color-saver" id="brand-c2"
-                                                                       name="brand-c2">
+                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"><input  class="cp" type="text" value="27ae60"></div>
                                                             </div>
                                                             <span class="hidden standard-color--main-second"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   data-tooltip-text="Hex is incorrect" maxlength="7">
                                                         </div>
                                                     </div>
                                                     <!-- SECOND -->
@@ -325,24 +426,16 @@
                                                         <div class="cp-brand__preview">
                                                             <span class="cp-brand__big">Aa</span>
                                                             <div class="cp-brand__picker">
-                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
-                                                                <input type="hidden" class="color-saver" id="brand-c3"
-                                                                       name="brand-c3">
+                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"><input  class="cp" type="text" value="231231"></div>
                                                             </div>
                                                             <span class="hidden standard-color--secondary-first"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                         <div class="cp-brand__preview">
                                                             <span class="cp-brand__big">Aa</span>
                                                             <div class="cp-brand__picker">
-                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
-                                                                <input type="hidden" class="color-saver" id="brand-c4"
-                                                                       name="brand-c4">
+                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"><input  class="cp" type="text" value="ff0000"></div>
                                                             </div>
                                                             <span class="hidden standard-color--secondary-second"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                     </div>
                                                     <!-- THIRD -->
@@ -350,26 +443,20 @@
                                                         <div class="cp-brand__preview">
                                                             <span class="cp-brand__big">Aa</span>
                                                             <div class="cp-brand__picker">
-                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"></div>
-                                                                <input type="hidden" class="color-saver" id="brand-c5"
-                                                                       name="brand-c5">
+                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--left"><input  class="cp" type="text" value="f44336"></div>
                                                             </div>
                                                             <span class="hidden standard-color--background-first"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                         <div class="cp-brand__preview">
                                                             <span class="cp-brand__big">Aa</span>
                                                             <div class="cp-brand__picker">
-                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"></div>
-                                                                <input type="hidden" class="color-saver" id="brand-c6"
-                                                                       name="brand-c6">
+                                                                <div class="cp-brand__p-sgl cp-brand__p-sgl--right"><input  class="cp" type="text" value="ffa726"></div>
                                                             </div>
                                                             <span class="hidden standard-color--background-second"></span>
-                                                            <input type="text" class="cp" name="hex-input" value=""
-                                                                   maxlength="7" data-tooltip-text="Hex is incorrect">
                                                         </div>
                                                     </div>
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -398,7 +485,7 @@
     </section>
 </div>
 </div>
-
+<textarea class="is-hidden brand-colors-container"></textarea>
 <% include ../layout/js_files %>
 </body>
 

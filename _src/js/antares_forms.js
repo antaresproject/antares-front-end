@@ -51,6 +51,7 @@ const AntaresForms = {
     self.elements.stopScroll();
     self.elements.updateHeightChartJS();
     self.elements.logsCorrectTimelineBorder();
+    self.elements.addSizeClassToCardChartJS();
     //MDL reinit
     componentHandler.upgradeAllRegistered();
   },
@@ -91,14 +92,14 @@ const AntaresForms = {
       }
     };
 
-    enquire.register('screen and (max-width: 1366px)', {
-      //mobile readonly for multiple
-      match: function() {
-        $('select').on('select2:open', function() {
-          $('input').prop('focus', 0);
-        });
-      }
-    });
+    // enquire.register('screen and (max-width: 1366px)', { //#155 -> 27 // comment because
+    //     //mobile readonly for multiple
+    //     match: function () {
+    //         $('select').on('select2:open', function () {
+    //             $('input').prop('focus', 0);
+    //         });
+    //     }
+    // });
 
     window.requestAnimationFrame(() => {
       $('input[hover]')
@@ -403,7 +404,6 @@ const AntaresForms = {
         //tmp
         if ($self.closest('.ddown-multi__submenu').length) {
           e.preventDefault();
-
           setTimeout(function() {
             $self.closest('.ddown-multi__submenu').css('display', 'block');
           }, 10);
@@ -420,232 +420,214 @@ const AntaresForms = {
         }
 
         $element.on('select2:opening', cancelAndRemove);
-
         $element.on('select2:closing', cancelAndRemove);
         setTimeout(removeEvents, 0);
       });
 
-      (function select2() {
-        //select2 - better, faster, harder, stronger
+      var select2Base = {
+        dropdownAutoWidth: true,
+        theme: 'selectAR',
+        allowClear: true
+        // placeholder: 'Select an option',
+        //disable search below
+        // minimumResultsForSearch: Infinity
+      };
 
-        var select2Base = {
-          dropdownAutoWidth: true,
-          // placeholder: 'Select an option',
-          theme: 'selectAR',
-          allowClear: true,
-          //disable search below
-          minimumResultsForSearch: Infinity
-        };
+      // $.fn.select2.defaults.set("theme", "AR");
 
-        // $.fn.select2.defaults.set("theme", "AR");
+      // Select2 Init - Standard
+      $('[data-selectAR]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'selectAR ' + myData
+          })
+        );
+      });
 
-        $('[data-selectAR]').each(function() {
-          var myData = $(this).attr('data-select2--class');
-          if (myData === undefined) {
-            myData = '';
-          }
-          $(this)
-            .select2(
-              $.extend({}, select2Base, {
-                theme: 'selectAR ' + myData
-              })
-            )
-            .on('change', function() {
-              //validation if needed
-              if ($(this).closest('.form-validation').length) {
-                // $(this).valid();
+      // Select2 Init - Search
+      $('[data-selectAR--search]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'selectAR ' + myData,
+            minimumResultsForSearch: 1
+          })
+        );
+      });
+
+      // Select2 Init - Tags
+      $('[data-selectAR--tags-add-new]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'selectAR ' + myData,
+            tags: true
+          })
+        );
+      });
+
+      // Select2 Init - Mdl
+      $('[data-selectAR--mdl]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'mdl' + myData
+          })
+        );
+      });
+
+      // Select2 Init - Mdl Big
+      $('[data-selectAR--mdl-big]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'mdl-big ' + myData
+          })
+        );
+      });
+
+      // Select2 Init - Mdl Short
+      $('[data-selectAR--mdl-short]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'mdl-short ' + myData
+          })
+        );
+      });
+
+      // Select2 Init - Tags
+      $('[data-selectAR--tags]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        let myData = $(this).attr('data-select2--class');
+        if (myData === undefined) {
+          myData = '';
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            theme: 'tags ' + myData
+          })
+        );
+      });
+
+      // Select2 Init - Tags with 1 option
+      $('[data-selectAR--custom-input]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        $(this).select2(
+          $.extend({}, select2Base, {
+            createTag: function(term, data) {
+              if (
+                $(data).filter(function() {
+                  return this.text.localeCompare(term) === 0;
+                }).length === 0
+              ) {
+                return {
+                  text: term,
+                  id: '123'
+                };
               }
-              $(this)
-                .closest('.input-field')
-                .removeClass('error');
-            });
-        });
+            },
+            multiple: true,
+            tags: true,
+            theme: 'custom-input',
+            maximumSelectionLength: 1
+          })
+        );
+      });
 
-        //WITH SEARCH
-        $('[data-selectAR--search]').each(function() {
-          var myData = $(this).attr('data-select2--class');
-          if (myData === undefined) {
-            myData = '';
-          }
-          $(this)
-            .select2(
-              $.extend({}, select2Base, {
-                theme: 'selectAR ' + myData,
-                minimumResultsForSearch: 1
-              })
-            )
-            .on('change', function() {
-              //validation if needed
-              if ($(this).closest('.form-validation').length) {
-                // $(this).valid();
-              }
-              $(this)
-                .closest('.input-field')
-                .removeClass('error');
-            });
-        });
+      //https://github.com/select2/select2/issues/3901
+      // $('[data-selectAR]').select2(select2Base);
+      // //https://github.com/select2/select2/issues/3901
+      //Flags integration
+      //on init
 
-        //MDL
-        $('[data-selectAR--mdl]').each(function() {
-          var myData = $(this).attr('data-select2--class');
-          if (myData === undefined) {
-            myData = '';
-          }
-          $(this)
-            .select2(
-              $.extend({}, select2Base, {
-                theme: 'mdl' + myData
-              })
-            )
-            .on('change', function() {
-              //validation if needed
-              if ($(this).closest('.form-validation').length) {
-                // $(this).valid();
-              }
-              $(this)
-                .closest('.input-field')
-                .removeClass('error');
-            });
-        });
+      // Select2 Init - Flag
+      $('select[data-flag-select]').each(function() {
+        if ($(this).find('option:selected').length) {
+          var flag = $(this)
+            .find('option:selected')
+            .data('country');
+        } else {
+          return false;
+        }
 
-        //MDL big
-        $('[data-selectAR--mdl-big]').each(function() {
-          var myData = $(this).attr('data-select2--class');
-          if (myData === undefined) {
-            myData = '';
-          }
-          $(this)
-            .select2(
-              $.extend({}, select2Base, {
-                theme: 'mdl-big ' + myData
-              })
-            )
-            .on('change', function() {
-              //validation if needed
-              if ($(this).closest('.form-validation').length) {
-                // $(this).valid();
-              }
-              $(this)
-                .closest('.input-field')
-                .removeClass('error');
-            });
-        });
-        //MDL short (v2)
-        $('[data-selectAR--mdl-short]').each(function() {
-          var myData = $(this).attr('data-select2--class');
-          if (myData === undefined) {
-            myData = '';
-          }
-          $(this)
-            .select2(
-              $.extend({}, select2Base, {
-                theme: 'mdl-short ' + myData
-              })
-            )
-            .on('change', function() {
-              //validation if needed
-              if ($(this).closest('.form-validation').length) {
-                // $(this).valid();
-              }
-              $(this)
-                .closest('.input-field')
-                .removeClass('error');
-            });
-        });
+        $(this)
+          .siblings('.input-field__icon')
+          .find('.flag-icon')
+          .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
+      });
 
-        //Select - tags
-        $('[data-selectAR--tags]').each(function() {
-          var myData = $(this).attr('data-select2--class');
-          if (myData === undefined) {
-            myData = '';
-          }
-          $(this)
-            .select2(
-              $.extend({}, select2Base, {
-                theme: 'tags ' + myData
-              })
-            )
-            .on('change', function() {
-              //validation if needed
-              if ($(this).closest('.form-validation').length) {
-                // $(this).valid();
-              }
-              $(this)
-                .closest('.input-field')
-                .removeClass('error');
-            });
-        });
+      $('select[data-flag-select]').on('change', function() {
+        if ($(this).find('option:selected').length) {
+          var flag = $(this)
+            .find('option:selected')
+            .data('country');
+        } else {
+          return false;
+        }
 
-        //Select - custom input (tags with 1 option)
-        $('[data-selectAR--custom-input]')
-          .select2(
-            $.extend({}, select2Base, {
-              createTag: function(term, data) {
-                if (
-                  $(data).filter(function() {
-                    return this.text.localeCompare(term) === 0;
-                  }).length === 0
-                ) {
-                  return {
-                    text: term,
-                    id: '123'
-                  };
-                }
-              },
-              multiple: true,
-              tags: true,
-              theme: 'custom-input',
-              maximumSelectionLength: 1
-            })
-          )
-          .on('change', function() {
-            //validation if needed
-            if ($(this).closest('.form-validation').length) {
-              // $(this).valid();
-            }
-            $(this)
-              .closest('.input-field')
-              .removeClass('error');
-          });
+        $(this)
+          .siblings('.input-field__icon')
+          .find('.flag-icon')
+          .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
+      });
 
-        //https://github.com/select2/select2/issues/3901
-        // $('[data-selectAR]').select2(select2Base);
-        // //https://github.com/select2/select2/issues/3901
-        //Flags integration
-        //on init
-
-        $('select[data-flag-select]').each(function() {
-          if ($(this).find('option:selected').length) {
-            var flag = $(this)
-              .find('option:selected')
-              .data('country');
-          } else {
-            return false;
-          }
-
-          $(this)
-            .siblings('.input-field__icon')
-            .find('.flag-icon')
-            .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
-        });
-
-        $('select[data-flag-select], [data-flag-select-translations]').on('change', function() {
-          if ($(this).find('option:selected').length) {
-            var flag = $(this)
-              .find('option:selected')
-              .data('country');
-          } else {
-            return false;
-          }
-
-          $(this)
-            .siblings('.input-field__icon')
-            .find('.flag-icon')
-            .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
-        });
-
-        //on init
-        $('[data-flag-select]').select2({
+      // Select2 Init - Flag 2
+      $('[data-flag-select]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        $(this).select2({
           minimumResultsForSearch: Infinity,
           theme: 'selectAR',
           dropdownAutoWidth: true,
@@ -660,56 +642,35 @@ const AntaresForms = {
             }
           }
         });
+      });
 
-        //on init
-        $('[data-flag-select-translations]').select2({
-          theme: 'translations',
-          dropdownAutoWidth: true,
-          templateResult: function(data) {
-            if (data.element && data.element.attributes['data-country']) {
-              // console.log(data);
-              var flagCode = data.element.attributes['data-country'].nodeValue;
-              var $state = $('<span class="flag-icon flag-icon-' + flagCode + '"></span><span>' + data.text + '</span>');
-              return $state;
-            } else {
-              return data.text;
-            }
-          }
-        });
+      // Select2 Init - Flag with search
+      $('select[data-flag-select--search]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        if ($(this).find('option:selected').length) {
+          var flag = $(this)
+            .find('option:selected')
+            .data('country');
+        } else {
+          return false;
+        }
 
-        //on init
-        // Flag integration with search
+        $(this)
+          .siblings('.input-field__icon')
+          .find('.flag-icon')
+          .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
+      });
 
-        $('select[data-flag-select--search]').each(function() {
-          if ($(this).find('option:selected').length) {
-            var flag = $(this)
-              .find('option:selected')
-              .data('country');
-          } else {
-            return false;
-          }
-
-          $(this)
-            .siblings('.input-field__icon')
-            .find('.flag-icon')
-            .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
-        });
-
-        $('select[data-flag-select-translations]').each(function() {
-          if ($(this).find('option:selected').length) {
-            var flag = $(this)
-              .find('option:selected')
-              .data('country');
-          } else {
-            return false;
-          }
-          $(this)
-            .siblings('.input-field__icon')
-            .find('.flag-icon')
-            .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
-        });
-
-        $('[data-flag-select--search]').select2({
+      // Select2 Init - Flag with search v2
+      $('[data-flag-select--search]').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
+        $(this).select2({
           dropdownAutoWidth: true,
           theme: 'selectAR',
           minimumResultsForSearch: 1,
@@ -725,26 +686,29 @@ const AntaresForms = {
             }
           }
         });
+      });
 
-        $('select[data-flag-select--search]').on('change', function() {
-          if ($(this).find('option:selected').length) {
-            var flag = $(this)
-              .find('option:selected')
-              .data('country');
-          } else {
-            return false;
-          }
+      $('select[data-flag-select--search]').on('change', function() {
+        if ($(this).find('option:selected').length) {
+          var flag = $(this)
+            .find('option:selected')
+            .data('country');
+        } else {
+          return false;
+        }
 
-          $(this)
-            .siblings('.input-field__icon')
-            .find('.flag-icon')
-            .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
-        });
-      })();
+        $(this)
+          .siblings('.input-field__icon')
+          .find('.flag-icon')
+          .attr('class', 'flag-icon ' + 'flag-icon-' + flag);
+      });
 
-      // prefix control
-
+      // Select2 Init - Prefix Control
       $('select').each(function() {
+        if ($(this).data('select2')) {
+          console.log('select2Spam');
+          return false;
+        }
         if ($(this).attr('data-prefix')) {
           if (
             !$(this)
@@ -767,17 +731,6 @@ const AntaresForms = {
           }
         }
       });
-
-      enquire.register('screen and (max-width: 1366px)', {
-        //mobile readonly for multiple
-        match: function() {
-          if ($('.select2-selection').hasClass('select2-selection--multiple')) {
-            $('.select2-selection--multiple')
-              .find('input')
-              .attr('readonly', 'true');
-          }
-        }
-      });
     },
     spinner() {
       $('[data-spinner="true"]').spinner({
@@ -790,55 +743,66 @@ const AntaresForms = {
       });
     },
     tooltip() {
-      $('[data-tooltip-inline]').qtip({
-        hide: 'click'
-      });
-
       $('.mdl-button__ripple-container').on('click', function() {
         $('[data-hasqtip]').qtip('hide');
       });
 
       function tooltipDesktop() {
-        $('[data-tooltip-inline!=""]').qtip({
-          style: {
-            classes: 'ar',
-            tip: {
-              width: 9,
-              height: 5
-            }
-          },
-          position: {
-            viewport: $(window),
-            adjust: {
-              method: 'shift'
-            }
-          },
-          content: {
-            attr: 'data-tooltip-inline'
-          },
-          show: {
-            effect() {
-              $(this).fadeIn(300); // "this" refers to the tooltip
-            }
-          },
-          hide: {
-            effect() {
-              $(this).fadeOut(300); // "this" refers to the tooltipc1
-            }
-          },
-
-          events: {
-            show: function(event, api) {
-              var $el = $(api.elements.target[0]);
-              $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
-              $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
-
-              // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
-            }
+        $(document).on('mouseover', "[data-tooltip-inline != '']", function(event) {
+          // Element already has a qTip? Return.
+          if ($(this).qtip('api')) {
+            return;
           }
+
+          // Create our new one
+          $(this).qtip({
+            style: {
+              classes: 'ar',
+              tip: {
+                width: 9,
+                height: 5
+              }
+            },
+            position: {
+              viewport: $(window),
+              adjust: {
+                method: 'shift'
+              }
+            },
+            content: {
+              attr: 'data-tooltip-inline'
+            },
+            show: {
+              effect() {
+                $(this).fadeIn(300); // "this" refers to the tooltip
+              }
+            },
+            hide: {
+              effect() {
+                $(this).fadeOut(300); // "this" refers to the tooltipc1
+              }
+            },
+
+            events: {
+              show: function(event, api) {
+                var $el = $(api.elements.target[0]);
+                $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
+                $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
+
+                // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
+              }
+            }
+          });
+
+          $(this).qtip('show');
         });
-        $('[data-tooltip="true"]').each(function() {
-          // Notice the .each() loop, discussed below
+
+        $(document).on('mouseover', "[data-tooltip='true']", function(event) {
+          // Element already has a qTip? Return.
+          if ($(this).qtip('api')) {
+            return;
+          }
+
           $(this).qtip({
             style: {
               classes: 'ar',
@@ -862,19 +826,25 @@ const AntaresForms = {
               }
             },
             hide: {
-              effect: function() {
-                $(this).fadeOut(300); // "this" refers to the tooltip
-              }
+              // effect: function () {
+              //     $(this).fadeOut(300); // "this" refers to the tooltip
+              // }
             },
             events: {
               show: function(event, api) {
                 var $el = $(api.elements.target[0]);
                 $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
                 $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
+                $('.cp-brand').off('click.tooltip');
+                $el.on('click.tooltip', function() {
+                  api.hide();
+                });
               }
             }
           });
         });
+
+        $(this).qtip('show');
       }
 
       tooltipDesktop();
@@ -1186,26 +1156,60 @@ const AntaresForms = {
       });
     },
     updateHeightChartJS() {
-      enquire.register('screen and (min-width: 1450px)', {
-        match: function() {
-          window.requestAnimationFrame(() => {
-            let thisHeightChart = $('.card--chart').height() - 60;
-            $('.chartjs-render-monitor').css('height', thisHeightChart);
-            function updateHeightCharts(containerTarget) {
-              if (containerTarget === undefined) {
-                return false;
-              }
-              let thisHeightChart = containerTarget.find('.card--chart').height() - 60;
-              containerTarget.find('.chartjs-render-monitor').css('height', thisHeightChart);
+      function updateHeight(device) {
+        setTimeout(function() {
+          $('.card--chart').each(function() {
+            let target;
+            if (device === 'mob') {
+              target = $(this).find('.card__left');
+            } else if (device === 'desc') {
+              target = $(this);
             }
+            let thisHeightChart = target.height() - 60;
+            $(this)
+              .find('.chart')
+              .css('height', thisHeightChart);
+          });
+        }, 200);
+      }
 
-            var container;
-            $('.ui-resizable-handle').mousedown(function() {
-              container = $(this).closest('.grid-stack-item');
-            });
-            $('.grid-stack').on('change.gridHEightCharts', function(event, ui) {
-              updateHeightCharts(container);
-            });
+      // enquire.register('screen and (max-width: 1449px)', {
+      //     match: function () {
+      //         updateHeight('mob')
+      //         $(window).resize(
+      //             _.debounce(function () {
+      //                 updateHeight('mob')
+      //             }, 300)
+      //         );
+      //     },
+      //     unmatch: function () {
+      //         updateHeight('desc')
+      //         $(window).resize(
+      //             _.debounce(function () {
+      //                 updateHeight('desc')
+      //             }, 300)
+      //         );
+      //     }
+      // });
+
+      enquire.register('screen and (min-width: 1367px)', {
+        match: function() {
+          updateHeight('desc');
+          function updateHeightCharts(containerTarget) {
+            if (containerTarget === undefined) {
+              return false;
+            }
+            let thisHeightChart = containerTarget.find('.card--chart').height() - 60;
+
+            containerTarget.find('.chart').css('height', thisHeightChart);
+          }
+
+          var container;
+          $('.ui-resizable-handle').mousedown(function() {
+            container = $(this).closest('.grid-stack-item');
+          });
+          $('.grid-stack').on('change.gridHEightCharts', function(event, ui) {
+            updateHeightCharts(container);
           });
         },
         unmatch: function() {
@@ -1216,6 +1220,113 @@ const AntaresForms = {
     logsCorrectTimelineBorder() {
       $('.card--logs .timeline > li').removeClass('is-logs--show');
       $('.card--logs .timeline > li:visible:last').addClass('is-logs--show');
+    },
+    cardChartHeaderTruncate() {
+      $('.card--chart .card__header').each(function() {
+        let self = $(this);
+        function giveTruncate() {
+          let widthHeader = self.width();
+          let thisNameSpan = self.find('.card__header-left span');
+          let widthCardName = self.find('.card__header-left span').width();
+          let widthDatePickerButton = self.find('.card__header-right > form').width();
+          let widthForNameCard = widthHeader - widthDatePickerButton;
+          if (widthForNameCard - 15 < widthCardName) {
+            let thisSpanText = thisNameSpan.text();
+            thisNameSpan.attr('data-tooltip-inline', thisSpanText);
+
+            $(document).on('mouseover', thisNameSpan, function(event) {
+              // Element already has a qTip? Return.
+              if ($(this).qtip('api')) {
+                return;
+              }
+              thisNameSpan.qtip({
+                style: {
+                  classes: 'ar',
+                  tip: {
+                    width: 9,
+                    height: 5
+                  }
+                },
+                position: {
+                  viewport: $(window),
+                  adjust: {
+                    method: 'shift'
+                  }
+                },
+                content: {
+                  attr: 'data-tooltip-inline'
+                },
+                show: {
+                  effect() {
+                    $(this).fadeIn(300); // "this" refers to the tooltip
+                  }
+                },
+                hide: {
+                  effect() {
+                    $(this).fadeOut(300); // "this" refers to the tooltipc1
+                  }
+                },
+                events: {
+                  show: function(event, api) {
+                    var $el = $(api.elements.target[0]);
+                    $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
+                    $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
+
+                    // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
+                  }
+                }
+              });
+
+              $(this).qtip('show');
+            });
+          } else {
+            thisNameSpan.removeAttr('data-tooltip-inline');
+            thisNameSpan.qtip('destroy');
+          }
+        }
+        $(window).resize(
+          _.debounce(function() {
+            giveTruncate();
+          }, 300)
+        );
+        $('.grid-stack').on('change.gridNameTruncate', function(event, ui) {
+          giveTruncate();
+        });
+      });
+    },
+    addSizeClassToCardChartJS() {
+      enquire.register('screen and (max-width: 767px)', {
+        match: function() {
+          $('.card.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--mobile');
+        }
+      });
+      enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
+        match: function() {
+          $('.card.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--tablet');
+        }
+      });
+      enquire.register('screen and (min-width: 1024px) and (max-width: 1366px)', {
+        match: function() {
+          $('.card.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--laptop');
+        }
+      });
+      enquire.register('screen and (min-width: 1367px)', {
+        match: function() {
+          $('.card.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--desktop');
+        }
+      });
     }
   }
 };

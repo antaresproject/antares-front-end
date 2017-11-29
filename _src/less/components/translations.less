@@ -377,6 +377,8 @@
     padding: 9px 17px;
     padding-left: 49px;
     .translation-row__counter {
+      padding-right: 4px;
+      width: auto;
       padding-left: 0 !important;
     }
     .table-key--translate {
@@ -667,9 +669,11 @@
     .tbl-c table tr td:first-child,
     .tbl-c table tr th:first-child {
       margin-right: 8px;
+      width: auto;
+      padding:6px 8px;
     }
     .table-key.table-key--key {
-      width: 85%;
+      width: auto;
     }
     .translation-row__mobile-open .table-key .table-key__init-edit {
       position: absolute;
@@ -809,10 +813,7 @@
     tbody tr.translation-new-row td {
       padding: 8px 0px !important;
     }
-    tbody tr:not(.translation-new-row) td {
-      padding: 7px 0px !important;
 
-    }
     .translation-new-row .translation-new-row__key textarea {
       @media only screen and (min-width: 1200px){
       margin-right: 16px;
@@ -824,7 +825,7 @@
         justify-content: flex-start;
       }
       .table-key__init-edit, .table-key__actions, .table-key__delete-row {
-        margin-right: 16px;
+        margin-right: 8px;
         margin-left: auto;
       }
     }

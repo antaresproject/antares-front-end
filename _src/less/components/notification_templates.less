@@ -96,6 +96,7 @@
       }
       .variables-pane {
         margin-right: 0;
+        right: 0;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
       }
     }
@@ -187,7 +188,9 @@
     }
   }
 }
-
+.page-notification-templates .mdl-tabs .CodeMirror{
+  min-height: 600px;
+}
 @media @xs {
   .page-notification-templates {
     .page-notification-templates__info, .page-notification-templates__content {
@@ -247,13 +250,15 @@
   z-index: 80;
   transition: 0.5s;
   width: 500px;
+  height: 100%;
   min-width: 500px;
   @media only screen and (min-width: 1024px) and (max-width: 1199px) {
     width: 350px;
     min-width: 350px;
+    right: -350px;
   }
-  margin-right: -500px;
-  position: relative;
+  right: -500px;
+  position: absolute;
   overflow: hidden;
   background: @standard-white;
   .variables-pane__inner {
@@ -363,7 +368,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
     padding: 20px;
     z-index: 1050;
     overflow: hidden;

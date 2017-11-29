@@ -140,6 +140,10 @@
   .form-block {
     .input-field--desc {
       flex-flow: column;
+      &:after{
+        top:18px;
+        right: 16px;
+      }
       .input-field__desc {
         margin-top: 4px;
       }
@@ -151,7 +155,9 @@
   .form-block > .col-group > div:last-child .switch {
     display: inline-block;
     margin-left: 8px;
-    margin-right: 8px
+    margin-right: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
   .form-block label:not(.switch) {
     > span {
@@ -210,14 +216,23 @@ fieldset[name="Noty"], fieldset[name="Alert"] {
     }
   }
 }
-
-@media @xs {
-  #app-wrapper .page-settings .generals-form fieldset[name='RadioCheckSwitch'] {
-    .switchbox, .radiobtns, .checkboxs {
-      display: block;
-    }
+.form-block .input-field{
+  .icheckbox_billevo,.icheckbox_billevo+span,.iradio_billevo,.iradio_billevo+span{
+    margin-top: 8px;
   }
 }
+  #app-wrapper .page-settings .generals-form fieldset[name='RadioCheckSwitch'] {
+    .switchbox, .radiobtns, .checkboxs {
+      flex-flow: wrap;
+      &>label{
+        display: flex;
+        align-items:center;
+        &>span{
+          line-height: 19px;
+        }
+      }
+    }
+  }
 
 @media @xs {
   .page-settings .main-content fieldset[name="GridFixedRation"] {

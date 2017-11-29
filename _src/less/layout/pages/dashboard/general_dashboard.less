@@ -116,28 +116,70 @@
 //  left: 50%;
 //  transform: translatyX(-50%);
 //}
-@media @xs {
-  ul.mobile-toogle--target,
-  div.mobile-toogle--target {
+
+.card--chart {
+  .mobile-toogle--box {
     display: none;
   }
 }
 
-@media @max1366 {
-  .card__mobile-toggle {
-    display: inline-block;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    float: right;
-    font-size: 24px;
-    line-height: 40px;
+.card__mobile-toggle {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  float: right;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  .mdl-button__ripple-container {
+    border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .mobile-toogle--box {
+    width: 100%;
     text-align: center;
-    cursor: pointer;
-    .mdl-button__ripple-container {
-      border-radius: 50%;
+    .card__mobile-toggle {
+      float: inherit !important;
+      margin: 0;
+      left: auto;
     }
   }
+}
+
+@media only screen   and (max-width: 767px) {
+  .card--detail-info {
+
+    .mobile-toogle--target{
+      display: none;
+    }
+    .card--mobile-toggled{
+      .mobile-toogle--box {
+        display: block !important;
+      }
+    }
+  }
+  .card-container.card--mobile-toggled .card .mobile-toogle--target{
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  .card--detail-info {
+    .mobile-toogle--box {
+      display: none !important;
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .mobile-toogle--box {
+    display: none !important;
+  }
+}
+
+@media @max1366 {
 
   .card--logs,
   .mdl-tabs {
@@ -155,22 +197,6 @@
     display: none !important;
   }
 
-  .mobile-toogle--box {
-    width: 100%;
-    text-align: center;
-    .card__mobile-toggle {
-      float: inherit !important;
-      margin: 0;
-      left: auto;
-    }
-  }
-
-  .card--chart {
-    .mobile-toogle--box {
-      display: none;
-    }
-  }
-
   #app-wrapper .card--tabs .mdl-tabs .tbl-c {
     overflow-y: hidden !important;
   }
@@ -179,20 +205,6 @@
 @media only screen and (max-width: 1366px) {
   .mobile-toogle--box {
     padding: 8px !important;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .card--chart .card__mobile-toggle {
-    display: none !important;
-  }
-}
-
-@media @xs {
-  .card--chart {
-    .mobile-toogle--box {
-      display: block !important;
-    }
   }
 }
 
@@ -420,10 +432,8 @@
   }
 }
 
-@media only screen and (max-width: 1449px) {
-  .chartjs-render-monitor {
-    max-height: 270px;
-  }
+.chartjs-render-monitor {
+  max-height: 270px;
 }
 
 .card .card__header-right .ddown--three-dots,

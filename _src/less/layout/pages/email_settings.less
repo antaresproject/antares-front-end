@@ -1,6 +1,9 @@
 .page-email-settings {
   .CodeMirror {
     height: ~'calc(100vh - 400px)';
+    @media only screen and (min-width: 768px) and (max-width: 800px) and (orientation: landscape){
+      height: 200px;
+    }
     @media @xs {
       height: ~'calc(100vh - 480px)';
     }

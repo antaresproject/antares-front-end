@@ -16,10 +16,12 @@
     margin-bottom: 0px;
   }
 }
-.card--contacts .ddown--three-dots .btn-more i{
+
+.card--contacts .ddown--three-dots .btn-more i {
   color: #747b80;
   margin-left: 0;
 }
+
 .page-clients-details {
   .card {
     margin-bottom: @unit3;
@@ -250,13 +252,15 @@
     }
   }
 }
+
 #app-wrapper .card--contacts .ddown--three-dots > div.btn-more {
   margin-right: -8px;
 }
+
 #app-wrapper .card .ddown--three-dots > div.btn-more {
-     width: 40px;
-    height: 40px;
-    justify-content: center;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
 }
 
 @media @xs {
@@ -378,12 +382,9 @@
   left: 2px;
 }
 
-
-
 //search box + dropdown "Show:" end d
 // client_list
 .page-datatables.page-vue-datatables {
-
 
   .card-ctrls__right .filters .ddown .btn-with-selected {
     display: flex !important;
@@ -677,12 +678,18 @@ span.ellipse.clickable {
 // #app-wrapper .main-content .grid-stack .grid-stack-item-content .card.card--logs.card--pagination [data-scrollable] {
 // margin-bottom: 24px;
 // }
+@media @xs {
+  #app-wrapper .main-content .grid-stack.clients-details-gridstack .grid-stack-item-content .card.card--pagination {
+    padding-bottom: 0px !important;
+  }
+}
+
 #app-wrapper .main-content .grid-stack.clients-details-gridstack .grid-stack-item-content .card {
   .tbl-c .datarow .dataTables_wrapper .dt-area-bottom.pagination {
     position: relative;
   }
   &.card--pagination {
-    padding-bottom: 56px;
+    padding-bottom: 62px;
   }
   @media @md {
     &.card--pagination {

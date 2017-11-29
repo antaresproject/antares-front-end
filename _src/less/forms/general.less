@@ -49,7 +49,9 @@
     }
   }
 }
-
+.card-datatables .tbl-c .dataTables_wrapper tbody tr td:first-child:not(.dataTables_empty){
+  white-space: nowrap;
+}
 .mobile-menu-active {
   .main-menu.li-submenu-open.main-menu--brand {
     .submenu {
@@ -494,8 +496,8 @@ input {
 ////////////////////////////
 .form-block .col-group {
   width: 100%;
-  display: flex;
-  align-items: center;
+  //display: flex;
+  //align-items: center;
 }
 
 .page-settings {
@@ -505,8 +507,22 @@ input {
       text-align: right;
     }
   }
-  .input-field .mdl-textfield {
+
+}
+
+.form-block div.input-field {
+  .mdl-textfield {
     width: 100%;
+    padding: 0;
+    .mdl-textfield__label {
+      top: 6px;
+      &:after{
+        bottom: 0;
+      }
+    }
+  }
+  .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+    top: -12px
   }
 }
 
@@ -596,6 +612,7 @@ input {
 
 fieldset.slider {
   .input-field {
+    height: 36px;
     padding: 0 8px;
   }
 }

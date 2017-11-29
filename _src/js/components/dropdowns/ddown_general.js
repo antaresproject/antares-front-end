@@ -101,7 +101,9 @@ const AntaresDdownGeneral = {
                 }
             },
             closeDatePicker() {
+                if( $('.comiseo-daterangepicker-active').length !== 0){
                 $('[data-daterangepicker],[data-daterangepicker--filter="true"]').daterangepicker('close');
+                }
             },
             closeMiniColors() {
                 $('.minicolors').removeClass("minicolors-focus")
