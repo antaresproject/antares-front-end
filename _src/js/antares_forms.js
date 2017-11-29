@@ -396,7 +396,7 @@ const AntaresForms = {
     select() {
       //select close on remove option - fix
 
-      var $element = $('select');
+      const $element = $('select');
 
       $element.on('select2:unselect', function(e) {
         var $self = $(this);
@@ -438,7 +438,6 @@ const AntaresForms = {
       // Select2 Init - Standard
       $('[data-selectAR]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         let myData = $(this).attr('data-select2--class');
@@ -455,7 +454,6 @@ const AntaresForms = {
       // Select2 Init - Search
       $('[data-selectAR--search]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         let myData = $(this).attr('data-select2--class');
@@ -473,7 +471,6 @@ const AntaresForms = {
       // Select2 Init - Tags
       $('[data-selectAR--tags-add-new]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         let myData = $(this).attr('data-select2--class');
@@ -491,7 +488,6 @@ const AntaresForms = {
       // Select2 Init - Mdl
       $('[data-selectAR--mdl]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         let myData = $(this).attr('data-select2--class');
@@ -507,10 +503,9 @@ const AntaresForms = {
 
       // Select2 Init - Mdl Big
       $('[data-selectAR--mdl-big]').each(function() {
-        if ($(this).data('select2')) {
-          console.log('select2Spam');
-          return false;
-        }
+        // if ($(this).data('select2')) {
+        //   return false;
+        // }
         let myData = $(this).attr('data-select2--class');
         if (myData === undefined) {
           myData = '';
@@ -525,7 +520,6 @@ const AntaresForms = {
       // Select2 Init - Mdl Short
       $('[data-selectAR--mdl-short]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         let myData = $(this).attr('data-select2--class');
@@ -542,7 +536,6 @@ const AntaresForms = {
       // Select2 Init - Tags
       $('[data-selectAR--tags]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         let myData = $(this).attr('data-select2--class');
@@ -559,7 +552,6 @@ const AntaresForms = {
       // Select2 Init - Tags with 1 option
       $('[data-selectAR--custom-input]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         $(this).select2(
@@ -624,7 +616,6 @@ const AntaresForms = {
       // Select2 Init - Flag 2
       $('[data-flag-select]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         $(this).select2({
@@ -647,7 +638,6 @@ const AntaresForms = {
       // Select2 Init - Flag with search
       $('select[data-flag-select--search]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         if ($(this).find('option:selected').length) {
@@ -667,7 +657,6 @@ const AntaresForms = {
       // Select2 Init - Flag with search v2
       $('[data-flag-select--search]').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         $(this).select2({
@@ -706,7 +695,6 @@ const AntaresForms = {
       // Select2 Init - Prefix Control
       $('select').each(function() {
         if ($(this).data('select2')) {
-          console.log('select2Spam');
           return false;
         }
         if ($(this).attr('data-prefix')) {

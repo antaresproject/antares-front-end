@@ -65,83 +65,95 @@
     </div>
 </template>
 <script>
-    import cardEditControls from './card_edit_controls.vue';
-    export default {
-        name: 'CardInfo',
-        components: {
-            'card-edit-controls': cardEditControls
+import cardEditControls from './card_edit_controls.vue';
+export default {
+  name: 'CardInfo',
+  components: {
+    'card-edit-controls': cardEditControls
+  },
+  data: function() {
+    return {
+      title: 'System Info',
+      widgetName: 'card--info',
+      widgetClass: 'card--info',
+      headerButtonText: 'View More',
+      currentVersion: '0.9.1',
+      updateAvailable: true,
+      upgradeLink: 'http://modulesgarden.com',
+      changelogLink: 'http://modulesgarden.com',
+      datarows: [
+        {
+          left: 'Licence',
+          right: 'Cancelled'
         },
-        data: function () {
-            return {
-                title: 'System Info',
-                widgetName: 'card--info',
-                widgetClass: 'card--info',
-                headerButtonText: 'View More',
-                currentVersion: '0.9.1',
-                updateAvailable: true,
-                upgradeLink: 'http://modulesgarden.com',
-                changelogLink: 'http://modulesgarden.com',
-                datarows: [{
-                    left: 'Licence',
-                    right: 'Cancelled',
-                }, {
-                    left: 'Installed Modules',
-                    right: '15',
-                }, {
-                    left: 'Outdated Modules',
-                    right: '2',
-                }, {
-                    left: 'Free Modules Available',
-                    right: '51',
-                }, {
-                    left: 'Licence',
-                    right: 'Pending',
-                }, {
-                    left: 'Licence',
-                    right: 'Confirmed',
-                }, {
-                    left: 'Installed Modules',
-                    right: '15',
-                }, {
-                    left: 'Outdated Modules',
-                    right: '2',
-                }, {
-                    left: 'Free Modules Available',
-                    right: '51',
-                }, {
-                    left: 'Licence',
-                    right: 'Pending',
-                }, {
-                    left: 'Licence',
-                    right: 'Confirmed',
-                }]
-            }
+        {
+          left: 'Installed Modules',
+          right: '15'
         },
-        mounted: function () {
-            // var self = this;
-            // dataCalc(this);
-            // var domElem = $(self.$el);
-            // domElem.find('[data-icheck]').on('ifChanged', function(event) {
-            //     self.compareMode = !self.compareMode;
-            // });
+        {
+          left: 'Outdated Modules',
+          right: '2'
         },
-        methods: {}
+        {
+          left: 'Free Modules Available',
+          right: '51'
+        },
+        {
+          left: 'Licence',
+          right: 'Pending'
+        },
+        {
+          left: 'Licence',
+          right: 'Confirmed'
+        },
+        {
+          left: 'Installed Modules',
+          right: '15'
+        },
+        {
+          left: 'Outdated Modules',
+          right: '2'
+        },
+        {
+          left: 'Free Modules Available',
+          right: '51'
+        },
+        {
+          left: 'Licence',
+          right: 'Pending'
+        },
+        {
+          left: 'Licence',
+          right: 'Confirmed'
+        }
+      ]
     };
+  },
+  mounted: function() {
+    // var self = this;
+    // dataCalc(this);
+    // var domElem = $(self.$el);
+    // domElem.find('[data-icheck]').on('ifChanged', function(event) {
+    //     self.compareMode = !self.compareMode;
+    // });
+  },
+  methods: {}
+};
 </script>
 <style lang="less" scoped>
-    .card-maximize {
-        margin-right: -8px;
-    }
+.card-maximize {
+  margin-right: -8px;
+}
 
-    .card--info {
-        .single-row {
-            .btn--link {
-                padding: 0 8px;
-                margin-right: 0;
-            }
-            .mobile-toogle--box {
-                margin-top: 0;
-            }
-        }
+.card--info {
+  .single-row {
+    .btn--link {
+      padding: 0 8px;
+      margin-right: 0;
     }
+    .mobile-toogle--box {
+      margin-top: 0;
+    }
+  }
+}
 </style>

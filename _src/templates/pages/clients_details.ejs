@@ -1,405 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
 <% var pageTitle = 'Client Details'; %>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title> <%=pageTitle %></title>
-    <% if(mainMenuType === 'wide'){ %>
-    <% include ../layout/color_template_wide %>
-    <% } else{ %>
-    <% include ../layout/color_template %>
-    <% } %>
-    <% include ../layout/css_files %>
-</head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <title>
+            <%=pageTitle %>
+        </title>
+        <% if(mainMenuType === 'wide'){ %>
+            <% include ../layout/color_template_wide %>
+                <% } else{ %>
+                    <% include ../layout/color_template %>
+                        <% } %>
+                            <% include ../layout/css_files %>
+    </head>
 
 
-<body>
-<template id="vue-page-clients-details">
-    <div class="client-value-chart--blue">
-        <chart-client-value></chart-client-value>
-    </div>
-</template>
-<% include ../layout/app_wrapper_start_tag %>
-
-<% if(clientArea){ %>
-<% include ../layout/mode_clientArea/CA_menutop %>
-<% } else{ %>
-<% include ../layout/main_menu_html %>
-<% } %>
-
-<div class="app-content page-clients-details app-content--gridstack">
-    <% include ../layout/card_bar %>
-
-    <% var breadData = 'Clients Details'; %>
-    <% if(clientArea){ %>
-    <% include ../layout/mode_clientArea/CA_mainhead %>
-    <% } else{ %>
-    <% include ../layout/mainhead %>
-    <% } %>
-
-    <% include ../layout/sidebar_notifications %>
-    <% include ../layout/sidebar_alerts %>
-    <section class="main-content">
-        <div class="clients-details-gridstack clients-details--vue grid-stack ui-draggable-disabled ui-resizable-disabled">
-            <!-- Clients Info -->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="0" data-gs-y="0"
-                 data-gs-width="5" data-gs-auto-position="0"
-                 data-gs-height="12" data-gs-min-width="5" data-gs-min-height="19">
-                <div class="grid-stack-item-content">
-                    <% include ../layout/widget_edit %>
-                    <div class="card-container">
-
-                        <div class="card card--detail-info card--dark card--more-gradient card--unadjustable" data-preload>
-                            <div class="card__header">
-                                <div class="card__header--top">
-                                    <div class="avatar avatar--active avatar--lg">
-                                        <img src="img/avatars/avatar_sample.png" alt="Avatar">
-                                    </div>
-                                    <div class="client-name">
-                                        <span>INBS.Software Konrad Keck</span>
-                                        <span class="label-basic label-basic--success label-basic--md">ACTIVE</span>
-                                    </div>
-                                </div>
-                                <div class="card__header--bottom">
-                                    <section class="list list--md list--icons">
-                                        <ul>
-                                            <li><i class="zmdi zmdi-case-check"></i>
-                                                <span>Last login <span>9 days ago<span></span></li>
-                                            <li><i class="zmdi zmdi-email"></i> <span><a
-                                                    >konrad@inbs.software</a></span></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </div>
-                            <div class="card__content ">
-                                <section class="list list--md ">
-                                    <div class="list__title">Account Details</div>
-                                    <ul>
-                                        <li><span>INBS.Software Konrad Keck</span></li>
-                                        <li><span>ul. Tadeusza Rejtana 36/14</span></li>
-                                        <li><span>35-303 Rzeszów</span></li>
-                                        <li><span>Polska</span></li>
-                                        <li><span>NIP: 6254895746</span></li>
-                                    </ul>
-                                </section>
-                                <div class="mobile-toogle--target">
-                                    <section class="list list--md ">
-                                        <div class="list__title">Billing Address</div>
-                                        <ul>
-                                            <li><span>Same as account address</span></li>
-                                        </ul>
-                                    </section>
-                                    <section class="list list--md ">
-                                        <div class="list__title">Billing Info</div>
-                                        <ul>
-                                            <li><span>**** **** **** 1699</span></li>
-                                        </ul>
-                                    </section>
-                                    <section class="list list--md ">
-                                        <div class="list__title">Settings</div>
-                                        <ul class="datarow ">
-                                            <li class="datarow__sgl">
-                                                <div class="datarow__left">
-                                                    <span class="datarow__status">Currency</span>
-                                                </div>
-                                                <div class="datarow__right">
-                                                                                                                        <span class="datarow__data">
-                                                    <strong>USA Dollar ($)</strong>
-                                                </span>
-                                                </div>
-                                            </li>
-                                            <li class="datarow__sgl">
-                                                <div class="datarow__left">
-                                                    <span class="datarow__status">Language</span>
-                                                </div>
-                                                <div class="datarow__right">
-                                                                                                                        <span class="datarow__data">
-                                                    <strong>Polish</strong>
-                                                </span>
-                                                </div>
-                                            </li>
-                                            <li class="datarow__sgl">
-                                                <div class="datarow__left">
-                                                    <span class="datarow__status">Group</span>
-                                                </div>
-                                                <div class="datarow__right">
-                                                                                                                        <span class="datarow__data">
-                                                    <strong>Default</strong>
-                                                </span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </div>
-                            <div class="mobile-toogle--box">
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                            class="zmdi zmdi-caret-down"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+    <body>
+        <template id="vue-page-clients-details">
+            <div class="client-value-chart--blue">
+                <chart-client-value></chart-client-value>
             </div>
-            <!-- Clients Info END-->
+        </template>
+        <% include ../layout/app_wrapper_start_tag %>
+
+            <% if(clientArea){ %>
+                <% include ../layout/mode_clientArea/CA_menutop %>
+                    <% } else{ %>
+                        <% include ../layout/main_menu_html %>
+                            <% } %>
+
+                                <div class="app-content page-clients-details app-content--gridstack">
+                                    <% include ../layout/card_bar %>
+
+                                        <% var breadData = 'Clients Details'; %>
+                                            <% if(clientArea){ %>
+                                                <% include ../layout/mode_clientArea/CA_mainhead %>
+                                                    <% } else{ %>
+                                                        <% include ../layout/mainhead %>
+                                                            <% } %>
+
+                                                                <% include ../layout/sidebar_notifications %>
+                                                                    <% include ../layout/sidebar_alerts %>
+                                                                        <section class="main-content">
+                                                                            <div class="clients-details-gridstack clients-details--vue grid-stack ui-draggable-disabled ui-resizable-disabled">
+                                                                                <!-- Clients Info -->
+                                                                                <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="0" data-gs-y="0" data-gs-width="5" data-gs-auto-position="0"
+                                                                                    data-gs-height="12" data-gs-min-width="5"
+                                                                                    data-gs-min-height="19">
+                                                                                    <div class="grid-stack-item-content">
+                                                                                        <% include ../layout/widget_edit %>
+                                                                                            <div class="card-container">
+
+                                                                                                <div class="card card--detail-info card--dark card--more-gradient" data-preload>
+                                                                                                    <div class="card__header">
+                                                                                                        <div class="card__header--top">
+                                                                                                            <div class="avatar avatar--active avatar--lg">
+                                                                                                                <img src="img/avatars/avatar_sample.png" alt="Avatar">
+                                                                                                            </div>
+                                                                                                            <div class="client-name">
+                                                                                                                <span>INBS.Software
+                                                                                                                    Konrad
+                                                                                                                    Keck
+                                                                                                                </span>
+                                                                                                                <span class="label-basic label-basic--success label-basic--md">ACTIVE</span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="card__header--bottom">
+                                                                                                            <section class="list list--md list--icons">
+                                                                                                                <ul>
+                                                                                                                    <li>
+                                                                                                                        <i class="zmdi zmdi-case-check"></i>
+                                                                                                                        <span>Last
+                                                                                                                            login
+                                                                                                                            <span>9
+                                                                                                                                days
+                                                                                                                                ago
+                                                                                                                                <span></span>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <i class="zmdi zmdi-email"></i>
+                                                                                                                        <span>
+                                                                                                                            <a>konrad@inbs.software</a>
+                                                                                                                        </span>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                            </section>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="card__content ">
+                                                                                                        <section class="list list--md ">
+                                                                                                            <div class="list__title">Account Details</div>
+                                                                                                            <ul>
+                                                                                                                <li>
+                                                                                                                    <span>INBS.Software
+                                                                                                                        Konrad
+                                                                                                                        Keck
+                                                                                                                    </span>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <span>ul. Tadeusza
+                                                                                                                        Rejtana
+                                                                                                                        36/14
+                                                                                                                    </span>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <span>35-303
+                                                                                                                        Rzeszów
+                                                                                                                    </span>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <span>Polska</span>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <span>NIP:
+                                                                                                                        6254895746
+                                                                                                                    </span>
+                                                                                                                </li>
+                                                                                                            </ul>
+                                                                                                        </section>
+                                                                                                        <div class="mobile-toogle--target">
+                                                                                                            <section class="list list--md ">
+                                                                                                                <div class="list__title">Billing Address</div>
+                                                                                                                <ul>
+                                                                                                                    <li>
+                                                                                                                        <span>Same
+                                                                                                                            as
+                                                                                                                            account
+                                                                                                                            address
+                                                                                                                        </span>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                            </section>
+                                                                                                            <section class="list list--md ">
+                                                                                                                <div class="list__title">Billing Info</div>
+                                                                                                                <ul>
+                                                                                                                    <li>
+                                                                                                                        <span>****
+                                                                                                                            ****
+                                                                                                                            ****
+                                                                                                                            1699
+                                                                                                                        </span>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                            </section>
+                                                                                                            <section class="list list--md ">
+                                                                                                                <div class="list__title">Settings</div>
+                                                                                                                <ul class="datarow ">
+                                                                                                                    <li class="datarow__sgl">
+                                                                                                                        <div class="datarow__left">
+                                                                                                                            <span class="datarow__status">Currency</span>
+                                                                                                                        </div>
+                                                                                                                        <div class="datarow__right">
+                                                                                                                            <span class="datarow__data">
+                                                                                                                                <strong>USA
+                                                                                                                                    Dollar
+                                                                                                                                    ($)
+                                                                                                                                </strong>
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                    </li>
+                                                                                                                    <li class="datarow__sgl">
+                                                                                                                        <div class="datarow__left">
+                                                                                                                            <span class="datarow__status">Language</span>
+                                                                                                                        </div>
+                                                                                                                        <div class="datarow__right">
+                                                                                                                            <span class="datarow__data">
+                                                                                                                                <strong>Polish</strong>
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                    </li>
+                                                                                                                    <li class="datarow__sgl">
+                                                                                                                        <div class="datarow__left">
+                                                                                                                            <span class="datarow__status">Group</span>
+                                                                                                                        </div>
+                                                                                                                        <div class="datarow__right">
+                                                                                                                            <span class="datarow__data">
+                                                                                                                                <strong>Default</strong>
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                            </section>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="mobile-toogle--box">
+                                                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
+                                                                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Clients Info END-->
 
 
-            <!--BIG TABLE (services, invoices, translation....)-->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="0"
-                 data-gs-width="14" data-gs-height="19"
-                 data-gs-min-width="13" data-gs-min-height="18"
-                 data-gs-auto-position="0">
-                <div class="grid-stack-item-content">
-                    <% include ../layout/widget_edit %>
-                    <div class="card card--pagination card--tabs" data-preload>
-                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                                                                                <!--BIG TABLE (services, invoices, translation....)-->
+                                                                                <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="0" data-gs-width="14" data-gs-height="19"
+                                                                                    data-gs-min-width="13" data-gs-min-height="18"
+                                                                                    data-gs-auto-position="0">
+                                                                                    <div class="grid-stack-item-content">
+                                                                                        <% include ../layout/widget_edit %>
+                                                                                            <div class="card card--pagination card--tabs" data-preload>
+                                                                                                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 
-                            <% include ../layout/mdl_tabs_bar.ejs %>
-                            <div class="mdl-tabs__panel is-active" id="services-panel">
-                                <!-- TAB 1 -->
-                                <div class="tbl-c tbl-c--nopadding card--unadjustable">
-                                    <% include ../layout/card_ctrls_filter %>
+                                                                                                    <% include ../layout/mdl_tabs_bar.ejs %>
+                                                                                                        <div class="mdl-tabs__panel is-active" id="services-panel">
+                                                                                                            <!-- TAB 1 -->
+                                                                                                            <div class="tbl-c tbl-c--nopadding">
+                                                                                                                <% include ../layout/card_ctrls_filter %>
 
-                                    <% include ../layout/example_datatable %>
+                                                                                                                    <% include ../layout/example_datatable %>
+
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="mdl-tabs__panel" id="invoices-panel">
+                                                                                                            <!-- TAB 2 -->
+
+                                                                                                            <div class="zd-container">
+
+                                                                                                                <div class="zd zd--lg">
+                                                                                                                    <div class="zd__header">
+                                                                                                                        <i class="zmdi zmdi-email"></i>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__content">
+                                                                                                                        <div class="zd__title">No
+                                                                                                                            invoices
+                                                                                                                            to
+                                                                                                                            display.
+                                                                                                                        </div>
+                                                                                                                        <div class="zd__description">
+                                                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac efficitur.
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__footer">
+                                                                                                                        <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
+                                                                                                                            NEW
+                                                                                                                            TICKET
+                                                                                                                        </a>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+
+                                                                                                        </div>
+                                                                                                        <div class="mdl-tabs__panel" id="transactions-panel">
+                                                                                                            <!-- TAB 2 -->
+
+                                                                                                            <div class="zd-container">
+
+                                                                                                                <div class="zd zd--lg">
+                                                                                                                    <div class="zd__header">
+                                                                                                                        <i class="zmdi zmdi-email"></i>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__content">
+                                                                                                                        <div class="zd__title">No
+                                                                                                                            transactions
+                                                                                                                            to
+                                                                                                                            display.
+                                                                                                                        </div>
+                                                                                                                        <div class="zd__description">
+                                                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac efficitur.
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__footer">
+                                                                                                                        <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
+                                                                                                                            NEW
+                                                                                                                            TICKET
+                                                                                                                        </a>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+
+                                                                                                        </div>
+                                                                                                        <div class="mdl-tabs__panel" id="quotes-panel">
+                                                                                                            <!-- TAB 2 -->
+                                                                                                            <div class="zd-container">
+
+                                                                                                                <div class="zd zd--lg">
+                                                                                                                    <div class="zd__header">
+                                                                                                                        <i class="zmdi zmdi-email"></i>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__content">
+                                                                                                                        <div class="zd__title">No
+                                                                                                                            quotes
+                                                                                                                            to
+                                                                                                                            display.
+                                                                                                                        </div>
+                                                                                                                        <div class="zd__description">
+                                                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac efficitur.
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__footer">
+                                                                                                                        <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
+                                                                                                                            NEW
+                                                                                                                            TICKET
+                                                                                                                        </a>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="mdl-tabs__panel" id="tickets-panel">
+                                                                                                            <!-- TAB 2 -->
+                                                                                                            <div class="zd-container">
+
+                                                                                                                <div class="zd zd--lg">
+                                                                                                                    <div class="zd__header">
+                                                                                                                        <i class="zmdi zmdi-email"></i>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__content">
+                                                                                                                        <div class="zd__title">No
+                                                                                                                            tickets
+                                                                                                                            to
+                                                                                                                            display.
+                                                                                                                        </div>
+                                                                                                                        <div class="zd__description">
+                                                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac efficitur.
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="zd__footer">
+                                                                                                                        <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
+                                                                                                                            NEW
+                                                                                                                            TICKET
+                                                                                                                        </a>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!--BIG TABLE (services, invoices, translation...) END-->
+
+
+                                                                                <!--Client value-->
+                                                                                <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="19" data-gs-y="0" data-gs-width="5" data-gs-height="10"
+                                                                                    data-gs-min-width="4" data-gs-min-height="10"
+                                                                                    data-gs-auto-position="0" data-widget-resizable>
+                                                                                    <div class="grid-stack-item-content">
+                                                                                        <% include ../layout/widget_edit %>
+                                                                                            <div class="card card--chart-small chart" data-preload>
+                                                                                                <div class="card__header">
+                                                                                                    <div class="card__header-left">
+                                                                                                        <span>CLIENT VALUE</span>
+                                                                                                    </div>
+                                                                                                    <div class="card__header-right">
+                                                                                                        <i class="card-maximize zmdi zmdi-window-maximize mdl-js-button mdl-js-ripple-effect text-white"></i>
+                                                                                                        <% include ../layout/card_more_btn.ejs %>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="card__header-chart" id="chart--client-value">
+                                                                                                    <span class="card__indicator">$1898.65</span>
+                                                                                                    <svg class="lineChart--svg"></svg>
+                                                                                                    <vue-page-clients-details></vue-page-clients-details>
+                                                                                                </div>
+                                                                                                <div class="card__content pt24 pb24">
+                                                                                                    <% include ../layout/example_client_value_datarow %>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- <antares-comments></antares-comments> -->
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <!--Client value END-->
+
+
+                                                                                <!-- Contacts-->
+                                                                                <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="0" data-gs-y="19" data-gs-width="5" data-gs-height="10"
+                                                                                    data-gs-min-width="5" data-gs-min-height="6"
+                                                                                    data-gs-auto-position="0">
+                                                                                    <div class="grid-stack-item-content">
+                                                                                        <% include ../layout/widget_edit %>
+                                                                                            <div class="card-container">
+                                                                                                <div class="card card--contacts card--scrollbox card--more-gradient" data-preload>
+                                                                                                    <div class="card__header">
+                                                                                                        <div class="card__header-left">
+                                                                                                            <span>CLIENT CONTACTS</span>
+                                                                                                        </div>
+                                                                                                        <div class="card__header-right">
+                                                                                                            <% include ../layout/card_more_btn.ejs %>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="datarow mobile-target--overflow">
+                                                                                                        <div class="" data-scrollable>
+                                                                                                            <% include ../layout/example_contacts.ejs %>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="mobile-toogle--box">
+                                                                                                        <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect">
+                                                                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Contacts -->
+
+                                                                                <!-- Logs -->
+                                                                                <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="28" data-gs-width="14" data-gs-height="16"
+                                                                                    data-gs-min-width="13" data-gs-min-height="6">
+                                                                                    <div class="grid-stack-item-content">
+                                                                                        <% include ../layout/widget_edit %>
+                                                                                            <div class="card card--pagination card--logs card-block--logs" data-preload>
+                                                                                                <div class="card__header">
+                                                                                                    <div class="card__header-left">
+                                                                                                        <span>Logs</span>
+                                                                                                    </div>
+                                                                                                    <div class="card__header-right">
+
+                                                                                                        <i class="card-maximize zmdi zmdi-window-maximize mdl-js-button mdl-js-ripple-effect"></i>
+
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="card__content datarow flex ff-cnw jc-flex-start">
+                                                                                                    <% include ../layout/card_ctrls %>
+                                                                                                        <div class="datarow">
+                                                                                                            <div class="dataTablesLogs">
+                                                                                                                <% include ../layout/example_timeline %>
+                                                                                                            </div>
+                                                                                                            <div class="pagination">
+                                                                                                                <div class="pagination-list simple-pagination--list"></div>
+                                                                                                                <div class="pagination-current simple-pagination--current antares-pagination">
+                                                                                                                    <ul>
+                                                                                                                        <li>
+                                                                                                                            <a class="current10 active mdl-js-button mdl-js-ripple-effect">10</a>
+                                                                                                                        </li>
+                                                                                                                        <li>
+                                                                                                                            <a class="current25 mdl-js-button mdl-js-ripple-effect">25</a>
+                                                                                                                        </li>
+                                                                                                                        <li>
+                                                                                                                            <a class="current50 mdl-js-button mdl-js-ripple-effect">50</a>
+                                                                                                                        </li>
+                                                                                                                        <li>
+                                                                                                                            <a class="current100 mdl-js-button mdl-js-ripple-effect">100</a>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <!-- Logs End -->
+
+                                                                            </div>
+                                                                        </section>
 
                                 </div>
-                            </div>
-                            <div class="mdl-tabs__panel" id="invoices-panel">
-                                <!-- TAB 2 -->
-
-                                <div class="zd-container">
-
-                                    <div class="zd zd--lg">
-                                        <div class="zd__header">
-                                            <i class="zmdi zmdi-email"></i>
-                                        </div>
-                                        <div class="zd__content">
-                                            <div class="zd__title">No invoices
-                                                to
-                                                display.
-                                            </div>
-                                            <div class="zd__description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                                                fermentum magna ac efficitur.
-                                            </div>
-                                        </div>
-                                        <div class="zd__footer">
-                                            <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
-                                                NEW TICKET</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="mdl-tabs__panel" id="transactions-panel">
-                                <!-- TAB 2 -->
-
-                                <div class="zd-container">
-
-                                    <div class="zd zd--lg">
-                                        <div class="zd__header">
-                                            <i class="zmdi zmdi-email"></i>
-                                        </div>
-                                        <div class="zd__content">
-                                            <div class="zd__title">No transactions
-                                                to
-                                                display.
-                                            </div>
-                                            <div class="zd__description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                                                fermentum magna ac efficitur.
-                                            </div>
-                                        </div>
-                                        <div class="zd__footer">
-                                            <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
-                                                NEW TICKET</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="mdl-tabs__panel" id="quotes-panel">
-                                <!-- TAB 2 -->
-                                <div class="zd-container">
-
-                                    <div class="zd zd--lg">
-                                        <div class="zd__header">
-                                            <i class="zmdi zmdi-email"></i>
-                                        </div>
-                                        <div class="zd__content">
-                                            <div class="zd__title">No quotes
-                                                to
-                                                display.
-                                            </div>
-                                            <div class="zd__description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                                                fermentum magna ac efficitur.
-                                            </div>
-                                        </div>
-                                        <div class="zd__footer">
-                                            <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
-                                                NEW TICKET</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="mdl-tabs__panel" id="tickets-panel">
-                                <!-- TAB 2 -->
-                                <div class="zd-container">
-
-                                    <div class="zd zd--lg">
-                                        <div class="zd__header">
-                                            <i class="zmdi zmdi-email"></i>
-                                        </div>
-                                        <div class="zd__content">
-                                            <div class="zd__title">No tickets
-                                                to
-                                                display.
-                                            </div>
-                                            <div class="zd__description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                                                fermentum magna ac efficitur.
-                                            </div>
-                                        </div>
-                                        <div class="zd__footer">
-                                            <a class="btn btn--primary btn--zd mdl-js-button mdl-js-ripple-effect">OPEN
-                                                NEW TICKET</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--BIG TABLE (services, invoices, translation...) END-->
-
-
-            <!--Client value-->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="19" data-gs-y="0"
-                 data-gs-width="5" data-gs-height="10"
-                 data-gs-min-width="4" data-gs-min-height="10"
-                 data-gs-auto-position="0" data-widget-resizable>
-                <div class="grid-stack-item-content">
-                    <% include ../layout/widget_edit %>
-                    <div class="card card--chart-small chart" data-preload>
-                        <div class="card__header">
-                            <div class="card__header-left">
-                                <span>CLIENT VALUE</span>
-                            </div>
-                            <div class="card__header-right">
-                                <i class="card-maximize zmdi zmdi-window-maximize mdl-js-button mdl-js-ripple-effect text-white"></i>
-                                <% include ../layout/card_more_btn.ejs %>
-                            </div>
-                        </div>
-                        <div class="card__header-chart" id="chart--client-value">
-                            <span class="card__indicator">$1898.65</span>
-                            <svg class="lineChart--svg"></svg>
-                            <vue-page-clients-details></vue-page-clients-details>
-                        </div>
-                        <div class="card__content pt24 pb24">
-                            <% include ../layout/example_client_value_datarow %>
-                        </div>
-                    </div>
-                    <!-- <antares-comments></antares-comments> -->
-                </div>
-            </div>
-
-            <!--Client value END-->
-
-
-            <!-- Contacts-->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="0" data-gs-y="19"
-                 data-gs-width="5" data-gs-height="10"
-                 data-gs-min-width="5" data-gs-min-height="6"
-                 data-gs-auto-position="0">
-                <div class="grid-stack-item-content">
-                    <% include ../layout/widget_edit %>
-                    <div class="card-container">
-                        <div class="card card--contacts card--scrollbox card--more-gradient" data-preload>
-                            <div class="card__header">
-                                <div class="card__header-left">
-                                    <span>CLIENT CONTACTS</span>
-                                </div>
-                                <div class="card__header-right">
-                                    <% include ../layout/card_more_btn.ejs %>
-                                </div>
-                            </div>
-                            <div class="datarow mobile-target--overflow">
-                                <div class=""  data-scrollable>
-                                    <% include ../layout/example_contacts.ejs %>
-                                </div>
-                            </div>
-                            <div class="mobile-toogle--box">
-                                <div class="card__mobile-toggle mdl-js-button mdl-js-ripple-effect"><i
-                                            class="zmdi zmdi-caret-down"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Contacts -->
-
-            <!-- Logs -->
-            <div class="grid-stack-item" data-gs-no-move="1" data-gs-no-resize="1" data-gs-x="5" data-gs-y="28"
-                 data-gs-width="14" data-gs-height="16"
-                 data-gs-min-width="13" data-gs-min-height="6">
-                <div class="grid-stack-item-content">
-                    <% include ../layout/widget_edit %>
-                    <div class="card card--pagination card--logs card-block--logs card--unadjustable" data-preload>
-                        <div class="card__header">
-                            <div class="card__header-left">
-                                <span>Logs</span>
-                            </div>
-                            <div class="card__header-right">
-
-                                <i class="card-maximize zmdi zmdi-window-maximize mdl-js-button mdl-js-ripple-effect"></i>
-
-                            </div>
-                        </div>
-                        <div class="card__content datarow flex ff-cnw jc-flex-start">
-                            <% include ../layout/card_ctrls %>
-                            <div class="datarow">
-                                <div class="dataTablesLogs">
-                                    <% include ../layout/example_timeline %>
-                                </div>
-                                <div class="pagination">
-                                    <div class="pagination-list simple-pagination--list"></div>
-                                    <div class="pagination-current simple-pagination--current antares-pagination">
-                                        <ul>
-                                            <li>
-                                                <a class="current10 active mdl-js-button mdl-js-ripple-effect">10</a>
-                                            </li>
-                                            <li>
-                                                <a class="current25 mdl-js-button mdl-js-ripple-effect">25</a>
-                                            </li>
-                                            <li>
-                                                <a class="current50 mdl-js-button mdl-js-ripple-effect">50</a>
-                                            </li>
-                                            <li>
-                                                <a class="current100 mdl-js-button mdl-js-ripple-effect">100</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Logs End -->
-
-        </div>
-    </section>
-
-</div>
-<% include ../layout/js_files %>
-</body>
+                                <% include ../layout/js_files %>
+    </body>
 
 </html>

@@ -34,22 +34,22 @@
 
 </template>
 <script>
-
 import cardEditControls from './card_edit_controls.vue';
 export default {
-    name: 'CardClean',
-    data: function() {
-        return {
-            widgetName: 'Clean',
-            name: 'Card Clean',
-            type: 'clean',
-            html: 'lorem-ipsumas ada sd as das da'
-        }
-    },
-    components: {
-        'card-edit-controls': cardEditControls
-    }
-}
+  name: 'CardClean',
+  data: function() {
+    return {
+      widgetName: 'Clean',
+      name: 'Card Clean',
+      type: 'clean',
+      html: 'lorem-ipsumas ada sd as das da'
+    };
+  },
+  components: {
+    'card-edit-controls': cardEditControls
+  }
+};
 </script>
 <style lang="less">
+
 </style>
