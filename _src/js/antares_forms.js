@@ -51,7 +51,6 @@ const AntaresForms = {
     self.elements.stopScroll();
     self.elements.updateHeightChartJS();
     self.elements.logsCorrectTimelineBorder();
-    self.elements.addSizeClassToCardChartJS();
     //MDL reinit
     componentHandler.upgradeAllRegistered();
   },
@@ -503,9 +502,9 @@ const AntaresForms = {
 
       // Select2 Init - Mdl Big
       $('[data-selectAR--mdl-big]').each(function() {
-        // if ($(this).data('select2')) {
-        //   return false;
-        // }
+        if ($(this).data('select2')) {
+          return false;
+        }
         let myData = $(this).attr('data-select2--class');
         if (myData === undefined) {
           myData = '';
@@ -720,6 +719,7 @@ const AntaresForms = {
         }
       });
     },
+
     spinner() {
       $('[data-spinner="true"]').spinner({
         min: 0,
@@ -731,6 +731,10 @@ const AntaresForms = {
       });
     },
     tooltip() {
+      $('[data-tooltip-inline]').qtip({
+        hide: 'click'
+      });
+
       $('.mdl-button__ripple-container').on('click', function() {
         $('[data-hasqtip]').qtip('hide');
       });
@@ -781,8 +785,6 @@ const AntaresForms = {
               }
             }
           });
-
-          $(this).qtip('show');
         });
 
         $(document).on('mouseover', "[data-tooltip='true']", function(event) {
@@ -831,12 +833,11 @@ const AntaresForms = {
             }
           });
         });
-
-        $(this).qtip('show');
       }
 
       tooltipDesktop();
     },
+
     activateWithSelected() {
       $('.card-ctrls').click();
       let table = $('#table-ma');
@@ -1161,26 +1162,26 @@ const AntaresForms = {
         }, 200);
       }
 
-      // enquire.register('screen and (max-width: 1449px)', {
-      //     match: function () {
-      //         updateHeight('mob')
-      //         $(window).resize(
-      //             _.debounce(function () {
-      //                 updateHeight('mob')
-      //             }, 300)
-      //         );
-      //     },
-      //     unmatch: function () {
-      //         updateHeight('desc')
-      //         $(window).resize(
-      //             _.debounce(function () {
-      //                 updateHeight('desc')
-      //             }, 300)
-      //         );
-      //     }
-      // });
+      enquire.register('screen and (max-width: 1449px)', {
+        match: function() {
+          updateHeight('mob');
+          $(window).resize(
+            _.debounce(function() {
+              updateHeight('mob');
+            }, 300)
+          );
+        },
+        unmatch: function() {
+          updateHeight('desc');
+          $(window).resize(
+            _.debounce(function() {
+              updateHeight('desc');
+            }, 300)
+          );
+        }
+      });
 
-      enquire.register('screen and (min-width: 1367px)', {
+      enquire.register('screen and (min-width: 1450px)', {
         match: function() {
           updateHeight('desc');
           function updateHeightCharts(containerTarget) {
@@ -1221,51 +1222,43 @@ const AntaresForms = {
           if (widthForNameCard - 15 < widthCardName) {
             let thisSpanText = thisNameSpan.text();
             thisNameSpan.attr('data-tooltip-inline', thisSpanText);
-
-            $(document).on('mouseover', thisNameSpan, function(event) {
-              // Element already has a qTip? Return.
-              if ($(this).qtip('api')) {
-                return;
-              }
-              thisNameSpan.qtip({
-                style: {
-                  classes: 'ar',
-                  tip: {
-                    width: 9,
-                    height: 5
-                  }
-                },
-                position: {
-                  viewport: $(window),
-                  adjust: {
-                    method: 'shift'
-                  }
-                },
-                content: {
-                  attr: 'data-tooltip-inline'
-                },
-                show: {
-                  effect() {
-                    $(this).fadeIn(300); // "this" refers to the tooltip
-                  }
-                },
-                hide: {
-                  effect() {
-                    $(this).fadeOut(300); // "this" refers to the tooltipc1
-                  }
-                },
-                events: {
-                  show: function(event, api) {
-                    var $el = $(api.elements.target[0]);
-                    $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
-                    $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
-
-                    // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
-                  }
+            thisNameSpan.qtip({
+              style: {
+                classes: 'ar',
+                tip: {
+                  width: 9,
+                  height: 5
                 }
-              });
+              },
+              position: {
+                viewport: $(window),
+                adjust: {
+                  method: 'shift'
+                }
+              },
+              content: {
+                attr: 'data-tooltip-inline'
+              },
+              show: {
+                effect() {
+                  $(this).fadeIn(300); // "this" refers to the tooltip
+                }
+              },
+              hide: {
+                effect() {
+                  $(this).fadeOut(300); // "this" refers to the tooltipc1
+                }
+              },
 
-              $(this).qtip('show');
+              events: {
+                show: function(event, api) {
+                  var $el = $(api.elements.target[0]);
+                  $el.qtip('option', 'position.my', $el.data('tooltip-my-position') == undefined ? 'top center' : $el.data('tooltip-my-position'));
+                  $el.qtip('option', 'position.at', $el.data('tooltip-target-position') == undefined ? 'bottom center' : $el.data('tooltip-target-position'));
+
+                  // $(document).one("click", function() { $(".item-grp-single").qtip('hide'); });  issue #256
+                }
+              }
             });
           } else {
             thisNameSpan.removeAttr('data-tooltip-inline');
@@ -1282,40 +1275,19 @@ const AntaresForms = {
         });
       });
     },
-    addSizeClassToCardChartJS() {
-      enquire.register('screen and (max-width: 767px)', {
-        match: function() {
-          $('.card.card--chart')
-            .closest('.card-container')
-            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
-            .addClass('chart--mobile');
-        }
-      });
-      enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
-        match: function() {
-          $('.card.card--chart')
-            .closest('.card-container')
-            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
-            .addClass('chart--tablet');
-        }
-      });
-      enquire.register('screen and (min-width: 1024px) and (max-width: 1366px)', {
-        match: function() {
-          $('.card.card--chart')
-            .closest('.card-container')
-            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
-            .addClass('chart--laptop');
-        }
-      });
-      enquire.register('screen and (min-width: 1367px)', {
-        match: function() {
-          $('.card.card--chart')
-            .closest('.card-container')
-            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
-            .addClass('chart--desktop');
-        }
-      });
-    }
+      checkIfNeedTruncateTooltip(){
+          $('.check-truncate-tooltip').each(function () {
+              let $self = $(this)
+              let thisSelfWidth = $self.width()
+              let grandFatherWidth =  $self.parent().parent().width()
+              let positionLeft = $self.position().left
+              if (thisSelfWidth > grandFatherWidth && (positionLeft > 10 || grandFatherWidth - positionLeft > 10)) {
+                  let maxWidthForSelf = grandFatherWidth - positionLeft - 20
+                  $self.attr('data-tooltip-inline', $self.text())
+                  $self.css('overflow', 'hidden').css('white-space', 'nowrap').css('text-overflow', 'ellipsis').css('max-width', maxWidthForSelf)
+              }
+          })
+      }
   }
 };
 

@@ -25,46 +25,63 @@ export const listOfDropJS = {
     },
 
     initDropJS(){
-        $('[data-dropJS--target]').each(function () {
-            let dropJS = new Drop({
-                position: 'bottom left',
-                openOn: 'click',
-                classes: 'data-dropJS--target',
-                target: $(this)[0],
-                content: $(this).find('[data-dropJS--wrapper]')[0],
-                tetherOptions: {
-                    constraints: [
-                        {
-                            to: 'scrollParent',
-                            pin: true
-                        }
-                    ]
-                }
+        $(document).on('mouseover', "[data-dropJS--target]", function (event) {
+            // Element already has a qTip? Return.
+            if ($(this).hasClass('drop-target')) {
+                return;
+            }
+            $(this).each(function () {
+                let dropJS = new Drop({
+                    position: 'bottom left',
+                    openOn: 'click',
+                    classes: 'data-dropJS--target',
+                    target: $(this)[0],
+                    content: $(this).find('[data-dropJS--wrapper]')[0],
+                    tetherOptions: {
+                        constraints: [
+                            {
+                                to: 'scrollParent',
+                                pin: true
+                            }
+                        ]
+                    }
+                })
+                dropJS.open();
+                dropJS.position();
+                dropJS.close();
             })
-            dropJS.open();
-            dropJS.position();
-            dropJS.close();
         })
-        $('[data-dropJS-hover--target]').each(function () {
-            let dropJShover = new Drop({
-                position: 'right top',
-                openOn: 'hover',
-                classes: 'data-dropJS--target',
-                target: $(this)[0],
-                content: $(this).find('[data-dropJS-hover--wrapper]')[0],
-                tetherOptions: {
-                    constraints: [
-                        {
-                            to: 'scrollParent',
-                            pin: true
-                        }
-                    ]
-                }
+
+
+
+        $(document).on('mouseover', "[data-dropJS-hover--target]", function (event) {
+            // Element already has a qTip? Return.
+            if ($(this).hasClass('drop-target')) {
+                return;
+            }
+            $(this).each(function () {
+                let dropJShover = new Drop({
+                    position: 'right top',
+                    openOn: 'hover',
+                    classes: 'data-dropJS--target',
+                    target: $(this)[0],
+                    content: $(this).find('[data-dropJS-hover--wrapper]')[0],
+                    tetherOptions: {
+                        constraints: [
+                            {
+                                to: 'scrollParent',
+                                pin: true
+                            }
+                        ]
+                    }
+                })
+                dropJShover.open();
+                dropJShover.position();
+                dropJShover.close();
             })
-            dropJShover.open();
-            dropJShover.position();
-            dropJShover.close();
         })
+
+
     }
 
 };

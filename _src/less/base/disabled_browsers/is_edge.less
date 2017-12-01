@@ -2,6 +2,7 @@
     .comiseo-daterangepicker-left .comiseo-daterangepicker-calendar {
         float: right; // not rwd
     }
+
     .comiseo-daterangepicker .comiseo-daterangepicker-presets {
         float: left; // not rwd
     }
@@ -14,18 +15,23 @@
 .app-content.page-login .login-box .login-box__header img {
     width: 250px;
 }
-*{
+
+* {
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
-.ps{
-    overflow:hidden !important;
+
+.ps {
+    overflow: hidden !important;
 }
-.main-sidebar--top#app-wrapper .main-sidebar nav ul.main-menu .submenu-open .submenu .submenu__content .data-list{
+
+.main-sidebar--top#app-wrapper .main-sidebar nav ul.main-menu .submenu-open .submenu .submenu__content .data-list {
     display: inline-table;
 }
-.main-menu-html nav ul.main-menu{
+
+.main-menu-html nav ul.main-menu {
     overflow: visible;
 }
+
 #app-wrapper .card.card--logs .card__content {
     max-height: 100%;
     .datarow {
@@ -50,6 +56,27 @@
     align-items: center;
 }
 
-.comiseo-daterangepicker>.comiseo-daterangepicker-main.ui-widget-content {
+.comiseo-daterangepicker > .comiseo-daterangepicker-main.ui-widget-content {
     display: block !important;
+}
+
+#app-wrapper .page-datatables .main-content .card .pagination {
+    height: auto
+}
+ul {
+    height: auto !important;
+}
+#app-wrapper {
+    [data-gs-width="8"],
+    [data-gs-width="9"]{
+        .card .card-ctrls.tab-search.tab-search--filter.with-mass-actions-container .card-ctrls__left .search-box .search-box__mdl-textfield input {
+            max-width: 120px
+        }
+    }
+}
+.ddown.ddown--user .ddown__menu{
+    list-style-type:none
+}
+ul{
+    list-style-type:none
 }

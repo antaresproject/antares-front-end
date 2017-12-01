@@ -5,7 +5,9 @@
 table.dataTable.no-footer {
   border-bottom: 0;
 }
-
+.dataTables_scrollFoot{
+  display: none;
+}
 table.dataTable {
   background: @standard-white;
   min-height: 70px;
@@ -14,7 +16,12 @@ table.dataTable {
 .dataTables_wrapper {
   background: @standard-white;
 }
-
+.dataTables_scrollHeadInner,.dataTables_scrollFootInner{
+  width: 100% !important;
+  table{
+    width: 100% !important;
+  }
+}
 .tbl-c {
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
   position: relative;

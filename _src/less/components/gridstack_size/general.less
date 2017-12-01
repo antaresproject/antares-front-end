@@ -264,7 +264,6 @@ div.card.card--chart {
   //    }
   //  }
   //}
-
   .card.card--logs {
     .card-ctrls.tab-search .select2-container {
       max-width: 160px !important;
@@ -403,6 +402,18 @@ div.card.card--chart {
 }
 
 .card-datatables {
+  .tbl-c:not(.card--unadjustable) {
+    .dataTables_wrapper {
+      thead {
+        th {
+          width: auto !important;
+        }
+      }
+    }
+  }
+}
+
+.card-datatables {
   .tbl-c {
     padding: 0;
     .card-ctrls {
@@ -418,11 +429,6 @@ div.card.card--chart {
     }
     .dataTables_wrapper {
       padding: 0 16px !important;
-      thead {
-        th {
-          width: auto !important;
-        }
-      }
       @media only screen and (max-width: 1023px) {
         padding: 0 !important;
         thead tr th:first-child {
@@ -450,22 +456,22 @@ div.card.card--chart {
   width: 100% !important;
 }
 
-.chart--desktop{
-  div.card.card--chart{
-    .chartjs-render-monitor{
+.chart--desktop {
+  div.card.card--chart {
+    .chartjs-render-monitor {
       max-height: inherit;
     }
-    @media @xs{
-    .card__right{
-      padding: 16px 0 !important;
-    }
+    @media @xs {
+      .card__right {
+        padding: 16px 0 !important;
+      }
     }
 
   }
-  div.card.card--chart .card__right .mobile-toogle--target .datarow__data{
+  div.card.card--chart .card__right .mobile-toogle--target .datarow__data {
     margin-right: 16px;
   }
-  div.card.card--chart div.card__right header{
+  div.card.card--chart div.card__right header {
     height: 70px;
     display: flex;
     flex-flow: column;

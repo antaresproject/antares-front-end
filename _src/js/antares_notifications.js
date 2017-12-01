@@ -319,7 +319,7 @@ Antares.prototype.dialog = {
         dialogElement += '<div class="mdl-dialog__canvas">';
         dialogElement += '<div class="mdl-dialog__header">';
         dialogElement += '<span class="mdl-dialog__title">Modal</span>';
-        dialogElement += '<a class="mdl-js-button mdl-js-ripple-effect close" href="#"><i class="zmdi zmdi-close"></i></a>';
+        dialogElement += '<a class="mdl-js-button mdl-js-ripple-effect close"><i class="zmdi zmdi-close"></i></a>';
         dialogElement += '</div>';
         dialogElement += '<div class="mdl-dialog__content" data-scrollable>';
         dialogElement += '<p>';
@@ -575,7 +575,7 @@ Antares.prototype.modal = {
         //clear
         $('.jquery-modal.current .modal .modal__header').remove();
         //create footer when buttons
-        $('.jquery-modal.current .modal').prepend('<div class="modal__header"><div class="modal__title">Title</div><a class="modal__close mdl-js-button mdl-js-ripple-effect close" href="#" rel="modal:close"><i class="zmdi zmdi-close "></i></a></div>');
+        $('.jquery-modal.current .modal').prepend('<div class="modal__header"><div class="modal__title">Title</div><a class="modal__close mdl-js-button mdl-js-ripple-effect close" rel="modal:close"><i class="zmdi zmdi-close "></i></a></div>');
         if (!$.isEmptyObject(options) && 'title' in options) {
             //insert title
             $('.jquery-modal.current .modal__title').html(options.title);

@@ -215,6 +215,9 @@ export default {
             if ($('.app-content').hasClass('app-content--widgets-movable')) {
                 return false;
             }
+            if ( card.hasClass('card--unadjustable') || gsi.find('.tbl-c').hasClass('card--unadjustable')) {
+                return false;
+            }
 
             //logs exception
             // if (card.hasClass('card--logs')) {

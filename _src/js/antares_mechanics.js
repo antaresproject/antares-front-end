@@ -19,7 +19,6 @@
  */
 
 /* global antaresEvents */
-
 export const Antares = function() {};
 Antares.prototype.init = function() {
   var self = this;
@@ -51,60 +50,16 @@ Antares.prototype.init = function() {
   $(window).on('load', function() {
     // APP.components.pagePreloader('off');
   });
-
-  // (function secondary() {
-  //     if ($("body[data-id='dashboard'").length) {
-  //         self.components.breadcrumbs('Dashboard');
-  //         $('.breadcrumbs li:not(:first-child').remove();
-  //     }
-  //     if ($("body[data-id='clients-list'").length) {
-  //         self.components.breadcrumbs('Clients');
-  //         $('.breadcrumbs li:not(:first-child').remove();
-  //     }
-  //     if ($("body[data-id='settings-page'").length) {
-  //         self.components.breadcrumbs('Settings', 'General Settings');
-  //     }
-  //     if ($("body[data-id='settings-page'").length) {
-  //         self.components.breadcrumbs('Settings', 'General Settings');
-  //     }
-  // }());
-  //tmp - wip:
-  // self.components.tabScroll();
-  //unused
-  // self.animations.animator();
-  // self.animations.animate();
-  // self.dashboard.gridShowCase();
-  // self.dashboard.cardReadability();
-  // self.charts.labelBackground();
 };
 Antares.prototype.helpers = function() {
   const self = this;
-
-  antaresEvents.on('something_happend', callback => {
-    callback();
-  });
-
-  antaresEvents.emit('something_happend', () => {});
-
-  // $('.main-menu--primary > li:nth-child(3)').addClass('hovered submenu-open');
-  //input file manual
-  // $('.file-upload').each(function(index, el) {
-
-  //     $(this).find('input.input-upload').on('change', function() {
-
-  //         var curVal = $(this).val();
-
-  //         $(this).siblings('.file-path').val(curVal);
-
-  //     });
-
-  // });
 
   (function($) {
     $.fn.hasScrollBar = function() {
       return this.get(0) ? this.get(0).scrollWidth > this.innerWidth() : false;
     };
   })(jQuery);
+
   $('.ddown-multi__init').on('click', function() {
     $(this)
       .closest('.ddown-multi')
@@ -125,30 +80,8 @@ Antares.prototype.helpers = function() {
     });
   }
 
-  //tmp add expanded sidebar
-  // $('#app-wrapper').addClass('main-sidebar--expanded');
   radioButtonsBigBg();
-  //     $('.card >* ').css('opacity', '0');
-  //     $('.card >* ').css('transition', '500ms');
-  // window.addEventListener("load", function(event) {
-  //     setTimeout(function() {
-  //         $('.card > * ').css('opacity', '1');
-  //     }, 500);
-  //   });
-  // if ($('.grid-container--1col').length) {
-  //     $('.app-content .main-content').css('height', '100%');
-  // }
-  //simulate widnowResizeEnd
-  $(window).on('resize', function() {
-    if (this.resizeTO) clearTimeout(this.resizeTO);
-    this.resizeTO = setTimeout(function() {
-      $(this).trigger('resizeEnd');
-    }, 500);
-  });
-  //use:
-  $(window).on('resizeEnd', function() {
-    //do something, window hasn't changed size in 500ms
-  });
+
   // cursor at end of input plugin
   jQuery.fn.putCursorAtEnd = function() {
     return this.each(function() {
@@ -177,10 +110,7 @@ Antares.prototype.helpers = function() {
       this.scrollTop = 999999;
     });
   };
-  //if footer absolute add class to container (card)
-  // if ( $('.app-content__footer--absolute').length ) {
-  //    $(this).closest('.card__content').addClass('');
-  // }
+
   //fix on tags widget
   if ($('.card--tags').length) {
     $('.card--tags')
@@ -228,10 +158,6 @@ Antares.prototype.helpers = function() {
     $(element).attr('data-scrollable', 'true');
     APP.components.scroll();
   });
-  // fix quick
-  // ready('.dataTables_wrapper', function(element) {
-  //   $(this).perfectScrollbar();
-  // });
 
   ready('.tbl-c', function(element) {
     $(this).perfectScrollbar('destroy');
@@ -245,30 +171,6 @@ Antares.prototype.components = {
     });
   },
   preloader: function() {
-    // if (!$('.page-preloader').length) {
-    //     return false;
-    // }
-    var target = $('.main-preloader');
-
-    function mainPrelaoderOn() {
-      // target.show();
-      // target.velocity({
-      //     opacity: '1',
-      // }, 250);
-    }
-
-    function mainPrelaoderOff() {
-      // target.velocity({
-      //     opacity: '0',
-      // }, 250, function() {
-      //     target.hide();
-      // });
-    }
-
-    // mainPrelaoderOn();
-    // setTimeout(function() {
-    //     mainPrelaoderOff();
-    // }, 5000);
     Pace.start({
       elements: false,
       document: true,
@@ -300,52 +202,8 @@ Antares.prototype.components = {
       $(this).css('color', getC3);
     });
   },
-  cardTruncate: function() {
-    //truncate size
-    function truncateFix() {
-      // setTimeout(function() {
-      //     $('.card__header-left').each(function(index, el) {
-      //         var width = $(this).outerWidth() - 24;
-      //         $(this).find('>span').css('max-width', width);
-      //     });
-      // }, 1000);
-    }
-
-    // truncateFix();
-    // $(window).on('resize', function() {
-    //     truncateFix();
-    // });
-    // $('.grid-stack').on('change', function(event, ui) {
-    //     truncateFix();
-    // });
-  },
-  pagePreloader: function(action) {
-    // paceOptions = {
-    //     // Disable the 'elements' source
-    //     elements: false,
-    //     eventLag: true,
-    //     document: true,
-    //     // Only show the progress on regular and ajax-y page navigation,
-    //     // not every request
-    //     restartOnRequestAfter: true
-    // };
-    // var pagePreloader = $('.preloader');
-    // if (action === "on") {
-    //     // pagePreloader.css({ 'opacity': '1', 'width': '100vw', 'display': 'flex' });
-    //     // pagePreloader.find('img').css('width', 'auto');
-    //     // console.log('pre.on');
-    //     // preloader.on();
-    // } else if (action === "off") {
-    //     // pagePreloader.velocity({ opacity: 0, width: "toggle", }, 500);
-    //     // pagePreloader.find('img').velocity({ width: "toggle", }, 400);
-    //     // console.log('pre.off');
-    //     setTimeout(function() {
-    //         // preloader.off();
-    //     }, 1000);
-    // } else {
-    //     return false;
-    // }
-  },
+  cardTruncate: function() {},
+  pagePreloader: function(action) {},
   divPreloader: function() {
     $.fn.divPreload = function(action) {
       var self = $(this);
@@ -371,21 +229,24 @@ Antares.prototype.components = {
         wheelPropagation: true,
         suppressScrollX: true
       };
-      if (relative) {
-        $(selector)
-          .perfectScrollbar(perfectScrollbarCFG)
-          .css('position', 'relative');
-      } else {
-        $(selector).perfectScrollbar(perfectScrollbarCFG);
+      if (!$(selector).hasClass('ps')) {
+        if (relative) {
+          $(selector)
+            .perfectScrollbar(perfectScrollbarCFG)
+            .css('position', 'relative');
+        } else {
+          $(selector).perfectScrollbar(perfectScrollbarCFG);
+        }
       }
     }
-      enquire.register('screen and (min-width:768px)', {
-          match: function() {
-              addScroll('.card--unadjustable .datarow .dataTablesLogs', true);
-              setTimeout(function () {
-                  addScroll('.card--unadjustable > .dataTables_wrapper', true);
-              }, 300);
-          }})
+    enquire.register('screen and (min-width:768px)', {
+      match: function() {
+        addScroll('.card--unadjustable .datarow .dataTablesLogs', true);
+        setTimeout(function() {
+          addScroll('.card--unadjustable   .dataTables_wrapper .dataTables_scrollBody', true);
+        }, 300);
+      }
+    });
     enquire.register('screen and (min-width:1200px)', {
       match: function() {
         //main
@@ -393,11 +254,7 @@ Antares.prototype.components = {
         addScroll('.sidebar--notifications .sidebar__content', true);
         addScroll('.sidebar--alerts .sidebar__content', true);
         //menu
-        // addScroll('nav .main-menu--primary', false);
-        // addScroll('nav .main-menu--secondary', false);
-        // addScroll('nav .submenu', false);
-        // addScroll('.menu-aside-container', false);
-        //custom selector for scrolling
+
         addScroll('[data-scrollable]', true);
         addScroll('[data-scrollable--alt]', false);
         (function update(argument) {
@@ -707,50 +564,8 @@ Antares.prototype.RWD = {
     };
   }
 };
-//not needed
-// require('./antares_notifications.js');
-//fire on document ready
+
 $(function() {
   window.APP = new Antares();
   APP.init();
 });
-// function displayNotification(type) {
-//     noty(APP.noti.type);
-// }
-//graveyard
-// Antares.prototype.destroy = function() {
-//     setTimeout(function() {
-//         $('body').hide(3000);
-//     }, 2000);
-//     console.log('hiding...');
-//     return true;
-// };
-// Antares.prototype.bulid = function() {
-//     setTimeout(function() {
-//         $('body').show(3000);
-//     }, 2000);
-//     console.log('showing...');
-//     return true;
-// };
-// Antares.prototype.helpers = {
-//     logger: function() {
-//         console.log(message + " running accordingly.");
-//     },
-//     positiveNumber: function(argument) {
-//         var sandbox = parseInt(argument, 10);
-//         if (isNaN(sandbox)) {
-//             console.log('Not a Number');
-//             return false;
-//         }
-//         positive = -sandbox > 0 ? -sandbox : sandbox;
-//         return positive;
-//     },
-//     initComponent: function(name, description) {
-//         if (typeof name === "function") {
-//             name();
-//         } else {
-//             console.log('||||| Not a Correct Function, im afraid!');
-//         }
-//         if (typeof description !== 'undefined') logger(description);
-//     }
-// };
