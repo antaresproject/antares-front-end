@@ -20,7 +20,17 @@
 }
 .form-block {
     min-height: 80px;
+    &:last-of-type{
+        margin-top: 64px;
+    }
+
 }
+@media only screen and (min-width: 1200px){
+    .header-translations .header__compare--desktop .header-translation__country .header-translation__select-text{
+        vertical-align: super;
+    }
+}
+
 .grid-container.grid-container--1col .grid-col--container{
     flex: auto;
 }

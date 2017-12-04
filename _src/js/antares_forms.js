@@ -50,7 +50,10 @@ const AntaresForms = {
     self.elements.disabledDashboardChartCompareMode();
     self.elements.stopScroll();
     self.elements.updateHeightChartJS();
-    self.elements.logsCorrectTimelineBorder();
+    self.elements.cardChartHeaderTruncate();
+    self.elements.checkIfNeedTruncateTooltip();
+    self.elements.classForChart();
+
     //MDL reinit
     componentHandler.upgradeAllRegistered();
   },
@@ -502,9 +505,9 @@ const AntaresForms = {
 
       // Select2 Init - Mdl Big
       $('[data-selectAR--mdl-big]').each(function() {
-        if ($(this).data('select2')) {
-          return false;
-        }
+        // if ($(this).data('select2')) {
+        //     return false;
+        // }
         let myData = $(this).attr('data-select2--class');
         if (myData === undefined) {
           myData = '';
@@ -1184,6 +1187,7 @@ const AntaresForms = {
       enquire.register('screen and (min-width: 1450px)', {
         match: function() {
           updateHeight('desc');
+
           function updateHeightCharts(containerTarget) {
             if (containerTarget === undefined) {
               return false;
@@ -1213,6 +1217,7 @@ const AntaresForms = {
     cardChartHeaderTruncate() {
       $('.card--chart .card__header').each(function() {
         let self = $(this);
+
         function giveTruncate() {
           let widthHeader = self.width();
           let thisNameSpan = self.find('.card__header-left span');
@@ -1265,6 +1270,7 @@ const AntaresForms = {
             thisNameSpan.qtip('destroy');
           }
         }
+
         $(window).resize(
           _.debounce(function() {
             giveTruncate();
@@ -1275,19 +1281,80 @@ const AntaresForms = {
         });
       });
     },
-      checkIfNeedTruncateTooltip(){
-          $('.check-truncate-tooltip').each(function () {
-              let $self = $(this)
-              let thisSelfWidth = $self.width()
-              let grandFatherWidth =  $self.parent().parent().width()
-              let positionLeft = $self.position().left
-              if (thisSelfWidth > grandFatherWidth && (positionLeft > 10 || grandFatherWidth - positionLeft > 10)) {
-                  let maxWidthForSelf = grandFatherWidth - positionLeft - 20
-                  $self.attr('data-tooltip-inline', $self.text())
-                  $self.css('overflow', 'hidden').css('white-space', 'nowrap').css('text-overflow', 'ellipsis').css('max-width', maxWidthForSelf)
-              }
-          })
-      }
+    checkIfNeedTruncateTooltip() {
+      $('.check-truncate-tooltip').each(function() {
+        let $self = $(this);
+        let thisSelfWidth = $self.width();
+        let grandFatherWidth = $self
+          .parent()
+          .parent()
+          .width();
+        let positionLeft = $self.position().left;
+        if (thisSelfWidth > grandFatherWidth && (positionLeft > 10 || grandFatherWidth - positionLeft > 10)) {
+          let maxWidthForSelf = grandFatherWidth - positionLeft - 20;
+          $self.attr('data-tooltip-inline', $self.text());
+          $self
+            .css('overflow', 'hidden')
+            .css('white-space', 'nowrap')
+            .css('text-overflow', 'ellipsis')
+            .css('max-width', maxWidthForSelf);
+        }
+      });
+    },
+    classForChart() {
+      enquire.register('screen and (max-width: 767px)', {
+        match: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--mobile');
+        },
+        unmatch: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile');
+        }
+      });
+      enquire.register('screen and (min-width: 768px) and (max-width:1023px)', {
+        match: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--tablet');
+        },
+        unmatch: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--tablet');
+        }
+      });
+      enquire.register('screen and (min-width:1024px) and (max-width:1366px)', {
+        match: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--laptop');
+        },
+        unmatch: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--laptop');
+        }
+      });
+      enquire.register('screen and (min-width:1367px)', {
+        match: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--mobile chart--tablet chart--laptop chart--desktop')
+            .addClass('chart--desktop');
+        },
+        unmatch: function() {
+          $('.card--chart')
+            .closest('.card-container')
+            .removeClass('chart--desktop');
+        }
+      });
+    }
   }
 };
 

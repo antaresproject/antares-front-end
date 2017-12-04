@@ -218,15 +218,14 @@ const AntaresDdownGeneral = {
         // $(document).mouseup(function (e) {
         //     var container = $('.ddown');
         //     var container2 = $('.input-field--group');
-        //     console.log(e.target)
-        //     if (!e.target.closest('.ui-widget-content')) {
+        //     if ($(!e.target).closest('.ui-widget-content')) {
         //         if (container.has(e.target).length === 0 || container2.has(e.target).length === 0) {
         //             $('[data-daterangepicker]').daterangepicker('close');
         //         }
         //     }
         // });
         // $('.breadcrumbs').click(function () {
-        //     self.closeAllDropdowns;
+        //     self.closeAllDropdowns();
         //     $('.grid-stack-item').css('z-index', '0');
         // });
     },
