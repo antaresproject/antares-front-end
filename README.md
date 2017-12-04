@@ -26,6 +26,10 @@ An open source package by [Antares Project](http://antaresproject.io), code well
 
 Open Source Laravel User Management Platform for standalone and SaaS applications. Based on Laravel, PHP7 ready, using flexible design patterns that keep the code clean and elegant.Speed up your work even up to 50% by using built-in workflow improvements.
 
+## Demo
+
+You can preview front-end demo here: [http://demo.antaresproject.io/frontend/](http://demo.antaresproject.io/frontend/).
+
 ## Usage
 
 Install using preferred dependency manager.
