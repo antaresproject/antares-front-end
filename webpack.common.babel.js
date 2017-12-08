@@ -509,6 +509,14 @@ module.exports = {
         chunks: ['app_cache', 'forms_standard', 'view_gridstack']
       })
     ),
+      new HtmlWebpackPlugin(
+          Object.assign(htmlOptions, {
+              title: 'Antares Change Log',
+              template: path.resolve(__dirname, '_src/templates/pages/change_log.ejs'),
+              filename: 'change_log.html',
+              chunks: ['app_cache', 'forms_standard', 'view_gridstack']
+          })
+      ),
     new HtmlWebpackPlugin(
       Object.assign(htmlOptions, {
         title: 'Antares Notifications Preview',
