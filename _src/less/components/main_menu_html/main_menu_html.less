@@ -23,7 +23,7 @@
   align-items: center;
   transition: 300ms;
   padding-left: 50px;
-  @media only screen and (max-width: 1023px) {
+  @media @max1023 {
     display: none !important;
   }
   &:hover {
@@ -82,7 +82,7 @@
       }
     }
     .main-content {
-      @media only screen and (max-width: 1199px) {
+      @media @max1199 {
         padding-left: 8px !important;
         padding-right: 8px !important;
 
@@ -90,7 +90,7 @@
     }
     .page-clients-details, .page-dashboard {
       .main-content {
-        @media only screen and (max-width: 1199px) {
+        @media @max1199 {
           padding-left: 0px !important;
           padding-right: 0px !important;
         }
@@ -106,7 +106,7 @@
     }
   }
   &.main-sidebar--top--mobile {
-    @media only screen and (max-width: 1023px) {
+    @media @max1023 {
       @import "top_menu/top_menu_mobile";
     }
   }
@@ -146,7 +146,7 @@
       left: 98px !important;
       display: block;
       overflow: visible;
-      @media only screen and (max-width: 1023px) {
+      @media @max1023 {
         transition: 0ms;
         left: 0 !important;
       }
@@ -178,7 +178,7 @@
 nav {
   .menu-scroll {
     max-height: ~'calc(90vh - 20px)' !important;
-    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    @media @min768max1023 {
       max-height: ~'calc(90vh - 60px)' !important;
       .main-menu {
         max-height: ~'calc(100vh - 215px)' !important;
@@ -192,7 +192,7 @@ nav {
 
 nav.submenu-is-active .menu-scroll {
   max-height: ~'calc(100vh - 70px)' !important;
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media @min768max1023 {
     max-height: ~'calc(90vh - 60px)' !important;
     .main-menu {
       max-height: none !important;
@@ -251,7 +251,7 @@ nav.submenu-is-active .menu-scroll {
       font-weight: 400;
       color: #b8becc;
       width: 100%;
-      @media only screen and (max-width: 1023px) {
+      @media @max1023 {
         padding-left: 0 !important;
       }
       &:hover {

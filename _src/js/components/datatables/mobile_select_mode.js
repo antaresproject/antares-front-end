@@ -171,7 +171,7 @@ export const AntaresMobileSelectMode = {
         })
 
 
-        enquire.register('screen and (max-width: 767px)', {
+        enquire.register(bpMobMax767, {
             match: function () {
                 if ($('table tbody tr').hasClass('is-selected')) {
                     $('.tbl-c').addClass('selected-mode--touch-active')

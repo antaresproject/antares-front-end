@@ -148,7 +148,7 @@ aside.main-sidebar .main-sidebar__logo {
 .app-content {
   padding-top: @menu-top-height;
   padding-bottom: @menu-top-height;
-  @media only screen and (max-width: 1023px) {
+  @media @max1023 {
     margin-top: 0;
   }
 }
@@ -161,7 +161,7 @@ aside.main-sidebar {
   //@media @md{
     position: fixed;
   //}
-  @media only screen and (max-width: 1023px) {
+  @media @max1023 {
     height: 0;
   }
   .menu-scroll,
@@ -394,7 +394,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   }
 }
 
-@media only screen and (min-width: 1024px){
+@media @min1024{
 .app-content.page-dashboard {
   padding-bottom: 80px; //because 'height:100vh'
 }
@@ -402,7 +402,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
 @media only screen and (max-width: 1024px){
   .app-content.page-dashboard {
     padding-bottom: 0; //because 'height:100vh'
-    padding-top: 0; //because 'height:100vh'
+    //padding-top: 0; //because 'height:100vh'
   }
 }
 .page-brand-settings {

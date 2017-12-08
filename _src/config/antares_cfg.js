@@ -35,6 +35,7 @@ export let antaresCfg = {
       'Antares Alerts',
       'Antares Grid',
       'Form Single',
+        'Change Log',
       'Antares Notifications Preview'
     ],
     secondary: ['Access Control List', 'Notification Templates']

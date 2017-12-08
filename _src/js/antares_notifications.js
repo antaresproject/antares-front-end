@@ -270,17 +270,18 @@ Antares.prototype.dialog = {
                                 $targetDialog[0].close();
                             });
 
-                            targetDialog.showModal();
+                            targetDialog.show();
                         });
                     });
                 } else {
                     dialog.querySelectorAll('.ar-dialog .close').forEach(function (element, index) {
                         element.addEventListener('click', function () {
                             dialog.close();
+                            $('.dialog-backdrop').remove()
                         });
                     });
                     showModalButton.addEventListener('click', function () {
-                        dialog.showModal();
+                        dialog.show();
                     });
                 }
             }
@@ -305,7 +306,8 @@ Antares.prototype.dialog = {
 
     close() {
         $('.ar-dialog').removeClass('is-current');
-        $('.ar-dialog').removeAttr('open');
+        $('.ar-dialog').removeAttr('open'); 
+        $('.dialog-backdrop').remove()
     },
 
     cleanUp: function (options) {
@@ -354,6 +356,7 @@ Antares.prototype.dialog = {
         $('dialog.is-current .close').each(function () {
             $(this)[0].addEventListener('click', function () {
                 dialog.close();
+                $('.dialog-backdrop').remove()
                 $('body').removeClass('dialog-is-open');
             });
         })
@@ -422,6 +425,7 @@ Antares.prototype.dialog = {
                 });
                 $('.ar-dialog.is-current .mdl-dialog__actions').on('click', function () {
                     $('body').removeClass('dialog-is-open');
+                    $('.dialog-backdrop').remove()
                 });
             });
         }
@@ -433,8 +437,8 @@ Antares.prototype.dialog = {
 
     display: function (options) {
         var dialog = $('dialog.is-current');
-
-        dialog[0].showModal();
+        $(dialog[0]).after("<div class='dialog-backdrop'></div>")
+        dialog[0].show();
 
         //MDL
         componentHandler.upgradeAllRegistered();
@@ -489,13 +493,14 @@ Antares.prototype.dialog = {
             dialog.classList.add('ar-dialog');
 
             showModalButton.addEventListener('click', function () {
-                dialog.showModal();
+                dialog.show();
                 $('.is-programmatic').removeAttr('open');
             });
 
             dialog.querySelectorAll('.ar-dialog .close').forEach(function (element, index) {
                 element.addEventListener('click', function () {
                     dialog.close();
+                    $('.dialog-backdrop').remove()
                 });
             });
 

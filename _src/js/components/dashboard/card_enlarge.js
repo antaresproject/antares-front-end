@@ -39,7 +39,7 @@ $(function() {
             bigCard.modal();
 
 
-            enquire.register("screen and (min-width:1200px)", {
+            enquire.register(bpTabMin1200, {
 
                 match: function() {
 

@@ -16,7 +16,7 @@
   margin-top: 80px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media @min768max1023 {
   .ac-container .ac-container--wrapper {
     width: 400px !important;
     right: 145px;
@@ -36,9 +36,13 @@
   display: none;
   height: 100%;
   max-height: 70vh;
+  margin-left: -200px;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
   top: 65px !important;
-  @media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  @media @xs{
+    margin-left: 0;
+  }
+  @media @min1024max1366 {
     overflow: auto !important;
   }
   .ps-scrollbar-y-rail > .ps-scrollbar-y {
@@ -47,6 +51,7 @@
     margin-right: 4px;
   }
   .ui-autocomplete.antares-ac {
+    transform: translateY(0);
     & > span {
       display: block;
     }

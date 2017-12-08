@@ -77,7 +77,7 @@
 
         //SMALL SCREEN
         //Screen Size <768
-        enquire.register("screen and (max-width:767px)", {
+        enquire.register(bpMobMax767, {
 
 
 

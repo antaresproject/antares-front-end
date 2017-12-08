@@ -336,7 +336,7 @@ const AntaresDatatablesFilters = {
         .addClass('dropjs-target')
         .removeClass('dropjs--no-active--template')
         .addClass('dropjs--no-active');
-      templateElement.find('.select--badge').attr('data-selectAR', true);
+      templateElement.find('.select--badge').attr('data-select-filter', true);
       templateElement.find('.filter').attr('data-type', typeFilter);
       templateElement
         .find('.dropjs-target')

@@ -1,5 +1,5 @@
 .main-sidebar--top {
-  @media only screen and (min-width: 1024px) {
+  @media @min1024 {
     .app-content, .main-content {
       transition: 0ms !important;
     }
@@ -7,7 +7,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media @min768max1023 {
   .app-content .main-content {
     padding: 0 8px;
   }
@@ -17,7 +17,7 @@
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+@media @min1024max1199 {
   .app-content .main-content {
     padding: 0 14px;
   }
@@ -564,7 +564,14 @@ input {
 .ui-front.comiseo-daterangepicker-mask {
   z-index: -10;
 }
-
+.box--with-menu-aside{
+  padding: 16px;
+  padding-top: 24px;
+  @media @xs{
+    padding: 8px;
+    padding-top: 16px;
+  }
+}
 .icheckbox_billevo.disabled, .icheckbox_billevo.disabled, .switch-checkbox[disabled] + .switch-container {
   opacity: 0.5;
 }
@@ -588,16 +595,16 @@ input {
   }
 }
 
-[data-tooltip-inline="Widget Edit Toggle"] {
+.mainhead-btn--widget-edit {
   display: none !important;
 }
 
 .app-content--gridstack {
-  [data-tooltip-inline="Widget Edit Toggle"] {
+  .mainhead-btn--widget-edit {
     display: block !important;
   }
   @media (max-width: 1350px) {
-    [data-tooltip-inline="Widget Edit Toggle"] {
+    .mainhead-btn--widget-edit {
       display: none !important;
     }
   }
@@ -637,7 +644,7 @@ fieldset.slider {
   .page-forms.page-single-form .generals-form .app-content__footer {
     left: auto;
     width: ~'calc(100% - 280px)';
-    @media only screen and (min-width: 1024px) {
+    @media @min1024 {
       margin-left: -16px
     }
   }
@@ -660,7 +667,7 @@ fieldset.slider {
     position: relative;
     & > .grid-col {
       padding: 0;
-      @media only screen and (max-width: 1023px) {
+      @media @max1023 {
         margin: 0;
         .app-content__footer {
           left: 0;

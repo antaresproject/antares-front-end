@@ -146,7 +146,7 @@ const AntaresMainMenuHtml = {
     },
     moreTriggerTopHeight() {
         if (window.antaresCfgLocal.statusMenuList.menuTop === true) {
-            enquire.register('screen and (min-width: 1024px)', {
+            enquire.register(bpTabHMin1024, {
                 //dla tableta
                 match: function () {
                     window.requestAnimationFrame(() => {
@@ -181,7 +181,7 @@ const AntaresMainMenuHtml = {
     documentReady() {
         var self = this;
         if (window.antaresCfgLocal.statusMenuList.menuTop === true) {
-            enquire.register('screen and (min-width: 1024px)', {
+            enquire.register(bpTabHMin1024, {
                 match: function () {
                     $('.main-menu--secondary>li').css('opacity', '0'); //for animation
                     $('.main-menu--primary>li').css('opacity', '1'); //for animation
@@ -194,7 +194,7 @@ const AntaresMainMenuHtml = {
     },
     openSubmenu() {
         if (window.antaresCfgLocal.statusMenuList.menuTop === true) {
-            enquire.register('screen and (max-width: 1023px)', {
+            enquire.register(bpTabHMax1023, {
                 match: function () {
                     var parent = $('.main-menu-html');
                     parent.find('.has-submenu').click(function () {
@@ -218,7 +218,7 @@ const AntaresMainMenuHtml = {
                     });
                 }
             });
-            enquire.register('screen and (min-width: 1024px)', {
+            enquire.register(bpTabHMin1024, {
                 match: function () {
                     var li = $('.main-menu').find('>li');
 
@@ -270,7 +270,7 @@ const AntaresMainMenuHtml = {
                 }
             });
         } else {
-            enquire.register('screen and (max-width: 1023px)', {
+            enquire.register(bpTabHMax1023, {
                 match: function () {
                     var parent = $('.main-menu-html');
                     parent.find('.has-submenu').on('click', function () {
@@ -295,7 +295,7 @@ const AntaresMainMenuHtml = {
                     $('.has-submenu').off('click');
                 }
             });
-            enquire.register('screen and (min-width: 1024px)', {
+            enquire.register(bpTabHMin1024, {
                 match: function () {
                     var li = $('.main-menu').find('>li');
 
@@ -456,7 +456,7 @@ const AntaresMainMenuHtml = {
         openSecondaryMenu()
         $('.main-sidebar nav').css('opacity', 1);
 
-        enquire.register('screen and (max-width: 1023px)', {
+        enquire.register(bpTabHMax1023, {
             unmatch: function () {
                 $('.menu-scroll').removeClass('open-second-menu');
                 $('.has-submenu').removeClass('submenu-open');
@@ -466,7 +466,7 @@ const AntaresMainMenuHtml = {
                 openSecondaryMenu()
             }
         });
-        enquire.register('screen and (min-width: 1024px)', {
+        enquire.register(bpTabHMin1024, {
             unmatch: function () {
                 $('.menu-scroll').removeClass('open-second-menu');
                 $('.has-submenu').removeClass('submenu-open');
@@ -511,20 +511,20 @@ const AntaresMainMenuHtml = {
                 width = $('.main-content').width();
                 widthSideMenu = $('.grid-col--menu').width();
                 if($('.app-content').hasClass('page-single-form')){
-                    enquire.register('screen and (min-width:768px)', {
+                    enquire.register(bpMin768, {
                         match: function () {
                             $('.app-content__footer').css('width', width);
                         }
                     });
                 }
                 else{
-                    enquire.register('screen and (min-width: 1200px)', {
+                    enquire.register(bpTabMin1200, {
                         match: function () {
                             $('.app-content__footer').css('width', width - widthSideMenu);
                             $('.notification-templates .app-content__footer').css('width', width);
                         }
                     });
-                    enquire.register('screen and (min-width:768px) and (max-width: 1199px)', {
+                    enquire.register(bpTabMin768Max1199, {
                         match: function () {
                             $('.app-content__footer').css('width', width);
                         }
@@ -571,7 +571,7 @@ const AntaresMainMenuHtml = {
                 }
             });
         } else {
-            enquire.register('screen and (max-width: 1023px)', {
+            enquire.register(bpTabHMax1023, {
                 match: function () {
                     var parent = $('.main-menu-html');
                     parent.find('.mobile-ddowns__sgl').click(function () {
@@ -607,7 +607,7 @@ const AntaresMainMenuHtml = {
     },
     mobileDisabledTopMenu() {
         if (window.antaresCfgLocal.statusMenuList.menuTop === true) {
-            enquire.register('screen and (max-width: 1023px)', {
+            enquire.register(bpTabHMax1023, {
                 //dla tablet
                 match: function () {
                     $('#app-wrapper').removeClass('main-sidebar--top');
@@ -623,14 +623,14 @@ const AntaresMainMenuHtml = {
                     $('#app-wrapper').removeClass('mobile-menu-active');
                 }
             });
-            enquire.register('screen and (min-width: 1024px)', {
+            enquire.register(bpTabHMin1024, {
                 //dla tablet
                 match: function () {
                     $('#app-wrapper').addClass('main-sidebar--top');
                 }
             });
         } else {
-            enquire.register('screen and (max-width: 1023px)', {
+            enquire.register(bpTabHMax1023, {
                 match: function () {
                     setTimeout(function () {
                         $('aside.main-menu-html').addClass('transition-300');

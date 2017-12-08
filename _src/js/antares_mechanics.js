@@ -156,7 +156,7 @@ Antares.prototype.helpers = function() {
 
   ready('.select2-dropdown .select2-results__options', function(element) {
     $(element).attr('data-scrollable', 'true');
-    APP.components.scroll();
+    // APP.components.scroll();
   });
 
   ready('.tbl-c', function(element) {
@@ -167,8 +167,8 @@ Antares.prototype.components = {
   autoComplete: function() {},
   mutationService: function() {
     ready('[data-scrollable]', function(element) {
-      APP.components.scroll();
-    });
+          // APP.components.scroll();
+      });
   },
   preloader: function() {
     Pace.start({
@@ -229,7 +229,7 @@ Antares.prototype.components = {
         wheelPropagation: true,
         suppressScrollX: true
       };
-      if (!$(selector).hasClass('ps')) {
+
         if (relative) {
           $(selector)
             .perfectScrollbar(perfectScrollbarCFG)
@@ -237,9 +237,8 @@ Antares.prototype.components = {
         } else {
           $(selector).perfectScrollbar(perfectScrollbarCFG);
         }
-      }
     }
-    enquire.register('screen and (min-width:768px)', {
+    enquire.register(bpMin768, {
       match: function() {
         addScroll('.card--unadjustable .datarow .dataTablesLogs', true);
         setTimeout(function() {
@@ -257,6 +256,7 @@ Antares.prototype.components = {
 
         addScroll('[data-scrollable]', true);
         addScroll('[data-scrollable--alt]', false);
+        addScroll('.select2-dropdown .select2-results__options', false);
         (function update(argument) {
           //update
           //update scroll when needed
@@ -471,7 +471,7 @@ Antares.prototype.animations = {
   },
   animate: function() {
     var self = this;
-    enquire.register('screen and (min-width:768px)', {
+    enquire.register(bpMobMax767, {
       match: function() {
         // animator('.main-head', 'animated fadeInDown');
         self.animator('aside', 'animated fadeInLeft');
@@ -532,7 +532,7 @@ Antares.prototype.RWD = {
     $('.page-dashboard .card--chart').rwdHelper('card-chart--slim', '780');
 
     // card logs scrolling
-    enquire.register('screen and (max-width:768px)', {
+    enquire.register(bpMobMax767, {
       match: function() {
         // here
         // $('.app-content').

@@ -140,7 +140,7 @@ const AntaresDdownGeneral = {
         let newW;
         let oldW = window.innerHeight;
         $(window).on('resize', function () {
-            enquire.register('screen and (max-width: 1023px)', {
+            enquire.register(bpTabHMax1023, {
                 match: function () {
                     newW = window.innerHeight;
                     let differenceWidthOldAndNew = oldW - newW
@@ -149,7 +149,7 @@ const AntaresDdownGeneral = {
                     }
                 }
             })
-            enquire.register('screen and (min-width: 1024px)', {
+            enquire.register(bpTabHMin1024, {
                 match: function () {
                     self.closeAllDropdowns()
                 }

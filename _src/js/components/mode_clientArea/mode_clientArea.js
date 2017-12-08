@@ -57,12 +57,12 @@ export const AntaresModeClienArea = {
   // methods
 
   clientAreaTopMenu() {
-    enquire.register('screen and (max-width: 1023px)', {
+    enquire.register(bpTabHMax1023, {
       match: function() {
         $('.client-area').appendTo('.notification-block');
       }
     });
-    enquire.register('screen and (min-width: 1024px)', {
+    enquire.register(bpTabHMin1024, {
       match: function() {
         $('.client-area').appendTo('.menu-scroll');
       }
@@ -100,7 +100,7 @@ export const AntaresModeClienArea = {
   // },
   documentReady() {
     var self = this;
-    enquire.register('screen and (max-width: 1023px)', {
+    enquire.register(bpTabHMax1023, {
       //dla tableta
       match: function() {
         $('.burgericon').click(function() {
@@ -112,7 +112,7 @@ export const AntaresModeClienArea = {
         });
       }
     });
-    enquire.register('screen and (min-width: 1024px)', {
+    enquire.register(bpTabHMin1024, {
       match: function() {
         // self.moreTriggerTopHeight(); //for animation
         $('.main-menu--secondary>li').css('opacity', '0'); //for animation
@@ -125,12 +125,12 @@ export const AntaresModeClienArea = {
       let width, widthSideMenu;
       width = $('.main-content').width();
       widthSideMenu = $('.grid-col--menu').width();
-      enquire.register('screen and (min-width: 1200px)', {
+      enquire.register(bpTabMin1200, {
         match: function() {
           $('.app-content__footer').css('width', width - widthSideMenu);
         }
       });
-      enquire.register('screen and (min-width:768px) and (max-width: 1199px)', {
+      enquire.register(bpTabMin768Max1199, {
         match: function() {
           $('.app-content__footer').css('width', width);
         }
@@ -148,7 +148,7 @@ export const AntaresModeClienArea = {
   },
 
   mobileDisabledTopMenu() {
-    enquire.register('screen and (max-width: 1023px)', {
+    enquire.register(bpTabHMax1023, {
       //dla tablet
       match: function() {
         $('#app-wrapper').removeClass('main-sidebar--top');

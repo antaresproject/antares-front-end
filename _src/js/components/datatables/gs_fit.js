@@ -20,7 +20,7 @@ const AntaresGsFit = {
   init() {
     let self = this;
 
-    enquire.register('screen and (min-width:768px)', {
+    enquire.register(bpMin768, {
       match: function() {
         self.GsFitMutate();
       }

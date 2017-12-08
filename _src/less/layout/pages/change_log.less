@@ -1,0 +1,39 @@
+.page-change-log{
+  .change-log--content{
+    &>.timeline li .timeline__padding{
+      padding-left: 24px;
+    }
+    .cl-title{
+      font-size: 24px;
+      padding-left: 8px;
+      .cl-version-date{
+        margin-left: 8px;
+      }
+      @media @xs{
+        font-style: 18px;
+      }
+    }
+    .cl-boxes{
+      margin: 8px 0;
+    }
+    .cl-timeline--box{
+      padding: 4px;
+      .cl-background{
+        background: #f9f9f9;
+        border-radius: 3px;
+        padding: 8px;
+        .timeline .timeline__indicator:before{
+          background: #f9f9f9;
+        }
+      }
+      .cl-timeline--header{
+        padding: 8px 0;
+        padding-top: 4px;
+        @media @xs{
+          padding: 4px 0;
+        }
+      }
+    }
+  }
+
+}

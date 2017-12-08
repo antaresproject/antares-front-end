@@ -150,7 +150,7 @@
   //themes
   &.item-grp--40 {
     margin-right: 12px ;
-    .item-grp-single:last-of-type {
+    .item-grp-single:last-child {
       margin-left: 12px;
     }
     .item-grp-single {
@@ -225,7 +225,7 @@
 #app-wrapper.main-sidebar--ca {
   &.main-sidebar--top nav {
     div.client-area {
-      @media only screen and (max-width: 1023px) {
+      @media @max1023 {
         display: none;
       }
 
@@ -233,7 +233,7 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media @min1024 {
   #app-wrapper.main-sidebar--ca {
     &.main-sidebar--top {
       .main-menu--primary,

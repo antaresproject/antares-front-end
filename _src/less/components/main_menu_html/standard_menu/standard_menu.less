@@ -2,11 +2,11 @@
 @transition-ripple-on: 500ms;
 @transition-ripple-off: 500ms;
 @icon-size: 22px;
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   @import "rwd/xs";
 }
 
-@media only screen and (min-width: 1024px) {
+@media @min1024 {
   @import "rwd/min768";
 }
 
@@ -25,6 +25,11 @@
 ul.main-menu.main-menu--brand .submenu section {
   height: 100%;
 }
+
+
+
+
+
 
 .more-trigger {
   margin-bottom: 16px;
@@ -160,7 +165,7 @@ nav ul.main-menu {
       border-radius: 50%;
       top: 11px;
       left: 25px;
-      @media only screen and (max-width: 1023px) {
+      @media @max1023 {
         left: 0;
       }
       display: block;
@@ -336,7 +341,7 @@ nav .submenu {
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
 
   .main-menu__brand.submenu-open {
     height: ~'calc(100vh - 70px)' !important;
@@ -347,7 +352,7 @@ nav .submenu {
   transform: rotate(180deg);
 }
 
-@media only screen and (min-width: 1024px) {
+@media @min1024 {
   .nav-container .menu-scroll ul.main-menu {
 
     &.main-menu--brand > li > a {

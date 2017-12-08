@@ -267,7 +267,7 @@ export default {
   },
   checkDevices() {
     const self = this;
-    enquire.register('screen and (max-width:767px) ', {
+    enquire.register(bpMobMax767, {
       match() {
         $('#app-wrapper').addClass('is-mobile');
       },
@@ -275,7 +275,7 @@ export default {
         $('#app-wrapper').removeClass('is-mobile');
       }
     });
-    enquire.register('screen and (min-width:768px) and (max-width:1023px)', {
+    enquire.register(bpTabVMin768Max1023, {
       match() {
         $('#app-wrapper').addClass('is-tablet-vertical');
         // changeGridstackFromDevices();
@@ -284,7 +284,7 @@ export default {
         $('#app-wrapper').removeClass('is-tablet-vertical');
       }
     });
-    enquire.register('screen and (min-width:1024px) and (max-width:1199px)', {
+    enquire.register(bpTabHMin1024Max1199, {
       match() {
         $('#app-wrapper').addClass('is-tablet-horizontal');
         // changeGridstackFromDevices();
@@ -293,7 +293,7 @@ export default {
         $('#app-wrapper').removeClass('is-tablet-horizontal');
       }
     });
-    enquire.register('screen and (min-width:1200px) and (max-width:1366px)', {
+    enquire.register(bpLapMin1200Max1366, {
       match() {
         $('#app-wrapper').addClass('is-laptop');
         // changeGridstackFromDevices();
@@ -302,7 +302,7 @@ export default {
         $('#app-wrapper').removeClass('is-laptop');
       }
     });
-    enquire.register('screen and (min-width:1367px)', {
+    enquire.register(bpDesMin1367, {
       match() {
         $('.grid-stack-item').each(function() {
           const width = $(this).attr('data-gs-width');

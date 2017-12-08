@@ -810,7 +810,7 @@ const AntaresAC = {
         $('.ui-autocomplete-category')
           .prev('li')
           .addClass('last-in-category');
-        enquire.register('screen and (min-width: 1367px)', {
+        enquire.register(bpDesMin1367, {
           match: function() {
             $('.ac-container--wrapper').perfectScrollbar();
           }

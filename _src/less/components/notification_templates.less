@@ -45,18 +45,6 @@
       }
       .switch {
         position: absolute;
-        width: 50px !important;
-        .switch-checkbox:checked + .switch-container {
-          &:after {
-            content: "Yes";
-          }
-        }
-        .switch-checkbox + .switch-container {
-          &:after {
-            content: "No";
-            right: 8px;
-          }
-        }
       }
     }
   }
@@ -174,7 +162,7 @@
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   .page-notification-templates {
     .mdl-tabs {
       border: 0;
@@ -252,7 +240,7 @@
   width: 500px;
   height: 100%;
   min-width: 500px;
-  @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  @media @min1024max1199 {
     width: 350px;
     min-width: 350px;
     right: -350px;
@@ -359,7 +347,7 @@
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   .variables-pane {
     position: fixed;
     visibility: hidden;

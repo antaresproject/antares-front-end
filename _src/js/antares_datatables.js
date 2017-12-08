@@ -30,7 +30,7 @@ const AntaresTableView = {
     this.dataTablesGridStackClass();
     this.dataTablesSelectRows();
     this.dataTablesDblClick();
-    enquire.register('screen and (min-width:767px)', {
+    enquire.register(bpMin768, {
       match() {
         self.dataTablesFilterSearch();
         self.dataTablesSelectFilter();
@@ -475,7 +475,7 @@ const AntaresTableView = {
   },
   dataTablesUpdateTable() {
     const self = this;
-    enquire.register('screen and (max-width: 767px)', {
+    enquire.register(bpMobMax767, {
       match: function() {
         oTable.responsive.recalc();
         self.dataTables0Data();
@@ -485,7 +485,7 @@ const AntaresTableView = {
         self.dataTables0Data();
       }
     });
-    enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
+    enquire.register(bpTabVMin768Max1023, {
       match: function() {
         oTable.responsive.recalc();
         self.dataTables0Data();
@@ -495,7 +495,7 @@ const AntaresTableView = {
         self.dataTables0Data();
       }
     });
-    enquire.register('screen and (min-width: 1024px) and (max-width: 1199px)', {
+    enquire.register(bpTabHMin1024Max1199, {
       match: function() {
         oTable.responsive.recalc();
         self.dataTables0Data();
@@ -505,7 +505,7 @@ const AntaresTableView = {
         self.dataTables0Data();
       }
     });
-    enquire.register('screen and (min-width: 1200px) and (max-width: 1349px)', {
+    enquire.register(bpLapMin1200Max1366, {
       match: function() {
         oTable.responsive.recalc();
         self.dataTables0Data();
@@ -515,7 +515,7 @@ const AntaresTableView = {
         self.dataTables0Data();
       }
     });
-    enquire.register('screen and (min-width: 1350px) and (max-width: 1499px)', {
+    enquire.register('screen and (min-width: 1367px) and (max-width: 1499px)', {
       match: function() {
         oTable.responsive.recalc();
         self.dataTables0Data();
@@ -563,7 +563,7 @@ const AntaresTableView = {
   },
 
   dataTablesGridStackClass() {
-    enquire.register('screen and (min-width:1350px)', {
+    enquire.register(bpDesMin1367, {
       match: function() {
         let container = $('.card-datatables');
         let parent = container.closest('.grid-stack-item');
@@ -590,7 +590,7 @@ const AntaresTableView = {
     });
   },
   dataTablesHeightForScroll() {
-    enquire.register('screen and (min-width: 768px) and (max-width: 1023px)', {
+    enquire.register(bpMobLapMin768Max1366, {
       match: function() {
         giveHeightForTableScroll();
       },
@@ -598,7 +598,7 @@ const AntaresTableView = {
         giveHeightForTableScroll();
       }
     });
-    enquire.register('screen and (min-width: 1024px) and (max-width: 1366px)', {
+    enquire.register(bpTabLapMin1024Max1366, {
       match: function() {
         giveHeightForTableScroll();
       },
@@ -606,7 +606,7 @@ const AntaresTableView = {
         giveHeightForTableScroll();
       }
     });
-    enquire.register('screen and (min-width: 1367px)', {
+    enquire.register(bpDesMin1367, {
       match: function() {
         giveHeightForTableScroll();
       },

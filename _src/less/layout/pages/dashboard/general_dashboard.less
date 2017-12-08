@@ -32,7 +32,7 @@
   height: 27%;
   top: 50px;
   max-height: 94px;
-  /*@media only screen and (max-width: 1199px) {*/
+  /*@media @max1199 {*/
   /*height: 35%;*/
   /*}*/
   &:after {
@@ -83,7 +83,7 @@
 }
 
 @media @md {
-  div[data-tooltip-inline="Widget Edit Toggle"] {
+  div.mainhead-btn--widget-edit {
     display: none !important;
   }
 
@@ -138,7 +138,7 @@
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   .mobile-toogle--box {
     width: 100%;
     text-align: center;
@@ -166,19 +166,28 @@
     display: none;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1023px){
+@media @min768max1023{
   .card--detail-info {
     .mobile-toogle--box {
       display: none !important;
     }
   }
 }
-@media only screen and (min-width: 1024px) {
-  .mobile-toogle--box {
+@media @min1024 {
+  .card:not(.card--contacts, .card--info) .mobile-toogle--box {
     display: none !important;
   }
 }
-
+@media @min768{
+  .card-container .card.card--detail-info .mobile-toogle--box{
+    display: none !important;
+  }
+}
+@media @min1200{
+  .card-container .card.card--contacts .mobile-toogle--box{
+    display: none !important;
+  }
+}
 @media @max1366 {
 
   .card--logs,
@@ -425,7 +434,7 @@
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   canvas#line-chart,
   canvas#bar-chart,
   canvas#horizontalbar-chart {
@@ -456,7 +465,7 @@
   // FOR HIDDen BORDERS ON TABLET AND MOBILE DEVICES END
 }
 
-@media only screen and (min-width: 1024px) {
+@media @min1024 {
   #app-wrapper:not(.main-sidebar--top) .app-content {
 
     &.page-error--clean {
@@ -474,7 +483,7 @@
   padding-bottom: 32px;
 }
 
-@media only screen and (min-width: 1200px) {
+@media @min1200 {
   #app-wrapper .page-dashboard.dashboard--vue .main-content .card--logs .card-ctrls.tab-search--standard .card-ctrls__left .search-box .mdl-textfield.search-box__mdl-textfield label {
     top: 6px
   }

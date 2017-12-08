@@ -81,7 +81,7 @@ export const truncator = {
   rwd() {
     const self = this;
 
-    enquire.register('screen and (min-width:1200px)', {
+    enquire.register(bpTabMin1200, {
       match() {
         self.desktop();
       }

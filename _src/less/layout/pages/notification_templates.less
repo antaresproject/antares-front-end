@@ -56,21 +56,6 @@
                 margin-bottom: 8px;
             ;
             }
-            .switch {
-                position: absolute;
-                width: 50px !important;
-                .switch-checkbox:checked+.switch-container {
-                    &:after {
-                        content: "Yes";
-                    }
-                }
-                .switch-checkbox+.switch-container {
-                    &:after {
-                        content: "No";
-                        right: 8px;
-                    }
-                }
-            }
         }
     }
     .page-notification-templates__content {
@@ -155,7 +140,7 @@
 }
 
 #app-wrapper .app-content.page-brand-settings.notification-templates .main-content .app-content__footer {
-    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    @media @min768max1023 {
         left: 24px;
         width: ~'calc(100% - 50px)' !important;
     }
@@ -183,7 +168,7 @@
     .app-content__footer {
         left: ~'calc(230px + 24px)';
         width: ~'calc(100% - (24px + 24px + 230px))';
-        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        @media @min768max1023 {
             left: 24px;
         }
         @media @xs {

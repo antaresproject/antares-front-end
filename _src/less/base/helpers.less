@@ -334,7 +334,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media @min1200 {
   .gradient-top--transparent {
     position: relative;
     &:before {
@@ -470,4 +470,18 @@ i.zmdi-help-outline.help--trigger {
 
 .z-index100 {
   z-index: 100 !important;
+}
+
+.masonry-layout{
+  column-count: 3;
+  column-gap: 0;
+  @media @md{
+    column-count: 2;
+  }
+  @media @xs{
+    column-count: 1;
+  }
+  &>*{
+    break-inside: avoid;
+  }
 }

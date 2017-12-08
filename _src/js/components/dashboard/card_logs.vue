@@ -1,7 +1,7 @@
 <template lang="ejs">
     <div class="card-container">
         <card-edit-controls></card-edit-controls>
-        <div  class="card card--pagination card--logs" :data-widget-name="widgetName">
+        <div  class="card card--pagination card--logs card--unadjustable" :data-widget-name="widgetName">
             <div class="card__header">
                 <div class="card__header-left"><span>{{widgetName}} </span>
 

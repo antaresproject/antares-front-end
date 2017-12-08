@@ -61,7 +61,7 @@
       .card-ctrls {
         margin-top: 20px;
         margin-bottom: 21px;
-        @media only screen and (max-width: 1023px) {
+        @media @max1023 {
           margin-top: 13px !important;
         }
         @media @xs {
@@ -69,7 +69,7 @@
         }
         &.swiper--no-slides {
           margin-bottom: 21px !important;
-          @media only screen and (max-width: 1023px) {
+          @media @max1023 {
             margin-bottom: 0 !important;
           }
         }
@@ -87,7 +87,7 @@
                   width: 206px;
                 }
                 height: 39px;
-                @media only screen and (max-width: 1023px) {
+                @media @max1023 {
                   width: 100%;
                 }
               }
@@ -107,7 +107,7 @@
             }
           }
           .select2 {
-            @media only screen and (max-width: 1023px) {
+            @media @max1023 {
               margin-right: 10px;
             }
             .select2-selection__rendered {
@@ -132,12 +132,12 @@
           }
         }
         td:first-child {
-          @media only screen and (max-width: 1023px) {
+          @media @max1023 {
             padding-left: 8px !important;
           }
         }
         td.dt-actions {
-          @media only screen and (max-width: 1023px) {
+          @media @max1023 {
             padding-right: 8px !important;
           }
         }
@@ -259,7 +259,7 @@
       }
     }
   }
-  @media only screen and (max-width: 1199px) {
+  @media @max1199 {
     .card--mobile-toggled .card--contacts .mobile-target--overflow {
       &:after {
         opacity: 0;
@@ -290,7 +290,7 @@
 //dashboard chart
 #app-wrapper .main-content .card--logs {
   .card-ctrls.tab-search--standard {
-    margin-top: 22px;
+    //margin-top: 22px;
     @media @xs {
       border-bottom: 1px solid #dfe3e6;
       margin: 8px 0;
@@ -377,7 +377,7 @@
 }
 
 #app-wrapper .main-content .search-box {
-  @media only screen and (min-width: 768px) and (max-width: 1199px) {
+  @media @min768max1199 {
     //padding-left: 25px;
     //margin-left: 16px;
   }

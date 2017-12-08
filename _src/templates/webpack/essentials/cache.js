@@ -1,5 +1,5 @@
 // BUNDLE STARTING POINT
-
+require('./breakpoints.js');
 // IE
 import 'babel-polyfill';
 

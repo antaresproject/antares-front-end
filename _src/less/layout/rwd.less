@@ -32,12 +32,9 @@
 
 
 
-@media only screen and (max-width: 1023px) {
-    .main-head .ddown--brand {
-        display: none;
-    }
+@media @max1023 {
     .main-head {
-        .item-grp-single:nth-child(4) {
+        .ddown--brand,.mainhead-btn--user-info {
             display: none;
         }
         .item-grp {
@@ -87,7 +84,7 @@
     }
 }
 
-@media @max1200 {
+@media @max1199 {
     .card.card--news .card__footer a,
     .card.card--news .card__footer button {
         //bottom: 16px;

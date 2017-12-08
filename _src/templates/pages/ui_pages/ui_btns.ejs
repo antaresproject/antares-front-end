@@ -50,7 +50,9 @@
                         <li>
                             <a href="#AntaresButtonsSizes" class="mdl-js-button mdl-js-ripple-effect"><span>Buttons sizes</span></a>
                         </li>
-
+                        <li>
+                            <a href="#AntaresRadio" class="mdl-js-button mdl-js-ripple-effect"><span>Buttons radio</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +88,14 @@
                             <% include ../ui_components/ui_btn_sizes %>
                         </fieldset>
                     </form>
-
+                    <form method="post" action="">
+                        <fieldset name="Buttons">
+                            <a name="AntaresRadio">
+                                <legend>Buttons radio</legend>
+                            </a>
+                            <% include ../ui_components/ui_btn_radio %>
+                        </fieldset>
+                    </form>
                 </section>
                 <% include ../../layout/app_footer %>
             </div>

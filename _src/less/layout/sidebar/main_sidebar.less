@@ -164,9 +164,28 @@ aside.main-sidebar {
         font-size: 13px;
         height: 70px;
         cursor: pointer; //clean hover css state
+        .icon-antares{
+          width: 50px;
+          height: 45px;
+          @media @max1023{
+            margin-left: -14px;
+            margin-right: 14px;
+          }
+          .cls-3,.cls-4,.cls-5{
+            fill:#8a9099;
+            transition: 300ms;
+          }
+        }
         &:hover {
           //color: @standard-white;
           transition: 300ms;
+          .icon-antares{
+            width: 50px;
+            height: 50px;
+            .cls-3,.cls-4,.cls-5{
+              fill:white
+            }
+          }
           span,
           i {
             color: @standard-white;
@@ -581,7 +600,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
 }
 
 // TABLET VERTICAL MENU
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media @min768max1023 {
   #app-wrapper {
     .app-content__footer {
       width: 100% !important;
@@ -1064,13 +1083,13 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
 }
 
 // TABLET VERTICAL MENU END
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   #app-wrapper aside.main-sidebar ul.main-menu.main-menu--primary {
     //overflow: hidden;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media @min768max1023 {
   #app-wrapper aside.main-sidebar .menu-scroll {
     //overflow: hidden;
   }
@@ -1092,7 +1111,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   #app-wrapper {
     &.mobile-menu-active {
       .app-content {
@@ -1102,7 +1121,7 @@ aside.main-sidebar ul.main-menu .submenu.submenu--system section.section--2col {
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media @max1023 {
   .menu-scroll > ul.main-menu {
     & > li > .submenu {
       display: none !important;

@@ -50,7 +50,7 @@
         width: auto;
         display: flex;
         padding-right: 16px;
-        @media only screen and (max-width: 1023px){
+        @media @max1023{
           padding-right: 24px;
         }
         align-items: center;
@@ -144,7 +144,7 @@
   }
 }
 
-@media @max1200 {
+@media @max1199 {
   .grid-container.grid-container--2col.grid-container--email .grid-col--container {
     flex-flow: column nowrap;
     padding: 0 !important;
@@ -355,7 +355,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1366px) {
+@media @min1200max1366 {
   .page-email-settings .menu-mobile-settings + .select2 .select2-selection {
     margin-bottom: 0;
   }

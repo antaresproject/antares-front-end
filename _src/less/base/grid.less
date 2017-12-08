@@ -94,7 +94,7 @@
         width: 245px;
         min-width: 245px;
       }
-      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      @media @min768max1023 {
         width: 60px;
         min-width: 60px;
       }
@@ -104,10 +104,10 @@
           justify-content: flex-start;
           align-items: center;
           height: 56px;
-          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          @media @min768max1023 {
             justify-content: center;
           }
-          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          @media @min768max1023 {
             i {
               margin-right: 0;
             }
@@ -117,7 +117,7 @@
             }
           }
         }
-        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        @media @min768max1023 {
           li.has-submenu > a:after {
             right: 8px;
           }
@@ -170,7 +170,7 @@
       margin-left: 24px;
       margin-right: 24px;
     }
-    @media @max1200 {
+    @media @max1199 {
       .menu-mobile-settings {
         display: block;
       }

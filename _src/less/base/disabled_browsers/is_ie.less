@@ -20,17 +20,19 @@
 }
 .form-block {
     min-height: 80px;
-    &:last-of-type{
-        margin-top: 64px;
-    }
+    //&:last-of-type{
+    //    margin-top: 64px;
+    //}
 
 }
-@media only screen and (min-width: 1200px){
+@media @min1200{
     .header-translations .header__compare--desktop .header-translation__country .header-translation__select-text{
         vertical-align: super;
     }
 }
-
+.masonry-layout{
+    column-count: auto;
+}
 .grid-container.grid-container--1col .grid-col--container{
     flex: auto;
 }
@@ -164,11 +166,12 @@ input::placeholder {
 }
 
 .app-content .main-head {
-    margin-bottom: 24px;
-    padding-top: 16px;
+    padding-top: 0;
 }
 
-
+#app-wrapper .page-clients-details .card .card__header > .card__header-right{
+    flex: 1;
+}
 
 
 

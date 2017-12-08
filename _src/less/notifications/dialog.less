@@ -12,12 +12,22 @@ dialog {
     display: none;
     border: 0;
 }
-
+body dialog.mdl-dialog.ar-dialog[open]{
+    z-index: 30;
+}
 dialog[open] {
     display: block;
     position: fixed;
 }
-
+dialog + .dialog-backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+    width: 100%;
+}
 dialog+.backdrop {
     position: fixed;
     top: 0;
@@ -114,6 +124,7 @@ body.dialog-is-open{
         width: 40px;
         height: 40px;
         margin-right: -16px;
+        cursor: pointer;
         .flex-center();
         .mdl-button__ripple-container {
             border-radius: 50%;
@@ -134,7 +145,7 @@ body.dialog-is-open{
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 70vh;
-    @media only screen and (min-width: 1200px){
+    @media @min1200{
         &.ps>.ps__scrollbar-y-rail{
             display: block;
         }

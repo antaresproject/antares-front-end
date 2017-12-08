@@ -48,7 +48,7 @@
 //        @media @xs {
 //          width: 33%;
 //        }
-//        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+//        @media @min768max1023 {
 //          width: 100px;
 //        }
 //
@@ -59,7 +59,7 @@
 
 .page-dashboard .card.card--chart {
   .card__right {
-    @media only screen and (min-width: 768px) and (max-width: 1366px) {
+    @media @min768max1366 {
       header, .mobile-toogle--target {
         //display: inline-block !important;
         //height: auto !important;
@@ -291,7 +291,7 @@ div.card.card--chart {
   }
 }
 
-@media only screen and (max-width: 1199px) {
+@media @max1199 {
   #app-wrapper {
     [data-gs-width="8"],
     [data-gs-width="9"],
@@ -429,7 +429,7 @@ div.card.card--chart {
     }
     .dataTables_wrapper {
       padding: 0 16px !important;
-      @media only screen and (max-width: 1023px) {
+      @media @max1023 {
         padding: 0 !important;
         thead tr th:first-child {
           padding-left: 43px;

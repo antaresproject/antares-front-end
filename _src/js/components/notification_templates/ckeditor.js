@@ -157,7 +157,7 @@
         },
         reszie: function () {
             self = this;
-            enquire.register('screen and (max-width:767px)', {
+            enquire.register(bpMobMax767, {
                 match: function () {
                     self.initMobileCKE();
                 },
