@@ -224,20 +224,20 @@ const AntaresBrandColors = {
                 '.btn.btn--primary',
                 '.select2-container .select2-selection--multiple .select2-selection__rendered li.select2-selection__choice',
                 'table.collapsed tbody tr.parent td:first-child:before',
-                '.icheckbox_billevo:active',
-                '.icheckbox_billevo:focus',
-                '.icheckbox_billevo:hover',
-                '#app-wrapper .icheckbox_billevo.hover',
+                '.icheckbox_antares:active',
+                '.icheckbox_antares:focus',
+                '.icheckbox_antares:hover',
+                '#app-wrapper .icheckbox_antares.hover',
                 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu',
                 '.ddown.ddown-multi .ddown-multi__submenu > li.ddown-multi__return',
-                '.icheckbox_billevo.checked',
+                '.icheckbox_antares.checked',
                 '.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after',
                 '.form-block .radio-btns [data-type="radio-btn"] input:checked + .btn',
                 '#notification-counter, .main-head .item-grp-single .badge ',
                 '.error-container .top-area',
                 '.mdl-tabs__tab .mdl-tabs__ripple-container .mdl-ripple'
               ],
-              lightMode = ['.tbl-c .billevo-table tr.is-selected td', '.tbl-c .billevo-table tr.ui-selected td', '.tbl-c .billevo-table tr.ui-selecting td', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header', '.btn.btn--highlight'];
+              lightMode = ['.tbl-c .antares-table tr.is-selected td', '.tbl-c .antares-table tr.ui-selected td', '.tbl-c .antares-table tr.ui-selecting td', 'aside.main-sidebar .mobile-ddowns .mobile-ddowns__sgl ul.mobile-ddowns__menu li.mobile-ddowns__menu-header', '.btn.btn--highlight'];
 
             var primaryColorNormal = [
               '.grid-stack-item-content .card.card--pagination .tbl-c .pagination--type2 .dataTables_paginate span > .mdl-js-button.current',
@@ -298,7 +298,7 @@ const AntaresBrandColors = {
               self.addStyles(primary, lightMode[u], 'background-color', lighterColor, 'lighterColor');
             }
 
-            let primaryBorderDarken = ['.antares-dropjs-filter .drop-enabled', '.table-key .table-key__input', '.icheck-label:hover > .icheckbox_billevo, .icheckbox_billevo.hover'];
+            let primaryBorderDarken = ['.antares-dropjs-filter .drop-enabled', '.table-key .table-key__input', '.icheck-label:hover > .icheckbox_antares, .icheckbox_antares.hover'];
 
             for (var z = 0; z < primaryBorderDarken.length; z++) {
               self.addStyles(primary, primaryBorderDarken[z], 'border-color', darkenColor, 'darkenColor');

@@ -113,11 +113,11 @@ const AntaresMainMenuHtml = {
                 document.cookie = cookie_name += '=; expires=' + cookie_date.toGMTString();
             }
             deleteCookie('statusMenu');
-            if ($('#standard-menu').closest('.iradio_billevo').hasClass('checked')) {
+            if ($('#standard-menu').closest('.iradio_antares').hasClass('checked')) {
                 createCookie('statusMenu', 'standard');
-            } else if ($('#top-menu').closest('.iradio_billevo').hasClass('checked')) {
+            } else if ($('#top-menu').closest('.iradio_antares').hasClass('checked')) {
                 createCookie('statusMenu', 'top');
-            } else if ($('#wide-menu').closest('.iradio_billevo').hasClass('checked')) {
+            } else if ($('#wide-menu').closest('.iradio_antares').hasClass('checked')) {
                 createCookie('statusMenu', 'wide');
             }
 

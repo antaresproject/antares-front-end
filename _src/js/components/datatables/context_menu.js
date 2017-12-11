@@ -26,14 +26,14 @@ const AntaresContextMenu = {
 
 
         //each roww
-        $('.billevo-table tbody tr:not(.child)').each(function (index, item) {
+        $('.antares-table tbody tr:not(.child)').each(function (index, item) {
 
             enquire.register('screen and (min-width: 320px)', {
                 match: function () {
                     if ($('html').hasClass('is-mobile') || $('html').hasClass('is-tablet')) {
 
                         // $.contextMenu({
-                        //     selector: '.billevo-table tbody tr td:not(.dt-actions):not(:first-of-type)',
+                        //     selector: '.antares-table tbody tr td:not(.dt-actions):not(:first-of-type)',
                         //     build: function (trigger, e) {  // 'trigger' this is the last element (td:not(.dt-actions)) that is written by the line above (30 line)
                         //         trigger = trigger.closest('tr')
                         //         if (trigger.is('.child')) {
@@ -57,7 +57,7 @@ const AntaresContextMenu = {
                     }
                     else {
                         $.contextMenu({
-                            selector: '.billevo-table tbody tr td:not(.dt-actions)',
+                            selector: '.antares-table tbody tr td:not(.dt-actions)',
                             build: function (trigger, e) {  // 'trigger' this is the last element (td:not(.dt-actions)) that is written by the line above (30 line)
                                 // $('tr').removeClass('is-selected')
                                 trigger = trigger.closest('tr')
@@ -100,7 +100,7 @@ const AntaresContextMenu = {
 
             // RIGHT TRIGGER ON DOTS
             $.contextMenu({
-                selector: '.billevo-table td.dt-actions',
+                selector: '.antares-table td.dt-actions',
                 build: function (trigger) {
                     return getItems(trigger);
                 },

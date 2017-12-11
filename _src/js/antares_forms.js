@@ -106,7 +106,7 @@ const AntaresForms = {
 
         window.requestAnimationFrame(() => {
             $('input[hover]')
-                .closest('.iradio_billevo')
+                .closest('.iradio_antares')
                 .addClass('hover');
         });
     },
@@ -172,10 +172,10 @@ const AntaresForms = {
         checkboxesAndRadios() {
             // init only when needed
             $('[data-icheck="true"]').each(function () {
-                if (!$(this).closest('.icheckbox_billevo').length) {
+                if (!$(this).closest('.icheckbox_antares').length) {
                     $(this).iCheck({
-                        checkboxClass: 'icheckbox_billevo',
-                        radioClass: 'iradio_billevo',
+                        checkboxClass: 'icheckbox_antares',
+                        radioClass: 'iradio_antares',
                         increaseArea: '30%'
                     });
                 }

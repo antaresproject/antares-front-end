@@ -84,7 +84,7 @@ const AntaresDdownGeneral = {
             },
             closeContextMenu() {
                 // $(".context-menu-active").contextMenu("hide"); //need open or error in console
-                // $('.billevo-table tbody tr td:not(.dt-actions)').contextMenu( false );
+                // $('.antares-table tbody tr td:not(.dt-actions)').contextMenu( false );
                 if ($('ul').is('.context-menu-list')) {
                     $('.context-menu-list').contextMenu('hide');
                 }

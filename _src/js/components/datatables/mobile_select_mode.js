@@ -32,18 +32,18 @@ export const AntaresMobileSelectMode = {
       require('jquery-hammerjs');
 
       function disableSelectMode() {
-        $('.billevo-table tbody tr').removeClass('is-selected');
+        $('.antares-table tbody tr').removeClass('is-selected');
         $('.tbl-c').removeClass('selected-mode--touch-active');
         $('#table-ma')
           .attr('disabled', true)
           .removeClass('display-flex');
-        $('.billevo-table tbody tr').off('click');
+        $('.antares-table tbody tr').off('click');
         $('#table-ma span').html('0 Items Selected');
       }
 
       function quickSelectRowDataTable($self) {
         if ($('.tbl-c').hasClass('selected-mode--touch-active')) {
-          $('.billevo-table tbody tr').on('click', function() {
+          $('.antares-table tbody tr').on('click', function() {
             if ($(this).hasClass('is-selected')) {
               $(this).removeClass('is-selected');
               $self
@@ -52,7 +52,7 @@ export const AntaresMobileSelectMode = {
                 .attr('disabled', false)
                 .addClass('display-flex')
                 .html($self.closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
-              if ($('.billevo-table tbody tr.is-selected').length === 0) {
+              if ($('.antares-table tbody tr.is-selected').length === 0) {
                 disableSelectMode();
               }
             } else {
@@ -85,7 +85,7 @@ export const AntaresMobileSelectMode = {
         updatePaginationSelectMode();
       }
 
-      $('.billevo-table tbody tr').each(function() {
+      $('.antares-table tbody tr').each(function() {
         let hammertime = new Hammer($(this)[0], {});
         var statusHammer = false;
         // hammertime.on("panleft panright tap press pressup", function (ev) {
@@ -155,7 +155,7 @@ export const AntaresMobileSelectMode = {
                 self.closest('.btn-selected').removeClass('ddown--open ddown--open-bottom')
                 self.closest('.btn-selected').find('.btn-with-selected').removeClass('display-flex')
                 self.closest('.tbl-c').removeClass('selected-mode--touch-active')
-                self.closest('.tbl-c').find('.billevo-table tbody tr').off("click")
+                self.closest('.tbl-c').find('.antares-table tbody tr').off("click")
                 $(this).closest('.filters').find('#table-ma span').html($(this).closest('.tbl-c').find('tr.is-selected').length + ' items Selected');
                 // self.closest('.tbl-c').find('#table-ma').html('0 Items Selected');
                 let parentTblc = self.closest('.tbl-c')

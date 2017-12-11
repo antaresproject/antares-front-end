@@ -718,7 +718,7 @@ const AntaresDatatablesFilters = {
       return false;
     });
 
-    var table = $('.billevo-table').DataTable();
+    var table = $('.antares-table').DataTable();
     table.draw();
   },
   editFilterDT(parent) {
@@ -733,7 +733,7 @@ const AntaresDatatablesFilters = {
       return false;
     });
 
-    var table = $('.billevo-table').DataTable();
+    var table = $('.antares-table').DataTable();
     table.draw();
   },
   showAllRowsDT() {

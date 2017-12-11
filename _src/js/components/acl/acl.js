@@ -147,8 +147,8 @@ if (loadPossible) {
     e.preventDefault();
 
     APP.swal.init('skin1', 'typeError', {
-      title: 'Czy na pewno chcesz to zrobic?',
-      text: 'Jestes tego pewien?'
+      title: 'Are you sure you want to do this?',
+      text: 'Really?'
     });
 
     $('body').on('click', '.sweet-cancel', function() {});

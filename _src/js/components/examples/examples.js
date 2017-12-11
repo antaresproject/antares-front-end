@@ -54,8 +54,8 @@
 //         // $('[data-init="true"]').trigger('click');
 //         // $('[data-init="true"]').find('.selectivity-input').trigger('click');
 
-//         $('.inline-forms .form-block .icheckbox_billevo:last-of-type').addClass('hover');
-//         $('.inline-forms .form-block .iradio_billevo:last-of-type').addClass('hover');
+//         $('.inline-forms .form-block .icheckbox_antares:last-of-type').addClass('hover');
+//         $('.inline-forms .form-block .iradio_antares:last-of-type').addClass('hover');
 //         $('.mod [data-slider] .ui-slider-handle').css('left', '40%');
 //     }, 500);
 
@@ -76,7 +76,7 @@ function animeAnimation() {
             return parseFloat(getComputedStyle(document.documentElement).fontSize);
         }
 
-        var canvas = document.querySelector('.billevo-experiments');
+        var canvas = document.querySelector('.antares-experiments');
         var ctx = canvas.getContext('2d');
         var numberOfParticules = 34;
         var distance = 350;

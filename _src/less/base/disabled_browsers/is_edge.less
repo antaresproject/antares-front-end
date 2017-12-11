@@ -19,7 +19,9 @@
 * {
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
-
+.masonry-layout{
+    column-count: auto;
+}
 .ps {
     overflow: hidden !important;
 }
@@ -33,11 +35,11 @@
 }
 
 #app-wrapper .card.card--logs .card__content {
-    max-height: 100%;
-    .datarow {
-        height: 100%;
-        overflow: hidden;
-    }
+    //max-height: 100%;
+    //.datarow {
+    //    height: 100%;
+    //    overflow: hidden;
+    //}
 }
 
 #app-wrapper .card.card--contacts {
@@ -77,6 +79,7 @@ ul {
 .ddown.ddown--user .ddown__menu{
     list-style-type:none
 }
-ul{
-    list-style-type:none
+ul, li{
+    list-style-type:none;
+    list-style: none;
 }

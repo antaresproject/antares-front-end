@@ -22,8 +22,8 @@
 //icheck init
 $('[data-icheck="true"]').iCheck({
 
-    checkboxClass: 'icheckbox_billevo',
-    radioClass: 'iradio_billevo',
+    checkboxClass: 'icheckbox_antares',
+    radioClass: 'iradio_antares',
     increaseArea: '30%'
 });
 
