@@ -437,9 +437,9 @@ const AntaresBrandColors = {
           //   .val(zeroColor);
         }
       });
-      $('.cp-brand__pallete').on('click', function() {
-        $thisMiniColor.minicolors('show');
-      });
+      // $('.cp-brand__pallete').on('click', function() {
+      //   $thisMiniColor.minicolors('show');
+      // });
       $('.reset-style').click(function() {
         $thisMiniColor.minicolors('value', defaultColor);
       });

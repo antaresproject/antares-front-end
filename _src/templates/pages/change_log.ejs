@@ -2,458 +2,404 @@
 <html lang="en">
 <% var pageTitle = 'Change Log'; %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>
-        <%= pageTitle %>
-    </title>
-    <% if(mainMenuType === 'wide'){ %>
-    <% include ../layout/color_template_wide %>
-    <% } else{ %>
-    <% include ../layout/color_template %>
-    <% } %>
-    <% include ../layout/css_files %>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <title>
+            <%= pageTitle %>
+        </title>
+        <% if(mainMenuType === 'wide'){ %>
+            <% include ../layout/color_template_wide %>
+                <% } else{ %>
+                    <% include ../layout/color_template %>
+                        <% } %>
+                            <% include ../layout/css_files %>
+    </head>
 
-<body>
-<% include ../layout/app_wrapper_start_tag %>
+    <body>
+        <% include ../layout/app_wrapper_start_tag %>
 
-<% if(clientArea){ %>
-<% include ../layout/mode_clientArea/CA_menutop %>
-<% } else{ %>
-<% include ../layout/main_menu_html %>
-<% } %>
+            <% if(clientArea){ %>
+                <% include ../layout/mode_clientArea/CA_menutop %>
+                    <% } else{ %>
+                        <% include ../layout/main_menu_html %>
+                            <% } %>
 
-<div class="app-content page-change-log">
-    <% var breadData = 'Change Log'; %>
+                                <div class="app-content page-change-log">
+                                    <% var breadData = 'Change Log'; %>
 
-    <% if(clientArea){ %>
-    <% include ../layout/mode_clientArea/CA_mainhead %>
-    <% } else{ %>
-    <% include ../layout/mainhead %>
-    <% } %>
+                                        <% if(clientArea){ %>
+                                            <% include ../layout/mode_clientArea/CA_mainhead %>
+                                                <% } else{ %>
+                                                    <% include ../layout/mainhead %>
+                                                        <% } %>
 
-    <% include ../layout/sidebar_notifications %>
-    <% include ../layout/sidebar_alerts %>
-    <section class="main-content nopadding">
-        <div class="grid-container grid-container--2col grid-container--no-padd">
-            <div class="grid-col grid-col--menu">
-                <div class="grid-col grid-col--menu">
-                    <div class="menu-aside-container" data-scrollable>
-                        <ul class="menu-aside menu-aside--links">
-                            <li>
-                                <a href="#0.9.4" class="mdl-js-button mdl-js-ripple-effect">
-                                    <i class="zmdi zmdi-settings"></i>
-                                    <span>0.9.4</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-col grid-col--container">
-                <div class="menu-mobile-settings--box">
-                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue"
-                            data-selectAR--search="true" name="select"></select>
-                </div>
-                <div class="box--with-menu-aside">
-                    <div class="change-log--content">
-                        <ul class="timeline">
-                          
-                            <li class="timeline__entry timeline__entry--ok">
-                                <div class="timeline__indicator" data-color="red"
-                                     data-tooltip-inline="Version"
-                                     data-logs-type="Version"></div>
-                                <div class="timeline__padding">
-                                    <div class="cl-version">
-                                        <h3 class="cl-title"><span class="cl-current-version">Version <a name="0.9.2">0.9.2</a></span> <span class="cl-version-date">Date: 04.12.2017</span></h3>
-                                        <div class="cl-boxes masonry-layout">
-                                            <div class="cl-timeline--box">
-                                                <div class="cl-background">
-                                                    <h4 class="cl-timeline--header">New:</h4>
-                                                    <ul class="timeline">
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    New system layouts (wide menu, top menu, short top menu)
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Upgraded new JS events system
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    New layout - table filtering
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Massive front-end demo update
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Responsive widget layout engine
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Mobile select mode in table view
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Various optimizations towards mobile devices
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Full babel support
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Webpack 3 support
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Table cells truncation and tooltips system
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Production and development NPM scripts
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    New content preloading mechanism
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    New branding elements
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New"
-                                                                 data-logs-type="New"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Special menu tooltips
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="cl-timeline--box">
-                                                <div class="cl-background">
-                                                    <h4 class="cl-timeline--header">Changes:</h4>
-                                                    <ul class="timeline">
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="rebeccapurple"
-                                                                 data-tooltip-inline="Changes"
-                                                                 data-logs-type="Changes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Demo menu layout
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="rebeccapurple"
-                                                                 data-tooltip-inline="Changes"
-                                                                 data-logs-type="Changes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Grunt && Webpack configuration files
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="rebeccapurple"
-                                                                 data-tooltip-inline="Changes"
-                                                                 data-logs-type="Changes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Removing unused files
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="rebeccapurple"
-                                                                 data-tooltip-inline="Changes"
-                                                                 data-logs-type="Changes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Internal templating system updates
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="cl-timeline--box">
-                                                <div class="cl-background">
-                                                    <h4 class="cl-timeline--header">Fixes:</h4>
-                                                    <ul class="timeline">
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    JS performance improvements
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Form plugins initiation time reduction
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Cross browser layouts fixes - IE, Edge, Safari, Firefox, Opera
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Branding system update && optimization
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Translations layout fixes
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Dropdowns JS engine fixes
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Notifications engine update && optimization
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Grid system updates
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Dashboard charts fixes
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Increased touch devices support (form plugins)
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Improved asset minification
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="orange"
-                                                                 data-tooltip-inline="Fixes"
-                                                                 data-logs-type="Fixes"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Notifications module front-end fixes
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="cl-timeline--box">
-                                                <div class="cl-background">
-                                                    <h4 class="cl-timeline--header">Internal:</h4>
-                                                    <ul class="timeline">
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="silver"
-                                                                 data-tooltip-inline="Internal"
-                                                                 data-logs-type="Internal"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Dependency updates
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="silver"
-                                                                 data-tooltip-inline="Internal"
-                                                                 data-logs-type="Internal"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Webpack configuration update && optimization
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="silver"
-                                                                 data-tooltip-inline="Internal"
-                                                                 data-logs-type="Internal"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Grunt configuration update && optimization
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="cl-timeline--box">
-                                                <div class="cl-background">
-                                                    <h4 class="cl-timeline--header">Other:</h4>
-                                                    <ul class="timeline">
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="green"
-                                                                 data-tooltip-inline="Other"
-                                                                 data-logs-type="Other"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Update travis configuration
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline__entry timeline__entry--ok">
-                                                            <div class="timeline__indicator" data-color="green"
-                                                                 data-tooltip-inline="Other"
-                                                                 data-logs-type="Other"></div>
-                                                            <div class="timeline__padding">
-                                                                <div>
-                                                                    Update README file
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                            <% include ../layout/sidebar_notifications %>
+                                                                <% include ../layout/sidebar_alerts %>
+                                                                    <section class="main-content nopadding">
+                                                                        <div class="grid-container grid-container--2col grid-container--no-padd">
+                                                                            <div class="grid-col grid-col--menu">
+                                                                                <div class="grid-col grid-col--menu">
+                                                                                    <div class="menu-aside-container" data-scrollable>
+                                                                                        <ul class="menu-aside menu-aside--links">
+                                                                                            <li>
+                                                                                                <a href="#0.9.2" class="mdl-js-button mdl-js-ripple-effect">
+                                                                                                    <i class="zmdi zmdi-settings"></i>
+                                                                                                    <span>0.9.2</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-col grid-col--container">
+                                                                                <div class="menu-mobile-settings--box">
+                                                                                    <select class="menu-mobile-settings" data-select2--class="menu-aside-settings--blue" data-selectAR--search="true" name="select"></select>
+                                                                                </div>
+                                                                                <div class="box--with-menu-aside">
+                                                                                    <div class="change-log--content">
+                                                                                        <ul class="timeline">
+
+                                                                                            <li class="timeline__entry timeline__entry--ok">
+                                                                                                <div class="timeline__indicator" data-color="red" data-tooltip-inline="Version" data-logs-type="Version"></div>
+                                                                                                <div class="timeline__padding">
+                                                                                                    <div class="cl-version">
+                                                                                                        <h3 class="cl-title">
+                                                                                                            <span class="cl-current-version">Version
+                                                                                                                <a name="0.9.2">0.9.2</a>
+                                                                                                            </span>
+                                                                                                            <span class="cl-version-date">Date: 04.12.2017</span>
+                                                                                                        </h3>
+                                                                                                        <div class="cl-boxes masonry-layout">
+                                                                                                            <div class="cl-timeline--box">
+                                                                                                                <div class="cl-background">
+                                                                                                                    <h4 class="cl-timeline--header">New:</h4>
+                                                                                                                    <ul class="timeline">
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    New system layouts (wide menu, top menu, short top menu)
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Upgraded new JS events system
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    New layout - table filtering
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Massive front-end demo update
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Responsive widget layout engine
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Mobile select mode in table view
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Various optimizations towards mobile devices
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Full babel support
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Webpack 3 support
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Table cells truncation and tooltips system
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Production and development NPM scripts
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    New content preloading mechanism
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    New branding elements
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="#02a8f3" data-tooltip-inline="New" data-logs-type="New"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Special menu tooltips
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="cl-timeline--box">
+                                                                                                                <div class="cl-background">
+                                                                                                                    <h4 class="cl-timeline--header">Changes:</h4>
+                                                                                                                    <ul class="timeline">
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="rebeccapurple" data-tooltip-inline="Changes" data-logs-type="Changes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Demo menu layout
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="rebeccapurple" data-tooltip-inline="Changes" data-logs-type="Changes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Grunt && Webpack configuration files
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="rebeccapurple" data-tooltip-inline="Changes" data-logs-type="Changes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Removing unused files
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="rebeccapurple" data-tooltip-inline="Changes" data-logs-type="Changes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Internal templating system updates
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="cl-timeline--box">
+                                                                                                                <div class="cl-background">
+                                                                                                                    <h4 class="cl-timeline--header">Fixes:</h4>
+                                                                                                                    <ul class="timeline">
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    JS performance improvements
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Form plugins initiation time reduction
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Cross browser layouts fixes - IE, Edge, Safari, Firefox, Opera
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Branding system update && optimization
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Translations layout fixes
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Dropdowns JS engine fixes
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Notifications engine update && optimization
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Grid system updates
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Dashboard charts fixes
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Increased touch devices support (form plugins)
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Improved asset minification
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="orange" data-tooltip-inline="Fixes" data-logs-type="Fixes"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Notifications module front-end fixes
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="cl-timeline--box">
+                                                                                                                <div class="cl-background">
+                                                                                                                    <h4 class="cl-timeline--header">Internal:</h4>
+                                                                                                                    <ul class="timeline">
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="silver" data-tooltip-inline="Internal" data-logs-type="Internal"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Dependency updates
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="silver" data-tooltip-inline="Internal" data-logs-type="Internal"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Webpack configuration update && optimization
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="silver" data-tooltip-inline="Internal" data-logs-type="Internal"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Grunt configuration update && optimization
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="cl-timeline--box">
+                                                                                                                <div class="cl-background">
+                                                                                                                    <h4 class="cl-timeline--header">Other:</h4>
+                                                                                                                    <ul class="timeline">
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="green" data-tooltip-inline="Other" data-logs-type="Other"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Update travis configuration
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="timeline__entry timeline__entry--ok">
+                                                                                                                            <div class="timeline__indicator" data-color="green" data-tooltip-inline="Other" data-logs-type="Other"></div>
+                                                                                                                            <div class="timeline__padding">
+                                                                                                                                <div>
+                                                                                                                                    Update README file
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-</div>
-<textarea class="is-hidden brand-colors-container"></textarea>
-<% include ../layout/js_files %>
-</body>
+                                </div>
+                                <textarea class="is-hidden brand-colors-container"></textarea>
+                                <% include ../layout/js_files %>
+    </body>
 
 </html>

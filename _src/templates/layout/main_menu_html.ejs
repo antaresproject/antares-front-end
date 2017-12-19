@@ -1,570 +1,644 @@
 <% for (var pageName in whichMenu.primary) { %>
-<% if (pageTitle === whichMenu.primary[pageName] ) { %>
-<aside class="main-sidebar main-menu-html" data-menu-on-load="primary">
-    <% } %>
-    <% } %>
+    <% if (pageTitle === whichMenu.primary[pageName] ) { %>
+        <aside class="main-sidebar main-menu-html" data-menu-on-load="primary">
+            <% } %>
+                <% } %>
 
-    <% for (var pageName in whichMenu.secondary) { %>
-    <% if (pageTitle === whichMenu.secondary[pageName] ) { %>
-    <aside class="main-sidebar main-menu-html" data-menu-on-load="secondary">
-        <% } %>
-        <% } %>
+                    <% for (var pageName in whichMenu.secondary) { %>
+                        <% if (pageTitle === whichMenu.secondary[pageName] ) { %>
+                            <aside class="main-sidebar main-menu-html" data-menu-on-load="secondary">
+                                <% } %>
+                                    <% } %>
 
-        <div class="nav-container">
-            <nav>
-                <div class="menu-scroll">
-                    <ul class="main-menu--brand main-menu ">
-                        <li class="main-menu__brand has-submenu" data-index="0" data-name="brand">
-                            <a>
-                                <div class="main-sidebar__logo"></div>
-                            </a>
-                            <div class="submenu submenu--system js-flex-start">
-                                <a class="submenu__mobile-return">
-                                    <i class="zmdi zmdi-arrow-left"></i> <span>Brand Menu</span>
-                                </a>
-                                <section class="section--2col" data-scrollable>
-                                    <!-- <header>
+                                        <div class="nav-container">
+                                            <nav>
+                                                <div class="menu-scroll">
+                                                    <ul class="main-menu--brand main-menu ">
+                                                        <li class="main-menu__brand has-submenu" data-index="0" data-name="brand">
+                                                            <a>
+                                                                <div class="main-sidebar__logo"></div>
+                                                            </a>
+                                                            <div class="submenu submenu--system js-flex-start">
+                                                                <a class="submenu__mobile-return">
+                                                                    <i class="zmdi zmdi-arrow-left"></i>
+                                                                    <span>Brand Menu</span>
+                                                                </a>
+                                                                <section class="section--2col" data-scrollable>
+                                                                    <!-- <header>
                                         <h3>Main Section</h3>
                                     </header> -->
-                                    <div class="submenu__content standard">
+                                                                    <div class="submenu__content standard">
 
-                                        <div class="submenu__content-left">
-                                            <div class="brand-logo"></div>
-                                        </div>
-                                        <div class="submenu__content-right"><span class="brand-name">564</span>
-                                            <div class="menu-columns">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <ul class="">
-                                                            <li class="">
-                                                                <span>Plan</span>
-                                                                <span>Lite</span>
+                                                                        <div class="submenu__content-left">
+                                                                            <div class="brand-logo"></div>
+                                                                        </div>
+                                                                        <div class="submenu__content-right">
+                                                                            <span class="brand-name">564</span>
+                                                                            <div class="menu-columns">
+                                                                                <div class="row">
+                                                                                    <div class="col-6">
+                                                                                        <ul class="">
+                                                                                            <li class="">
+                                                                                                <span>Plan</span>
+                                                                                                <span>Lite</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Payment</span>
+                                                                                                <span>Monthly</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Support</span>
+                                                                                                <span>3 mo. left</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Registered</span>
+                                                                                                <span>2 years ago</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Support</span>
+                                                                                                <span>3 mo. left</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Registered</span>
+                                                                                                <span>2 years ago</span>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col-6">
+                                                                                        <ul class="">
+                                                                                            <li class="">
+                                                                                                <span>Plan</span>
+                                                                                                <span>Lite</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Payment</span>
+                                                                                                <span>Monthly</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Support</span>
+                                                                                                <span>3 mo. left</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Registered</span>
+                                                                                                <span>2 years ago</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Support</span>
+                                                                                                <span>3 mo. left</span>
+                                                                                            </li>
+                                                                                            <li class="">
+                                                                                                <span>Registered</span>
+                                                                                                <span>2 years ago</span>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="main-menu main-menu--primary">
+                                                        <li data-index="0" data-name="dashboard">
+                                                            <a href="index.html">
+                                                                <i class="zmdi zmdi-view-dashboard"></i>
+                                                                <span class="text">Dashboard</span>
+                                                            </a>
+                                                        </li>
+                                                        <li data-index="1" data-name="pages" class="has-submenu">
+                                                            <a>
+                                                                <i class="zmdi zmdi-layers"></i>
+                                                                <span class="text">Pages</span>
+                                                            </a>
+                                                            <div class="submenu flex-fs">
+                                                                <a class="submenu__mobile-return">
+                                                                    <i class="zmdi zmdi-arrow-left"></i>
+                                                                    <span>Pages</span>
+                                                                </a>
+                                                                <section data-scrollable>
+                                                                    <header>
+                                                                        <h3>Upper Menu</h3>
+                                                                    </header>
+                                                                    <div class="submenu__content">
+                                                                        <div class="menu-columns">
+                                                                            <div class="row">
+                                                                                <div class="col-6">
+                                                                                    <ul class="">
+                                                                                        <li data-name="clients_list">
+                                                                                            <a href="clients_list.html">
+                                                                                                <span>Clients List</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">99</span>
+                                                                                        </li>
+                                                                                        <li data-name="client_details">
+                                                                                            <a href="clients_details.html">
+                                                                                                <span>Client Details</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">21</span>
+                                                                                        </li>
+                                                                                        <li data-name="brand_settings">
+                                                                                            <a href="brand_settings.html">
+                                                                                                <span>Brand Settings</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">59</span>
+                                                                                        </li>
+                                                                                        <li data-name="email_settings">
+                                                                                            <a href="email_settings.html">
+                                                                                                <span>Email Settings</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">11</span>
+                                                                                        </li>
+                                                                                        <li data-name="steps_page">
+                                                                                            <a href="steps.html">
+                                                                                                <span>Steps Page</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">4</span>
+                                                                                        </li>
+                                                                                        <li data-name="login_page">
+                                                                                            <a href="login_page.html">
+                                                                                                <span>Login Page</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">2</span>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <ul class="">
+                                                                                        <li data-name="zero_data">
+                                                                                            <a href="zero_data.html">
+                                                                                                <span>Zero Data</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">52</span>
+                                                                                        </li>
+                                                                                        <li data-name="error_400">
+                                                                                            <a href="error_400.html">
+                                                                                                <span>Error 400</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">12</span>
+                                                                                        </li>
+                                                                                        <li data-name="error_404">
+                                                                                            <a href="error_404.html">
+                                                                                                <span>Error 404</span>
+                                                                                            </a>
+
+                                                                                            <span class="badge badge--dark badge--md">5</span>
+                                                                                        </li>
+                                                                                        <li data-name="error_500">
+                                                                                            <a href="error_500.html">
+                                                                                                <span>Error 500</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">1</span>
+                                                                                        </li>
+
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div data-menu-item="clients_list" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Client list</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content" data-scrollable>Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                                <ul>
+                                                                                    <li>Test1</li>
+                                                                                    <li>Test2</li>
+                                                                                    <li>Test1</li>
+                                                                                    <li>Test2</li>
+                                                                                    <li>Test1</li>
+                                                                                    <li>Test2</li>
+                                                                                    <li>Test1</li>
+                                                                                    <li>Test2</li>
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="client_details" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Client details</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="brand_settings" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Brand settings</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="email_settings" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Email settings</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="steps_page" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Steps page</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="login_page" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Login page</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="zero_data" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Zero data</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="error_400" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Error 400</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="error_404" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Error 404</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="error_500" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Error 500</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </li>
+                                                        <li data-index="2" data-name="UI elements" class="has-submenu">
+                                                            <a>
+                                                                <i class="zmdi zmdi-check-all"></i>
+                                                                <span class="text">UI elem.</span>
+                                                            </a>
+                                                            <div class="submenu flex-fs">
+                                                                <a class="submenu__mobile-return">
+                                                                    <i class="zmdi zmdi-arrow-left"></i>
+                                                                    <span>UI elements</span>
+                                                                </a>
+                                                                <section data-scrollable>
+                                                                    <header>
+                                                                        <h3>Upper Menu</h3>
+                                                                    </header>
+                                                                    <div class="submenu__content">
+                                                                        <div class="menu-columns">
+                                                                            <div class="row">
+                                                                                <div class="col-6">
+                                                                                    <ul class="">
+                                                                                        <li data-name="form_elements">
+                                                                                            <a href="form_elements.html">
+                                                                                                <span>Form Elements</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">79</span>
+                                                                                        </li>
+                                                                                        <li data-name="form_layouts">
+                                                                                            <a href="form_layouts.html">
+                                                                                                <span>Form Layouts</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">56</span>
+                                                                                        </li>
+                                                                                        <li data-name="ui_grid">
+                                                                                            <a href="ui_grid.html">
+                                                                                                <span>Grid</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">42</span>
+                                                                                        </li>
+                                                                                        <li data-name="ui_alerts">
+                                                                                            <a href="ui_alerts.html">
+                                                                                                <span>Alerts</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">93</span>
+                                                                                        </li>
+                                                                                        <li data-name="form_single">
+                                                                                            <a href="form_single.html">
+                                                                                                <span>Form Single</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">81</span>
+                                                                                        </li>
+
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <ul class="">
+                                                                                        <li data-name="ui_noti">
+                                                                                            <a href="ui_notification_preview.html">
+                                                                                                <span>Notification Preview</span>
+                                                                                            </a>
+                                                                                            <span class="badge badge--dark badge--md">63</span>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div data-menu-item="form_elements" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Form Elements</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="form_layouts" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Form Layouts</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="ui_btns" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Buttons</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="ui_alerts" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Alerts</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="ui_grid" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Grid</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="form_single" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Form Single</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-menu-item="ui_noti" class="menu-tooltip">
+                                                                            <div class="menu-tooltip__header">
+                                                                                <i class="zmdi zmdi-info-outline"></i>
+                                                                                <span>Notification Preview</span>
+                                                                            </div>
+                                                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the printing
+                                                                                and typesetting industry. Lorem Ipsum has
+                                                                                been the industry's standard dummy text ever
+                                                                                since the 1500s...
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+                                                    <ul class="main-menu main-menu--secondary">
+                                                        <li data-index="3" data-name="acl">
+                                                            <a href="acl.html">
+                                                                <i class="zmdi zmdi-code-setting"></i>
+                                                                <span class="text">ACL</span>
+                                                            </a>
+                                                        </li>
+                                                        <li data-index="4" data-name="notification_templates">
+                                                            <a href="notification_templates.html">
+                                                                <i class="zmdi zmdi-book-image"></i>
+                                                                <span class="text">Templates</span>
+                                                            </a>
+                                                        </li>
+                                                        <li data-index="5" data-name="change_log">
+                                                            <a href="change_log.html">
+                                                                <i class="zmdi zmdi-arrow-split"></i>
+                                                                <span class="text">Change Log</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="more-trigger">
+                                                    <div class="more-trigger__inner">
+                                                        <div class="main-close">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                            <span class="text"></span>
+                                                        </div>
+                                                        <div class="alt-close">
+                                                            <div class="close close--one"></div>
+                                                            <div class="close close--two"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mobile-ddowns">
+                                                    <div class="mobile-ddowns__sgl ddown--logged">
+                                                        <div class="mobile-ddowns__desc">
+                                                            <div class="mobile-ddowns__label">Logged As:</div>
+                                                            <div class="mobile-ddowns__text">Paweł Bis</div>
+                                                        </div>
+                                                        <div class="mobile-ddowns__icon">
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                        <ul class="mobile-ddowns__menu mobile-ddowns__menu--user">
+                                                            <li class="mobile-ddowns__menu-header">
+                                                                <a>
+                                                                    <div class="flex-block">
+                                                                        <div class="avatar avatar--xs">
+                                                                            <img src="img/brand/brand-inbs.png" alt="Logged In User Avatar">
+                                                                        </div>
+                                                                        <div class="flex-block__content">
+                                                                            <span class="flex-block__title">Paweł Bis</span>
+                                                                            <span class="flex-block__desc">RS Studio</span>
+                                                                        </div>
+                                                                        <div class="flex-block__badge">
+                                                                            <i class="zmdi zmdi-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
                                                             </li>
-                                                            <li class="">
-                                                                <span>Payment</span>
-                                                                <span>Monthly</span>
+                                                            <li>
+                                                                <a>
+                                                                    <span>View Profile</span>
+                                                                </a>
                                                             </li>
-                                                            <li class="">
-                                                                <span>Support</span>
-                                                                <span>3 mo. left</span>
+                                                            <li>
+                                                                <a>
+                                                                    <span>Upgrade Plan</span>
+                                                                </a>
                                                             </li>
-                                                            <li class="">
-                                                                <span>Registered</span>
-                                                                <span>2 years ago</span>
+                                                            <li>
+                                                                <a>
+                                                                    <span>Account Billing Aight</span>
+                                                                </a>
                                                             </li>
-                                                            <li class="">
-                                                                <span>Support</span>
-                                                                <span>3 mo. left</span>
-                                                            </li>
-                                                            <li class="">
-                                                                <span>Registered</span>
-                                                                <span>2 years ago</span>
+                                                            <li>
+                                                                <a>
+                                                                    <span>Logout</span>
+                                                                </a>
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div class="col-6">
-                                                        <ul class="">
-                                                            <li class="">
-                                                                <span>Plan</span>
-                                                                <span>Lite</span>
+                                                    <div class="mobile-ddowns__sgl ddown--brand">
+                                                        <div class="mobile-ddowns__desc">
+                                                            <div class="mobile-ddowns__label">Brands:</div>
+                                                            <div class="mobile-ddowns__text">INBS.software</div>
+                                                        </div>
+                                                        <div class="mobile-ddowns__icon">
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                        <ul class="mobile-ddowns__menu mobile-ddowns__menu--brand">
+                                                            <li class="mdl-js-button mdl-js-ripple-effect is-selected" data-upgraded=",MaterialButton,MaterialRipple">
+                                                                <a>
+                                                                    <div class="flex-block">
+                                                                        <div class="avatar avatar--xs">
+                                                                            <img src="img/brand/brand-inbs.png" alt="item.avatarAlt">
+                                                                        </div>
+                                                                        <div class="flex-block__content">
+                                                                            <span class="flex-block__title">INBS.software</span>
+                                                                        </div>
+                                                                        <div class="flex-block__badge">
+                                                                            <i class="zmdi zmdi-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <span class="mdl-button__ripple-container">
+                                                                    <span class="mdl-ripple"></span>
+                                                                </span>
                                                             </li>
-                                                            <li class="">
-                                                                <span>Payment</span>
-                                                                <span>Monthly</span>
+                                                            <li class="mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                                                                <a>
+                                                                    <div class="flex-block">
+                                                                        <div class="avatar avatar--xs">
+                                                                            <img src="img/brand/brand-rsstudio.png" alt="item.avatarAlt">
+                                                                        </div>
+                                                                        <div class="flex-block__content">
+                                                                            <span class="flex-block__title">RS Studio</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <span class="mdl-button__ripple-container">
+                                                                    <span class="mdl-ripple"></span>
+                                                                </span>
                                                             </li>
-                                                            <li class="">
-                                                                <span>Support</span>
-                                                                <span>3 mo. left</span>
-                                                            </li>
-                                                            <li class="">
-                                                                <span>Registered</span>
-                                                                <span>2 years ago</span>
-                                                            </li>
-                                                            <li class="">
-                                                                <span>Support</span>
-                                                                <span>3 mo. left</span>
-                                                            </li>
-                                                            <li class="">
-                                                                <span>Registered</span>
-                                                                <span>2 years ago</span>
+                                                            <li class="mobile-ddowns-new mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                                                                <a>
+                                                                    <div class="flex-block">
+                                                                        <div class="avatar avatar--xs">
+                                                                            <i class="zmdi zmdi-plus-circle-o"></i>
+                                                                        </div>
+                                                                        <div class="flex-block__content">
+                                                                            <span class="flex-block__title">Add Brands</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <span class="mdl-button__ripple-container">
+                                                                    <span class="mdl-ripple"></span>
+                                                                </span>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </nav>
                                         </div>
-                                    </div>
-                                </section>
+                            </aside>
 
+                            <div class="control-menu-panel">
+                                <form>
+                                    <i class="zmdi zmdi-settings"></i>
+                                    <label>
+                                        <input data-icheck="true" type="radio" name="type" id="standard-menu" value='Standard Menu'>
+                                        <span class="mr8">Standard</span>
+                                    </label>
+                                    <label>
+                                        <input data-icheck="true" type="radio" name="type" id="top-menu" value='Top Menu'>
+                                        <span class="mr8">Top</span>
+                                    </label>
+                                    <label>
+                                        <input data-icheck="true" type="radio" name="type" id="wide-menu" value='Wide Menu'>
+                                        <span class="mr8">Wide</span>
+                                    </label>
+                                    <a href="" class="btn btn--xs btn--default">Update Menu</a>
+                                </form>
                             </div>
-                        </li>
-                    </ul>
-                    <ul class="main-menu main-menu--primary">
-                        <li data-index="0" data-name="dashboard">
-                            <a href="index.html"><i class="zmdi zmdi-view-dashboard"></i> <span
-                                        class="text">Dashboard</span></a>
-                        </li>
-                        <li data-index="1" data-name="pages" class="has-submenu">
-                            <a>
-                                <i class="zmdi zmdi-layers"></i>
-                                <span class="text">Pages</span>
-                            </a>
-                            <div class="submenu flex-fs">
-                                <a class="submenu__mobile-return">
-                                    <i class="zmdi zmdi-arrow-left"></i><span>Pages</span></a>
-                                <section data-scrollable>
-                                    <header>
-                                        <h3>Upper Menu</h3>
-                                    </header>
-                                    <div class="submenu__content">
-                                        <div class="menu-columns">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <ul class="">
-                                                        <li data-name="clients_list">
-                                                            <a href="clients_list.html"><span>Clients List</span></a>
-                                                            <span class="badge badge--dark badge--md">99</span>
-                                                        </li>
-                                                        <li data-name="client_details">
-                                                            <a href="clients_details.html"><span>Client Details</span></a>
-
-                                                            <span class="badge badge--dark badge--md">21</span>
-                                                        </li>
-                                                        <li data-name="brand_settings">
-                                                            <a href="brand_settings.html"><span>Brand Settings</span></a>
-
-                                                            <span class="badge badge--dark badge--md">59</span>
-                                                        </li>
-                                                        <li data-name="email_settings">
-                                                            <a href="email_settings.html"><span>Email Settings</span></a>
-
-                                                            <span class="badge badge--dark badge--md">11</span>
-                                                        </li>
-                                                        <li data-name="steps_page">
-                                                            <a href="steps.html"><span>Steps Page</span></a>
-
-                                                            <span class="badge badge--dark badge--md">4</span>
-                                                        </li>
-                                                        <li data-name="login_page">
-                                                            <a href="login_page.html"><span>Login Page</span></a>
-
-                                                            <span class="badge badge--dark badge--md">2</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-6">
-                                                    <ul class="">
-                                                        <li data-name="zero_data">
-                                                            <a href="zero_data.html"><span>Zero Data</span></a>
-
-                                                            <span class="badge badge--dark badge--md">52</span>
-                                                        </li>
-                                                        <li data-name="error_400">
-                                                            <a href="error_400.html"><span>Error 400</span></a>
-
-                                                            <span class="badge badge--dark badge--md">12</span>
-                                                        </li>
-                                                        <li data-name="error_404">
-                                                            <a href="error_404.html"><span>Error 404</span></a>
-
-                                                            <span class="badge badge--dark badge--md">5</span>
-                                                        </li>
-                                                        <li data-name="error_500">
-                                                            <a href="error_500.html"><span>Error 500</span></a>
-                                                            <span class="badge badge--dark badge--md">1</span>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div data-menu-item="clients_list" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Client list</span>
-                                            </div>
-                                            <div class="menu-tooltip__content" data-scrollable>Lorem Ipsum is simply
-                                                dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                                <ul>
-                                                    <li>Test1</li>
-                                                    <li>Test2</li>
-                                                    <li>Test1</li>
-                                                    <li>Test2</li>
-                                                    <li>Test1</li>
-                                                    <li>Test2</li>
-                                                    <li>Test1</li>
-                                                    <li>Test2</li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="client_details" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Client details</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="brand_settings" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Brand settings</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="email_settings" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Email settings</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="steps_page" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Steps page</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="login_page" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Login page</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="zero_data" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Zero data</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="error_400" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Error 400</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="error_404" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Error 404</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="error_500" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Error 500</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </li>
-                        <li data-index="2" data-name="UI elements" class="has-submenu">
-                            <a><i class="zmdi zmdi-check-all"></i> <span class="text">UI elem.</span></a>
-                            <div class="submenu flex-fs">
-                                <a class="submenu__mobile-return">
-                                    <i class="zmdi zmdi-arrow-left"></i><span>UI elements</span></a>
-                                <section data-scrollable>
-                                    <header>
-                                        <h3>Upper Menu</h3>
-                                    </header>
-                                    <div class="submenu__content">
-                                        <div class="menu-columns">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <ul class="">
-                                                        <li data-name="form_elements"><a
-                                                                    href="form_elements.html"><span>Form Elements</span></a>
-                                                            <span class="badge badge--dark badge--md">79</span></li>
-                                                        <li data-name="form_layouts"><a
-                                                                    href="form_layouts.html"><span>Form Layouts</span></a>
-                                                            <span class="badge badge--dark badge--md">56</span></li>
-                                                        <li data-name="ui_grid"><a href="ui_grid.html"><span>Grid</span></a>
-                                                            <span class="badge badge--dark badge--md">42</span></li>
-                                                        <li data-name="ui_alerts"><a
-                                                                    href="ui_alerts.html"><span>Alerts</span></a>
-                                                            <span class="badge badge--dark badge--md">93</span></li>
-                                                        <li data-name="form_single"><a
-                                                                    href="form_single.html"><span>Form Single</span></a>
-                                                            <span class="badge badge--dark badge--md">81</span></li>
-
-                                                    </ul>
-                                                </div>
-                                                <div class="col-6">
-                                                    <ul class="">
-                                                        <li data-name="ui_noti"><a
-                                                                    href="ui_notification_preview.html"><span>Notification Preview</span></a>
-                                                            <span class="badge badge--dark badge--md">63</span></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div data-menu-item="form_elements" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Form Elements</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="form_layouts" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Form Layouts</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="ui_btns" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Buttons</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="ui_alerts" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Alerts</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="ui_grid" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Grid</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="form_single" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Form Single</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                        <div data-menu-item="ui_noti" class="menu-tooltip">
-                                            <div class="menu-tooltip__header"><i class="zmdi zmdi-info-outline"></i>
-                                                <span>Notification Preview</span>
-                                            </div>
-                                            <div class="menu-tooltip__content">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s...
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </li>
-                        <li data-index="0" data-name="dashboard">
-                            <a href="https://www.antaresproject.io/">
-                                <span class="icon-antares">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393.7 276.35">
-    <defs>
-        <style>.cls-1{fill:#414042;}.cls-2{fill:#00aeef;}.cls-3{fill:#ccc;}.cls-4{fill:#e0e0e0;}.cls-5{fill:#fff;}
-        </style>
-    </defs>
-    <title>antares_logo_full</title>
-    <g id="Warstwa_2" data-name="Warstwa 2">
-        <g id="Warstwa_1-2" data-name="Warstwa 1">
-            <path fill="#8a9099" class="cls-3"
-                  d="M220.7,248.7a16,16,0,0,0-5.21-11,15.83,15.83,0,0,0-11.71-5.17H195.2a41.28,41.28,0,0,1-41.73-37.3c0-.42-.07-.84-.1-1.25q-.07-1.11-.11-2.23c0-.41-.06-.8-.06-1.21,0-.14,0-.27,0-.41a42.78,42.78,0,0,1,8.3-25,51.18,51.18,0,0,1,38.18-17.63l-7.53-1.2a60.1,60.1,0,0,0-41.94,103.18l.08.05c.31.31.61.64.92.95a74.61,74.61,0,0,0,45,15h8.58c.46,0,.89-.09,1.33-.12a16.06,16.06,0,0,0,14.67-15.88C220.78,249.21,220.72,249,220.7,248.7Z"/>
-            <path fill="#8a9099" class="cls-4"
-                  d="M151.21,250.45a60.16,60.16,0,0,1,42-103.28,60.78,60.78,0,0,1,6.51.36,42.94,42.94,0,0,1,39.56,42.73c0-.09,0-.18,0-.27a102.26,102.26,0,0,0-30.1-72.47c-.45-.44-1-.6-1.47-1a73.79,73.79,0,0,0-11.48-1.16,75,75,0,0,0-45,135.12Z"/>
-            <path fill="#8a9099" class="cls-5"
-                  d="M234.6,126.36c-11.2-5.63-20.13-8.45-26.67-9.84l-.22,0a11.34,11.34,0,0,0,.93,1.11A102.16,102.16,0,0,1,238.7,190c0,.09,0,.18,0,.27s0,.09,0,.13v59a16,16,0,0,0,17.81,15.9c8.17-.9,14.19-8.11,14.19-16.34V190.4A75,75,0,0,0,234.6,126.36Z"/>
-        </g>
-    </g>
-</svg>
-                                </span>
-                                <span
-                                        class="text">Project</span></a>
-                        </li>
-                    </ul>
-                    <ul class="main-menu main-menu--secondary">
-                        <li data-index="3" data-name="acl">
-                            <a href="acl.html">
-                                <i class="zmdi zmdi-code-setting"></i>
-                                <span class="text">ACL</span>
-                            </a>
-                        </li>
-                        <li data-index="4" data-name="notification_templates">
-                            <a href="notification_templates.html">
-                                <i class="zmdi zmdi-book-image"></i>
-                                <span class="text">Templates</span>
-                            </a>
-                        </li>
-                        <li data-index="5" data-name="change_log">
-                            <a href="change_log.html">
-                                <i class="zmdi zmdi-arrow-split"></i>
-                                <span class="text">Change Log</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="more-trigger">
-                    <div class="more-trigger__inner">
-                        <div class="main-close">
-                            <i class="zmdi zmdi-more"></i>
-                            <span class="text"></span>
-                        </div>
-                        <div class="alt-close">
-                            <div class="close close--one"></div>
-                            <div class="close close--two"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile-ddowns">
-                    <div class="mobile-ddowns__sgl ddown--logged">
-                        <div class="mobile-ddowns__desc">
-                            <div class="mobile-ddowns__label">Logged As:</div>
-                            <div class="mobile-ddowns__text">Paweł Bis</div>
-                        </div>
-                        <div class="mobile-ddowns__icon"><i class="zmdi zmdi-caret-down"></i></div>
-                        <ul class="mobile-ddowns__menu mobile-ddowns__menu--user">
-                            <li class="mobile-ddowns__menu-header">
-                                <a>
-                                    <div class="flex-block">
-                                        <div class="avatar avatar--xs"><img src="img/brand/brand-inbs.png"
-                                                                            alt="Logged In User Avatar"></div>
-                                        <div class="flex-block__content"><span
-                                                    class="flex-block__title">Paweł Bis</span><span
-                                                    class="flex-block__desc">RS Studio</span></div>
-                                        <div class="flex-block__badge"><i class="zmdi zmdi-check"></i></div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li><a><span>View Profile</span></a></li>
-                            <li><a><span>Upgrade Plan</span></a></li>
-                            <li><a><span>Account Billing Aight</span></a></li>
-                            <li><a><span>Logout</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-ddowns__sgl ddown--brand">
-                        <div class="mobile-ddowns__desc">
-                            <div class="mobile-ddowns__label">Brands:</div>
-                            <div class="mobile-ddowns__text">INBS.software</div>
-                        </div>
-                        <div class="mobile-ddowns__icon"><i class="zmdi zmdi-caret-down"></i></div>
-                        <ul class="mobile-ddowns__menu mobile-ddowns__menu--brand">
-                            <li class="mdl-js-button mdl-js-ripple-effect is-selected"
-                                data-upgraded=",MaterialButton,MaterialRipple">
-                                <a>
-                                    <div class="flex-block">
-                                        <div class="avatar avatar--xs"><img src="img/brand/brand-inbs.png"
-                                                                            alt="item.avatarAlt"></div>
-                                        <div class="flex-block__content"><span
-                                                    class="flex-block__title">INBS.software</span></div>
-                                        <div class="flex-block__badge"><i class="zmdi zmdi-check"></i></div>
-                                    </div>
-                                </a><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
-                            </li>
-                            <li class="mdl-js-button mdl-js-ripple-effect"
-                                data-upgraded=",MaterialButton,MaterialRipple">
-                                <a>
-                                    <div class="flex-block">
-                                        <div class="avatar avatar--xs"><img src="img/brand/brand-rsstudio.png"
-                                                                            alt="item.avatarAlt"></div>
-                                        <div class="flex-block__content"><span
-                                                    class="flex-block__title">RS Studio</span>
-                                        </div>
-                                    </div>
-                                </a><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
-                            </li>
-                            <li class="mobile-ddowns-new mdl-js-button mdl-js-ripple-effect"
-                                data-upgraded=",MaterialButton,MaterialRipple">
-                                <a>
-                                    <div class="flex-block">
-                                        <div class="avatar avatar--xs"><i class="zmdi zmdi-plus-circle-o"></i></div>
-                                        <div class="flex-block__content"><span
-                                                    class="flex-block__title">Add Brands</span>
-                                        </div>
-                                    </div>
-                                </a><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </aside>
-
-    <div class="control-menu-panel">
-        <form>
-            <i class="zmdi zmdi-settings"></i>
-            <label>
-                <input data-icheck="true" type="radio"
-                       name="type"
-                       id="standard-menu" value='Standard Menu'>
-                <span class="mr8">Standard</span>
-            </label>
-            <label>
-                <input data-icheck="true" type="radio"
-                       name="type"
-                       id="top-menu" value='Top Menu'>
-                <span class="mr8">Top</span>
-            </label>
-            <label>
-                <input data-icheck="true" type="radio"
-                       name="type"
-                       id="wide-menu" value='Wide Menu'>
-                <span class="mr8">Wide</span>
-            </label>
-            <a href="" class="btn btn--xs btn--default">Update Menu</a>
-        </form>
-    </div>

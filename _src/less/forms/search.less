@@ -296,10 +296,15 @@
 }
 #app-wrapper .main-head{
   .breadcrumbs{
-    &>li:first-of-type{
-
-      @media @max1023{
+    &>li{
+      @media only screen and (max-width:1024px){
         display: none;
+        &:last-of-type{
+          display: flex;
+          &:before{
+            display:none
+          }
+        }
       }
     }
     &>li:nth-child(2){
