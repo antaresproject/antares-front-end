@@ -910,6 +910,10 @@ const AntaresForms = {
                     return false;
                 });
             }
+            window.requestAnimationFrame(() => {
+
+                $('.app-content.page-datatables.page-vue-datatables .card.card--pagination .card__content').adjustCardHeight()
+            })
         },
         mobileSelectMenu() {
             $('#select-anchor').change(function (e) {

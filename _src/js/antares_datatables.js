@@ -48,6 +48,9 @@ const AntaresTableView = {
         self.dataTablesPaginationButtons();
         self.dataTablesHeightForScroll();
         antaresEvents.emit('performance.datatables_loaded');
+
+
+
     },
 
     // methods
@@ -339,6 +342,7 @@ const AntaresTableView = {
             asSorting: ['asc'],
             aTargets: [2],
             initComplete: function () {
+
                 let column = $('[data-table-init="true"]')
                         .DataTable()
                         .column(3),
@@ -360,8 +364,8 @@ const AntaresTableView = {
                     .each(function (d, j) {
                         select.append('<option value="' + d + '">' + d + '</option>');
                     });
-
-                $('.tbl-c').append($('.tbl-c .pagination'));
+                let thisTblc = $(this).closest('.tbl-c')
+                thisTblc.append(thisTblc.find('.pagination'));
                 // window.AntaresForms.elements.select();
 
                 // setTimeout(() => {
